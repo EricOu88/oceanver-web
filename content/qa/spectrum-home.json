@@ -1,0 +1,114 @@
+[
+  {
+    "id": "spectrum-home-001",
+    "provider": "spectrum",
+    "category": "pre-sales",
+    "question_variants": [
+      "Spectrum 家庭宽带有哪些套餐",
+      "Spectrum 住家宽带套餐选择",
+      "Spectrum 家庭套餐有哪些"
+    ],
+    "answer": "Spectrum 家庭宽带提供多种套餐选择，包括基础套餐、高速套餐和超高速套餐。具体套餐和速度取决于您的地址覆盖情况。建议加微信提供地址，我们帮您查询可用的套餐选项。",
+    "scope": "allowed",
+    "next_step": "加微信提供地址查询可用套餐",
+    "do_not_say": ["$", "价格", "多少钱", "最便宜", "促销"],
+    "source_url": "/internet/spectrum",
+    "updated_at": "2026-01-27T00:00:00Z"
+  },
+  {
+    "id": "spectrum-home-002",
+    "provider": "spectrum",
+    "category": "coverage",
+    "question_variants": [
+      "我的地址能装 Spectrum 吗",
+      "Spectrum 覆盖查询",
+      "Spectrum 地址覆盖"
+    ],
+    "answer": "地址覆盖需要具体查询。我们可以帮您免费查询地址覆盖情况。建议加微信提供详细地址，我们会在 1 分钟内告诉您该地址是否支持 Spectrum。",
+    "scope": "blocked",
+    "next_step": "加微信提供地址查询",
+    "do_not_say": ["能装", "不能装", "100%", "保证", "确定"],
+    "source_url": "/internet/spectrum",
+    "updated_at": "2026-01-27T00:00:00Z"
+  },
+  {
+    "id": "spectrum-home-003",
+    "provider": "spectrum",
+    "category": "installation",
+    "question_variants": [
+      "Spectrum 安装需要多久",
+      "Spectrum 安装时间",
+      "Spectrum 多久能装好"
+    ],
+    "answer": "Spectrum 宽带安装通常需要 1-3 个工作日。具体时间取决于您的地址和运营商安排。我们会帮您预约最快的安装时间，并全程跟踪安装进度。",
+    "scope": "allowed",
+    "next_step": "加微信预约安装时间",
+    "do_not_say": ["保证", "确定", "一定"],
+    "source_url": "/internet/spectrum",
+    "updated_at": "2026-01-27T00:00:00Z"
+  },
+  {
+    "id": "spectrum-home-004",
+    "provider": "spectrum",
+    "category": "billing",
+    "question_variants": [
+      "Spectrum 为什么涨价",
+      "Spectrum 账单涨价原因",
+      "Spectrum 为什么账单不一样"
+    ],
+    "answer": "Spectrum 涨价通常是因为促销期（12-24 个月）结束，恢复到正常价格。这是正常情况。我们可以帮您联系 Spectrum 协商续约优惠，或对比其他运营商方案。通常可以帮您节省费用。",
+    "scope": "allowed",
+    "next_step": "加微信协助处理账单问题",
+    "do_not_say": ["$", "具体金额", "保证"],
+    "source_url": "/internet/spectrum",
+    "updated_at": "2026-01-27T00:00:00Z"
+  },
+  {
+    "id": "spectrum-home-005",
+    "provider": "spectrum",
+    "category": "contract",
+    "question_variants": [
+      "Spectrum 有合约吗",
+      "Spectrum 需要签合约吗",
+      "Spectrum 合约期限"
+    ],
+    "answer": "Spectrum 大部分套餐无合约，可随时取消。部分促销套餐可能有 12-24 个月合约，但通常可以提前解约。我们会详细说明合约条款。",
+    "scope": "allowed",
+    "next_step": "加微信了解具体合约条款",
+    "do_not_say": ["保证", "一定"],
+    "source_url": "/internet/spectrum",
+    "updated_at": "2026-01-27T00:00:00Z"
+  },
+  {
+    "id": "spectrum-home-006",
+    "provider": "spectrum",
+    "category": "business",
+    "question_variants": [
+      "Spectrum 商业和家用差别",
+      "Spectrum 商业家用区别",
+      "Spectrum 商业 vs 家用"
+    ],
+    "answer": "Spectrum 商业宽带和家用宽带的主要区别：1) 商业宽带通常有 SLA（服务级别协议）保证，故障响应更快 2) 商业宽带通常有静态 IP 地址 3) 商业宽带价格通常高于家用，但稳定性更好 4) 商业宽带通常有专门的商业客服支持。具体选择取决于您的使用场景和需求。",
+    "scope": "allowed",
+    "next_step": "加微信根据需求推荐方案",
+    "do_not_say": ["$", "具体价格", "保证"],
+    "source_url": "/internet/spectrum",
+    "updated_at": "2026-01-27T00:00:00Z"
+  },
+  {
+    "id": "spectrum-home-007",
+    "provider": "spectrum",
+    "category": "moving",
+    "question_variants": [
+      "Spectrum 搬家可以转移吗",
+      "Spectrum 搬家宽带",
+      "Spectrum 服务转移"
+    ],
+    "answer": "可以。Spectrum 支持服务转移，但需要确认新地址有覆盖。转移通常免费或收取少量费用。我们会帮您处理转移流程，并确认新地址的套餐和价格。",
+    "scope": "allowed",
+    "next_step": "加微信提供新地址处理转移",
+    "do_not_say": ["$", "具体费用", "保证"],
+    "source_url": "/internet/spectrum",
+    "updated_at": "2026-01-27T00:00:00Z"
+  }
+]

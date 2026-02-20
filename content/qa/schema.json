@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "QA Data Schema",
+  "description": "鸿达电讯 AI 客服知识库 QA 数据结构",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "唯一标识符，格式：provider-category-number，如 xfinity-home-001"
+    },
+    "provider": {
+      "type": "string",
+      "enum": ["xfinity", "spectrum", "att", "tmobile", "verizon", "frontier", "ultra", "genmobile", "mint", "general"],
+      "description": "运营商或通用类型"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["home", "business", "pre-sales", "after-sales", "installation", "billing", "contract", "moving", "equipment", "coverage", "no-ssn", "general"],
+      "description": "问题分类"
+    },
+    "question_variants": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 3,
+      "description": "问题的同义问法，至少 3 个变体"
+    },
+    "answer": {
+      "type": "string",
+      "description": "标准答案，必须符合 policy.md 和 voice.md 要求"
+    },
+    "scope": {
+      "type": "string",
+      "enum": ["allowed", "blocked"],
+      "description": "是否允许回答（allowed）或必须转人工（blocked）"
+    },
+    "next_step": {
+      "type": "string",
+      "description": "下一步引导，如：加微信、提供地址、说明家庭或商业"
+    },
+    "do_not_say": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "禁止在回答中出现的词汇列表"
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "来源页面 URL（可选）"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "最后更新时间"
+    }
+  },
+  "required": ["id", "provider", "category", "question_variants", "answer", "scope", "next_step"]
+}

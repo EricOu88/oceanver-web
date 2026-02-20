@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.baymediastar.com"
+        }
+      ],
+      "destination": "https://baymediastar.com/$1",
+      "permanent": true
+    }
+  ]
+}

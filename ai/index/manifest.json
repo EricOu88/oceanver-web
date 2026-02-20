@@ -1,0 +1,46 @@
+{
+  "count": 53,
+  "timestamp": "2026-01-28T01:41:51.035Z",
+  "version": "1.0.0",
+  "providers": [
+    "att",
+    "general",
+    "xfinity",
+    "spectrum"
+  ],
+  "categories": [
+    "business",
+    "pre-sales",
+    "coverage",
+    "installation",
+    "billing",
+    "no-ssn",
+    "contract",
+    "moving",
+    "equipment",
+    "商业资格",
+    "after-sales"
+  ],
+  "indexedIds": [
+    "att-business-001",
+    "att-business-002",
+    "att-business-003",
+    "att-home-001",
+    "att-home-002",
+    "att-home-003",
+    "att-home-004",
+    "att-home-005",
+    "att-home-006",
+    "att-home-007",
+    "att-home-008",
+    "general-001",
+    "general-002",
+    "general-003",
+    "general-004",
+    "general-005",
+    "general-006",
+    "general-007",
+    "general-008",
+    "xfinity_business_license"
+  ]
+}

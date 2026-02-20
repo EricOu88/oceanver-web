@@ -1,0 +1,727 @@
+// Xfinity FAQ 数据
+// 四大分类：住家售前、住家售后、商业售前、商业售后
+
+export interface FAQItem {
+  question: string
+  answer: string
+  id?: string
+  isHot?: boolean
+}
+
+export interface FAQSubCategory {
+  id: string
+  title: string
+  items: FAQItem[]
+}
+
+export interface FAQMainCategory {
+  id: string
+  title: string
+  shortTitle: string
+  description: string
+  subCategories: FAQSubCategory[]
+}
+
+// ==================== 住家宽带 · 售前 ====================
+export const residentialPreSale: FAQMainCategory = {
+  id: 'residential-pre-sales',
+  title: '住家宽带 · 售前',
+  shortTitle: '住家售前',
+  description: '安装前你想了解的问题',
+  subCategories: [
+    {
+      id: 'coverage-install',
+      title: '地址覆盖与安装',
+      items: [
+        {
+          question: '我的地址能装 Xfinity 吗？',
+          answer: 'Xfinity 在湾区和全美覆盖最广，大部分地址都支持。但具体能否安装需要查询您的详细地址。我们可以帮您免费查询地址覆盖情况。',
+          isHot: true,
+        },
+        {
+          question: '公寓能装 Xfinity 吗？',
+          answer: '大部分公寓都支持 Xfinity，但需要确认楼内是否有线路接口。有些公寓可能已有 Xfinity 线路，安装会更快。',
+        },
+        {
+          question: 'Xfinity 安装需要多长时间？',
+          answer: '新安装通常需要 1-2 周预约时间。如果地址已有线路，安装当天即可完成。首次安装可能需要技术人员上门。',
+        },
+        {
+          question: '安装费用是多少？',
+          answer: 'Xfinity 新用户安装通常是免费的，但可能需要支付设备押金或购买路由器。具体费用取决于您选择的套餐。',
+        },
+        {
+          question: '可以自己安装吗？',
+          answer: '如果地址已有 Xfinity 线路，可以申请自助安装（Self-Install Kit）。新地址通常需要技术人员上门安装。',
+        },
+      ],
+    },
+    {
+      id: 'plan-selection',
+      title: '套餐选择',
+      items: [
+        {
+          question: 'Xfinity 有哪些套餐？',
+          answer: 'Xfinity 提供从 50Mbps 到 1200Mbps 多种速度选择，价格从 $20-$100+ 不等。还有住家和商业宽带两种类型。',
+          isHot: true,
+        },
+        {
+          question: '住家和商业宽带有什么区别？',
+          answer: '商业宽带通常更稳定，有 SLA 保障，价格结构不同，适合办公室和店铺。住家宽带促销更多，适合家庭使用。',
+        },
+        {
+          question: '应该选多少速度？',
+          answer: '一般家庭 200-400Mbps 足够。如果多人同时使用、远程办公或游戏，建议 600Mbps 以上。我们可以根据您的使用情况推荐。',
+        },
+        {
+          question: 'Xfinity 有流量上限吗？',
+          answer: '大部分套餐有 1.2TB 流量上限，超出后可能收费。但很多促销套餐前几个月不限制流量。',
+        },
+        {
+          question: '可以只装宽带不办手机吗？',
+          answer: '可以。Xfinity 宽带和手机是分开的，不需要捆绑。但捆绑可能有额外折扣。',
+        },
+      ],
+    },
+    {
+      id: 'pricing-promo',
+      title: '价格与优惠',
+      items: [
+        {
+          question: 'Xfinity 新用户有什么优惠？',
+          answer: '新用户通常有前 12-24 个月的促销价格，可能比标准价格低 $20-$40/月。还有免安装费、免费路由器等优惠。',
+          isHot: true,
+        },
+        {
+          question: '促销价格会持续多久？',
+          answer: '促销价格通常持续 12-24 个月，到期后会恢复到标准价格。我们可以在到期前帮您重新申请优惠。',
+        },
+        {
+          question: '可以锁定价格吗？',
+          answer: 'Xfinity 的促销价格有期限，无法永久锁定。但我们可以帮您在到期前重新申请新用户优惠或协商价格。',
+        },
+        {
+          question: '设备费用是多少？',
+          answer: '可以租用 Xfinity 路由器（$10-15/月）或自备兼容设备。自备设备可以节省月费。',
+        },
+        {
+          question: '有隐藏费用吗？',
+          answer: '需要注意：设备租赁费、流量超限费、提前解约费等。我们会在办理时详细说明所有费用。',
+        },
+      ],
+    },
+    {
+      id: 'no-ssn',
+      title: '无 SSN 办理',
+      items: [
+        {
+          question: '没有 SSN 可以办 Xfinity 吗？',
+          answer: '可以。Xfinity 支持无 SSN 办理，但可能需要支付押金或提供其他身份证明。我们有专门的无 SSN 办理方案。',
+          isHot: true,
+        },
+        {
+          question: '无 SSN 需要多少押金？',
+          answer: '押金通常在 $50-$200 之间，取决于套餐和信用情况。押金会在 12 个月后返还（如果账单正常）。',
+        },
+        {
+          question: '新移民可以办吗？',
+          answer: '可以。我们专门为新移民和留学生提供中文办理服务，支持无 SSN、无信用记录的情况。',
+        },
+        {
+          question: '需要什么材料？',
+          answer: '通常需要：护照、地址证明（租房合同或账单）、押金。我们可以帮您准备所有材料。',
+        },
+        {
+          question: '无 SSN 办理流程复杂吗？',
+          answer: '不复杂。我们全程中文协助，帮您填写表格、准备材料、与客服沟通，通常 1-2 天即可完成。',
+        },
+      ],
+    },
+    {
+      id: 'contract',
+      title: '合约与期限',
+      items: [
+        {
+          question: 'Xfinity 有合约吗？',
+          answer: '大部分促销套餐有 12-24 个月合约。提前解约可能需要支付违约金（通常 $10/剩余月数）。',
+        },
+        {
+          question: '可以按月付费吗？',
+          answer: '可以，但月付价格通常比合约价格高 $10-$20/月。合约套餐更划算。',
+        },
+        {
+          question: '合约到期后怎么办？',
+          answer: '合约到期后价格会上涨到标准价格。我们可以在到期前帮您重新申请优惠或更换方案。',
+        },
+        {
+          question: '可以提前解约吗？',
+          answer: '可以，但需要支付违约金。如果搬家到 Xfinity 不覆盖的区域，可以免费解约。',
+        },
+        {
+          question: '办理 Xfinity 需要多长时间？',
+          answer: '查询地址覆盖：即时。申请办理：1-2 天。预约安装：1-2 周。整个流程通常 2-3 周完成。',
+        },
+      ],
+    },
+  ],
+}
+
+// ==================== 住家宽带 · 售后 ====================
+export const residentialAfterSale: FAQMainCategory = {
+  id: 'residential-after-sales',
+  title: '住家宽带 · 售后',
+  shortTitle: '住家售后',
+  description: '使用中遇到的问题',
+  subCategories: [
+    {
+      id: 'billing',
+      title: '账单问题',
+      items: [
+        {
+          question: '为什么账单突然涨价了？',
+          answer: '最常见原因是促销价格到期，自动恢复到标准价格。也可能是因为流量超限、设备费用增加等原因。',
+          isHot: true,
+        },
+        {
+          question: '账单涨价了能降回来吗？',
+          answer: '可以。我们可以帮您重新申请优惠、协商价格，或更换更合适的套餐。很多客户成功降回原价。',
+          isHot: true,
+        },
+        {
+          question: '如何查看账单明细？',
+          answer: '登录 Xfinity 账户，在"账单"页面可以查看详细费用。我们帮您分析账单，找出可以节省的地方。',
+        },
+        {
+          question: '账单有错误怎么办？',
+          answer: '如果发现账单错误，可以联系客服申诉。我们帮您准备材料、与客服沟通，争取退款或调整。',
+        },
+        {
+          question: '可以设置自动付款吗？',
+          answer: '可以。在 Xfinity 账户中设置自动付款，可以避免逾期费用，有时还有额外折扣。',
+        },
+      ],
+    },
+    {
+      id: 'speed-performance',
+      title: '速度与性能',
+      items: [
+        {
+          question: 'Xfinity 速度稳定吗？',
+          answer: 'Xfinity 是 Cable 宽带，速度相对稳定，但高峰期可能略有下降。光纤更稳定，但覆盖范围较小。',
+        },
+        {
+          question: '实际速度能达到宣传速度吗？',
+          answer: '实际速度通常能达到宣传速度的 80-90%。有线连接比 WiFi 更稳定。我们帮您测试实际速度。',
+        },
+        {
+          question: '实际速度比宣传慢很多？',
+          answer: '可能原因：路由器问题、设备距离太远、高峰期拥堵、线路问题。我们可以帮您诊断并解决。',
+          isHot: true,
+        },
+        {
+          question: '为什么速度有时慢？',
+          answer: '可能原因：高峰期网络拥堵、路由器问题、设备距离路由器太远、线路问题。我们可以帮您诊断。',
+        },
+        {
+          question: '上传速度是多少？',
+          answer: 'Cable 宽带上传速度通常比下载速度慢很多。例如 400Mbps 下载可能只有 10-20Mbps 上传。',
+        },
+        {
+          question: '适合远程办公吗？',
+          answer: '适合。200Mbps 以上足够远程办公。如果需要大量上传（如视频会议），建议选择更高速度或光纤。',
+        },
+        {
+          question: 'WiFi 信号弱怎么办？',
+          answer: '可以：移动路由器位置、使用 WiFi 扩展器、升级路由器、使用有线连接。我们推荐合适的解决方案。',
+        },
+        {
+          question: '晚上速度特别慢？',
+          answer: '这是 Cable 宽带的常见问题，高峰期（晚上 7-11 点）网络拥堵导致速度下降。可以考虑升级套餐或换光纤。',
+        },
+        {
+          question: '如何测试实际速度？',
+          answer: '使用 speedtest.net 或 fast.com 测试。建议用有线连接测试，排除 WiFi 干扰。我们帮您分析测试结果。',
+        },
+        {
+          question: '速度问题可以要求退款吗？',
+          answer: '如果速度持续不达标，可以联系客服要求调整或退款。我们帮您准备证据、与客服沟通。',
+        },
+      ],
+    },
+    {
+      id: 'connection-issues',
+      title: '连接问题',
+      items: [
+        {
+          question: '经常断网怎么办？',
+          answer: '可能原因：线路问题、设备故障、信号干扰。先重启路由器，如果持续，联系技术支持检查线路。',
+          isHot: true,
+        },
+        {
+          question: '路由器需要重启吗？',
+          answer: '如果遇到连接问题，重启路由器通常能解决。建议每周重启一次，保持设备最佳状态。',
+        },
+        {
+          question: '无法连接 WiFi？',
+          answer: '检查：路由器是否正常、密码是否正确、设备是否在范围内、是否被屏蔽。我们帮您逐步排查。',
+        },
+        {
+          question: '有线连接正常但 WiFi 不行？',
+          answer: '这是路由器问题。可以重启路由器、更新固件、更换路由器，或联系技术支持。',
+        },
+        {
+          question: '多个设备同时用会卡？',
+          answer: '可能是速度不够或路由器性能不足。建议升级套餐速度或更换更好的路由器。',
+        },
+      ],
+    },
+    {
+      id: 'equipment-issues',
+      title: '设备问题',
+      items: [
+        {
+          question: '需要买路由器吗？',
+          answer: '可以租用 Xfinity 路由器（$10-15/月）或自备兼容设备。自备设备可以节省月费，但需要确保兼容。',
+        },
+        {
+          question: '什么路由器兼容 Xfinity？',
+          answer: '大部分 DOCSIS 3.0/3.1 路由器都兼容。我们推荐几款性价比高的路由器，可以帮您确认兼容性。',
+        },
+        {
+          question: 'Xfinity 路由器质量如何？',
+          answer: 'Xfinity 提供的路由器质量不错，覆盖范围广。但自备高端路由器可能性能更好，且长期更省钱。',
+        },
+        {
+          question: '路由器坏了怎么办？',
+          answer: '如果租用 Xfinity 路由器，可以免费更换。如果自备设备，需要自己购买新设备。',
+        },
+        {
+          question: '可以更换路由器吗？',
+          answer: '可以。可以在 Xfinity 账户中更新设备信息，或联系客服更换。自备设备需要确保兼容。',
+        },
+        {
+          question: '可以随时更换设备吗？',
+          answer: '可以。可以随时从租用改为自备，或更换自备设备。只需要在 Xfinity 账户中更新设备信息。',
+        },
+        {
+          question: '设备费用可以取消吗？',
+          answer: '如果自备设备，可以取消设备租赁费。需要在账户中设置，可能需要归还 Xfinity 设备。',
+        },
+        {
+          question: '设备押金什么时候退？',
+          answer: '设备押金通常在 12 个月后，如果账单正常、设备完好，会自动返还到账户。',
+        },
+        {
+          question: '设备升级需要费用吗？',
+          answer: '如果租用 Xfinity 设备，升级通常免费。如果自备设备，需要自己购买新设备。',
+        },
+        {
+          question: '自备设备安装复杂吗？',
+          answer: '不复杂。Xfinity 提供激活步骤，我们中文指导您完成。如果遇到问题，可以联系技术支持。',
+        },
+      ],
+    },
+    {
+      id: 'upgrade-downgrade',
+      title: '套餐升级与降级',
+      items: [
+        {
+          question: '可以升级套餐吗？',
+          answer: '可以。随时可以升级套餐，通常立即生效。升级可能有促销价格，我们帮您申请最佳优惠。',
+        },
+        {
+          question: '可以降级套餐吗？',
+          answer: '可以，但需要注意合约限制。如果还在合约期内，降级可能需要支付违约金。',
+        },
+        {
+          question: '升级后价格会变吗？',
+          answer: '升级通常会按新套餐价格收费。但我们可以帮您申请升级优惠，可能比标准价格低。',
+        },
+        {
+          question: '降级后速度够用吗？',
+          answer: '降级前建议先评估使用需求。我们帮您分析使用情况，推荐合适的套餐速度。',
+        },
+        {
+          question: '可以临时升级吗？',
+          answer: '可以。例如临时需要更高速度，可以升级 1-2 个月，然后再降回来。',
+        },
+      ],
+    },
+    {
+      id: 'cancel-switch',
+      title: '取消与转网',
+      items: [
+        {
+          question: '如何取消 Xfinity 服务？',
+          answer: '联系客服取消服务，可能需要支付违约金（如果在合约期内）。我们帮您处理取消手续。',
+        },
+        {
+          question: '取消需要提前通知吗？',
+          answer: '建议提前 30 天通知，避免产生额外费用。取消后需要归还设备。',
+        },
+        {
+          question: '违约金是多少？',
+          answer: '违约金通常是 $10 × 剩余月数。如果搬家到不覆盖区域，可以免费取消。',
+        },
+        {
+          question: '可以转网到其他运营商吗？',
+          answer: '可以。转网前需要先取消 Xfinity 服务。我们帮您处理转网手续，确保无缝切换。',
+        },
+        {
+          question: '取消后设备怎么办？',
+          answer: '如果租用 Xfinity 设备，需要归还。可以邮寄或送到 Xfinity 门店。保留归还凭证。',
+        },
+      ],
+    },
+    {
+      id: 'moving',
+      title: '搬家转移',
+      items: [
+        {
+          question: '搬家可以转移服务吗？',
+          answer: '可以。如果新地址也支持 Xfinity，可以转移服务，通常免费。我们帮您处理转移手续。',
+          isHot: true,
+        },
+        {
+          question: '转移需要费用吗？',
+          answer: '转移服务通常免费，但可能需要重新安装（如果新地址没有线路）。',
+        },
+        {
+          question: '新地址不支持 Xfinity 怎么办？',
+          answer: '如果新地址不支持 Xfinity，可以免费取消服务（无需支付违约金）。我们可以帮您找新地址的运营商。',
+        },
+        {
+          question: '转移需要多长时间？',
+          answer: '转移服务通常需要 1-2 周，取决于新地址是否有线路。有线路的话可以更快。',
+        },
+        {
+          question: '转移期间会断网吗？',
+          answer: '会有短暂断网，通常在转移当天。我们帮您安排时间，尽量减少影响。',
+        },
+      ],
+    },
+    {
+      id: 'tech-support',
+      title: '技术支持',
+      items: [
+        {
+          question: '如何联系 Xfinity 技术支持？',
+          answer: '可以电话、在线聊天、或到门店。我们帮您准备问题描述，协助与技术支持沟通。',
+        },
+        {
+          question: '技术支持是 24 小时吗？',
+          answer: 'Xfinity 技术支持是 24/7 的，但高峰期可能需要等待。商业客户有优先支持。',
+        },
+        {
+          question: '技术支持会收费吗？',
+          answer: '电话支持通常免费。但如果需要技术人员上门，可能需要支付上门费（除非是设备故障）。',
+        },
+        {
+          question: '可以要求中文支持吗？',
+          answer: 'Xfinity 有中文客服，但可能需要等待。我们提供中文翻译服务，帮您与技术支持的沟通。',
+        },
+        {
+          question: '问题解决不了怎么办？',
+          answer: '可以要求升级到高级技术支持，或联系客服经理。我们帮您准备材料，争取更好的解决方案。',
+        },
+      ],
+    },
+    {
+      id: 'renewal',
+      title: '续约与优惠',
+      items: [
+        {
+          question: '促销到期后可以续约吗？',
+          answer: '可以。我们可以在促销到期前帮您重新申请优惠，可能获得新的促销价格。',
+          isHot: true,
+        },
+        {
+          question: '如何获得新用户优惠？',
+          answer: '如果家庭成员没有 Xfinity 账户，可以用新名字申请，获得新用户优惠。我们帮您处理。',
+        },
+        {
+          question: '可以协商价格吗？',
+          answer: '可以。联系 Retention 部门，说明情况，可能获得价格调整。我们帮您准备话术和材料。',
+        },
+        {
+          question: '续约有什么优惠？',
+          answer: '续约可能有：价格锁定、免费升级、设备折扣等。我们帮您申请最佳续约优惠。',
+        },
+        {
+          question: '什么时候联系续约最好？',
+          answer: '建议在促销到期前 30 天联系，有足够时间协商和申请优惠。',
+        },
+      ],
+    },
+    {
+      id: 'other',
+      title: '其他问题',
+      items: [
+        {
+          question: 'Xfinity 和 AT&T Fiber 哪个好？',
+          answer: 'AT&T Fiber 速度更稳定、上下行对称，但覆盖范围小。Xfinity 覆盖广、促销多，但速度可能不如光纤稳定。',
+        },
+        {
+          question: 'Xfinity 和 Spectrum 有什么区别？',
+          answer: '两者都是 Cable 宽带，覆盖和速度类似。Xfinity 促销力度更大，但 Spectrum 价格结构更稳定。',
+        },
+        {
+          question: '什么时候选 Xfinity？',
+          answer: '适合：想拿促销价、地址没有光纤、需要快速安装、预算有限的情况。',
+        },
+        {
+          question: '什么时候不选 Xfinity？',
+          answer: '如果地址有 AT&T Fiber 且价格相近，通常光纤更好。如果对上传速度要求高，也建议选光纤。',
+        },
+        {
+          question: '可以同时装两家吗？',
+          answer: '技术上可以，但不划算。通常选择一家即可。如果一家出问题，可以快速切换到另一家。',
+        },
+        {
+          question: '可以暂停服务吗？',
+          answer: '可以。如果短期不在家，可以暂停服务（通常需要支付少量费用），避免完全取消。',
+        },
+        {
+          question: '账户可以多人使用吗？',
+          answer: '账户是个人账户，但可以设置多个用户。家庭成员可以共享账户，但账单由主账户负责。',
+        },
+        {
+          question: '可以更改账户信息吗？',
+          answer: '可以。可以在线更改地址、电话、支付方式等信息。我们帮您处理账户信息更新。',
+        },
+        {
+          question: '需要本人到场吗？',
+          answer: '申请可以远程完成。但安装时可能需要有人在家（如果技术人员需要进入室内）。',
+        },
+        {
+          question: '可以远程办理吗？',
+          answer: '可以。我们提供全程远程办理服务，通过电话、微信协助您完成所有步骤。',
+        },
+        {
+          question: '办理需要什么材料？',
+          answer: '身份证明（护照/驾照）、地址证明（租房合同/账单）、支付方式（信用卡/银行账户）。',
+        },
+        {
+          question: '中文办理流程复杂吗？',
+          answer: '不复杂。我们全程中文协助，帮您填写表格、准备材料、与客服沟通，让您无需担心语言问题。',
+        },
+        {
+          question: 'Xfinity 有移动应用吗？',
+          answer: '有。Xfinity 移动应用可以管理账户、查看账单、控制 WiFi、联系技术支持等。',
+        },
+        {
+          question: '遇到问题可以找你们吗？',
+          answer: '可以。我们提供全程中文支持，帮您解决账单、技术、转网等各种问题。',
+          isHot: true,
+        },
+      ],
+    },
+  ],
+}
+
+// ==================== 商业宽带 · 售前 ====================
+export const businessPreSale: FAQMainCategory = {
+  id: 'business-pre-sales',
+  title: '商业宽带 · 售前',
+  shortTitle: '商业售前',
+  description: '商业宽带办理前的问题',
+  subCategories: [
+    {
+      id: 'business-basics',
+      title: '商业宽带基础',
+      items: [
+        {
+          question: '商业宽带和住家有什么区别？',
+          answer: '商业宽带有 SLA 保障、技术支持优先、价格结构不同、通常更稳定。适合办公室、餐厅、店铺。',
+          isHot: true,
+        },
+        {
+          question: '商业宽带价格是多少？',
+          answer: '商业宽带价格通常比住家高 20-50%，但更稳定，有保障。价格取决于速度和需求。',
+        },
+        {
+          question: '需要营业执照吗？',
+          answer: '通常需要提供商业地址和营业执照。但小型家庭办公室可能可以用住家宽带。',
+          id: 'need-license', // 添加锚点 ID
+        },
+        {
+          question: '商业宽带有合约吗？',
+          answer: '商业宽带通常有 12-36 个月合约，提前解约违约金更高。但稳定性保障更好。',
+        },
+        {
+          question: '商业宽带技术支持如何？',
+          answer: '商业宽带有专门的技术支持热线，响应更快，有 SLA 保障。适合对网络稳定性要求高的业务。',
+          isHot: true,
+        },
+        {
+          question: '商业宽带有哪些速度选择？',
+          answer: '商业宽带通常提供 100Mbps 到 1Gbps 等多种速度，价格和 SLA 保障根据速度不同。',
+        },
+      ],
+    },
+    {
+      id: 'business-process',
+      title: '办理流程',
+      items: [
+        {
+          question: '商业宽带安装需要多长时间？',
+          answer: '商业宽带安装通常需要 1-3 周，取决于地址覆盖和线路铺设情况。',
+        },
+        {
+          question: '商业宽带安装费用是多少？',
+          answer: '商业宽带安装费用通常比住家高，可能需要 $100-$500，具体取决于地址和套餐。',
+        },
+        {
+          question: '商业宽带可以远程办理吗？',
+          answer: '可以。我们提供全程远程办理服务，通过电话、微信协助您完成所有步骤。',
+        },
+        {
+          question: '商业地址能装 Xfinity 吗？',
+          answer: '可以。Xfinity 支持商业地址安装，但需要确认地址覆盖。商业宽带通常有 SLA 保障和优先技术支持。',
+        },
+      ],
+    },
+  ],
+}
+
+// ==================== 商业宽带 · 售后 ====================
+export const businessAfterSale: FAQMainCategory = {
+  id: 'business-after-sales',
+  title: '商业宽带 · 售后',
+  shortTitle: '商业售后',
+  description: '商业宽带使用中的问题',
+  subCategories: [
+    {
+      id: 'business-billing',
+      title: '账单问题',
+      items: [
+        {
+          question: '商业宽带账单突然涨价了？',
+          answer: '商业宽带价格相对稳定，但如果涨价，可能是合约到期或套餐变更。我们可以帮您分析账单原因。',
+        },
+      ],
+    },
+    {
+      id: 'business-speed',
+      title: '速度与性能',
+      items: [
+        {
+          question: '商业宽带速度不达标怎么办？',
+          answer: '商业宽带有 SLA 保障，如果速度不达标，可以要求技术支持或申请补偿。我们帮您处理。',
+        },
+      ],
+    },
+    {
+      id: 'business-outage',
+      title: '连接问题',
+      items: [
+        {
+          question: '商业宽带断网了怎么办？',
+          answer: '商业宽带有 SLA 保障，断网时可以优先联系技术支持。我们帮您快速处理问题。',
+        },
+      ],
+    },
+    {
+      id: 'business-support',
+      title: '技术支持',
+      items: [
+        {
+          question: '如何联系商业宽带技术支持？',
+          answer: '商业宽带有专门的技术支持热线，响应更快。我们帮您准备问题描述，协助沟通。',
+        },
+        {
+          question: '商业宽带技术支持响应时间？',
+          answer: '商业宽带技术支持通常有 SLA 保障，响应时间比住家更快，通常 4 小时内响应。',
+        },
+      ],
+    },
+    {
+      id: 'business-upgrade',
+      title: '套餐升级与降级',
+      items: [
+        {
+          question: '商业宽带可以升级速度吗？',
+          answer: '可以。商业宽带可以随时升级速度，通常立即生效。升级可能有促销价格。',
+        },
+        {
+          question: '商业宽带可以降级吗？',
+          answer: '可以，但需要注意合约限制。如果还在合约期内，降级可能需要支付违约金。',
+        },
+      ],
+    },
+    {
+      id: 'business-cancel',
+      title: '取消与转网',
+      items: [
+        {
+          question: '商业宽带可以提前解约吗？',
+          answer: '可以，但需要支付违约金。违约金通常比住家更高，取决于剩余合约期。',
+        },
+      ],
+    },
+    {
+      id: 'business-moving',
+      title: '搬家转移',
+      items: [
+        {
+          question: '商业地址搬家可以转移吗？',
+          answer: '可以。如果新地址也支持 Xfinity，可以转移服务。转移可能需要重新安装。',
+        },
+      ],
+    },
+    {
+      id: 'business-renewal',
+      title: '续约与优惠',
+      items: [
+        {
+          question: '商业宽带合约到期怎么办？',
+          answer: '合约到期后可以续约或重新协商价格。我们可以在到期前帮您申请最佳续约优惠。',
+        },
+      ],
+    },
+  ],
+}
+
+// 所有分类
+export const allCategories: FAQMainCategory[] = [
+  residentialPreSale,
+  residentialAfterSale,
+  businessPreSale,
+  businessAfterSale,
+]
+
+// 生成 Schema 用的所有问题
+export function getAllFAQsForSchema() {
+  const allFaqs: { question: string; answer: string }[] = []
+  
+  allCategories.forEach(mainCat => {
+    mainCat.subCategories.forEach(subCat => {
+      subCat.items.forEach(item => {
+        allFaqs.push({
+          question: item.question,
+          answer: item.answer.replace(/\n/g, ' ').replace(/•/g, '-').replace(/【/g, '').replace(/】/g, ': '),
+        })
+      })
+    })
+  })
+  
+  return allFaqs
+}
+
+// 按主分类获取 Schema
+export function getFAQsForSchemaByCategory(categoryId: string) {
+  const category = allCategories.find(c => c.id === categoryId)
+  if (!category) return []
+  
+  const faqs: { question: string; answer: string }[] = []
+  category.subCategories.forEach(subCat => {
+    subCat.items.forEach(item => {
+      faqs.push({
+        question: item.question,
+        answer: item.answer.replace(/\n/g, ' ').replace(/•/g, '-').replace(/【/g, '').replace(/】/g, ': '),
+      })
+    })
+  })
+  
+  return faqs
+}

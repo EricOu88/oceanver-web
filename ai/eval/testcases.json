@@ -1,0 +1,50 @@
+[
+  {
+    "question": "xfinity 商业需要营业执照吗？",
+    "expectedDecision": "HIT",
+    "expectedTransferToHuman": false,
+    "category": "business"
+  },
+  {
+    "question": "你们最便宜多少钱？",
+    "expectedDecision": "NO_HIT",
+    "expectedTransferToHuman": true,
+    "category": "price"
+  },
+  {
+    "question": "我的地址能装 spectrum 吗？",
+    "expectedDecision": "NO_HIT",
+    "expectedTransferToHuman": true,
+    "category": "coverage"
+  },
+  {
+    "question": "没有 SSN 能办 AT&T 吗？",
+    "expectedDecision": "HIT",
+    "expectedTransferToHuman": false,
+    "category": "no-ssn"
+  },
+  {
+    "question": "Xfinity 为什么涨价",
+    "expectedDecision": "HIT",
+    "expectedTransferToHuman": false,
+    "category": "billing"
+  },
+  {
+    "question": "宽带安装需要多久",
+    "expectedDecision": "HIT",
+    "expectedTransferToHuman": false,
+    "category": "installation"
+  },
+  {
+    "question": "商业宽带 vs 家用宽带的申请条件差异",
+    "expectedDecision": "HIT",
+    "expectedTransferToHuman": false,
+    "category": "business"
+  },
+  {
+    "question": "什么情况下不建议办商业宽带",
+    "expectedDecision": "HIT",
+    "expectedTransferToHuman": false,
+    "category": "business"
+  }
+]

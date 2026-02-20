@@ -1,0 +1,1392 @@
+[
+  {
+    "id": "att-business-001",
+    "text": "AT&T 商业是否需要营业执照 AT&T 商业宽带需要什么材料 AT&T 商业申请条件 AT&T 商业需要营业执照吗 AT&T 商业要执照吗 AT&T 商业需要执照吗 AT&T business license AT&T business license required 商业宽带需要营业执照吗 商业宽带要执照吗 商业宽带需要执照吗 要执照吗 需要什么材料 business license 商业宽带申请需要什么 商业宽带办理需要什么材料 商业宽带需要什么证件 商业宽带申请条件 AT&T 商业宽带通常需要提供营业执照（Business License）或商业注册证明。具体要求可能因地区和套餐而异。如果您没有营业执照，可以咨询我们是否有其他适合的方案。建议加微信详细咨询，我们可以帮您确认具体申请条件。",
+    "metadata": {
+      "id": "att-business-001",
+      "provider": "att",
+      "category": "business",
+      "question_variants": [
+        "AT&T 商业是否需要营业执照",
+        "AT&T 商业宽带需要什么材料",
+        "AT&T 商业申请条件",
+        "AT&T 商业需要营业执照吗",
+        "AT&T 商业要执照吗",
+        "AT&T 商业需要执照吗",
+        "AT&T business license",
+        "AT&T business license required",
+        "商业宽带需要营业执照吗",
+        "商业宽带要执照吗",
+        "商业宽带需要执照吗",
+        "要执照吗",
+        "需要什么材料",
+        "business license",
+        "商业宽带申请需要什么",
+        "商业宽带办理需要什么材料",
+        "商业宽带需要什么证件",
+        "商业宽带申请条件"
+      ],
+      "answer": "AT&T 商业宽带通常需要提供营业执照（Business License）或商业注册证明。具体要求可能因地区和套餐而异。如果您没有营业执照，可以咨询我们是否有其他适合的方案。建议加微信详细咨询，我们可以帮您确认具体申请条件。",
+      "scope": "allowed",
+      "next_step": "加微信确认具体申请条件",
+      "do_not_say": [
+        "保证",
+        "一定",
+        "100%"
+      ],
+      "source_url": "/internet/att-fiber",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "att-business-002",
+    "text": "AT&T 商业和家用有什么区别 AT&T 商业宽带 vs 家用 AT&T 商业家用区别 AT&T 商业宽带和家用宽带的主要区别：1) 商业宽带通常有 SLA（服务级别协议）保证，故障响应更快 2) 商业宽带通常有静态 IP 地址 3) 商业宽带价格通常高于家用，但稳定性更好 4) 商业宽带通常有专门的商业客服支持。具体选择取决于您的使用场景和需求。",
+    "metadata": {
+      "id": "att-business-002",
+      "provider": "att",
+      "category": "business",
+      "question_variants": [
+        "AT&T 商业和家用有什么区别",
+        "AT&T 商业宽带 vs 家用",
+        "AT&T 商业家用区别"
+      ],
+      "answer": "AT&T 商业宽带和家用宽带的主要区别：1) 商业宽带通常有 SLA（服务级别协议）保证，故障响应更快 2) 商业宽带通常有静态 IP 地址 3) 商业宽带价格通常高于家用，但稳定性更好 4) 商业宽带通常有专门的商业客服支持。具体选择取决于您的使用场景和需求。",
+      "scope": "allowed",
+      "next_step": "加微信根据需求推荐方案",
+      "do_not_say": [
+        "$",
+        "具体价格",
+        "保证"
+      ],
+      "source_url": "/internet/att-fiber",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "att-business-003",
+    "text": "什么情况下不建议办 AT&T 商业宽带 AT&T 商业宽带适合什么情况 什么时候选 AT&T 商业 以下情况通常不建议办理 AT&T 商业宽带：1) 没有营业执照或商业注册证明 2) 家庭办公或小型工作室，家用宽带已能满足需求 3) 预算有限，商业宽带价格通常高于家用宽带 4) 不需要静态 IP 地址或 SLA 保证 5) 不需要专门的商业客服支持。如果您不确定是否应该选择商业宽带，建议加微信详细咨询。",
+    "metadata": {
+      "id": "att-business-003",
+      "provider": "att",
+      "category": "business",
+      "question_variants": [
+        "什么情况下不建议办 AT&T 商业宽带",
+        "AT&T 商业宽带适合什么情况",
+        "什么时候选 AT&T 商业"
+      ],
+      "answer": "以下情况通常不建议办理 AT&T 商业宽带：1) 没有营业执照或商业注册证明 2) 家庭办公或小型工作室，家用宽带已能满足需求 3) 预算有限，商业宽带价格通常高于家用宽带 4) 不需要静态 IP 地址或 SLA 保证 5) 不需要专门的商业客服支持。如果您不确定是否应该选择商业宽带，建议加微信详细咨询。",
+      "scope": "allowed",
+      "next_step": "加微信根据情况推荐方案",
+      "do_not_say": [
+        "$",
+        "具体价格",
+        "保证"
+      ],
+      "source_url": "/internet/att-fiber",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "att-home-001",
+    "text": "AT&T 家庭宽带有哪些套餐 AT&T 住家宽带套餐选择 AT&T Fiber 家庭套餐 AT&T 家庭宽带提供多种套餐选择，包括 AT&T Fiber 光纤套餐。具体套餐和速度取决于您的地址覆盖情况。AT&T Fiber 上传速度快，适合远程办公。建议加微信提供地址，我们帮您查询可用的套餐选项。",
+    "metadata": {
+      "id": "att-home-001",
+      "provider": "att",
+      "category": "pre-sales",
+      "question_variants": [
+        "AT&T 家庭宽带有哪些套餐",
+        "AT&T 住家宽带套餐选择",
+        "AT&T Fiber 家庭套餐"
+      ],
+      "answer": "AT&T 家庭宽带提供多种套餐选择，包括 AT&T Fiber 光纤套餐。具体套餐和速度取决于您的地址覆盖情况。AT&T Fiber 上传速度快，适合远程办公。建议加微信提供地址，我们帮您查询可用的套餐选项。",
+      "scope": "allowed",
+      "next_step": "加微信提供地址查询可用套餐",
+      "do_not_say": [
+        "$",
+        "价格",
+        "多少钱",
+        "最便宜",
+        "促销"
+      ],
+      "source_url": "/internet/att-fiber",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "att-home-002",
+    "text": "我的地址能装 AT&T 吗 AT&T Fiber 覆盖查询 AT&T 地址覆盖 地址覆盖需要具体查询。我们可以帮您免费查询地址覆盖情况。建议加微信提供详细地址，我们会在 1 分钟内告诉您该地址是否支持 AT&T Fiber。",
+    "metadata": {
+      "id": "att-home-002",
+      "provider": "att",
+      "category": "coverage",
+      "question_variants": [
+        "我的地址能装 AT&T 吗",
+        "AT&T Fiber 覆盖查询",
+        "AT&T 地址覆盖"
+      ],
+      "answer": "地址覆盖需要具体查询。我们可以帮您免费查询地址覆盖情况。建议加微信提供详细地址，我们会在 1 分钟内告诉您该地址是否支持 AT&T Fiber。",
+      "scope": "blocked",
+      "next_step": "加微信提供地址查询",
+      "do_not_say": [
+        "能装",
+        "不能装",
+        "100%",
+        "保证",
+        "确定"
+      ],
+      "source_url": "/internet/att-fiber",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "att-home-003",
+    "text": "AT&T 安装需要多久 AT&T Fiber 安装时间 AT&T 多久能装好 AT&T Fiber 安装通常需要 1-3 个工作日。具体时间取决于您的地址和运营商安排。我们会帮您预约最快的安装时间，并全程跟踪安装进度。",
+    "metadata": {
+      "id": "att-home-003",
+      "provider": "att",
+      "category": "installation",
+      "question_variants": [
+        "AT&T 安装需要多久",
+        "AT&T Fiber 安装时间",
+        "AT&T 多久能装好"
+      ],
+      "answer": "AT&T Fiber 安装通常需要 1-3 个工作日。具体时间取决于您的地址和运营商安排。我们会帮您预约最快的安装时间，并全程跟踪安装进度。",
+      "scope": "allowed",
+      "next_step": "加微信预约安装时间",
+      "do_not_say": [
+        "保证",
+        "确定",
+        "一定"
+      ],
+      "source_url": "/internet/att-fiber",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "att-home-004",
+    "text": "AT&T 为什么涨价 AT&T 账单涨价原因 AT&T Fiber 为什么账单不一样 AT&T 涨价通常是因为促销期（12-24 个月）结束，恢复到正常价格。这是正常情况。我们可以帮您联系 AT&T 协商续约优惠，或对比其他运营商方案。通常可以帮您节省费用。",
+    "metadata": {
+      "id": "att-home-004",
+      "provider": "att",
+      "category": "billing",
+      "question_variants": [
+        "AT&T 为什么涨价",
+        "AT&T 账单涨价原因",
+        "AT&T Fiber 为什么账单不一样"
+      ],
+      "answer": "AT&T 涨价通常是因为促销期（12-24 个月）结束，恢复到正常价格。这是正常情况。我们可以帮您联系 AT&T 协商续约优惠，或对比其他运营商方案。通常可以帮您节省费用。",
+      "scope": "allowed",
+      "next_step": "加微信协助处理账单问题",
+      "do_not_say": [
+        "$",
+        "具体金额",
+        "保证"
+      ],
+      "source_url": "/internet/att-fiber",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "att-home-005",
+    "text": "没有 SSN 可以办 AT&T 吗 无 SSN 办 AT&T AT&T 无 SSN 办理 可以。我们支持无 SSN 办理 AT&T 宽带服务。部分运营商可能需要押金或预付费，我们会帮您选择最适合的无 SSN 办理方案。具体情况需要人工确认，建议加微信详细咨询。",
+    "metadata": {
+      "id": "att-home-005",
+      "provider": "att",
+      "category": "no-ssn",
+      "question_variants": [
+        "没有 SSN 可以办 AT&T 吗",
+        "无 SSN 办 AT&T",
+        "AT&T 无 SSN 办理"
+      ],
+      "answer": "可以。我们支持无 SSN 办理 AT&T 宽带服务。部分运营商可能需要押金或预付费，我们会帮您选择最适合的无 SSN 办理方案。具体情况需要人工确认，建议加微信详细咨询。",
+      "scope": "allowed",
+      "next_step": "加微信确认无 SSN 办理可行性",
+      "do_not_say": [
+        "保证",
+        "一定",
+        "100%",
+        "不需要押金"
+      ],
+      "source_url": "/internet/att-fiber",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "att-home-006",
+    "text": "AT&T 有合约吗 AT&T Fiber 需要签合约吗 AT&T 合约期限 AT&T Fiber 大部分套餐无合约，可随时取消。部分促销套餐可能有 12-24 个月合约，但通常可以提前解约。我们会详细说明合约条款。",
+    "metadata": {
+      "id": "att-home-006",
+      "provider": "att",
+      "category": "contract",
+      "question_variants": [
+        "AT&T 有合约吗",
+        "AT&T Fiber 需要签合约吗",
+        "AT&T 合约期限"
+      ],
+      "answer": "AT&T Fiber 大部分套餐无合约，可随时取消。部分促销套餐可能有 12-24 个月合约，但通常可以提前解约。我们会详细说明合约条款。",
+      "scope": "allowed",
+      "next_step": "加微信了解具体合约条款",
+      "do_not_say": [
+        "保证",
+        "一定"
+      ],
+      "source_url": "/internet/att-fiber",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "att-home-007",
+    "text": "AT&T 搬家可以转移吗 AT&T Fiber 搬家宽带 AT&T 服务转移 可以。AT&T 支持服务转移，但需要确认新地址有覆盖。转移通常免费或收取少量费用。我们会帮您处理转移流程，并确认新地址的套餐和价格。",
+    "metadata": {
+      "id": "att-home-007",
+      "provider": "att",
+      "category": "moving",
+      "question_variants": [
+        "AT&T 搬家可以转移吗",
+        "AT&T Fiber 搬家宽带",
+        "AT&T 服务转移"
+      ],
+      "answer": "可以。AT&T 支持服务转移，但需要确认新地址有覆盖。转移通常免费或收取少量费用。我们会帮您处理转移流程，并确认新地址的套餐和价格。",
+      "scope": "allowed",
+      "next_step": "加微信提供新地址处理转移",
+      "do_not_say": [
+        "$",
+        "具体费用",
+        "保证"
+      ],
+      "source_url": "/internet/att-fiber",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "att-home-008",
+    "text": "AT&T 需要买路由器吗 AT&T Fiber 设备费用 AT&T Modem 租赁 AT&T 通常提供 Modem 租赁服务。您可以自备兼容的路由器节省月费。我们会帮您确认设备兼容性，并推荐性价比高的路由器选择。",
+    "metadata": {
+      "id": "att-home-008",
+      "provider": "att",
+      "category": "equipment",
+      "question_variants": [
+        "AT&T 需要买路由器吗",
+        "AT&T Fiber 设备费用",
+        "AT&T Modem 租赁"
+      ],
+      "answer": "AT&T 通常提供 Modem 租赁服务。您可以自备兼容的路由器节省月费。我们会帮您确认设备兼容性，并推荐性价比高的路由器选择。",
+      "scope": "allowed",
+      "next_step": "加微信了解设备选择",
+      "do_not_say": [
+        "$",
+        "具体价格"
+      ],
+      "source_url": "/internet/att-fiber",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "general-001",
+    "text": "宽带为什么涨价 账单涨价原因 为什么第一年便宜第二年涨价 宽带涨价通常是因为促销期（12-24 个月）结束，恢复到正常价格。这是正常情况。我们可以帮您联系运营商协商续约优惠，或对比其他运营商方案。通常可以帮您节省费用。",
+    "metadata": {
+      "id": "general-001",
+      "provider": "general",
+      "category": "billing",
+      "question_variants": [
+        "宽带为什么涨价",
+        "账单涨价原因",
+        "为什么第一年便宜第二年涨价"
+      ],
+      "answer": "宽带涨价通常是因为促销期（12-24 个月）结束，恢复到正常价格。这是正常情况。我们可以帮您联系运营商协商续约优惠，或对比其他运营商方案。通常可以帮您节省费用。",
+      "scope": "allowed",
+      "next_step": "加微信协助处理账单问题",
+      "do_not_say": [
+        "$",
+        "具体金额",
+        "保证"
+      ],
+      "source_url": "/internet",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "general-002",
+    "text": "宽带安装需要多久 安装时间 多久能装好 宽带安装通常需要 1-3 个工作日。具体时间取决于运营商和地址。我们会帮您预约最快的安装时间，并全程跟踪安装进度。",
+    "metadata": {
+      "id": "general-002",
+      "provider": "general",
+      "category": "installation",
+      "question_variants": [
+        "宽带安装需要多久",
+        "安装时间",
+        "多久能装好"
+      ],
+      "answer": "宽带安装通常需要 1-3 个工作日。具体时间取决于运营商和地址。我们会帮您预约最快的安装时间，并全程跟踪安装进度。",
+      "scope": "allowed",
+      "next_step": "加微信预约安装时间",
+      "do_not_say": [
+        "保证",
+        "确定",
+        "一定"
+      ],
+      "source_url": "/internet",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "general-003",
+    "text": "搬家可以转移宽带吗 搬家宽带 服务转移 可以。大部分运营商支持服务转移，但需要确认新地址有覆盖。转移通常免费或收取少量费用。我们会帮您处理转移流程，并确认新地址的套餐和价格。",
+    "metadata": {
+      "id": "general-003",
+      "provider": "general",
+      "category": "moving",
+      "question_variants": [
+        "搬家可以转移宽带吗",
+        "搬家宽带",
+        "服务转移"
+      ],
+      "answer": "可以。大部分运营商支持服务转移，但需要确认新地址有覆盖。转移通常免费或收取少量费用。我们会帮您处理转移流程，并确认新地址的套餐和价格。",
+      "scope": "allowed",
+      "next_step": "加微信提供新地址处理转移",
+      "do_not_say": [
+        "$",
+        "具体费用",
+        "保证"
+      ],
+      "source_url": "/internet",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "general-004",
+    "text": "宽带有合约吗 需要签合约吗 合约期限 大部分宽带套餐无合约，可随时取消。部分促销套餐可能有 12-24 个月合约，但通常可以提前解约。我们会详细说明合约条款。",
+    "metadata": {
+      "id": "general-004",
+      "provider": "general",
+      "category": "contract",
+      "question_variants": [
+        "宽带有合约吗",
+        "需要签合约吗",
+        "合约期限"
+      ],
+      "answer": "大部分宽带套餐无合约，可随时取消。部分促销套餐可能有 12-24 个月合约，但通常可以提前解约。我们会详细说明合约条款。",
+      "scope": "allowed",
+      "next_step": "加微信了解具体合约条款",
+      "do_not_say": [
+        "保证",
+        "一定"
+      ],
+      "source_url": "/internet",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "general-005",
+    "text": "没有 SSN 可以办宽带吗 无 SSN 办宽带 无 SSN 办理 可以。我们支持无 SSN 办理宽带服务。部分运营商可能需要押金或预付费，我们会帮您选择最适合的无 SSN 办理方案。具体情况需要人工确认，建议加微信详细咨询。",
+    "metadata": {
+      "id": "general-005",
+      "provider": "general",
+      "category": "no-ssn",
+      "question_variants": [
+        "没有 SSN 可以办宽带吗",
+        "无 SSN 办宽带",
+        "无 SSN 办理"
+      ],
+      "answer": "可以。我们支持无 SSN 办理宽带服务。部分运营商可能需要押金或预付费，我们会帮您选择最适合的无 SSN 办理方案。具体情况需要人工确认，建议加微信详细咨询。",
+      "scope": "allowed",
+      "next_step": "加微信确认无 SSN 办理可行性",
+      "do_not_say": [
+        "保证",
+        "一定",
+        "100%",
+        "不需要押金"
+      ],
+      "source_url": "/internet",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "general-006",
+    "text": "我的地址能装什么宽带 地址覆盖查询 能装哪些运营商 地址覆盖需要具体查询。我们可以帮您免费查询地址覆盖情况。建议加微信提供详细地址，我们会在 1 分钟内告诉您该地址支持哪些运营商和套餐。",
+    "metadata": {
+      "id": "general-006",
+      "provider": "general",
+      "category": "coverage",
+      "question_variants": [
+        "我的地址能装什么宽带",
+        "地址覆盖查询",
+        "能装哪些运营商"
+      ],
+      "answer": "地址覆盖需要具体查询。我们可以帮您免费查询地址覆盖情况。建议加微信提供详细地址，我们会在 1 分钟内告诉您该地址支持哪些运营商和套餐。",
+      "scope": "blocked",
+      "next_step": "加微信提供地址查询",
+      "do_not_say": [
+        "能装",
+        "不能装",
+        "100%",
+        "保证",
+        "确定"
+      ],
+      "source_url": "/internet",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "general-007",
+    "text": "需要买路由器吗 设备费用 Modem 租赁 运营商通常提供 Modem 租赁服务。您可以自备兼容的路由器节省月费。我们会帮您确认设备兼容性，并推荐性价比高的路由器选择。",
+    "metadata": {
+      "id": "general-007",
+      "provider": "general",
+      "category": "equipment",
+      "question_variants": [
+        "需要买路由器吗",
+        "设备费用",
+        "Modem 租赁"
+      ],
+      "answer": "运营商通常提供 Modem 租赁服务。您可以自备兼容的路由器节省月费。我们会帮您确认设备兼容性，并推荐性价比高的路由器选择。",
+      "scope": "allowed",
+      "next_step": "加微信了解设备选择",
+      "do_not_say": [
+        "$",
+        "具体价格"
+      ],
+      "source_url": "/internet",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "general-008",
+    "text": "宽带套餐怎么选 如何选择宽带 选哪个运营商好 选择宽带套餐主要看：1) 家庭人数和设备数量 2) 使用场景（工作、娱乐、游戏）3) 预算。我们提供免费咨询，根据您的实际需求推荐最适合的套餐。建议加微信详细咨询。",
+    "metadata": {
+      "id": "general-008",
+      "provider": "general",
+      "category": "pre-sales",
+      "question_variants": [
+        "宽带套餐怎么选",
+        "如何选择宽带",
+        "选哪个运营商好"
+      ],
+      "answer": "选择宽带套餐主要看：1) 家庭人数和设备数量 2) 使用场景（工作、娱乐、游戏）3) 预算。我们提供免费咨询，根据您的实际需求推荐最适合的套餐。建议加微信详细咨询。",
+      "scope": "allowed",
+      "next_step": "加微信根据需求推荐套餐",
+      "do_not_say": [
+        "$",
+        "具体价格",
+        "最便宜",
+        "保证"
+      ],
+      "source_url": "/internet",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "xfinity_business_license",
+    "text": "xfinity 商业需要营业执照吗 xfinity business 要营业执照吗 comcast business 需要营业执照吗 商业宽带要营业执照吗 商业宽带需要营业执照吗 商业宽带要执照吗 商业宽带需要执照吗 小型家庭办公室可以用商业宽带吗 Xfinity 商业是否需要营业执照 Xfinity 商业宽带需要什么材料 Xfinity 商业申请条件 xfinity 商业需要什么证件 comcast 商业宽带申请条件 需要营业执照吗 要执照吗 需要什么材料 business license business license required xfinity business license comcast business license 商业宽带申请需要什么 商业宽带办理需要什么材料 商业宽带需要什么证件 商业宽带申请条件 通常需要提供商业地址和营业执照。但小型家庭办公室可能可以用住家宽带。",
+    "metadata": {
+      "id": "xfinity_business_license",
+      "provider": "xfinity",
+      "category": "商业资格",
+      "question_variants": [
+        "xfinity 商业需要营业执照吗",
+        "xfinity business 要营业执照吗",
+        "comcast business 需要营业执照吗",
+        "商业宽带要营业执照吗",
+        "商业宽带需要营业执照吗",
+        "商业宽带要执照吗",
+        "商业宽带需要执照吗",
+        "小型家庭办公室可以用商业宽带吗",
+        "Xfinity 商业是否需要营业执照",
+        "Xfinity 商业宽带需要什么材料",
+        "Xfinity 商业申请条件",
+        "xfinity 商业需要什么证件",
+        "comcast 商业宽带申请条件",
+        "需要营业执照吗",
+        "要执照吗",
+        "需要什么材料",
+        "business license",
+        "business license required",
+        "xfinity business license",
+        "comcast business license",
+        "商业宽带申请需要什么",
+        "商业宽带办理需要什么材料",
+        "商业宽带需要什么证件",
+        "商业宽带申请条件"
+      ],
+      "answer": "通常需要提供商业地址和营业执照。但小型家庭办公室可能可以用住家宽带。",
+      "scope": "allowed",
+      "next_step": "建议加微信详细咨询，我们可以帮您确认具体申请条件。",
+      "do_not_say": [
+        "具体价格",
+        "保证100%",
+        "最终资格承诺"
+      ],
+      "source_url": "/internet/xfinity/faq#need-license",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "spectrum-business-001",
+    "text": "Spectrum 商业是否需要营业执照 Spectrum 商业宽带需要什么材料 Spectrum 商业申请条件 Spectrum 商业需要营业执照吗 Spectrum 商业要执照吗 Spectrum 商业需要执照吗 Spectrum business license Spectrum business license required 商业宽带需要营业执照吗 商业宽带要执照吗 商业宽带需要执照吗 要执照吗 需要什么材料 business license 商业宽带申请需要什么 商业宽带办理需要什么材料 商业宽带需要什么证件 商业宽带申请条件 Spectrum 商业宽带通常需要提供营业执照（Business License）或商业注册证明。具体要求可能因地区和套餐而异。如果您没有营业执照，可以咨询我们是否有其他适合的方案。建议加微信详细咨询，我们可以帮您确认具体申请条件。",
+    "metadata": {
+      "id": "spectrum-business-001",
+      "provider": "spectrum",
+      "category": "business",
+      "question_variants": [
+        "Spectrum 商业是否需要营业执照",
+        "Spectrum 商业宽带需要什么材料",
+        "Spectrum 商业申请条件",
+        "Spectrum 商业需要营业执照吗",
+        "Spectrum 商业要执照吗",
+        "Spectrum 商业需要执照吗",
+        "Spectrum business license",
+        "Spectrum business license required",
+        "商业宽带需要营业执照吗",
+        "商业宽带要执照吗",
+        "商业宽带需要执照吗",
+        "要执照吗",
+        "需要什么材料",
+        "business license",
+        "商业宽带申请需要什么",
+        "商业宽带办理需要什么材料",
+        "商业宽带需要什么证件",
+        "商业宽带申请条件"
+      ],
+      "answer": "Spectrum 商业宽带通常需要提供营业执照（Business License）或商业注册证明。具体要求可能因地区和套餐而异。如果您没有营业执照，可以咨询我们是否有其他适合的方案。建议加微信详细咨询，我们可以帮您确认具体申请条件。",
+      "scope": "allowed",
+      "next_step": "加微信确认具体申请条件",
+      "do_not_say": [
+        "保证",
+        "一定",
+        "100%"
+      ],
+      "source_url": "/internet/spectrum",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "spectrum-business-002",
+    "text": "Spectrum 商业和家用有什么区别 Spectrum 商业宽带 vs 家用 Spectrum 商业家用区别 Spectrum 商业宽带和家用宽带的主要区别：1) 商业宽带通常有 SLA（服务级别协议）保证，故障响应更快 2) 商业宽带通常有静态 IP 地址 3) 商业宽带价格通常高于家用，但稳定性更好 4) 商业宽带通常有专门的商业客服支持。具体选择取决于您的使用场景和需求。",
+    "metadata": {
+      "id": "spectrum-business-002",
+      "provider": "spectrum",
+      "category": "business",
+      "question_variants": [
+        "Spectrum 商业和家用有什么区别",
+        "Spectrum 商业宽带 vs 家用",
+        "Spectrum 商业家用区别"
+      ],
+      "answer": "Spectrum 商业宽带和家用宽带的主要区别：1) 商业宽带通常有 SLA（服务级别协议）保证，故障响应更快 2) 商业宽带通常有静态 IP 地址 3) 商业宽带价格通常高于家用，但稳定性更好 4) 商业宽带通常有专门的商业客服支持。具体选择取决于您的使用场景和需求。",
+      "scope": "allowed",
+      "next_step": "加微信根据需求推荐方案",
+      "do_not_say": [
+        "$",
+        "具体价格",
+        "保证"
+      ],
+      "source_url": "/internet/spectrum",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "spectrum-business-003",
+    "text": "什么情况下不建议办 Spectrum 商业宽带 Spectrum 商业宽带适合什么情况 什么时候选 Spectrum 商业 以下情况通常不建议办理 Spectrum 商业宽带：1) 没有营业执照或商业注册证明 2) 家庭办公或小型工作室，家用宽带已能满足需求 3) 预算有限，商业宽带价格通常高于家用宽带 4) 不需要静态 IP 地址或 SLA 保证 5) 不需要专门的商业客服支持。如果您不确定是否应该选择商业宽带，建议加微信详细咨询。",
+    "metadata": {
+      "id": "spectrum-business-003",
+      "provider": "spectrum",
+      "category": "business",
+      "question_variants": [
+        "什么情况下不建议办 Spectrum 商业宽带",
+        "Spectrum 商业宽带适合什么情况",
+        "什么时候选 Spectrum 商业"
+      ],
+      "answer": "以下情况通常不建议办理 Spectrum 商业宽带：1) 没有营业执照或商业注册证明 2) 家庭办公或小型工作室，家用宽带已能满足需求 3) 预算有限，商业宽带价格通常高于家用宽带 4) 不需要静态 IP 地址或 SLA 保证 5) 不需要专门的商业客服支持。如果您不确定是否应该选择商业宽带，建议加微信详细咨询。",
+      "scope": "allowed",
+      "next_step": "加微信根据情况推荐方案",
+      "do_not_say": [
+        "$",
+        "具体价格",
+        "保证"
+      ],
+      "source_url": "/internet/spectrum",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "spectrum-business-004",
+    "text": "Spectrum 商业宽带安装时间 Spectrum 商业安装需要多久 Spectrum 商业宽带安装流程 Spectrum 商业宽带安装时间通常需要 3-7 个工作日。具体时间取决于地址和运营商安排。商业宽带通常有专门的安装团队，安装质量更有保障。我们会帮您预约安装时间，并全程跟踪进度。",
+    "metadata": {
+      "id": "spectrum-business-004",
+      "provider": "spectrum",
+      "category": "business",
+      "question_variants": [
+        "Spectrum 商业宽带安装时间",
+        "Spectrum 商业安装需要多久",
+        "Spectrum 商业宽带安装流程"
+      ],
+      "answer": "Spectrum 商业宽带安装时间通常需要 3-7 个工作日。具体时间取决于地址和运营商安排。商业宽带通常有专门的安装团队，安装质量更有保障。我们会帮您预约安装时间，并全程跟踪进度。",
+      "scope": "allowed",
+      "next_step": "加微信预约商业宽带安装",
+      "do_not_say": [
+        "保证",
+        "一定",
+        "100%"
+      ],
+      "source_url": "/internet/spectrum",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "spectrum-business-005",
+    "text": "Spectrum 商业宽带 SLA Spectrum 商业服务保证 Spectrum 商业宽带稳定性 Spectrum 商业宽带通常有 SLA（服务级别协议）保证，包括故障响应时间、网络可用性等。商业宽带通常有专门的商业客服支持，故障处理更快。具体 SLA 条款因套餐而异。建议加微信了解具体 SLA 详情。",
+    "metadata": {
+      "id": "spectrum-business-005",
+      "provider": "spectrum",
+      "category": "business",
+      "question_variants": [
+        "Spectrum 商业宽带 SLA",
+        "Spectrum 商业服务保证",
+        "Spectrum 商业宽带稳定性"
+      ],
+      "answer": "Spectrum 商业宽带通常有 SLA（服务级别协议）保证，包括故障响应时间、网络可用性等。商业宽带通常有专门的商业客服支持，故障处理更快。具体 SLA 条款因套餐而异。建议加微信了解具体 SLA 详情。",
+      "scope": "allowed",
+      "next_step": "加微信了解商业宽带 SLA 详情",
+      "do_not_say": [
+        "保证",
+        "100%",
+        "一定"
+      ],
+      "source_url": "/internet/spectrum",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "spectrum-business-006",
+    "text": "Spectrum 商业宽带静态 IP Spectrum 商业 IP 地址 Spectrum 商业需要静态 IP 吗 Spectrum 商业宽带通常提供静态 IP 地址选项。静态 IP 地址适合需要远程访问、服务器托管等场景。具体是否包含静态 IP 取决于您选择的套餐。建议加微信了解具体套餐详情。",
+    "metadata": {
+      "id": "spectrum-business-006",
+      "provider": "spectrum",
+      "category": "business",
+      "question_variants": [
+        "Spectrum 商业宽带静态 IP",
+        "Spectrum 商业 IP 地址",
+        "Spectrum 商业需要静态 IP 吗"
+      ],
+      "answer": "Spectrum 商业宽带通常提供静态 IP 地址选项。静态 IP 地址适合需要远程访问、服务器托管等场景。具体是否包含静态 IP 取决于您选择的套餐。建议加微信了解具体套餐详情。",
+      "scope": "allowed",
+      "next_step": "加微信了解静态 IP 选项",
+      "do_not_say": [
+        "$",
+        "具体价格",
+        "保证"
+      ],
+      "source_url": "/internet/spectrum",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "spectrum-business-007",
+    "text": "Spectrum 商业宽带技术支持 Spectrum 商业客服 Spectrum 商业故障处理 Spectrum 商业宽带通常有专门的商业客服支持，故障响应更快。商业客服通常提供 24/7 支持，响应时间更短。我们会帮您联系商业客服处理问题。",
+    "metadata": {
+      "id": "spectrum-business-007",
+      "provider": "spectrum",
+      "category": "business",
+      "question_variants": [
+        "Spectrum 商业宽带技术支持",
+        "Spectrum 商业客服",
+        "Spectrum 商业故障处理"
+      ],
+      "answer": "Spectrum 商业宽带通常有专门的商业客服支持，故障响应更快。商业客服通常提供 24/7 支持，响应时间更短。我们会帮您联系商业客服处理问题。",
+      "scope": "allowed",
+      "next_step": "加微信协助联系商业客服",
+      "do_not_say": [
+        "保证",
+        "一定",
+        "100%"
+      ],
+      "source_url": "/internet/spectrum",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "spectrum-home-001",
+    "text": "Spectrum 家庭宽带有哪些套餐 Spectrum 住家宽带套餐选择 Spectrum 家庭套餐有哪些 Spectrum 家庭宽带提供多种套餐选择，包括基础套餐、高速套餐和超高速套餐。具体套餐和速度取决于您的地址覆盖情况。建议加微信提供地址，我们帮您查询可用的套餐选项。",
+    "metadata": {
+      "id": "spectrum-home-001",
+      "provider": "spectrum",
+      "category": "pre-sales",
+      "question_variants": [
+        "Spectrum 家庭宽带有哪些套餐",
+        "Spectrum 住家宽带套餐选择",
+        "Spectrum 家庭套餐有哪些"
+      ],
+      "answer": "Spectrum 家庭宽带提供多种套餐选择，包括基础套餐、高速套餐和超高速套餐。具体套餐和速度取决于您的地址覆盖情况。建议加微信提供地址，我们帮您查询可用的套餐选项。",
+      "scope": "allowed",
+      "next_step": "加微信提供地址查询可用套餐",
+      "do_not_say": [
+        "$",
+        "价格",
+        "多少钱",
+        "最便宜",
+        "促销"
+      ],
+      "source_url": "/internet/spectrum",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "spectrum-home-002",
+    "text": "我的地址能装 Spectrum 吗 Spectrum 覆盖查询 Spectrum 地址覆盖 地址覆盖需要具体查询。我们可以帮您免费查询地址覆盖情况。建议加微信提供详细地址，我们会在 1 分钟内告诉您该地址是否支持 Spectrum。",
+    "metadata": {
+      "id": "spectrum-home-002",
+      "provider": "spectrum",
+      "category": "coverage",
+      "question_variants": [
+        "我的地址能装 Spectrum 吗",
+        "Spectrum 覆盖查询",
+        "Spectrum 地址覆盖"
+      ],
+      "answer": "地址覆盖需要具体查询。我们可以帮您免费查询地址覆盖情况。建议加微信提供详细地址，我们会在 1 分钟内告诉您该地址是否支持 Spectrum。",
+      "scope": "blocked",
+      "next_step": "加微信提供地址查询",
+      "do_not_say": [
+        "能装",
+        "不能装",
+        "100%",
+        "保证",
+        "确定"
+      ],
+      "source_url": "/internet/spectrum",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "spectrum-home-003",
+    "text": "Spectrum 安装需要多久 Spectrum 安装时间 Spectrum 多久能装好 Spectrum 宽带安装通常需要 1-3 个工作日。具体时间取决于您的地址和运营商安排。我们会帮您预约最快的安装时间，并全程跟踪安装进度。",
+    "metadata": {
+      "id": "spectrum-home-003",
+      "provider": "spectrum",
+      "category": "installation",
+      "question_variants": [
+        "Spectrum 安装需要多久",
+        "Spectrum 安装时间",
+        "Spectrum 多久能装好"
+      ],
+      "answer": "Spectrum 宽带安装通常需要 1-3 个工作日。具体时间取决于您的地址和运营商安排。我们会帮您预约最快的安装时间，并全程跟踪安装进度。",
+      "scope": "allowed",
+      "next_step": "加微信预约安装时间",
+      "do_not_say": [
+        "保证",
+        "确定",
+        "一定"
+      ],
+      "source_url": "/internet/spectrum",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "spectrum-home-004",
+    "text": "Spectrum 为什么涨价 Spectrum 账单涨价原因 Spectrum 为什么账单不一样 Spectrum 涨价通常是因为促销期（12-24 个月）结束，恢复到正常价格。这是正常情况。我们可以帮您联系 Spectrum 协商续约优惠，或对比其他运营商方案。通常可以帮您节省费用。",
+    "metadata": {
+      "id": "spectrum-home-004",
+      "provider": "spectrum",
+      "category": "billing",
+      "question_variants": [
+        "Spectrum 为什么涨价",
+        "Spectrum 账单涨价原因",
+        "Spectrum 为什么账单不一样"
+      ],
+      "answer": "Spectrum 涨价通常是因为促销期（12-24 个月）结束，恢复到正常价格。这是正常情况。我们可以帮您联系 Spectrum 协商续约优惠，或对比其他运营商方案。通常可以帮您节省费用。",
+      "scope": "allowed",
+      "next_step": "加微信协助处理账单问题",
+      "do_not_say": [
+        "$",
+        "具体金额",
+        "保证"
+      ],
+      "source_url": "/internet/spectrum",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "spectrum-home-005",
+    "text": "Spectrum 有合约吗 Spectrum 需要签合约吗 Spectrum 合约期限 Spectrum 大部分套餐无合约，可随时取消。部分促销套餐可能有 12-24 个月合约，但通常可以提前解约。我们会详细说明合约条款。",
+    "metadata": {
+      "id": "spectrum-home-005",
+      "provider": "spectrum",
+      "category": "contract",
+      "question_variants": [
+        "Spectrum 有合约吗",
+        "Spectrum 需要签合约吗",
+        "Spectrum 合约期限"
+      ],
+      "answer": "Spectrum 大部分套餐无合约，可随时取消。部分促销套餐可能有 12-24 个月合约，但通常可以提前解约。我们会详细说明合约条款。",
+      "scope": "allowed",
+      "next_step": "加微信了解具体合约条款",
+      "do_not_say": [
+        "保证",
+        "一定"
+      ],
+      "source_url": "/internet/spectrum",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "spectrum-home-006",
+    "text": "Spectrum 商业和家用差别 Spectrum 商业家用区别 Spectrum 商业 vs 家用 Spectrum 商业宽带和家用宽带的主要区别：1) 商业宽带通常有 SLA（服务级别协议）保证，故障响应更快 2) 商业宽带通常有静态 IP 地址 3) 商业宽带价格通常高于家用，但稳定性更好 4) 商业宽带通常有专门的商业客服支持。具体选择取决于您的使用场景和需求。",
+    "metadata": {
+      "id": "spectrum-home-006",
+      "provider": "spectrum",
+      "category": "business",
+      "question_variants": [
+        "Spectrum 商业和家用差别",
+        "Spectrum 商业家用区别",
+        "Spectrum 商业 vs 家用"
+      ],
+      "answer": "Spectrum 商业宽带和家用宽带的主要区别：1) 商业宽带通常有 SLA（服务级别协议）保证，故障响应更快 2) 商业宽带通常有静态 IP 地址 3) 商业宽带价格通常高于家用，但稳定性更好 4) 商业宽带通常有专门的商业客服支持。具体选择取决于您的使用场景和需求。",
+      "scope": "allowed",
+      "next_step": "加微信根据需求推荐方案",
+      "do_not_say": [
+        "$",
+        "具体价格",
+        "保证"
+      ],
+      "source_url": "/internet/spectrum",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "spectrum-home-007",
+    "text": "Spectrum 搬家可以转移吗 Spectrum 搬家宽带 Spectrum 服务转移 可以。Spectrum 支持服务转移，但需要确认新地址有覆盖。转移通常免费或收取少量费用。我们会帮您处理转移流程，并确认新地址的套餐和价格。",
+    "metadata": {
+      "id": "spectrum-home-007",
+      "provider": "spectrum",
+      "category": "moving",
+      "question_variants": [
+        "Spectrum 搬家可以转移吗",
+        "Spectrum 搬家宽带",
+        "Spectrum 服务转移"
+      ],
+      "answer": "可以。Spectrum 支持服务转移，但需要确认新地址有覆盖。转移通常免费或收取少量费用。我们会帮您处理转移流程，并确认新地址的套餐和价格。",
+      "scope": "allowed",
+      "next_step": "加微信提供新地址处理转移",
+      "do_not_say": [
+        "$",
+        "具体费用",
+        "保证"
+      ],
+      "source_url": "/internet/spectrum",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "xfinity-business-002",
+    "text": "Xfinity 商业和家用有什么区别 Xfinity 商业宽带 vs 家用 Xfinity 商业家用区别 Xfinity 商业宽带和家用宽带的主要区别：1) 商业宽带通常有 SLA（服务级别协议）保证，故障响应更快 2) 商业宽带通常有静态 IP 地址 3) 商业宽带价格通常高于家用，但稳定性更好 4) 商业宽带通常有专门的商业客服支持。具体选择取决于您的使用场景和需求。",
+    "metadata": {
+      "id": "xfinity-business-002",
+      "provider": "xfinity",
+      "category": "business",
+      "question_variants": [
+        "Xfinity 商业和家用有什么区别",
+        "Xfinity 商业宽带 vs 家用",
+        "Xfinity 商业家用区别"
+      ],
+      "answer": "Xfinity 商业宽带和家用宽带的主要区别：1) 商业宽带通常有 SLA（服务级别协议）保证，故障响应更快 2) 商业宽带通常有静态 IP 地址 3) 商业宽带价格通常高于家用，但稳定性更好 4) 商业宽带通常有专门的商业客服支持。具体选择取决于您的使用场景和需求。",
+      "scope": "allowed",
+      "next_step": "加微信根据需求推荐方案",
+      "do_not_say": [
+        "$",
+        "具体价格",
+        "保证"
+      ],
+      "source_url": "/internet/xfinity",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "xfinity-business-003",
+    "text": "什么情况下不建议办 Xfinity 商业宽带 Xfinity 商业宽带适合什么情况 什么时候选 Xfinity 商业 以下情况通常不建议办理 Xfinity 商业宽带：1) 没有营业执照或商业注册证明 2) 家庭办公或小型工作室，家用宽带已能满足需求 3) 预算有限，商业宽带价格通常高于家用宽带 4) 不需要静态 IP 地址或 SLA 保证 5) 不需要专门的商业客服支持。如果您不确定是否应该选择商业宽带，建议加微信详细咨询。",
+    "metadata": {
+      "id": "xfinity-business-003",
+      "provider": "xfinity",
+      "category": "business",
+      "question_variants": [
+        "什么情况下不建议办 Xfinity 商业宽带",
+        "Xfinity 商业宽带适合什么情况",
+        "什么时候选 Xfinity 商业"
+      ],
+      "answer": "以下情况通常不建议办理 Xfinity 商业宽带：1) 没有营业执照或商业注册证明 2) 家庭办公或小型工作室，家用宽带已能满足需求 3) 预算有限，商业宽带价格通常高于家用宽带 4) 不需要静态 IP 地址或 SLA 保证 5) 不需要专门的商业客服支持。如果您不确定是否应该选择商业宽带，建议加微信详细咨询。",
+      "scope": "allowed",
+      "next_step": "加微信根据情况推荐方案",
+      "do_not_say": [
+        "$",
+        "具体价格",
+        "保证"
+      ],
+      "source_url": "/internet/xfinity",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "xfinity-business-004",
+    "text": "Xfinity 商业宽带安装时间 Xfinity 商业安装需要多久 Xfinity 商业宽带安装流程 Xfinity 商业宽带安装时间通常需要 3-7 个工作日。具体时间取决于地址和运营商安排。商业宽带通常有专门的安装团队，安装质量更有保障。我们会帮您预约安装时间，并全程跟踪进度。",
+    "metadata": {
+      "id": "xfinity-business-004",
+      "provider": "xfinity",
+      "category": "business",
+      "question_variants": [
+        "Xfinity 商业宽带安装时间",
+        "Xfinity 商业安装需要多久",
+        "Xfinity 商业宽带安装流程"
+      ],
+      "answer": "Xfinity 商业宽带安装时间通常需要 3-7 个工作日。具体时间取决于地址和运营商安排。商业宽带通常有专门的安装团队，安装质量更有保障。我们会帮您预约安装时间，并全程跟踪进度。",
+      "scope": "allowed",
+      "next_step": "加微信预约商业宽带安装",
+      "do_not_say": [
+        "保证",
+        "一定",
+        "100%"
+      ],
+      "source_url": "/internet/xfinity",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "xfinity-business-005",
+    "text": "Xfinity 商业宽带 SLA Xfinity 商业服务保证 Xfinity 商业宽带稳定性 Xfinity 商业宽带通常有 SLA（服务级别协议）保证，包括故障响应时间、网络可用性等。商业宽带通常有专门的商业客服支持，故障处理更快。具体 SLA 条款因套餐而异。建议加微信了解具体 SLA 详情。",
+    "metadata": {
+      "id": "xfinity-business-005",
+      "provider": "xfinity",
+      "category": "business",
+      "question_variants": [
+        "Xfinity 商业宽带 SLA",
+        "Xfinity 商业服务保证",
+        "Xfinity 商业宽带稳定性"
+      ],
+      "answer": "Xfinity 商业宽带通常有 SLA（服务级别协议）保证，包括故障响应时间、网络可用性等。商业宽带通常有专门的商业客服支持，故障处理更快。具体 SLA 条款因套餐而异。建议加微信了解具体 SLA 详情。",
+      "scope": "allowed",
+      "next_step": "加微信了解商业宽带 SLA 详情",
+      "do_not_say": [
+        "保证",
+        "100%",
+        "一定"
+      ],
+      "source_url": "/internet/xfinity",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "xfinity-business-006",
+    "text": "Xfinity 商业宽带静态 IP Xfinity 商业 IP 地址 Xfinity 商业需要静态 IP 吗 Xfinity 商业宽带通常提供静态 IP 地址选项。静态 IP 地址适合需要远程访问、服务器托管等场景。具体是否包含静态 IP 取决于您选择的套餐。建议加微信了解具体套餐详情。",
+    "metadata": {
+      "id": "xfinity-business-006",
+      "provider": "xfinity",
+      "category": "business",
+      "question_variants": [
+        "Xfinity 商业宽带静态 IP",
+        "Xfinity 商业 IP 地址",
+        "Xfinity 商业需要静态 IP 吗"
+      ],
+      "answer": "Xfinity 商业宽带通常提供静态 IP 地址选项。静态 IP 地址适合需要远程访问、服务器托管等场景。具体是否包含静态 IP 取决于您选择的套餐。建议加微信了解具体套餐详情。",
+      "scope": "allowed",
+      "next_step": "加微信了解静态 IP 选项",
+      "do_not_say": [
+        "$",
+        "具体价格",
+        "保证"
+      ],
+      "source_url": "/internet/xfinity",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "xfinity-business-007",
+    "text": "Xfinity 商业宽带技术支持 Xfinity 商业客服 Xfinity 商业故障处理 Xfinity 商业宽带通常有专门的商业客服支持，故障响应更快。商业客服通常提供 24/7 支持，响应时间更短。我们会帮您联系商业客服处理问题。",
+    "metadata": {
+      "id": "xfinity-business-007",
+      "provider": "xfinity",
+      "category": "business",
+      "question_variants": [
+        "Xfinity 商业宽带技术支持",
+        "Xfinity 商业客服",
+        "Xfinity 商业故障处理"
+      ],
+      "answer": "Xfinity 商业宽带通常有专门的商业客服支持，故障响应更快。商业客服通常提供 24/7 支持，响应时间更短。我们会帮您联系商业客服处理问题。",
+      "scope": "allowed",
+      "next_step": "加微信协助联系商业客服",
+      "do_not_say": [
+        "保证",
+        "一定",
+        "100%"
+      ],
+      "source_url": "/internet/xfinity",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "xfinity-home-001",
+    "text": "Xfinity 家庭宽带有哪些套餐 Xfinity 住家宽带套餐选择 Xfinity 家庭套餐有哪些 Xfinity 家庭宽带提供多种套餐选择，包括基础套餐、高速套餐和超高速套餐。具体套餐和速度取决于您的地址覆盖情况。建议加微信提供地址，我们帮您查询可用的套餐选项。",
+    "metadata": {
+      "id": "xfinity-home-001",
+      "provider": "xfinity",
+      "category": "pre-sales",
+      "question_variants": [
+        "Xfinity 家庭宽带有哪些套餐",
+        "Xfinity 住家宽带套餐选择",
+        "Xfinity 家庭套餐有哪些"
+      ],
+      "answer": "Xfinity 家庭宽带提供多种套餐选择，包括基础套餐、高速套餐和超高速套餐。具体套餐和速度取决于您的地址覆盖情况。建议加微信提供地址，我们帮您查询可用的套餐选项。",
+      "scope": "allowed",
+      "next_step": "加微信提供地址查询可用套餐",
+      "do_not_say": [
+        "$",
+        "价格",
+        "多少钱",
+        "最便宜",
+        "促销"
+      ],
+      "source_url": "/internet/xfinity",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "xfinity-home-002",
+    "text": "我的地址能装 Xfinity 吗 Xfinity 覆盖查询 Xfinity 地址覆盖 地址覆盖需要具体查询。我们可以帮您免费查询地址覆盖情况。建议加微信提供详细地址，我们会在 1 分钟内告诉您该地址是否支持 Xfinity。",
+    "metadata": {
+      "id": "xfinity-home-002",
+      "provider": "xfinity",
+      "category": "coverage",
+      "question_variants": [
+        "我的地址能装 Xfinity 吗",
+        "Xfinity 覆盖查询",
+        "Xfinity 地址覆盖"
+      ],
+      "answer": "地址覆盖需要具体查询。我们可以帮您免费查询地址覆盖情况。建议加微信提供详细地址，我们会在 1 分钟内告诉您该地址是否支持 Xfinity。",
+      "scope": "blocked",
+      "next_step": "加微信提供地址查询",
+      "do_not_say": [
+        "能装",
+        "不能装",
+        "100%",
+        "保证",
+        "确定"
+      ],
+      "source_url": "/internet/xfinity",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "xfinity-home-003",
+    "text": "Xfinity 安装需要多久 Xfinity 安装时间 Xfinity 多久能装好 Xfinity 宽带安装通常需要 1-3 个工作日。具体时间取决于您的地址和运营商安排。我们会帮您预约最快的安装时间，并全程跟踪安装进度。",
+    "metadata": {
+      "id": "xfinity-home-003",
+      "provider": "xfinity",
+      "category": "installation",
+      "question_variants": [
+        "Xfinity 安装需要多久",
+        "Xfinity 安装时间",
+        "Xfinity 多久能装好"
+      ],
+      "answer": "Xfinity 宽带安装通常需要 1-3 个工作日。具体时间取决于您的地址和运营商安排。我们会帮您预约最快的安装时间，并全程跟踪安装进度。",
+      "scope": "allowed",
+      "next_step": "加微信预约安装时间",
+      "do_not_say": [
+        "保证",
+        "确定",
+        "一定"
+      ],
+      "source_url": "/internet/xfinity",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "xfinity-home-004",
+    "text": "Xfinity 为什么涨价 Xfinity 账单涨价原因 Xfinity 为什么账单不一样 Xfinity 涨价通常是因为促销期（12-24 个月）结束，恢复到正常价格。这是正常情况。我们可以帮您联系 Xfinity 协商续约优惠，或对比其他运营商方案。通常可以帮您节省费用。",
+    "metadata": {
+      "id": "xfinity-home-004",
+      "provider": "xfinity",
+      "category": "billing",
+      "question_variants": [
+        "Xfinity 为什么涨价",
+        "Xfinity 账单涨价原因",
+        "Xfinity 为什么账单不一样"
+      ],
+      "answer": "Xfinity 涨价通常是因为促销期（12-24 个月）结束，恢复到正常价格。这是正常情况。我们可以帮您联系 Xfinity 协商续约优惠，或对比其他运营商方案。通常可以帮您节省费用。",
+      "scope": "allowed",
+      "next_step": "加微信协助处理账单问题",
+      "do_not_say": [
+        "$",
+        "具体金额",
+        "保证"
+      ],
+      "source_url": "/internet/xfinity",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "xfinity-home-005",
+    "text": "Xfinity 有合约吗 Xfinity 需要签合约吗 Xfinity 合约期限 Xfinity 大部分套餐无合约，可随时取消。部分促销套餐可能有 12-24 个月合约，但通常可以提前解约。我们会详细说明合约条款。",
+    "metadata": {
+      "id": "xfinity-home-005",
+      "provider": "xfinity",
+      "category": "contract",
+      "question_variants": [
+        "Xfinity 有合约吗",
+        "Xfinity 需要签合约吗",
+        "Xfinity 合约期限"
+      ],
+      "answer": "Xfinity 大部分套餐无合约，可随时取消。部分促销套餐可能有 12-24 个月合约，但通常可以提前解约。我们会详细说明合约条款。",
+      "scope": "allowed",
+      "next_step": "加微信了解具体合约条款",
+      "do_not_say": [
+        "保证",
+        "一定"
+      ],
+      "source_url": "/internet/xfinity",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "xfinity-home-006",
+    "text": "Xfinity 需要买路由器吗 Xfinity 设备费用 Xfinity Modem 租赁 Xfinity 通常提供 Modem 租赁服务。您可以自备兼容的路由器节省月费。我们会帮您确认设备兼容性，并推荐性价比高的路由器选择。",
+    "metadata": {
+      "id": "xfinity-home-006",
+      "provider": "xfinity",
+      "category": "equipment",
+      "question_variants": [
+        "Xfinity 需要买路由器吗",
+        "Xfinity 设备费用",
+        "Xfinity Modem 租赁"
+      ],
+      "answer": "Xfinity 通常提供 Modem 租赁服务。您可以自备兼容的路由器节省月费。我们会帮您确认设备兼容性，并推荐性价比高的路由器选择。",
+      "scope": "allowed",
+      "next_step": "加微信了解设备选择",
+      "do_not_say": [
+        "$",
+        "具体价格"
+      ],
+      "source_url": "/internet/xfinity",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "xfinity-home-007",
+    "text": "Xfinity 搬家可以转移吗 Xfinity 搬家宽带 Xfinity 服务转移 可以。Xfinity 支持服务转移，但需要确认新地址有覆盖。转移通常免费或收取少量费用。我们会帮您处理转移流程，并确认新地址的套餐和价格。",
+    "metadata": {
+      "id": "xfinity-home-007",
+      "provider": "xfinity",
+      "category": "moving",
+      "question_variants": [
+        "Xfinity 搬家可以转移吗",
+        "Xfinity 搬家宽带",
+        "Xfinity 服务转移"
+      ],
+      "answer": "可以。Xfinity 支持服务转移，但需要确认新地址有覆盖。转移通常免费或收取少量费用。我们会帮您处理转移流程，并确认新地址的套餐和价格。",
+      "scope": "allowed",
+      "next_step": "加微信提供新地址处理转移",
+      "do_not_say": [
+        "$",
+        "具体费用",
+        "保证"
+      ],
+      "source_url": "/internet/xfinity",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "xfinity-home-008",
+    "text": "Xfinity 可以提前解约吗 Xfinity 取消服务 Xfinity 解约费用 可以。无合约套餐可随时取消；有合约套餐通常可以提前解约，可能需要支付剩余设备费用。我们会帮您了解具体解约条款和费用。",
+    "metadata": {
+      "id": "xfinity-home-008",
+      "provider": "xfinity",
+      "category": "after-sales",
+      "question_variants": [
+        "Xfinity 可以提前解约吗",
+        "Xfinity 取消服务",
+        "Xfinity 解约费用"
+      ],
+      "answer": "可以。无合约套餐可随时取消；有合约套餐通常可以提前解约，可能需要支付剩余设备费用。我们会帮您了解具体解约条款和费用。",
+      "scope": "allowed",
+      "next_step": "加微信了解解约流程",
+      "do_not_say": [
+        "$",
+        "具体金额",
+        "保证"
+      ],
+      "source_url": "/internet/xfinity",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "xfinity_billing_price_increase",
+    "text": "账单涨价了 账单涨价了为什么 账单为什么会涨价 xfinity 账单涨价 xfinity 账单涨价了 xfinity 账单涨价了为什么 xfinity 账单为什么会涨价 comcast 账单涨价 comcast 账单涨价了 为什么账单涨价了 账单怎么涨价了 账单突然涨价 账单费用增加了 为什么费用增加了 为什么账单变贵了 账单变贵了 price increase bill increased why did my bill increase xfinity bill increase comcast bill increase Xfinity账单可能因促销期结束、升级套餐、增加服务（如电话/电视）、税费调整等上涨。建议登录账户查看详细账单，或联系客服确认具体原因。",
+    "metadata": {
+      "id": "xfinity_billing_price_increase",
+      "provider": "xfinity",
+      "category": "billing",
+      "question_variants": [
+        "账单涨价了",
+        "账单涨价了为什么",
+        "账单为什么会涨价",
+        "xfinity 账单涨价",
+        "xfinity 账单涨价了",
+        "xfinity 账单涨价了为什么",
+        "xfinity 账单为什么会涨价",
+        "comcast 账单涨价",
+        "comcast 账单涨价了",
+        "为什么账单涨价了",
+        "账单怎么涨价了",
+        "账单突然涨价",
+        "账单费用增加了",
+        "为什么费用增加了",
+        "为什么账单变贵了",
+        "账单变贵了",
+        "price increase",
+        "bill increased",
+        "why did my bill increase",
+        "xfinity bill increase",
+        "comcast bill increase"
+      ],
+      "answer": "Xfinity账单可能因促销期结束、升级套餐、增加服务（如电话/电视）、税费调整等上涨。建议登录账户查看详细账单，或联系客服确认具体原因。",
+      "scope": "allowed",
+      "next_step": "建议加微信，我们可以帮您查看账单明细，或协助联系Xfinity客服确认涨价原因。",
+      "do_not_say": [
+        "具体价格",
+        "保证降价",
+        "承诺退款"
+      ],
+      "source_url": "/internet/xfinity/faq#billing",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "xfinity_speed_slow",
+    "text": "网速为什么慢了 网速慢了怎么办 网速慢 网速很慢 网速太慢了 网速变慢了 为什么网速慢了 网速慢怎么办 xfinity 网速慢 xfinity 网速慢了 xfinity 网速为什么慢 comcast 网速慢 comcast 网速慢了 网速不够快 网速不达标 网速达不到 网速测试慢 speed slow slow internet slow speed xfinity slow speed comcast slow speed internet slow why is internet slow 网速慢常见原因：1.高峰期拥堵 2.WiFi信号弱 3.设备过多 4.线路问题。建议：重启调制解调器、用网线连接测试、有线优先、检查路由器位置。",
+    "metadata": {
+      "id": "xfinity_speed_slow",
+      "provider": "xfinity",
+      "category": "after-sales",
+      "question_variants": [
+        "网速为什么慢了",
+        "网速慢了怎么办",
+        "网速慢",
+        "网速很慢",
+        "网速太慢了",
+        "网速变慢了",
+        "为什么网速慢了",
+        "网速慢怎么办",
+        "xfinity 网速慢",
+        "xfinity 网速慢了",
+        "xfinity 网速为什么慢",
+        "comcast 网速慢",
+        "comcast 网速慢了",
+        "网速不够快",
+        "网速不达标",
+        "网速达不到",
+        "网速测试慢",
+        "speed slow",
+        "slow internet",
+        "slow speed",
+        "xfinity slow speed",
+        "comcast slow speed",
+        "internet slow",
+        "why is internet slow"
+      ],
+      "answer": "网速慢常见原因：1.高峰期拥堵 2.WiFi信号弱 3.设备过多 4.线路问题。建议：重启调制解调器、用网线连接测试、有线优先、检查路由器位置。",
+      "scope": "allowed",
+      "next_step": "建议加微信，我们可以帮您诊断网速问题，或协助联系Xfinity技术支持。",
+      "do_not_say": [
+        "保证提速",
+        "承诺修复",
+        "100%解决"
+      ],
+      "source_url": "/internet/xfinity/faq#speed",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "xfinity_internet_disconnected",
+    "text": "为什么断网了 断网了怎么办 网络断开 断网 没网了 网络断了 为什么没网了 为什么网络断了 xfinity 断网 xfinity 断网了 xfinity 为什么断网 comcast 断网 comcast 断网了 网络连接不上 连不上网 上不了网 无法上网 internet disconnected no internet internet down xfinity down comcast down internet outage service outage 断网常见原因：1.设备故障 2.区域性中断 3.欠费停机 4.调制解调器灯状态异常。建议：检查Xfinity官网故障地图→重启设备→拨打客服*611确认。",
+    "metadata": {
+      "id": "xfinity_internet_disconnected",
+      "provider": "xfinity",
+      "category": "after-sales",
+      "question_variants": [
+        "为什么断网了",
+        "断网了怎么办",
+        "网络断开",
+        "断网",
+        "没网了",
+        "网络断了",
+        "为什么没网了",
+        "为什么网络断了",
+        "xfinity 断网",
+        "xfinity 断网了",
+        "xfinity 为什么断网",
+        "comcast 断网",
+        "comcast 断网了",
+        "网络连接不上",
+        "连不上网",
+        "上不了网",
+        "无法上网",
+        "internet disconnected",
+        "no internet",
+        "internet down",
+        "xfinity down",
+        "comcast down",
+        "internet outage",
+        "service outage"
+      ],
+      "answer": "断网常见原因：1.设备故障 2.区域性中断 3.欠费停机 4.调制解调器灯状态异常。建议：检查Xfinity官网故障地图→重启设备→拨打客服*611确认。",
+      "scope": "allowed",
+      "next_step": "建议加微信，我们可以帮您检查设备状态，或协助联系Xfinity技术支持排查断网原因。",
+      "do_not_say": [
+        "保证修复",
+        "承诺恢复",
+        "100%解决"
+      ],
+      "source_url": "/internet/xfinity/faq#disconnected",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  },
+  {
+    "id": "xfinity_wifi_not_connecting",
+    "text": "连不上WiFi WiFi连不上怎么办 为什么连不上WiFi WiFi连不上 WiFi连接不上 无法连接WiFi WiFi连不了 连不上无线网 无线网连不上 xfinity WiFi连不上 xfinity WiFi连接不上 xfinity 连不上WiFi comcast WiFi连不上 comcast WiFi连接不上 WiFi密码错误 WiFi密码不对 WiFi信号弱 WiFi信号不好 wifi not connecting cannot connect to wifi wifi connection failed xfinity wifi not working comcast wifi not working wifi password wrong WiFi连不上：1.信号太弱 2.WiFi密码错误 3.路由器故障 4.设备兼容问题。解决：靠近路由器→重置WiFi密码→重启路由器→'忘记网络'后重新连接。",
+    "metadata": {
+      "id": "xfinity_wifi_not_connecting",
+      "provider": "xfinity",
+      "category": "equipment",
+      "question_variants": [
+        "连不上WiFi",
+        "WiFi连不上怎么办",
+        "为什么连不上WiFi",
+        "WiFi连不上",
+        "WiFi连接不上",
+        "无法连接WiFi",
+        "WiFi连不了",
+        "连不上无线网",
+        "无线网连不上",
+        "xfinity WiFi连不上",
+        "xfinity WiFi连接不上",
+        "xfinity 连不上WiFi",
+        "comcast WiFi连不上",
+        "comcast WiFi连接不上",
+        "WiFi密码错误",
+        "WiFi密码不对",
+        "WiFi信号弱",
+        "WiFi信号不好",
+        "wifi not connecting",
+        "cannot connect to wifi",
+        "wifi connection failed",
+        "xfinity wifi not working",
+        "comcast wifi not working",
+        "wifi password wrong"
+      ],
+      "answer": "WiFi连不上：1.信号太弱 2.WiFi密码错误 3.路由器故障 4.设备兼容问题。解决：靠近路由器→重置WiFi密码→重启路由器→'忘记网络'后重新连接。",
+      "scope": "allowed",
+      "next_step": "建议加微信，我们可以帮您检查WiFi设置，或协助联系Xfinity技术支持。",
+      "do_not_say": [
+        "保证修复",
+        "承诺连接",
+        "100%解决"
+      ],
+      "source_url": "/internet/xfinity/faq#wifi",
+      "updated_at": "2026-01-27T00:00:00Z"
+    }
+  }
+]

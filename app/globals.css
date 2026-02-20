@@ -1,0 +1,585 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* =========================
+   基础主题变量
+========================= */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 移动端底部安全区（防止被固定 CTA 遮挡） */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 120px; /* 为移动端 CTA 预留空间 */
+  }
+}
+
+/* 全局 section 间距 */
+section {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+/* =========================
+   流光动画（只允许 CSS）
+========================= */
+
+@keyframes shine {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.45;
+  }
+  50% {
+    transform: translateX(120%);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+.shine-layer {
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.75) 50%,
+    transparent 70%
+  );
+  animation: shine 1s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  .shine-layer {
+    background: linear-gradient(
+      120deg,
+      transparent 35%,
+      rgba(255, 255, 255, 0.28) 50%,
+      transparent 65%
+    );
+    animation-duration: 2.2s;
+  }
+}
+/* ===== 微信浏览器识别 ===== */
+@supports (-webkit-touch-callout: none) {
+  .google-dim-in-wechat {
+    opacity: 0.65;
+  }
+  .wechat-highlight {
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.35);
+  }
+}
+
+/* ===== 主 CTA 轻微脉冲 ===== */
+@keyframes pulseSoft {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.pulse-cta {
+  animation: pulseSoft 3s ease-in-out infinite;
+}
+/* 自定义工具类 */
+@layer utilities {
+  /* 隐藏滚动条但保留滚动功能 */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* 无缝滚动动画 */
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+  }
+
+  .pause {
+    animation-play-state: paused;
+  }
+}
+/* Google Logo 呼吸 + 轻波动动画 */
+.google-breath {
+  animation: googleBreath 2.6s ease-in-out infinite;
+  cursor: pointer;
+}
+
+@keyframes googleBreath {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(66,133,244,0));
+  }
+  40% {
+    transform: scale(1.06);
+    filter: drop-shadow(0 6px 12px rgba(66,133,244,0.35));
+  }
+  70% {
+    transform: scale(0.98);
+    filter: drop-shadow(0 3px 6px rgba(66,133,244,0.2));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(66,133,244,0));
+  }
+}
+
+/* Hover 时更明显（引导点击） */
+.google-breath:hover {
+  animation-play-state: paused;
+  transform: scale(1.12);
+  filter: drop-shadow(0 10px 20px rgba(66,133,244,0.45));
+}
+/* ===============================
+   Google Logo 左→右滚动波浪动效
+   =============================== */
+
+.google-wave {
+  display: inline-flex;
+  animation: googleWave 2.4s ease-in-out infinite;
+  transform-origin: center;
+  cursor: pointer;
+}
+
+/* 核心：左→中→右 的“起伏扫过” */
+@keyframes googleWave {
+  0% {
+    transform: translateX(-6px) scale(0.95);
+    filter: brightness(0.95);
+    opacity: 0.85;
+  }
+
+  30% {
+    transform: translateX(0) scale(1.15);
+    filter: brightness(1.25) drop-shadow(0 6px 12px rgba(66,133,244,0.35));
+    opacity: 1;
+  }
+
+  60% {
+    transform: translateX(6px) scale(1);
+    filter: brightness(1.05);
+    opacity: 0.95;
+  }
+
+  100% {
+    transform: translateX(-6px) scale(0.95);
+    filter: brightness(0.95);
+    opacity: 0.85;
+  }
+}
+
+/* Hover：立即强化（非常有“可点性”） */
+.google-wave:hover {
+  animation-play-state: paused;
+  transform: scale(1.25);
+  filter: brightness(1.35) drop-shadow(0 10px 20px rgba(66,133,244,0.55));
+}
+/* ===============================
+   Google Logo 左 → 右 起伏扫过
+   =============================== */
+
+.google-wave {
+  display: inline-flex;
+  align-items: center;
+  animation: googleWave 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  transform-origin: center;
+  cursor: pointer;
+  will-change: transform, filter;
+}
+
+@keyframes googleWave {
+  0% {
+    transform: translateX(-8px) scale(0.95);
+    filter: brightness(0.9);
+    opacity: 0.85;
+  }
+
+  35% {
+    transform: translateX(0px) scale(1.15);
+    filter: brightness(1.3)
+      drop-shadow(0 6px 14px rgba(66,133,244,0.35));
+    opacity: 1;
+  }
+
+  65% {
+    transform: translateX(8px) scale(1);
+    filter: brightness(1.05);
+    opacity: 0.95;
+  }
+
+  100% {
+    transform: translateX(-8px) scale(0.95);
+    filter: brightness(0.9);
+    opacity: 0.85;
+  }
+}
+
+/* Hover：强化“可点击感” */
+.google-wave:hover {
+  animation-play-state: paused;
+  transform: scale(1.25);
+  filter: brightness(1.4)
+    drop-shadow(0 10px 24px rgba(66,133,244,0.55));
+}
+/* 放大版 Google g */
+.google-wave-lg {
+  transform-origin: center;
+}
+
+/* 评分数字稍微更稳一点 */
+.google-wave-rating {
+  animation-duration: 2.4s; /* 比 g 略慢，更高级 */
+}
+/* ===============================
+   Google Logo / 评分 左→右滚动波浪动效
+   =============================== */
+
+/* Google G 图标 */
+.google-wave {
+  display: inline-flex;
+  animation: googleWave 2.6s ease-in-out infinite;
+  transform-origin: center;
+  cursor: pointer;
+}
+
+/* HERO 区更大一点 */
+.google-wave-lg {
+  animation-duration: 2.4s;
+}
+
+/* 数字 5.0 专用（稍慢、稳一点） */
+.google-wave-rating {
+  display: inline-block;
+  animation: googleWaveRating 2.8s ease-in-out infinite;
+}
+
+/* 星星流光 */
+.stars-shine {
+  display: inline-flex;
+  animation: starsShine 3s ease-in-out infinite;
+}
+
+/* ===== 核心动画 ===== */
+
+@keyframes googleWave {
+  0% {
+    transform: translateX(-8px) scale(0.92);
+    filter: brightness(0.9);
+    opacity: 0.85;
+  }
+  35% {
+    transform: translateX(0) scale(1.25);
+    filter: brightness(1.35)
+      drop-shadow(0 6px 14px rgba(66, 133, 244, 0.45));
+    opacity: 1;
+  }
+  65% {
+    transform: translateX(8px) scale(1);
+    filter: brightness(1.05);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateX(-8px) scale(0.92);
+    filter: brightness(0.9);
+    opacity: 0.85;
+  }
+}
+
+@keyframes googleWaveRating {
+  0% {
+    transform: translateX(-4px) scale(0.96);
+    opacity: 0.85;
+  }
+  40% {
+    transform: translateX(0) scale(1.18);
+    opacity: 1;
+  }
+  70% {
+    transform: translateX(4px) scale(1);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateX(-4px) scale(0.96);
+    opacity: 0.85;
+  }
+}
+
+@keyframes starsShine {
+  0% {
+    filter: brightness(0.9);
+    transform: scale(0.96);
+    opacity: 0.8;
+  }
+  50% {
+    filter: brightness(1.35)
+      drop-shadow(0 4px 10px rgba(250, 204, 21, 0.45));
+    transform: scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    filter: brightness(0.9);
+    transform: scale(0.96);
+    opacity: 0.8;
+  }
+}
+
+/* Hover：非常“可点” */
+.google-wave:hover,
+.google-wave-rating:hover,
+.stars-shine:hover {
+  animation-play-state: paused;
+  transform: scale(1.3);
+  filter: brightness(1.45)
+    drop-shadow(0 12px 24px rgba(66, 133, 244, 0.6));
+}
+/* ===============================
+   Google 星级：1→5 连续扫光
+   =============================== */
+
+.star-seq {
+  display: inline-flex;
+}
+
+.star-seq svg {
+  opacity: 0.35;
+  transform: scale(0.9);
+  animation: starWave 2.2s ease-in-out infinite;
+}
+
+.star-seq svg:nth-child(1) { animation-delay: 0s; }
+.star-seq svg:nth-child(2) { animation-delay: 0.15s; }
+.star-seq svg:nth-child(3) { animation-delay: 0.3s; }
+.star-seq svg:nth-child(4) { animation-delay: 0.45s; }
+.star-seq svg:nth-child(5) { animation-delay: 0.6s; }
+
+@keyframes starWave {
+  0% {
+    opacity: 0.35;
+    transform: scale(0.9);
+    filter: none;
+  }
+  35% {
+    opacity: 1;
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 8px rgba(250, 204, 21, 0.7));
+  }
+  70% {
+    opacity: 0.6;
+    transform: scale(1);
+    filter: none;
+  }
+  100% {
+    opacity: 0.35;
+    transform: scale(0.9);
+  }
+}
+/* ===============================
+   5.0 数字联动放大（与星星同节奏）
+   =============================== */
+
+.rating-wave {
+  display: inline-block;
+  animation: ratingPulse 2.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes ratingPulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+    filter: none;
+  }
+
+  35% {
+    transform: scale(1.35);
+    opacity: 1;
+    filter: drop-shadow(0 6px 14px rgba(37, 99, 235, 0.45));
+  }
+
+  70% {
+    transform: scale(1.05);
+    opacity: 0.95;
+    filter: none;
+  }
+
+  100% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+}
+
+/* hover 时再强化（非常有“可点性”） */
+.group:hover .rating-wave {
+  animation-duration: 1.4s;
+  transform: scale(1.45);
+  filter: drop-shadow(0 10px 22px rgba(37, 99, 235, 0.6));
+}
+/* 自定义波浪波动动画 */
+@keyframes logoWave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-wave {
+  animation: logoWave 3s ease-in-out infinite;
+}
+
+/* 鼠标悬停停止动画并稍微放大 */
+.animate-wave:hover {
+  animation-play-state: paused;
+  transform: scale(1.1) !important;
+  transition: transform 0.3s ease;
+}
+
+/* 隐藏滚动条 */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+/* 无缝滚动动画 */
+@keyframes infiniteScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-infinite-scroll {
+  display: flex;
+  width: max-content;
+  animation: infiniteScroll 3s linear infinite; /* 30秒循环一次，可调慢或调快 */
+}
+
+/* 鼠标悬停时暂停滚动，方便用户点击链接 */
+.animate-infinite-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* 隐藏滚动条 */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* --- 品牌 Logo 专用：从左向右无缝滚动 --- */
+@keyframes scrollRightCustom {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+.brand-scroll-right {
+  display: flex !important;
+  width: max-content !important;
+  animation: scrollRightCustom 30s linear infinite !important;
+}
+
+/* 鼠标悬停暂停 */
+.brand-scroll-right:hover {
+  animation-play-state: paused;
+}
+
+/* ===============================
+   呼吸起伏波动动画（用于按钮）
+   =============================== */
+@keyframes pulse-slow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+/* ===============================
+   AI 问答组件动画
+   =============================== */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-3px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(3px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
