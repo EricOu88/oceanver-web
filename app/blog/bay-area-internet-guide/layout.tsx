@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { CommunityDiscussionClientOnly } from '@/app/components/community/CommunityDiscussionByPath'
 
 export const metadata: Metadata = {
   title: '湾区华人办宽带指南 | Xfinity AT&T 独家折扣 | 鸿达电讯',
@@ -48,5 +49,5 @@ export default function BayAreaInternetGuideLayout({
 }: {
   children: React.ReactNode
 }) {
-  return <>{children}</>
+  return <>{children}<CommunityDiscussionClientOnly pageKey="blog:bay-area-internet-guide" /></>
 }

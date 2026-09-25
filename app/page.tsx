@@ -3,17 +3,19 @@ import type { Metadata } from 'next'
 import HeroSection from '@/app/components/home/HeroSection'
 import ContactEntry from '@/app/components/contact/ContactEntry'
 import HomeClientWrapper from './HomeClientWrapper'
+import CommunityHighlights from '@/app/components/community/CommunityHighlights'
+import HomepageCampaignBanner from '@/app/components/home/HomepageCampaignBanner'
 
 export const metadata: Metadata = {
   title: '鸿达电信 - 旧金山湾区/Fremont 中文电信服务 | 全美手机卡与宽带办理',
   description:
     '专为美国华人提供 Xfinity, AT&T, Spectrum, T-Mobile 宽带与手机套餐申请。实体店经营，全美50州中文咨询。免押金、免信用审核，比官网直办省20%-40%，更有独家账单审计减免服务。',
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
     googleBot: {
-      index: true,
-      follow: true,
+      index: false,
+      follow: false,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
@@ -48,14 +50,10 @@ export const metadata: Metadata = {
     '留学生手机卡',
     'Bay Area Chinese Service',
   ],
-  alternates: {
-    canonical: 'https://baymediastar.com/',
-  },
   openGraph: {
     title: '鸿达电信 - 旧金山湾区/Fremont 中文电信服务 | 全美手机卡与宽带办理',
     description:
       '18年湾区实体店，美国手机卡宽带中文办理专家。支持无SSN办网、无SSN办手机卡，Xfinity/AT&T/Spectrum宽带办理，账单涨价处理。服务Fremont/San Jose/Milpitas及全美50州。',
-    url: 'https://baymediastar.com/',
     siteName: 'Bay Media Star 鸿达电讯',
     type: 'website',
     locale: 'zh_CN',
@@ -70,6 +68,10 @@ export default function Page() {
 
       {/* 业务介绍部分 - Client Component（ssr: false 避免 hydration mismatch） */}
       <HomeClientWrapper />
+
+      <HomepageCampaignBanner />
+
+      <CommunityHighlights />
 
       {/* ContactSection - Server Component，在业务介绍之后 */}
       <div className="max-w-6xl mx-auto px-6 py-8 md:py-12">

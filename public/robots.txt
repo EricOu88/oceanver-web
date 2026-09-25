@@ -1,12 +1,2 @@
 User-Agent: *
 Allow: /
-
-Disallow: /feed/
-Disallow: /tag/
-Disallow: /embed/
-Disallow: /wp-admin/
-Disallow: /wp-content/
-Disallow: /wp-includes/
-Disallow: /*?*
-
-Sitemap: https://baymediastar.com/sitemap.xml

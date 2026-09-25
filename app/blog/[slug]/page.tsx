@@ -4,8 +4,8 @@ import { notFound } from 'next/navigation'
 import { getAllPostSlugs, getPostBySlug, getRelatedPosts } from '@/lib/blog'
 import { Calendar, Tag, ArrowLeft, ArrowRight } from 'lucide-react'
 import Script from 'next/script'
-import ContactModal from '@/app/components/ContactModal'
 import BlogPostClient from './BlogPostClient'
+import { CommunityDiscussionClientOnly } from '@/app/components/community/CommunityDiscussionByPath'
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>
@@ -175,6 +175,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
         {/* CTA 区域 */}
         <BlogPostClient />
+
+        <CommunityDiscussionClientOnly pageKey={`blog:${post.slug}`} />
 
         {/* 相关文章 */}
         {relatedPosts.length > 0 && (

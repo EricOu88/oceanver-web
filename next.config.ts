@@ -148,6 +148,16 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
+        // Phase 1: keep every HTML response out of search indexes, including dynamic routes.
+        source: '/:path*',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow, noarchive',
+          },
+        ],
+      },
+      {
         source: '/:all*(svg|jpg|jpeg|png|webp|avif|gif|ico|woff|woff2)',
         headers: [
           {

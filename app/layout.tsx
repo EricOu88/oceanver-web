@@ -1,18 +1,16 @@
 // app/layout.tsx - 根布局（默认中文）
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import Script from 'next/script'
 import './globals.css'
 import ServiceSchemas from '@/app/components/seo/ServiceSchemas'
 import MobileContactBar from '@/app/components/contact/MobileContactBar'
 // import AIQuestionWidget from '@/app/components/AIQuestionWidget' // 暂时注释，使用 SafeAIQuestionWidget
 import SafeAIQuestionWidgetWrapper from '@/app/components/SafeAIQuestionWidgetWrapper'
-import { getHreflangAlternates } from '@/lib/hreflang-utils'
 
 /* ================== 全站默认 SEO / 社交元数据 ================== */
 export const metadata: Metadata = {
-  metadataBase: new URL('https://baymediastar.com'),
-
   title: {
     default: '鸿达电讯｜美国手机卡与宽带中文服务',
     template: '%s｜鸿达电讯 Bay Media Star',
@@ -38,12 +36,9 @@ export const metadata: Metadata = {
     'Bay Media Star',
   ],
 
-  alternates: getHreflangAlternates(''),
-
   openGraph: {
     type: 'website',
     locale: 'zh_CN',
-    url: 'https://baymediastar.com',
     siteName: '鸿达电讯 Bay Media Star',
     title: '鸿达电讯｜美国手机卡与宽带中文服务',
     description:
@@ -73,11 +68,11 @@ export const metadata: Metadata = {
   },
 
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
     googleBot: {
-      index: true,
-      follow: true,
+      index: false,
+      follow: false,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
@@ -227,9 +222,9 @@ export default function RootLayout({
               <a href="/internet/diagnosis" className="hover:text-blue-600">
                 美国宽带问题诊断
               </a>
-              <a href="/" className="hover:text-blue-600">
+              <Link href="/" className="hover:text-blue-600">
                 返回首页
-              </a>
+              </Link>
             </div>
           </div>
           

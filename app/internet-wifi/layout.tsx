@@ -1,9 +1,5 @@
 import CommunityDiscussionByPath from '@/app/components/community/CommunityDiscussionByPath'
 
-export default function BillOptimizationLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function InternetWifiLayout({ children }: { children: React.ReactNode }) {
   return <>{children}<CommunityDiscussionByPath /></>
 }
