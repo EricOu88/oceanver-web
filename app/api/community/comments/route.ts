@@ -3,6 +3,7 @@ import { COMMUNITY_RATE_LIMIT, containsSensitiveAccountData, getRequestFingerpri
 import { getCommunityClient, isCommunityConfigured } from '@/lib/community/server'
 import { getCommunitySecretClient } from '@/lib/community/serverSecret'
 import { getApprovedComments } from '@/lib/community/server'
+import { notifyNewComment } from '@/lib/community/notifyNewComment'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
@@ -46,6 +47,17 @@ export async function POST(request: NextRequest) {
     const comment = createdComment
       ? { ...createdComment, like_count: 0 }
       : { id: commentId, page_key: pageKey, nickname, body: commentBody, parent_id: parentId, status: 'approved', is_official: false, created_at: new Date().toISOString(), like_count: 0 }
+    try {
+      await notifyNewComment({
+        commentId: String(commentId),
+        pageKey: comment.page_key,
+        nickname: comment.nickname,
+        body: comment.body,
+        createdAt: comment.created_at,
+      })
+    } catch (error) {
+      console.error('Community notification email failed:', error)
+    }
     return NextResponse.json({ ok: true, commentId, comment, message: '留言已发布。' }, { status: 201, headers: noStoreHeaders })
   } catch (error) {
     console.error('Community comment submission failed:', error)
