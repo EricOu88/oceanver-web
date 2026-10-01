@@ -27,7 +27,6 @@ const GoogleReviewsSlider = dynamic(
 
 /* ================= 1. 数据定义 ================= */
 const BUSINESS_INFO = {
-  name: '美国鸿达电讯 (Bay Media Star)',
   tel: '510-849-6191',
   telLink: '15108496191', // For tel: links (no dashes or plus)
   address: '46292 Warm Springs Blvd #606, Fremont, CA 94539',
@@ -149,9 +148,9 @@ export default function HomePage() {
               <div className="w-10 h-10 bg-blue-700 rounded-xl flex items-center justify-center text-white text-sm">
                 B
               </div>
-              鸿达电讯
+              美国鸿达电讯
             </div>
-            <p className="text-sm font-bold text-slate-700 leading-relaxed italic">Serving the Chinese community since 2007.</p>
+            <p className="text-sm font-bold text-slate-700 leading-relaxed">中文一对一服务</p>
             <ul className="text-xs space-y-1 text-slate-600">
               <li><Link href="/about" className="hover:text-blue-700">关于我们</Link></li>
               <li><Link href="/why-us" className="hover:text-blue-700">为什么选择鸿达</Link></li>
@@ -240,10 +239,11 @@ export default function HomePage() {
               联系我们
             </Link>
             <div className="text-sm space-y-3 font-extrabold text-slate-800">
-              <p>在线客服微信号: 美国鸿达电讯</p>
-              <p>电话: {BUSINESS_INFO.tel}</p>
+              <p>美国鸿达电讯</p>
+              <p>电话：{BUSINESS_INFO.tel}</p>
+              <p>中文一对一服务</p>
               <address className="not-italic leading-relaxed font-bold text-slate-700">
-                <span className="text-blue-700 block mb-1">Fremont 总店:</span>
+                <span className="text-blue-700 block mb-1">Fremont, California</span>
                 46292 Warm Springs Blvd #606, <br />
                 Fremont, CA 94539
               </address>
@@ -255,7 +255,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 mt-8 grid md:grid-cols-2 gap-6">
           <div className="text-sm font-bold text-slate-700 bg-slate-50 p-5 rounded-2xl border border-slate-200">
             <p className="mb-2 text-slate-950 font-black">💡 办网小贴士</p>
-            <p>Xfinity 或 Spectrum 优惠期结束后，建议联系我们重新锁定新用户价。</p>
+            <p>Xfinity 或 Spectrum 优惠期结束后，可以结合当前账单与地址重新比较可用方案。</p>
             <Link href="/internet/price-hike" className="text-blue-600 hover:underline text-xs mt-2 inline-block">
               查看宽带涨价应对指南 →
             </Link>
@@ -271,9 +271,9 @@ export default function HomePage() {
         </div>
 
         <div className="max-w-7xl mx-auto px-6 mt-12 pt-6 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] font-black uppercase tracking-[0.2em] text-slate-700">
-          <div>© {new Date().getFullYear()} Bay Media Star.</div>
+          <div>© {new Date().getFullYear()} 美国鸿达电讯</div>
           <div className="flex gap-6">
-            <span className="text-blue-700 underline underline-offset-4">Licensed Agency</span>
+            <span className="text-blue-700 underline underline-offset-4">中文一对一服务</span>
             
           </div>
         </div>

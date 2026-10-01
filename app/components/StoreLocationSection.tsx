@@ -6,7 +6,6 @@ import { MapPin, Phone, MessageCircle, ExternalLink } from 'lucide-react';
 
 const GOOGLE_LINK = 'https://www.google.com/maps/search/?api=1&query=美国鸿达电讯&query_place_id=ChIJX6ngelzGj4ARrdcNVV0c-Gc';
 const BUSINESS_TEL = '15108496191'; // For tel: links (no dashes or plus)
-const BUSINESS_TEL_DISPLAY = '510-849-6191'; // For display text
 
 interface StoreLocationSectionProps {
   onWeChatClick?: () => void;
@@ -32,10 +31,10 @@ export default function StoreLocationSection({
                 </h2>
                 <div className="space-y-3 text-slate-800">
                   <p className={`${isCompact ? 'text-base md:text-lg' : 'text-lg md:text-xl'} font-bold`}>
-                    📍 鸿达电讯（Bay Media Star）
+                    📍 美国鸿达电讯
                   </p>
                   <p className={`${isCompact ? 'text-sm md:text-base' : 'text-base md:text-lg'} font-semibold text-slate-700 leading-relaxed`}>
-                    Fremont & Milpitas 手机卡 实体门店｜服务湾区和洛杉矶｜支持全美远程办理
+                    Fremont 中文电信服务门店｜提供手机与家庭宽带中文服务
                   </p>
                   {!isCompact && (
                     <p className="text-sm md:text-base text-slate-600 leading-relaxed">
@@ -91,7 +90,7 @@ export default function StoreLocationSection({
               <div className={`relative w-full ${isCompact ? 'h-40 md:h-44' : 'h-48 md:h-56'} rounded-xl overflow-hidden border border-slate-200 shadow-lg ring-2 ring-blue-100/50`}>
                 <Image
                   src="/locations/fremont-exterior.jpg"
-                  alt="鸿达电讯 Fremont 实体门店外观 - 湾区手机卡宽带中文办理服务点 46292 Warm Springs Blvd"
+                  alt="美国鸿达电讯 Fremont 门店外观 - 46292 Warm Springs Blvd"
                   fill
                   className="object-cover rounded-xl"
                   sizes="(max-width: 768px) 100vw, 400px"
@@ -102,7 +101,7 @@ export default function StoreLocationSection({
               <div className={`relative w-full ${isCompact ? 'h-40 md:h-44' : 'h-48 md:h-56'} rounded-xl overflow-hidden border border-slate-200 shadow-lg ring-2 ring-blue-100/50`}>
                 <Image
                   src="/locations/fremont-interior.jpg"
-                  alt="鸿达电讯 Fremont 门店内部环境 - AT&T T-Mobile Xfinity 等运营商授权代理柜台"
+                  alt="美国鸿达电讯 Fremont 中文电信服务门店内部环境"
                   fill
                   className="object-cover rounded-xl"
                   sizes="(max-width: 768px) 100vw, 400px"

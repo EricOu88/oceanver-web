@@ -1,30 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { ExternalLink, Star } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 const GOOGLE_LINK = 'https://www.google.com/maps/search/?api=1&query=美国鸿达电讯&query_place_id=ChIJX6ngelzGj4ARrdcNVV0c-Gc';
-
-const REVIEWS = [
-  {
-    name: 'Jason W.',
-    location: 'Fremont, CA',
-    text: 'Evan 效率非常高！帮我把家里 Xfinity 的旧账单优化了，每个月省了快 $30。',
-    date: '1个月前',
-  },
-  {
-    name: 'Linda Zhang',
-    location: 'Los Angeles, CA',
-    text: '刚搬到洛杉矶没有 SSN 办卡一直碰壁，Amy 帮我申请了套餐，落地就能上网！',
-    date: '2个月前',
-  },
-  {
-    name: 'Michael Chen',
-    location: 'San Jose, CA',
-    text: 'Paul 真的很靠谱，Spectrum 移机出现问题找他半天就搞定了。',
-    date: '3周前',
-  },
-];
 
 const GoogleIcon = () => (
   <span className="google-wave google-wave-lg inline-flex items-center">
@@ -49,19 +28,11 @@ const GoogleIcon = () => (
   </span>
 );
 
-const FiveStars = ({ size = 16 }: { size?: number }) => (
-  <div className="stars-shine flex gap-0.5">
-    {[...Array(5)].map((_, i) => (
-      <Star key={i} size={size} fill="#FBBF24" className="drop-shadow-sm" style={{ color: '#FBBF24' }} />
-    ))}
-  </div>
-);
-
 export default function GoogleReviewsSlider() {
   return (
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center md:items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col md:flex-row items-center md:items-end justify-between gap-6">
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
               <Link
@@ -73,48 +44,18 @@ export default function GoogleReviewsSlider() {
                 <span className="text-slate-800 text-[15px] font-black uppercase tracking-wider">Google 看评论</span>
                 <ExternalLink size={12} className="text-slate-600" />
               </Link>
-              <div className="flex items-center gap-2">
-                <FiveStars size={20} />
-                <span className="google-wave-rating text-sm font-black text-blue-700 ml-1">5.0</span>
-              </div>
             </div>
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900">"靠谱，是我们的唯一标准"</h2>
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900">Google 用户评价</h2>
+            <p className="mt-4 text-base text-slate-600 md:text-lg">查看客户在 Google 上留下的公开评价</p>
           </div>
           <a
             href={GOOGLE_LINK}
             target="_blank"
             className="group flex items-center gap-3 bg-green-600 text-white px-8 py-4 rounded-2xl font-bold shadow-xl hover:bg-blue-700 transition-all"
           >
-            <span className="font-extrabold tracking-wide">查看 500+ 真实评论</span>
+            <span className="font-extrabold tracking-wide">前往 Google 查看公开评价</span>
             <ExternalLink size={18} className="google-wave" />
           </a>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {REVIEWS.map((review, i) => (
-            <div
-              key={i}
-              className="bg-white p-6 rounded-[2.5rem] border border-slate-200 hover:shadow-2xl transition-all h-full flex flex-col"
-            >
-              <div className="flex items-center justify-between mb-5">
-                <FiveStars size={15} />
-                <div className="opacity-40">
-                  <GoogleIcon />
-                </div>
-              </div>
-              <p className="text-slate-800 leading-relaxed mb-6 font-bold italic flex-grow">"{review.text}"</p>
-              <div className="flex items-center gap-4 pt-6 border-t border-slate-100 mt-auto">
-                <div className="w-12 h-12 bg-blue-700 rounded-full flex items-center justify-center text-white font-black">
-                  {review.name[0]}
-                </div>
-                <div>
-                  <p className="font-black text-slate-900 text-sm">{review.name}</p>
-                  <p className="text-slate-700 text-[11px] font-bold uppercase tracking-widest">{review.location}</p>
-                </div>
-                <span className="ml-auto text-[11px] text-slate-600 font-bold">{review.date}</span>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>

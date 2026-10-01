@@ -9,9 +9,11 @@ import CommunityHighlights from '@/app/components/community/CommunityHighlights'
 import HomepageCampaignBanner from '@/app/components/home/HomepageCampaignBanner'
 
 export const metadata: Metadata = {
-  title: '鸿达电信 - 旧金山湾区/Fremont 中文电信服务 | 全美手机卡与宽带办理',
+  title: {
+    absolute: '美国手机、宽带账单涨价怎么办？｜美国鸿达电讯',
+  },
   description:
-    '专为美国华人提供 Xfinity, AT&T, Spectrum, T-Mobile 宽带与手机套餐申请。实体店经营，全美50州中文咨询。免押金、免信用审核，比官网直办省20%-40%，更有独家账单审计减免服务。',
+    '手机或家庭宽带账单突然变贵？美国鸿达电讯帮助中文用户判断涨价原因、优惠是否到期、是否需要换套餐或换运营商，并处理常见手机与宽带问题。',
   robots: {
     index: false,
     follow: false,
@@ -23,42 +25,19 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  keywords: [
-    '鸿达电讯',
-    'bay media star',
-    '美国手机卡中文办理',
-    '美国宽带中文办理',
-    '无SSN办网',
-    '无SSN办手机卡',
-    '美国白卡激活',
-    '美国电话卡',
-    '美国手机卡',
-    'Fremont 手机卡',
-    'Fremont 宽带',
-    'Fremont 中文电信',
-    'San Jose 手机卡',
-    'San Jose 宽带',
-    'Milpitas 手机卡',
-    'Milpitas 宽带',
-    'best internet provider fremont',
-    'business wi-fi bay area',
-    '美国宽带运营商',
-    '美国宽带涨价',
-    'Xfinity账单太贵',
-    'AT&T降费',
-    '湾区中文办网',
-    '湾区中文手机卡',
-    '新移民办网',
-    '留学生手机卡',
-    'Bay Area Chinese Service',
-  ],
   openGraph: {
-    title: '鸿达电信 - 旧金山湾区/Fremont 中文电信服务 | 全美手机卡与宽带办理',
+    title: '美国手机、宽带账单涨价怎么办？｜美国鸿达电讯',
     description:
-      '18年湾区实体店，美国手机卡宽带中文办理专家。支持无SSN办网、无SSN办手机卡，Xfinity/AT&T/Spectrum宽带办理，账单涨价处理。服务Fremont/San Jose/Milpitas及全美50州。',
-    siteName: 'Bay Media Star 鸿达电讯',
+      '手机或家庭宽带账单突然变贵？美国鸿达电讯帮助中文用户判断涨价原因、优惠是否到期、是否需要换套餐或换运营商，并处理常见手机与宽带问题。',
+    siteName: '美国鸿达电讯',
     type: 'website',
     locale: 'zh_CN',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '美国手机、宽带账单涨价怎么办？｜美国鸿达电讯',
+    description:
+      '手机或家庭宽带账单突然变贵？美国鸿达电讯帮助中文用户判断涨价原因、优惠是否到期、是否需要换套餐或换运营商，并处理常见手机与宽带问题。',
   },
 }
 
@@ -73,6 +52,20 @@ export default function Page() {
 
       {/* 信任/特性条（新增） */}
       <TrustIndicators />
+
+      <section aria-labelledby="bill-increase-summary-title" className="mx-auto max-w-5xl px-6 py-12 md:py-16">
+        <div className="border-y border-slate-200 py-8 md:py-10">
+          <h2 id="bill-increase-summary-title" className="text-2xl font-black text-slate-900 md:text-3xl">
+            手机、宽带账单为什么会突然变贵？
+          </h2>
+          <p className="mt-5 text-base leading-8 text-slate-700 md:text-lg">
+            手机或家庭宽带账单突然变贵，常见原因包括优惠期结束、AutoPay 或其他折扣失效、设备费变化、附加服务增加、套餐调整，以及运营商价格变化。是否需要换套餐、降速、取消附加服务或换运营商，要结合当前账单、地址、账户资格和实际使用需求判断。
+          </p>
+          <p className="mt-6 text-sm text-slate-500">
+            最后更新：2026年10月 · 内容由美国鸿达电讯团队整理与审核
+          </p>
+        </div>
+      </section>
 
       {/* 业务介绍部分 - Client Component（ssr: false 避免 hydration mismatch） */}
       <HomeClientWrapper />

@@ -3,8 +3,8 @@ import { PiggyBank, Headphones, ShieldCheck, Star } from 'lucide-react';
 const ITEMS = [
   {
     icon: <PiggyBank size={28} />,
-    title: '帮你省钱',
-    desc: '找出不必缴的费用',
+    title: '账单费用检查',
+    desc: '协助检查账单中的费用变化',
     color: 'text-blue-700 bg-blue-50',
   },
   {
@@ -22,7 +22,7 @@ const ITEMS = [
   {
     icon: <Star size={28} />,
     title: '5.0',
-    desc: 'Google 好评 · 数量待替换',
+    desc: 'Google 用户评价',
     color: 'text-blue-700 bg-blue-50',
   },
 ];

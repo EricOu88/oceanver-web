@@ -43,7 +43,7 @@ export default function AboutEnClient() {
           </p>
 
           <p className="mt-6">
-            Phone: 510-651-1888 · WeChat: 美国鸿达电讯 · Website: baymediastar.com
+            Phone: 510-849-6191 · WeChat: 美国鸿达电讯 · Website: baymediastar.com
           </p>
         </div>
       </section>

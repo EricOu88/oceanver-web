@@ -11,13 +11,14 @@ import SafeAIQuestionWidgetWrapper from '@/app/components/SafeAIQuestionWidgetWr
 
 /* ================== 全站默认 SEO / 社交元数据 ================== */
 export const metadata: Metadata = {
+  metadataBase: new URL('https://oceanver.com'),
   title: {
-    default: '鸿达电讯｜美国手机卡与宽带中文服务',
-    template: '%s｜鸿达电讯 Bay Media Star',
+    default: '美国鸿达电讯｜美国手机与家庭宽带中文服务',
+    template: '%s｜美国鸿达电讯',
   },
 
   description:
-    '鸿达电讯是湾区 Fremont 本地实体店，提供美国手机卡、家庭宽带、ADT 安防等一站式中文服务。支持无 SSN 办卡办网，全美 50 州远程办理，新移民、留学生首选。',
+    '美国鸿达电讯为美国中文用户提供手机套餐、家庭宽带、账单检查、套餐选择和常见通信问题处理信息，并在需要账户、地址或资格核实时提供中文一对一服务。',
 
   keywords: [
     '美国手机卡中文办理',
@@ -33,31 +34,31 @@ export const metadata: Metadata = {
     'AT&T中文',
     'T-Mobile中文',
     '鸿达电讯',
-    'Bay Media Star',
+    '美国鸿达电讯',
   ],
 
   openGraph: {
     type: 'website',
     locale: 'zh_CN',
-    siteName: '鸿达电讯 Bay Media Star',
-    title: '鸿达电讯｜美国手机卡与宽带中文服务',
+    siteName: '美国鸿达电讯',
+    title: '美国鸿达电讯｜美国手机与家庭宽带中文服务',
     description:
-      '湾区 Fremont 本地实体店，提供美国手机卡、家庭宽带、ADT 安防等一站式中文服务。支持无 SSN 办卡办网，全美 50 州远程办理。',
+      '美国鸿达电讯为美国中文用户提供手机套餐、家庭宽带、账单检查、套餐选择和常见通信问题处理信息，并在需要账户、地址或资格核实时提供中文一对一服务。',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: '鸿达电讯 Bay Media Star - 美国手机卡宽带中文服务',
+        alt: '美国鸿达电讯｜美国手机与家庭宽带中文服务',
       },
     ],
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: '鸿达电讯｜美国手机卡与宽带中文服务',
+    title: '美国鸿达电讯｜美国手机与家庭宽带中文服务',
     description:
-      '湾区 Fremont 本地实体店，提供美国手机卡、家庭宽带等一站式中文服务。支持无 SSN，全美 50 州远程办理。',
+      '美国鸿达电讯为美国中文用户提供手机套餐、家庭宽带、账单检查、套餐选择和常见通信问题处理信息，并在需要账户、地址或资格核实时提供中文一对一服务。',
     images: ['/og-image.png'],
   },
 
@@ -84,13 +85,11 @@ export const metadata: Metadata = {
 const localBusinessJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  '@id': 'https://baymediastar.com',
-  name: '鸿达电讯 Bay Media Star',
-  alternateName: ['鸿达电讯', 'Bay Media Star Fremont', 'Fremont 中文手机卡宽带', 'Bay Area Chinese Telecom', 'California Chinese Internet Service'],
-  description: '旧金山湾区专业中文手机卡与宽带办理服务，支持全美远程办网，Xfinity, AT&T, T-Mobile 授权代理。',
-  url: 'https://baymediastar.com',
-  logo: 'https://baymediastar.com/bms-logo.png',
-  image: 'https://baymediastar.com/logo.png',
+  '@id': 'https://oceanver.com/#localbusiness',
+  name: '美国鸿达电讯',
+  alternateName: ['鸿达电讯', 'Fremont 中文手机与家庭宽带服务'],
+  description: '美国中文手机套餐、家庭宽带、账单检查与通信问题协助服务。',
+  url: 'https://oceanver.com',
   telephone: '+1-510-849-6191',
   priceRange: '$$',
   address: {
@@ -130,13 +129,6 @@ const localBusinessJsonLd = {
       name: 'United States',
     },
   ],
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5.0',
-    reviewCount: '100',
-    bestRating: '5',
-    worstRating: '1',
-  },
   knowsLanguage: ['zh-CN', 'en-US', '中文', 'English'],
   audience: {
     '@type': 'Audience',
@@ -149,7 +141,6 @@ const localBusinessJsonLd = {
   hasMap: 'https://www.google.com/maps/search/?api=1&query=美国鸿达电讯&query_place_id=ChIJX6ngelzGj4ARrdcNVV0c-Gc',
   sameAs: [
     'https://www.google.com/maps/search/?api=1&query=美国鸿达电讯&query_place_id=ChIJX6ngelzGj4ARrdcNVV0c-Gc',
-    'https://baymediastar.com/contact',
   ],
 }
 
@@ -204,13 +195,16 @@ export default function RootLayout({
             {/* 左侧：品牌与说明 */}
             <div className="space-y-2">
               <div className="font-semibold text-slate-700">
-                Bay Media Star 鸿达电讯
+                美国鸿达电讯
               </div>
               <div>
                 美国中文手机 / 宽带 / 网络服务协助
               </div>
               <div>
-                © {new Date().getFullYear()} Bay Media Star
+                Fremont, California · 电话：510-849-6191
+              </div>
+              <div>
+                © {new Date().getFullYear()} 美国鸿达电讯
               </div>
             </div>
 

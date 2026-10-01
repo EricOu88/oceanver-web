@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 export default function WeChatPopup({ onClose }: { onClose: () => void }) {
   const WECHAT_ID = '美国鸿达电讯';
 
@@ -7,7 +9,10 @@ export default function WeChatPopup({ onClose }: { onClose: () => void }) {
     try {
       await navigator.clipboard.writeText(WECHAT_ID);
 
-      const w = window as any;
+      const w = window as Window & {
+        gtag?: (...args: unknown[]) => void;
+        uetq?: unknown[];
+      };
 
       /* ================= GA4 转化事件 ================= */
       if (typeof w.gtag === 'function') {
@@ -27,7 +32,7 @@ export default function WeChatPopup({ onClose }: { onClose: () => void }) {
       }
 
       alert(`✅ 已复制微信号：${WECHAT_ID}\n请打开微信 → 搜索粘贴添加客服`);
-    } catch (err) {
+    } catch {
       prompt('复制失败，请手动复制下方微信号：', WECHAT_ID);
     }
   };
@@ -56,16 +61,18 @@ export default function WeChatPopup({ onClose }: { onClose: () => void }) {
             ×
           </button>
 
-          <h3 className="text-white text-xl font-bold">添加官方客服微信</h3>
+          <h3 className="text-white text-xl font-bold">添加中文客服微信</h3>
           <p className="text-white/90 text-sm mt-1">
             真人中文客服 · 免费咨询宽带手机方案
           </p>
         </div>
 
         <div className="bg-[#F5F7FB] px-6 pb-6 pt-6">
-          <img
+          <Image
             src="/wechat-qr.jpg"
             alt="微信二维码"
+            width={224}
+            height={224}
             className="w-56 h-56 mx-auto rounded-xl shadow-md"
           />
 
