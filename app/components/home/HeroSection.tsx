@@ -1,15 +1,22 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Phone } from 'lucide-react';
+import { ArrowRight, MessageCircle, Phone } from 'lucide-react';
+import WeChatPopup from '@/app/components/WeChatPopup';
 
 const BUSINESS_TEL_DISPLAY = '510-849-6191';
-const BUSINESS_TEL = '15108496191'; // For tel: links (no dashes)
+const BUSINESS_TEL = '+15108496191';
 
 export default function HeroSection() {
+  const [showWeChat, setShowWeChat] = useState(false);
+
   return (
-    <section className="relative overflow-hidden bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-100 via-white to-white">
-      <div className="max-w-[1280px] mx-auto px-5 py-6 md:px-6 md:py-3">
-        <div className="grid items-center gap-7 lg:min-h-[400px] lg:grid-cols-2 lg:gap-8">
+    <>
+      <section className="relative overflow-hidden bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-100 via-white to-white">
+        <div className="max-w-[1280px] mx-auto px-5 py-6 md:px-6 md:py-3">
+          <div className="grid items-center gap-7 lg:min-h-[400px] lg:grid-cols-2 lg:gap-8">
           {/* 左侧：文案 */}
           <div className="text-center lg:text-left">
             <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200 px-4 py-1.5 text-sm font-bold text-blue-800 mb-5">
@@ -26,27 +33,32 @@ export default function HeroSection() {
               先帮你判断为什么变贵，再告诉你该不该调整、换方案，还是继续用。
             </p>
 
-            <div className="flex w-full flex-col gap-3 sm:flex-row lg:max-w-[600px] lg:flex-col xl:flex-row">
+            <div className="grid w-full grid-cols-1 gap-3 lg:grid-cols-3">
               <Link
                 href="/bill-optimization"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-blue-700 px-6 py-4 text-lg font-bold text-white shadow-lg shadow-blue-700/20 transition-all hover:bg-blue-800 hover:shadow-xl"
+                className="inline-flex h-14 w-full items-center justify-center gap-2 whitespace-nowrap rounded-full border-2 border-blue-700 bg-blue-700 px-4 text-base font-bold text-white shadow-lg shadow-blue-700/20 transition-all hover:border-blue-800 hover:bg-blue-800 hover:shadow-xl lg:px-2 lg:text-xs 2xl:px-3 2xl:text-sm"
               >
                 帮我查为什么变贵了
-                <ArrowRight size={20} />
+                <ArrowRight size={18} className="shrink-0" />
               </Link>
+
+              <button
+                type="button"
+                onClick={() => setShowWeChat(true)}
+                className="inline-flex h-14 w-full items-center justify-center gap-2 whitespace-nowrap rounded-full border-2 border-blue-600 bg-white px-4 text-base font-bold text-blue-600 shadow-md transition-all hover:bg-blue-50 hover:shadow-lg lg:px-2 lg:text-xs 2xl:px-3 2xl:text-sm"
+              >
+                <MessageCircle size={18} className="shrink-0" />
+                不想研究，直接找人帮我看
+              </button>
 
               <a
                 href={`tel:${BUSINESS_TEL}`}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-blue-600 bg-white px-6 py-4 text-lg font-bold text-blue-600 shadow-md transition-all hover:bg-blue-50 hover:shadow-lg"
+                className="inline-flex h-14 w-full items-center justify-center gap-2 whitespace-nowrap rounded-full border-2 border-blue-600 bg-white px-4 text-base font-bold text-blue-600 shadow-md transition-all hover:bg-blue-50 hover:shadow-lg lg:px-2 lg:text-xs 2xl:px-3 2xl:text-sm"
               >
-                <Phone size={18} />
-                不想研究，直接找人帮我看
+                <Phone size={18} className="shrink-0" />
+                电话咨询 {BUSINESS_TEL_DISPLAY}
               </a>
             </div>
-
-            <p className="mt-5 text-sm text-slate-500">
-              中文一对一服务 · {BUSINESS_TEL_DISPLAY}
-            </p>
           </div>
 
           {/* 右侧：配图占位（素材到位后替换） */}
@@ -60,8 +72,11 @@ export default function HeroSection() {
               className="object-cover object-center"
             />
           </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {showWeChat && <WeChatPopup onClose={() => setShowWeChat(false)} />}
+    </>
   );
 }
