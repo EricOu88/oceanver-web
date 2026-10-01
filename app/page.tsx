@@ -1,6 +1,8 @@
 // app/page.tsx  （Server Component）
 import type { Metadata } from 'next'
 import HeroSection from '@/app/components/home/HeroSection'
+import ProblemSelection from '@/app/components/home/ProblemSelection'
+import TrustIndicators from '@/app/components/home/TrustIndicators'
 import ContactEntry from '@/app/components/contact/ContactEntry'
 import HomeClientWrapper from './HomeClientWrapper'
 import CommunityHighlights from '@/app/components/community/CommunityHighlights'
@@ -65,6 +67,12 @@ export default function Page() {
     <>
       {/* HeroSection - Server Component，最顶部 */}
       <HeroSection />
+
+      {/* 问题选择三大入口（新增） */}
+      <ProblemSelection />
+
+      {/* 信任/特性条（新增） */}
+      <TrustIndicators />
 
       {/* 业务介绍部分 - Client Component（ssr: false 避免 hydration mismatch） */}
       <HomeClientWrapper />

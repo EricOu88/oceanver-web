@@ -1,7 +1,9 @@
 "use client"
 import { useState, useEffect, useRef, useCallback } from 'react'
+import { usePathname } from 'next/navigation'
 
 export default function SafeAIQuestionWidget() {
+  const pathname = usePathname()
   // 使用 useState 的初始值确保服务器端和客户端一致
   const [mounted, setMounted] = useState(false)
   const [messages, setMessages] = useState<string[]>([])
@@ -134,7 +136,8 @@ export default function SafeAIQuestionWidget() {
 
   // 客户端 mounted 后才渲染实际内容
   return (
-    <div 
+    <div
+      className={pathname === '/' ? 'max-lg:hidden' : undefined}
       style={{
         position: 'fixed',
         top: '80px',

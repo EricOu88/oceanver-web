@@ -2,15 +2,11 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
 import {
-  Phone,
-  Wifi,
   MessageCircle,
-  Zap,
   X,
   ArrowRight,
 } from 'lucide-react';
@@ -89,206 +85,13 @@ function WeChatModal({ open, onClose }: { open: boolean; onClose: () => void }) 
   );
 }
 
-/* ================= 2. 服务卡片数据（纯静态常量，确保 SSR/CSR 完全一致）================= */
-type ServiceCardIcon = 'wifi' | 'phone' | 'zap';
-
-interface ServiceCard {
-  title: string;
-  desc: string;
-  icon: ServiceCardIcon;
-  color: 'blue' | 'indigo' | 'amber';
-  link: string;
-  btnColor: string;
-  btnTextColor: string;
-  btnShadow: string;
-  btnAnimation: string;
-  btnHoverShadow: string;
-  btnHoverShadowSmall: string;
-  logos?: Array<{ name: string; src: string }>;
-}
-
-// 完全静态的卡片配置（module-level const，确保 SSR/CSR 完全一致）
-// 禁止任何运行时修改，禁止客户端覆盖
-const SERVICE_CARDS: readonly ServiceCard[] = [
-  {
-    title: '如何申请商业及住家宽带？',
-    desc: 'Xfinity, AT&T Fiber, Spectrum，Frontier 独家新开户折扣，<strong class="font-black text-orange-800">免除押金与信用审核</strong>。美国宽带申请，中文客服一对一服务。',
-    icon: 'wifi',
-    color: 'blue',
-    link: '/internet',
-    btnColor: 'bg-blue-600 hover:bg-blue-700 shadow-blue-200',
-    btnTextColor: 'text-white',
-    btnShadow: 'shadow-lg',
-    btnAnimation: 'animate-pulse-subtle',
-    btnHoverShadow: 'group-hover:shadow-2xl',
-    btnHoverShadowSmall: 'hover:shadow-lg',
-    logos: [
-      { name: 'Xfinity', src: '/brands/xfinity.webp' },
-      { name: 'AT&T', src: '/brands/att.webp' },
-      { name: 'Spectrum', src: '/brands/spectrum.webp' },
-    ],
-  },
-  {
-    title: '如何申请商业及家庭手机卡？',
-    desc: '主流运营商团购折扣，<strong class="font-black text-orange-800">比官网直接办理更省 20%-40%</strong>，全美包邮寄送。家庭手机套餐折扣，网络账单减免服务。',
-    icon: 'phone',
-    color: 'indigo',
-    link: '/cellphone',
-    btnColor: 'bg-green-600 hover:bg-green-700 shadow-green-200',
-    btnTextColor: 'text-white',
-    btnShadow: 'shadow-lg',
-    btnAnimation: 'animate-pulse-subtle',
-    btnHoverShadow: 'group-hover:shadow-2xl',
-    btnHoverShadowSmall: 'hover:shadow-lg',
-    logos: [
-      { name: 'AT&T', src: '/brands/att.webp' },
-      { name: 'T-Mobile', src: '/brands/tmobile.webp' },
-      { name: 'Verizon', src: '/brands/verizon.webp' },
-    ],
-  },
-  {
-    title: '查看账单是否还能降价',
-    desc: '老用户账单突然变贵？我们提供免费账单审计服务，帮您重新申请低价合约。',
-    icon: 'zap',
-    color: 'amber',
-    link: '/bill-optimization',
-    btnColor: 'bg-yellow-300 hover:bg-yellow-400 border-2 border-yellow-500',
-    btnTextColor: 'text-yellow-900',
-    btnShadow: 'shadow-sm',
-    btnAnimation: '',
-    btnHoverShadow: 'group-hover:shadow-md',
-    btnHoverShadowSmall: 'hover:shadow-sm',
-  },
-] as const;
-
-// Icon 映射函数（纯函数，SSR/CSR 一致）
-function getIconComponent(icon: ServiceCardIcon) {
-  switch (icon) {
-    case 'wifi':
-      return <Wifi />;
-    case 'phone':
-      return <Phone />;
-    case 'zap':
-      return <Zap />;
-    default:
-      return null;
-  }
-}
-
 /* ================= 3. 主页面 ================= */
 export default function HomePage() {
-  const router = useRouter();
   const [isModalOpen, setModalOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-white text-slate-900 selection:bg-blue-100 font-sans">
       <WeChatModal open={isModalOpen} onClose={() => setModalOpen(false)} />
-
-      {/* CORE SERVICES - 业务介绍部分 */}
-      <section className="py-8 md:py-12 lg:py-16 bg-slate-50/50">
-        <div className="max-w-6xl mx-auto px-6 text-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-black mb-3 text-slate-900">
-            为什么美国华人都会找鸿达电讯？
-          </h2>
-          <p className="text-base md:text-lg text-slate-700 font-medium mt-4">
-            全美50州远程办理，专业中文团队，实时查询本地独家优惠。
-          </p>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6">
-          {/* 使用标准的 next/link Link 组件渲染服务卡片（不使用 LinkComponent） */}
-          {SERVICE_CARDS.map((item, i) => (
-            <Link
-              key={item.link}
-              href={item.link}
-              className="block animate-float group bg-white p-6 rounded-[2.5rem] border border-slate-200 hover:border-slate-300 transition-all duration-300 shadow-sm hover:shadow-2xl hover:-translate-y-2 active:scale-[0.98] cursor-pointer"
-              style={{ animationDelay: `${i * 0.2}s` }}
-            >
-              {/* Logo 区域 */}
-              {item.logos ? (
-                <div className="flex items-center justify-center gap-2 md:gap-3 mb-5 flex-nowrap">
-                  {item.logos.map((logo, idx) => {
-                    const isXfinity = logo.name === 'Xfinity'
-                    return (
-                      <div
-                        key={logo.name}
-                        className={`relative flex items-center justify-center flex-shrink-0 ${
-                          isXfinity
-                            ? 'h-8 w-14 md:h-10 md:w-20'
-                            : 'h-10 w-20 md:h-12 md:w-24'
-                        }`}
-                      >
-                        <Image
-                          src={logo.src}
-                          alt={`${logo.name} 授权代理 - 鸿达电讯 Fremont 实体店 ${logo.name === 'Xfinity' || logo.name === 'AT&T' || logo.name === 'Spectrum' ? '宽带' : '手机卡'}中文办理服务`}
-                          fill
-                          sizes="(max-width: 768px) 80px, 96px"
-                          className="object-contain opacity-80 group-hover:opacity-100 transition-opacity"
-                          loading="lazy"
-                        />
-                      </div>
-                    )
-                  })}
-                </div>
-              ) : (
-                <div
-                  className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-5 ${
-                    item.color === 'blue'
-                      ? 'bg-blue-100 text-blue-700'
-                      : item.color === 'indigo'
-                      ? 'bg-indigo-100 text-indigo-700'
-                      : 'bg-amber-100 text-amber-700'
-                  }`}
-                >
-                  {getIconComponent(item.icon)}
-                </div>
-              )}
-
-              <div
-                className={`
-                  w-full mb-4 px-6 py-4 ${item.btnColor}
-                  ${item.btnTextColor} font-black text-xl rounded-2xl
-                  transition-all duration-500
-                  ${item.btnShadow}
-                  ${item.btnAnimation}
-                  group-hover:scale-105 ${item.btnHoverShadow}
-                `}
-              >
-                {item.title}
-              </div>
-
-              <p className="text-slate-700 leading-relaxed mb-6 text-[15px] font-medium" dangerouslySetInnerHTML={{ __html: item.desc }} />
-
-              {/* 宽带卡片内链 */}
-              {item.link === '/internet' && (
-                <div className="mb-4">
-                  <span
-                    onClick={(e) => {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      router.push('/blog/bay-area-internet-guide');
-                    }}
-                    className="text-sm text-blue-600 font-semibold hover:underline inline-flex items-center gap-1 cursor-pointer"
-                  >
-                    2026年湾区华人办宽带全攻略 →
-                  </span>
-                </div>
-              )}
-
-              <button
-                onClick={(e) => {
-                  e.preventDefault()
-                  e.stopPropagation()
-                  setModalOpen(true)
-                }}
-                className={`w-full ${item.btnColor} ${item.btnTextColor} font-bold text-sm py-3 px-6 rounded-xl flex items-center justify-center gap-2 transition-all ${item.btnHoverShadowSmall} active:scale-95`}
-              >
-                立即咨询 <ArrowRight size={14} />
-              </button>
-            </Link>
-          ))}
-        </div>
-      </section>
 
       {/* STORE LOCATION SECTION */}
       <section className="py-8 md:py-12">

@@ -1,11 +1,11 @@
 'use client'
 
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { Phone, MessageCircle, X } from 'lucide-react'
 import Image from 'next/image'
 
 const PHONE_NUMBER = '15108496191' // For tel: and sms: links (no dashes or plus)
-const PHONE_DISPLAY = '510-849-6191' // For display text
 const WECHAT_ID = '美国鸿达电讯'
 
 function WeChatModal({ open, onClose }: { open: boolean; onClose: () => void }) {
@@ -61,6 +61,9 @@ function WeChatModal({ open, onClose }: { open: boolean; onClose: () => void }) 
 
 export default function MobileContactBar() {
   const [isWeChatOpen, setWeChatOpen] = useState(false)
+  const pathname = usePathname()
+
+  if (pathname === '/') return null
 
   return (
     <>

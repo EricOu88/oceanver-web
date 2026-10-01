@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Script from 'next/script'
 import './globals.css'
 import ServiceSchemas from '@/app/components/seo/ServiceSchemas'
-import MobileContactBar from '@/app/components/contact/MobileContactBar'
+import MobileContactBarClientOnly from '@/app/components/contact/MobileContactBarClientOnly'
 // import AIQuestionWidget from '@/app/components/AIQuestionWidget' // 暂时注释，使用 SafeAIQuestionWidget
 import SafeAIQuestionWidgetWrapper from '@/app/components/SafeAIQuestionWidgetWrapper'
 
@@ -250,7 +250,7 @@ export default function RootLayout({
         <ServiceSchemas />
 
         {/* ================== 全站唯一移动端悬浮 CTA（全局只引入一次） ================== */}
-        <MobileContactBar />
+        <MobileContactBarClientOnly />
 
         {/* ================== AI 智能问答组件（右下角悬浮） ================== */}
         <SafeAIQuestionWidgetWrapper />
