@@ -4,7 +4,6 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRef, useCallback } from 'react'
-import StoreLocationSection from '@/app/components/StoreLocationSection'
 import SmartBillAnalysis from './SmartBillAnalysis'
 import {
   Upload,
@@ -241,14 +240,7 @@ export default function BillOptimizationClient() {
                 我们帮你检查费用变化，并根据账户情况提供调整建议（免费检查）
               </p>
 
-              {/* 主 CTA 按钮 */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                <button
-                  onClick={() => fileInputRef.current?.click()}
-                  className="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-black text-lg rounded-2xl shadow-lg shadow-blue-600/20 transition-all active:scale-[0.99]"
-                >
-                  👉 免费检查我的账单
-                </button>
                 <button
                   onClick={() => setWechatOpen(true)}
                   className="w-full sm:w-auto px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-lg rounded-2xl shadow-lg shadow-emerald-600/20 transition-all active:scale-[0.99]"
@@ -340,7 +332,7 @@ export default function BillOptimizationClient() {
                     发短信
                   </a>
                   <p className="text-xs text-slate-500 text-center">
-                    发送短信建议内容：“我在 Fremont，账单从 $__ 涨到 $__，想判断值不值”
+                    发送短信建议内容：“账单从 $__ 涨到 $__，想判断值不值”
                   </p>
                 </div>
               </div>
@@ -726,49 +718,6 @@ export default function BillOptimizationClient() {
             </div>
           </div>
         </section>
-
-        {/* ================= 结尾 CTA 强化 ================= */}
-        <section className="py-12 md:py-16 bg-gradient-to-b from-blue-600 to-blue-700 text-white">
-          <div className="max-w-5xl mx-auto px-5 text-center">
-            <h2 className="text-2xl md:text-3xl font-black mb-4">
-              账单涨价不是你的问题，但可以被解决
-            </h2>
-            <p className="text-lg md:text-xl mb-8 opacity-90">
-              现在就提交账单，看看还能不能降
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button
-                onClick={() => fileInputRef.current?.click()}
-                className="w-full sm:w-auto px-8 py-4 bg-white text-blue-600 font-black text-lg rounded-2xl shadow-lg hover:bg-slate-100 transition-all active:scale-[0.99]"
-              >
-                👉 免费检查我的账单
-              </button>
-              <button
-                onClick={() => setWechatOpen(true)}
-                className="w-full sm:w-auto px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-white font-black text-lg rounded-2xl shadow-lg transition-all active:scale-[0.99]"
-              >
-                👉 微信中文咨询
-              </button>
-            </div>
-          </div>
-        </section>
-
-        {/* ================= SEO 语义强化（页面底部） ================= */}
-        <section className="py-8 bg-white border-t border-slate-200">
-          <div className="max-w-5xl mx-auto px-5">
-            <div className="text-sm text-slate-500 leading-relaxed space-y-2">
-              <p>
-                宽带或手机账单突然变贵时，可以先检查优惠期限、设备费、附加服务和套餐变化，再结合地址、账户资格与实际使用需求判断是否调整套餐或更换运营商。
-                如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">美国鸿达电讯首页</Link>。
-                常见问题如<Link href="/internet/faq" className="text-blue-600 hover:text-blue-700 font-semibold underline">宽带账单为什么会突然涨价？</Link>和<Link href="/cellphone/faq/how-to-choose-us-cellphone-plan" className="text-blue-600 hover:text-blue-700 font-semibold underline">手机账单涨价后应该怎么办？</Link>都有详细解答。
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* ================= 门店信息区块 ================= */}
-        <StoreLocationSection onWeChatClick={() => setWechatOpen(true)} variant="compact" />
 
         {/* ================= FOOTER LINK ================= */}
         <div className="py-8 text-center border-t border-slate-200 bg-white">
