@@ -2,16 +2,16 @@ import type { Metadata } from 'next';
 import PriceHikeClient from './PriceHikeClient';
 
 export const metadata: Metadata = {
-  title: '美国宽带涨价应对指南｜如何通过账单诊断与换网来省钱',
+  title: '宽带优惠到期后为什么会涨价？原因与换网判断 | 美国鸿达电讯',
   description:
-    '分析美国常见宽带涨价原因（Xfinity、Spectrum、AT&T），提供账单检查、套餐调整与换网判断建议。具体价格和可选方案以地址、账户资格及运营商审核为准。',
+    '了解宽带促销价结束、标准月费恢复、AutoPay 折扣和设备费变化的判断方法，并比较现有服务与新方案的长期成本。',
   alternates: {
     canonical: 'https://oceanver.com/internet/price-hike',
   },
   openGraph: {
-    title: '美国宽带涨价应对指南｜如何通过账单诊断与换网来省钱',
+    title: '宽带优惠到期后为什么会涨价？原因与换网判断 | 美国鸿达电讯',
     description:
-      '分析美国常见宽带涨价原因，提供账单诊断、升级/换网建议。帮助用户控制上网费用。',
+      '检查促销期限、账单折扣、基础月费和一次性费用，再判断是否需要调整宽带方案。',
     url: 'https://oceanver.com/internet/price-hike',
     siteName: '美国鸿达电讯',
     locale: 'zh_CN',

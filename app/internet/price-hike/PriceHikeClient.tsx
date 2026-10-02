@@ -7,7 +7,6 @@ import Image from 'next/image';
 import PriceHikeServiceSchema from '@/app/components/schema/PriceHikeServiceSchema';
 
 import {
-  AlertTriangle,
   TrendingUp,
   MessageCircle,
   Zap,
@@ -88,20 +87,14 @@ export default function PriceHikeClient() {
 
         {/* Hero */}
         <section className="py-12 bg-slate-50 text-center px-6">
-          <div className="inline-flex gap-2 bg-red-100 text-red-700 px-4 py-1 rounded-full text-xs font-bold mb-6">
-            <AlertTriangle size={14} />
-            多数宽带用户在 12–24 个月后会被涨价
-          </div>
+          <p className="mb-5 text-sm font-bold tracking-wide text-blue-700">宽带账单变化判断指南</p>
 
           <h1 className="text-3xl md:text-5xl font-black mb-4">
-            美国宽带账单涨价解决方案
+            宽带优惠到期后为什么会涨价？
           </h1>
 
           <p className="max-w-2xl mx-auto text-slate-600 mb-8">
-            Xfinity / Spectrum / AT&T 账单变贵，可能与优惠到期、折扣失效、设备费或套餐变化有关。
-            我们根据当前账单、地址、账户资格和使用需求，协助判断是否适合调整套餐或更换运营商。
-            如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">美国鸿达电讯首页</Link>。
-            常见问题如<Link href="/internet/faq" className="text-blue-600 hover:text-blue-700 font-semibold underline">宽带账单为什么会突然涨价？</Link>都有详细解答。
+            宽带促销价通常只在约定期限内适用；优惠结束后，账单中的基础月费可能恢复为当时适用的标准月费。AutoPay 折扣、设备费、speed tier、bundle 或运营商价格调整也可能改变总额。应先比较账单项目和促销条款，再判断是否需要调整。
           </p>
 
           <button
@@ -110,6 +103,51 @@ export default function PriceHikeClient() {
           >
             免费检查我的账单
           </button>
+        </section>
+
+        <section className="py-12 px-6">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-black mb-3">宽带优惠到期后，账单为什么会涨价？</h2>
+            <p className="max-w-3xl text-slate-700 leading-7 mb-6">
+              如果账单中的促销折扣结束，基础月费可能恢复到该账户当时适用的标准价格。账单总额也可能同时受到其他项目变化影响，因此需要逐项核对，不能只凭总额判断。
+            </p>
+            <div className="grid gap-4 md:grid-cols-2">
+              {[
+                ['促销价结束', '核对 promotion 的期限、折扣金额和结束日期；以账单及运营商条款为准。'],
+                ['标准月费恢复', '比较促销前后基础套餐费用，确认变化是否出现在同一服务项目。'],
+                ['AutoPay 折扣变化', '查看自动付款或 Paperless 折扣是否仍符合账户当前条件。'],
+                ['设备费变化', '核对 Modem / Router 租赁、设备促销或设备记录是否变化。'],
+                ['Speed tier / bundle 变化', '确认速度档位、组合服务和相应折扣是否被调整。'],
+                ['运营商价格调整', '查看运营商通知和账单基础服务费的变化日期，确认是否影响后续月份。'],
+              ].map(([title, detail]) => (
+                <article key={title} className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                  <h3 className="font-black mb-2">{title}</h3>
+                  <p className="leading-7 text-slate-700">{detail}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-12 px-6 bg-slate-50">
+          <div className="max-w-5xl mx-auto grid gap-8 md:grid-cols-2">
+            <article>
+              <h2 className="text-2xl font-black mb-4">怎么判断是不是优惠到期？</h2>
+              <ol className="list-decimal pl-5 space-y-3 leading-7 text-slate-700">
+                <li>对比本月和上月账单中的相同服务项目。</li>
+                <li>查找 promotion、discount 或 credit 行及对应金额。</li>
+                <li>查看是否有 expiration 或 promotional pricing 相关说明。</li>
+                <li>核对 base plan 是否恢复为标准月费。</li>
+                <li>排除 installation、activation 或 prorated charge 等一次性费用。</li>
+              </ol>
+              <p className="mt-4 leading-7 text-slate-700">如果账单没有标明促销期限或项目含义不清，记录变化的行项目和日期，再向运营商核实；不要仅凭总额推断原因。</p>
+            </article>
+            <article className="rounded-2xl border border-blue-200 bg-white p-6">
+              <h2 className="text-2xl font-black mb-4">优惠到期后一定要换运营商吗？</h2>
+              <p className="leading-7 text-slate-700">不一定。先比较当前标准价、现有服务质量、设备和安装成本，以及新运营商促销结束后的长期成本，再结合实际使用需求和账户条件决定是否换套餐或换运营商。促销价格不代表之后的长期费用。</p>
+              <p className="mt-4 leading-7 text-slate-700">如果仍不确定费用是否会持续，可查看<a href="/internet/faq" className="font-semibold text-blue-700 underline">宽带账单 FAQ</a>中的设备费、AutoPay 和一次性费用说明。</p>
+            </article>
+          </div>
         </section>
 
         {/* 三步 */}

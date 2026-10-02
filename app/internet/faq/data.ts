@@ -50,9 +50,31 @@ export const internetFAQData: InternetFAQEntry[] = [
     ],
   },
   {
-    question: '设备费、安装费合理吗？可以自带 Modem 吗？',
+    question: 'AutoPay 折扣为什么消失？',
     answer:
-      '设备费和安装费会因运营商、地址、设备及安装方式而异。部分运营商允许自带兼容 Modem 或 Router，但需要先核对官方兼容列表。办理前应确认含设备、税费和附加项目后的总月费，并询问是否提供自安装选项。',
+      'AutoPay 折扣可能因付款方式变化、银行账户或银行卡类型不再符合要求、Paperless Billing 关闭、账户状态或资格变化而消失。更新付款或电子账单设置后，折扣也可能要到下一个账期才显示。请核对账单和账户设置；具体资格、付款方式要求及生效时间以对应运营商规则和账户状态为准。',
+    relatedProviders: [
+      { name: 'Xfinity', href: '/internet/xfinity/faq' },
+      { name: 'Spectrum', href: '/internet/spectrum/faq' },
+      { name: 'AT&T Fiber', href: '/internet/att/fiber/faq' },
+      { name: 'Frontier', href: '/internet/frontier/faq' },
+    ],
+  },
+  {
+    question: '宽带设备费为什么增加？',
+    answer:
+      '宽带设备费可能来自 Modem 或 Router 租赁、新增 extender 或 gateway、equipment promotion 到期、设备退还尚未处理完成，或设备型号及方案发生变化。账单也可能列出一次性设备相关费用。请比较设备名称、收费类型和账期；如果设备已退还或项目来源不确定，可向运营商核对设备记录和费用是否会在下期重复。',
+    relatedProviders: [
+      { name: 'Xfinity', href: '/internet/xfinity/faq' },
+      { name: 'Spectrum', href: '/internet/spectrum/faq' },
+      { name: 'AT&T Fiber', href: '/internet/att/fiber/faq' },
+      { name: 'Frontier', href: '/internet/frontier/faq' },
+    ],
+  },
+  {
+    question: '一次性费用和长期涨价怎么区分？',
+    answer:
+      'Installation fee、activation fee、prorated charge 和 equipment one-time charge 可能只对应一次安装、开通、账期调整或设备事件；recurring monthly charge 则通常按月重复。先看收费项目是否标为 one-time 或 recurring，再对照下期账单确认同一项目是否再次出现；标注不清时应向运营商核实。',
     relatedProviders: [
       { name: 'Xfinity', href: '/internet/xfinity/faq' },
       { name: 'Spectrum', href: '/internet/spectrum/faq' },

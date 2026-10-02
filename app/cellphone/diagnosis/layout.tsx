@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
 export const metadata: Metadata = {
-  title: '美国手机套餐怎么选？1 分钟诊断适合你的方案 | 鸿达电信',
+  title: '手机 Trade-in 抵扣为什么消失？账单检查指南 | Oceanver',
   description:
-    '不知道选哪家美国手机运营商？通过 5 个问题，快速判断适合你的手机套餐类型。信号稳定、国际使用、预付费、商务套餐——找到最适合的方案。',
+    '了解手机 trade-in credit 可能延迟或停止显示的原因，以及如何检查促销名称、设备分期、线路资格和设备状态。具体结果需按账户与促销条款核实。',
   keywords: [
     '美国手机套餐',
     '手机套餐诊断',
@@ -28,11 +28,11 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://baymediastar.com/cellphone/diagnosis',
+    canonical: 'https://oceanver.com/cellphone/diagnosis',
   },
   openGraph: {
-    title: '美国手机套餐怎么选？1 分钟诊断适合你的方案',
-    description: '通过 5 个问题，快速判断适合你的手机套餐类型。',
+    title: '手机 Trade-in 抵扣为什么消失？账单检查指南 | Oceanver',
+    description: '检查手机 trade-in credit、设备分期、线路资格和促销状态。',
     type: 'website',
   },
 };

@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const reasons = [
   {
     title: '优惠期结束',
@@ -253,6 +255,15 @@ export default function BillOptimizationClient() {
             ))}
           </div>
         </section>
+
+        <nav aria-label="相关账单问题" className="rounded-2xl bg-white p-5 text-sm font-semibold text-blue-800 shadow-sm">
+          <h2 className="mb-3 text-base font-bold text-slate-900">继续查看相关问题</h2>
+          <div className="flex flex-wrap gap-x-5 gap-y-3">
+            <Link href="/internet/price-hike" className="underline underline-offset-4">宽带优惠到期与换网判断</Link>
+            <Link href="/internet/faq" className="underline underline-offset-4">AutoPay、设备费与一次性费用</Link>
+            <Link href="/cellphone/diagnosis" className="underline underline-offset-4">手机 trade-in credit 检查</Link>
+          </div>
+        </nav>
 
         <footer className="px-2 py-4 text-center text-sm leading-6 text-slate-500">
           <p>最后更新：2026年10月</p>

@@ -2,18 +2,18 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight, MessageCircle, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 
 // 诊断问题数据（请根据实际需求替换为Q1-Q5的具体内容）
 const questions = [
   {
     id: 'q1',
-    question: '你主要在哪个城市使用手机？',
+    question: '你通常在哪里使用手机？',
     options: [
-      { value: 'bay-area', label: '旧金山湾区（Fremont/San Jose/Milpitas）' },
-      { value: 'la', label: '洛杉矶地区' },
-      { value: 'ny', label: '纽约地区' },
-      { value: 'other', label: '其他城市' }
+      { value: 'urban', label: '城市或郊区' },
+      { value: 'rural', label: '乡村或覆盖较少的地区' },
+      { value: 'travel', label: '经常跨地区旅行' },
+      { value: 'unsure', label: '不确定' }
     ]
   },
   {
@@ -56,8 +56,24 @@ const questions = [
   }
 ];
 
+function TradeInCreditGuide() {
+  return (
+    <section className="mb-8 rounded-2xl border border-blue-200 bg-white p-6 md:p-8">
+      <h2 className="text-2xl font-black text-slate-900">手机 trade-in credit 为什么没了？</h2>
+      <p className="mt-3 leading-7 text-slate-700">Trade-in credit 暂时没有出现在账单上，不一定代表抵扣永久取消。抵扣可能尚未开始，也可能受账期延迟、线路或套餐资格、设备分期状态、旧设备评估或交付条件影响；账户变更也可能影响需要持续满足条件的促销。</p>
+      <h3 className="mt-5 font-bold text-slate-900">先检查什么</h3>
+      <ul className="mt-2 grid gap-2 text-slate-700 sm:grid-cols-2">
+        {['原促销名称', '设备分期状态', '对应线路', 'trade-in 状态', '最近几期账单变化', '是否更改套餐或线路'].map((item) => <li key={item} className="rounded-lg bg-slate-50 p-3">{item}</li>)}
+      </ul>
+      <p className="mt-5 leading-7 text-slate-700">是否还能恢复抵扣，需要根据具体账户、促销条款和设备状态核实。如果看不出抵扣期数或资格变化，请向运营商核对促销记录及设备评估结果；不要仅凭一张账单判断原因。</p>
+    </section>
+  );
+}
+
 // 诊断结果映射（根据答案组合推荐方案）
-function getRecommendation(answers: Record<string, string>) {
+type Recommendation = { type: string; reasons: string[]; providers: string[] };
+
+function getRecommendation(answers: Record<string, string>): Recommendation {
   const hasSSN = answers.q3 === 'yes';
   const needsInternational = answers.q4 === 'frequent' || answers.q4 === 'occasional';
   const priority = answers.q5;
@@ -127,7 +143,7 @@ export default function DiagnosisClient() {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [showResult, setShowResult] = useState(false);
-  const [recommendation, setRecommendation] = useState<any>(null);
+  const [recommendation, setRecommendation] = useState<Recommendation | null>(null);
 
   const handleAnswer = (questionId: string, value: string) => {
     const newAnswers = { ...answers, [questionId]: value };
@@ -157,6 +173,7 @@ export default function DiagnosisClient() {
     return (
       <main className="min-h-screen bg-slate-50">
         <div className="max-w-4xl mx-auto px-6 py-12">
+          <TradeInCreditGuide />
           {/* 返回链接 */}
           <div className="mb-6">
             <Link
@@ -232,6 +249,7 @@ export default function DiagnosisClient() {
   return (
     <main className="min-h-screen bg-slate-50">
       <div className="max-w-3xl mx-auto px-6 py-12">
+        <TradeInCreditGuide />
         {/* 返回链接 */}
         <div className="mb-6">
           <Link
@@ -254,7 +272,7 @@ export default function DiagnosisClient() {
               查看《美国手机套餐怎么选》新手指南
             </Link>
             ，再开始诊断更高效。
-            如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">鸿达电讯 Bay Media Star 首页</Link>。
+            如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">Oceanver 首页</Link>。
             常见问题如<Link href="/cellphone/faq/prepaid-vs-postpaid" className="text-blue-600 hover:text-blue-700 font-semibold underline">预付费和后付费手机卡有什么区别？</Link>都有详细解答。
           </p>
         </div>

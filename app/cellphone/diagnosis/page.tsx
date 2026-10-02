@@ -2,18 +2,15 @@ import type { Metadata } from 'next';
 import DiagnosisClient from './DiagnosisClient';
 
 export const metadata: Metadata = {
-  title: '账单诊断与省钱方案｜美国手机卡宽带优化服务',
+  title: '手机 Trade-in 抵扣为什么消失？账单检查指南 | Oceanver',
   description:
-    '在线提交手机卡或宽带账单，我们帮你对比运营商资费，找出省钱方案。适合湾区及全美中文用户的一对一账单诊断服务，支持无 SSN 办卡。',
-  alternates: {
-    canonical: 'https://baymediastar.com/cellphone/diagnosis',
-  },
+    '了解手机 trade-in credit 可能延迟或停止显示的原因，以及如何检查促销名称、设备分期、线路资格和设备状态。具体结果需按账户与促销条款核实。',
+  alternates: { canonical: 'https://oceanver.com/cellphone/diagnosis' },
   openGraph: {
-    title: '账单诊断与省钱方案｜美国手机卡宽带优化服务',
-    description:
-      '在线提交手机卡或宽带账单，我们帮你对比运营商资费，找出省钱方案。适合湾区及全美中文用户。',
-    url: 'https://baymediastar.com/cellphone/diagnosis',
-    siteName: '鸿达电讯 Bay Media Star',
+    title: '手机 Trade-in 抵扣为什么消失？账单检查指南 | Oceanver',
+    description: '检查手机 trade-in credit、设备分期、线路资格和促销状态。',
+    url: 'https://oceanver.com/cellphone/diagnosis',
+    siteName: 'Oceanver',
     locale: 'zh_CN',
     type: 'website',
   },
