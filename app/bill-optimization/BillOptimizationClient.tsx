@@ -1,734 +1,264 @@
-'use client'
+const reasons = [
+  {
+    title: '优惠期结束',
+    detail:
+      '查看账单上的 promotion、introductory offer 或折扣结束日期，并与上月同一项目比较。若基础月费恢复到标准价格，通常会持续影响后续账期。',
+  },
+  {
+    title: 'AutoPay / Paperless 折扣失效',
+    detail:
+      '检查 AutoPay 或 Paperless Billing 折扣是否从账单中消失，并确认付款方式、注册状态和账户资格。若状态没有恢复，之后的账单也可能继续少一项折扣。',
+  },
+  {
+    title: '设备费用变化',
+    detail:
+      '比较手机设备分期、modem 或 router 租用费，以及设备抵扣项目。设备付款、租用或抵扣变化可能持续多个账期，具体以账户明细为准。',
+  },
+  {
+    title: '附加服务增加',
+    detail:
+      '查找保险、国际功能、额外数据、网络服务或其他 add-on 是否新增或调整。先确认服务是否仍需要，再向运营商核实取消条件和生效时间。',
+  },
+  {
+    title: '套餐或线路变化',
+    detail:
+      '核对手机线路数量、套餐档位、宽带速度档位和 bundle 是否改变。升级可能提高经常性月费，也可能带来首月按比例计费。',
+  },
+  {
+    title: '一次性费用或 prorated charge',
+    detail:
+      '查看费用是否标为 activation、installation、upgrade、设备或按比例计费，并确认日期范围。一次性费用通常不会自动重复，但应在下一期账单确认。',
+  },
+  {
+    title: '运营商价格或税费调整',
+    detail:
+      '比较基础服务费、税费和监管费用的具体行项目，并留意运营商通知。若基础服务费本身变化，之后可能持续；税费变化则应按账单列项和适用地区核实。',
+  },
+]
 
-import { useState } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { useRef, useCallback } from 'react'
-import SmartBillAnalysis from './SmartBillAnalysis'
-import {
-  Upload,
-  MessageCircle,
-  Phone,
-  ChevronDown,
-} from 'lucide-react'
+const phoneItems = [
+  ['家庭线路数', '比较本期与上期线路数量、停用线路和新开线路，确认家庭成员或设备变更是否带来月费变化。'],
+  ['免费线与 line discount', '查看免费线路、线路折扣或多线折扣是否仍列在账单上，并核对适用期限和资格。'],
+  ['AutoPay / Paperless', '检查付款方式和电子账单状态，以及相应折扣是否仍出现在每条线路或账户总额中。'],
+  ['Trade-in credits', '比较设备抵扣金额、已抵扣期数和剩余期数；抵扣延迟或资格变化需要运营商查看账户记录。'],
+  ['设备分期', '核对每台设备的月供、剩余期数、升级或换机后的新分期，以及是否存在重复收费。'],
+  ['手机保险', '确认保险覆盖的设备、月费和是否有新增线路；取消资格与生效日期应向运营商确认。'],
+  ['国际功能与附加服务', '检查国际通话、漫游、热点或其他 add-on 的使用记录、月费和启用时间。'],
+  ['套餐升级', '比较套餐名称、数据或热点权益及月费；确认升级由谁发起、何时生效。'],
+  ['一次性 activation / upgrade fee', '核对费用日期和说明，并在下一期账单确认是否只收取一次。'],
+]
 
-const WECHAT_ID = '美国鸿达电讯'
+const internetItems = [
+  ['促销期结束', '对照开户或续约时的促销期限，检查基础月费是否恢复；确认新的常规价格及生效日期。'],
+  ['Modem / router 设备费', '比较设备租用费和自有设备抵扣，确认设备归属、租用状态及费用是否重复。'],
+  ['Unlimited data', '查看无限流量服务是否新增、移除或改价，并确认是否有数据用量相关费用。'],
+  ['Speed tier', '核对当前速度档位和套餐名称，判断是否曾升级或改回其他档位。'],
+  ['Bundle', '检查宽带与手机、电视或其他服务的组合折扣是否改变，尤其是其中一项服务取消或改档后。'],
+  ['AutoPay', '确认自动付款方式、注册状态和账单折扣是否符合该账户的当前条件。'],
+  ['安装费与一次性费用', '区分 installation、activation、technician visit 等费用和每月服务费，并查看收费对应的日期。'],
+  ['旧套餐切换', '查看套餐是否停止提供、迁移到新档位或被账户变更替代，并向运营商核实切换记录。'],
+  ['运营商价格调整', '对照通知和账单中的基础服务费变化，确认新价格何时开始、是否影响后续账期。'],
+]
 
-/* =========================
-   FAQPage Schema
-========================= */
-function FAQPageSchema() {
-  const faqs = [
-    {
-      '@type': 'Question',
-      name: '我是老用户，还能拿到优惠吗？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '是否有老用户优惠取决于运营商、套餐、地址和账户资格，需要结合当前账户确认。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '不想换号、不想停网，可以降价吗？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '很多情况可以，尤其是宽带与家庭手机计划。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '账单检查真的免费吗？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '是的，账单分析本身不收费。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '需要提供账号密码吗？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '不需要。只需账单截图即可。',
-      },
-    },
-  ]
+const faqs = [
+  {
+    q: '为什么手机或宽带账单会突然变贵？',
+    a: '常见原因包括促销或折扣结束、AutoPay 折扣失效、设备费用变化、附加服务增加、套餐或线路调整、一次性费用，以及运营商价格或税费变化。应先比较相邻账期的明细，找出具体变化项目。',
+  },
+  {
+    q: '优惠期结束怎么判断？',
+    a: '查看账单上的 promotion 或折扣名称、金额和适用期限，再与开户或续约时收到的价格说明核对。若优惠行消失、基础月费恢复，且后续账期继续按新价格收费，可能是优惠期结束；最终期限应向运营商确认。',
+  },
+  {
+    q: 'AutoPay 折扣消失怎么判断？',
+    a: '比较前后账单中的 AutoPay 或 Paperless 折扣行，检查付款方式和电子账单状态是否仍有效。账户资格或支付方式要求可能因运营商和套餐而异，应以账户记录为准。',
+  },
+  {
+    q: '一次性费用和长期涨价怎么区分？',
+    a: '查看费用名称和覆盖日期：安装、激活、升级或按比例费用可能只对应一个事件；基础月费、设备月供或持续服务费则可能重复。再比较下一期账单确认是否再次出现。',
+  },
+  {
+    q: '手机家庭套餐为什么会变贵？',
+    a: '线路数、线路折扣、免费线资格、设备分期、trade-in credits、保险、附加服务或套餐档位发生变化，都可能改变家庭总额。应同时检查账户总额和每条线路明细。',
+  },
+  {
+    q: '宽带促销期结束后应该怎么办？',
+    a: '先确认新的常规月费、促销结束日期和设备费用，再判断当前速度、数据和 bundle 是否仍符合实际需要。是否更换方案取决于地址可用性、账户资格、总成本和切换条件。',
+  },
+  {
+    q: '什么时候换运营商不划算？',
+    a: '当一次性费用、设备余额或抵扣损失、价格保证差异、安装成本和服务需求变化抵消了潜在月费差异时，换运营商未必划算。应比较完整周期成本和账户条件，而不是只看宣传价格。',
+  },
+  {
+    q: '看不懂账单怎么办？需要提供账号密码吗？',
+    a: '先对比本月和上月总额，再找新增或金额变化的行项目，以及消失的折扣、设备费、附加服务和一次性费用。不需要向任何人提供账户密码；若需要人工核实，请遮住账号、完整地址、电话号码、条码和其他敏感信息。',
+  },
+]
 
-  const schema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs,
-  }
-
+function CheckList({ items }: { items: string[] }) {
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
+    <ul className="grid gap-3 sm:grid-cols-2">
+      {items.map((item) => (
+        <li key={item} className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white p-4 text-slate-700">
+          <span aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 rounded border-2 border-blue-500" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
   )
 }
 
-/* =========================
-   微信弹窗
-========================= */
-const WeChatModal = ({
-  open,
-  onClose,
-}: {
-  open: boolean
-  onClose: () => void
-}) => {
-  if (!open) return null
-
+function ReviewList({ items }: { items: string[][] }) {
   return (
-    <div
-      className="fixed inset-0 z-[200] flex items-center justify-center bg-black/50"
-      onClick={onClose}
-    >
-      <div
-        className="bg-white rounded-3xl p-6 w-full max-w-sm text-center mx-4"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <h3 className="text-xl font-bold mb-2">微信中文顾问</h3>
-        <p className="text-sm text-slate-500 mb-4">扫码添加微信，发送账单截图</p>
-
-        <div>
-          <Image
-            src="/wechat-qr.jpg"
-            alt="微信二维码"
-            width={200}
-            height={200}
-            className="mx-auto mb-2 rounded-xl"
-          />
-          <p className="text-center text-sm text-slate-500">长按识别或扫码添加</p>
-        </div>
-
-        <div className="mt-4 flex items-center justify-between bg-slate-100 rounded-xl px-3 py-2">
-          <span className="font-mono font-bold">{WECHAT_ID}</span>
-          <button
-            onClick={() => {
-              navigator.clipboard.writeText(WECHAT_ID)
-            }}
-            className="text-blue-600 font-bold text-sm"
-          >
-            复制
-          </button>
-        </div>
-
-        <button onClick={onClose} className="mt-4 text-sm text-slate-500">
-          关闭
-        </button>
-      </div>
+    <div className="grid gap-4 md:grid-cols-2">
+      {items.map(([title, detail]) => (
+        <article key={title} className="rounded-2xl border border-slate-200 bg-white p-5">
+          <h3 className="font-bold text-slate-900">{title}</h3>
+          <p className="mt-2 leading-7 text-slate-700">{detail}</p>
+        </article>
+      ))}
     </div>
   )
 }
 
 export default function BillOptimizationClient() {
-  const [wechatOpen, setWechatOpen] = useState(false)
-  const [file, setFile] = useState<File | null>(null)
-  const [preview, setPreview] = useState<string | null>(null)
-  const [showAnalysis, setShowAnalysis] = useState(false)
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null)
-  const fileInputRef = useRef<HTMLInputElement>(null)
-
-  // 处理文件选择
-  const handleFileSelect = useCallback((selectedFile: File) => {
-    const validTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'application/pdf']
-    if (!validTypes.includes(selectedFile.type)) {
-      alert('请上传 JPG、PNG、WebP 图片或 PDF 文件')
-      return
-    }
-
-    const maxSize = 10 * 1024 * 1024
-    if (selectedFile.size > maxSize) {
-      alert('文件大小不能超过 10MB')
-      return
-    }
-
-    setFile(selectedFile)
-
-    if (selectedFile.type.startsWith('image/')) {
-      const reader = new FileReader()
-      reader.onloadend = () => {
-        setPreview(reader.result as string)
-      }
-      reader.readAsDataURL(selectedFile)
-    } else {
-      setPreview(null)
-    }
-
-    setShowAnalysis(true)
-    setTimeout(() => {
-      document.getElementById('bill-analysis-section')?.scrollIntoView({ behavior: 'smooth' })
-    }, 100)
-  }, [])
-
-  const handleDrop = useCallback(
-    (e: React.DragEvent<HTMLDivElement>) => {
-      e.preventDefault()
-      e.stopPropagation()
-      const droppedFile = e.dataTransfer.files[0]
-      if (droppedFile) {
-        handleFileSelect(droppedFile)
-      }
-    },
-    [handleFileSelect]
-  )
-
-  const handleDragOver = useCallback((e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault()
-    e.stopPropagation()
-  }, [])
-
-  const handleFileInputChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      const selectedFile = e.target.files?.[0]
-      if (selectedFile) {
-        handleFileSelect(selectedFile)
-      }
-    },
-    [handleFileSelect]
-  )
-
-  const faqs = [
-    {
-      q: '我是老用户，还能拿到优惠吗？',
-      a: '是否有老用户优惠取决于运营商、套餐、地址和账户资格，需要结合当前账户确认。',
-    },
-    {
-      q: '不想换号、不想停网，可以降价吗？',
-      a: '很多情况可以，尤其是宽带与家庭手机计划。',
-    },
-    {
-      q: '账单检查真的免费吗？',
-      a: '是的，账单分析本身不收费。',
-    },
-    {
-      q: '需要提供账号密码吗？',
-      a: '不需要。只需账单截图即可。',
-    },
-  ]
-
   return (
-    <>
-      <FAQPageSchema />
-      {wechatOpen && <WeChatModal open={wechatOpen} onClose={() => setWechatOpen(false)} />}
-
-      <main className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50">
-        {/* ================= 返回首页 ================= */}
-        <div className="max-w-5xl mx-auto px-5 pt-6 pb-2">
-          <Link
-            href="/"
-            className="inline-flex items-center text-sm text-slate-500 hover:text-blue-600 transition-colors"
-          >
-            ← 返回首页
-          </Link>
+    <main className="min-h-screen bg-slate-50 text-slate-900">
+      <header className="bg-gradient-to-b from-blue-50 to-slate-50 px-5 pb-12 pt-36 md:pb-16 md:pt-16">
+        <div className="mx-auto max-w-5xl">
+          <p className="mb-4 text-sm font-bold uppercase tracking-wide text-blue-700">BILL CHECK · 美国手机与家庭宽带</p>
+          <h1 className="max-w-4xl text-3xl font-black leading-tight tracking-tight md:text-5xl">
+            手机、宽带账单为什么变贵？
+          </h1>
+          <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-700 md:text-xl">
+            账单变贵不一定只有一个原因。常见情况包括优惠到期、AutoPay 折扣失效、设备费、附加服务、套餐调整、一次性费用或运营商价格变化。先找到账单中发生变化的项目，再判断是否需要处理。
+          </p>
+          <p className="mt-4 font-semibold text-blue-900">先判断原因，再决定是否换套餐或换运营商。</p>
+          <nav aria-label="账单检查入口" className="mt-8 grid gap-3 sm:grid-cols-3">
+            <a href="#mobile-bill" className="rounded-xl border border-blue-200 bg-white px-5 py-4 font-bold text-blue-800 shadow-sm hover:border-blue-400">手机账单</a>
+            <a href="#home-internet-bill" className="rounded-xl border border-blue-200 bg-white px-5 py-4 font-bold text-blue-800 shadow-sm hover:border-blue-400">家庭宽带账单</a>
+            <a href="#unknown-reason" className="rounded-xl border border-blue-200 bg-white px-5 py-4 font-bold text-blue-800 shadow-sm hover:border-blue-400">我不确定 / 看不懂账单</a>
+          </nav>
+          <nav aria-label="按涨价情况查看" className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-xs font-semibold text-blue-800 sm:text-sm">
+            <span className="text-slate-600">按情况查看：</span>
+            <a href="#bill-reasons" className="whitespace-nowrap underline underline-offset-4">突然变贵</a>
+            <a href="#gradual-change" className="whitespace-nowrap underline underline-offset-4">逐渐变贵</a>
+            <a href="#unknown-reason" className="whitespace-nowrap underline underline-offset-4">不确定原因</a>
+          </nav>
         </div>
+      </header>
 
-        {/* ================= HERO ================= */}
-        <section className="pt-4 md:pt-8 pb-8 md:pb-12">
-          <div className="max-w-5xl mx-auto px-5">
-            <div className="text-center space-y-6">
-              {/* H1 主标题 */}
-              <h1 className="text-3xl md:text-5xl font-black tracking-tight text-slate-900">
-                账单突然涨价了？我们帮你把月费降下来
-              </h1>
+      <div className="mx-auto max-w-5xl space-y-6 px-5 pb-28 pt-0 md:space-y-8 md:py-14">
+        <section id="bill-reasons" className="scroll-mt-6 rounded-3xl bg-white p-5 shadow-sm md:p-8">
+          <h2 className="text-2xl font-black md:text-3xl">账单突然变贵，先看这 7 个地方</h2>
+          <p className="mt-3 max-w-3xl leading-7 text-slate-700">先比较本月和上月的账单明细，定位金额、新增项目或折扣状态的变化。下面每种情况都要结合账户记录确认。</p>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {reasons.map((reason, index) => (
+              <article key={reason.title} className="scroll-mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                <h3 className="text-lg font-bold">{index + 1}. {reason.title}</h3>
+                <p className="mt-2 leading-7 text-slate-700">{reason.detail}</p>
+              </article>
+            ))}
+          </div>
+        </section>
 
-              {/* 副标题 */}
-              <p className="text-lg md:text-xl text-slate-700 leading-relaxed max-w-3xl mx-auto">
-                宽带 / 手机月费变贵，不一定要换运营商
-                <br />
-                我们帮你检查费用变化，并根据账户情况提供调整建议（免费检查）
-              </p>
+        <section id="mobile-bill" className="scroll-mt-6 rounded-3xl bg-white p-5 shadow-sm md:p-8">
+          <p className="text-sm font-bold text-blue-700">手机账单</p>
+          <h2 className="mt-2 text-2xl font-black md:text-3xl">手机账单变贵，重点检查什么？</h2>
+          <div className="mt-6"><ReviewList items={phoneItems} /></div>
+        </section>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-                <button
-                  onClick={() => setWechatOpen(true)}
-                  className="w-full sm:w-auto px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-lg rounded-2xl shadow-lg shadow-emerald-600/20 transition-all active:scale-[0.99]"
-                >
-                  👉 微信咨询账单降价
-                </button>
-              </div>
+        <section id="home-internet-bill" className="scroll-mt-6 rounded-3xl bg-white p-5 shadow-sm md:p-8">
+          <p className="text-sm font-bold text-blue-700">家庭宽带账单</p>
+          <h2 className="mt-2 text-2xl font-black md:text-3xl">家庭宽带账单变贵，重点检查什么？</h2>
+          <div className="mt-6"><ReviewList items={internetItems} /></div>
+        </section>
 
+        <section id="unknown-reason" className="scroll-mt-6 rounded-3xl border border-blue-200 bg-blue-50 p-5 md:p-8">
+          <p className="text-sm font-bold text-blue-700">不知道 / 不确定 / 看不懂账单</p>
+          <h2 className="mt-2 text-2xl font-black md:text-3xl">完全看不懂账单？按这个顺序查</h2>
+          <ol className="mt-6 grid gap-3 sm:grid-cols-2">
+            {[
+              '记下本月账单总额和账期。',
+              '找出上月总额，比较总额相差多少。',
+              '检查新增的收费项目，以及同名项目是否变贵。',
+              '查找 discount、promotion 或 credit 是否减少或消失。',
+              '检查 equipment、add-on、安装费或其他一次性费用。',
+              '仍不确定时，记录项目名称和收费日期，再向运营商核实。',
+            ].map((item, index) => (
+              <li key={item} className="flex gap-3 rounded-xl bg-white p-4 leading-7 text-slate-700">
+                <span className="font-black text-blue-700">{index + 1}.</span><span>{item}</span>
+              </li>
+            ))}
+          </ol>
+          <p id="gradual-change" className="mt-5 leading-7 text-slate-700">如果金额是逐月缓慢增加，逐期比较基础月费、设备分期、附加服务和折扣行；如果只在某一期突然变化，优先确认新增项目、优惠结束日期和一次性收费。</p>
+        </section>
+
+        <section className="grid gap-6 md:grid-cols-2">
+          <article className="rounded-3xl border border-blue-200 bg-white p-5 md:p-7">
+            <h2 className="text-xl font-black md:text-2xl">哪些情况值得进一步处理？</h2>
+            <ul className="mt-4 list-disc space-y-2 pl-5 leading-7 text-slate-700">
+              <li>账单显示优惠明确到期，后续常规价格与原预算差异较大。</li>
+              <li>出现不需要的附加服务，或设备月费持续增加。</li>
+              <li>实际使用需求改变，当前线路数、速度档位或套餐权益不再合适。</li>
+              <li>折扣或 trade-in credit 与账户记录不一致。</li>
+              <li>同一地址存在其他可选方案，且完整周期成本值得比较。</li>
+            </ul>
+          </article>
+          <article className="rounded-3xl border border-slate-200 bg-white p-5 md:p-7">
+            <h2 className="text-xl font-black md:text-2xl">哪些情况可以先确认，不必急着换？</h2>
+            <ul className="mt-4 list-disc space-y-2 pl-5 leading-7 text-slate-700">
+              <li>只出现一次的安装、激活或升级费用。</li>
+              <li>账期中途变更产生的 prorated charge。</li>
+              <li>刚换套餐后的首月费用或账期衔接调整。</li>
+              <li>小幅税费变化，且基础服务费没有改变。</li>
+              <li>已确认只收一次的设备费用；仍应在下一期账单确认没有重复。</li>
+            </ul>
+            <p className="mt-4 rounded-xl bg-slate-50 p-4 leading-7 text-slate-700">先确认费用是否会重复出现，再判断是否需要调整套餐或运营商。</p>
+          </article>
+        </section>
+
+        <section id="self-check" className="scroll-mt-6 rounded-3xl bg-white p-5 shadow-sm md:p-8">
+          <h2 className="text-2xl font-black md:text-3xl">账单自查清单</h2>
+          <div className="mt-6 grid gap-6 lg:grid-cols-2">
+            <div>
+              <h3 className="mb-3 text-lg font-bold">手机</h3>
+              <CheckList items={['月费与账期', '线路数量', '折扣与 promotion', '设备分期', 'Trade-in credit', '手机保险', '附加服务', '税费与其他费用']} />
+            </div>
+            <div>
+              <h3 className="mb-3 text-lg font-bold">家庭宽带</h3>
+              <CheckList items={['基础套餐', '促销与折扣', '设备费用', '速度档位', '附加服务', 'Bundle 折扣', '一次性费用', '税费与其他费用']} />
             </div>
           </div>
         </section>
 
-        {/* ================= 行动触发语 ================= */}
-        <section className="py-6 bg-white">
-          <div className="max-w-5xl mx-auto px-5">
-            <p className="text-center text-lg md:text-xl text-slate-800 font-semibold leading-relaxed">
-              只要把账单发来，我们会直接告诉你：
-              <br />
-              费用为什么变化、有哪些可选方案、是否需要调整。
-            </p>
+        <section id="manual-review" className="scroll-mt-6 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:p-8">
+          <h2 className="text-2xl font-black md:text-3xl">什么情况需要人工核实？</h2>
+          <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+            {['看不懂折扣或费用名称', '需要确认账户资格或 promotion eligibility', '需要核实地址可用方案', 'Trade-in credit 金额或期数异常', '设备归还状态或设备费有疑问', '无法确认费用来源或是否会重复'].map((item) => (
+              <li key={item} className="rounded-xl bg-slate-50 p-4 leading-7 text-slate-700">{item}</li>
+            ))}
+          </ul>
+          <p className="mt-5 rounded-xl border border-amber-200 bg-amber-50 p-4 leading-7 text-slate-800">不要公开上传完整账单。如需发送截图，请遮住账户号码、完整地址、电话号码、条码和其他敏感信息。不要提供账户密码。</p>
+        </section>
+
+        <section id="faq" className="scroll-mt-6 rounded-3xl bg-white p-5 shadow-sm md:p-8">
+          <h2 className="text-2xl font-black md:text-3xl">常见问题</h2>
+          <div className="mt-5 divide-y divide-slate-200">
+            {faqs.map((faq) => (
+              <article key={faq.q} className="py-5 first:pt-0 last:pb-0">
+                <h3 className="text-lg font-bold">{faq.q}</h3>
+                <p className="mt-2 leading-7 text-slate-700">{faq.a}</p>
+              </article>
+            ))}
           </div>
         </section>
 
-        {/* ================= 三卡模块 ================= */}
-        <section className="py-8 md:py-12 bg-slate-50">
-          <div className="max-w-5xl mx-auto px-5">
-            {/* 隐藏的文件输入 */}
-            <input
-              ref={fileInputRef}
-              type="file"
-              accept="image/jpeg,image/jpg,image/png,image/webp,application/pdf"
-              onChange={handleFileInputChange}
-              className="hidden"
-            />
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {/* 卡片1：上传账单截图 */}
-              <div className="rounded-2xl bg-white border border-slate-200 shadow-sm p-5">
-                <div className="flex items-center gap-2 font-black text-slate-900 mb-3">
-                  <Upload className="h-5 w-5 text-emerald-600" />
-                  <span>📸 上传账单截图（推荐）</span>
-                </div>
-                <p className="text-sm text-slate-600 mb-4 leading-relaxed">
-                  我们只看关键项目，尽量不占你时间；不保存隐私信息。
-                </p>
-                <div
-                  onDrop={handleDrop}
-                  onDragOver={handleDragOver}
-                  onClick={() => fileInputRef.current?.click()}
-                  className="cursor-pointer"
-                >
-                  <div className="rounded-xl border border-slate-200 bg-white p-3 flex justify-center">
-                    <Image
-                      src="/wechat-qr.jpg"
-                      alt="微信二维码"
-                      width={140}
-                      height={140}
-                      className="rounded-xl"
-                    />
-                  </div>
-                  <p className="mt-3 text-center text-xs text-slate-500">
-                    微信里直接发：账单截图 + “想判断值不值”
-                  </p>
-                </div>
-              </div>
-
-              {/* 卡片2：电话或短信说明情况 */}
-              <div className="rounded-2xl bg-white border border-slate-200 shadow-sm p-5">
-                <div className="flex items-center gap-2 font-black text-slate-900 mb-3">
-                  <Phone className="h-5 w-5 text-blue-600" />
-                  <span>📞 电话或短信说明情况</span>
-                </div>
-                <p className="text-sm text-slate-600 mb-4 leading-relaxed">
-                  适合不方便截图的用户：你描述关键数字，我们也能快速判断方向。
-                </p>
-                <div className="space-y-3">
-                  <a
-                    href="tel:15108496191"
-                    className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 text-white font-black py-3 shadow-lg shadow-blue-600/20 active:scale-[0.99] transition"
-                  >
-                    <Phone className="h-5 w-5" />
-                    电话咨询
-                  </a>
-                  <a
-                    href="sms:15108496191"
-                    className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 text-white font-black py-3 shadow-lg shadow-emerald-600/20 active:scale-[0.99] transition"
-                  >
-                    <MessageCircle className="h-5 w-5" />
-                    发短信
-                  </a>
-                  <p className="text-xs text-slate-500 text-center">
-                    发送短信建议内容：“账单从 $__ 涨到 $__，想判断值不值”
-                  </p>
-                </div>
-              </div>
-
-              {/* 卡片3：微信中文沟通 */}
-              <div className="rounded-2xl bg-white border border-slate-200 shadow-sm p-5">
-                <div className="flex items-center gap-2 font-black text-slate-900 mb-3">
-                  <MessageCircle className="h-5 w-5 text-emerald-600" />
-                  <span>💬 微信中文沟通</span>
-                </div>
-                <p className="text-sm text-slate-600 mb-4 leading-relaxed">
-                  全程中文，不需要反复解释。我们会直接告诉你结论：值 / 不值 / 哪一项在坑你。
-                </p>
-                <div className="rounded-xl bg-slate-50 border border-slate-200 p-4 text-sm text-slate-700 leading-relaxed mb-4">
-                  <div className="font-black text-slate-900 mb-2">你发我这 3 个信息就够：</div>
-                  <ul className="space-y-1">
-                    <li>1) 运营商（Xfinity / AT&T / Spectrum…）</li>
-                    <li>2) 现在月费大概多少（$__）</li>
-                    <li>3) 最近一次涨价发生在什么时候</li>
-                  </ul>
-                </div>
-                <button
-                  onClick={() => setWechatOpen(true)}
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black py-3 shadow-lg shadow-emerald-600/20 transition-all active:scale-[0.99]"
-                >
-                  <MessageCircle className="h-5 w-5" />
-                  打开微信二维码
-                </button>
-                <p className="mt-3 text-center text-xs text-slate-500">
-                  （你也可以直接发账单截图：最省事）
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ================= 智能账单分析组件 ================= */}
-        {showAnalysis && file && (
-          <section id="bill-analysis-section" className="py-8 md:py-12 bg-gradient-to-b from-white to-slate-50">
-            <div className="max-w-5xl mx-auto px-5">
-              <SmartBillAnalysis initialFile={file} initialPreview={preview} />
-            </div>
-          </section>
-        )}
-
-        {/* ================= 为什么你的账单会涨价？ ================= */}
-        <section className="py-12 md:py-16 bg-white">
-          <div className="max-w-5xl mx-auto px-5">
-            <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-6 text-center">
-              为什么你的账单会涨价？
-            </h2>
-            <p className="text-lg text-slate-700 mb-8 text-center max-w-3xl mx-auto">
-              很多用户的账单上涨，并不是用多了，而是因为以下原因：
-            </p>
-
-            <div className="space-y-4 max-w-3xl mx-auto">
-              <div className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-200">
-                <span className="text-blue-600 font-black text-lg">•</span>
-                <p className="text-slate-700">新用户优惠到期，价格自动恢复原价</p>
-              </div>
-              <div className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-200">
-                <span className="text-blue-600 font-black text-lg">•</span>
-                <p className="text-slate-700">老用户没有被系统分配到最新优惠</p>
-              </div>
-              <div className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-200">
-                <span className="text-blue-600 font-black text-lg">•</span>
-                <p className="text-slate-700">套餐被悄悄调整，出现额外费用</p>
-              </div>
-              <div className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-200">
-                <span className="text-blue-600 font-black text-lg">•</span>
-                <p className="text-slate-700">合约到期但未重新谈条件</p>
-              </div>
-              <div className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-200">
-                <span className="text-blue-600 font-black text-lg">•</span>
-                <p className="text-slate-700">不知道可以和运营商争取保留优惠（Retention）</p>
-              </div>
-            </div>
-
-            <p className="text-center text-slate-800 font-semibold mt-8 text-lg">
-              账单是否继续变化，取决于优惠期限、套餐、设备和附加服务等具体情况。
-            </p>
-          </div>
-        </section>
-
-        {/* ================= 账单涨价后，你其实还有这些选择 ================= */}
-        <section className="py-12 md:py-16 bg-slate-50">
-          <div className="max-w-5xl mx-auto px-5">
-            <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-6 text-center">
-              账单涨价后，你其实还有这些选择
-            </h2>
-            <p className="text-lg text-slate-700 mb-8 text-center max-w-3xl mx-auto">
-              很多人以为只有“忍着”或“换运营商”，其实并不是。
-            </p>
-
-            <div className="space-y-4 max-w-3xl mx-auto">
-              <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
-                <span className="text-emerald-600 font-black text-lg">•</span>
-                <p className="text-slate-700">争取老用户续约优惠</p>
-              </div>
-              <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
-                <span className="text-emerald-600 font-black text-lg">•</span>
-                <p className="text-slate-700">调整更适合的套餐结构</p>
-              </div>
-              <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
-                <span className="text-emerald-600 font-black text-lg">•</span>
-                <p className="text-slate-700">去除不必要的附加费用</p>
-              </div>
-              <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
-                <span className="text-emerald-600 font-black text-lg">•</span>
-                <p className="text-slate-700">重新谈判月费与合约条件</p>
-              </div>
-              <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
-                <span className="text-emerald-600 font-black text-lg">•</span>
-                <p className="text-slate-700">检查不换号、不停网时是否有可调整的方案</p>
-              </div>
-            </div>
-
-            <p className="text-center text-slate-800 font-semibold mt-8 text-lg">
-              是否需要换运营商，要在账单分析后才能判断。
-            </p>
-          </div>
-        </section>
-
-        {/* ================= 我们是如何帮你降低账单的？ ================= */}
-        <section className="py-12 md:py-16 bg-white">
-          <div className="max-w-5xl mx-auto px-5">
-            <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-6 text-center">
-              我们是如何帮你检查账单的？
-            </h2>
-            <p className="text-lg text-slate-700 mb-8 text-center max-w-3xl mx-auto">
-              流程简单透明：
-            </p>
-
-            <div className="space-y-6 max-w-3xl mx-auto">
-              <div className="flex items-start gap-4 p-6 bg-blue-50 rounded-xl border border-blue-200">
-                <span className="text-2xl font-black text-blue-600">1️⃣</span>
-                <p className="text-slate-700 text-lg">你提交当前账单（拍照或截图）</p>
-              </div>
-              <div className="flex items-start gap-4 p-6 bg-blue-50 rounded-xl border border-blue-200">
-                <span className="text-2xl font-black text-blue-600">2️⃣</span>
-                <p className="text-slate-700 text-lg">我们分析涨价原因与可操作空间</p>
-              </div>
-              <div className="flex items-start gap-4 p-6 bg-blue-50 rounded-xl border border-blue-200">
-                <span className="text-2xl font-black text-blue-600">3️⃣</span>
-                <p className="text-slate-700 text-lg">根据具体账户提供套餐调整建议</p>
-              </div>
-              <div className="flex items-start gap-4 p-6 bg-blue-50 rounded-xl border border-blue-200">
-                <span className="text-2xl font-black text-blue-600">4️⃣</span>
-                <p className="text-slate-700 text-lg">如需操作，我们可协助沟通或指导步骤</p>
-              </div>
-            </div>
-
-            <p className="text-center text-slate-800 font-semibold mt-8 text-lg">
-              整个过程支持中文说明，不需要你自己和英文客服反复沟通。
-            </p>
-          </div>
-        </section>
-
-        {/* ================= 真实账单优化案例 ================= */}
-        <section className="py-12 md:py-16 bg-slate-50">
-          <div className="max-w-5xl mx-auto px-5">
-            <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-6 text-center">
-              真实账单优化案例
-            </h2>
-            <p className="text-lg text-slate-700 mb-8 text-center max-w-3xl mx-auto">
-              以下为真实客户情况（金额为示例结构）：
-            </p>
-
-            <div className="space-y-4 max-w-3xl mx-auto">
-              <div className="p-6 bg-white rounded-xl border border-slate-200 shadow-sm">
-                <p className="text-slate-700">
-                  <span className="font-black text-slate-900">宽带账单：</span>检查优惠到期、设备费和附加服务变化
-                </p>
-              </div>
-              <div className="p-6 bg-white rounded-xl border border-slate-200 shadow-sm">
-                <p className="text-slate-700">
-                  <span className="font-black text-slate-900">套餐比较：</span>结合地址覆盖和实际用量判断是否需要调整
-                </p>
-              </div>
-              <div className="p-6 bg-white rounded-xl border border-slate-200 shadow-sm">
-                <p className="text-slate-700">
-                  <span className="font-black text-slate-900">手机家庭计划：</span>检查线路数量、设备分期和附加服务
-                </p>
-              </div>
-            </div>
-
-            <p className="text-center text-slate-800 font-semibold mt-8 text-lg">
-              是否能降、能降多少，取决于你的账单结构，但不看账单无法判断。
-            </p>
-          </div>
-        </section>
-
-        {/* ================= 常见问题（FAQ） ================= */}
-        <section className="py-12 md:py-16 bg-white">
-          <div className="max-w-3xl mx-auto px-5">
-            <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-8 text-center">
-              常见问题（FAQ）
-            </h2>
-
-            <div className="space-y-3">
-              {faqs.map((item, idx) => {
-                const isOpen = openFaqIndex === idx
-                return (
-                  <button
-                    key={idx}
-                    type="button"
-                    onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
-                    className="w-full text-left rounded-2xl bg-slate-50 border border-slate-200 shadow-sm p-5 hover:bg-slate-100 transition-colors"
-                  >
-                    <div className="flex items-center justify-between gap-3">
-                      <div className="font-black text-slate-900 text-lg">
-                        <span className="text-blue-600">Q：</span> {item.q}
-                      </div>
-                      <ChevronDown
-                        className={`h-5 w-5 text-slate-500 transition ${isOpen ? 'rotate-180' : ''}`}
-                      />
-                    </div>
-                    {isOpen && (
-                      <div className="mt-4 text-slate-700 leading-relaxed">
-                        <span className="text-emerald-600 font-semibold">A：</span> {item.a}
-                      </div>
-                    )}
-                  </button>
-                )
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* ================= 账单涨价深度解析 ================= */}
-        <section className="py-12 md:py-16 bg-white">
-          <div className="max-w-4xl mx-auto px-5">
-            <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-8 text-center">
-              账单涨价深度解析
-            </h2>
-
-            {/* 问题11：美国手机账单“连年上涨”的底层逻辑 */}
-            <div className="mb-12 bg-slate-50 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                美国手机账单“连年上涨”的底层逻辑：Promotion 结束后如何重新判断方案？
-              </h3>
-              <div className="space-y-4 text-slate-700 leading-relaxed">
-                <p>
-                  <strong>结论：</strong>美国手机账单连年上涨的主要原因是促销期（Promotion）结束后价格自动恢复原价，运营商通常不会主动提醒用户。用户可以通过续约、换套餐、或转网来重新锁定低价。
-                </p>
-                <p>
-                  <strong>原因解释：</strong>部分套餐包含有期限的优惠。优惠结束后，账单可能恢复为当时适用的标准价格；具体期限和费用变化以账单及运营商条款为准。
-                </p>
-                <p>
-                  <strong>实操建议：</strong>留意账单中的优惠截止日期，并向运营商确认续约、换套餐或转网条件。可选价格和资格以地址、账户及运营商审核为准。
-                </p>
-                <p>
-                  <strong>适用人群：</strong>使用手机套餐超过 12 个月的用户，发现账单逐年上涨的用户。
-                </p>
-              </div>
-            </div>
-
-            {/* 问题12：如何看懂美国宽带账单 */}
-            <div className="mb-12 bg-slate-50 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                如何看懂美国宽带账单？解析隐藏的建设费、租机费及税费陷阱
-              </h3>
-              <div className="space-y-4 text-slate-700 leading-relaxed">
-                <p>
-                  <strong>结论：</strong>美国宽带账单通常包含基础套餐费、设备租用费、税费、以及各种隐藏费用。了解这些费用结构有助于识别不必要的费用，降低总成本。
-                </p>
-                <p>
-                  <strong>原因解释：</strong>宽带账单通常包含以下费用：
-                </p>
-                <ul className="list-disc list-inside space-y-2 ml-4">
-                  <li><strong>基础套餐费：</strong>运营商宣传的价格，通常是促销价</li>
-                  <li><strong>设备租用费：</strong>路由器、调制解调器租用费，通常 $10-$15/月</li>
-                  <li><strong>建设费：</strong>新安装或移机费用，可能一次性或分期收取</li>
-                  <li><strong>税费：</strong>联邦税、州税、地方税等，通常 5%-15%</li>
-                  <li><strong>其他费用：</strong>如“网络增强费”“技术支持费”等账单项目</li>
-                </ul>
-                <p>
-                  <strong>实操建议：</strong>仔细阅读账单明细，识别每项费用。如果发现不必要的费用（如不需要的设备租用费），联系运营商取消。考虑自购路由器，避免设备租用费。
-                </p>
-                <p>
-                  <strong>适用人群：</strong>希望降低宽带总成本的用户，发现账单包含不明费用的用户。
-                </p>
-              </div>
-            </div>
-
-            {/* 问题5：从 Xfinity 转网到 AT&T Fiber */}
-            <div className="mb-12 bg-slate-50 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                在加州从 Xfinity 转网到 AT&T Fiber，如何保留原手机号并确保宽带无缝衔接？
-              </h3>
-              <div className="space-y-4 text-slate-700 leading-relaxed">
-                <p>
-                  <strong>结论：</strong>从 Xfinity 转网到 AT&T Fiber 时，需要提前准备账户信息、协调安装时间、确保转网过程中服务不中断。如果同时有手机号需要转网，需要分别处理宽带和手机转网。
-                </p>
-                <p>
-                  <strong>原因解释：</strong>转网过程涉及两个运营商之间的协调，需要确保：
-                </p>
-                <ul className="list-disc list-inside space-y-2 ml-4">
-                  <li>新运营商（AT&T）可以安装服务</li>
-                  <li>旧运营商（Xfinity）账户状态正常，可以关闭</li>
-                  <li>转网时间协调，避免服务中断</li>
-                  <li>手机号转网需要单独处理，与宽带转网分开</li>
-                </ul>
-                <p>
-                  <strong>实操建议：</strong>
-                </p>
-                <ul className="list-disc list-inside space-y-2 ml-4">
-                  <li>提前 2-4 周联系 AT&T 确认安装时间</li>
-                  <li>准备 Xfinity 账户号码、PIN 码、账单</li>
-                  <li>协调安装时间，确保新服务开通后再关闭旧服务</li>
-                  <li>如果同时转手机号，需要提供手机账户信息</li>
-                  <li>转网完成后，确认旧账户已关闭，避免继续收费</li>
-                </ul>
-                <p>
-                  <strong>适用人群：</strong>准备从 Xfinity 转网到 AT&T Fiber 的用户，需要同时转手机号的用户。
-                </p>
-              </div>
-            </div>
-
-            {/* 问题20：面对账单暴涨的议价技巧 */}
-            <div className="mb-12 bg-slate-50 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                面对账单上涨，除了提出“销户”（Cancellation），还可以怎样沟通？
-              </h3>
-              <div className="space-y-4 text-slate-700 leading-relaxed">
-                <p>
-                  <strong>结论：</strong>面对账单暴涨，除了威胁销户，还可以通过了解促销信息、强调长期客户价值、要求保留部门（Retention Department）、对比竞争对手价格等方式进行议价。关键是准备充分、态度友好、有理有据。
-                </p>
-                <p>
-                  <strong>原因解释：</strong>威胁销户不一定有效，因为：
-                </p>
-                <ul className="list-disc list-inside space-y-2 ml-4">
-                  <li>部分运营商可能不会因为威胁销户而提供优惠</li>
-                  <li>更好的方法是强调长期客户价值、了解促销信息</li>
-                  <li>要求保留部门，通常有更多权限提供优惠</li>
-                </ul>
-                <p>
-                  <strong>实操建议：</strong>
-                </p>
-                <ul className="list-disc list-inside space-y-2 ml-4">
-                  <li><strong>了解促销信息：</strong>在议价前，了解运营商当前的促销活动，查看竞争对手的价格</li>
-                  <li><strong>强调长期客户价值：</strong>强调使用年限、按时付费记录、多线价值</li>
-                  <li><strong>要求保留部门：</strong>直接要求转接保留部门（Retention Department），有更多权限提供优惠</li>
-                  <li><strong>对比竞争对手价格：</strong>准备竞争对手的价格信息，说明“其他运营商提供了可比较的套餐”</li>
-                  <li><strong>时机重要：</strong>在优惠或合约到期前确认后续价格和可选方案</li>
-                </ul>
-                <p>
-                  <strong>适用人群：</strong>账单突然上涨的用户，长期客户希望获得老用户优惠的用户。
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ================= 适合哪些人使用这项服务？ ================= */}
-        <section className="py-12 md:py-16 bg-slate-50">
-          <div className="max-w-5xl mx-auto px-5">
-            <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-6 text-center">
-              适合哪些人使用这项服务？
-            </h2>
-
-            <div className="space-y-4 max-w-3xl mx-auto">
-              <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
-                <span className="text-blue-600 font-black text-lg">•</span>
-                <p className="text-slate-700">最近 1–3 个月账单突然上涨</p>
-              </div>
-              <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
-                <span className="text-blue-600 font-black text-lg">•</span>
-                <p className="text-slate-700">已使用同一运营商一年以上</p>
-              </div>
-              <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
-                <span className="text-blue-600 font-black text-lg">•</span>
-                <p className="text-slate-700">不确定自己是否还在优惠期</p>
-              </div>
-              <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
-                <span className="text-blue-600 font-black text-lg">•</span>
-                <p className="text-slate-700">不想自己和英文客服反复沟通</p>
-              </div>
-              <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
-                <span className="text-blue-600 font-black text-lg">•</span>
-                <p className="text-slate-700">希望有人协助判断是否需要换套餐或运营商</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ================= FOOTER LINK ================= */}
-        <div className="py-8 text-center border-t border-slate-200 bg-white">
-          <Link href="/" className="text-sm text-blue-600 hover:underline font-semibold">
-            查看美国鸿达电讯完整服务 →
-          </Link>
-        </div>
-
-        {/* Mobile padding for bottom bars */}
-        <div className="h-16 md:h-0" />
-      </main>
-    </>
+        <footer className="px-2 py-4 text-center text-sm leading-6 text-slate-500">
+          <p>最后更新：2026年10月</p>
+          <p>内容由美国鸿达电讯团队整理与审核</p>
+        </footer>
+      </div>
+    </main>
   )
 }

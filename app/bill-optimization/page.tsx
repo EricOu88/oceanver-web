@@ -1,17 +1,19 @@
 import type { Metadata } from 'next'
 import BillOptimizationClient from './BillOptimizationClient'
 
+const title = '手机、宽带账单为什么变贵？账单涨价判断指南｜美国鸿达电讯'
+const description =
+  '美国手机和家庭宽带账单变贵，常见原因包括优惠到期、AutoPay 折扣失效、设备费、附加服务、套餐调整和一次性费用。先判断费用变化原因，再决定是否需要处理。'
+
 export const metadata: Metadata = {
-  title: '账单涨价怎么办？宽带 / 手机月费变贵的解决方案｜美国鸿达电讯',
-  description:
-    '美国鸿达电讯帮助中文用户检查手机与宽带账单中的费用变化，判断优惠是否到期，并根据当前账单、地址、账户资格和使用需求提供套餐调整或转网建议。',
+  title,
+  description,
   alternates: {
     canonical: 'https://oceanver.com/bill-optimization',
   },
   openGraph: {
-    title: '账单涨价怎么办？宽带 / 手机月费变贵的解决方案｜美国鸿达电讯',
-    description:
-      '美国鸿达电讯帮助中文用户检查手机与宽带账单中的费用变化，并根据具体情况提供套餐调整或转网建议。',
+    title,
+    description,
     url: 'https://oceanver.com/bill-optimization',
     siteName: '美国鸿达电讯',
     locale: 'zh_CN',

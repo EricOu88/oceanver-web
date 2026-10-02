@@ -7,7 +7,7 @@ import './globals.css'
 import ServiceSchemas from '@/app/components/seo/ServiceSchemas'
 import MobileContactBarClientOnly from '@/app/components/contact/MobileContactBarClientOnly'
 // import AIQuestionWidget from '@/app/components/AIQuestionWidget' // 暂时注释，使用 SafeAIQuestionWidget
-import SafeAIQuestionWidgetWrapper from '@/app/components/SafeAIQuestionWidgetWrapper'
+// import SafeAIQuestionWidgetWrapper from '@/app/components/SafeAIQuestionWidgetWrapper' // 暂时隐藏全站公开入口；需要恢复时取消注释
 
 /* ================== 全站默认 SEO / 社交元数据 ================== */
 export const metadata: Metadata = {
@@ -247,7 +247,7 @@ export default function RootLayout({
         <MobileContactBarClientOnly />
 
         {/* ================== AI 智能问答组件（右下角悬浮） ================== */}
-        <SafeAIQuestionWidgetWrapper />
+        {/* <SafeAIQuestionWidgetWrapper /> */}
       </body>
     </html>
   )
