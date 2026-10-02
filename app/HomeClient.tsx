@@ -1,29 +1,11 @@
-'use client';
-
-import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import dynamic from 'next/dynamic';
 
 import {
-  MessageCircle,
-  X,
   ArrowRight,
 } from 'lucide-react';
 
-import StoreLocationSection from '@/app/components/StoreLocationSection';
 import FAQSection from '@/app/components/home/FaqSection';
-
-// 动态导入非首屏组件（仅保留 GoogleReviewsSlider）
-const GoogleReviewsSlider = dynamic(
-  () => import('@/app/components/home/GoogleReviewsSlider'),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="h-[300px] bg-slate-100 animate-pulse rounded-xl" />
-    ),
-  }
-);
+import GoogleReviewsSlider from '@/app/components/home/GoogleReviewsSlider';
 
 /* ================= 1. 数据定义 ================= */
 const BUSINESS_INFO = {
@@ -32,110 +14,77 @@ const BUSINESS_INFO = {
   address: '46292 Warm Springs Blvd #606, Fremont, CA 94539',
 };
 
-function WeChatModal({ open, onClose }: { open: boolean; onClose: () => void }) {
-  const [cp, setCp] = useState(false);
-  const ID = '美国鸿达电讯';
+const PHONE_QUESTION_LINKS = [
+  { label: '美国手机套餐怎么选', href: '/cellphone/faq/how-to-choose-us-cellphone-plan' },
+  { label: 'Prepaid vs Postpaid', href: '/cellphone/faq/prepaid-vs-postpaid' },
+  { label: '手机套餐与账单判断', href: '/cellphone/diagnosis' },
+  { label: '美国手机常见问题', href: '/cellphone/faq' },
+];
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(ID);
-    setCp(true);
-    setTimeout(() => setCp(false), 2000);
-  };
+const INTERNET_QUESTION_LINKS = [
+  { label: '宽带涨价原因与处理', href: '/internet/price-hike' },
+  { label: '宽带问题诊断', href: '/internet/diagnosis' },
+  { label: '美国宽带常见问题', href: '/internet/faq' },
+  { label: '宽带运营商比较', href: '/internet/providers' },
+];
 
-  if (!open) return null;
-
+function QuestionLinks({
+  title,
+  links,
+}: {
+  title: string;
+  links: ReadonlyArray<{ label: string; href: string }>;
+}) {
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center px-4">
-      <div className="absolute inset-0 bg-slate-900/70 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative bg-white rounded-[2.5rem] shadow-2xl p-8 w-full max-w-sm text-center animate-in fade-in zoom-in duration-300">
-        <button onClick={onClose} className="absolute right-6 top-6 text-slate-500 hover:text-slate-800">
-          <X size={24} />
-        </button>
-
-        <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-green-700">
-          <MessageCircle size={32} />
-        </div>
-        <h3 className="text-xl font-bold text-slate-900 mb-1">添加在线中文客服</h3>
-        <p className="text-slate-600 font-medium mb-6 text-sm">长按识别二维码 或 复制微信号</p>
-
-        <div className="relative aspect-square w-52 mx-auto bg-slate-50 rounded-2xl overflow-hidden border-4 border-white shadow-inner">
-          <Image src="/wechat-qr.jpg" alt="鸿达电讯微信客服二维码 - 扫码添加中文在线客服咨询美国手机卡宽带办理" fill unoptimized className="object-cover" />
-        </div>
-
-        <div className="mt-6 flex flex-col gap-3">
-          <div className="flex items-center justify-between bg-slate-50 p-3 rounded-xl border border-slate-200">
-            <span className="font-bold text-slate-900 text-sm">{ID}</span>
-            <button
-              onClick={handleCopy}
-              className={`px-3 py-1.5 rounded-lg font-bold text-xs transition-all ${
-                cp ? 'bg-green-600' : 'bg-blue-700'
-              } text-white`}
+    <div className="rounded-2xl border border-slate-200 bg-white p-5 md:p-6">
+      <h3 className="text-lg font-black text-slate-900 mb-3">{title}</h3>
+      <ul className="divide-y divide-slate-100">
+        {links.map((link) => (
+          <li key={link.href}>
+            <Link
+              href={link.href}
+              className="flex min-w-0 items-center justify-between gap-3 py-3 text-sm md:text-base font-semibold text-slate-700 hover:text-blue-700 transition-colors"
             >
-              {cp ? '已复制' : '复制微信号'}
-            </button>
-          </div>
-
-          <div className="p-3 bg-blue-50/80 rounded-2xl border border-dashed border-blue-300">
-            <p className="font-mono font-extrabold text-lg text-blue-700 uppercase">美国鸿达电讯</p>
-          </div>
-        </div>
-      </div>
+              <span className="min-w-0">{link.label}</span>
+              <ArrowRight size={17} className="shrink-0" aria-hidden="true" />
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
 
 /* ================= 3. 主页面 ================= */
 export default function HomePage() {
-  const [isModalOpen, setModalOpen] = useState(false);
-
   return (
     <div className="min-h-screen bg-white font-sans text-[#202D3A] selection:bg-[#2786A5]/20">
-      <WeChatModal open={isModalOpen} onClose={() => setModalOpen(false)} />
-
-      {/* STORE LOCATION SECTION */}
-      <section className="py-8 md:py-12">
-        <StoreLocationSection onWeChatClick={() => setModalOpen(true)} />
-      </section>
-
-      {/* REVIEWS - 动态加载 */}
+      {/* REVIEWS */}
       <section className="py-8 md:py-12">
         <GoogleReviewsSlider />
       </section>
 
-      {/* FAQ Section - 动态加载 */}
+      {/* FAQ Section */}
       <section className="py-8 md:py-12">
         <FAQSection />
       </section>
 
-      {/* BLOG ENTRY SECTION - 博客入口区块 */}
-      <section className="bg-[#F4F8FA] py-8 md:py-12">
+      {/* 问题导航入口 */}
+      <section className="py-10 md:py-14 bg-slate-50">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="rounded-3xl border-2 border-[#D5E5EC] bg-white p-8 shadow-xl md:p-12">
-            <div className="text-center mb-8">
-              <h2 className="mb-4 text-3xl font-black text-[#202D3A] md:text-4xl">
-                📚 最新博客文章
-              </h2>
-              <p className="text-lg text-[#202D3A]">
-                湾区宽带、手机套餐申请指南与省钱攻略
-              </p>
-            </div>
+          <h2 className="text-2xl md:text-3xl font-black text-slate-900 text-center mb-8">
+            常见问题继续看
+          </h2>
 
-            <div className="flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:flex-wrap sm:items-center">
-              <Link
-                href="/blog"
-                className="inline-flex w-full min-w-0 items-center justify-center gap-3 rounded-2xl bg-[#164B78] px-6 py-5 text-center text-lg font-black leading-6 text-white transition-all shadow-lg hover:bg-[#103B60] hover:shadow-2xl sm:w-auto sm:min-w-[16rem] md:text-xl"
-              >
-                查看所有博客文章
-                <ArrowRight size={24} />
-              </Link>
-              <Link
-                href="/blog/bay-area-internet-guide"
-                className="inline-flex w-full min-w-0 items-center justify-center gap-3 rounded-2xl border-2 border-[#246B95] bg-transparent px-6 py-5 text-center text-lg font-bold leading-6 text-[#246B95] transition-all hover:bg-[#E8F2F6] hover:shadow-lg sm:w-auto sm:min-w-[16rem] md:text-xl"
-              >
-                湾区办网全攻略
-                <ArrowRight size={24} />
-              </Link>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <QuestionLinks
+              title="手机问题"
+              links={PHONE_QUESTION_LINKS}
+            />
+            <QuestionLinks
+              title="宽带问题"
+              links={INTERNET_QUESTION_LINKS}
+            />
           </div>
         </div>
       </section>

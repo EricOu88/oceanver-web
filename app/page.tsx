@@ -67,7 +67,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 业务介绍部分 - Client Component（ssr: false 避免 hydration mismatch） */}
+      {/* 首页下半部 - Server Component；仅局部交互保留 Client 边界 */}
       <HomeClientWrapper />
 
       <HomepageCampaignBanner />

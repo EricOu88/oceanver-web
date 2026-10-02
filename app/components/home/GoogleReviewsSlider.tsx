@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
 
@@ -30,32 +28,27 @@ const GoogleIcon = () => (
 
 export default function GoogleReviewsSlider() {
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center md:items-end justify-between gap-6">
-          <div className="text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
-              <Link
-                href={GOOGLE_LINK}
-                target="_blank"
-                className="flex items-center gap-2 bg-slate-100 px-4 py-1.5 rounded-full border border-slate-300 hover:bg-slate-200 transition-colors"
-              >
-                <GoogleIcon />
-                <span className="text-slate-800 text-[15px] font-black uppercase tracking-wider">Google 看评论</span>
-                <ExternalLink size={12} className="text-slate-600" />
-              </Link>
+    <section className="bg-white py-2">
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-5 md:px-6">
+          <div className="flex min-w-0 items-start gap-3">
+            <div className="shrink-0 rounded-xl bg-white border border-slate-200 p-2.5" aria-hidden="true">
+              <GoogleIcon />
             </div>
-            <h2 className="text-4xl md:text-5xl font-black text-slate-900">Google 用户评价</h2>
-            <p className="mt-4 text-base text-slate-600 md:text-lg">查看客户在 Google 上留下的公开评价</p>
+            <div className="min-w-0">
+              <h2 className="text-lg md:text-xl font-black text-slate-900">Google 用户评价</h2>
+              <p className="mt-1 text-sm text-slate-600">查看客户在 Google 上留下的公开评价</p>
+            </div>
           </div>
-          <a
+          <Link
             href={GOOGLE_LINK}
             target="_blank"
-            className="group flex items-center gap-3 bg-green-600 text-white px-8 py-4 rounded-2xl font-bold shadow-xl hover:bg-blue-700 transition-all"
+            rel="noopener noreferrer"
+            className="inline-flex w-full sm:w-auto shrink-0 items-center justify-center gap-2 rounded-xl border border-blue-600 bg-white px-4 py-2.5 text-sm font-bold text-blue-700 hover:bg-blue-50 transition-colors"
           >
-            <span className="font-extrabold tracking-wide">前往 Google 查看公开评价</span>
-            <ExternalLink size={18} className="google-wave" />
-          </a>
+            查看 Google 公开评价
+            <ExternalLink size={16} aria-hidden="true" />
+          </Link>
         </div>
       </div>
     </section>
