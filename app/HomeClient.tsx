@@ -89,7 +89,7 @@ export default function HomePage() {
   const [isModalOpen, setModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-blue-100 font-sans">
+    <div className="min-h-screen bg-white font-sans text-[#202D3A] selection:bg-[#2786A5]/20">
       <WeChatModal open={isModalOpen} onClose={() => setModalOpen(false)} />
 
       {/* STORE LOCATION SECTION */}
@@ -108,29 +108,29 @@ export default function HomePage() {
       </section>
 
       {/* BLOG ENTRY SECTION - 博客入口区块 */}
-      <section className="py-8 md:py-12 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+      <section className="bg-[#F4F8FA] py-8 md:py-12">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border-2 border-blue-200">
+          <div className="rounded-3xl border-2 border-[#D5E5EC] bg-white p-8 shadow-xl md:p-12">
             <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4">
+              <h2 className="mb-4 text-3xl font-black text-[#202D3A] md:text-4xl">
                 📚 最新博客文章
               </h2>
-              <p className="text-lg text-slate-700">
+              <p className="text-lg text-[#202D3A]">
                 湾区宽带、手机套餐申请指南与省钱攻略
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:flex-wrap sm:items-center">
               <Link
                 href="/blog"
-                className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-black px-10 py-5 rounded-2xl text-lg md:text-xl transition-all shadow-lg hover:shadow-2xl transform hover:scale-105"
+                className="inline-flex w-full min-w-0 items-center justify-center gap-3 rounded-2xl bg-[#164B78] px-6 py-5 text-center text-lg font-black leading-6 text-white transition-all shadow-lg hover:bg-[#103B60] hover:shadow-2xl sm:w-auto sm:min-w-[16rem] md:text-xl"
               >
                 查看所有博客文章
                 <ArrowRight size={24} />
               </Link>
               <Link
                 href="/blog/bay-area-internet-guide"
-                className="inline-flex items-center justify-center gap-3 border-2 border-blue-600 bg-transparent hover:bg-blue-50 text-blue-600 font-bold px-10 py-5 rounded-2xl text-lg md:text-xl transition-all shadow-md hover:shadow-lg"
+                className="inline-flex w-full min-w-0 items-center justify-center gap-3 rounded-2xl border-2 border-[#246B95] bg-transparent px-6 py-5 text-center text-lg font-bold leading-6 text-[#246B95] transition-all hover:bg-[#E8F2F6] hover:shadow-lg sm:w-auto sm:min-w-[16rem] md:text-xl"
               >
                 湾区办网全攻略
                 <ArrowRight size={24} />

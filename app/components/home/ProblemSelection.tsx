@@ -69,7 +69,7 @@ const PROBLEMS: Problem[] = [
 
 export default function ProblemSelection() {
   return (
-    <section className="bg-slate-50/60">
+    <section className="homepage-problems bg-slate-50/60">
       <div className="mx-auto max-w-[1280px] px-5 pb-10 pt-14 md:px-6 md:pb-12 md:pt-1">
         {/* 标题 */}
         <div className="mb-8 text-center md:mb-10">

@@ -45,12 +45,12 @@ export default function StoreLocationSection({
               </div>
 
               {/* 三个按钮 */}
-              <div className={`flex flex-col sm:flex-row gap-3 ${isCompact ? 'pt-1' : 'pt-2'}`}>
+              <div className={`flex flex-col gap-3 sm:flex-row sm:flex-wrap ${isCompact ? 'pt-1' : 'pt-2'}`}>
                 <a
                   href={GOOGLE_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-bold px-6 py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg hover:scale-105 active:scale-100"
+                  className="inline-flex w-full min-w-0 flex-1 items-center justify-center gap-2 rounded-xl bg-[#2786A5] px-5 py-3.5 text-center font-bold leading-5 text-white transition-all shadow-md hover:bg-[#246B95] hover:shadow-lg active:scale-100 sm:min-w-[10rem] sm:w-auto"
                 >
                   <MapPin size={18} />
                   <span>👉 点击查看地图</span>
@@ -59,7 +59,7 @@ export default function StoreLocationSection({
 
                 <a
                   href={`tel:${BUSINESS_TEL}`}
-                  className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg hover:scale-105 active:scale-100"
+                  className="inline-flex w-full min-w-0 flex-1 items-center justify-center gap-2 rounded-xl bg-[#164B78] px-5 py-3.5 text-center font-bold leading-5 text-white transition-all shadow-md hover:bg-[#103B60] hover:shadow-lg active:scale-100 sm:min-w-[10rem] sm:w-auto"
                 >
                   <Phone size={18} />
                   <span>📞 立即咨询</span>
@@ -68,7 +68,7 @@ export default function StoreLocationSection({
                 {onWeChatClick ? (
                   <button
                     onClick={onWeChatClick}
-                    className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg hover:scale-105 active:scale-100"
+                    className="inline-flex w-full min-w-0 flex-1 items-center justify-center gap-2 rounded-xl bg-[#246B95] px-5 py-3.5 text-center font-bold leading-5 text-white transition-all shadow-md hover:bg-[#103B60] active:scale-100 sm:min-w-[10rem] sm:w-auto"
                   >
                     <MessageCircle size={18} />
                     <span>💬 微信联系</span>
@@ -76,7 +76,7 @@ export default function StoreLocationSection({
                 ) : (
                   <Link
                     href="/contact#wechat"
-                    className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg hover:scale-105 active:scale-100"
+                    className="inline-flex w-full min-w-0 flex-1 items-center justify-center gap-2 rounded-xl bg-[#246B95] px-5 py-3.5 text-center font-bold leading-5 text-white transition-all shadow-md hover:bg-[#103B60] active:scale-100 sm:min-w-[10rem] sm:w-auto"
                   >
                     <MessageCircle size={18} />
                     <span>💬 微信联系</span>

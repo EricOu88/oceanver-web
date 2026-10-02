@@ -6,7 +6,11 @@
 ========================= */
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #202d3a;
+  --brand-primary: #164b78;
+  --brand-primary-hover: #103b60;
+  --brand-link: #246b95;
+  --brand-accent: #2786a5;
 }
 
 @theme inline {
@@ -582,4 +586,99 @@ section {
 
 .animate-slide-up {
   animation: slide-up 0.3s ease-out;
+}
+
+/* Homepage hero palette and responsive CTA sizing. */
+.hero-theme .text-blue-700,
+.hero-theme .text-blue-600 {
+  color: #202d3a !important;
+}
+
+.hero-theme .border-blue-700,
+.hero-theme .bg-blue-700 {
+  background-color: #164b78 !important;
+  border-color: #164b78 !important;
+  color: #ffffff !important;
+}
+
+.hero-theme .border-blue-600 {
+  border-color: #246b95 !important;
+}
+
+.hero-theme .text-blue-600 {
+  color: #246b95 !important;
+}
+
+.hero-theme .hover\:bg-blue-800:hover,
+.hero-theme .hover\:border-blue-800:hover,
+.hero-theme .hover\:bg-blue-700:hover {
+  background-color: #103b60 !important;
+  border-color: #103b60 !important;
+}
+
+.hero-theme .hover\:bg-blue-50:hover {
+  background-color: #e8f2f6 !important;
+}
+
+.hero-theme a:not([href='/bill-optimization']) {
+  min-height: 3.5rem;
+  min-width: 0;
+  flex: 1 1 14rem;
+  white-space: normal;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  text-align: center;
+  line-height: 1.25rem;
+  color: #246b95;
+  border-color: #246b95;
+}
+
+@layer utilities {
+  .homepage-problems .text-blue-700 {
+    color: #246b95;
+  }
+
+  .homepage-problems .text-blue-500 {
+    color: #2786a5;
+  }
+
+  .homepage-problems .bg-blue-50 {
+    background-color: #f4f8fa;
+  }
+
+  .homepage-problems .bg-blue-100 {
+    background-color: #e8f2f6;
+  }
+
+  .homepage-problems .hover\:bg-blue-100:hover {
+    background-color: #d5e5ec;
+  }
+
+  section.hero-theme h1 > span {
+    color: #202d3a !important;
+  }
+
+  section.hero-theme div.flex.flex-col > a[href^='tel'] {
+    min-height: 3.5rem;
+    min-width: 0;
+    flex: 1 1 14rem;
+    white-space: normal;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    text-align: center;
+    line-height: 1.25rem;
+    color: #246b95 !important;
+    border-color: #246b95 !important;
+  }
+
+  @media (max-width: 639px) {
+    section.hero-theme .flex-1 {
+      flex: 0 0 auto !important;
+    }
+
+    section.hero-theme div.flex.flex-col > a:last-child {
+      flex: 0 0 auto !important;
+      width: 100%;
+    }
+  }
 }
