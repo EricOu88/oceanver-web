@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRef, useCallback } from 'react'
@@ -8,8 +8,6 @@ import StoreLocationSection from '@/app/components/StoreLocationSection'
 import SmartBillAnalysis from './SmartBillAnalysis'
 import {
   Upload,
-  FileText,
-  Image as ImageIcon,
   MessageCircle,
   Phone,
   ChevronDown,
@@ -27,7 +25,7 @@ function FAQPageSchema() {
       name: '我是老用户，还能拿到优惠吗？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '可以。多数运营商都有老用户保留优惠，但需要正确方式处理。',
+        text: '是否有老用户优惠取决于运营商、套餐、地址和账户资格，需要结合当前账户确认。',
       },
     },
     {
@@ -131,13 +129,7 @@ export default function BillOptimizationClient() {
   const [preview, setPreview] = useState<string | null>(null)
   const [showAnalysis, setShowAnalysis] = useState(false)
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null)
-  const [mounted, setMounted] = useState(false)
   const fileInputRef = useRef<HTMLInputElement>(null)
-
-  // 确保只在客户端渲染，避免 hydration mismatch
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   // 处理文件选择
   const handleFileSelect = useCallback((selectedFile: File) => {
@@ -201,7 +193,7 @@ export default function BillOptimizationClient() {
   const faqs = [
     {
       q: '我是老用户，还能拿到优惠吗？',
-      a: '可以。多数运营商都有老用户保留优惠，但需要正确方式处理。',
+      a: '是否有老用户优惠取决于运营商、套餐、地址和账户资格，需要结合当前账户确认。',
     },
     {
       q: '不想换号、不想停网，可以降价吗？',
@@ -246,7 +238,7 @@ export default function BillOptimizationClient() {
               <p className="text-lg md:text-xl text-slate-700 leading-relaxed max-w-3xl mx-auto">
                 宽带 / 手机月费变贵，不一定要换运营商
                 <br />
-                我们帮你分析账单、争取优惠、给出最省钱方案（免费检查）
+                我们帮你检查费用变化，并根据账户情况提供调整建议（免费检查）
               </p>
 
               {/* 主 CTA 按钮 */}
@@ -275,7 +267,7 @@ export default function BillOptimizationClient() {
             <p className="text-center text-lg md:text-xl text-slate-800 font-semibold leading-relaxed">
               只要把账单发来，我们会直接告诉你：
               <br />
-              能不能降、能降多少、要不要换。
+              费用为什么变化、有哪些可选方案、是否需要调整。
             </p>
           </div>
         </section>
@@ -283,16 +275,14 @@ export default function BillOptimizationClient() {
         {/* ================= 三卡模块 ================= */}
         <section className="py-8 md:py-12 bg-slate-50">
           <div className="max-w-5xl mx-auto px-5">
-            {/* 隐藏的文件输入 - 只在客户端渲染，避免 hydration mismatch */}
-            {mounted && (
-              <input
-                ref={fileInputRef}
-                type="file"
-                accept="image/jpeg,image/jpg,image/png,image/webp,application/pdf"
-                onChange={handleFileInputChange}
-                className="hidden"
-              />
-            )}
+            {/* 隐藏的文件输入 */}
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="image/jpeg,image/jpg,image/png,image/webp,application/pdf"
+              onChange={handleFileInputChange}
+              className="hidden"
+            />
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {/* 卡片1：上传账单截图 */}
@@ -320,7 +310,7 @@ export default function BillOptimizationClient() {
                     />
                   </div>
                   <p className="mt-3 text-center text-xs text-slate-500">
-                    微信里直接发：账单截图 + "想判断值不值"
+                    微信里直接发：账单截图 + “想判断值不值”
                   </p>
                 </div>
               </div>
@@ -350,7 +340,7 @@ export default function BillOptimizationClient() {
                     发短信
                   </a>
                   <p className="text-xs text-slate-500 text-center">
-                    发送短信建议内容： "我在Fremont，账单从 $__ 涨到 $__，想判断值不值"
+                    发送短信建议内容：“我在 Fremont，账单从 $__ 涨到 $__，想判断值不值”
                   </p>
                 </div>
               </div>
@@ -430,7 +420,7 @@ export default function BillOptimizationClient() {
             </div>
 
             <p className="text-center text-slate-800 font-semibold mt-8 text-lg">
-              只要没有主动处理，账单几乎一定会年年涨。
+              账单是否继续变化，取决于优惠期限、套餐、设备和附加服务等具体情况。
             </p>
           </div>
         </section>
@@ -442,7 +432,7 @@ export default function BillOptimizationClient() {
               账单涨价后，你其实还有这些选择
             </h2>
             <p className="text-lg text-slate-700 mb-8 text-center max-w-3xl mx-auto">
-              很多人以为只有"忍着"或"换运营商"，其实并不是。
+              很多人以为只有“忍着”或“换运营商”，其实并不是。
             </p>
 
             <div className="space-y-4 max-w-3xl mx-auto">
@@ -464,7 +454,7 @@ export default function BillOptimizationClient() {
               </div>
               <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
                 <span className="text-emerald-600 font-black text-lg">•</span>
-                <p className="text-slate-700">在不换号、不停网的情况下直接降价</p>
+                <p className="text-slate-700">检查不换号、不停网时是否有可调整的方案</p>
               </div>
             </div>
 
@@ -478,7 +468,7 @@ export default function BillOptimizationClient() {
         <section className="py-12 md:py-16 bg-white">
           <div className="max-w-5xl mx-auto px-5">
             <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-6 text-center">
-              我们是如何帮你降低账单的？
+              我们是如何帮你检查账单的？
             </h2>
             <p className="text-lg text-slate-700 mb-8 text-center max-w-3xl mx-auto">
               流程简单透明：
@@ -495,7 +485,7 @@ export default function BillOptimizationClient() {
               </div>
               <div className="flex items-start gap-4 p-6 bg-blue-50 rounded-xl border border-blue-200">
                 <span className="text-2xl font-black text-blue-600">3️⃣</span>
-                <p className="text-slate-700 text-lg">给你明确的降价方案建议</p>
+                <p className="text-slate-700 text-lg">根据具体账户提供套餐调整建议</p>
               </div>
               <div className="flex items-start gap-4 p-6 bg-blue-50 rounded-xl border border-blue-200">
                 <span className="text-2xl font-black text-blue-600">4️⃣</span>
@@ -522,17 +512,17 @@ export default function BillOptimizationClient() {
             <div className="space-y-4 max-w-3xl mx-auto">
               <div className="p-6 bg-white rounded-xl border border-slate-200 shadow-sm">
                 <p className="text-slate-700">
-                  <span className="font-black text-slate-900">Xfinity 宽带：</span>月费 $85 → $55
+                  <span className="font-black text-slate-900">宽带账单：</span>检查优惠到期、设备费和附加服务变化
                 </p>
               </div>
               <div className="p-6 bg-white rounded-xl border border-slate-200 shadow-sm">
                 <p className="text-slate-700">
-                  <span className="font-black text-slate-900">Spectrum 宽带：</span>月费 $99 → $60
+                  <span className="font-black text-slate-900">套餐比较：</span>结合地址覆盖和实际用量判断是否需要调整
                 </p>
               </div>
               <div className="p-6 bg-white rounded-xl border border-slate-200 shadow-sm">
                 <p className="text-slate-700">
-                  <span className="font-black text-slate-900">AT&T 手机家庭计划：</span>平均每线下降 $20+
+                  <span className="font-black text-slate-900">手机家庭计划：</span>检查线路数量、设备分期和附加服务
                 </p>
               </div>
             </div>
@@ -587,20 +577,20 @@ export default function BillOptimizationClient() {
               账单涨价深度解析
             </h2>
 
-            {/* 问题11：美国手机账单"连年上涨"的底层逻辑 */}
+            {/* 问题11：美国手机账单“连年上涨”的底层逻辑 */}
             <div className="mb-12 bg-slate-50 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                美国手机账单"连年上涨"的底层逻辑：Promotion 结束后如何重新锁定低价？
+                美国手机账单“连年上涨”的底层逻辑：Promotion 结束后如何重新判断方案？
               </h3>
               <div className="space-y-4 text-slate-700 leading-relaxed">
                 <p>
                   <strong>结论：</strong>美国手机账单连年上涨的主要原因是促销期（Promotion）结束后价格自动恢复原价，运营商通常不会主动提醒用户。用户可以通过续约、换套餐、或转网来重新锁定低价。
                 </p>
                 <p>
-                  <strong>原因解释：</strong>运营商通过促销价吸引新用户，促销期通常 12-24 个月。促销期结束后，价格自动恢复到标准价格，通常上涨 $20-$60/月。运营商不会主动提醒用户促销期结束，导致用户发现账单突然上涨。
+                  <strong>原因解释：</strong>部分套餐包含有期限的优惠。优惠结束后，账单可能恢复为当时适用的标准价格；具体期限和费用变化以账单及运营商条款为准。
                 </p>
                 <p>
-                  <strong>实操建议：</strong>在促销期结束前 1-2 个月，联系运营商或授权代理，询问是否可以续约或换套餐。如果运营商不提供优惠，可以考虑转网到其他运营商，通常可以获得新的促销价。
+                  <strong>实操建议：</strong>留意账单中的优惠截止日期，并向运营商确认续约、换套餐或转网条件。可选价格和资格以地址、账户及运营商审核为准。
                 </p>
                 <p>
                   <strong>适用人群：</strong>使用手机套餐超过 12 个月的用户，发现账单逐年上涨的用户。
@@ -625,7 +615,7 @@ export default function BillOptimizationClient() {
                   <li><strong>设备租用费：</strong>路由器、调制解调器租用费，通常 $10-$15/月</li>
                   <li><strong>建设费：</strong>新安装或移机费用，可能一次性或分期收取</li>
                   <li><strong>税费：</strong>联邦税、州税、地方税等，通常 5%-15%</li>
-                  <li><strong>隐藏费用：</strong>如"网络增强费"、"技术支持费"等</li>
+                  <li><strong>其他费用：</strong>如“网络增强费”“技术支持费”等账单项目</li>
                 </ul>
                 <p>
                   <strong>实操建议：</strong>仔细阅读账单明细，识别每项费用。如果发现不必要的费用（如不需要的设备租用费），联系运营商取消。考虑自购路由器，避免设备租用费。
@@ -673,7 +663,7 @@ export default function BillOptimizationClient() {
             {/* 问题20：面对账单暴涨的议价技巧 */}
             <div className="mb-12 bg-slate-50 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                面对账单暴涨，除了威胁"销户" (Cancellation)，还有哪些有效的议价技巧？
+                面对账单上涨，除了提出“销户”（Cancellation），还可以怎样沟通？
               </h3>
               <div className="space-y-4 text-slate-700 leading-relaxed">
                 <p>
@@ -694,8 +684,8 @@ export default function BillOptimizationClient() {
                   <li><strong>了解促销信息：</strong>在议价前，了解运营商当前的促销活动，查看竞争对手的价格</li>
                   <li><strong>强调长期客户价值：</strong>强调使用年限、按时付费记录、多线价值</li>
                   <li><strong>要求保留部门：</strong>直接要求转接保留部门（Retention Department），有更多权限提供优惠</li>
-                  <li><strong>对比竞争对手价格：</strong>准备竞争对手的价格信息，说明"XX 运营商提供类似套餐，价格更低"</li>
-                  <li><strong>时机重要：</strong>在促销期、合约到期前、或账单异常时议价，成功率更高</li>
+                  <li><strong>对比竞争对手价格：</strong>准备竞争对手的价格信息，说明“其他运营商提供了可比较的套餐”</li>
+                  <li><strong>时机重要：</strong>在优惠或合约到期前确认后续价格和可选方案</li>
                 </ul>
                 <p>
                   <strong>适用人群：</strong>账单突然上涨的用户，长期客户希望获得老用户优惠的用户。
@@ -731,7 +721,7 @@ export default function BillOptimizationClient() {
               </div>
               <div className="flex items-start gap-3 p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
                 <span className="text-blue-600 font-black text-lg">•</span>
-                <p className="text-slate-700">希望有人直接告诉"该不该换、怎么最省钱"</p>
+                <p className="text-slate-700">希望有人协助判断是否需要换套餐或运营商</p>
               </div>
             </div>
           </div>
@@ -769,8 +759,8 @@ export default function BillOptimizationClient() {
           <div className="max-w-5xl mx-auto px-5">
             <div className="text-sm text-slate-500 leading-relaxed space-y-2">
               <p>
-                宽带账单涨价、手机账单变贵、月费突然上涨怎么办？很多用户遇到老用户优惠失效的问题，但通过正确的处理方式，可以在不换号的情况下实现宽带降价方案。账单优化服务帮助用户分析通信费用太高的原因，提供专业的账单优化建议，让用户在不换运营商的情况下也能降低月费。
-                如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">鸿达电讯 Bay Media Star 首页</Link>。
+                宽带或手机账单突然变贵时，可以先检查优惠期限、设备费、附加服务和套餐变化，再结合地址、账户资格与实际使用需求判断是否调整套餐或更换运营商。
+                如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">美国鸿达电讯首页</Link>。
                 常见问题如<Link href="/internet/faq" className="text-blue-600 hover:text-blue-700 font-semibold underline">宽带账单为什么会突然涨价？</Link>和<Link href="/cellphone/faq/how-to-choose-us-cellphone-plan" className="text-blue-600 hover:text-blue-700 font-semibold underline">手机账单涨价后应该怎么办？</Link>都有详细解答。
               </p>
             </div>
@@ -783,7 +773,7 @@ export default function BillOptimizationClient() {
         {/* ================= FOOTER LINK ================= */}
         <div className="py-8 text-center border-t border-slate-200 bg-white">
           <Link href="/" className="text-sm text-blue-600 hover:underline font-semibold">
-            查看鸿达电讯完整服务 →
+            查看美国鸿达电讯完整服务 →
           </Link>
         </div>
 

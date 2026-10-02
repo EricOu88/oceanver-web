@@ -10,8 +10,6 @@ import {
   AlertTriangle,
   TrendingUp,
   MessageCircle,
-  Phone,
-  Star,
   Zap,
   CheckCircle2,
   X,
@@ -100,9 +98,9 @@ export default function PriceHikeClient() {
           </h1>
 
           <p className="max-w-2xl mx-auto text-slate-600 mb-8">
-            Xfinity / Spectrum / AT&T 用户常见每月多付 $20–$60。
-            我们帮你谈价、转网或优化方案，很多客户一年可省 $300–$500。
-            如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">鸿达电讯 Bay Media Star 首页</Link>。
+            Xfinity / Spectrum / AT&T 账单变贵，可能与优惠到期、折扣失效、设备费或套餐变化有关。
+            我们根据当前账单、地址、账户资格和使用需求，协助判断是否适合调整套餐或更换运营商。
+            如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">美国鸿达电讯首页</Link>。
             常见问题如<Link href="/internet/faq" className="text-blue-600 hover:text-blue-700 font-semibold underline">宽带账单为什么会突然涨价？</Link>都有详细解答。
           </p>
 
@@ -119,7 +117,7 @@ export default function PriceHikeClient() {
           <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
             {[
               { icon: <TrendingUp />, title: '账单审核', desc: '检查隐藏涨价与优惠失效' },
-              { icon: <Zap />, title: '转网 / 新户', desc: '利用新用户价格重新锁定低价' },
+              { icon: <Zap />, title: '转网 / 新户', desc: '结合地址和账户资格比较可选方案' },
               { icon: <CheckCircle2 />, title: 'Retention 谈价', desc: '指导或代沟通争取优惠' },
             ].map((i, idx) => (
               <div key={idx} className="p-8 bg-slate-50 rounded-2xl">
@@ -142,7 +140,7 @@ export default function PriceHikeClient() {
         </section>
 
         <footer className="py-8 text-center text-xs text-slate-400">
-          © {new Date().getFullYear()} 鸿达电讯 · 宽带账单优化服务
+          © {new Date().getFullYear()} 美国鸿达电讯 · 宽带账单检查服务
         </footer>
       </div>
     </>

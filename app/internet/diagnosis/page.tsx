@@ -15,10 +15,19 @@ import {
 export const metadata: Metadata = {
   title: '美国宽带问题诊断｜地址覆盖 · 宽带涨价 · 中文办理支持',
   description:
-    '新移民、华人装美国宽带常见 5 个坑：没 SSN 能不能装？为什么第二年涨价？地址显示能装却装不上？鸿达电讯用中文帮你判断是否值得处理。',
+    '美国鸿达电讯帮助中文用户判断宽带地址覆盖、优惠到期、账单涨价和安装问题。资格、价格与可选方案以具体地址、账户及运营商审核为准。',
   alternates: {
-    canonical: 'https://baymediastar.com/internet/diagnosis',
+    canonical: 'https://oceanver.com/internet/diagnosis',
   },
+  openGraph: {
+    title: '美国宽带问题诊断｜地址覆盖 · 宽带涨价 · 中文办理支持',
+    description: '判断宽带地址覆盖、优惠到期、账单涨价和安装问题，具体结果以地址、账户及运营商审核为准。',
+    url: 'https://oceanver.com/internet/diagnosis',
+    siteName: '美国鸿达电讯',
+    locale: 'zh_CN',
+    type: 'website',
+  },
+  robots: { index: false, follow: false },
 }
 
 export default function InternetDiagnosisPage() {
@@ -41,7 +50,7 @@ export default function InternetDiagnosisPage() {
         </h1>
         <p className="text-slate-600 text-lg max-w-2xl mx-auto">
           地址覆盖、宽带涨价、中文办理——先判断，再决定要不要换。
-          如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">鸿达电讯 Bay Media Star 首页</Link>。
+          如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">美国鸿达电讯首页</Link>。
           常见问题如<Link href="/internet/providers/faq" className="text-blue-600 hover:text-blue-700 font-semibold underline">宽带账单为什么会突然涨价？</Link>和<Link href="/internet/faq" className="text-blue-600 hover:text-blue-700 font-semibold underline">没有 SSN 可以办宽带吗？</Link>都有详细解答。
         </p>
       </section>
@@ -80,10 +89,10 @@ export default function InternetDiagnosisPage() {
             涨价处理
           </h2>
           <p className="text-slate-700 text-sm leading-relaxed mb-3">
-            第一年 $29.99，第二年突然 $79.99？促销到期自动恢复原价，很多人不知道可以续约或转网。
+            账单突然变贵，可能与优惠期结束、折扣失效、设备费或套餐调整有关。
           </p>
           <p className="text-slate-600 text-sm leading-relaxed mb-4">
-            我们帮你判断：当前账单是否值得折腾、续约能不能谈、转网能省多少，不盲目换也不被动挨宰。
+            我们帮你结合当前账单、地址、账户资格和使用需求，判断是否需要调整套餐或更换运营商。价格和结果以运营商审核为准。
           </p>
           <Link
             href="/internet/providers/faq#faq-2"
@@ -149,8 +158,8 @@ export default function InternetDiagnosisPage() {
           新移民 / 华人装美国宽带，最常见的 5 个坑
         </h2>
         <div className="grid md:grid-cols-2 gap-6">
-          <Pit title="1️⃣ 没有 SSN 能不能装？" desc="可以，但并不是所有套餐都支持，需要选对方案。" />
-          <Pit title="2️⃣ 为什么第二年一定涨价？" desc="因为大多数套餐是促销价，到期会自动恢复标准价。" />
+          <Pit title="1️⃣ 没有 SSN 能不能装？" desc="是否可以办理取决于具体运营商、套餐、地址及账户审核要求。" />
+          <Pit title="2️⃣ 为什么账单后来变贵？" desc="可能是优惠到期、折扣失效、设备费变化或套餐调整，需要结合账单确认。" />
           <Pit title="3️⃣ 地址显示能装，结果装不上？" desc="系统显示 ≠ 现场可装，这是美国宽带最常见问题之一。" />
           <Pit title="4️⃣ 被捆绑手机 / TV 套餐怎么办？" desc="很多销售会强推捆绑，其实是可以避免的。" />
           <Pit title="5️⃣ 账单已经涨了还能处理吗？" desc="很多情况是可以重新调整方案的，不一定只能忍。" />
@@ -176,13 +185,13 @@ export default function InternetDiagnosisPage() {
             楼内线路、管理规定或接口问题是常见原因。
           </Faq>
           <Faq q="新移民没有 SSN 能装宽带吗？">
-            可以，需要选择支持的套餐类型。
+            是否可以办理取决于具体运营商、套餐、地址及账户审核要求。
           </Faq>
           <Faq q="可以只装宽带不办手机吗？">
             可以，不必被强制捆绑。
           </Faq>
           <Faq q="宽带账单已经涨了还能救吗？">
-            很多客户成功把账单调整回更合理的价格。
+            可以先检查优惠、设备费、附加服务和套餐变化，再根据账户资格判断可选方案。
             {' '}
             <Link href="/bill-optimization" className="text-blue-600 hover:underline font-semibold">
               免费判断你的账单是否值得处理 →
@@ -239,8 +248,8 @@ export default function InternetDiagnosisPage() {
           '@context': 'https://schema.org',
           '@type': 'FAQPage',
           mainEntity: [
-            { '@type': 'Question', name: '新移民没有 SSN 能装美国宽带吗？', acceptedAnswer: { '@type': 'Answer', text: '可以，但需要选择支持无 SSN 的套餐类型。' } },
-            { '@type': 'Question', name: '美国宽带为什么第二年会涨价？', acceptedAnswer: { '@type': 'Answer', text: '因为促销期结束后会自动恢复标准价。' } },
+            { '@type': 'Question', name: '新移民没有 SSN 能装美国宽带吗？', acceptedAnswer: { '@type': 'Answer', text: '是否可以办理取决于具体运营商、套餐、地址及账户审核要求。' } },
+            { '@type': 'Question', name: '美国宽带账单为什么后来会涨价？', acceptedAnswer: { '@type': 'Answer', text: '可能是优惠到期、折扣失效、设备费变化或套餐调整，需要结合当前账单确认。' } },
             { '@type': 'Question', name: '地址显示能装为什么实际装不上？', acceptedAnswer: { '@type': 'Answer', text: '楼内线路或现场条件限制是常见原因。' } },
           ],
         })}
@@ -254,9 +263,9 @@ export default function InternetDiagnosisPage() {
           name: '美国宽带问题诊断与咨询服务',
           serviceType: 'Internet Service Evaluation',
           description: '为新移民和华人用户提供美国宽带账单涨价判断、地址覆盖分析，以及是否值得更换宽带方案的中文咨询服务。',
-          provider: { '@type': 'LocalBusiness', name: 'Bay Media Star 鸿达电讯', url: 'https://baymediastar.com', telephone: '+1-510-849-6191' },
+          provider: { '@type': 'LocalBusiness', name: '美国鸿达电讯', url: 'https://oceanver.com', telephone: '+1-510-849-6191' },
           areaServed: { '@type': 'Country', name: 'United States' },
-          availableChannel: { '@type': 'ServiceChannel', serviceLocation: { '@type': 'VirtualLocation', url: 'https://baymediastar.com' } },
+          availableChannel: { '@type': 'ServiceChannel', serviceLocation: { '@type': 'VirtualLocation', url: 'https://oceanver.com' } },
           audience: { '@type': 'Audience', audienceType: 'Chinese-speaking residents in the United States' },
         })}
       </Script>

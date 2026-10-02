@@ -8,7 +8,7 @@ import { Phone, MapPin, Home, Mail } from 'lucide-react';
 /* ================== ContactPage Schema（只引用 LocalBusiness，不重复声明） ================== */
 /* 使用常量 JSON 字符串避免 SSR/CSR 的 JSON.stringify 结果不一致导致 hydration 报错 */
 const CONTACT_PAGE_SCHEMA_JSON =
-  '{"@context":"https://schema.org","@type":"ContactPage","@id":"https://baymediastar.com/contact#contactpage","url":"https://baymediastar.com/contact","name":"联系我们 | Bay Media Star 鸿达电讯","description":"联系鸿达电讯 Bay Media Star，提供湾区与洛杉矶地区中文手机套餐、宽带网络与通信方案咨询服务。","inLanguage":"zh-CN","primaryImageOfPage":{"@type":"ImageObject","url":"https://baymediastar.com/brands/wechat.png","contentUrl":"https://baymediastar.com/brands/wechat.png","caption":"鸿达电讯 Bay Media Star 微信客服二维码"},"about":{"@id":"https://baymediastar.com/#localbusiness"}}';
+  '{"@context":"https://schema.org","@type":"ContactPage","@id":"https://oceanver.com/contact#contactpage","url":"https://oceanver.com/contact","name":"联系我们 | 美国鸿达电讯","description":"联系美国鸿达电讯，前往 Fremont 门店或通过电话、微信获得手机与宽带中文一对一服务。","inLanguage":"zh-CN","about":{"@id":"https://oceanver.com/#localbusiness"}}';
 
 function ContactSchema() {
   return (
@@ -126,7 +126,7 @@ export default function ContactClient() {
                 <div className="md:col-span-2 rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
                   <img
                     src="/locations/fremont-exterior.jpg"
-                    alt="鸿达电讯 Fremont 实体门店外观"
+                    alt="美国鸿达电讯 Fremont 实体门店外观"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -135,7 +135,7 @@ export default function ContactClient() {
                   <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
                     <img
                       src="/locations/fremont-exterior1.jpg"
-                      alt="鸿达电讯 Fremont 门店外观（侧面）"
+                      alt="美国鸿达电讯 Fremont 门店外观（侧面）"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -143,59 +143,11 @@ export default function ContactClient() {
                   <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
                     <img
                       src="/locations/fremont-interior.jpg"
-                      alt="鸿达电讯 Fremont 店内环境"
+                      alt="美国鸿达电讯 Fremont 店内环境"
                       className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
-              </div>
-            </div>
-          </section>
-
-          {/* ================= Milpitas 门店 ================= */}
-          <section className="bg-white border border-blue-100 rounded-2xl shadow-xl p-6 md:p-7 space-y-6">
-            <div>
-              <p className="text-xl md:text-2xl font-bold text-blue-900">
-                分店（大华超市内）
-              </p>
-
-              <p className="text-gray-700 mt-2">
-                338 Barber Lane, Milpitas, CA 95035
-              </p>
-
-              <div className="mt-4 flex flex-col sm:flex-row gap-3">
-                <a
-                  href="tel:15108496191"
-                  className="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-5 py-2.5 rounded-xl font-semibold shadow hover:bg-blue-700 transition"
-                >
-                  <Phone className="w-5 h-5" />
-                  拨打电话或发短信：510-849-6191
-                </a>
-
-                <a
-                  href="https://www.google.com/maps?q=338+Barber+Lane,+Milpitas,+CA+95035"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-white text-blue-700 border border-blue-400 px-5 py-2.5 rounded-xl font-semibold shadow hover:bg-blue-50 transition"
-                >
-                  <MapPin className="w-5 h-5" />
-                  查看地图
-                </a>
-              </div>
-            </div>
-
-            {/* Milpitas 室内实拍 */}
-            <div>
-              <p className="text-sm font-semibold text-slate-500 mb-3">
-                Milpitas 分店店内实拍（大华超市内）
-              </p>
-
-              <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm max-w-md">
-                <img
-                  src="/locations/milpitas-interior.jpg"
-                  alt="鸿达电讯 Milpitas 分店 店内环境（大华超市内）"
-                  className="w-full h-full object-cover"
-                />
               </div>
             </div>
           </section>
@@ -234,7 +186,7 @@ export default function ContactClient() {
               <div className="w-44 h-44 md:w-52 md:h-52 rounded-2xl overflow-hidden border border-slate-200 shadow-md">
                 <img
                   src="/wechat-qr.jpg"
-                  alt="鸿达电讯 微信客服二维码"
+                  alt="美国鸿达电讯 微信客服二维码"
                   className="w-full h-full object-cover"
                 />
               </div>

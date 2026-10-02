@@ -30,7 +30,7 @@ export const internetFAQData: InternetFAQEntry[] = [
   {
     question: '为什么宽带第一年便宜、第二年就涨价？',
     answer:
-      '美国宽带普遍采用「新用户促销价」：首 12–24 个月享受折扣，到期后自动恢复标准价，涨幅常见 50%–150%。例如首年 $29.99/月，第二年变成 $79.99/月。这不是 bug，而是合同里写明的条款。应对方式：促销到期前 30–60 天联系客服续约或换套餐、考虑转网拿新用户价，或通过授权代理协助续约与谈价。',
+      '部分美国宽带套餐包含有期限的促销折扣，优惠结束后账单可能恢复为当时适用的标准价格。具体优惠期限和费用变化以账单及运营商条款为准。发现涨价时，可先检查优惠、AutoPay、设备费和附加服务，再向运营商确认续约、换套餐或转网条件。',
     relatedProviders: [
       { name: 'Xfinity', href: '/internet/xfinity/faq' },
       { name: 'Spectrum', href: '/internet/spectrum/faq' },
@@ -41,7 +41,7 @@ export const internetFAQData: InternetFAQEntry[] = [
   {
     question: '宽带一定要签合约吗？有没有无合约方案？',
     answer:
-      '不一定。多数运营商同时提供有合约与无合约方案：有合约通常月费更低、促销多，但需承诺 12–24 个月，提前取消可能有违约金；无合约可随时取消，月费一般高 $10–20。若计划长住且不搬家，选合约更省；若可能短期居住或搬家，选无合约更灵活。签前务必看清提前解约条款及搬家、覆盖不足等免责情形。',
+      '不一定。运营商可能提供有合约或无合约方案，具体月费、促销期限和提前取消条件会因地址、套餐及账户而异。若计划长住，可比较合约期内的总成本；若可能短期居住或搬家，则应重点查看取消和移机条款。签约前务必确认提前解约费用及适用条件。',
     relatedProviders: [
       { name: 'Spectrum', href: '/internet/spectrum/faq' },
       { name: 'Xfinity', href: '/internet/xfinity/faq' },
@@ -52,7 +52,7 @@ export const internetFAQData: InternetFAQEntry[] = [
   {
     question: '设备费、安装费合理吗？可以自带 Modem 吗？',
     answer:
-      '设备费通常 $5–15/月，安装费 $50–100 较常见；部分促销可免安装费，自安装也能省一笔。许多运营商支持自带兼容 Modem（BYOD），能省月租，但需确认型号在官方兼容列表内；Router 一般可自备。办理前问清「含税含设备总月费」及是否有安装费减免、自装选项，避免只看宣传价。',
+      '设备费和安装费会因运营商、地址、设备及安装方式而异。部分运营商允许自带兼容 Modem 或 Router，但需要先核对官方兼容列表。办理前应确认含设备、税费和附加项目后的总月费，并询问是否提供自安装选项。',
     relatedProviders: [
       { name: 'Xfinity', href: '/internet/xfinity/faq' },
       { name: 'Spectrum', href: '/internet/spectrum/faq' },
@@ -63,7 +63,7 @@ export const internetFAQData: InternetFAQEntry[] = [
   {
     question: '促销到期前该怎么操作，才不容易被涨价？',
     answer:
-      '在促销到期前 30–60 天主动联系客服，要求续约或更换套餐，多数会给出新的促销价。若当前运营商不愿让步，可考虑转网，以新用户身份享受别家优惠。同时留意「价格锁定」类套餐，虽起价略高，但能锁 2–3 年。通过代理商办理的，可交由对方协助续约与谈价，省心且常能拿到更好条件。',
+      '发现优惠即将到期时，可联系运营商确认到期后的价格、续约条件和其他可选套餐。若现有方案不合适，再结合地址覆盖、账户资格、设备费用和实际需求比较其他运营商。具体优惠期限和资格以运营商当前条款及审核结果为准。',
     relatedProviders: [
       { name: 'Xfinity', href: '/internet/xfinity/faq' },
       { name: 'Spectrum', href: '/internet/spectrum/faq' },
@@ -85,7 +85,7 @@ export const internetFAQData: InternetFAQEntry[] = [
   {
     question: '同一地址不同运营商价格差很多，为什么？',
     answer:
-      '主因包括：技术类型（Fiber 通常比 Cable 贵 $10–20/月）、当地竞争（仅一家覆盖往往更贵）、促销力度与期限、设备费与各类附加费不同。不能只看官网「起价」，要对比「含设备、税费、杂费后的真实月费」。有的基础价低但设备费高，总支出反而更贵；建议逐项算清再选。',
+      '主因包括技术类型、当地覆盖情况、促销期限、设备费与附加服务不同。不能只看官网起价，应对比包含设备、税费和其他项目后的实际账单，并结合地址可用方案逐项判断。',
     relatedProviders: [
       { name: 'AT&T Fiber', href: '/internet/att/fiber/faq' },
       { name: 'Xfinity', href: '/internet/xfinity/faq' },
@@ -96,7 +96,7 @@ export const internetFAQData: InternetFAQEntry[] = [
   {
     question: '怎么查自己地址能装哪些宽带？',
     answer:
-      '可到各运营商官网输入地址查询覆盖，但官网结果有时与现场不符（楼内线路、物业限制等）。更稳妥的做法：用多家官网交叉查，或通过授权代理商、本地宽带办理点代为查址；他们常有实际安装经验，能判断「系统显示可装」是否真的可装。避免只看一家就下单，尤其公寓、新房。',
+      '可到各运营商官网输入地址查询覆盖，但系统结果仍可能受楼内线路、接口或物业限制影响。建议交叉查询多家运营商，并在下单前向运营商确认现场安装条件，尤其是公寓和新建住宅。',
     relatedProviders: [
       { name: 'AT&T Fiber', href: '/internet/att/fiber/faq' },
       { name: 'Xfinity', href: '/internet/xfinity/faq' },
@@ -107,7 +107,7 @@ export const internetFAQData: InternetFAQEntry[] = [
   {
     question: '没有 SSN 能办美国宽带吗？',
     answer:
-      '可以。部分运营商与套餐支持无 SSN 办理，通常需提供护照、签证、地址证明等；具体以运营商政策为准。新移民、留学生若不想直接联系英文客服，可通过提供中文服务的授权代理商办理，由对方协助选套餐、查覆盖、走流程，省事且易沟通。',
+      '是否可以在没有 SSN 的情况下办理，取决于运营商、套餐、地址、身份材料及账户审核要求。部分情况可能需要其他身份证明或押金，具体应以运营商当前政策和审核结果为准。',
     relatedProviders: [
       { name: 'Xfinity', href: '/internet/xfinity/faq' },
       { name: 'Spectrum', href: '/internet/spectrum/faq' },
@@ -118,7 +118,7 @@ export const internetFAQData: InternetFAQEntry[] = [
   {
     question: '华人、新移民如何用中文办理宽带？',
     answer:
-      '可选两种方式：一是直接联系运营商客服（部分有中文或翻译），二是通过提供中文服务的宽带代理商办理。代理商通常可代为查地址覆盖、比价、选套餐、办续约，全程中文沟通，免去自己打英文客服的麻烦；有的还能免安装费、拿额外优惠。适合不熟悉本地宽带、怕踩坑的新移民与留学生。',
+      '可直接联系运营商客服，或选择提供中文协助的服务渠道。办理前应确认地址覆盖、套餐价格、设备费、安装安排及账户资格；最终可用方案和费用以运营商当前政策及审核结果为准。',
     relatedProviders: [
       { name: 'Xfinity', href: '/internet/xfinity/faq' },
       { name: 'Spectrum', href: '/internet/spectrum/faq' },

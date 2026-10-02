@@ -4,7 +4,7 @@ import { ArrowLeft, HelpCircle, ChevronRight, ArrowRight } from 'lucide-react'
 import { internetFAQData } from './data'
 
 export const metadata: Metadata = {
-  title: '美国宽带常见问题 FAQ｜宽带类型、安装、涨价、合约与中文办理 | 鸿达电讯',
+  title: '美国宽带常见问题 FAQ｜宽带类型、安装、涨价、合约与中文办理 | 美国鸿达电讯',
   description:
     '美国宽带常见问题成文版知识中枢：光纤/Cable/DSL 区别、安装流程、涨价原因、合同与设备、中文办理等，每题附运营商 FAQ 内链。',
   keywords: [
@@ -17,17 +17,17 @@ export const metadata: Metadata = {
     '中文办理宽带',
   ],
   alternates: {
-    canonical: 'https://baymediastar.com/internet/faq',
+    canonical: 'https://oceanver.com/internet/faq',
   },
   openGraph: {
     title: '美国宽带常见问题 FAQ｜宽带类型、安装、涨价、合约与中文办理',
     description: '美国宽带常见问题成文版知识中枢，覆盖类型区别、安装流程、涨价原因、合同设备、中文办理，每题附运营商 FAQ 推荐。',
-    url: 'https://baymediastar.com/internet/faq',
-    siteName: 'Bay Media Star 鸿达电讯',
+    url: 'https://oceanver.com/internet/faq',
+    siteName: '美国鸿达电讯',
     locale: 'zh_CN',
     type: 'website',
   },
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: false },
 }
 
 function FAQPageSchema() {
