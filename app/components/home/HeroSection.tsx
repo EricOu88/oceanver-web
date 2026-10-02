@@ -19,8 +19,8 @@ export default function HeroSection() {
           <div className="grid items-center gap-7 lg:min-h-[400px] lg:grid-cols-2 lg:gap-8">
           {/* 左侧：文案 */}
           <div className="text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200 px-4 py-1.5 text-sm font-bold text-blue-800 mb-5">
-              服务全美华人家庭 · 手机 · 宽带都可以
+            <div className="inline-flex w-fit items-center gap-2 rounded-full bg-blue-50 border border-blue-200 px-5 py-1.5 text-base font-bold leading-[1.4] text-blue-800 mb-5 whitespace-normal lg:whitespace-nowrap lg:text-lg">
+              美国鸿达电讯｜授权服务全美国手机 · 家庭宽带中文申请安装
             </div>
 
             <h1 className="mb-4 text-4xl font-extrabold leading-[1.1] tracking-tight text-slate-900 sm:text-[42px] lg:text-[64px]">
