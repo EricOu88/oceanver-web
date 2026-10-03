@@ -46,12 +46,12 @@ export default function InternetPage() {
         </div>
 
         <h1 className="text-4xl md:text-5xl font-extrabold">
-          美国宽带申请 (中文服务)
+          美国宽带问题怎么判断？
         </h1>
 
         <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-          查地址覆盖 · 中文办理 · 解决宽带涨价  
-          支持 Xfinity / AT&T Fiber / Spectrum / Frontier
+          先判断是账单、网络、覆盖、搬家还是办理前选择问题
+          支持 Xfinity / AT&T Fiber / Spectrum / Frontier 的比较入口
         </p>
 
         <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-stretch sm:justify-center sm:gap-6">
@@ -59,7 +59,7 @@ export default function InternetPage() {
           <div className="w-full sm:flex-1 sm:max-w-3xl">
             <GradientBannerCTA
               href="/internet/providers"
-              title="查看各大宽带运营商详细对比方案"
+              title="查看不同宽带运营商怎么比较"
               subtitle="Xfinity · AT&T Fiber · Spectrum · Frontier"
             />
           </div>
@@ -94,7 +94,7 @@ export default function InternetPage() {
                      text-white py-6 rounded-[2.5rem]
                      text-xl font-bold shadow-lg hover:opacity-95 transition"
         >
-          美国宽带涨价问题诊断及解决方案 →
+          宽带账单与网络问题判断 →
         </Link>
       </section>
 
@@ -164,22 +164,22 @@ export default function InternetPage() {
         <div className="grid md:grid-cols-4 gap-6">
           <ProviderCard
             name="Xfinity"
-            desc="覆盖最广，住家与商业宽带选择灵活"
+            desc="先核对地址可用性、设备费用和促销期限"
             href="/internet/xfinity"
           />
           <ProviderCard
             name="AT&T Fiber"
-            desc="真光纤，对称上下行，稳定性极高"
+            desc="核对上传需求、设备条件和实际总月费"
             href="/internet/att-fiber"
           />
           <ProviderCard
             name="Spectrum"
-            desc="价格结构相对稳定，无流量上限"
+            desc="比较数据条件、设备费用和长期成本"
             href="/internet/spectrum"
           />
           <ProviderCard
             name="Frontier Fiber"
-            desc="部分地区高速光纤，价格竞争力强"
+            desc="确认具体地址、促销条件和退出成本"
             href="/internet/frontier"
           />
         </div>

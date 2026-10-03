@@ -83,7 +83,7 @@ export default function PrepaidVsPostpaidPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="text-green-600 shrink-0 mt-0.5" size={18} />
-                    <span className="text-slate-700">价格透明，不会突然涨价</span>
+                    <span className="text-slate-700">账单结构通常较简单，但价格和条款仍可能变化</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="text-green-600 shrink-0 mt-0.5" size={18} />
@@ -106,11 +106,11 @@ export default function PrepaidVsPostpaidPage() {
                 <ul className="space-y-3">
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="text-green-600 shrink-0 mt-0.5" size={18} />
-                    <span className="text-slate-700">信号覆盖通常更好</span>
+                    <span className="text-slate-700">网络优先级和功能条件需要结合具体方案核实</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="text-green-600 shrink-0 mt-0.5" size={18} />
-                    <span className="text-slate-700">多线有折扣，家庭更划算</span>
+                    <span className="text-slate-700">多线有时能降低人均月费，需要结合总成本判断</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="text-green-600 shrink-0 mt-0.5" size={18} />
@@ -177,7 +177,7 @@ export default function PrepaidVsPostpaidPage() {
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <p className="font-semibold text-slate-900 mb-2">Prepaid</p>
-                  <p className="text-slate-600 text-sm">价格固定，不会突然涨价，透明可控。</p>
+                  <p className="text-slate-600 text-sm">价格和条款通常较易核对，但仍可能随运营商政策和账户条件变化。</p>
                 </div>
                 <div>
                   <p className="font-semibold text-slate-900 mb-2">Postpaid</p>
@@ -196,7 +196,7 @@ export default function PrepaidVsPostpaidPage() {
                 </div>
                 <div>
                   <p className="font-semibold text-slate-900 mb-2">Postpaid</p>
-                  <p className="text-slate-600 text-sm">Family Plan 多线共享流量，人均成本更低。</p>
+                  <p className="text-slate-600 text-sm">Family Plan 可能通过多线共享降低人均月费，但要结合线路数、设备优惠和总成本判断。</p>
                 </div>
               </div>
             </div>
@@ -211,7 +211,7 @@ export default function PrepaidVsPostpaidPage() {
                 </div>
                 <div>
                   <p className="font-semibold text-slate-900 mb-2">Postpaid</p>
-                  <p className="text-slate-600 text-sm">通常有更好的网络优先级，信号更稳定。</p>
+                  <p className="text-slate-600 text-sm">网络优先级可能不同，实际体验还取决于覆盖、拥塞、设备和套餐条件。</p>
                 </div>
               </div>
             </div>
@@ -242,7 +242,7 @@ export default function PrepaidVsPostpaidPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="text-green-600 shrink-0 mt-0.5" size={18} />
-                  <span>价格敏感，担心突然涨价</span>
+                  <span>希望先核对费用结构和条款变化</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="text-green-600 shrink-0 mt-0.5" size={18} />
@@ -268,7 +268,7 @@ export default function PrepaidVsPostpaidPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="text-blue-600 shrink-0 mt-0.5" size={18} />
-                  <span>对信号稳定性要求高</span>
+                  <span>需要结合覆盖、拥塞和优先级判断体验</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="text-blue-600 shrink-0 mt-0.5" size={18} />
@@ -307,8 +307,7 @@ export default function PrepaidVsPostpaidPage() {
                 </h3>
               </div>
               <p className="text-slate-700 leading-relaxed ml-9">
-                不一定。对于单线用户，Prepaid 可能更便宜。但对于多线家庭，Postpaid 的 Family Plan 人均成本通常更低。
-                关键要看你的使用场景和线路数量。
+                不能只按 Prepaid 或 Postpaid 判断价格。关键要看线路数量、设备优惠、促销期限和实际总成本。
               </p>
             </div>
 
@@ -320,8 +319,7 @@ export default function PrepaidVsPostpaidPage() {
                 </h3>
               </div>
               <p className="text-slate-700 leading-relaxed ml-9">
-                确实，Postpaid 通常需要 SSN。但如果你没有 SSN，Prepaid 是完全可行的选择，
-                很多新移民和留学生都用 Prepaid，功能上完全够用。
+                没有 SSN 时可选方案取决于运营商、账户资格和具体办理方式，需要进一步确认，不能直接归结为某一种方案。
               </p>
             </div>
           </div>
@@ -333,7 +331,7 @@ export default function PrepaidVsPostpaidPage() {
             还是不确定选哪种类型？
           </h2>
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-            用我们的智能诊断工具，1 分钟帮你判断适合 Prepaid 还是 Postpaid，并推荐具体运营商方案。
+            用我们的智能诊断工具，1 分钟帮你比较 Prepaid 与 Postpaid 的条件和下一步，不直接给出固定运营商推荐。
           </p>
           <Link
             href="/cellphone/diagnosis"

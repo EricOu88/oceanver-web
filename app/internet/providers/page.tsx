@@ -11,9 +11,9 @@ import {
 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: '美国宽带怎么选？(中文服务) - 湾区/Fremont 实体店咨询 | 鸿达电信',
+  title: '不同宽带运营商怎么比较？| 美国鸿达电讯',
   description:
-    '鸿达电信代理全美主流宽带业务，包括 Xfintiy, Spectrum, AT&T, Frontier 及 Cox。专为华人家庭提供全中文申请安装服务，一站式对比各运营商资费与最新优惠活动，让您在美国办理网络省时省力又省钱，尊享超值光纤宽带体验！',
+    '面向全美中文用户整理宽带运营商比较维度，包括地址可用性、速度需求、设备费用、促销期限、合同条件与实际月费。',
   alternates: {
     canonical: 'https://oceanver.com/internet/providers',
   },
@@ -41,8 +41,8 @@ export default function InternetProvidersPage() {
         <p className="mt-6 max-w-3xl mx-auto text-center text-base md:text-lg text-slate-600 leading-relaxed">
           美国宽带运营商主要分为有线（Cable）和光纤（Fiber）两类。
           不同地址、不同城市，可选运营商差异很大。
-          下面我们按「覆盖范围、价格稳定性、是否支持中文办理」
-          帮你快速对比主流美国宽带公司。
+          下面按地址可用性、速度需求、设备费用、促销期限、合同条件和实际月费，
+          帮你建立比较不同宽带运营商的判断框架。
         </p>
       </section>
 
@@ -67,15 +67,15 @@ export default function InternetProvidersPage() {
         <DecisionCard
           icon={<Wifi size={28} />}
           provider="Xfinity"
-          title="覆盖最广 · 促销力度大"
-          desc="Cable 宽带代表，湾区和全美覆盖最广，前期价格低，但优惠期结束后容易涨价。"
-          who="租房 / 普通家庭 / 想先拿促销价"
+          title="先核对地址与促销期限"
+          desc="比较 Xfinity 时，先确认地址能否安装、下载上传需求、设备费用和促销结束后的实际月费。"
+          who="需要核对地址、费用和安装条件的用户"
           highlights={[
-            '湾区 & 全美覆盖最广',
-            '前期促销力度大',
-            '住家 & 商业都可选',
+            '地址可用性与安装方式',
+            '促销期限与恢复价格',
+            '设备费、税费与实际月费',
           ]}
-          cta="查看 Xfinity 详细方案"
+          cta="查看 Xfinity 比较维度"
           href="/internet/xfinity"
         />
 
@@ -83,15 +83,15 @@ export default function InternetProvidersPage() {
         <DecisionCard
           icon={<ShieldCheck size={28} />}
           provider="AT&T Fiber"
-          title="速度与稳定性优先"
-          desc="真光纤到户，上下行对称，延迟低，适合远程办公、直播和高要求用户。"
-          who="重度办公 / 远程 / 高端用户"
+          title="核对上传需求与设备条件"
+          desc="比较 AT&T Fiber 时，重点确认地址可用性、上下行需求、设备费用、合同和提前退出条件。"
+          who="远程办公、视频会议或有上传需求的用户"
           highlights={[
-            '真光纤到户（上下行对称）',
-            '延迟低，体验好',
-            '价格相对透明',
+            '地址是否支持光纤安装',
+            '上下行与设备需求',
+            '合同、促销和实际月费',
           ]}
-          cta="查看 AT&T Fiber 覆盖"
+          cta="查看 AT&T Fiber 比较维度"
           href="/internet/att-fiber"
         />
 
@@ -99,15 +99,15 @@ export default function InternetProvidersPage() {
         <DecisionCard
           icon={<TrendingUp size={28} />}
           provider="Frontier Fiber"
-          title="隐藏型高性价比光纤"
-          desc="部分老社区其实有光纤覆盖，价格通常比 AT&T 更友好，稳定性很好。"
-          who="懂行用户 / 老社区 / 隐藏光纤"
+          title="确认局部地址与条件"
+          desc="比较 Frontier Fiber 时，不能只看宣传价格，需要核对具体地址、安装条件、促销期限和退出成本。"
+          who="正在核对光纤可用性与总成本的用户"
           highlights={[
-            '很多地址有光纤但没人告诉你',
-            '价格比 AT&T 更友好',
-            '稳定性非常好',
+            '具体地址是否可装',
+            '促销后价格与设备费',
+            '合同和提前退出条件',
           ]}
-          cta="查看 Frontier 是否可装"
+          cta="查看 Frontier 比较维度"
           href="/internet/frontier"
         />
 
@@ -115,15 +115,15 @@ export default function InternetProvidersPage() {
         <DecisionCard
           icon={<Home size={28} />}
           provider="Spectrum"
-          title="价格结构相对稳定"
-          desc="Cable 宽带，很多老社区唯一选择，适合不想频繁谈价的长期用户。"
-          who="长期使用 / 讨厌谈价"
+          title="核对可用性与长期费用"
+          desc="比较 Spectrum 时，重点确认地址是否可用、设备费用、数据条件、促销期限和实际总月费。"
+          who="需要比较安装条件和长期费用的用户"
           highlights={[
-            '价格结构相对稳定',
-            '通常无流量上限',
-            '很多老社区唯一选择',
+            '具体地址和安装条件',
+            '设备费用与数据条件',
+            '促销结束后的总月费',
           ]}
-          cta="查看 Spectrum 方案"
+          cta="查看 Spectrum 比较维度"
           href="/internet/spectrum"
         />
       </section>
@@ -153,14 +153,14 @@ export default function InternetProvidersPage() {
         <p className="text-lg text-slate-700">
           同一家运营商，<strong>住家和商业完全是两套逻辑</strong>。
           商业宽带通常更稳定、价格结构不同，更适合公司、店铺、诊所等场景。
-          如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">鸿达电讯 Bay Media Star 首页</Link>。
+          如需返回判断入口，请回到<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">美国鸿达电讯首页</Link>。
           常见问题如<Link href="/internet/providers/faq" className="text-blue-600 hover:text-blue-700 font-semibold underline">宽带账单为什么会突然涨价？</Link>和<Link href="/internet/faq" className="text-blue-600 hover:text-blue-700 font-semibold underline">没有 SSN 可以办宽带吗？</Link>都有详细解答。
         </p>
         <Link
           href="/contact"
           className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-2xl text-lg font-semibold"
         >
-          直接告诉我使用场景
+          告诉我你的宽带判断问题
           <ArrowRight size={20} />
         </Link>
       </section>

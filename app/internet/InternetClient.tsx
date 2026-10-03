@@ -15,11 +15,11 @@ export default function InternetClient() {
 </p>
 
         <h1 className="text-5xl font-extrabold leading-tight">
-          美国宽带怎么选？中文帮你搞定
+          美国宽带问题怎么判断？
         </h1>
         <p className="text-xl text-slate-700 max-w-3xl">
-          地址覆盖查询 · 中文办理 · 涨价处理  
-          支持 Xfinity / AT&T Fiber / Spectrum
+          先判断账单、网络、覆盖、搬家或办理前选择问题
+          支持 Xfinity / AT&T Fiber / Spectrum 的比较入口
         </p>
 
         <Link
@@ -66,22 +66,22 @@ export default function InternetClient() {
 
       {/* ================= 运营商入口 ================= */}
       <section className="space-y-8">
-        <h2 className="text-3xl font-bold">主流美国宽带运营商</h2>
+          <h2 className="text-3xl font-bold">不同宽带运营商怎么比较</h2>
 
         <div className="grid md:grid-cols-3 gap-8">
           <ProviderEntry
             name="Xfinity"
-            desc="覆盖最广，住家与商业宽带选择灵活"
+            desc="核对地址可用性、设备费用和促销期限"
             href="/internet/xfinity"
           />
           <ProviderEntry
             name="AT&T Fiber"
-            desc="真光纤，对称上下行，稳定性高"
+            desc="核对上传需求、设备条件和实际总月费"
             href="/internet/att-fiber"
           />
           <ProviderEntry
             name="Spectrum"
-            desc="价格相对稳定，无流量上限"
+            desc="比较数据条件、设备费用和长期成本"
             href="/internet/providers"
           />
         </div>
@@ -94,7 +94,7 @@ export default function InternetClient() {
           不确定哪家宽带适合你？
         </h2>
         <p className="text-lg text-slate-700">
-          中文顾问免费帮你查询地址覆盖、对比方案、预约安装
+          先核对地址、使用需求、总月费和合同条件，再决定下一步
         </p>
         <Link
           href="/contact"

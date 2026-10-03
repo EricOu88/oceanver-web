@@ -48,7 +48,7 @@ export default function HomePage() {
             <div className="max-w-md">
               <h2 className="text-xl font-bold text-slate-900">美国鸿达电讯</h2>
               <p className="mt-4 text-sm leading-6 text-slate-600">
-                帮助美国中文用户看懂手机和宽带账单，判断是否需要调整套餐、费用或运营商。
+                帮助美国中文用户看懂手机和宽带账单，判断问题原因、比较方案并决定下一步。
               </p>
               <p className="mt-4 text-sm text-slate-600">电话：{BUSINESS_INFO.tel}</p>
               <Link href="/bill-optimization" className="mt-4 inline-block text-sm font-medium text-blue-700 hover:underline">

@@ -28,7 +28,7 @@ const TYPE_CARDS = [
   {
     title: 'AT&T 家庭合约机',
     desc: '适合：家庭多线、长期使用、想要合约机',
-    bullets: ['多线更优惠、正规账单', '携号转网有补贴', '不同人群适合不同类型'],
+    bullets: ['比较线路数量和总月费', '核对设备分期与 bill credit', '不同需求对应不同类型'],
     href: '/cellphone/att-family',
     icon: Users,
     color: 'cyan',
@@ -36,27 +36,27 @@ const TYPE_CARDS = [
   {
     title: 'AT&T 商业手机方案',
     desc: '适合：公司、店铺、团队多线',
-    bullets: ['商业专属折扣、可扩展多号码', '商业账单便于报销', '不同人群适合不同类型'],
+    bullets: ['账户资格和价格需要核实', '商业账单与管理方式不同', '不同需求对应不同方案'],
     href: '/cellphone/att-business',
     icon: Building2,
     color: 'indigo',
   },
 ];
 
-/* ===================== 湾区运营商快速对比 ===================== */
+/* ===================== 手机方案比较维度 ===================== */
 const OPERATOR_COMPARE = [
   { name: 'Gen Mobile', type: 'Prepaid', crowd: '留学生/回国漫游/预算优先', strength: '低价、国际漫游', difficulty: '低', href: '/cellphone/prepaid' },
   { name: 'Ultra Mobile', type: 'Prepaid', crowd: '新移民/无 SSN/短期', strength: '无 SSN、灵活', difficulty: '低', href: '/cellphone/prepaid' },
   { name: 'T-Mobile', type: 'Prepaid/Family', crowd: '城市用户/国际使用', strength: '国际漫游、城市覆盖', difficulty: '中', href: '/cellphone/prepaid' },
-  { name: 'AT&T', type: 'Family/Business', crowd: '家庭多线/商业多线', strength: '覆盖广、合约机优惠', difficulty: '中', href: '/cellphone/att-family' },
+  { name: 'AT&T', type: 'Family/Business', crowd: '家庭多线/商业多线', strength: '比较覆盖、设备与账户条件', difficulty: '中', href: '/cellphone/att-family' },
   { name: 'Verizon', type: 'Family', crowd: '信号优先/郊区/乡村', strength: '信号最强、覆盖广', difficulty: '中', href: '/cellphone/att-family' },
 ];
 
-/* ===================== 按场景推荐 ===================== */
+/* ===================== 按场景比较 ===================== */
 const SCENARIO_RECOMEND = [
   { scenario: '新移民 / 无 SSN', desc: '无法办理合约套餐，预付费无需信用检查，落地即用。', href: '/cellphone/prepaid' },
   { scenario: '留学生 / 预算优先', desc: '预付费灵活、可随时换，国内可下单包邮到美，回国也可用。', href: '/cellphone/prepaid' },
-  { scenario: '家庭多线 / 长期使用', desc: '家庭合约多线更优惠，正规账单，携号转网有补贴。', href: '/cellphone/att-family' },
+  { scenario: '家庭多线 / 长期使用', desc: '比较线路数量、设备条件、促销期限和退出成本。', href: '/cellphone/att-family' },
   { scenario: '公司 / 店铺 / 团队多线', desc: '商业方案专属折扣，可扩展多号码，商业账单便于报销。', href: '/cellphone/att-business' },
   { scenario: '经常回国 / 国际使用', desc: '预付费方案多含国际漫游，或可搭配 WiFi Calling。', href: '/cellphone/prepaid' },
 ];
@@ -66,19 +66,19 @@ const OPERATOR_CARDS = [
   { name: 'Gen Mobile', type: 'Prepaid', tagline: '适合留学生、回国漫游、预算优先用户', pros: ['低价月费', '国际漫游友好', '国内可激活'], cons: ['MVNO 依赖 T-Mobile 网络'], href: '/cellphone/genmobile' },
   { name: 'Ultra Mobile', type: 'Prepaid', tagline: '适合新移民、无 SSN、短期用户', pros: ['无 SSN 可办', '灵活无合约', '邮寄中美'], cons: ['预付费流量有限'], href: '/cellphone/ultra' },
   { name: 'T-Mobile', type: 'Prepaid', tagline: '适合城市用户、国际漫游需求', pros: ['国际漫游好', '城市 5G 覆盖', '预付费可选'], cons: ['郊区信号相对弱'], href: '/cellphone/tmobile' },
-  { name: 'AT&T 家庭', type: 'Family', tagline: '适合家庭多线、长期使用', pros: ['覆盖广', '合约机优惠', '携号转网补贴'], cons: ['需信用或押金'], href: '/cellphone/att-family' },
-  { name: 'AT&T 商业', type: 'Business', tagline: '适合公司、店铺、团队多线', pros: ['商业专属折扣', '可扩展多号码', '商业账单'], cons: ['需商业资格'], href: '/cellphone/att-business' },
+  { name: 'AT&T 家庭', type: 'Family', tagline: '比较家庭多线、长期使用的条件', pros: ['线路数量', '设备分期条件', '退出成本'], cons: ['需核对信用与资格'], href: '/cellphone/att-family' },
+  { name: 'AT&T 商业', type: 'Business', tagline: '比较公司、店铺、团队多线的条件', pros: ['账户资格', '账单与管理方式', '线路需求'], cons: ['需商业资格'], href: '/cellphone/att-business' },
   { name: 'Verizon', type: 'Family', tagline: '适合信号优先、郊区乡村用户', pros: ['信号最强', '郊区覆盖好', '高速网络'], cons: ['价格偏高'], href: '/cellphone/verizon' },
 ];
 
 /* ===================== Providers FAQ ===================== */
 const PROVIDER_FAQ = [
-  { q: '湾区哪个运营商信号比较稳定？', a: 'AT&T、Verizon 在湾区覆盖较广；T-Mobile 城市好、郊区稍弱；预付费 MVNO 依赖主网。' },
+  { q: '不同方案的信号和速度怎么比较？', a: '需要结合具体地址、覆盖、拥塞、设备、优先级和套餐条件判断，不能只按 Prepaid 或 Postpaid 下结论。' },
   { q: '预付费电话卡和合约机有什么区别？', a: '预付费：先付费后使用，无合约、无信用检查。合约机：需信用审核，有合约，可低价或免费拿手机。' },
   { q: '没有 SSN 可以选择哪些运营商？', a: '预付费方案如 Gen Mobile、Ultra Mobile、T-Mobile 预付费等，通常无需 SSN。' },
-  { q: '家庭多线适合哪类方案？', a: 'AT&T、Verizon、T-Mobile 家庭套餐，多线共享更划算，适合长期使用。' },
+  { q: '家庭多线适合哪类方案？', a: '先核对线路数量、各线需求、设备优惠、促销期限和总成本，再比较方案。' },
   { q: '商业手机方案通常需要什么资料？', a: '通常需要 EIN（税号）、营业执照等商业资格，具体以运营商要求为准。' },
-  { q: '在湾区办卡可以远程吗？', a: '可以。支持远程办理、邮寄 SIM 或 eSIM 激活，中文客服协助。' },
+  { q: '办理前需要核对什么？', a: '核对月费、线路数量、数据和热点需求、国际使用、设备分期、AutoPay、信用或资格及退出成本。' },
 ];
 
 export default function ProvidersClient() {
@@ -104,11 +104,11 @@ export default function ProvidersClient() {
           {/* ===================== 1. H1 + 定位段 ===================== */}
           <section className="pt-12 pb-10">
             <h1 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 leading-tight text-center">
-              湾区手机运营商与电话卡选择指南（华人中文）
+              不同手机方案该怎么比较？
             </h1>
             <div className="max-w-3xl mx-auto text-lg text-slate-700 leading-relaxed space-y-3 text-center">
               <p>
-                在湾区选手机运营商，第一步不是比价格，而是<strong className="text-slate-900">先选「类型」再选「运营商」</strong>。
+                比较手机方案时，第一步不是寻找固定推荐，而是<strong className="text-slate-900">先明确需求和比较维度</strong>。
               </p>
               <p>
                 不同类型适合不同人群：预付费（灵活省心）、家庭合约（长期划算）、商业方案（多线企业）。本页提供<strong className="text-slate-900">对比与正确入口</strong>，华人中文服务，帮你高效决策。
@@ -157,9 +157,9 @@ export default function ProvidersClient() {
             </div>
           </section>
 
-          {/* ===================== 3. 湾区运营商快速对比 ===================== */}
+          {/* ===================== 3. 手机方案比较维度 ===================== */}
           <section className="py-10 bg-slate-50 rounded-2xl px-4 md:px-6">
-            <h2 className="text-2xl font-black text-slate-900 mb-6 text-center">湾区运营商快速对比</h2>
+            <h2 className="text-2xl font-black text-slate-900 mb-6 text-center">手机方案比较维度</h2>
             <div className="overflow-x-auto">
               <table className="w-full text-sm border-collapse">
                 <thead>
@@ -192,9 +192,9 @@ export default function ProvidersClient() {
             </div>
           </section>
 
-          {/* ===================== 4. 按使用场景推荐 ===================== */}
+          {/* ===================== 4. 按使用场景比较 ===================== */}
           <section className="py-10">
-            <h2 className="text-2xl font-black text-slate-900 mb-6 text-center">按使用场景推荐</h2>
+            <h2 className="text-2xl font-black text-slate-900 mb-6 text-center">按使用场景比较</h2>
             <div className="space-y-4">
               {SCENARIO_RECOMEND.map((s) => (
                 <Link
@@ -249,11 +249,11 @@ export default function ProvidersClient() {
 
           {/* ===================== 6. GEO 本地信号 ===================== */}
           <section className="py-12">
-            <h2 className="text-2xl font-black text-slate-900 mb-6 text-center">湾区本地服务</h2>
+            <h2 className="text-2xl font-black text-slate-900 mb-6 text-center">全美中文判断协助</h2>
             <ul className="space-y-3 mb-8 text-slate-700 max-w-2xl mx-auto">
               <li className="flex items-center gap-2">
                 <MapPin className="text-blue-600 shrink-0" size={20} />
-                服务覆盖：东湾、南湾、北湾（Fremont、San Jose、Milpitas 等）
+                服务面向全美中文用户，可按地址和账户条件协助核实
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="text-green-600 shrink-0" size={20} />
@@ -300,7 +300,7 @@ export default function ProvidersClient() {
       </main>
 
       <footer className="py-8 border-t text-center">
-        <p className="text-[11px] font-black text-slate-300 uppercase tracking-[0.2em]">© {new Date().getFullYear()} BAY MEDIA STAR</p>
+        <p className="text-[11px] font-black text-slate-300 uppercase tracking-[0.2em]">© {new Date().getFullYear()} 美国鸿达电讯</p>
       </footer>
     </div>
   );

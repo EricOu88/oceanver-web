@@ -6,18 +6,18 @@ import ProblemCards from './ProblemCards';
 import { BottomCTAButton } from './BottomCTAButton';
 
 export const metadata: Metadata = {
-  title: '美国手机套餐推荐湾区中文办理 AT&T, T-Mobile, Ultra Mobile - 鸿达电讯',
+  title: '不同手机方案该怎么比较？| 美国鸿达电讯',
   description:
-    '湾区华人办理美国手机卡与套餐怎么选？本页对比 AT&T、T-Mobile、Verizon、Ultra Mobile 等主流运营商，支持中文咨询、微信办理与 Fremont 到店服务，适合新移民、家庭合约与预付费用户。',
+    '面向全美中文用户比较 AT&T、T-Mobile、Verizon、Ultra Mobile 等手机方案，覆盖月费、线路数量、数据、设备、资格与退出成本。',
   alternates: {
     canonical: 'https://oceanver.com/cellphone/providers',
   },
   openGraph: {
-    title: '美国手机套餐推荐湾区中文办理 AT&T, T-Mobile, Ultra Mobile - 鸿达电讯',
+    title: '不同手机方案该怎么比较？| 美国鸿达电讯',
     description:
-      '湾区华人办理美国手机卡与套餐怎么选？本页对比 AT&T、T-Mobile、Verizon、Ultra Mobile 等主流运营商，支持中文咨询、微信办理与 Fremont 到店服务，适合新移民、家庭合约与预付费用户。',
-    url: 'https://baymediastar.com/cellphone/providers',
-    siteName: '鸿达电讯 Bay Media Star',
+      '面向全美中文用户比较 AT&T、T-Mobile、Verizon、Ultra Mobile 等手机方案，覆盖月费、线路数量、数据、设备、资格与退出成本。',
+    url: 'https://oceanver.com/cellphone/providers',
+    siteName: '美国鸿达电讯',
     locale: 'zh_CN',
     type: 'website',
   },
@@ -31,19 +31,19 @@ export default function CellphoneProvidersPage() {
           {/* HERO */}
           <section className="text-center space-y-4 mb-12">
             <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">
-              美国/湾区手机卡办理与运营商套餐选择指南（中文）
+              不同手机方案该怎么比较？
             </h1>
             <div className="max-w-3xl mx-auto text-center text-base md:text-lg text-slate-600 leading-relaxed space-y-2">
-              <p>美国/湾区手机卡办理，中文服务，微信办理与 Fremont 到店服务。</p>
-              <p>适合新移民、家庭合约与预付费用户，方案推荐合适，到店/远程都方便。</p>
-              <p>建议先选类型，再选运营商，避免踩坑。</p>
+              <p>面向全美中文用户，整理不同手机方案的比较方法。</p>
+              <p>从月费、线路数量、数据与热点需求、国际使用、设备分期和退出成本进行判断。</p>
+              <p>具体价格、优惠和资格随账户、地区和时间变化，需要核实。</p>
             </div>
             <p className="max-w-3xl mx-auto text-center text-base md:text-lg text-slate-600 leading-relaxed">
               不同手机运营商在
               <strong className="text-slate-900">价格、信号覆盖、国际使用、账单稳定性</strong>
               方面差异很大。选错运营商可能导致信号差、国际漫游费用高、账单突然涨价等问题。
-              <strong className="text-blue-600">中文协助可以帮您避免踩坑，找到最适合的方案。</strong>
-              如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">鸿达电讯 Bay Media Star 首页</Link>。
+              <strong className="text-blue-600">中文协助可以帮你整理比较条件，不直接给出固定运营商推荐。</strong>
+              如需返回判断入口，请回到<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">美国鸿达电讯首页</Link>。
               常见问题如<Link href="/cellphone/faq/how-to-choose-us-cellphone-plan" className="text-blue-600 hover:text-blue-700 font-semibold underline">没有 SSN 可以办手机卡吗？</Link>和<Link href="/cellphone/faq/prepaid-vs-postpaid" className="text-blue-600 hover:text-blue-700 font-semibold underline">预付费和后付费手机卡有什么区别？</Link>都有详细解答。
             </p>
           </section>
@@ -73,7 +73,7 @@ export default function CellphoneProvidersPage() {
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <p className="text-slate-700 text-sm md:text-base">
                 不确定选哪家？
-                <span className="font-semibold text-slate-900"> 👉 用 1 分钟帮你判断最合适的手机套餐</span>
+                <span className="font-semibold text-slate-900"> 👉 用 1 分钟帮你判断手机方案条件</span>
               </p>
               <Link
                 href="/cellphone/diagnosis"
@@ -92,20 +92,20 @@ export default function CellphoneProvidersPage() {
       {/* Testimonials 模块 */}
       <section className="py-16 px-4 bg-gradient-to-br from-slate-50 to-slate-100">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4 text-center">湾区用户真实评价</h2>
-          <p className="text-center text-slate-600 mb-12">中文沟通清楚，方案推荐更省心；到店/远程都方便。</p>
+          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4 text-center">比较手机方案时先核对这些条件</h2>
+          <p className="text-center text-slate-600 mb-12">月费、线路数、数据需求、设备条件和退出成本都可能影响结果。</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-white border border-slate-200 rounded-xl shadow-sm p-5">
               <p className="text-slate-700 leading-relaxed mb-3">
                 “刚来美国不懂怎么选套餐，中文解释特别清楚，帮我对比了 AT&T 和 T-Mobile 的覆盖和费用，最后选到合适的预付费方案，办得很快。”
               </p>
-              <p className="font-semibold text-slate-900">— 来自 San Jose 的小王</p>
+              <p className="font-semibold text-slate-900">— 月费与线路数</p>
             </div>
             <div className="bg-white border border-slate-200 rounded-xl shadow-sm p-5">
               <p className="text-slate-700 leading-relaxed mb-3">
-                “家里 4 条线想省月费又怕麻烦，他们直接按我们用量推荐家庭方案，还提醒转网注意事项。到店办理很顺畅，之后账单问题也能中文沟通。”
+                “家里 4 条线需要比较月费和设备条件，中文说明了不同方案的差异，也提醒了转网和账单核对事项。”
               </p>
-              <p className="font-semibold text-slate-900">— Fremont 家庭用户</p>
+              <p className="font-semibold text-slate-900">— 设备分期与 bill credit</p>
             </div>
             <div className="bg-white border border-slate-200 rounded-xl shadow-sm p-5">
               <p className="text-slate-700 leading-relaxed mb-3">
@@ -132,7 +132,7 @@ export default function CellphoneProvidersPage() {
               href="/contact"
               className="border border-blue-700 text-blue-700 bg-white hover:bg-blue-50 text-lg px-8 py-4 rounded-xl w-full sm:w-auto min-h-[48px] flex items-center justify-center font-black transition-all"
             >
-              预约 Fremont 店面（到店办理）
+              查看比较方法
             </Link>
           </div>
         </div>
@@ -147,7 +147,7 @@ export default function CellphoneProvidersPage() {
               href="/blog/bay-area-internet-guide"
               className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-sm transition-all"
             >
-              <h3 className="text-lg font-semibold text-blue-700 underline underline-offset-4 hover:text-blue-900">新移民入境攻略：刚到美国如何办理手机卡更省钱</h3>
+              <h3 className="text-lg font-semibold text-blue-700 underline underline-offset-4 hover:text-blue-900">新用户办理手机卡前要核对什么</h3>
             </Link>
             <Link
               href="#"
@@ -223,7 +223,7 @@ export default function CellphoneProvidersPage() {
               href="/contact"
               className="border border-blue-700 text-blue-700 bg-white hover:bg-blue-50 text-lg px-8 py-4 rounded-xl w-full sm:w-auto min-h-[48px] flex items-center justify-center font-black transition-all"
             >
-              预约 Fremont 店面（到店办理）
+              办理前先判断
             </Link>
           </div>
           <p className="text-slate-700 text-lg mb-8 leading-relaxed">
@@ -247,7 +247,7 @@ export default function CellphoneProvidersPage() {
 
       <footer className="py-12 border-t border-slate-100 text-center">
         <p className="text-[10px] font-black text-slate-300 tracking-[0.2em] uppercase">
-          © {new Date().getFullYear()} BAY MEDIA STAR · OFFICIAL PARTNER
+          © {new Date().getFullYear()} 美国鸿达电讯
         </p>
       </footer>
     </ProvidersShell>

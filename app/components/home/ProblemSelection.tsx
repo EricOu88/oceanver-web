@@ -37,7 +37,7 @@ const PROBLEMS: Problem[] = [
     label: '办理 / 换之前',
     title: '准备办理 / 换套餐？',
     tag: '手机 · 宽带',
-    desc: '帮你比较方案，做出更好的选择。',
+    desc: '帮你比较方案，判断办理或更换前的条件。',
     cta: '帮我做决定',
     href: '/cellphone',
     image: '/home/problem-plan-choice.png',
@@ -45,7 +45,7 @@ const PROBLEMS: Problem[] = [
     icon: <Smartphone size={24} />,
     questions: [
       '从 T-Mobile 转 AT&T，值得吗？',
-      '家庭套餐哪几条线最划算？',
+      '家庭多线套餐怎样结合线路数和总成本判断？',
       '现在换 iPhone 18，要选什么套餐？',
     ],
   },

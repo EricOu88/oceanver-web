@@ -89,7 +89,7 @@ export default function HowToChooseCellphonePlanPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="text-green-600 shrink-0 mt-0.5" size={18} />
-                      <span className="text-slate-700">价格透明，不会突然涨价</span>
+                      <span className="text-slate-700">账单结构通常较简单，但价格和条款仍可能变化</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="text-green-600 shrink-0 mt-0.5" size={18} />
@@ -135,7 +135,7 @@ export default function HowToChooseCellphonePlanPage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="text-green-600 shrink-0 mt-0.5" size={18} />
-                      <span className="text-slate-700">多线有折扣，家庭更划算</span>
+                      <span className="text-slate-700">多线有时能降低人均月费，需要结合总成本判断</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle2 className="text-green-600 shrink-0 mt-0.5" size={18} />
@@ -239,7 +239,7 @@ export default function HowToChooseCellphonePlanPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="font-bold text-blue-600">✗ 没有</span>
-                  <span>→ 只能选 Prepaid（预付费）</span>
+                  <span>→ 可选方案取决于运营商、账户资格和办理方式，需要进一步确认</span>
                 </li>
               </ul>
             </div>
@@ -251,7 +251,7 @@ export default function HowToChooseCellphonePlanPage() {
               <ul className="space-y-2 text-slate-700">
                 <li className="flex items-start gap-2">
                   <span className="font-bold text-blue-600">长期（1年以上）</span>
-                  <span>→ Postpaid 或 Family Plan 更划算</span>
+                  <span>→ 结合使用时长、线路数量和总成本比较</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="font-bold text-blue-600">短期（几个月）</span>
@@ -271,7 +271,7 @@ export default function HowToChooseCellphonePlanPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="font-bold text-blue-600">3 条以上</span>
-                  <span>→ Family Plan 通常更划算</span>
+                  <span>→ 结合线路数、设备优惠和总成本判断</span>
                 </li>
               </ul>
             </div>
@@ -314,7 +314,7 @@ export default function HowToChooseCellphonePlanPage() {
               </div>
               <p className="text-slate-700 leading-relaxed ml-9">
                 很多人直接对比 AT&T 和 T-Mobile 的价格，但忽略了类型差异。
-                Prepaid 的 $30 和 Postpaid 的 $30 完全不是一回事，前者是固定价格，后者可能只是促销价。
+                Prepaid 的 $30 和 Postpaid 的 $30 可能对应不同的费用结构；价格、促销期限和条款都需要核实。
               </p>
             </div>
 
@@ -326,8 +326,7 @@ export default function HowToChooseCellphonePlanPage() {
                 </h3>
               </div>
               <p className="text-slate-700 leading-relaxed ml-9">
-                这是最大的误解。Prepaid（预付费）套餐不需要 SSN，也不需要信用检查。
-                很多新移民和留学生都用 Prepaid，完全没问题。
+              没有 SSN 时仍可能有不同方案，但具体选择取决于运营商、账户资格和办理方式，需要进一步确认。
               </p>
             </div>
 
@@ -339,7 +338,7 @@ export default function HowToChooseCellphonePlanPage() {
                 </h3>
               </div>
               <p className="text-slate-700 leading-relaxed ml-9">
-                对于家庭多线用户，Family Plan 的人均成本通常比 Prepaid 更低。
+                对于家庭多线用户，Family Plan 有时能降低人均月费，但需要结合线路数、设备优惠和总成本判断。
                 关键是要看你的使用场景和需求。
               </p>
             </div>
@@ -348,7 +347,7 @@ export default function HowToChooseCellphonePlanPage() {
               <div className="flex items-start gap-3 mb-2">
                 <AlertCircle className="text-amber-800 shrink-0 mt-0.5" size={24} />
                 <h3 className="text-xl font-bold text-slate-900">
-                  误区 4：直接选最便宜的运营商
+                  误区 4：只按价格选择运营商
                 </h3>
               </div>
               <p className="text-slate-700 leading-relaxed ml-9">
@@ -365,7 +364,7 @@ export default function HowToChooseCellphonePlanPage() {
             还是不确定选哪种类型？
           </h2>
           <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-            用我们的智能诊断工具，1 分钟帮你判断适合哪种手机方案类型，并推荐具体运营商。
+            用我们的智能诊断工具，1 分钟帮你判断需求、方案类型和下一步，不直接给出固定运营商推荐。
           </p>
           <Link
             href="/cellphone/diagnosis"
@@ -392,7 +391,7 @@ export default function HowToChooseCellphonePlanPage() {
             </li>
             <li className="flex items-start gap-3">
               <span className="font-black text-blue-600 shrink-0">3.</span>
-              <span><strong>避免误区：</strong>不要只看价格，不要以为没 SSN 就不能办，不要直接选最便宜的。</span>
+              <span><strong>避免误区：</strong>不要只看价格，不要把 SSN、促销或方案类型当成绝对结论。</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="font-black text-blue-600 shrink-0">4.</span>

@@ -27,9 +27,9 @@ const FAQ_ITEMS = [
     desc: '信用要求、合约、价格稳定性，帮你做出正确选择',
   },
   {
-    href: '/blog/bay-area-phone-card-guide',
-    title: '湾区电话卡办理指南',
-    desc: '湾区相关电话卡覆盖与套餐问题',
+    href: '/cellphone/family-plan-guide',
+    title: '家庭多线套餐怎么判断',
+    desc: '从线路数、设备分期、账单和总成本比较方案',
   },
   {
     href: '/blog/how-to-save-on-phone-bills',
@@ -60,8 +60,8 @@ export default function CellphoneClient() {
             </p>
             <p>
               不同类型适合的人群不同：<strong className="text-slate-900">预付费电话卡</strong>（灵活省心）、
-              <strong className="text-slate-900">AT&T 家庭合约机</strong>（长期更划算）、
-              <strong className="text-slate-900">AT&T 商业手机方案</strong>（多线/企业更合适）。
+              <strong className="text-slate-900">家庭多线方案</strong>（需要结合线路数与总成本）、
+              <strong className="text-slate-900">商业手机方案</strong>（需要结合账户资格与管理需求）。
             </p>
             <p>
               本页面向美国中文用户提供信息与协助；具体办理资格和方式以运营商政策、账户状态及所在地址为准。
@@ -118,15 +118,15 @@ export default function CellphoneClient() {
               <ul className="space-y-2 mb-6">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="text-green-600 flex-shrink-0 mt-0.5" size={18} />
-                  <span className="text-slate-700">多线更优惠、正规账单、长期更稳定</span>
+                  <span className="text-slate-700">多线费用需要结合线路数和总月费比较</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="text-green-600 flex-shrink-0 mt-0.5" size={18} />
-                  <span className="text-slate-700">携号转网有补贴</span>
+                  <span className="text-slate-700">可能涉及设备优惠或 bill credit，需核实条件</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="text-green-600 flex-shrink-0 mt-0.5" size={18} />
-                  <span className="text-slate-700">合约机免费或低价拿新手机</span>
+                  <span className="text-slate-700">设备优惠通常附带期限、资格或账单条件</span>
                 </li>
               </ul>
               <Link
@@ -150,7 +150,7 @@ export default function CellphoneClient() {
               <ul className="space-y-2 mb-6">
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="text-green-600 flex-shrink-0 mt-0.5" size={18} />
-                  <span className="text-slate-700">商业专属折扣、可扩展多号码</span>
+                  <span className="text-slate-700">商业账户条件和价格需要单独核实</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="text-green-600 flex-shrink-0 mt-0.5" size={18} />
@@ -158,7 +158,7 @@ export default function CellphoneClient() {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="text-green-600 flex-shrink-0 mt-0.5" size={18} />
-                  <span className="text-slate-700">多线共享流量，人均成本更低</span>
+                  <span className="text-slate-700">多线共享方式和总成本取决于具体需求</span>
                 </li>
               </ul>
               <Link
@@ -289,7 +289,7 @@ export default function CellphoneClient() {
 
       <footer className="py-8 border-t text-center">
         <p className="text-[11px] font-black text-slate-300 uppercase tracking-[0.3em]">
-          © {new Date().getFullYear()} BAY MEDIA STAR
+          © {new Date().getFullYear()} 美国鸿达电讯
         </p>
       </footer>
     </div>
