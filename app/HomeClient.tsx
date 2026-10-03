@@ -19,7 +19,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-[#FCFDFE] font-sans text-[#202D3A] selection:bg-[#2786A5]/20">
       {/* FAQ Section */}
-      <section className="bg-[#EDF5F9] py-8 md:py-12">
+      <section id="faq" className="bg-[#EDF5F9] py-8 md:py-12">
         <FAQSection />
         <div className="mx-auto max-w-4xl px-4">
           <div className="border-t border-slate-200 pt-5 text-center">
