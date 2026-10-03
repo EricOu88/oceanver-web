@@ -91,7 +91,7 @@ const organizationJsonLd = {
     '为美国中文用户提供手机套餐、家庭宽带、账单检查、套餐选择和常见通信问题信息与中文协助。',
   url: 'https://oceanver.com',
   telephone: '+1-510-849-6191',
-  knowsLanguage: ['zh-CN', 'en-US'],
+  knowsLanguage: ['zh-CN'],
   audience: {
     '@type': 'Audience',
     audienceType: 'Chinese-speaking users in the United States',
