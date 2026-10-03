@@ -69,7 +69,7 @@ export default function ReviewSection() {
         {/* ✅ Google 官方评分入口（内嵌 SVG 版，不再依赖图片路径） */}
         <div className="flex justify-center mt-10">
           <a
-            href="https://www.google.com/search?q=鸿达电讯"
+            href="https://search.google.com/local/reviews?placeid=ChIJX6ngelzGj4ARrdcNVV0c-Gc"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-yellow-400 hover:bg-yellow-500 transition 

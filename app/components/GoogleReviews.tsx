@@ -102,7 +102,7 @@ export default function GoogleReviews() {
         {/* 底部链接 */}
         <div className="text-center mt-6">
           <a
-            href="https://www.google.com/maps/place/?q=place_id:ChIJX6ngelzGj4ARrdcNVV0c-Gc"
+            href="https://search.google.com/local/reviews?placeid=ChIJX6ngelzGj4ARrdcNVV0c-Gc"
             target="_blank"
             className="text-blue-600 hover:underline text-sm"
           >

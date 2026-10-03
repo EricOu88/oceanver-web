@@ -34,7 +34,7 @@ const ITEMS = [
     title: '5.0',
     desc: 'Google 用户评价',
     cta: '查看 Google 评价',
-    href: 'https://www.google.com/maps/search/?api=1&query=美国鸿达电讯&query_place_id=ChIJX6ngelzGj4ARrdcNVV0c-Gc',
+    href: 'https://search.google.com/local/reviews?placeid=ChIJX6ngelzGj4ARrdcNVV0c-Gc',
     external: true,
     color: 'text-[#2786A5] bg-[#EDF5F9]',
   },
