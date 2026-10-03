@@ -26,9 +26,14 @@
     "answer": "Spectrum 商业宽带通常需要提供营业执照（Business License）或商业注册证明。具体要求可能因地区和套餐而异。如果您没有营业执照，可以咨询我们是否有其他适合的方案。建议加微信详细咨询，我们可以帮您确认具体申请条件。",
     "scope": "allowed",
     "next_step": "加微信确认具体申请条件",
-    "do_not_say": ["保证", "一定", "100%"],
+    "do_not_say": [
+      "保证",
+      "一定",
+      "100%"
+    ],
     "source_url": "/internet/spectrum",
-    "updated_at": "2026-01-27T00:00:00Z"
+    "updated_at": "2026-01-27T00:00:00Z",
+    "review_status": "time_sensitive"
   },
   {
     "id": "spectrum-business-002",
@@ -42,9 +47,14 @@
     "answer": "Spectrum 商业宽带和家用宽带的主要区别：1) 商业宽带通常有 SLA（服务级别协议）保证，故障响应更快 2) 商业宽带通常有静态 IP 地址 3) 商业宽带价格通常高于家用，但稳定性更好 4) 商业宽带通常有专门的商业客服支持。具体选择取决于您的使用场景和需求。",
     "scope": "allowed",
     "next_step": "加微信根据需求推荐方案",
-    "do_not_say": ["$", "具体价格", "保证"],
+    "do_not_say": [
+      "$",
+      "具体价格",
+      "保证"
+    ],
     "source_url": "/internet/spectrum",
-    "updated_at": "2026-01-27T00:00:00Z"
+    "updated_at": "2026-01-27T00:00:00Z",
+    "review_status": "time_sensitive"
   },
   {
     "id": "spectrum-business-003",
@@ -58,9 +68,14 @@
     "answer": "以下情况通常不建议办理 Spectrum 商业宽带：1) 没有营业执照或商业注册证明 2) 家庭办公或小型工作室，家用宽带已能满足需求 3) 预算有限，商业宽带价格通常高于家用宽带 4) 不需要静态 IP 地址或 SLA 保证 5) 不需要专门的商业客服支持。如果您不确定是否应该选择商业宽带，建议加微信详细咨询。",
     "scope": "allowed",
     "next_step": "加微信根据情况推荐方案",
-    "do_not_say": ["$", "具体价格", "保证"],
+    "do_not_say": [
+      "$",
+      "具体价格",
+      "保证"
+    ],
     "source_url": "/internet/spectrum",
-    "updated_at": "2026-01-27T00:00:00Z"
+    "updated_at": "2026-01-27T00:00:00Z",
+    "review_status": "time_sensitive"
   },
   {
     "id": "spectrum-business-004",
@@ -74,9 +89,14 @@
     "answer": "Spectrum 商业宽带安装时间通常需要 3-7 个工作日。具体时间取决于地址和运营商安排。商业宽带通常有专门的安装团队，安装质量更有保障。我们会帮您预约安装时间，并全程跟踪进度。",
     "scope": "allowed",
     "next_step": "加微信预约商业宽带安装",
-    "do_not_say": ["保证", "一定", "100%"],
+    "do_not_say": [
+      "保证",
+      "一定",
+      "100%"
+    ],
     "source_url": "/internet/spectrum",
-    "updated_at": "2026-01-27T00:00:00Z"
+    "updated_at": "2026-01-27T00:00:00Z",
+    "review_status": "time_sensitive"
   },
   {
     "id": "spectrum-business-005",
@@ -90,9 +110,14 @@
     "answer": "Spectrum 商业宽带通常有 SLA（服务级别协议）保证，包括故障响应时间、网络可用性等。商业宽带通常有专门的商业客服支持，故障处理更快。具体 SLA 条款因套餐而异。建议加微信了解具体 SLA 详情。",
     "scope": "allowed",
     "next_step": "加微信了解商业宽带 SLA 详情",
-    "do_not_say": ["保证", "100%", "一定"],
+    "do_not_say": [
+      "保证",
+      "100%",
+      "一定"
+    ],
     "source_url": "/internet/spectrum",
-    "updated_at": "2026-01-27T00:00:00Z"
+    "updated_at": "2026-01-27T00:00:00Z",
+    "review_status": "time_sensitive"
   },
   {
     "id": "spectrum-business-006",
@@ -106,9 +131,14 @@
     "answer": "Spectrum 商业宽带通常提供静态 IP 地址选项。静态 IP 地址适合需要远程访问、服务器托管等场景。具体是否包含静态 IP 取决于您选择的套餐。建议加微信了解具体套餐详情。",
     "scope": "allowed",
     "next_step": "加微信了解静态 IP 选项",
-    "do_not_say": ["$", "具体价格", "保证"],
+    "do_not_say": [
+      "$",
+      "具体价格",
+      "保证"
+    ],
     "source_url": "/internet/spectrum",
-    "updated_at": "2026-01-27T00:00:00Z"
+    "updated_at": "2026-01-27T00:00:00Z",
+    "review_status": "time_sensitive"
   },
   {
     "id": "spectrum-business-007",
@@ -122,8 +152,13 @@
     "answer": "Spectrum 商业宽带通常有专门的商业客服支持，故障响应更快。商业客服通常提供 24/7 支持，响应时间更短。我们会帮您联系商业客服处理问题。",
     "scope": "allowed",
     "next_step": "加微信协助联系商业客服",
-    "do_not_say": ["保证", "一定", "100%"],
+    "do_not_say": [
+      "保证",
+      "一定",
+      "100%"
+    ],
     "source_url": "/internet/spectrum",
-    "updated_at": "2026-01-27T00:00:00Z"
+    "updated_at": "2026-01-27T00:00:00Z",
+    "review_status": "time_sensitive"
   }
 ]

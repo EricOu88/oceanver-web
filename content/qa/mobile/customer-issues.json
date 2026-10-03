@@ -1,0 +1,218 @@
+[
+  {
+    "id": "mobile-lost-device-installment-001",
+    "provider": "general",
+    "category": "equipment",
+    "question_variants": [
+      "手机丢了，但设备还在分期怎么办？",
+      "手机遗失后，剩余设备分期还要继续付吗？",
+      "手机找不回来时，设备付款和线路应该怎么处理？"
+    ],
+    "answer": "手机遗失后，设备分期和无线线路通常需要分别核实。先联系运营商暂停或保护线路，并使用设备厂商的定位、锁定或擦除功能；再查看设备付款协议和账户账单，确认剩余分期、保险或促销抵扣如何处理。具体义务以账户协议和运营商核实结果为准。",
+    "scope": "allowed",
+    "next_step": "尽快保护线路和设备账户，再向运营商核对分期及保险状态。",
+    "do_not_say": [
+      "手机丢失后分期自动取消",
+      "保险一定赔付",
+      "一定能追回设备"
+    ],
+    "updated_at": "2026-10-03T00:00:00Z",
+    "stage": "solve",
+    "case_type": "historical-question",
+    "tags": [
+      "手机设备与分期",
+      "设备遗失",
+      "账户安全"
+    ],
+    "summary": "手机遗失后应先保护线路和设备，再分别核实设备分期、保险与促销条件。",
+    "check_first": [
+      "运营商线路是否需要暂停或更换 SIM/eSIM",
+      "设备分期协议和剩余余额",
+      "设备保险及促销抵扣条件"
+    ],
+    "self_help": [
+      "使用厂商账户定位、锁定设备或远程擦除",
+      "保存运营商暂停线路及报失记录"
+    ],
+    "cannot_determine": [
+      "剩余分期是否仍应支付",
+      "保险是否适用",
+      "账户变更对促销抵扣的影响"
+    ],
+    "review_status": "approved",
+    "public_case": true
+  },
+  {
+    "id": "att-mobile-slow-network-001",
+    "provider": "att",
+    "category": "after-sales",
+    "question_variants": [
+      "AT&T 手机网络慢怎么简单排查？",
+      "AT&T 手机数据速度很慢，先检查什么？",
+      "AT&T 手机上网卡顿，是信号还是套餐问题？"
+    ],
+    "answer": "先切换飞行模式后恢复连接并重启手机，再查看运营商是否报告服务异常。对比不同地点、不同时间和 Wi-Fi/移动网络表现，并确认账户套餐、数据使用状态及网络设置。若问题仅在特定地点出现，覆盖和室内环境也可能有关；不要仅凭一次测速断定线路故障。",
+    "scope": "allowed",
+    "next_step": "记录地点、时间、设备和测速条件，再通过 AT&T 账户或支持渠道核实。",
+    "do_not_say": [
+      "一定是手机坏了",
+      "一定是 AT&T 限速",
+      "更换套餐一定会变快"
+    ],
+    "updated_at": "2026-10-03T00:00:00Z",
+    "stage": "solve",
+    "case_type": "historical-question",
+    "tags": [
+      "手机网络 / 信号 / 漫游",
+      "AT&T",
+      "网速慢"
+    ],
+    "summary": "AT&T 手机网速慢时，先检查连接、地点、服务异常和账户数据状态。",
+    "check_first": [
+      "同一地点是否有服务异常",
+      "不同地点和时段的速度差异",
+      "套餐数据状态、网络设置及设备更新"
+    ],
+    "self_help": [
+      "切换飞行模式并重新连接",
+      "重启手机后在多个位置重复测试",
+      "对比 Wi-Fi 与移动网络是否都慢"
+    ],
+    "cannot_determine": [
+      "当地覆盖或临时网络负载",
+      "账户是否受特定数据规则影响",
+      "设备或 SIM/eSIM 是否需要进一步检查"
+    ],
+    "review_status": "approved",
+    "public_case": true
+  },
+  {
+    "id": "att-delivery-unavailable-001",
+    "provider": "att",
+    "category": "after-sales",
+    "question_variants": [
+      "AT&T 手机配送时家里没人怎么办？",
+      "AT&T 送手机时无人签收，下一步怎么查？",
+      "错过 AT&T 手机配送后，在哪里确认重新派送？"
+    ],
+    "answer": "先查看订单和承运商的最新追踪状态，确认是否要求本人签收、是否留下通知，以及页面提供的改约、再次派送或自取选项。不同订单、承运商和签收方式可能不同；不要假设包裹会自动放在门口或一定会再次派送。",
+    "scope": "allowed",
+    "next_step": "按订单追踪页面联系承运商或 AT&T，确认该包裹可用的签收和重新派送方式。",
+    "do_not_say": [
+      "一定会放在门口",
+      "一定会自动再次派送",
+      "任何人都可以代签"
+    ],
+    "updated_at": "2026-10-03T00:00:00Z",
+    "stage": "solve",
+    "case_type": "historical-question",
+    "tags": [
+      "账户 / 售后 / 流程",
+      "AT&T",
+      "手机配送"
+    ],
+    "summary": "配送时无人签收，应根据订单和承运商追踪页面确认可用处理方式。",
+    "check_first": [
+      "订单当前配送状态和承运商通知",
+      "是否要求本人或指定人员签收",
+      "订单页面显示的改约或自取选项"
+    ],
+    "self_help": [
+      "保存追踪编号和配送通知",
+      "通过订单页面更新允许的配送安排"
+    ],
+    "cannot_determine": [
+      "该订单是否允许代签或自取",
+      "再次派送时间和签收要求",
+      "包裹是否会被退回"
+    ],
+    "review_status": "time_sensitive",
+    "public_case": false
+  },
+  {
+    "id": "att-installment-early-payoff-001",
+    "provider": "att",
+    "category": "contract",
+    "question_variants": [
+      "AT&T 分期手机多久可以提前付清？",
+      "AT&T 手机分期能不能提前还完？",
+      "想提前付清 AT&T 设备款，需要满足什么条件？"
+    ],
+    "answer": "提前付清时间、操作入口和对促销抵扣的影响，应以该设备的分期协议和账户页面为准。付款前先确认剩余分期、设备是否仍有促销账单抵扣，以及提前结清会不会影响未发放的抵扣；不要只按通用说法决定付款。",
+    "scope": "allowed",
+    "next_step": "在 AT&T 账户查看设备付款协议，并向运营商确认提前结清对剩余抵扣的影响。",
+    "do_not_say": [
+      "任何时候都能提前付清",
+      "提前付清不会影响促销",
+      "付清后一定立即解锁"
+    ],
+    "updated_at": "2026-10-03T00:00:00Z",
+    "stage": "decide",
+    "case_type": "historical-question",
+    "tags": [
+      "手机设备与分期",
+      "AT&T",
+      "提前付清"
+    ],
+    "summary": "提前结清 AT&T 设备分期前，应核实协议余额和促销抵扣条件。",
+    "check_first": [
+      "设备分期协议、剩余金额及付款状态",
+      "相关线路和套餐资格",
+      "未发放的设备促销抵扣"
+    ],
+    "self_help": [
+      "先下载或查看账户中的设备付款明细",
+      "向运营商确认提前付款后的账单与设备状态"
+    ],
+    "cannot_determine": [
+      "具体可提前付款日期和结清金额",
+      "提前付款对剩余账单抵扣的影响",
+      "解锁资格和时间"
+    ],
+    "review_status": "time_sensitive",
+    "public_case": false
+  },
+  {
+    "id": "mobile-esim-deleted-restore-001",
+    "provider": "general",
+    "category": "after-sales",
+    "question_variants": [
+      "手机误删 eSIM 后怎么恢复？",
+      "eSIM 配置文件删除了，如何重新开通？",
+      "换手机前删掉 eSIM，现在没有信号怎么办？"
+    ],
+    "answer": "先确认运营商账户中的线路仍有效，再通过运营商提供的正式流程重新下载或补发 eSIM。各运营商对二维码复用、设备更换和身份验证的要求不同；不要公开分享激活二维码，也不要在确认线路恢复前清除旧设备中的其他账户资料。",
+    "scope": "allowed",
+    "next_step": "使用运营商账户或官方支持渠道申请 eSIM 重新激活，并按提示完成设备验证。",
+    "do_not_say": [
+      "旧二维码一定可以重复使用",
+      "删除 eSIM 会注销号码",
+      "一定可以立即恢复"
+    ],
+    "updated_at": "2026-10-03T00:00:00Z",
+    "stage": "solve",
+    "case_type": "historical-question",
+    "tags": [
+      "手机转网 / 号码 / eSIM",
+      "eSIM",
+      "恢复线路"
+    ],
+    "summary": "误删 eSIM 后，应通过运营商账户重新激活或补发配置，并保护激活信息。",
+    "check_first": [
+      "线路是否仍在账户中有效",
+      "设备是否支持该运营商 eSIM",
+      "是否有可用 Wi-Fi 和账户验证方式"
+    ],
+    "self_help": [
+      "不要分享 eSIM 二维码或验证码",
+      "按照运营商账户页面的重新激活步骤操作"
+    ],
+    "cannot_determine": [
+      "旧二维码能否再次使用",
+      "当前账户是否需要人工身份验证",
+      "恢复所需时间"
+    ],
+    "review_status": "approved",
+    "public_case": true
+  }
+]

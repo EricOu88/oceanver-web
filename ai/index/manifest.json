@@ -1,11 +1,11 @@
 {
-  "count": 53,
-  "timestamp": "2026-01-28T01:41:51.035Z",
+  "count": 64,
+  "timestamp": "2026-10-03T07:32:38.441Z",
   "version": "1.0.0",
   "providers": [
     "att",
-    "general",
     "xfinity",
+    "general",
     "spectrum"
   ],
   "categories": [
@@ -18,7 +18,6 @@
     "contract",
     "moving",
     "equipment",
-    "商业资格",
     "after-sales"
   ],
   "indexedIds": [
@@ -33,14 +32,14 @@
     "att-home-006",
     "att-home-007",
     "att-home-008",
+    "xfinity-equipment-return-charge-001",
+    "att-first-bill-higher-001",
+    "ultra-to-att-contract-decision-001",
     "general-001",
     "general-002",
     "general-003",
     "general-004",
     "general-005",
-    "general-006",
-    "general-007",
-    "general-008",
-    "xfinity_business_license"
+    "general-006"
   ]
 }

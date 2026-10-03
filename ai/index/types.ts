@@ -13,6 +13,16 @@ export interface QADocument {
   do_not_say: string[]
   source_url?: string
   updated_at: string
+  stage?: 'bill-check' | 'decide' | 'solve'
+  case_type?: 'historical-question' | 'common-question' | 'policy-question'
+  tags?: string[]
+  summary?: string
+  check_first?: string[]
+  self_help?: string[]
+  cannot_determine?: string[]
+  review_status?: 'approved' | 'needs_review' | 'time_sensitive'
+  public_case?: boolean
+  source_date?: string
 }
 
 export interface VectorDocument {

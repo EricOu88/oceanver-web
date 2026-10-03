@@ -55,6 +55,44 @@
       "type": "string",
       "format": "date-time",
       "description": "最后更新时间"
+    },
+    "stage": {
+      "type": "string",
+      "enum": ["bill-check", "decide", "solve"]
+    },
+    "case_type": {
+      "type": "string",
+      "enum": ["historical-question", "common-question", "policy-question"]
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "summary": {
+      "type": "string"
+    },
+    "check_first": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "self_help": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "cannot_determine": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "review_status": {
+      "type": "string",
+      "enum": ["approved", "needs_review", "time_sensitive"]
+    },
+    "public_case": {
+      "type": "boolean"
+    },
+    "source_date": {
+      "type": "string",
+      "format": "date"
     }
   },
   "required": ["id", "provider", "category", "question_variants", "answer", "scope", "next_step"]

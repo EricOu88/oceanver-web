@@ -1,0 +1,129 @@
+[
+  {
+    "id": "xfinity-smartmove-active-service-001",
+    "provider": "xfinity",
+    "category": "coverage",
+    "question_variants": [
+      "Xfinity 正在使用，但 SmartMove 显示无服务怎么办？",
+      "我家已经有 Xfinity，为什么 SmartMove 查不到服务？",
+      "SmartMove 说地址没有 Xfinity，但当前网络还在用，怎么核对？"
+    ],
+    "answer": "SmartMove 的地址可用性提示与现有账户的服务状态未必同步。先核对账户登记的服务地址和单元号、SmartMove 输入格式，以及当前账户显示的服务状态；在 Xfinity 确认前，不要仅凭该提示取消现有服务或重复开新账户。",
+    "scope": "allowed",
+    "next_step": "向 Xfinity 核对账户服务地址、当前服务状态及搬迁/转移资格。",
+    "do_not_say": [
+      "一定可以转移",
+      "系统错误",
+      "保证能办理"
+    ],
+    "updated_at": "2026-10-03T00:00:00Z",
+    "stage": "solve",
+    "case_type": "historical-question",
+    "tags": [
+      "宽带覆盖 / 地址 / 搬家 / 安装",
+      "SmartMove",
+      "地址不匹配"
+    ],
+    "summary": "SmartMove 显示无服务时，应核对输入地址、账户登记地址和当前账户状态。",
+    "check_first": [
+      "SmartMove 中的地址和单元号格式",
+      "Xfinity 账户登记的服务地址",
+      "账户是否仍显示当前服务有效"
+    ],
+    "self_help": [
+      "保留服务状态页面和查询结果，向运营商询问地址记录是否一致",
+      "在得到确认前不要重复提交开通或搬迁申请"
+    ],
+    "cannot_determine": [
+      "该地址当前是否可新开或转移服务",
+      "SmartMove 数据何时更新",
+      "具体账户是否符合转移条件"
+    ],
+    "review_status": "approved",
+    "public_case": true
+  },
+  {
+    "id": "xfinity-wifi-dead-zone-001",
+    "provider": "xfinity",
+    "category": "equipment",
+    "question_variants": [
+      "Xfinity Wi-Fi 屋里有些地方信号很差怎么办？",
+      "Xfinity 路由器附近正常，房间角落 Wi-Fi 很弱怎么办？",
+      "家里 Xfinity Wi-Fi 有死角，怎么先排查？"
+    ],
+    "answer": "先比较路由器附近和信号较差位置的连接表现，并确认问题是否只发生在某一台设备。路由器位置、墙体和干扰都可能影响 Wi-Fi；调整摆放位置后可重新测试。若多个设备在同一区域持续异常，再检查设备状态或向运营商咨询覆盖扩展方案。",
+    "scope": "allowed",
+    "next_step": "完成位置和设备对比测试后，仍有固定区域信号问题时再核实设备或网络状况。",
+    "do_not_say": [
+      "加装设备一定能解决",
+      "一定是 Xfinity 线路故障"
+    ],
+    "updated_at": "2026-10-03T00:00:00Z",
+    "stage": "solve",
+    "case_type": "historical-question",
+    "tags": [
+      "宽带设备 / Wi-Fi / 故障",
+      "Xfinity",
+      "Wi-Fi 死角"
+    ],
+    "summary": "Wi-Fi 局部信号弱时，先比较不同位置和设备，再判断是否需要检查网络或设备。",
+    "check_first": [
+      "路由器附近与问题区域的信号差异",
+      "问题是否影响多台设备",
+      "有线连接或靠近路由器时是否正常"
+    ],
+    "self_help": [
+      "将路由器放在较开阔且居中的位置后重新测试",
+      "记录出现问题的房间、设备和时段"
+    ],
+    "cannot_determine": [
+      "问题来自墙体遮挡、设备、干扰还是线路",
+      "特定设备是否兼容运营商的扩展设备"
+    ],
+    "review_status": "approved",
+    "public_case": true
+  },
+  {
+    "id": "internet-new-address-existing-account-001",
+    "provider": "general",
+    "category": "coverage",
+    "question_variants": [
+      "新地址查询时显示已有旧账户占用，怎么办？",
+      "搬到新家后，运营商说地址已经有账户，如何处理？",
+      "新住址仍关联前住户的宽带账户，怎么申请服务？"
+    ],
+    "answer": "地址关联已有账户时，先确认地址格式、单元号和入住日期是否正确，再通过运营商的账户或地址审核流程核实记录。不要尝试使用前住户的姓名、账户或登录信息，也不要仅凭在线提示判断该地址不能办理。",
+    "scope": "allowed",
+    "next_step": "联系目标运营商核对地址记录，并询问新住户需要提交的审核材料。",
+    "do_not_say": [
+      "可以绕过账户审核",
+      "前住户必须先提供账户密码",
+      "一定当天解除占用"
+    ],
+    "updated_at": "2026-10-03T00:00:00Z",
+    "stage": "solve",
+    "case_type": "historical-question",
+    "tags": [
+      "宽带覆盖 / 地址 / 搬家 / 安装",
+      "新地址",
+      "旧账户占用"
+    ],
+    "summary": "新地址被旧账户占用时，应核对地址信息并通过运营商流程审核。",
+    "check_first": [
+      "街道地址、单元号和邮编是否准确",
+      "入住或服务开始日期",
+      "运营商提示的是地址记录还是账户资格问题"
+    ],
+    "self_help": [
+      "准备能证明入住或租住关系的材料供运营商审核",
+      "只使用自己的身份和账户信息"
+    ],
+    "cannot_determine": [
+      "旧账户是否仍有效",
+      "运营商需要何种证明以及处理时间",
+      "地址当前是否满足开通条件"
+    ],
+    "review_status": "approved",
+    "public_case": true
+  }
+]

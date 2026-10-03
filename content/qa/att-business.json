@@ -26,9 +26,14 @@
     "answer": "AT&T 商业宽带通常需要提供营业执照（Business License）或商业注册证明。具体要求可能因地区和套餐而异。如果您没有营业执照，可以咨询我们是否有其他适合的方案。建议加微信详细咨询，我们可以帮您确认具体申请条件。",
     "scope": "allowed",
     "next_step": "加微信确认具体申请条件",
-    "do_not_say": ["保证", "一定", "100%"],
+    "do_not_say": [
+      "保证",
+      "一定",
+      "100%"
+    ],
     "source_url": "/internet/att-fiber",
-    "updated_at": "2026-01-27T00:00:00Z"
+    "updated_at": "2026-01-27T00:00:00Z",
+    "review_status": "time_sensitive"
   },
   {
     "id": "att-business-002",
@@ -42,9 +47,14 @@
     "answer": "AT&T 商业宽带和家用宽带的主要区别：1) 商业宽带通常有 SLA（服务级别协议）保证，故障响应更快 2) 商业宽带通常有静态 IP 地址 3) 商业宽带价格通常高于家用，但稳定性更好 4) 商业宽带通常有专门的商业客服支持。具体选择取决于您的使用场景和需求。",
     "scope": "allowed",
     "next_step": "加微信根据需求推荐方案",
-    "do_not_say": ["$", "具体价格", "保证"],
+    "do_not_say": [
+      "$",
+      "具体价格",
+      "保证"
+    ],
     "source_url": "/internet/att-fiber",
-    "updated_at": "2026-01-27T00:00:00Z"
+    "updated_at": "2026-01-27T00:00:00Z",
+    "review_status": "time_sensitive"
   },
   {
     "id": "att-business-003",
@@ -58,8 +68,13 @@
     "answer": "以下情况通常不建议办理 AT&T 商业宽带：1) 没有营业执照或商业注册证明 2) 家庭办公或小型工作室，家用宽带已能满足需求 3) 预算有限，商业宽带价格通常高于家用宽带 4) 不需要静态 IP 地址或 SLA 保证 5) 不需要专门的商业客服支持。如果您不确定是否应该选择商业宽带，建议加微信详细咨询。",
     "scope": "allowed",
     "next_step": "加微信根据情况推荐方案",
-    "do_not_say": ["$", "具体价格", "保证"],
+    "do_not_say": [
+      "$",
+      "具体价格",
+      "保证"
+    ],
     "source_url": "/internet/att-fiber",
-    "updated_at": "2026-01-27T00:00:00Z"
+    "updated_at": "2026-01-27T00:00:00Z",
+    "review_status": "time_sensitive"
   }
 ]

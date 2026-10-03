@@ -1,0 +1,46 @@
+[
+  {
+    "id": "ultra-to-att-contract-decision-001",
+    "provider": "general",
+    "category": "pre-sales",
+    "question_variants": [
+      "Ultra 用户是否适合为了 AT&T 合约机转网？",
+      "现在用 Ultra，想拿 AT&T 合约手机，值得转网吗？",
+      "为了 AT&T 手机优惠从 Ultra 转出前要比较什么？"
+    ],
+    "answer": "是否值得转网取决于总成本、覆盖和优惠资格，不应只看手机标价或月供。先比较现有 Ultra 服务、AT&T 套餐与税费、设备付款期限、促销抵扣条件、号码转入资格和覆盖体验；同时确认转出会不会影响当前服务或未完成的付款义务。具体资格和优惠以申请时账户及条款为准。",
+    "scope": "allowed",
+    "next_step": "取得两边当前书面方案后，按预期使用周期比较服务费、设备付款和可能失去的抵扣。",
+    "do_not_say": [
+      "转网一定更划算",
+      "一定能拿到合约机",
+      "设备一定免费"
+    ],
+    "updated_at": "2026-10-03T00:00:00Z",
+    "stage": "decide",
+    "case_type": "historical-question",
+    "tags": [
+      "办理前怎么选",
+      "Ultra",
+      "AT&T",
+      "转网决策"
+    ],
+    "summary": "从 Ultra 转到 AT&T 前，应比较服务总成本、设备条款、资格和覆盖，而非只看促销宣传。",
+    "check_first": [
+      "当前 Ultra 费用、线路和设备付款状态",
+      "AT&T 套餐、税费和设备促销完整条款",
+      "号码转入、账户资格及目标地址覆盖"
+    ],
+    "self_help": [
+      "用预计使用期限计算服务费与设备付款总额",
+      "确认优惠是否要求新线路、持续服务或满足特定账户条件"
+    ],
+    "cannot_determine": [
+      "当前活动是否适用于该账户",
+      "最终税费和设备账单抵扣",
+      "实际地点的网络体验"
+    ],
+    "review_status": "time_sensitive",
+    "public_case": false
+  }
+]

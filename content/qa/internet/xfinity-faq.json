@@ -1,8 +1,8 @@
 [
   {
-    "id": "xfinity_business_license",
+    "id": "xfinity_business_license_legacy",
     "provider": "xfinity",
-    "category": "商业资格",
+    "category": "business",
     "question_variants": [
       "xfinity 商业需要营业执照吗",
       "xfinity business 要营业执照吗",
@@ -32,9 +32,14 @@
     "answer": "通常需要提供商业地址和营业执照。但小型家庭办公室可能可以用住家宽带。",
     "scope": "allowed",
     "next_step": "建议加微信详细咨询，我们可以帮您确认具体申请条件。",
-    "do_not_say": ["具体价格", "保证100%", "最终资格承诺"],
+    "do_not_say": [
+      "具体价格",
+      "保证100%",
+      "最终资格承诺"
+    ],
     "source_url": "/internet/xfinity/faq#need-license",
-    "updated_at": "2026-01-27T00:00:00Z"
+    "updated_at": "2026-01-27T00:00:00Z",
+    "review_status": "time_sensitive"
   },
   {
     "id": "xfinity_billing_price_increase",
@@ -66,9 +71,14 @@
     "answer": "Xfinity账单可能因促销期结束、升级套餐、增加服务（如电话/电视）、税费调整等上涨。建议登录账户查看详细账单，或联系客服确认具体原因。",
     "scope": "allowed",
     "next_step": "建议加微信，我们可以帮您查看账单明细，或协助联系Xfinity客服确认涨价原因。",
-    "do_not_say": ["具体价格", "保证降价", "承诺退款"],
+    "do_not_say": [
+      "具体价格",
+      "保证降价",
+      "承诺退款"
+    ],
     "source_url": "/internet/xfinity/faq#billing",
-    "updated_at": "2026-01-27T00:00:00Z"
+    "updated_at": "2026-01-27T00:00:00Z",
+    "review_status": "time_sensitive"
   },
   {
     "id": "xfinity_speed_slow",
@@ -103,9 +113,14 @@
     "answer": "网速慢常见原因：1.高峰期拥堵 2.WiFi信号弱 3.设备过多 4.线路问题。建议：重启调制解调器、用网线连接测试、有线优先、检查路由器位置。",
     "scope": "allowed",
     "next_step": "建议加微信，我们可以帮您诊断网速问题，或协助联系Xfinity技术支持。",
-    "do_not_say": ["保证提速", "承诺修复", "100%解决"],
+    "do_not_say": [
+      "保证提速",
+      "承诺修复",
+      "100%解决"
+    ],
     "source_url": "/internet/xfinity/faq#speed",
-    "updated_at": "2026-01-27T00:00:00Z"
+    "updated_at": "2026-01-27T00:00:00Z",
+    "review_status": "needs_review"
   },
   {
     "id": "xfinity_internet_disconnected",
@@ -140,9 +155,14 @@
     "answer": "断网常见原因：1.设备故障 2.区域性中断 3.欠费停机 4.调制解调器灯状态异常。建议：检查Xfinity官网故障地图→重启设备→拨打客服*611确认。",
     "scope": "allowed",
     "next_step": "建议加微信，我们可以帮您检查设备状态，或协助联系Xfinity技术支持排查断网原因。",
-    "do_not_say": ["保证修复", "承诺恢复", "100%解决"],
+    "do_not_say": [
+      "保证修复",
+      "承诺恢复",
+      "100%解决"
+    ],
     "source_url": "/internet/xfinity/faq#disconnected",
-    "updated_at": "2026-01-27T00:00:00Z"
+    "updated_at": "2026-01-27T00:00:00Z",
+    "review_status": "needs_review"
   },
   {
     "id": "xfinity_wifi_not_connecting",
@@ -177,8 +197,13 @@
     "answer": "WiFi连不上：1.信号太弱 2.WiFi密码错误 3.路由器故障 4.设备兼容问题。解决：靠近路由器→重置WiFi密码→重启路由器→'忘记网络'后重新连接。",
     "scope": "allowed",
     "next_step": "建议加微信，我们可以帮您检查WiFi设置，或协助联系Xfinity技术支持。",
-    "do_not_say": ["保证修复", "承诺连接", "100%解决"],
+    "do_not_say": [
+      "保证修复",
+      "承诺连接",
+      "100%解决"
+    ],
     "source_url": "/internet/xfinity/faq#wifi",
-    "updated_at": "2026-01-27T00:00:00Z"
+    "updated_at": "2026-01-27T00:00:00Z",
+    "review_status": "time_sensitive"
   }
 ]
