@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     '商业宽带 vs 住宅宽带深度对比：除了价格差异，为什么湾区的小型初创公司、诊所、店铺必须选择 Business 计划？静态 IP、SLA 保障、技术支持的区别分析。',
   alternates: {
-    canonical: 'https://baymediastar.com/internet/business-vs-residential',
+    canonical: 'https://oceanver.com/internet/business-vs-residential',
   },
 };
 

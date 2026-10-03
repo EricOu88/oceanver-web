@@ -4,6 +4,12 @@
  */
 
 const BASE_URL = 'https://baymediastar.com'
+const CANONICAL_BASE_URL = 'https://oceanver.com'
+
+function getCanonicalUrl(path: string): string {
+  const normalizedPath = path.replace(/^\/+|\/+$/g, '')
+  return normalizedPath ? `${CANONICAL_BASE_URL}/${normalizedPath}` : `${CANONICAL_BASE_URL}/`
+}
 
 /**
  * 根据当前路径生成对应的中英文 URL
@@ -48,7 +54,7 @@ export function getHreflangAlternates(
   }
 } {
   const urls = getHreflangUrls(path)
-  const canonical = canonicalUrl || urls.zh
+  const canonical = canonicalUrl || getCanonicalUrl(path)
   
   return {
     canonical,
@@ -106,7 +112,7 @@ export function getSmartHreflangAlternates(
   }
 } {
   const urls = getHreflangUrls(path)
-  const canonical = canonicalUrl || urls.zh
+  const canonical = canonicalUrl || getCanonicalUrl(path)
   
   // 如果页面没有英文版本，只返回 canonical
   if (!hasEnglishVersion(path)) {

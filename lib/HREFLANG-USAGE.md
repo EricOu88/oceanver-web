@@ -61,7 +61,7 @@ export const metadata: Metadata = {
 getHreflangAlternates('/internet')
 // 返回：
 // {
-//   canonical: 'https://baymediastar.com/internet',
+//   canonical: 'https://oceanver.com/internet',
 //   languages: {
 //     'zh-CN': 'https://baymediastar.com/internet',
 //     'en-US': 'https://baymediastar.com/en/internet'
@@ -72,7 +72,7 @@ getHreflangAlternates('/internet')
 getHreflangAlternates('/en/internet')
 // 返回：
 // {
-//   canonical: 'https://baymediastar.com/en/internet',
+//   canonical: 'https://oceanver.com/en/internet',
 //   languages: {
 //     'zh-CN': 'https://baymediastar.com/internet',
 //     'en-US': 'https://baymediastar.com/en/internet'
@@ -110,7 +110,7 @@ Next.js 13+ 会自动将 `alternates.languages` 转换为 HTML `<link>` 标签�
 ```html
 <link rel="alternate" hreflang="zh-CN" href="https://baymediastar.com/internet" />
 <link rel="alternate" hreflang="en-US" href="https://baymediastar.com/en/internet" />
-<link rel="canonical" href="https://baymediastar.com/internet" />
+<link rel="canonical" href="https://oceanver.com/internet" />
 ```
 
 ## 已更新的页面

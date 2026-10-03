@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: FrontierFAQPageProps): Promis
       '中文办理',
     ],
     alternates: {
-      canonical: `https://baymediastar.com/internet-wifi/frontier/faq/${slug}`,
+      canonical: `https://oceanver.com/internet-wifi/frontier/faq/${slug}`,
     },
     openGraph: {
       title: `Frontier ${faq.question}`,

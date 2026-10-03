@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     '宽带覆盖查询',
   ],
   alternates: {
-    canonical: 'https://baymediastar.com/internet/providers/faq',
+    canonical: 'https://oceanver.com/internet/providers/faq',
   },
   openGraph: {
     title: '美国宽带常见问题 FAQ｜选宽带前必看 10 个关键问题',

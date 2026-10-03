@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     'Frontier 宽带常见问题总览页。涵盖覆盖范围、光纤DSL区别、速度、安装、故障、合约、费用、客服等15个常见问题。点击问题查看详细解答，中文办理协助。',
   alternates: {
-    canonical: 'https://baymediastar.com/internet/frontier/faq',
+    canonical: 'https://oceanver.com/internet/frontier/faq',
   },
 }
 

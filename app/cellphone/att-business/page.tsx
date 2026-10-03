@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'AT&T 商业手机方案 - 湾区华人办理 | 鸿达电信',
   description: 'AT&T 商业手机方案，适合公司、店铺、团队多线。商业专属折扣，可扩展多号码。湾区中文办理。',
-  alternates: { canonical: 'https://baymediastar.com/cellphone/att-business' },
+  alternates: { canonical: 'https://oceanver.com/cellphone/att-business' },
 };
 
 export default function AttBusinessPage() {

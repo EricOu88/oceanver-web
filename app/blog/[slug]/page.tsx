@@ -31,6 +31,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   return {
     title: `${post.title} | 鸿达电讯博客`,
     description: post.description,
+    alternates: { canonical: `https://oceanver.com/blog/${slug}` },
     openGraph: {
       title: post.title,
       description: post.description,

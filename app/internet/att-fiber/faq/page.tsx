@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     'AT&T Fiber 技术支持',
   ],
   alternates: {
-    canonical: 'https://baymediastar.com/internet/att-fiber/faq',
+    canonical: 'https://oceanver.com/internet/att-fiber/faq',
   },
   openGraph: {
     title: 'AT&T Fiber 宽带常见问题 FAQ | 售前售后50个问题解答',

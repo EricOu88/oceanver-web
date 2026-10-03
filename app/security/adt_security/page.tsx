@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: 'https://oceanver.com/security/adt_security' },
   title: '家庭安防服务 | 鸿达电讯 Bay Media Star',
   description:
     '提供 ADT 等家庭安防系统，支持湾区与全美安装，中文咨询与售后。',

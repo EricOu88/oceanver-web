@@ -11,6 +11,7 @@ import MobileContactBarClientOnly from '@/app/components/contact/MobileContactBa
 /* ================== 全站默认 SEO / 社交元数据 ================== */
 export const metadata: Metadata = {
   metadataBase: new URL('https://oceanver.com'),
+  alternates: { canonical: 'https://oceanver.com/' },
   title: {
     default: '美国鸿达电讯｜美国手机与家庭宽带中文服务',
     template: '%s｜美国鸿达电讯',

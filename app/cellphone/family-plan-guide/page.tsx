@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     '湾区多线家庭计划（Family Plan）深度拆解：4 人或 5 人组团真的能省一半钱吗？预付卡 vs 合约卡如何选择？MVNO 虚拟运营商与三大运营商正牌套餐在高峰期的真实差异。',
   alternates: {
-    canonical: 'https://baymediastar.com/cellphone/family-plan-guide',
+    canonical: 'https://oceanver.com/cellphone/family-plan-guide',
   },
 };
 

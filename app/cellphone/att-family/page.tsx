@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'AT&T 家庭合约机 - 湾区华人办理 | 鸿达电信',
   description: 'AT&T 家庭合约计划，多线更优惠，适合家庭长期使用。iPhone/Samsung 合约机，携号转网有补贴。湾区中文办理。',
-  alternates: { canonical: 'https://baymediastar.com/cellphone/att-family' },
+  alternates: { canonical: 'https://oceanver.com/cellphone/att-family' },
 };
 
 export default function AttFamilyPage() {

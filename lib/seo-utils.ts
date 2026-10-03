@@ -3,7 +3,7 @@
  * 用于统一处理 canonical、FAQ Schema、内链等 SEO 增强
  */
 
-const DOMAIN = 'https://baymediastar.com'
+const DOMAIN = 'https://oceanver.com'
 
 /**
  * 规范化 Canonical URL

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description:
     '鸿达电信代理全美主流宽带业务，包括 Xfintiy, Spectrum, AT&T, Frontier 及 Cox。专为华人家庭提供全中文申请安装服务，一站式对比各运营商资费与最新优惠活动，让您在美国办理网络省时省力又省钱，尊享超值光纤宽带体验！',
   alternates: {
-    canonical: 'https://baymediastar.com/internet/providers',
+    canonical: 'https://oceanver.com/internet/providers',
   },
 }
 

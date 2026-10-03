@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     '手机套餐选择'
   ],
   alternates: {
-    canonical: 'https://baymediastar.com/cellphone/faq/prepaid-vs-postpaid',
+    canonical: 'https://oceanver.com/cellphone/faq/prepaid-vs-postpaid',
   },
   openGraph: {
     title: 'Prepaid vs Postpaid：美国预付费和后付费手机套餐对比',

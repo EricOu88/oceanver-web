@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     'Gen Mobile 便宜手机卡申请指南。预付费手机卡，价格低，国内可激活，适合省钱用户、短期使用者。旧金山湾区 Fremont 实体店中文协助办理，覆盖 San Jose、Milpitas、Cupertino 及全美 50 州。',
   alternates: {
-    canonical: 'https://baymediastar.com/cellphone/genmobile',
+    canonical: 'https://oceanver.com/cellphone/genmobile',
   },
 };
 

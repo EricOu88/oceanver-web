@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     'AT&T 技术支持',
   ],
   alternates: {
-    canonical: 'https://baymediastar.com/cellphone/att/business-faq',
+    canonical: 'https://oceanver.com/cellphone/att/business-faq',
   },
   openGraph: {
     title: 'AT&T 商业计划常见问题 FAQ | 售前售后50个问题解答',

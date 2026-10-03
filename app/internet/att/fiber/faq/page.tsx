@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     '湾区 AT&T 光纤',
   ],
   alternates: {
-    canonical: 'https://baymediastar.com/internet/att/fiber/faq',
+    canonical: 'https://oceanver.com/internet/att/fiber/faq',
   },
   openGraph: {
     title: 'AT&T 光纤 常见问题 | 中文办理 | 无 SSN 可办',

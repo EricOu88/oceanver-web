@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     '湾区华人办理美国手机卡与套餐怎么选？本页对比 AT&T、T-Mobile、Verizon、Ultra Mobile 等主流运营商，支持中文咨询、微信办理与 Fremont 到店服务，适合新移民、家庭合约与预付费用户。',
   alternates: {
-    canonical: 'https://baymediastar.com/cellphone/providers',
+    canonical: 'https://oceanver.com/cellphone/providers',
   },
   openGraph: {
     title: '美国手机套餐推荐湾区中文办理 AT&T, T-Mobile, Ultra Mobile - 鸿达电讯',

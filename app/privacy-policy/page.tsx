@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     '鸿达电讯 Bay Media Star 隐私政策。说明我们在网站与服务过程中如何收集、使用和保护用户信息。',
   alternates: {
-    canonical: 'https://baymediastar.com/privacy-policy',
+    canonical: 'https://oceanver.com/privacy-policy',
   },
 };
 

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     '家庭网络技术深度指南：5G Home Internet 能否替代传统 Cable 宽带？光纤、电缆和 DSL 的真实网速与延迟对比。路由器自购 vs 租用成本分析。Mesh WiFi 部署方案。',
   alternates: {
-    canonical: 'https://baymediastar.com/internet/home-network-guide',
+    canonical: 'https://oceanver.com/internet/home-network-guide',
   },
 };
 

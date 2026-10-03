@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     '2026 年湾区信号实测报告：在 San Jose、Fremont、Milpitas 等城市，AT&T、T-Mobile、Verizon 哪家运营商信号最稳定？为什么 101 和 237 公路沿线是信号黑洞？技术原理与避坑指南。',
   alternates: {
-    canonical: 'https://baymediastar.com/cellphone/coverage/bay-area-los-angeles',
+    canonical: 'https://oceanver.com/cellphone/coverage/bay-area-los-angeles',
   },
 };
 

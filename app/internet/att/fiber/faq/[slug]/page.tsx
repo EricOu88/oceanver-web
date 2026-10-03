@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: ATTFiberFAQPageProps): Promis
       '中文办理',
     ],
     alternates: {
-      canonical: `https://baymediastar.com/internet/att/fiber/faq/${slug}`,
+      canonical: `https://oceanver.com/internet/att/fiber/faq/${slug}`,
     },
     openGraph: {
       title: `AT&T Fiber ${faq.question}`,

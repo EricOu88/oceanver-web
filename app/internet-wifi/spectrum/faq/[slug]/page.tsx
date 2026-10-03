@@ -71,7 +71,7 @@ export async function generateMetadata({ params }: SpectrumFAQPageProps): Promis
       ...(slug === 'spectrum-early-termination' ? ['无合约', '提前解约'] : []),
     ],
     alternates: {
-      canonical: `https://baymediastar.com/internet-wifi/spectrum/faq/${slug}`,
+      canonical: `https://oceanver.com/internet-wifi/spectrum/faq/${slug}`,
     },
     openGraph: {
       title,

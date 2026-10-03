@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     '没有 SSN 的新移民在加州办理手机和宽带有哪些合法的"免信用"通道？本文详细解析预付费套餐、押金后付费、护照办卡等方案，以及如何通过授权代理获得更好价格。',
   alternates: {
-    canonical: 'https://baymediastar.com/cellphone/faq/no-ssn-us-cellphone-internet',
+    canonical: 'https://oceanver.com/cellphone/faq/no-ssn-us-cellphone-internet',
   },
 };
 

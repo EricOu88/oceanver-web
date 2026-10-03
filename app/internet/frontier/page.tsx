@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     'Frontier Fiber 光纤宽带申请指南。真光纤到户服务，部分湾区城市覆盖率高、价格稳定。旧金山湾区 Fremont 实体店中文协助办理，覆盖 San Jose、Milpitas、Cupertino 及全美 50 州，支持地址查询与涨价处理。',
   alternates: {
-    canonical: 'https://baymediastar.com/internet/frontier',
+    canonical: 'https://oceanver.com/internet/frontier',
   },
   openGraph: {
     title: 'Frontier Fiber 光纤宽带申请指南 - 鸿达电信中文办理',

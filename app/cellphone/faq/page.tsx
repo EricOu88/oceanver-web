@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, BookOpen, HelpCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://oceanver.com/cellphone/faq' },
   title: '美国手机套餐常见问题 FAQ | 鸿达电信',
   description:
     '美国手机套餐常见问题解答，包括 Prepaid、Postpaid、Family Plan 的区别，如何选择运营商，以及新移民和留学生常见问题。',

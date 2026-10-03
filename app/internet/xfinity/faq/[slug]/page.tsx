@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: XfinityFAQPageProps): Promise
     description: faq.seo.description,
     keywords: ['Xfinity', 'Xfinity FAQ', 'Xfinity 账单', 'Xfinity 合约', 'Xfinity 取消', 'Xfinity 涨价', 'Xfinity 流量', faq.question],
     alternates: {
-      canonical: `https://baymediastar.com/internet/xfinity/faq/${slug}`,
+      canonical: `https://oceanver.com/internet/xfinity/faq/${slug}`,
     },
     openGraph: {
       title: faq.seo.title,

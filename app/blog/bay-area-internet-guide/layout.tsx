@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     '鸿达电讯',
   ],
   alternates: {
-    canonical: 'https://baymediastar.com/blog/bay-area-internet-guide',
+    canonical: 'https://oceanver.com/blog/bay-area-internet-guide',
   },
   openGraph: {
     title: '美国湾区家庭宽带选择指南 | 美国鸿达电讯',

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     '手机套餐选择'
   ],
   alternates: {
-    canonical: 'https://baymediastar.com/cellphone/faq/how-to-choose-us-cellphone-plan',
+    canonical: 'https://oceanver.com/cellphone/faq/how-to-choose-us-cellphone-plan',
   },
   openGraph: {
     title: '美国手机套餐怎么选？新手一篇就懂',

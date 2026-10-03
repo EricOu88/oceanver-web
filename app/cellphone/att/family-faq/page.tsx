@@ -5,6 +5,7 @@ import ATTFamilyFAQClient from './ATTFamilyFAQClient'
 import { getAllFAQsForSchema } from './data'
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://oceanver.com/cellphone/att/family-faq' },
   title: 'AT&T 家庭合约计划常见问题 FAQ｜无 SSN 办理 · 套餐选择 · 合约解约',
   description:
     '解答 AT&T 家庭合约计划的所有常见问题：无 SSN 能否办理、套餐选择、流量限制、合约解约、账单费用、国际漫游等。中文专业解答，帮你快速了解 AT&T 家庭计划。',
