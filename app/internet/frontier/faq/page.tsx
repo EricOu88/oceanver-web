@@ -8,17 +8,6 @@ export const metadata: Metadata = {
   title: 'Frontier 常见问题总览 | 15个核心问题索引 | 鸿达电讯',
   description:
     'Frontier 宽带常见问题总览页。涵盖覆盖范围、光纤DSL区别、速度、安装、故障、合约、费用、客服等15个常见问题。点击问题查看详细解答，中文办理协助。',
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
   alternates: {
     canonical: 'https://baymediastar.com/internet/frontier/faq',
   },

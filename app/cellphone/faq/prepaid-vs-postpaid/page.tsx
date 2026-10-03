@@ -16,17 +16,6 @@ export const metadata: Metadata = {
     '美国手机套餐对比',
     '手机套餐选择'
   ],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
   alternates: {
     canonical: 'https://baymediastar.com/cellphone/faq/prepaid-vs-postpaid',
   },

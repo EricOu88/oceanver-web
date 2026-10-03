@@ -22,17 +22,6 @@ export const metadata: Metadata = {
     '手机FAQ',
     '手机诊断'
   ],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
   openGraph: {
     title: '美国手机套餐选择指南 | 中文协助 | 运营商对比',
     description: '根据信号稳定、国际使用、预付费等使用场景，帮您找到最合适的美国手机套餐方案。',

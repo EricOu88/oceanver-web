@@ -19,17 +19,6 @@ export const metadata: Metadata = {
     locale: 'zh_CN',
     type: 'website',
   },
-  robots: {
-    index: false,
-    follow: false,
-    googleBot: {
-      index: false,
-      follow: false,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
 }
 
 export default function BillOptimizationPage() {

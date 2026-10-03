@@ -40,17 +40,6 @@ export const metadata: Metadata = {
     images: ['/og-image.png'],
   },
 
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
 };
 
 export default function EnglishLayout({ children }: { children: ReactNode }) {

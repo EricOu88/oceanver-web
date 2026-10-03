@@ -6,17 +6,6 @@ export const metadata: Metadata = {
   title: '美国手机套餐常见问题 FAQ | 鸿达电信',
   description:
     '美国手机套餐常见问题解答，包括 Prepaid、Postpaid、Family Plan 的区别，如何选择运营商，以及新移民和留学生常见问题。',
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
 };
 
 export default function CellphoneFAQPage() {

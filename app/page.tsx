@@ -13,17 +13,6 @@ export const metadata: Metadata = {
   },
   description:
     '手机或家庭宽带账单突然变贵？美国鸿达电讯帮助中文用户判断涨价原因、优惠是否到期、是否需要换套餐或换运营商，并处理常见手机与宽带问题。',
-  robots: {
-    index: false,
-    follow: false,
-    googleBot: {
-      index: false,
-      follow: false,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
   openGraph: {
     title: '美国手机、宽带账单涨价怎么办？｜美国鸿达电讯',
     description:

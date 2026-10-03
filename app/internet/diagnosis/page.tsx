@@ -34,7 +34,6 @@ export const metadata: Metadata = {
     locale: 'zh_CN',
     type: 'website',
   },
-  robots: { index: false, follow: false },
 }
 
 export default function InternetDiagnosisPage() {

@@ -21,17 +21,6 @@ export const metadata: Metadata = {
     '面向美国中文用户整理 Xfinity、AT&T Fiber、Spectrum、Frontier 等宽带套餐信息、地址覆盖核对和优惠到期后的账单判断。',
   alternates: getHreflangAlternates('/internet'),
 
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
 }
 
 export default function InternetPage() {
