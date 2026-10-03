@@ -14,7 +14,7 @@ export default function HeroSection() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#EDF5F9] via-white to-white">
+      <section className="relative overflow-hidden bg-[#FCFDFE]">
         <div className="max-w-[1280px] mx-auto px-5 py-6 md:px-6 md:py-3">
           <div className="grid items-center gap-7 lg:min-h-[400px] lg:grid-cols-2 lg:gap-8">
           {/* 左侧：文案 */}

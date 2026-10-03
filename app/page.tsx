@@ -52,7 +52,7 @@ export default function Page() {
       {/* 信任/特性条（新增） */}
       <TrustIndicators />
 
-      <section aria-labelledby="bill-increase-summary-title" className="mx-auto max-w-5xl px-6 py-12 md:py-16">
+      <section aria-labelledby="bill-increase-summary-title" className="mx-auto max-w-5xl bg-white px-6 py-12 md:py-16">
         <div className="border-y border-slate-200 py-8 md:py-10">
           <h2 id="bill-increase-summary-title" className="text-2xl font-black text-slate-900 md:text-3xl">
             手机、宽带账单为什么会突然变贵？
@@ -72,7 +72,7 @@ export default function Page() {
       <CommunityHighlights />
 
       {/* ContactSection - Server Component，在业务介绍之后 */}
-      <div className="max-w-6xl mx-auto px-6 py-8 md:py-12">
+      <div className="max-w-6xl mx-auto bg-[#EAF2F6] px-6 py-8 md:py-12">
         <ContactEntry />
       </div>
     </>

@@ -18,9 +18,9 @@ const DEEP_DIVE_LINKS = [
 /* ================= 3. 主页面 ================= */
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-white font-sans text-[#202D3A] selection:bg-[#2786A5]/20">
+    <div className="min-h-screen bg-[#FCFDFE] font-sans text-[#202D3A] selection:bg-[#2786A5]/20">
       {/* FAQ Section */}
-      <section className="py-8 md:py-12">
+      <section className="bg-[#EDF5F9] py-8 md:py-12">
         <FAQSection />
         <div className="mx-auto max-w-4xl px-4">
           <div className="border-t border-slate-200 pt-5 text-center">
@@ -37,12 +37,12 @@ export default function HomePage() {
       </section>
 
       {/* REVIEWS */}
-      <section className="py-8 md:py-12">
+      <section className="bg-[#F1F4F7] py-8 md:py-12">
         <GoogleReviewsSlider />
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-slate-100 bg-white py-14 md:py-16">
+      <footer className="border-t border-slate-100 bg-[#FCFDFE] py-14 md:py-16">
         <div className="mx-auto max-w-[1180px] px-6">
           <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1fr] lg:gap-12">
             <div className="max-w-md">

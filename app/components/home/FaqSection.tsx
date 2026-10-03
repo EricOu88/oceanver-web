@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function FAQSection() {
   return (
-    <section className="max-w-4xl mx-auto px-4 py-12">
+    <section className="max-w-4xl mx-auto bg-[#EDF5F9] px-4 py-12">
       <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">常见问题（FAQ）</h2>
 
       <div className="space-y-3">

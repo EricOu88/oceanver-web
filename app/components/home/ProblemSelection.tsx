@@ -69,7 +69,7 @@ const PROBLEMS: Problem[] = [
 
 export default function ProblemSelection() {
   return (
-    <section className="homepage-problems bg-slate-50/60">
+    <section className="homepage-problems bg-[#EAF2F6]">
       <div className="mx-auto max-w-[1280px] px-5 pb-10 pt-14 md:px-6 md:pb-12 md:pt-1">
         {/* 标题 */}
         <div className="mb-8 text-center md:mb-10">
@@ -86,7 +86,7 @@ export default function ProblemSelection() {
           {PROBLEMS.map((p) => (
             <div
               key={p.label}
-              className="flex w-full flex-col overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-sm transition-all hover:shadow-xl md:min-h-[280px] md:flex-row lg:min-h-[320px]"
+              className="flex w-full flex-col overflow-hidden rounded-[1.5rem] border border-[#D8E2EA] bg-white shadow-sm transition-all hover:shadow-xl md:min-h-[280px] md:flex-row lg:min-h-[320px]"
             >
               <div className="flex min-w-0 flex-col p-5 md:w-[64%] md:p-5 lg:w-[65%]">
               {/* 图标 + 标签 */}

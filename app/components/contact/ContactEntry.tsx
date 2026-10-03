@@ -25,7 +25,7 @@ export default function ContactEntry({
   }
 
   return (
-    <section className="bg-blue-50 border border-blue-100 rounded-3xl p-4 md:p-6 space-y-4">
+    <section className="bg-white border border-[#D8E2EA] rounded-3xl p-4 md:p-6 space-y-4">
       {/* 标题 */}
       <div className="text-center space-y-1">
         <h2 className="text-xl md:text-2xl font-black text-slate-900">

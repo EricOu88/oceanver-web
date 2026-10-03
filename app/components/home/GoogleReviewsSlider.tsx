@@ -28,9 +28,9 @@ const GoogleIcon = () => (
 
 export default function GoogleReviewsSlider() {
   return (
-    <section className="bg-white py-2">
+    <section className="bg-[#F1F4F7] py-2">
       <div className="max-w-5xl mx-auto px-6">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-5 md:px-6">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 rounded-2xl border border-slate-200 bg-white px-5 py-5 md:px-6">
           <div className="flex min-w-0 items-start gap-3">
             <div className="shrink-0 rounded-xl bg-white border border-slate-200 p-2.5" aria-hidden="true">
               <GoogleIcon />
