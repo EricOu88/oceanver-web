@@ -8,11 +8,11 @@ export default function FAQSection() {
       <div className="space-y-3">
         <details className="group bg-white rounded-xl border px-5 py-3">
           <summary className="cursor-pointer font-semibold flex justify-between">
-            手机、宽带账单为什么会突然变贵？
+            账单突然变贵，我应该先检查哪几项？
             <span className="group-open:rotate-180 transition">⌄</span>
           </summary>
           <p className="mt-2 text-slate-600">
-            常见原因包括优惠期结束、AutoPay 或其他折扣失效、设备费用变化、附加服务增加、套餐调整，以及运营商价格变化。先确认是哪一项发生变化，再判断是否需要处理。
+            先看最近两期账单，确认是基础月费上涨、优惠结束、AutoPay 折扣失效，还是设备费、附加服务或一次性费用增加。再检查套餐、线路、设备和促销状态最近是否发生变化。如果仍看不出原因，再根据具体账户或地址条件进一步核实。
           </p>
         </details>
 
