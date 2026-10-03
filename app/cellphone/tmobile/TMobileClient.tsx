@@ -26,7 +26,7 @@ export default function TMobilePage() {
         </h1>
         <p className="text-center text-gray-600 mb-12">
           全美覆盖 · 高速 5G · 留学生热门选择。
-          如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">鸿达电讯 Bay Media Star 首页</Link>。
+          如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">美国鸿达电讯首页</Link>。
           常见问题如<Link href="/cellphone/faq/how-to-choose-us-cellphone-plan" className="text-blue-600 hover:text-blue-700 font-semibold underline">没有 SSN 可以办手机卡吗？</Link>都有详细解答。
         </p>
 

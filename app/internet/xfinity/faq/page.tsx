@@ -8,7 +8,7 @@ import { getCanonicalUrl } from '@/lib/seo-utils'
 export const metadata: Metadata = {
   title: 'Xfinity 宽带 常见问题 | 中文办理 | 无 SSN 可办 | 鸿达电讯',
   description:
-    'Xfinity 宽带完整 FAQ：住家宽带售前售后、商业宽带售前售后，涵盖地址覆盖、套餐选择、价格优惠、无SSN办理、账单问题、速度优化等常见问题。湾区中文专业解答。',
+    'Xfinity 宽带完整 FAQ：住家与商业宽带售前售后，涵盖地址覆盖、套餐选择、价格变化、无 SSN 相关条件、账单问题和速度优化。中文说明以当前运营商规则为准。',
   keywords: [
     'Xfinity FAQ',
     'Xfinity 常见问题',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     description:
       'Xfinity 宽带完整 FAQ：住家与商业宽带售前售后问题解答。涵盖地址覆盖、套餐、价格、账单等常见问题。',
     url: getCanonicalUrl('/internet/xfinity/faq'),
-    siteName: 'Bay Media Star 鸿达电讯',
+    siteName: '美国鸿达电讯',
     locale: 'zh_CN',
     type: 'website',
   },

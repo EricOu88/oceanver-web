@@ -7,39 +7,38 @@ import { getCanonicalUrl } from '@/lib/seo-utils';
 // Xfinity 页面专用 FAQ（用于 Schema）
 const xfinityFAQs = [
   {
-    question: 'Xfinity 宽带在 Fremont 可以安装吗？',
-    answer: '可以。Xfinity 在 Fremont、San Jose、Milpitas 等湾区城市覆盖广泛。我们提供免费地址覆盖查询服务，1 分钟内即可确认您的地址是否支持安装。',
+    question: 'Xfinity 宽带可以安装吗？',
+    answer: '具体可用性取决于详细地址、线路设施和当前运营商系统结果，不能仅凭城市判断，办理前需查询地址。',
   },
   {
     question: 'Xfinity 宽带优惠期结束后会涨价吗？',
-    answer: '会。Xfinity 促销价格通常持续 12 个月，到期后会恢复标准价，涨幅可达 50-150%。我们可以在到期前帮您重新申请优惠或协商价格。',
+    answer: '促销期限和到期后的价格会随时间、地址、账户和资格变化。办理前应核对当前条款，并在账单变化时重新确认条件。',
   },
   {
     question: 'Xfinity 住家和商业宽带有什么区别？',
-    answer: '住家宽带价格更便宜，无 SLA 保障，标准技术支持。商业宽带有 SLA 服务保障、静态 IP 地址、优先技术支持，但价格高 30-50%。普通家庭选住家即可。',
+    answer: '住家与商业宽带在支持方式、服务条款、IP 和 SLA 等方面可能不同。是否适合要结合地址、账户、设备、线路数量和实际使用判断。',
   },
   {
     question: 'Xfinity 宽带适合新移民和留学生吗？',
-    answer: '适合。Xfinity 支持无 SSN 办理，新移民、留学生都可以申请。我们提供全程中文服务，协助您完成地址查询、套餐选择和安装预约。',
+    answer: '部分申请可能支持不同身份或账户条件，但不能一概而论。是否可办需核实身份、信用、地址和当前运营商要求。',
   },
   {
     question: 'Xfinity 宽带安装需要多长时间？',
-    answer: '通常预约后 3-7 个工作日可上门安装。如果地址已有 Xfinity 线路，可以选择自安装套件，邮寄 2-5 天即可。我们可协助您预约安装时间。',
+    answer: '安装或自安装时间取决于地址、设备、预约和当前运营商安排，办理前需确认可选方式和费用。',
   },
 ];
 
 export const metadata: Metadata = {
   title: 'Xfinity 宽带申请指南 - 鸿达电信中文办理',
   description:
-    'Xfinity 宽带申请指南。住家与商业方案对比，地址覆盖查询，优惠期到期涨价处理。旧金山湾区 Fremont 实体店中文协助办理，覆盖 San Jose、Milpitas、Cupertino 及全美 50 州。',
+    'Xfinity 宽带申请指南。介绍住家与商业方案、地址覆盖查询、优惠期和账单变化。价格、资格、设备与安装条件以当前运营商规则为准。',
   keywords: [
     'Xfinity 宽带',
     'Xfinity 住家宽带',
     'Xfinity 商业宽带',
     '美国宽带',
-    '湾区宽带',
-    'Fremont 宽带',
-    'Milpitas 宽带',
+    '美国宽带',
+    '中文宽带申请',
     '宽带涨价',
     '中文办理',
   ],
@@ -51,7 +50,7 @@ export const metadata: Metadata = {
     description:
       '用用户视角讲清：住家 vs 商业怎么选。支持查地址覆盖、对比套餐、处理优惠期涨价。',
     url: getCanonicalUrl('/internet/xfinity'),
-    siteName: 'Bay Media Star 鸿达电讯',
+    siteName: '美国鸿达电讯',
     locale: 'zh_CN',
     type: 'website',
   },

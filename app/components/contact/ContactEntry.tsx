@@ -89,7 +89,7 @@ export default function ContactEntry({
               说明需要核实的问题
             </p>
             <p className="text-xs text-slate-700 font-semibold mt-1.5">
-              支持中英文
+              中文服务
             </p>
           </div>
         </a>

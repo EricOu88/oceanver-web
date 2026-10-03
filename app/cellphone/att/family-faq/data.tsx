@@ -122,7 +122,7 @@ export const faqCategories: FAQCategory[] = [
       {
         question: '除了月费，还有其他费用吗？',
         answer: `可能涉及的费用：
-• 激活费：新线或升级设备 $35（部分情况可免）
+• 激活费：新线或升级设备可能产生，金额和豁免条件以当前条款为准
 • 行政费：账单包含"行政与监管成本回收费"
 • 州税：各州税率不同
 
@@ -136,7 +136,7 @@ export const faqCategories: FAQCategory[] = [
         answer: `大部分手机都支持，但需要满足：
 • 手机已解锁（Unlocked）
 • 支持 GSM 网络制式
-• 最好支持 AT&T 的 5G 频段
+• 建议核对设备是否支持当前 AT&T 5G 频段
 
 不确定？把手机型号告诉我们，免费帮你查！`,
         isHot: true,

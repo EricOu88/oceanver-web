@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'AT&T 商业手机方案 - 湾区华人办理 | 鸿达电信',
-  description: 'AT&T 商业手机方案，适合公司、店铺、团队多线。商业专属折扣，可扩展多号码。湾区中文办理。',
+  title: 'AT&T 商业手机方案申请说明 | 美国鸿达电讯',
+  description: 'AT&T 商业手机方案说明，适合比较公司、店铺或团队多线的账户条件。价格、设备、折扣和服务资格会变化，是否适合需结合线路数量、实际使用和当前规则判断。',
   alternates: { canonical: 'https://oceanver.com/cellphone/att-business' },
 };
 
@@ -15,7 +15,7 @@ export default function AttBusinessPage() {
           AT&T 商业手机方案
         </h1>
         <p className="text-lg text-slate-600 mb-8">
-          适合公司、店铺、团队多线。商业专属折扣，可扩展多号码。
+          适合公司、店铺、团队多线。具体账户条件、价格和可用优惠需以当前运营商规则核实。
         </p>
         <Link
           href="/cellphone/att/business-faq"

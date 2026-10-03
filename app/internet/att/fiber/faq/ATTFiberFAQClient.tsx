@@ -445,8 +445,8 @@ export default function ATTFiberFAQClient() {
             <Home size={18} className="text-purple-600" />
           </div>
           <div>
-            <div className="text-sm text-slate-500">实体店地址</div>
-            <div className="font-bold text-slate-800">Fremont / Milpitas</div>
+            <div className="text-sm text-slate-500">服务范围</div>
+            <div className="font-bold text-slate-800">全美中文说明与远程协助</div>
           </div>
         </div>
       </div>

@@ -64,11 +64,11 @@ export const attBusinessPreSaleCategories: FAQCategory[] = [
       },
       {
         question: '商业计划有什么优惠？',
-        answer: '优惠包括：免激活费、100GB 热点流量、无限流量、北美通话短信、可能的企业税务优惠。',
+        answer: '可能涉及热点、通话短信或账户相关优惠；具体内容、费用和资格会随时间、账户与当前运营商规则变化，办理前需核实。',
       },
       {
         question: '激活费用是多少？',
-        answer: '通过我们办理 AT&T 商业计划，通常可以免激活费。标准激活费是 $35/线，但我们有渠道可以免除。',
+        answer: '激活费是否适用、金额及豁免条件取决于当前账户、设备和运营商条款，办理前需核实。',
       },
       {
         question: '可以享受税务优惠吗？',
@@ -410,7 +410,7 @@ export const attBusinessAfterSaleCategories: FAQCategory[] = [
       },
       {
         question: '可以升级套餐吗？',
-        answer: '可以。随时可以升级套餐，通常立即生效。升级可能有促销价格，我们帮您申请最佳优惠。',
+        answer: '升级时间、价格和可用方案取决于账户、设备、线路数量与当前资格，办理前需核对条款。',
       },
       {
         question: '可以降级套餐吗？',
@@ -470,7 +470,7 @@ export const attBusinessAfterSaleCategories: FAQCategory[] = [
       },
       {
         question: '国际通话费用是多少？',
-        answer: '国际通话费用取决于目的地国家。AT&T 商业计划可能提供国际通话套餐或按分钟付费。我们帮您了解具体费用和最佳方案。',
+        answer: '国际通话费用取决于目的地国家、套餐和账户条件，需核对当前费率与可用方案。',
       },
     ],
   },

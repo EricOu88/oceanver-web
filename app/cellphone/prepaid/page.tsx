@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: '预付费电话卡 Prepaid 专区 - 湾区华人办理 | 鸿达电信',
-  description: '预付费电话卡（Prepaid）适合新移民、留学生、无 SSN 用户。灵活省心，可随时换套餐。湾区中文办理，支持远程。',
+  title: '预付费电话卡 Prepaid 申请说明 | 美国鸿达电讯',
+  description: '预付费电话卡（Prepaid）说明，帮助比较新移民、留学生及不同账户条件下的方案。可用资格、价格和换套餐规则会变化，办理前需核实当前条件。',
   alternates: { canonical: 'https://oceanver.com/cellphone/prepaid' },
 };
 

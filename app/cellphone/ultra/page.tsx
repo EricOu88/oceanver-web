@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://oceanver.com/cellphone/ultra' },
   title: 'Ultra Mobile 国际电话卡申请指南 - 鸿达电信中文办理',
   description:
-    'Ultra Mobile 国际电话卡申请指南。支持中美及 100+ 国家通话，适合华人、留学生、跨国商务用户。旧金山湾区 Fremont 实体店中文协助办理，覆盖 San Jose、Milpitas、Cupertino 及全美 50 州。',
+    'Ultra Mobile 国际电话卡申请指南。介绍国际通话、设备和账户条件，帮助中文用户结合实际使用场景判断是否适合。国家范围、价格和资格以当前运营商规则为准。',
 };
 
 export default function UltraPage() {

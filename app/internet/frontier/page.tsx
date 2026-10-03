@@ -4,7 +4,7 @@ import FrontierClient from './FrontierClient'
 export const metadata: Metadata = {
   title: 'Frontier Fiber 光纤宽带申请指南 - 鸿达电信中文办理',
   description:
-    'Frontier Fiber 光纤宽带申请指南。真光纤到户服务，部分湾区城市覆盖率高、价格稳定。旧金山湾区 Fremont 实体店中文协助办理，覆盖 San Jose、Milpitas、Cupertino 及全美 50 州，支持地址查询与涨价处理。',
+    'Frontier Fiber 光纤宽带申请指南。介绍光纤服务、地址覆盖、安装和账单变化。可用性、价格、设备和资格会随地址、时间及运营商规则变化，办理前需核实。',
   alternates: {
     canonical: 'https://oceanver.com/internet/frontier',
   },
@@ -12,8 +12,8 @@ export const metadata: Metadata = {
     title: 'Frontier Fiber 光纤宽带申请指南 - 鸿达电信中文办理',
     description:
       'Frontier Fiber 是否适合你？从用户视角讲清覆盖、稳定性、价格与适合人群。',
-    url: 'https://baymediastar.com/internet/frontier',
-    siteName: 'Bay Media Star 鸿达电讯',
+    url: 'https://oceanver.com/internet/frontier',
+    siteName: '美国鸿达电讯',
     locale: 'zh_CN',
     type: 'website',
   },

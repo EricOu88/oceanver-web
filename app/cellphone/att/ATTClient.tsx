@@ -60,7 +60,7 @@ export default function ATTClient({ promoSlot }: ATTClientProps) {
               鸿达电讯是 AT&T 授权代理，提供中文咨询、套餐对比、在线开通等服务。我们可以帮你评估家庭套餐与商业计划的差异，计算携号转网奖励金额，协助准备所需材料，并全程中文跟进开通流程。
             </p>
             <p>
-              如果你不确定是否适合 AT&T，或对套餐选择有疑问，可以联系鸿达电讯客服。我们会根据你的使用场景、居住地址、线路数量等因素，推荐最适合的 AT&T 计划，并协助完成申请和激活。
+              如果你不确定 AT&T 是否适合自己，或对套餐选择有疑问，可以联系鸿达电讯客服。是否适合要结合地址、账户、设备、线路数量、实际使用和当前资格判断，并协助核实申请与开通流程。
             </p>
           </div>
         </section>
@@ -107,8 +107,8 @@ export default function ATTClient({ promoSlot }: ATTClientProps) {
               </div>
 
               <div>
-                <p>携号转网每线赠送 $250</p>
-                <p>无限流量 · 北美通话短信 · 免激活费</p>
+                <p>携号转网优惠以当前资格和运营商规则为准</p>
+                <p>无限流量 · 北美通话短信 · 费用以当前账单为准</p>
               </div>
 
               <div className="bg-white/60 rounded-xl p-3 border">
@@ -135,8 +135,8 @@ export default function ATTClient({ promoSlot }: ATTClientProps) {
 
             <div className="space-y-3 text-sm text-gray-700">
               <p>5 条线仅 $50 + 税（自带手机）</p>
-              <p>或 $130（含 5 部 iPhone 16）</p>
-              <p>100GB 热点 · 免激活费</p>
+              <p>多线方案和设备条件以当前资格为准</p>
+              <p>100GB 热点 · 费用以当前账单为准</p>
             </div>
 
             <p className="text-3xl font-extrabold text-blue-800 mt-4">
@@ -196,7 +196,7 @@ export default function ATTClient({ promoSlot }: ATTClientProps) {
               },
               {
                 q: 'AT&T 和 T-Mobile、Verizon 相比有什么区别？',
-                a: 'AT&T、T-Mobile 和 Verizon 是美国三大主要运营商，在信号覆盖、套餐价格、国际漫游等方面各有特点。AT&T 在郊区和小城市覆盖较好，家庭套餐价格相对稳定。T-Mobile 在城市地区 5G 速度快，国际漫游功能较强。Verizon 信号覆盖最广，适合经常在乡村地区活动的用户。选择哪个运营商主要取决于你的居住地址、使用场景和预算。',
+                a: 'AT&T、T-Mobile 和 Verizon 在信号覆盖、套餐价格、国际漫游和设备条件等方面各有差异。实际体验和可用方案取决于你的居住地址、使用场景、预算、账户、设备与当前资格，不能仅凭品牌名称判断。',
               },
               {
                 q: 'AT&T 家庭套餐是怎么计费的？',
@@ -330,7 +330,7 @@ export default function ATTClient({ promoSlot }: ATTClientProps) {
         {/* ===================== 页面底部自然内链 ===================== */}
         <section className="mt-16 mb-12 text-slate-700 leading-relaxed">
           <p className="mb-4">
-            如需了解更多手机卡和宽带服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">鸿达电讯 Bay Media Star 首页</Link>。
+                如需了解更多手机卡和宽带服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">美国鸿达电讯首页</Link>。
           </p>
           <p className="mb-4">
             常见问题如<Link href="/cellphone/faq/how-to-choose-us-cellphone-plan" className="text-blue-600 hover:text-blue-700 font-semibold underline">没有 SSN 可以办手机卡吗？</Link>和<Link href="/bill-optimization" className="text-blue-600 hover:text-blue-700 font-semibold underline">手机账单为什么会突然涨价？</Link>都有详细解答。

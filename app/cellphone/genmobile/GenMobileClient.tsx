@@ -17,7 +17,7 @@ export default function GenMobileClient() {
 
           {/* ===== 套餐 1 ===== */}
           <PlanCard
-            title="基础版 · 省钱首选"
+            title="基础版 · 方案说明"
             color="rose"
             icon={<PhoneIncoming className="text-rose-600" size={26} />}
             onClick={() => setShowWeChat(true)}
@@ -27,9 +27,9 @@ export default function GenMobileClient() {
             <p className="text-lg font-bold text-[#E60023]">$20 / 月</p>
           </PlanCard>
 
-          {/* ===== 套餐 2（官方推荐） ===== */}
+          {/* ===== 套餐 2 ===== */}
           <PlanCard
-            title="预付费套餐（官方推荐）"
+            title="预付费套餐"
             highlight
             color="red"
             icon={<Network className="text-red-600" size={26} />}

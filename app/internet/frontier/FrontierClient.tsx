@@ -54,19 +54,18 @@ export default function FrontierClient() {
           <div className="max-w-7xl mx-auto px-6 py-14">
             <div className="max-w-3xl space-y-6">
               <span className="inline-block px-4 py-1 rounded-full bg-blue-50 text-blue-700 text-sm font-semibold">
-                Frontier Fiber · 湾区隐藏款光纤
+                Frontier Fiber · 地址覆盖说明
               </span>
 
               <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
-                为什么很多湾区用户装了 Frontier，
-                <br />却很少有人主动推荐？
+                Frontier Fiber 是否适合你的地址和使用场景？
               </h1>
 
               <p className="text-lg text-slate-700">
                 Frontier Fiber 是<strong>真光纤到户</strong>，
-                在部分湾区城市非常稳定、价格结构简单。
-                但覆盖范围有限、宣传少，导致很多人<strong>不知道自己地址其实能装</strong>。
-                如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">鸿达电讯 Bay Media Star 首页</Link>。
+                实际体验和价格结构取决于地址、线路、账户和当前条款。
+                覆盖范围有限，是否可安装需要查询详细地址。
+                如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">美国鸿达电讯首页</Link>。
                 常见问题如<Link href="/internet/frontier/faq" className="text-blue-600 hover:text-blue-700 font-semibold underline">Frontier 宽带会不会涨价？</Link>都有详细解答。
               </p>
 
@@ -119,20 +118,20 @@ export default function FrontierClient() {
         <section className="bg-slate-50 py-12">
           <div className="max-w-5xl mx-auto px-6 space-y-4">
             <h2 className="text-3xl font-bold flex items-center gap-2">
-              <MapPin /> Frontier 在湾区常见覆盖城市
+              <MapPin /> Frontier Fiber 地址覆盖
             </h2>
 
             <p className="text-slate-700">
-              Frontier Fiber 在以下城市的<strong>部分社区</strong>覆盖率较高。
-              如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">鸿达电讯 Bay Media Star 首页</Link>。
+              Frontier Fiber 的可用性需要按详细地址查询，不能仅凭城市判断。
+              如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">美国鸿达电讯首页</Link>。
               常见问题如<Link href="/internet/frontier/faq" className="text-blue-600 hover:text-blue-700 font-semibold underline">Frontier 宽带会不会涨价？</Link>都有详细解答。
             </p>
 
             <ul className="grid md:grid-cols-2 gap-3 text-slate-700">
-              <li>• San Jose（部分新社区）</li>
-              <li>• Sunnyvale</li>
-              <li>• Santa Clara</li>
-              <li>• Fremont（个别区域）</li>
+              <li>• 详细地址覆盖查询</li>
+              <li>• 线路与设施条件</li>
+              <li>• 安装方式和预约条件</li>
+              <li>• 账户与当前资格</li>
             </ul>
 
             <p className="text-sm text-slate-500">
@@ -147,7 +146,7 @@ export default function FrontierClient() {
             不确定 Frontier 是否比 Xfinity / AT&T 更适合你？
           </h2>
           <p className="text-lg text-slate-600 mb-6">
-            中文顾问可帮你横向对比三家宽带，只推荐真正适合的
+            中文顾问可帮你横向核对三家宽带的地址、账户和当前条件
           </p>
 
           <Link
@@ -173,7 +172,7 @@ export default function FrontierClient() {
                   Frontier 宽带覆盖哪些地区？
                 </h3>
                 <p className="text-sm text-slate-600 line-clamp-2">
-                  Frontier Fiber 覆盖范围有限，主要在湾区部分城市...
+                  Frontier Fiber 覆盖范围有限，需按详细地址查询...
                 </p>
               </Link>
               <Link

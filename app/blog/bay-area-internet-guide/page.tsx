@@ -44,13 +44,13 @@ export default function BayAreaInternetGuidePage() {
 
         {/* H1 标题 */}
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight">
-          2026年旧金山湾区华人办宽带全攻略：Xfinity, AT&T, Spectrum 哪家最省钱？
+          2026年旧金山湾区家庭宽带比较：Xfinity、AT&T、Spectrum 如何核对？
         </h1>
 
         {/* 引言 */}
         <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-xl mb-12">
           <p className="text-lg text-slate-700 leading-relaxed">
-            刚到湾区，不知道选哪家宽带？官网价格太贵，又担心被坑？本文为湾区华人提供最全面的宽带选择指南，帮你避开常见陷阱，找到最适合你地址的优惠方案。
+            刚到湾区，不知道如何比较宽带？本文保留湾区场景，整理地址覆盖、账单项目、促销期限和安装条件，具体可用方案以当前地址和运营商规则为准。
           </p>
         </div>
 
@@ -59,7 +59,7 @@ export default function BayAreaInternetGuidePage() {
           <div className="flex items-center gap-3 mb-6">
             <AlertCircle className="text-orange-800" size={32} />
             <h2 className="text-2xl md:text-3xl font-black text-slate-900">
-              【避坑指南】为什么在官网申请不一定最划算？
+              【避坑指南】申请前需要核对哪些条件？
             </h2>
           </div>
 
@@ -71,14 +71,14 @@ export default function BayAreaInternetGuidePage() {
                   <span className="text-orange-800 font-bold mt-1">1.</span>
                   <div>
                     <strong className="text-slate-900">隐藏费用多：</strong>
-                    激活费 $35-$99、设备租赁费每月 $10-$15、安装费 $50-$200，官网不会主动告诉你这些额外成本。
+                    激活费、设备租赁费和安装费可能分别出现，具体金额和适用条件应以当前订单和账单条款为准。
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-orange-800 font-bold mt-1">2.</span>
                   <div>
                     <strong className="text-slate-900">促销期短：</strong>
-                    官网显示的“$29.99/月”通常只有前 12 个月，到期后自动涨到 $79.99/月，很多人第一年结束后才发现账单翻倍。
+                    官网显示的促销价通常有适用期限，到期后的月费、设备费和其他项目应在下单前核对，不能按旧价格推断当前账单。
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
@@ -94,24 +94,24 @@ export default function BayAreaInternetGuidePage() {
             <div className="bg-green-50 border-2 border-green-200 rounded-xl p-6">
               <h3 className="text-xl font-bold text-green-900 mb-3 flex items-center gap-2">
                 <CheckCircle2 className="text-green-600" size={24} />
-                ✅ 鸿达电讯的独家优势：
+                ✅ 中文协助可以核对的内容：
               </h3>
               <ul className="space-y-2 text-green-800">
                 <li className="flex items-start gap-2">
                   <span className="text-green-600 font-bold">•</span>
-                  <span><strong>比官网省 20%-40%：</strong>通过授权代理渠道，我们拿到运营商内部折扣，同样套餐价格更低。</span>
+                  <span><strong>核对当前账单：</strong>比较订单、促销条款、设备费用、安装费用和后续账单项目。</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-600 font-bold">•</span>
-                  <span><strong>免除押金与信用审核：</strong>支持无 SSN 办网，新移民、留学生、短期访客都可以申请。</span>
+                  <span><strong>核对账户资格：</strong>身份、信用、地址和账户条件可能影响申请结果，不能保证免押金或免审核。</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-600 font-bold">•</span>
-                  <span><strong>免费地址覆盖查询：</strong>中文客服帮你查地址，告诉你哪家运营商在你家可用，避免选错。</span>
+                  <span><strong>核对地址覆盖：</strong>中文顾问可以协助整理地址查询结果，但最终可用性以运营商系统为准。</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-600 font-bold">•</span>
-                  <span><strong>全程中文服务：</strong>从申请到安装，再到后续账单问题，都有中文客服协助。</span>
+                  <span><strong>中文说明：</strong>协助理解申请、安装和账单问题，具体服务条件以当前安排为准。</span>
                 </li>
               </ul>
             </div>
@@ -147,18 +147,18 @@ export default function BayAreaInternetGuidePage() {
                 <div>
                   <strong className="text-slate-900">✅ 优势：</strong>
                   <ul className="mt-2 space-y-1 ml-4">
-                    <li>• 覆盖范围最广，湾区 90% 以上地址可用</li>
+                    <li>• 覆盖和可用性需按详细地址核对</li>
                     <li>• 速度选择多：300Mbps、500Mbps、1Gbps</li>
-                    <li>• 住家套餐约 $30-$100/月（促销期）</li>
+                    <li>• 价格和促销期限以当前地址、账户和订单为准</li>
                     <li>• 商业宽带选择灵活，适合小企业</li>
                   </ul>
                 </div>
                 <div>
                   <strong className="text-slate-900">⚠️ 注意事项：</strong>
                   <ul className="mt-2 space-y-1 ml-4">
-                    <li>• 促销期通常 12-24 个月，到期后月费上涨 $20-$50</li>
+                    <li>• 促销期限及到期后月费需核对当前条款</li>
                     <li>• 上传速度较慢（Cable 技术限制）</li>
-                    <li>• 需要自备或租赁路由器（$10/月）</li>
+                    <li>• 设备租赁或自备设备条件需核对当前规则</li>
                   </ul>
                 </div>
                 <div className="bg-blue-50 p-4 rounded-xl">
@@ -178,7 +178,7 @@ export default function BayAreaInternetGuidePage() {
                     <li>• 真光纤技术，上下行速度对称（上传和下载一样快）</li>
                     <li>• 稳定性极高，几乎不掉线</li>
                     <li>• 无流量上限，适合重度使用</li>
-                    <li>• 促销期价格约 $55-$80/月（300Mbps-1Gbps）</li>
+                    <li>• 促销价格和设备条件需按地址及当前条款核对</li>
                   </ul>
                 </div>
                 <div>
@@ -205,7 +205,7 @@ export default function BayAreaInternetGuidePage() {
                   <ul className="mt-2 space-y-1 ml-4">
                     <li>• 价格结构相对稳定，促销期结束后涨幅较小</li>
                     <li>• 无流量上限，适合家庭多设备使用</li>
-                    <li>• 住家套餐约 $50-$80/月（200Mbps-1Gbps）</li>
+                    <li>• 价格、期限和设备条件需按地址及当前条款核对</li>
                     <li>• 部分地区覆盖良好</li>
                   </ul>
                 </div>
@@ -228,7 +228,7 @@ export default function BayAreaInternetGuidePage() {
           <div className="mt-8 bg-yellow-50 border-2 border-yellow-200 rounded-xl p-6">
             <p className="text-yellow-900 font-bold mb-2">⚠️ 重要提醒：</p>
             <p className="text-yellow-800">
-              不同地址支持的运营商完全不同！<strong>必须查地址才能确定哪家可用。</strong>即使你邻居能用 Xfinity，你家也可能只能装 AT&T。建议先联系中文客服免费查询地址覆盖，再决定选哪家。
+              不同地址支持的运营商可能不同！<strong>需要查地址才能确定哪家可用。</strong>即使邻居能用 Xfinity，你家也可能只能装其他服务。办理前应核对当前地址覆盖和费用条款。
             </p>
           </div>
         </section>
@@ -262,7 +262,7 @@ export default function BayAreaInternetGuidePage() {
                   <span className="text-orange-800 font-bold mt-1">1.</span>
                   <div>
                     <strong className="text-slate-900">促销期结束：</strong>
-                    运营商通常给新用户 12-24 个月的优惠价，到期后自动恢复到原价，账单可能从 $29.99 涨到 $79.99。
+                    运营商可能提供有期限的优惠价，到期后账单项目可能变化，应对照当前订单、促销期限和账单条款核对。
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
@@ -298,7 +298,7 @@ export default function BayAreaInternetGuidePage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-600 font-bold">✓</span>
-                    <span><strong>Retention 谈价：</strong>通过运营商客服部门重新谈价，平均每年节省 $300-$600。</span>
+                    <span><strong>账单核对：</strong>通过运营商客服确认促销期限、设备费、安装费和当前可用方案，结果取决于账户资格。</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-600 font-bold">✓</span>
@@ -320,7 +320,7 @@ export default function BayAreaInternetGuidePage() {
             不确定选哪家？让中文顾问帮你查地址、比价格、选方案
           </h2>
           <p className="text-lg mb-6 text-blue-100">
-            免费地址覆盖查询 · 独家折扣申请 · 全程中文服务
+            地址覆盖核对 · 当前条款说明 · 中文协助
           </p>
           <button
             onClick={() => setModalOpen(true)}

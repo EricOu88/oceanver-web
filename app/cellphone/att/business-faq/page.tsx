@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'AT&T 商业计划常见问题 FAQ | 售前售后50个问题解答',
     description: 'AT&T 商业计划售前售后常见问题完整解答。涵盖套餐选择、价格优惠、账单问题等50个常见问题。',
-    url: 'https://baymediastar.com/cellphone/att/business-faq',
-    siteName: 'Bay Media Star 鸿达电讯',
+    url: 'https://oceanver.com/cellphone/att/business-faq',
+    siteName: '美国鸿达电讯',
     locale: 'zh_CN',
     type: 'website',
   },

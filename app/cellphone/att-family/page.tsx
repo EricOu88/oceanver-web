@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'AT&T 家庭合约机 - 湾区华人办理 | 鸿达电信',
-  description: 'AT&T 家庭合约计划，多线更优惠，适合家庭长期使用。iPhone/Samsung 合约机，携号转网有补贴。湾区中文办理。',
+  title: 'AT&T 家庭合约机申请说明 | 美国鸿达电讯',
+  description: 'AT&T 家庭合约计划说明，帮助比较多线账户、设备和资格条件。价格、设备优惠及携号转网条件会随时间、地区、账户和资格变化，办理前需核实。',
   alternates: { canonical: 'https://oceanver.com/cellphone/att-family' },
 };
 

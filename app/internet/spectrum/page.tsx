@@ -8,16 +8,16 @@ import { getCanonicalUrl } from '@/lib/seo-utils'
 // Spectrum 页面专用 FAQ（用于 Schema）
 const spectrumFAQs = [
   {
-    question: 'Spectrum 宽带在湾区速度稳定吗？',
-    answer: 'Spectrum 在湾区覆盖较广，速度相对稳定。Cable 宽带技术，高峰期可能略有下降，但整体表现可靠。适合家庭日常使用、视频流媒体和远程办公。',
+    question: 'Spectrum 宽带速度稳定吗？',
+    answer: 'Spectrum 使用 Cable 等网络设施，实际速度和高峰期表现取决于地址、线路、网络负载和套餐条件，需结合具体使用场景判断。',
   },
   {
     question: 'Spectrum 宽带会不会涨价？',
     answer: 'Spectrum 价格结构相对稳定，不像其他运营商那样在优惠期结束后大幅涨价。大多数套餐在促销期结束后会恢复原价，但涨幅通常较小。',
   },
   {
-    question: 'Spectrum 宽带在 Fremont 可以安装吗？',
-    answer: '可以。Spectrum 在 Fremont、San Jose、Milpitas 等湾区城市都有覆盖。我们提供免费地址覆盖查询服务，1 分钟内即可确认您的地址是否支持安装。',
+    question: 'Spectrum 宽带可以安装吗？',
+    answer: '是否可以安装取决于详细地址和当前覆盖查询结果，不能仅凭城市判断，办理前需核实。',
   },
   {
     question: 'Spectrum 宽带适合新移民和留学生吗？',
@@ -32,7 +32,7 @@ const spectrumFAQs = [
 export const metadata: Metadata = {
   title: 'Spectrum 宽带申请指南 - 鸿达电信中文办理',
   description:
-    'Spectrum 宽带申请指南。住家与商业方案对比，价格结构相对稳定，无优惠期暴涨套路。旧金山湾区 Fremont 实体店中文协助办理，覆盖 San Jose、Milpitas、Cupertino 及全美 50 州，支持地址查询与转网。',
+    'Spectrum 宽带申请指南。介绍住家与商业方案、账单结构、地址查询与转网判断。价格、覆盖、设备和资格会随时间与地址变化，办理前需核实。',
   alternates: {
     canonical: getCanonicalUrl('/internet/spectrum'),
   },
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     description:
       '从用户角度讲清 Spectrum 是否适合你：价格、稳定性、适合人群。',
     url: getCanonicalUrl('/internet/spectrum'),
-    siteName: 'Bay Media Star 鸿达电讯',
+    siteName: '美国鸿达电讯',
     locale: 'zh_CN',
     type: 'website',
   },

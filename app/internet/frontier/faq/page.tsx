@@ -33,7 +33,7 @@ function ItemListSchema() {
       position: index + 1,
       name: item.question,
       description: item.summary,
-      url: `https://baymediastar.com/internet-wifi/frontier/faq/${item.slug}`,
+      url: `https://oceanver.com/internet/frontier/faq/${item.slug}`,
     })),
   }
 

@@ -25,8 +25,8 @@ export default function UltraPage() {
           Ultra Mobile 预付费电话卡（可邮寄中-美）
         </h1>
         <p className="text-center text-gray-600 mb-12">
-          中美两地沟通首选 · 国际通话超便宜。
-          如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">鸿达电讯 Bay Media Star 首页</Link>。
+          中美两地沟通方案 · 国际通话条件以当前套餐为准。
+          如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">美国鸿达电讯首页</Link>。
           常见问题如<Link href="/cellphone/faq/prepaid-vs-postpaid" className="text-blue-600 hover:text-blue-700 font-semibold underline">预付费和后付费手机卡有什么区别？</Link>都有详细解答。
         </p>
 
@@ -45,7 +45,7 @@ export default function UltraPage() {
           </PlanCard>
 
           <PlanCard
-            title="预付费套餐 · 热门推荐"
+            title="预付费套餐 · 方案说明"
             highlight
             color="purple"
             icon={<MessageSquare className="text-purple-600" size={26} />}

@@ -9,8 +9,8 @@ export default function SpectrumFAQPage() {
   // 这里列出你最核心的几个 FAQ，必须与 Schema 组件里的内容一致
   const faqs = [
     {
-      q: "Spectrum 宽带在湾区会涨价吗？",
-      a: "大多数 Spectrum 套餐有 12-24 个月的促销期。促销期结束后会恢复标准价格，但我们可以协助您通过重新绑定服务或申请最新优惠来优化账单。"
+      q: "Spectrum 宽带会涨价吗？",
+      a: "促销期限、到期价格和账单变化会随时间、地址、账户和资格变化。办理前需核对当前条款，账单变化后再确认费用项目和可用条件。"
     },
     {
       q: "Spectrum 安装需要多久？",
@@ -39,7 +39,7 @@ export default function SpectrumFAQPage() {
           </Link>
 
           <h1 className="text-3xl font-black text-slate-900 mb-2">Spectrum 常见问题解答</h1>
-          <p className="text-slate-600 mb-8">为您解答关于湾区 Spectrum 宽带安装、价格及服务的疑问。</p>
+          <p className="text-slate-600 mb-8">为您解答 Spectrum 宽带地址、安装、价格及服务条件方面的常见问题。</p>
 
           {/* FAQ 列表 */}
           <div className="space-y-4">

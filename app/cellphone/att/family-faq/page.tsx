@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'AT&T解约',
     'AT&T国际漫游',
     '美国手机套餐',
-    '湾区手机卡',
+    '美国手机卡',
   ],
   openGraph: {
     title: 'AT&T 家庭合约计划常见问题 FAQ｜鸿达电讯',

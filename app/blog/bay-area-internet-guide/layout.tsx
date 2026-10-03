@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: '美国湾区家庭宽带选择指南 | 美国鸿达电讯',
     description:
       '整理湾区家庭宽带选择时需要核对的地址覆盖、套餐条件、促销期限和费用变化，具体可用服务以运营商地址查询为准。',
-    url: 'https://baymediastar.com/blog/bay-area-internet-guide',
+    url: 'https://oceanver.com/blog/bay-area-internet-guide',
     siteName: '美国鸿达电讯',
     type: 'article',
     locale: 'zh_CN',

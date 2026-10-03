@@ -45,8 +45,8 @@ export async function generateMetadata({ params }: FrontierFAQPageProps): Promis
     openGraph: {
       title: `Frontier ${faq.question}`,
       description: faq.summary,
-      url: `https://baymediastar.com/internet-wifi/frontier/faq/${slug}`,
-      siteName: 'Bay Media Star 鸿达电讯',
+      url: `https://oceanver.com/internet-wifi/frontier/faq/${slug}`,
+      siteName: '美国鸿达电讯',
       locale: 'zh_CN',
       type: 'article',
     },
@@ -170,7 +170,7 @@ export default async function FrontierFAQDetailPage({ params }: FrontierFAQPageP
           <div className="bg-blue-700 rounded-2xl p-8 text-white mb-12 shadow-xl">
             <h2 className="text-2xl font-black mb-4">中文协助查询 Frontier 覆盖 / 套餐 / 价格对比 / 安装预约</h2>
             <p className="text-blue-100 mb-6 text-lg">
-              旧金山湾区 Fremont 实体店中文顾问，帮您查询地址覆盖、对比套餐、处理安装预约问题。
+              中文顾问可协助整理地址覆盖、套餐和安装预约信息，具体条件以当前运营商规则为准。
             </p>
             <Link
               href="/internet/frontier"

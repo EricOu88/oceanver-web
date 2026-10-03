@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: 'AT&T Fiber 宽带常见问题 FAQ | 售前售后50个问题解答',
     description: 'AT&T Fiber 宽带售前售后常见问题完整解答。涵盖地址覆盖、套餐选择、价格优惠、账单问题等50个常见问题。',
     url: 'https://baymediastar.com/internet/att-fiber/faq',
-    siteName: 'Bay Media Star 鸿达电讯',
+    siteName: '美国鸿达电讯',
     locale: 'zh_CN',
     type: 'website',
   },

@@ -5,7 +5,7 @@ import { HelpCircle, Package, DollarSign, FileText, Calendar, Wifi, Zap, Buildin
 export const attFiberResidentialPreSale = [
   {
     question: '我的地址能装 AT&T Fiber 吗？',
-    answer: 'AT&T Fiber 覆盖范围比 Cable 宽带小，主要在 Fremont、Milpitas、San Jose、Sunnyvale、Santa Clara 等湾区城市的部分区域。我们可以帮您免费查询地址是否支持。',
+    answer: 'AT&T Fiber 的可用性取决于详细地址、线路设施和当前覆盖查询结果，不能仅凭城市判断，办理前需核实。',
   },
   {
     question: '如何确认地址有 AT&T Fiber？',
@@ -25,7 +25,7 @@ export const attFiberResidentialPreSale = [
   },
   {
     question: 'AT&T Fiber 有哪些套餐？',
-    answer: 'AT&T Fiber 提供 300Mbps、500Mbps、1000Mbps、2000Mbps、5000Mbps 等多种速度选择，价格从 $55-$180 不等。',
+    answer: 'AT&T Fiber 可能提供多种速度选择；当前速度、价格、设备和资格会随地址、时间、账户和套餐变化，办理前需核实。',
   },
   {
     question: '住家和商业有什么区别？',
@@ -45,7 +45,7 @@ export const attFiberResidentialPreSale = [
   },
   {
     question: 'AT&T Fiber 新用户有什么优惠？',
-    answer: '新用户通常有前 12 个月的促销价格，可能比标准价格低 $10-$30/月。还有免安装费、免费路由器等优惠。',
+    answer: '新用户促销、期限、价格、设备和安装费用会变化，办理前需核对当前运营商条款。',
   },
   {
     question: '促销价格会持续多久？',
@@ -57,7 +57,7 @@ export const attFiberResidentialPreSale = [
   },
   {
     question: '设备费用是多少？',
-    answer: '可以租用 AT&T 路由器（$10/月）或自备兼容设备。自备设备可以节省月费。',
+    answer: '设备租赁和自备兼容设备的条件、费用与限制以当前官方规则为准，需结合使用场景比较。',
   },
   {
     question: '有隐藏费用吗？',
@@ -69,7 +69,7 @@ export const attFiberResidentialPreSale = [
   },
   {
     question: '无 SSN 需要多少押金？',
-    answer: '押金通常在 $50-$200 之间，取决于套餐。押金会在 12 个月后返还（如果账单正常）。',
+    answer: '是否需要押金、金额及返还条件取决于身份、信用、地址、账户和当前运营商规则。',
   },
   {
     question: '新移民可以办吗？',
@@ -117,7 +117,7 @@ export const attFiberResidentialPreSale = [
   },
   {
     question: '适合远程办公吗？',
-    answer: '非常适合。Fiber 上传速度快、延迟低，是远程办公、视频会议、直播的最佳选择。',
+    answer: 'Fiber 的上传速度和延迟特征可能适合远程办公、视频会议或直播，但仍需结合地址、设备、套餐和实际使用判断。',
   },
   {
     question: '游戏延迟低吗？',
@@ -136,7 +136,7 @@ export const attFiberResidentialPreSale = [
     answer: '如果地址不支持 Fiber，或预算有限，可以考虑 Xfinity 或 Spectrum。',
   },
   {
-    question: 'Fiber 一定比 Cable 好吗？',
+    question: 'Fiber 和 Cable 有什么差异？',
     answer: '在速度稳定性和上传速度方面，Fiber 通常更好。但 Cable 覆盖更广、促销更多。',
   },
   {
@@ -213,7 +213,7 @@ export const attFiberResidentialAfterSale = [
   },
   {
     question: 'WiFi 信号弱怎么办？',
-    answer: '可以：移动路由器位置、使用 WiFi 扩展器、升级路由器、使用有线连接。我们推荐合适的解决方案。',
+    answer: '可以：移动路由器位置、使用 WiFi 扩展器、升级路由器或使用有线连接，再结合房屋结构和设备判断方案。',
   },
   {
     question: '速度不稳定？',
@@ -233,7 +233,7 @@ export const attFiberResidentialAfterSale = [
   },
   {
     question: '路由器需要重启吗？',
-    answer: '如果遇到连接问题，重启路由器通常能解决。建议每周重启一次，保持设备最佳状态。',
+    answer: '遇到连接问题可按设备说明重启并检查线路、账户和区域故障；重启频率不应作为固定保证。',
   },
   {
     question: '无法连接 WiFi？',
@@ -269,7 +269,7 @@ export const attFiberResidentialAfterSale = [
   },
   {
     question: '可以升级套餐吗？',
-    answer: '可以。随时可以升级套餐，通常立即生效。升级可能有促销价格，我们帮您申请最佳优惠。',
+    answer: '升级时间、价格和可用方案取决于地址、账户、设备与当前资格，办理前需核对条款。',
   },
   {
     question: '可以降级套餐吗？',
@@ -281,7 +281,7 @@ export const attFiberResidentialAfterSale = [
   },
   {
     question: '降级后速度够用吗？',
-    answer: '降级前建议先评估使用需求。我们帮您分析使用情况，推荐合适的套餐速度。',
+    answer: '降级前应评估同时在线设备、上传需求、远程办公和视频使用，再核对降级后的速度、费用和条款。',
   },
   {
     question: '可以临时升级吗？',
@@ -305,7 +305,7 @@ export const attFiberResidentialAfterSale = [
   },
   {
     question: '取消后设备怎么办？',
-    answer: '如果租用 AT&T 设备，需要归还。可以邮寄或送到 AT&T 门店。保留归还凭证。',
+    answer: '如果租用 AT&T 设备，取消或更换后通常需要按当前规则归还；邮寄、交付方式和凭证要求需向运营商核实。',
   },
   {
     question: '搬家可以转移服务吗？',
@@ -329,7 +329,7 @@ export const attFiberResidentialAfterSale = [
   },
   {
     question: '如何联系 AT&T 技术支持？',
-    answer: '可以电话、在线聊天、或到门店。我们帮您准备问题描述，协助与技术支持沟通。',
+    answer: '可以通过电话或在线渠道联系技术支持；是否提供现场服务、费用和处理方式以当前运营商规则为准。',
   },
   {
     question: '技术支持是 24 小时吗？',
@@ -361,11 +361,11 @@ export const attFiberResidentialAfterSale = [
   },
   {
     question: '续约有什么优惠？',
-    answer: '续约可能有：价格锁定、免费升级、设备折扣等。我们帮您申请最佳续约优惠。',
+    answer: '续约可用条件、价格、设备和期限会变化，需在当前账单和新条款基础上比较。',
   },
   {
-    question: '什么时候联系续约最好？',
-    answer: '建议在促销到期前 30 天联系，有足够时间协商和申请优惠。',
+    question: '什么时候核对续约条件？',
+    answer: '在发现促销期限或账单变化时尽早核对当前条款，具体时间以账户通知和运营商规则为准。',
   },
   {
     question: '可以暂停服务吗？',
@@ -429,7 +429,7 @@ export const attFiberBusinessPreSale = [
   },
   {
     question: '商业 Fiber 安装费用是多少？',
-    answer: '商业 Fiber 安装费用通常比住家高，可能需要 $100-$500，具体取决于地址和套餐。',
+    answer: '商业 Fiber 安装费用取决于地址、线路建设、设备和当前套餐条款，办理前需核实，不按固定金额判断。',
   },
 ]
 
@@ -465,7 +465,7 @@ export const attFiberBusinessAfterSale = [
   },
   {
     question: '商业 Fiber 合约到期怎么办？',
-    answer: '合约到期后可以续约或重新协商价格。我们可以在到期前帮您申请最佳续约优惠。',
+    answer: '合约到期后应重新核对价格、期限、设备和服务条款，再决定续约或比较其他可用方案。',
   },
   {
     question: '商业 Fiber 可以提前解约吗？',

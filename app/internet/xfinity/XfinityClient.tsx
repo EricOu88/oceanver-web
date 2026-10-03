@@ -220,13 +220,13 @@ export default function XfinityClient() {
             </div>
 
             <h1 className="text-4xl md:text-5xl font-black mt-5 leading-tight">
-              Xfinity 宽带在湾区速度稳定吗？住家和商业宽带有什么区别？
+              Xfinity 宽带速度稳定吗？住家和商业宽带有什么区别？
             </h1>
 
             <p className="text-slate-700 font-medium mt-4 leading-relaxed">
               同样是 Xfinity：住家宽带与商业宽带在
               <strong>价格结构、稳定性、合约</strong> 上差异很大。
-              如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">鸿达电讯 Bay Media Star 首页</Link>。
+              如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">美国鸿达电讯首页</Link>。
               常见问题如<Link href="/internet/xfinity/faq" className="text-blue-600 hover:text-blue-700 font-semibold underline">Xfinity 宽带优惠期结束后会涨价吗？</Link>都有详细解答。
             </p>
 
@@ -372,13 +372,13 @@ export default function XfinityClient() {
               </Link>
             </div>
             <p className="text-center text-slate-600 mt-6">
-              如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">鸿达电讯 Bay Media Star 首页</Link>。
+              如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">美国鸿达电讯首页</Link>。
             </p>
           </div>
         </section>
 
         <footer className="py-10 border-t border-slate-100 text-center text-xs text-slate-400 font-black">
-          © {new Date().getFullYear()} BAY MEDIA STAR · XFINITY INTERNET
+          © {new Date().getFullYear()} 美国鸿达电讯 · XFINITY INTERNET
         </footer>
       </main>
     </>

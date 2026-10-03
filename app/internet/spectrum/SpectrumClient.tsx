@@ -61,11 +61,11 @@ export default function SpectrumClient() {
               </span>
 
               <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">
-                Spectrum 宽带在湾区速度稳定吗？价格会不会突然涨价？
+                Spectrum 宽带速度稳定吗？价格会不会突然涨价？
               </h1>
 
               <p className="text-lg text-slate-700 leading-relaxed">
-                很多用户从 Xfinity / AT&T 转到 Spectrum，不是因为最便宜，而是因为<strong>价格结构更简单、没那么多套路</strong>。
+                用户比较 Xfinity、AT&T 和 Spectrum 时，通常需要同时查看<strong>价格结构、地址、设备、网络负载和促销条件</strong>，不能只按价格或品牌判断。
                 如需了解更多服务，请返回 <Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">鸿达电讯首页</Link>。
                 常见问题如 <Link href={`${FAQ_BASE_PATH}/spectrum-bill-increase`} className="text-blue-600 hover:text-blue-700 font-semibold underline">Spectrum 宽带会不会涨价？</Link> 都有详细解答。
               </p>
@@ -146,8 +146,8 @@ export default function SpectrumClient() {
               {[
                 { slug: 'spectrum-bill-increase', q: 'Spectrum 会不会涨价？', a: '大多数套餐在促销期结束后会恢复原价...' },
                 { slug: 'spectrum-installation', q: 'Spectrum 安装要多久？', a: '不同房型流程不同，最快当天完成...' },
-                { slug: 'spectrum-bay-area', q: '湾区哪些地区有 Spectrum？', a: '主要在 Gilroy、Morgan Hill 及南湾部分地区...' },
-                { slug: 'spectrum-retention', q: '账单涨价了能降回来吗？', a: '可以。我们可以帮您重新申请优惠...' },
+                { slug: 'spectrum-coverage', q: '哪些地址有 Spectrum？', a: '可用性取决于详细地址和当前覆盖查询结果，不能仅凭城市或邻近地址判断。' },
+                { slug: 'spectrum-retention', q: '账单涨价了怎么办？', a: '先核对促销期限、设备费和账单项目，再向运营商核实当前方案与可用资格。' },
                 { slug: 'spectrum-speed', q: 'Spectrum 速度怎么样？', a: 'Cable 宽带，速度稳定，适合日常使用...' },
               ].map((faq) => (
                 <Link

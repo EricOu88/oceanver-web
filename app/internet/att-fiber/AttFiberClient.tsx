@@ -67,7 +67,7 @@ export default function AttFiberClient() {
                 AT&T Fiber 是<strong>真·光纤到户</strong>，
                 在稳定性、延迟、上传速度上明显优于普通有线宽带。
                 但不是所有地址都能装，也不一定适合所有人。
-                如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">鸿达电讯 Bay Media Star 首页</Link>。
+                如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">美国鸿达电讯首页</Link>。
                 常见问题如<Link href="/internet/att/fiber/faq" className="text-blue-600 hover:text-blue-700 font-semibold underline">AT&T Fiber 会涨价吗？</Link>都有详细解答。
               </p>
 
@@ -132,11 +132,10 @@ export default function AttFiberClient() {
         <section className="bg-slate-50 py-12">
           <div className="max-w-5xl mx-auto px-6 space-y-4">
             <h2 className="text-3xl font-bold">
-              哪些湾区城市更常见 AT&T Fiber？
+              哪些地址更常见 AT&T Fiber？
             </h2>
             <p className="text-slate-700">
-              在 <strong>Fremont / Milpitas / San Jose / Sunnyvale / Santa Clara</strong>  
-              的部分社区，AT&T Fiber 覆盖率较高，但<strong>同一城市不同街区差异极大</strong>，
+              AT&T Fiber 的可用性需要按详细地址查询，<strong>同一城市不同街区差异也可能很大</strong>，
               必须按地址查询。
             </p>
           </div>
@@ -149,7 +148,7 @@ export default function AttFiberClient() {
           </h2>
           <p className="text-lg text-slate-600 mb-6">
             中文顾问可免费帮你查询地址、对比 Xfinity / Spectrum / Frontier。
-            如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">鸿达电讯 Bay Media Star 首页</Link>。
+            如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">美国鸿达电讯首页</Link>。
             常见问题如<Link href="/internet/att/fiber/faq" className="text-blue-600 hover:text-blue-700 font-semibold underline">AT&T Fiber 会涨价吗？</Link>都有详细解答。
           </p>
 
@@ -176,7 +175,7 @@ export default function AttFiberClient() {
                   AT&T Fiber 覆盖哪些地区？我家能装吗？
                 </h3>
                 <p className="text-sm text-slate-600 line-clamp-2">
-                  AT&T Fiber 覆盖范围比 Cable 宽带小，主要在湾区部分城市的特定区域...
+                  AT&T Fiber 覆盖范围需要按详细地址查询，城市内不同街区也可能不同...
                 </p>
               </Link>
               <Link
@@ -209,7 +208,7 @@ export default function AttFiberClient() {
                   AT&T Fiber 会涨价吗？第一年后多少钱？
                 </h3>
                 <p className="text-sm text-slate-600 line-clamp-2">
-                  AT&T Fiber 第一年通常是促销价格，第二年可能涨价 $10-$30/月...
+                  AT&T Fiber 促销期限和后续月费可能变化，需核对当前账单条款...
                 </p>
               </Link>
               <Link

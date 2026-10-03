@@ -4,7 +4,7 @@ import { FAQCategory } from '@/app/components/faq/ProviderFAQ'
 export const xfinityResidentialPreSale = [
   {
     question: '我的地址能装 Xfinity 吗？',
-    answer: 'Xfinity 在湾区和全美覆盖最广，大部分地址都支持。但具体能否安装需要查询您的详细地址。我们可以帮您免费查询地址覆盖情况。',
+    answer: 'Xfinity 的可用性取决于详细地址、线路设施和当前运营商系统结果，不能仅凭城市或邻近地址判断，办理前需查询地址。',
   },
   {
     question: '公寓能装 Xfinity 吗？',
@@ -24,7 +24,7 @@ export const xfinityResidentialPreSale = [
   },
   {
     question: 'Xfinity 有哪些套餐？',
-    answer: 'Xfinity 提供从 50Mbps 到 1200Mbps 多种速度选择，价格从 $20-$100+ 不等。还有住家和商业宽带两种类型。',
+    answer: 'Xfinity 可能提供多种速度和住家、商业宽带类型；当前速度、价格和可用方案会随地址、时间、账户和资格变化，办理前需核实。',
   },
   {
     question: '住家和商业宽带有什么区别？',
@@ -32,7 +32,7 @@ export const xfinityResidentialPreSale = [
   },
   {
     question: '应该选多少速度？',
-    answer: '一般家庭 200-400Mbps 足够。如果多人同时使用、远程办公或游戏，建议 600Mbps 以上。我们可以根据您的使用情况推荐。',
+    answer: '速度需求取决于同时在线人数、设备、远程办公、视频或游戏等实际使用。应结合地址、设备和当前套餐条件比较。',
   },
   {
     question: 'Xfinity 有流量上限吗？',
@@ -44,7 +44,7 @@ export const xfinityResidentialPreSale = [
   },
   {
     question: 'Xfinity 新用户有什么优惠？',
-    answer: '新用户通常有前 12-24 个月的促销价格，可能比标准价格低 $20-$40/月。还有免安装费、免费路由器等优惠。',
+    answer: '新用户促销、期限、设备和安装费用会随时间、地区、账户和资格变化，办理前需核对当前条款。',
   },
   {
     question: '促销价格会持续多久？',
@@ -56,7 +56,7 @@ export const xfinityResidentialPreSale = [
   },
   {
     question: '设备费用是多少？',
-    answer: '可以租用 Xfinity 路由器（$10-15/月）或自备兼容设备。自备设备可以节省月费。',
+    answer: '可以比较运营商设备租赁和自备兼容设备的条件，具体设备费用和兼容列表以当前规则为准。',
   },
   {
     question: '有隐藏费用吗？',
@@ -68,7 +68,7 @@ export const xfinityResidentialPreSale = [
   },
   {
     question: '无 SSN 需要多少押金？',
-    answer: '押金通常在 $50-$200 之间，取决于套餐和信用情况。押金会在 12 个月后返还（如果账单正常）。',
+    answer: '是否需要押金、金额和返还条件取决于身份、信用、账户、地址和当前运营商规则，不能按固定金额判断。',
   },
   {
     question: '新移民可以办吗？',
@@ -84,11 +84,11 @@ export const xfinityResidentialPreSale = [
   },
   {
     question: 'Xfinity 有合约吗？',
-    answer: '大部分促销套餐有 12-24 个月合约。提前解约可能需要支付违约金（通常 $10/剩余月数）。',
+    answer: '合约、促销期限和提前终止费用取决于当前套餐条款，办理前需核对完整条件。',
   },
   {
     question: '可以按月付费吗？',
-    answer: '可以，但月付价格通常比合约价格高 $10-$20/月。合约套餐更划算。',
+    answer: '是否可以按月付费、月费和合约条件取决于当前套餐；应比较完整账单、期限和终止条款。',
   },
   {
     question: '合约到期后怎么办？',
@@ -108,7 +108,7 @@ export const xfinityResidentialPreSale = [
   },
   {
     question: '什么路由器兼容 Xfinity？',
-    answer: '大部分 DOCSIS 3.0/3.1 路由器都兼容。我们推荐几款性价比高的路由器，可以帮您确认兼容性。',
+    answer: '应查看当前官方兼容设备列表，并结合速度、WiFi 覆盖、设备管理和使用需求判断，不按性价比绝对推荐。',
   },
   {
     question: '自备设备安装复杂吗？',
@@ -212,7 +212,7 @@ export const xfinityResidentialAfterSale = [
   },
   {
     question: 'WiFi 信号弱怎么办？',
-    answer: '可以：移动路由器位置、使用 WiFi 扩展器、升级路由器、使用有线连接。我们推荐合适的解决方案。',
+    answer: '可以先检查设备位置、无线频道、扩展器和有线连接，再结合房屋结构与使用设备判断解决方案。',
   },
   {
     question: '晚上速度特别慢？',
@@ -232,7 +232,7 @@ export const xfinityResidentialAfterSale = [
   },
   {
     question: '路由器需要重启吗？',
-    answer: '如果遇到连接问题，重启路由器通常能解决。建议每周重启一次，保持设备最佳状态。',
+    answer: '遇到连接问题可按设备说明重启并检查线路、账户和区域故障；重启频率不应作为固定保证。',
   },
   {
     question: '无法连接 WiFi？',
@@ -268,7 +268,7 @@ export const xfinityResidentialAfterSale = [
   },
   {
     question: '可以升级套餐吗？',
-    answer: '可以。随时可以升级套餐，通常立即生效。升级可能有促销价格，我们帮您申请最佳优惠。',
+    answer: '升级时间、可用方案和价格取决于地址、账户、设备和当前资格，办理前需核对条款。',
   },
   {
     question: '可以降级套餐吗？',
@@ -280,7 +280,7 @@ export const xfinityResidentialAfterSale = [
   },
   {
     question: '降级后速度够用吗？',
-    answer: '降级前建议先评估使用需求。我们帮您分析使用情况，推荐合适的套餐速度。',
+    answer: '降级前应评估同时在线设备、上传需求、远程办公和视频使用，再核对降级后的速度、费用和条款。',
   },
   {
     question: '可以临时升级吗？',
@@ -296,7 +296,7 @@ export const xfinityResidentialAfterSale = [
   },
   {
     question: '违约金是多少？',
-    answer: '违约金通常是 $10 × 剩余月数。如果搬家到不覆盖区域，可以免费取消。',
+    answer: '提前终止费用和搬家处理方式以当前合约、地址和账户条款为准，不能按固定公式判断。',
   },
   {
     question: '可以转网到其他运营商吗？',
@@ -304,7 +304,7 @@ export const xfinityResidentialAfterSale = [
   },
   {
     question: '取消后设备怎么办？',
-    answer: '如果租用 Xfinity 设备，需要归还。可以邮寄或送到 Xfinity 门店。保留归还凭证。',
+    answer: '如果租用 Xfinity 设备，取消或更换后通常需要按当前规则归还；交付方式和凭证要求需向运营商核实。',
   },
   {
     question: '搬家可以转移服务吗？',
@@ -328,7 +328,7 @@ export const xfinityResidentialAfterSale = [
   },
   {
     question: '如何联系 Xfinity 技术支持？',
-    answer: '可以电话、在线聊天、或到门店。我们帮您准备问题描述，协助与技术支持沟通。',
+    answer: '可以通过电话或在线渠道联系技术支持；是否提供现场服务、费用和处理方式以当前运营商规则为准。',
   },
   {
     question: '技术支持是 24 小时吗？',
@@ -360,11 +360,11 @@ export const xfinityResidentialAfterSale = [
   },
   {
     question: '续约有什么优惠？',
-    answer: '续约可能有：价格锁定、免费升级、设备折扣等。我们帮您申请最佳续约优惠。',
+    answer: '续约可用条件、价格、设备和期限会变化，需在当前账单和新条款基础上比较。',
   },
   {
-    question: '什么时候联系续约最好？',
-    answer: '建议在促销到期前 30 天联系，有足够时间协商和申请优惠。',
+    question: '什么时候核对续约条件？',
+    answer: '在发现促销期限或账单变化时尽早核对当前条款，具体时间以账户通知和运营商规则为准。',
   },
   {
     question: '可以暂停服务吗？',
@@ -424,7 +424,7 @@ export const xfinityBusinessPreSale = [
   },
   {
     question: '商业宽带安装费用是多少？',
-    answer: '商业宽带安装费用通常比住家高，可能需要 $100-$500，具体取决于地址和套餐。',
+    answer: '商业宽带安装费用取决于地址、线路建设、设备和当前套餐条款，办理前需核实，不按固定金额判断。',
   },
   {
     question: '商业宽带可以远程办理吗？',
@@ -464,7 +464,7 @@ export const xfinityBusinessAfterSale = [
   },
   {
     question: '商业宽带合约到期怎么办？',
-    answer: '合约到期后可以续约或重新协商价格。我们可以在到期前帮您申请最佳续约优惠。',
+    answer: '合约到期后应重新核对价格、期限、设备和服务条款，再决定续约或比较其他可用方案。',
   },
   {
     question: '商业宽带可以提前解约吗？',

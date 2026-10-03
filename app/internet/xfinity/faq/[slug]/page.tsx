@@ -32,8 +32,8 @@ export async function generateMetadata({ params }: XfinityFAQPageProps): Promise
     openGraph: {
       title: faq.seo.title,
       description: faq.seo.description,
-      url: `https://baymediastar.com/internet/xfinity/faq/${slug}`,
-      siteName: 'Bay Media Star 鸿达电讯',
+      url: `https://oceanver.com/internet/xfinity/faq/${slug}`,
+      siteName: '美国鸿达电讯',
       locale: 'zh_CN',
       type: 'article',
     },
