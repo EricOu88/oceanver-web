@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { Phone, MessageCircle, Mail, Copy, X, Maximize2 } from 'lucide-react'
+import { Phone, MessageCircle, Mail, Copy, X } from 'lucide-react'
 import { useState } from 'react'
 
 const WECHAT_ID = '美国鸿达电讯'
@@ -9,8 +9,8 @@ const PHONE_NUMBER = '15108496191' // For tel: and sms: links
 const PHONE_DISPLAY = '510-849-6191' // For display text
 
 export default function ContactEntry({
-  title = '需要中文客服帮你直接申请安装？',
-  subtitle = '加微信最快｜也可电话或短信联系'
+  title = '看完还是不确定？',
+  subtitle = '如果涉及具体账单、账户资格、地址覆盖或促销条件，可以联系中文客服进一步核实。'
 }: {
   title?: string
   subtitle?: string
@@ -48,7 +48,7 @@ export default function ContactEntry({
             <h3 className="text-base md:text-lg font-black text-white">微信咨询</h3>
             <p className="text-xs text-white/90 leading-relaxed">
               扫码添加客服<br />
-              中文回复，一般 10 分钟内
+              说明需要核实的问题
             </p>
             <p className="text-xs text-white/80 font-semibold mt-1.5">
               微信号：{WECHAT_ID}
@@ -86,7 +86,7 @@ export default function ContactEntry({
             <h3 className="text-base md:text-lg font-black text-white">短信咨询</h3>
             <p className="text-xs text-white/90 leading-relaxed">
               发送短信<br />
-              说明需求，快速回复
+              说明需要核实的问题
             </p>
             <p className="text-xs text-white/80 font-semibold mt-1.5">
               支持中英文
@@ -152,7 +152,7 @@ export default function ContactEntry({
             </div>
 
             <p className="mt-4 text-xs text-slate-500">
-              工作时间内通常可即时回复
+              工作时间内可协助核实具体情况
             </p>
           </div>
         </div>
