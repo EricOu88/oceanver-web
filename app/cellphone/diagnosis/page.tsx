@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: '美国手机问题诊断｜账单、信号、转网、eSIM｜美国鸿达电讯',
     description: '手机账单变贵、信号差、转网失败、eSIM、设备分期或 Trade-in 出问题时，先通过中文诊断判断常见原因、检查步骤和下一步处理方向。',
     url: 'https://oceanver.com/cellphone/diagnosis',
-    siteName: 'Oceanver',
+    siteName: '美国鸿达电讯',
     locale: 'zh_CN',
     type: 'website',
   },

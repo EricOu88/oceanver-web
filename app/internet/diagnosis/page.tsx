@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title,
     description,
     url: 'https://oceanver.com/internet/diagnosis',
-    siteName: 'Oceanver',
+    siteName: '美国鸿达电讯',
     locale: 'zh_CN',
     type: 'website',
   },
