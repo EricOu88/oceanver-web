@@ -73,7 +73,7 @@ export default function ProblemSelection() {
       <div className="mx-auto max-w-[1280px] px-5 pb-10 pt-14 md:px-6 md:pb-12 md:pt-1">
         {/* 标题 */}
         <div className="mb-8 text-center md:mb-10">
-          <p className="text-sm font-bold text-blue-700 mb-2">—— 从真实用户问题出发 ——</p>
+          <p className="mb-2 text-sm font-bold text-[#246B95]">—— 从真实用户问题出发 ——</p>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-slate-900">
             先找到你遇到的问题
           </h2>
@@ -91,10 +91,10 @@ export default function ProblemSelection() {
               <div className="flex min-w-0 flex-col p-5 md:w-[64%] md:p-5 lg:w-[65%]">
               {/* 图标 + 标签 */}
               <div className="mb-3 flex items-center gap-3">
-                <div className="w-11 h-11 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center shrink-0">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#EDF5F9] text-[#2786A5]">
                   {p.icon}
                 </div>
-                <span className="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-50 rounded-full px-3 py-1">
+                <span className="rounded-full bg-[#EDF5F9] px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#246B95]">
                   {p.label}
                 </span>
               </div>
@@ -107,7 +107,7 @@ export default function ProblemSelection() {
               <ul className="mb-2 space-y-1">
                 {p.questions.map((q) => (
                   <li key={q} className="flex items-start gap-2 text-base leading-normal text-slate-600">
-                    <span className="text-blue-500 font-bold shrink-0">·</span>
+                    <span className="shrink-0 font-bold text-[#2786A5]">·</span>
                     {q}
                   </li>
                 ))}
@@ -115,7 +115,7 @@ export default function ProblemSelection() {
 
               <Link
                 href={p.href}
-                className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-blue-50 px-4 py-3 font-bold text-blue-700 hover:bg-blue-100 md:mt-auto md:w-fit md:justify-start"
+                className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#EDF5F9] px-4 py-3 font-bold text-[#246B95] hover:bg-[#DCECF4] md:mt-auto md:w-fit md:justify-start"
               >
                 {p.cta}
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
@@ -123,7 +123,7 @@ export default function ProblemSelection() {
 
               </div>
               {/* Card image */}
-              <div className="relative mx-5 mb-5 h-[190px] overflow-hidden rounded-2xl bg-gradient-to-br from-blue-100 via-slate-100 to-blue-50 md:mx-0 md:mb-0 md:min-h-[280px] md:w-[36%] lg:min-h-[320px] lg:w-[35%]">
+              <div className="relative mx-5 mb-5 h-[190px] overflow-hidden rounded-2xl bg-gradient-to-br from-[#EDF5F9] via-slate-100 to-[#EDF5F9] md:mx-0 md:mb-0 md:min-h-[280px] md:w-[36%] lg:min-h-[320px] lg:w-[35%]">
                 <Image
                   src={p.image}
                   alt={p.imageAlt}

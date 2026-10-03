@@ -5,8 +5,20 @@
    基础主题变量
 ========================= */
 :root {
-  --background: #ffffff;
+  --background: #fcfdfe;
   --foreground: #202d3a;
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #f1f4f7;
+  --color-background-info: #edf5f9;
+  --color-border-secondary: #d8e2ea;
+  --color-border-strong: #778795;
+  --color-text-primary: #202d3a;
+  --color-text-secondary: #526170;
+  --color-text-link: #246b95;
+  --color-text-accent: #2786a5;
+  --color-action-primary: #164b78;
+  --color-action-hover: #103b60;
+
   --brand-primary: #164b78;
   --brand-primary-hover: #103b60;
   --brand-link: #246b95;
@@ -16,6 +28,36 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-slate-50: var(--background);
+  --color-slate-100: var(--color-background-secondary);
+  --color-slate-200: var(--color-border-secondary);
+  --color-slate-300: var(--color-border-strong);
+  --color-slate-400: #778795;
+  --color-slate-500: var(--color-text-secondary);
+  --color-slate-600: var(--color-text-secondary);
+  --color-slate-700: var(--color-text-secondary);
+  --color-slate-800: #344456;
+  --color-slate-900: var(--color-text-primary);
+  --color-slate-950: #111c27;
+  --color-gray-50: var(--background);
+  --color-gray-100: var(--color-background-secondary);
+  --color-gray-200: var(--color-border-secondary);
+  --color-gray-300: var(--color-border-strong);
+  --color-gray-500: var(--color-text-secondary);
+  --color-gray-600: var(--color-text-secondary);
+  --color-gray-700: var(--color-text-secondary);
+  --color-gray-800: #344456;
+  --color-gray-900: var(--color-text-primary);
+  --color-blue-50: var(--color-background-info);
+  --color-blue-100: #dcecf4;
+  --color-blue-200: #bfd9e6;
+  --color-blue-300: #8fbfd2;
+  --color-blue-400: #5ca1bb;
+  --color-blue-500: var(--color-text-accent);
+  --color-blue-600: var(--color-text-link);
+  --color-blue-700: var(--color-action-primary);
+  --color-blue-800: var(--color-action-hover);
+  --color-blue-900: #092d49;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -24,6 +66,16 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --color-background-secondary: #17212c;
+    --color-background-info: #132a3a;
+    --color-border-secondary: #3a4a59;
+    --color-border-strong: #778795;
+    --color-text-primary: #f1f5f9;
+    --color-text-secondary: #c4ced8;
+    --color-text-link: #8bc8e4;
+    --color-text-accent: #83d5ef;
+    --color-action-primary: #28638f;
+    --color-action-hover: #164b78;
   }
 }
 
@@ -31,6 +83,56 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Brand-colored actions with clear keyboard and disabled states. */
+a[class~="bg-blue-600"],
+a[class~="bg-blue-500"],
+a[class~="bg-blue-700"],
+a[class~="bg-slate-900"],
+button[class~="bg-blue-600"],
+button[class~="bg-blue-500"],
+button[class~="bg-blue-700"],
+button[class~="bg-slate-900"],
+[role="button"][class~="bg-blue-600"],
+[role="button"][class~="bg-blue-500"],
+[role="button"][class~="bg-blue-700"],
+[role="button"][class~="bg-slate-900"] {
+  background-color: var(--color-action-primary) !important;
+  border-color: var(--color-action-primary) !important;
+  color: #fff !important;
+}
+
+a[class~="hover:bg-blue-700"]:hover,
+button[class~="hover:bg-blue-700"]:hover,
+a[class~="hover:bg-blue-800"]:hover,
+button[class~="hover:bg-blue-800"]:hover,
+[role="button"][class~="hover:bg-blue-700"]:hover,
+[role="button"][class~="hover:bg-blue-800"]:hover,
+a[class~="hover:bg-slate-800"]:hover,
+button[class~="hover:bg-slate-800"]:hover,
+[role="button"][class~="hover:bg-slate-800"]:hover {
+  background-color: var(--color-action-hover) !important;
+}
+
+a[class~="active:bg-blue-800"]:active,
+button[class~="active:bg-blue-800"]:active,
+[role="button"][class~="active:bg-blue-800"]:active {
+  background-color: #0b314f !important;
+}
+
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 1px;
+  box-shadow: 0 0 0 5px var(--color-text-accent);
+}
+
+button:disabled,
+[role="button"][aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.55;
 }
 
 /* 移动端底部安全区（防止被固定 CTA 遮挡） */
@@ -587,7 +689,6 @@ section {
 .animate-slide-up {
   animation: slide-up 0.3s ease-out;
 }
-
 /* Homepage hero palette and responsive CTA sizing. */
 .hero-theme .text-blue-700,
 .hero-theme .text-blue-600 {

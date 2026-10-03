@@ -5,25 +5,25 @@ const ITEMS = [
     icon: <PiggyBank size={28} />,
     title: '账单费用检查',
     desc: '协助检查账单中的费用变化',
-    color: 'text-blue-700 bg-blue-50',
+    color: 'text-[#2786A5] bg-[#EDF5F9]',
   },
   {
     icon: <Headphones size={28} />,
     title: '中文一对一服务',
     desc: '直接找人帮你处理',
-    color: 'text-blue-600 bg-blue-50',
+    color: 'text-[#2786A5] bg-[#EDF5F9]',
   },
   {
     icon: <ShieldCheck size={28} />,
     title: '真实案例',
     desc: '来自真实客户的问题',
-    color: 'text-blue-700 bg-blue-50',
+    color: 'text-[#2786A5] bg-[#EDF5F9]',
   },
   {
     icon: <Star size={28} />,
     title: '5.0',
     desc: 'Google 用户评价',
-    color: 'text-blue-700 bg-blue-50',
+    color: 'text-[#2786A5] bg-[#EDF5F9]',
   },
 ];
 
