@@ -4,7 +4,6 @@ import SpectrumFaqSchemas from '@/app/components/seo/SpectrumFaqSchemas'
 import DynamicFAQSchema from '@/app/components/seo/DynamicFAQSchema'
 import InternalLinks from '@/app/components/seo/InternalLinks'
 import { getCanonicalUrl } from '@/lib/seo-utils'
-import { getSmartHreflangAlternates } from '@/lib/hreflang-utils'
 
 // Spectrum 页面专用 FAQ（用于 Schema）
 const spectrumFAQs = [
@@ -35,7 +34,7 @@ export const metadata: Metadata = {
   description:
     'Spectrum 宽带申请指南。住家与商业方案对比，价格结构相对稳定，无优惠期暴涨套路。旧金山湾区 Fremont 实体店中文协助办理，覆盖 San Jose、Milpitas、Cupertino 及全美 50 州，支持地址查询与转网。',
   alternates: {
-    ...getSmartHreflangAlternates('/internet/spectrum', getCanonicalUrl('/internet/spectrum')),
+    canonical: getCanonicalUrl('/internet/spectrum'),
   },
   openGraph: {
     title: 'Spectrum 宽带申请指南 - 鸿达电信中文办理',

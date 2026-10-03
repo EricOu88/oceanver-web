@@ -3,7 +3,6 @@ import XfinityClient from './XfinityClient';
 import DynamicFAQSchema from '@/app/components/seo/DynamicFAQSchema';
 import InternalLinks from '@/app/components/seo/InternalLinks';
 import { getCanonicalUrl } from '@/lib/seo-utils';
-import { getSmartHreflangAlternates } from '@/lib/hreflang-utils';
 
 // Xfinity 页面专用 FAQ（用于 Schema）
 const xfinityFAQs = [
@@ -45,7 +44,7 @@ export const metadata: Metadata = {
     '中文办理',
   ],
   alternates: {
-    ...getSmartHreflangAlternates('/internet/xfinity', getCanonicalUrl('/internet/xfinity')),
+    canonical: getCanonicalUrl('/internet/xfinity'),
   },
   openGraph: {
     title: 'Xfinity 宽带申请指南 - 鸿达电信中文办理',

@@ -8,7 +8,6 @@ declare global {
 }
 
 import { useEffect, useState, useCallback, useRef } from 'react';
-import { usePathname } from 'next/navigation';
 import { MessageCircle, X, Send, Loader } from 'lucide-react'; // 引入图标
 
 // --- 国际化文本对象 (未改变) ---
@@ -26,27 +25,11 @@ const translations = {
     close: '关闭',
     phoneNotice: '短信将发送至：',
   },
-  en: {
-    title: 'Message Us',
-    name: 'Name (optional)',
-    phone: 'Your phone (optional)',
-    msg: 'Your message',
-    send: 'Send',
-    sending: 'Sending…',
-    sent: 'Sent! We’ll get back to you soon.',
-    error: 'Failed to send. Please try again.',
-    open: 'Chat',
-    close: 'Close',
-    phoneNotice: 'SMS will be sent to:',
-  },
 };
 
 export default function ChatWidget() {
   const modalRef = useRef<HTMLDivElement>(null);
-  const pathname = usePathname() || '/';
-  // 使用更清晰的变量名 isEn
-  const isEn = pathname.startsWith('/en');
-  const t = isEn ? translations.en : translations.zh;
+  const t = translations.zh;
 
   const [open, setOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -127,7 +110,7 @@ export default function ChatWidget() {
           name,
           fromPhone,
           message,
-          locale: isEn ? 'en' : 'zh', // 确保这里是正确的语言代码
+          locale: 'zh',
         }),
       });
 

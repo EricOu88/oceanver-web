@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import { getHreflangAlternates } from '@/lib/hreflang-utils';
+import { getCanonicalUrl } from '@/lib/seo-utils';
 
 export const metadata: Metadata = {
   title: '关于我们｜美国鸿达电讯',
   description:
     '了解美国鸿达电讯：面向美国中文用户整理手机套餐、家庭宽带、通信账单和常见通信问题信息，并在需要时提供中文协助。',
-  alternates: getHreflangAlternates('/about'),
+  alternates: { canonical: getCanonicalUrl('/about') },
 };
 
 const AboutSchema = () => {

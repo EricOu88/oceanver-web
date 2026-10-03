@@ -13,13 +13,13 @@ import {
 import SEOServiceSignal from '@/app/components/SEOServiceSignal'
 import FAQPageSchema from '@/app/components/FAQPageSchema'
 import GradientBannerCTA from '@/app/components/cta/GradientBannerCTA'
-import { getHreflangAlternates } from '@/lib/hreflang-utils'
+import { getCanonicalUrl } from '@/lib/seo-utils'
 
 export const metadata: Metadata = {
   title: '美国宽带套餐与账单问题判断 | 美国鸿达电讯',
   description:
     '面向美国中文用户整理 Xfinity、AT&T Fiber、Spectrum、Frontier 等宽带套餐信息、地址覆盖核对和优惠到期后的账单判断。',
-  alternates: getHreflangAlternates('/internet'),
+  alternates: { canonical: getCanonicalUrl('/internet') },
 
 }
 

@@ -13,7 +13,7 @@ const graph = [
     "@id": `${DOMAIN}/#website`,
     url: DOMAIN,
     name: "美国鸿达电讯",
-    inLanguage: ["zh-CN", "en-US"],
+    inLanguage: "zh-CN",
     publisher: { "@id": ORGANIZATION_ID },
   },
 
@@ -45,7 +45,7 @@ const graph = [
       {
         "@type": "ServiceChannel",
         serviceUrl: `${DOMAIN}/internet`,
-        availableLanguage: ["zh-CN", "en-US"],
+        availableLanguage: "zh-CN",
       },
     ],
     mainEntityOfPage: { "@id": `${HOMEPAGE_URL}#webpage` },
@@ -66,7 +66,7 @@ const graph = [
       {
         "@type": "ServiceChannel",
         serviceUrl: `${DOMAIN}/cellphone`,
-        availableLanguage: ["zh-CN", "en-US"],
+        availableLanguage: "zh-CN",
       },
     ],
     mainEntityOfPage: { "@id": `${HOMEPAGE_URL}#webpage` },
@@ -89,7 +89,7 @@ const graph = [
       {
         "@type": "ServiceChannel",
         serviceUrl: `${DOMAIN}/bill-optimization`,
-        availableLanguage: ["zh-CN", "en-US"],
+        availableLanguage: "zh-CN",
       },
     ],
     mainEntityOfPage: { "@id": `${HOMEPAGE_URL}#webpage` },

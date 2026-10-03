@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import CellphoneClient from './CellphoneClient';
-import { getHreflangAlternates } from '@/lib/hreflang-utils';
+import { getCanonicalUrl } from '@/lib/seo-utils';
 
 /* ===================== SEO Metadata（Server Only） ===================== */
 export const metadata: Metadata = {
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     '短期访客手机卡',
     '探亲手机卡',
   ],
-  alternates: getHreflangAlternates('/cellphone'),
+  alternates: { canonical: getCanonicalUrl('/cellphone') },
   openGraph: {
     title: '美国手机套餐与电话卡选择指南 | 美国鸿达电讯',
     description:

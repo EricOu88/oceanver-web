@@ -34,14 +34,6 @@ export default function SiteNavbar() {
             微信
           </a>
 
-          {/* 英文站按钮 */}
-          <Link
-            href="/en"
-            className="px-3 py-2 rounded-lg border text-gray-700 font-medium hover:bg-gray-50 text-sm transition"
-          >
-            EN
-          </Link>
-
         </div>
       </div>
     </header>

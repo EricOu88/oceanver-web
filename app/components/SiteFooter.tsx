@@ -2,36 +2,9 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
 export default function SiteFooter() {
-  const pathname = usePathname() || '/';
-  const isEn = pathname.startsWith('/en');
-
-  // 文案与路径基准
-  const t = isEn
-    ? {
-        wechatTitle: 'Online WeChat Support',
-        wechatIntro: 'Scan with the WeChat app to connect with us.',
-        wechatSteps: [
-          'Open WeChat.',
-          'Tap “+” and choose “Scan”.',
-          'Point at the QR code and follow the prompt to add us.',
-          'Send your name and what you need (cell / internet / security).',
-        ],
-        introLines: [
-          'Information for Chinese-speaking users across the United States.',
-          'Compare phone plans, home internet bills, and common service issues.',
-        ],
-        email: 'Email',
-        phone: 'Phone',
-        links: 'Quick links',
-        privacy: 'Privacy Policy',
-        about: 'About Us',
-        copyright: 'All rights reserved.',
-        base: '/en',
-      }
-    : {
+  const t = {
         wechatTitle: '在线客服微信公众号',
         wechatIntro: '使用微信扫码添加我们。',
         wechatSteps: [
@@ -50,14 +23,9 @@ export default function SiteFooter() {
         privacy: '隐私政策',
         about: '关于我们',
         copyright: '保留所有权利。',
-        base: '', // 中文 = 根路径
       };
 
-  // 安全生成链接：中文 /xxx，英文 /en/xxx
-  const href = (path: string) => {
-    if (!path.startsWith('/')) return `${t.base}/${path}`;
-    return t.base ? `${t.base}${path}` : path;
-  };
+  const href = (path: string) => path;
 
   return (
     <footer className="bg-gradient-to-br from-[#4B70DD] via-[#5E8EF7] to-[#8AB9FF] text-white">
@@ -94,7 +62,7 @@ export default function SiteFooter() {
         <div className="grid gap-12 lg:grid-cols-2">
           {/* Left */}
           <div>
-            <h3 className="mb-6 text-2xl font-bold">{isEn ? 'Oceanver' : '美国鸿达电讯'}</h3>
+            <h3 className="mb-6 text-2xl font-bold">美国鸿达电讯</h3>
             <p className="text-white/90 leading-relaxed">
               {t.introLines.map((line, i) => (
                 <span key={i}>
@@ -138,7 +106,7 @@ export default function SiteFooter() {
                     href={href('/bill-optimization')}
                     className="underline underline-offset-4 decoration-white/30 hover:text-white"
                   >
-                    {isEn ? 'Bill Optimization' : '账单涨价判断'}
+                    账单涨价判断
                   </Link>
                 </li>
                 <li>
@@ -169,10 +137,10 @@ export default function SiteFooter() {
           href={href('/bill-optimization')}
           className="inline-block bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-2xl font-bold shadow-[0_0_10px_rgba(22,75,120,0.5)] hover:shadow-[0_0_20px_rgba(22,75,120,0.8)] animate-pulse-slow transition-all duration-300"
         >
-          {isEn ? 'Check how to understand a bill increase →' : '查看账单涨价判断 →'}
+          查看账单涨价判断 →
         </a>
         <p className="text-white/80 text-sm mt-3">
-          {isEn ? 'Review common causes before deciding what to change.' : '先了解费用变化原因，再判断是否需要调整方案。'}
+          先了解费用变化原因，再判断是否需要调整方案。
         </p>
       </div>
 
@@ -196,7 +164,7 @@ export default function SiteFooter() {
       {/* ===== Bottom Bar ===== */}
       <div className="border-t border-white/20 mt-10">
         <div className="mx-auto max-w-7xl px-4 py-6 text-xs text-white/80">
-          © {new Date().getFullYear()} {isEn ? 'Oceanver' : '美国鸿达电讯'} {t.copyright}
+          © {new Date().getFullYear()} 美国鸿达电讯 {t.copyright}
         </div>
       </div>
     </footer>

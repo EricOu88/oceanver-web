@@ -24,6 +24,15 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // Retire the former English site without redirecting it to Chinese pages.
+  if (pathname === "/en" || pathname.startsWith("/en/")) {
+    return new NextResponse("Gone", {
+      status: 410,
+      statusText: "Gone",
+      headers: { "Cache-Control": "public, max-age=31536000, immutable" },
+    });
+  }
+
   // Reject the known legacy WordPress query URL without affecting normal queries.
   const legacyQuery = url.search.replace(/%2f/gi, "/");
   if (pathname === "/" && /^\?syjc(?:\/79\.html)?=?$/.test(legacyQuery)) {
@@ -95,7 +104,6 @@ export function proxy(request: NextRequest) {
     "/config",
     "/contact",
     "/data",
-    "/en",
     "/footer",
     "/internet",
     "/internet-wifi",
@@ -123,7 +131,7 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
   
-  const deprecatedPaths = ["/digital-tv", "/solar-panel", "/h2o-cellphone-plan", "/en/internet/spectrum", "/att-how-to-check-online-bill", "/2024-new-internet-plan"];
+  const deprecatedPaths = ["/digital-tv", "/solar-panel", "/h2o-cellphone-plan", "/att-how-to-check-online-bill", "/2024-new-internet-plan"];
   const isDeprecatedPath = deprecatedPaths.some(
     (deprecated) => pathname === deprecated || pathname.startsWith(`${deprecated}/`)
   );
