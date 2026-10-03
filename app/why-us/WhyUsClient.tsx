@@ -71,18 +71,14 @@ function matchesFilter(doc: QADocument, filter: string) {
 
 function relatedLinks(doc: QADocument) {
   const links: { href: string; label: string }[] = [];
-  if (doc.category === 'billing' || /账单|费用/.test(searchableText(doc))) {
-    links.push({ href: '/bill-optimization', label: '账单判断' });
-  }
   if (isTopic(doc, 'mobile')) {
     links.push({ href: '/cellphone/diagnosis', label: '手机问题诊断' });
-    links.push({ href: '/cellphone/faq', label: '美国手机常见问题' });
-  }
-  if (isTopic(doc, 'internet')) {
+  } else if (isTopic(doc, 'internet')) {
+    if (doc.category === 'billing' || /账单|费用/.test(searchableText(doc))) {
+      links.push({ href: '/bill-optimization', label: '账单费用判断' });
+    }
     links.push({ href: '/internet/diagnosis', label: '宽带问题诊断' });
-    links.push({ href: '/internet/faq', label: '美国宽带常见问题' });
-  }
-  if (doc.stage === 'decide') {
+  } else if (doc.stage === 'decide') {
     links.push({ href: isTopic(doc, 'mobile') ? '/cellphone/providers' : '/internet/providers', label: '运营商选择参考' });
   }
   return links;
@@ -220,7 +216,7 @@ export default function WhyUsClient({ cases }: WhyUsClientProps) {
                     {doc.next_step && <section><h3 className="mb-2 font-semibold text-[#202D3A]">处理方向</h3><p className="text-sm leading-7 text-[#526170]">{doc.next_step}</p></section>}
                     {links.length > 0 && (
                       <section>
-                        <h3 className="mb-2 font-semibold text-[#202D3A]">相关链接</h3>
+                        <h3 className="mb-2 font-semibold text-[#202D3A]">类似情况继续看</h3>
                         <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
                           {links.map((link) => <Link key={link.href} href={link.href} className="text-[#164B78] underline-offset-4 hover:text-[#103B60] hover:underline">{link.label} →</Link>)}
                         </div>
