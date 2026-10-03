@@ -26,7 +26,7 @@ export default function SiteHeader() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex h-16 md:h-20 items-center gap-4">
           <Link href="/" aria-label="首页" className="flex-shrink-0">
-            <Image src="/bms-logo.png" alt="Bay Media Star Inc (鸿达电讯)" width={150} height={44} priority />
+            <Image src="/bms-logo.png" alt="美国鸿达电讯" width={150} height={44} priority />
           </Link>
 
           <nav className="ml-2 hidden md:flex flex-1 justify-center">

@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: '美国宽带常见问题 FAQ｜选宽带前必看 10 个关键问题',
     description: '整理美国宽带最常见的 10 个关键问题，涵盖价格、合约、涨价、安装、速度与覆盖，帮助新移民、留学生和家庭用户避免选错宽带。',
-    url: 'https://baymediastar.com/internet/providers/faq',
-    siteName: 'Bay Media Star 鸿达电讯',
+    url: 'https://oceanver.com/internet/providers/faq',
+    siteName: '美国鸿达电讯',
     locale: 'zh_CN',
     type: 'website',
   },
@@ -181,7 +181,6 @@ export default function InternetProvidersFAQPage() {
                           const parts: (string | ReactElement)[] = []
                           let lastIndex = 0
                           let match
-                          let linkKey = 0
                           const matches: Array<{index: number, text: string, href: string, length: number}> = []
                           
                           // 收集所有匹配

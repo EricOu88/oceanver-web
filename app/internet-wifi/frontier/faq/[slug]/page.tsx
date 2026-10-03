@@ -35,7 +35,6 @@ export async function generateMetadata({ params }: FrontierFAQPageProps): Promis
       'Frontier Fiber',
       faq.question,
       '湾区宽带',
-      'Fremont 宽带',
       'Frontier FAQ',
       '中文办理',
     ],

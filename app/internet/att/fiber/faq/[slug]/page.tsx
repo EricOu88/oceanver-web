@@ -38,7 +38,6 @@ export async function generateMetadata({ params }: ATTFiberFAQPageProps): Promis
       isBusiness ? 'AT&T Business Fiber' : 'AT&T Fiber',
       faq.question,
       '湾区宽带',
-      'Fremont 宽带',
       'AT&T Fiber FAQ',
       '中文办理',
     ],

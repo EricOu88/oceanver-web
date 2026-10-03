@@ -90,32 +90,16 @@ export function proxy(request: NextRequest) {
     });
   }
 
-  // 【规则 6】根目录旧 WP slug：例如 /dish/ /wifi-price-raise/ -> 410
-  // 允许存在的顶级路径（来自你 app 目录）
-  const allowedTopLevel = new Set([
-    "/",
-    "/about",
-    "/admin",
-    "/api",
-    "/bill-optimization",
-    "/blog",
-    "/cellphone",
-    "/components",
-    "/config",
-    "/contact",
-    "/data",
-    "/footer",
-    "/internet",
-    "/internet-wifi",
-    "/logo-tool",
-    "/privacy-policy",
-    "/security",
-    "/why-us",
-  ]);
-
+  // 【规则 6】已知根目录旧 WP slug：例如 /dish/ /wifi-price-raise/ -> 410
   const top = pathname.split("/")[1] ? `/${pathname.split("/")[1]}` : "/";
+  const legacyRootSlugs = new Set([
+    "/dish",
+    "/wifi-price-raise",
+    "/internet-plan",
+    "/phone-plan",
+  ]);
   const isRootSlug =
-    /^\/[^\/]+\/?$/.test(pathname) && top !== "/" && !allowedTopLevel.has(top);
+    /^\/[^\/]+\/?$/.test(pathname) && legacyRootSlugs.has(top);
 
   if (isRootSlug) {
     return new NextResponse(null, {

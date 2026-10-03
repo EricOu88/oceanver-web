@@ -121,7 +121,7 @@ export async function GET() {
               color: '#ffffff',
             }}
           >
-            Bay Media Star 鸿达电讯
+            美国鸿达电讯
           </div>
         </div>
 
@@ -135,13 +135,7 @@ export async function GET() {
             color: '#94a3b8',
           }}
         >
-          <span>Fremont</span>
-          <span style={{ color: '#3b82f6' }}>·</span>
-          <span>San Jose</span>
-          <span style={{ color: '#3b82f6' }}>·</span>
-          <span>洛杉矶</span>
-          <span style={{ color: '#3b82f6' }}>·</span>
-          <span>全美 50 州</span>
+          <span>United States</span>
         </div>
 
         {/* 底部装饰 */}
@@ -156,7 +150,7 @@ export async function GET() {
             color: '#64748b',
           }}
         >
-          <span>baymediastar.com</span>
+          <span>oceanver.com</span>
         </div>
       </div>
     ),

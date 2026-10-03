@@ -1,8 +1,8 @@
 export const metadata = {
   alternates: { canonical: 'https://oceanver.com/security/adt_security' },
-  title: '家庭安防服务 | 鸿达电讯 Bay Media Star',
+  title: '家庭安防服务 | 美国鸿达电讯',
   description:
-    '提供 ADT 等家庭安防系统，支持湾区与全美安装，中文咨询与售后。',
+    '提供 ADT 等家庭安防系统说明，介绍设备、安装条件、中文咨询与售后流程。具体服务范围以当前安排为准。',
 };
 
 export default function SecurityPage() {
@@ -11,7 +11,7 @@ export default function SecurityPage() {
       <h1>家庭安防服务</h1>
       <p>
         鸿达电讯为华人家庭提供 ADT 安防系统选购、安装与售后支持，
-        覆盖 Fremont、Milpitas 及全美主要城市。
+        具体服务范围和安装条件需结合地址与当前安排核实。
       </p>
     </main>
   );

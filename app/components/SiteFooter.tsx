@@ -75,10 +75,10 @@ export default function SiteFooter() {
               <div>
                 <span className="font-semibold">{t.email}：</span>
                 <a
-                  href="mailto:info@baymediastar.com"
+                  href="mailto:info@oceanver.com"
                   className="underline underline-offset-2 hover:text-white"
                 >
-                  info@baymediastar.com
+                  info@oceanver.com
                 </a>
               </div>
               <div>

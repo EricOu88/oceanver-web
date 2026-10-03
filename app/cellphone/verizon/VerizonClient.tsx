@@ -27,8 +27,8 @@ export default function VerizonClient() {
         </h1>
 
         <p className="text-center text-gray-600 mb-12">
-          北美信号最强 · 高速用户首选 · 乡村地区覆盖最佳。
-          如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">鸿达电讯 Bay Media Star 首页</Link>。
+          覆盖、速度和套餐条件需要结合地址、设备、账户与实际使用判断。
+          如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">美国鸿达电讯首页</Link>。
           常见问题如<Link href="/cellphone/faq/how-to-choose-us-cellphone-plan" className="text-blue-600 hover:text-blue-700 font-semibold underline">没有 SSN 可以办手机卡吗？</Link>都有详细解答。
         </p>
 

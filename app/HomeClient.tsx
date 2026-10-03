@@ -1,7 +1,6 @@
 import Link from 'next/link';
 
 import FAQSection from '@/app/components/home/FaqSection';
-import GoogleReviewsSlider from '@/app/components/home/GoogleReviewsSlider';
 
 /* ================= 1. 数据定义 ================= */
 const BUSINESS_INFO = {
@@ -34,11 +33,6 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* REVIEWS */}
-      <section className="bg-[#F1F4F7] py-8 md:py-12">
-        <GoogleReviewsSlider />
       </section>
 
       {/* FOOTER */}
