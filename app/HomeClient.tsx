@@ -42,67 +42,52 @@ export default function HomePage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-white pt-16 pb-24 md:pb-12 border-t border-slate-100">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-5 gap-8">
-          <div className="space-y-4">
-            <div className="flex items-center gap-3 font-black text-2xl text-slate-950">
-              <div className="w-10 h-10 bg-blue-700 rounded-xl flex items-center justify-center text-white text-sm">
-                B
-              </div>
-              美国鸿达电讯
+      <footer className="border-t border-slate-100 bg-white py-14 md:py-16">
+        <div className="mx-auto max-w-[1180px] px-6">
+          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1fr] lg:gap-12">
+            <div className="max-w-md">
+              <h2 className="text-xl font-bold text-slate-900">美国鸿达电讯</h2>
+              <p className="mt-4 text-sm leading-6 text-slate-600">
+                帮助美国中文用户看懂手机和宽带账单，判断是否需要调整套餐、费用或运营商。
+              </p>
+              <p className="mt-4 text-sm text-slate-600">电话：{BUSINESS_INFO.tel}</p>
+              <Link href="/bill-optimization" className="mt-4 inline-block text-sm font-medium text-blue-700 hover:underline">
+                查看完整账单判断指南 →
+              </Link>
             </div>
-            <p className="text-sm font-bold text-slate-700 leading-relaxed">中文一对一服务</p>
-            <div className="text-sm space-y-3 font-extrabold text-slate-800">
-              <p>美国鸿达电讯</p>
-              <p>电话：{BUSINESS_INFO.tel}</p>
-              <p>中文一对一服务</p>
+
+            <div className="border-t border-slate-200 pt-6 sm:border-t-0 sm:pt-0 lg:border-l lg:pl-8">
+              <h3 className="text-sm font-semibold text-slate-900">手机问题</h3>
+              <ul className="mt-4 space-y-3 text-sm font-medium text-slate-600">
+                <li><Link href="/cellphone/faq/how-to-choose-us-cellphone-plan" className="hover:text-blue-700">美国手机套餐怎么选</Link></li>
+                <li><Link href="/cellphone/faq/prepaid-vs-postpaid" className="hover:text-blue-700">Prepaid vs Postpaid</Link></li>
+                <li><Link href="/cellphone/diagnosis" className="hover:text-blue-700">手机账单与套餐判断</Link></li>
+                <li><Link href="/cellphone/faq" className="hover:text-blue-700">美国手机常见问题</Link></li>
+              </ul>
+            </div>
+
+            <div className="border-t border-slate-200 pt-6 sm:border-t-0 sm:pt-0 lg:border-l lg:pl-8">
+              <h3 className="text-sm font-semibold text-slate-900">宽带问题</h3>
+              <ul className="mt-4 space-y-3 text-sm font-medium text-slate-600">
+                <li><Link href="/internet/price-hike" className="hover:text-blue-700">宽带涨价原因</Link></li>
+                <li><Link href="/internet/diagnosis" className="hover:text-blue-700">宽带问题诊断</Link></li>
+                <li><Link href="/internet/faq" className="hover:text-blue-700">美国宽带常见问题</Link></li>
+                <li><Link href="/internet/providers" className="hover:text-blue-700">宽带运营商比较</Link></li>
+              </ul>
+            </div>
+
+            <div className="border-t border-slate-200 pt-6 sm:border-t-0 sm:pt-0 lg:border-l lg:pl-8">
+              <h3 className="text-sm font-semibold text-slate-900">关于鸿达</h3>
+              <ul className="mt-4 space-y-3 text-sm font-medium text-slate-600">
+                <li><Link href="/about" className="hover:text-blue-700">关于我们</Link></li>
+                <li><Link href="/contact" className="hover:text-blue-700">联系我们</Link></li>
+                <li><Link href="/privacy-policy" className="hover:text-blue-700">隐私政策</Link></li>
+              </ul>
             </div>
           </div>
 
-          <div className="space-y-4">
-            <h4 className="font-black text-slate-950 uppercase tracking-widest text-xs">账单问题</h4>
-            <ul className="text-sm space-y-2 font-bold text-slate-700">
-              <li><Link href="/bill-optimization" className="hover:text-blue-700">账单为什么变贵</Link></li>
-              <li><Link href="/internet/price-hike" className="hover:text-blue-700">宽带涨价原因</Link></li>
-              <li><Link href="/internet/faq" className="hover:text-blue-700">宽带常见问题</Link></li>
-              <li><Link href="/cellphone/diagnosis" className="hover:text-blue-700">手机账单与套餐判断</Link></li>
-            </ul>
-          </div>
-
-          <div className="space-y-4">
-            <h4 className="font-black text-slate-950 uppercase tracking-widest text-xs">手机问题</h4>
-            <ul className="text-sm space-y-2 font-bold text-slate-700">
-              <li><Link href="/cellphone/faq/how-to-choose-us-cellphone-plan" className="hover:text-blue-700">美国手机套餐怎么选</Link></li>
-              <li><Link href="/cellphone/faq/prepaid-vs-postpaid" className="hover:text-blue-700">Prepaid vs Postpaid</Link></li>
-              <li><Link href="/cellphone/faq" className="hover:text-blue-700">美国手机常见问题</Link></li>
-              <li><Link href="/cellphone/providers" className="hover:text-blue-700">手机运营商比较</Link></li>
-            </ul>
-          </div>
-
-          <div className="space-y-4">
-            <h4 className="font-black text-slate-950 uppercase tracking-widest text-xs">宽带问题</h4>
-            <ul className="text-sm space-y-2 font-bold text-slate-700">
-              <li><Link href="/internet/diagnosis" className="hover:text-blue-700">宽带问题诊断</Link></li>
-              <li><Link href="/internet/faq" className="hover:text-blue-700">美国宽带常见问题</Link></li>
-              <li><Link href="/internet/providers" className="hover:text-blue-700">宽带运营商比较</Link></li>
-            </ul>
-          </div>
-
-          <div className="space-y-4">
-            <h4 className="font-black text-slate-950 uppercase tracking-widest text-xs">关于与帮助</h4>
-            <ul className="text-sm space-y-2 font-bold text-slate-700">
-              <li><Link href="/about" className="hover:text-blue-700">关于我们</Link></li>
-              <li><Link href="/contact" className="hover:text-blue-700">联系我们</Link></li>
-              <li><Link href="/privacy-policy" className="hover:text-blue-700">隐私政策</Link></li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-6 mt-12 pt-6 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] font-black uppercase tracking-[0.2em] text-slate-700">
-          <div>© {new Date().getFullYear()} 美国鸿达电讯</div>
-          <div className="flex gap-6">
-            <span className="text-blue-700 underline underline-offset-4">中文一对一服务</span>
-            
+          <div className="mt-12 border-t border-slate-200 pt-6 text-sm text-slate-500">
+            <p>© {new Date().getFullYear()} 美国鸿达电讯</p>
           </div>
         </div>
       </footer>

@@ -1,7 +1,6 @@
 // app/layout.tsx - 根布局（默认中文）
 
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import Script from 'next/script'
 import './globals.css'
 import ServiceSchemas from '@/app/components/seo/ServiceSchemas'
@@ -184,61 +183,6 @@ export default function RootLayout({
       <body className="antialiased">
         {/* ================== 页面主体 ================== */}
         {children}
-
-        {/* ================== 全站 Footer（弱入口，必须有） ================== */}
-        <footer className="border-t border-slate-200 mt-20 hidden md:block">          <div
-            className="max-w-6xl mx-auto px-6 py-10
-                       text-sm text-slate-500
-                       flex flex-col
-                       justify-between gap-8"
-          >
-            {/* 左侧：品牌与说明 */}
-            <div className="space-y-2">
-              <div className="font-semibold text-slate-700">
-                美国鸿达电讯
-              </div>
-              <div>
-                美国中文手机 / 宽带 / 网络服务协助
-              </div>
-              <div>
-                电话：510-849-6191
-              </div>
-              <div>
-                © {new Date().getFullYear()} 美国鸿达电讯
-              </div>
-            </div>
-
-            {/* 右侧：低调导航（why-us 弱入口） */}
-            <div className="flex flex-col gap-2">
-              <a href="/why-us" className="hover:text-blue-600">
-                为什么选择我们
-              </a>
-              <a href="/internet/diagnosis" className="hover:text-blue-600">
-                美国宽带问题诊断
-              </a>
-              <Link href="/" className="hover:text-blue-600">
-                返回首页
-              </Link>
-            </div>
-          </div>
-          
-          {/* 底部版权区域：关于我们、联系我们、隐私政策 */}
-          <div className="max-w-6xl mx-auto px-6 pb-6 border-t border-slate-200 pt-4">
-            <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-slate-500">
-              <a href="/about" className="hover:text-blue-600 transition-colors">
-                关于我们
-              </a>
-              <span className="text-slate-300">|</span>
-              <a href="/contact" className="hover:text-blue-600 transition-colors">
-                联系我们
-              </a>
-              <span className="text-slate-300">|</span>
-              <a href="/privacy-policy" className="hover:text-blue-600 transition-colors">
-                隐私政策
-              </a>
-            </div>
-          </div>
-        </footer>
 
         {/* ================== 全站 Service Schema（不影响 UI） ================== */}
         <ServiceSchemas />
