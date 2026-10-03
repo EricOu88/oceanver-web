@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { ArrowRight, PiggyBank, Headphones, ShieldCheck, Star } from 'lucide-react';
+import { ArrowRight, PiggyBank, Headphones, ShieldCheck, BookOpen } from 'lucide-react';
+import { getPublicCases } from '@/lib/cases/getPublicCases';
 
 const ITEMS = [
   {
@@ -22,30 +23,37 @@ const ITEMS = [
   },
   {
     icon: <ShieldCheck size={28} />,
-    title: '真实案例',
-    desc: '来自真实客户的问题',
+    title: '真实问题与处理案例',
+    desc: '地址覆盖异常、设备退还仍收费、eSIM 删除、手机分期等真实问题整理',
     cta: '查看真实案例',
     href: '/why-us',
     external: false,
     color: 'text-[#2786A5] bg-[#EDF5F9]',
   },
   {
-    icon: <Star size={28} />,
-    title: '5.0',
-    desc: 'Google 用户评价',
-    cta: '查看 Google 评价',
-    href: 'https://search.google.com/local/reviews?placeid=ChIJX6ngelzGj4ARrdcNVV0c-Gc',
-    external: true,
+    icon: <BookOpen size={28} />,
+    title: '问题知识库',
+    desc: '持续整理手机、宽带账单和使用问题',
+    cta: '查看问题答案',
+    href: '/blog',
+    external: false,
     color: 'text-[#2786A5] bg-[#EDF5F9]',
   },
 ];
 
-export default function TrustIndicators() {
+export default async function TrustIndicators() {
+  const publicCaseCount = (await getPublicCases()).length;
+  const items = ITEMS.map((item) =>
+    item.href === '/why-us'
+      ? { ...item, cta: `查看 ${publicCaseCount} 个真实案例` }
+      : item,
+  );
+
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-7xl px-5 py-6 md:px-6 md:py-8">
         <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
-          {ITEMS.map((item) => {
+          {items.map((item) => {
             const className = 'group flex h-full cursor-pointer flex-col items-center gap-2 rounded-2xl border border-slate-100 bg-slate-50/60 p-4 text-center transition hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-md sm:p-6';
             const content = (
               <>

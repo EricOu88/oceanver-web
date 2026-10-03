@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, MessageCircle, Phone } from 'lucide-react';
+import { ArrowRight, MessageCircle, Phone, Star } from 'lucide-react';
 import WeChatPopup from '@/app/components/WeChatPopup';
 
 const BUSINESS_TEL_DISPLAY = '510-849-6191';
@@ -57,6 +57,16 @@ export default function HeroSection() {
               >
                 <Phone size={18} className="shrink-0" />
                 <span className="min-w-0 text-center">电话咨询 {BUSINESS_TEL_DISPLAY}</span>
+              </a>
+
+              <a
+                href="https://search.google.com/local/reviews?placeid=ChIJX6ngelzGj4ARrdcNVV0c-Gc"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-14 w-full min-w-0 items-center justify-center gap-2 rounded-full border-2 border-[#164B78] bg-white px-4 py-3 text-sm font-bold leading-5 text-[#164B78] shadow-md transition-all hover:bg-[#EDF5F9] hover:shadow-lg md:w-[calc(50%-0.375rem)] md:px-4 md:text-sm"
+              >
+                <Star size={18} className="shrink-0" />
+                <span className="min-w-0 text-center">查看 Google 评价</span>
               </a>
             </div>
           </div>
