@@ -7,10 +7,6 @@ export const metadata: Metadata = {
     'Bay Media Star provides US cell phone plans (AT&T, T-Mobile, Verizon), home internet (Xfinity, Spectrum, AT&T Fiber), and ADT security with Chinese-speaking support. No SSN required. Fremont store + nationwide remote service.',
   alternates: {
     canonical: 'https://oceanver.com/en',
-    languages: {
-      'zh-CN': 'https://baymediastar.com',
-      'en-US': 'https://baymediastar.com/en',
-    },
   },
   openGraph: {
     title: 'US Cell Phone Plans & Internet with Chinese Support | Bay Media Star',

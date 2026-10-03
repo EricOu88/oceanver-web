@@ -7,10 +7,6 @@ export const metadata: Metadata = {
     'Bay Media Star is a trusted telecom provider for Chinese-speaking communities across the U.S. Authorized partner with AT&T, T-Mobile, Verizon, Xfinity, and ADT. Fremont store + nationwide service.',
   alternates: {
     canonical: 'https://oceanver.com/en/about',
-    languages: {
-      'zh-CN': 'https://baymediastar.com/about',
-      'en-US': 'https://baymediastar.com/en/about',
-    },
   },
   openGraph: {
     title: 'About Bay Media Star | Bay Area Chinese Telecom Provider',
