@@ -19,9 +19,9 @@ export default function GradientBannerCTA({
       href={href}
       className={`group relative block overflow-hidden ${className}`}
     >
-      <div className="relative bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-[3rem] md:rounded-[4rem] p-8 md:p-12 text-center shadow-2xl transform transition-all duration-500 hover:scale-[1.02] animate-pulse-slow">
+      <div className="relative bg-blue-700 group-hover:bg-blue-800 rounded-[3rem] md:rounded-[4rem] p-8 md:p-12 text-center shadow-2xl transform transition-all duration-500 hover:scale-[1.02] animate-pulse-slow">
         {/* 呼吸动画背景 */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-[3rem] md:rounded-[4rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse-slow" />
+        <div className="absolute inset-0 bg-blue-800 rounded-[3rem] md:rounded-[4rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse-slow" />
         
         {/* 内容 */}
         <div className="relative z-10 flex flex-col md:flex-row items-center justify-center gap-6">

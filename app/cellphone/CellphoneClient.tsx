@@ -107,10 +107,10 @@ export default function CellphoneClient() {
             </div>
 
             {/* 卡片2：AT&T 家庭 */}
-            <div className="bg-white rounded-3xl p-8 border-2 border-slate-200 hover:border-cyan-400 transition-shadow shadow-lg hover:shadow-xl">
+            <div className="bg-white rounded-3xl p-8 border-2 border-[#D8E2EA] hover:border-[#D8E2EA] transition-shadow shadow-lg hover:shadow-xl">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center">
-                  <Users className="text-cyan-600" size={24} />
+                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center">
+                  <Users className="text-blue-700" size={24} />
                 </div>
                 <h2 className="text-xl font-black text-slate-900">AT&T 家庭合约机</h2>
               </div>
@@ -131,7 +131,7 @@ export default function CellphoneClient() {
               </ul>
               <Link
                 href="/cellphone/att-family"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-600 hover:bg-cyan-700 text-white font-bold rounded-xl transition"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-xl transition"
               >
                 查看 AT&T 家庭方案
                 <ArrowRight size={18} />
@@ -139,10 +139,10 @@ export default function CellphoneClient() {
             </div>
 
             {/* 卡片3：AT&T 商业 */}
-            <div className="bg-white rounded-3xl p-8 border-2 border-slate-200 hover:border-indigo-400 transition-shadow shadow-lg hover:shadow-xl">
+            <div className="bg-white rounded-3xl p-8 border-2 border-slate-200 hover:border-blue-300 transition-shadow shadow-lg hover:shadow-xl">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center">
-                  <Building2 className="text-indigo-600" size={24} />
+                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center">
+                  <Building2 className="text-blue-700" size={24} />
                 </div>
                 <h2 className="text-xl font-black text-slate-900">AT&T 商业手机方案</h2>
               </div>
@@ -163,7 +163,7 @@ export default function CellphoneClient() {
               </ul>
               <Link
                 href="/cellphone/att-business"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl transition"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-xl transition"
               >
                 查看 AT&T 商业方案
                 <ArrowRight size={18} />
@@ -208,7 +208,7 @@ export default function CellphoneClient() {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
               href="/cellphone/diagnosis"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-xl transition"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-xl transition"
             >
               <Zap size={18} />
               快速判断

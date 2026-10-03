@@ -118,7 +118,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
               className={`w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl text-sm font-bold transition-all duration-300 transform active:scale-95 shadow-md ${
                 copied
                   ? 'bg-green-500 text-white shadow-green-100'
-                  : 'bg-blue-600 text-white hover:bg-blue-700 shadow-blue-100'
+                  : 'bg-blue-700 text-white hover:bg-blue-800 shadow-blue-100'
               }`}
             >
               {copied ? (

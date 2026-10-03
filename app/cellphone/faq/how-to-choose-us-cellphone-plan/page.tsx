@@ -371,7 +371,7 @@ export default function HowToChooseCellphonePlanPage() {
         </section>
 
         {/* CTA 引导到诊断 */}
-        <section className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-10 text-white text-center mb-12">
+        <section className="bg-blue-700 rounded-3xl p-10 text-white text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-black mb-4">
             还是不确定选哪种类型？
           </h2>

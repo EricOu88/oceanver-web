@@ -72,7 +72,7 @@ export default function GovernmentClient() {
 
           <button 
             onClick={() => setShowWeChat(true)}
-            className="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-full text-xs font-black hover:bg-green-700 shadow-md transition-all active:scale-95"
+            className="flex items-center gap-2 bg-blue-700 text-white px-4 py-2 rounded-full text-xs font-black hover:bg-blue-800 shadow-md transition-all active:scale-95"
           >
             <MessageCircle size={16} />
             微信咨询

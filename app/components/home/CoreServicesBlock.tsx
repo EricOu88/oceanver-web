@@ -15,19 +15,19 @@ export default function CoreServicesBlock() {
     },
     {
       href: '/internet',
-      icon: <Wifi size={24} className="text-green-600" />,
+      icon: <Wifi size={24} className="text-blue-700" />,
       title: '家庭宽带与 WiFi 安装',
       description: 'Xfinity、AT&T、Spectrum 宽带网络安装',
     },
     {
       href: '/bill-optimization',
-      icon: <TrendingUp size={24} className="text-amber-600" />,
+      icon: <TrendingUp size={24} className="text-blue-700" />,
       title: '手机与宽带账单涨价优化',
       description: '账单审计、涨价处理、降费方案',
     },
     {
       href: '/cellphone/att',
-      icon: <Building2 size={24} className="text-indigo-600" />,
+      icon: <Building2 size={24} className="text-blue-700" />,
       title: 'AT&T 官方手机计划与优惠',
       description: 'AT&T 预付费、后付费套餐与独家优惠',
     },

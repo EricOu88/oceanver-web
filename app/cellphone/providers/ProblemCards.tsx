@@ -2,14 +2,6 @@ import Link from 'next/link';
 import { problemCards, providerSlugMap, solutionButtonStyleSet } from './problem-cards-data';
 import { CardButtons } from './CardButtons';
 
-const colorClasses = {
-  blue: 'bg-blue-100 text-blue-600 border-blue-200',
-  indigo: 'bg-indigo-100 text-indigo-600 border-indigo-200',
-  green: 'bg-green-100 text-green-600 border-green-200',
-  orange: 'bg-orange-100 text-orange-800 border-orange-200',
-  purple: 'bg-purple-100 text-purple-600 border-purple-200',
-};
-
 /** Server Component: solutions 只由服务端渲染，无 hydration，消除 mismatch */
 export default function ProblemCards() {
   return (
@@ -22,7 +14,7 @@ export default function ProblemCards() {
             className="bg-white border border-slate-200 rounded-3xl p-8 space-y-5 hover:shadow-xl transition-all duration-300 flex flex-col"
           >
             <div className="flex items-center gap-3">
-              <div className={`w-12 h-12 rounded-2xl flex items-center justify-center ${colorClasses[card.color as keyof typeof colorClasses]}`}>
+              <div className="w-12 h-12 rounded-2xl flex items-center justify-center bg-blue-50 text-blue-700 border border-blue-100">
                 <IconComponent className="w-6 h-6" />
               </div>
               <div className="flex-1">
@@ -52,7 +44,7 @@ export default function ProblemCards() {
                         <Link
                           href={href}
                           className={isButton
-                            ? 'inline-block mt-1 px-3 py-1.5 rounded-xl font-semibold text-sm bg-green-600 hover:bg-green-700 text-white transition-all active:scale-95'
+                            ? 'inline-block mt-1 px-3 py-1.5 rounded-xl font-semibold text-sm bg-blue-700 hover:bg-blue-800 text-white transition-all active:scale-95'
                             : 'text-slate-700 hover:underline focus:underline focus:outline-none'}
                         >
                           {solution}
@@ -69,7 +61,6 @@ export default function ProblemCards() {
             {/* 按钮由 Client Component 渲染 */}
             <CardButtons
               solutionHref={card.solutionHrefs[0]}
-              color={card.color}
               buttonText={(card as { buttonText?: string }).buttonText}
             />
           </div>

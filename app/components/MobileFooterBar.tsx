@@ -7,7 +7,7 @@ export default function MobileFooterBar({ onWeChatClick }: { onWeChatClick: () =
       {/* 微信 */}
       <button
         onClick={onWeChatClick}
-        className="flex-1 h-12 rounded-full bg-green-500 text-white 
+        className="flex-1 h-12 rounded-full bg-blue-700 hover:bg-blue-800 text-white
         font-bold flex items-center justify-center active:scale-95 transition shadow-sm"
       >
         💬 微信客服
@@ -16,7 +16,7 @@ export default function MobileFooterBar({ onWeChatClick }: { onWeChatClick: () =
       {/* 电话 */}
       <a
         href="tel:15108496191"
-        className="flex-1 h-12 rounded-full bg-blue-600 text-white 
+        className="flex-1 h-12 rounded-full bg-blue-700 hover:bg-blue-800 text-white
         font-bold flex items-center justify-center active:scale-95 transition shadow-sm"
       >
         📞 拨号咨询

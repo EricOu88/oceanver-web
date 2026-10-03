@@ -167,7 +167,7 @@ export default function SiteFooter() {
       <div className="text-center mt-10">
         <a
           href={href('/bill-optimization')}
-          className="inline-block bg-gradient-to-r from-green-500 to-green-700 text-white px-8 py-4 rounded-2xl font-bold shadow-[0_0_10px_rgba(34,197,94,0.5)] hover:shadow-[0_0_20px_rgba(34,197,94,0.8)] animate-pulse-slow transition-all duration-300"
+          className="inline-block bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-2xl font-bold shadow-[0_0_10px_rgba(22,75,120,0.5)] hover:shadow-[0_0_20px_rgba(22,75,120,0.8)] animate-pulse-slow transition-all duration-300"
         >
           {isEn ? 'Check how to understand a bill increase →' : '查看账单涨价判断 →'}
         </a>
@@ -181,11 +181,11 @@ export default function SiteFooter() {
           0%,
           100% {
             transform: scale(1);
-            box-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+            box-shadow: 0 0 10px rgba(22, 75, 120, 0.5);
           }
           50% {
             transform: scale(1.03);
-            box-shadow: 0 0 20px rgba(34, 197, 94, 0.8);
+            box-shadow: 0 0 20px rgba(22, 75, 120, 0.8);
           }
         }
         .animate-pulse-slow {

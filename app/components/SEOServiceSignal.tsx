@@ -99,9 +99,9 @@ export default function SEOServiceSignal() {
           <div className="grid sm:grid-cols-2 gap-4">
             <button
               onClick={() => setWeChatOpen(true)}
-              className="flex items-center gap-3 p-4 bg-green-50 border-2 border-green-200 rounded-xl hover:bg-green-100 transition"
+              className="flex items-center gap-3 p-4 bg-white border-2 border-blue-700 rounded-xl hover:bg-blue-50 transition"
             >
-              <MessageCircle className="text-green-600" size={24} />
+              <MessageCircle className="text-blue-700" size={24} />
               <div className="text-left">
                 <div className="font-bold text-slate-900">微信：</div>
                 <div className="text-sm text-slate-600">页面现有二维码</div>

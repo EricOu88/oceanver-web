@@ -53,7 +53,7 @@ export default function FrontierClient() {
         <section className="bg-gradient-to-b from-indigo-50 to-white">
           <div className="max-w-7xl mx-auto px-6 py-14">
             <div className="max-w-3xl space-y-6">
-              <span className="inline-block px-4 py-1 rounded-full bg-indigo-100 text-indigo-700 text-sm font-semibold">
+              <span className="inline-block px-4 py-1 rounded-full bg-blue-50 text-blue-700 text-sm font-semibold">
                 Frontier Fiber · 湾区隐藏款光纤
               </span>
 
@@ -73,7 +73,7 @@ export default function FrontierClient() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/contact"
-                  className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-2xl text-lg font-bold flex items-center justify-center gap-2"
+                  className="bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-2xl text-lg font-bold flex items-center justify-center gap-2"
                 >
                   查我这个地址能不能装 <ArrowRight />
                 </Link>
@@ -252,7 +252,7 @@ function PlanCard({
   return (
     <div className="border rounded-3xl p-6 bg-white space-y-3">
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-700 flex items-center justify-center">
+        <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center">
           {icon}
         </div>
         <h3 className="text-xl font-bold">{title}</h3>

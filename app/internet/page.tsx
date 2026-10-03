@@ -80,7 +80,7 @@ export default function InternetPage() {
             <Link
               href="/contact"
               className="group relative inline-flex w-full sm:h-full items-center justify-center gap-3
-                         bg-gradient-to-br from-green-600 to-green-700 hover:from-green-700 hover:to-green-800
+                         bg-blue-700 hover:bg-blue-800
                          px-8 py-6 sm:py-8 md:py-12 rounded-[3rem] md:rounded-[4rem]
                          text-lg md:text-xl font-bold text-white transition-all duration-300
                          shadow-md hover:shadow-xl transform hover:scale-[1.01]"
@@ -101,7 +101,7 @@ export default function InternetPage() {
         <Link
           href="/internet/diagnosis"
           className="block w-full text-center
-                     bg-gradient-to-r from-blue-600 to-indigo-600
+                     bg-blue-700 hover:bg-blue-800
                      text-white py-6 rounded-[2.5rem]
                      text-xl font-bold shadow-lg hover:opacity-95 transition"
         >

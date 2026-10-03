@@ -122,7 +122,7 @@ export default function BayAreaInternetGuidePage() {
         <div className="mb-16">
           <button
             onClick={() => setModalOpen(true)}
-            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-5 px-8 rounded-2xl text-lg font-black shadow-lg hover:shadow-xl transition-all transform hover:scale-[1.02] flex items-center justify-center gap-3"
+            className="w-full bg-blue-700 hover:bg-blue-800 text-white py-5 px-8 rounded-2xl text-lg font-black shadow-lg hover:shadow-xl transition-all transform hover:scale-[1.02] flex items-center justify-center gap-3"
           >
             <MessageCircle size={24} />
             立即咨询中文客服，查询您的地址是否有隐藏优惠
@@ -237,7 +237,7 @@ export default function BayAreaInternetGuidePage() {
         <div className="mb-16">
           <button
             onClick={() => setModalOpen(true)}
-            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-5 px-8 rounded-2xl text-lg font-black shadow-lg hover:shadow-xl transition-all transform hover:scale-[1.02] flex items-center justify-center gap-3"
+            className="w-full bg-blue-700 hover:bg-blue-800 text-white py-5 px-8 rounded-2xl text-lg font-black shadow-lg hover:shadow-xl transition-all transform hover:scale-[1.02] flex items-center justify-center gap-3"
           >
             <MessageCircle size={24} />
             立即咨询中文客服，查询您的地址是否有隐藏优惠
@@ -315,7 +315,7 @@ export default function BayAreaInternetGuidePage() {
         </section>
 
         {/* 最终 CTA */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-8 md:p-12 text-center text-white mb-12">
+        <div className="bg-blue-700 rounded-3xl p-8 md:p-12 text-center text-white mb-12">
           <h2 className="text-2xl md:text-3xl font-black mb-4">
             不确定选哪家？让中文顾问帮你查地址、比价格、选方案
           </h2>

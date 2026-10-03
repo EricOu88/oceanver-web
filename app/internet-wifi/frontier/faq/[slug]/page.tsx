@@ -178,7 +178,7 @@ export default async function FrontierFAQDetailPage({ params }: FrontierFAQPageP
             </section>
           )}
 
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-white mb-12 shadow-xl">
+          <div className="bg-blue-700 rounded-2xl p-8 text-white mb-12 shadow-xl">
             <h2 className="text-2xl font-black mb-4">中文协助查询 Frontier 覆盖 / 套餐 / 价格对比 / 安装预约</h2>
             <p className="text-blue-100 mb-6 text-lg">
               旧金山湾区 Fremont 实体店中文顾问，帮您查询地址覆盖、对比套餐、处理安装预约问题。

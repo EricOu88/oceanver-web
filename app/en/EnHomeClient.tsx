@@ -204,9 +204,9 @@ export default function EnglishHomePage() {
               className="
                 w-full sm:w-auto px-8 py-4 rounded-2xl font-bold
                 text-white flex items-center justify-center gap-2
-                bg-gradient-to-r from-green-500 to-emerald-600
-                shadow-lg shadow-emerald-600/30
-                hover:shadow-xl hover:shadow-emerald-500/40
+                bg-blue-700 hover:bg-blue-800
+                shadow-lg
+                hover:shadow-xl
                 hover:scale-[1.04] active:scale-[0.98]
                 transition-all duration-300
               "
@@ -223,9 +223,9 @@ export default function EnglishHomePage() {
               className="
                 w-full sm:w-auto px-8 py-4 rounded-2xl font-bold
                 text-white flex items-center justify-center gap-2
-                bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600
-                shadow-lg shadow-indigo-600/30
-                hover:shadow-xl hover:shadow-indigo-500/40
+                bg-blue-700 hover:bg-blue-800
+                shadow-lg
+                hover:shadow-xl
                 hover:scale-[1.04] active:scale-[0.98]
                 transition-all duration-300
               "
@@ -349,9 +349,9 @@ export default function EnglishHomePage() {
               </div>
 
            {/* --- 3. Ultra / Gen High Value Plan --- */}
-              <div className="group p-6 rounded-2xl border border-emerald-200 bg-gradient-to-b from-emerald-50/80 to-white hover:shadow-xl hover:border-emerald-300 transition-all duration-300">
+              <div className="group p-6 rounded-2xl border border-blue-200 bg-gradient-to-b from-blue-50/80 to-white hover:shadow-xl hover:border-blue-300 transition-all duration-300">
                 <div className="flex items-center gap-3 mb-4">
-                    <div className="p-2 bg-emerald-100 text-emerald-600 rounded-lg group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                    <div className="p-2 bg-blue-100 text-blue-700 rounded-lg group-hover:bg-blue-700 group-hover:text-white transition-colors">
                       <Zap size={24} />
                     </div>
                     <h3 className="text-lg font-bold text-slate-900">
@@ -359,19 +359,19 @@ export default function EnglishHomePage() {
                     </h3>
                 </div>
                 <div className="mb-4">
-                    <p className="text-3xl font-extrabold text-emerald-600">
+                    <p className="text-3xl font-extrabold text-blue-700">
                       $10-25 <span className="text-sm font-semibold text-slate-500">/ Month</span>
                     </p>
                     <p className="text-xs text-slate-400 mt-1"> (Perfect for budget-conscious or light users) </p>
                 </div>
                 <ul className="text-sm text-slate-600 space-y-2 mb-6">
-                  <li className="flex items-center gap-2"><Check size={14} className="text-emerald-500"/> Flexible Data · International Roaming Support</li>
-                  <li className="flex items-center gap-2"><Check size={14} className="text-emerald-500"/> eSIM Instant Activation (Can activate in China)</li>
-                  <li className="flex items-center gap-2"><Check size={14} className="text-emerald-500"/> Ideal for Students and Short-Term Visitors</li>
+                  <li className="flex items-center gap-2"><Check size={14} className="text-blue-700"/> Flexible Data · International Roaming Support</li>
+                  <li className="flex items-center gap-2"><Check size={14} className="text-blue-700"/> eSIM Instant Activation (Can activate in China)</li>
+                  <li className="flex items-center gap-2"><Check size={14} className="text-blue-700"/> Ideal for Students and Short-Term Visitors</li>
                 </ul>
                 <button
                   onClick={() => setModalOpen(true)}
-                  className="w-full py-3 rounded-xl bg-emerald-600 text-white font-bold hover:bg-emerald-700 shadow-md shadow-emerald-600/20 transition"
+                  className="w-full py-3 rounded-xl bg-blue-700 text-white font-bold hover:bg-blue-800 shadow-md transition"
                 >
                   Let Our Specialist Recommend a Plan
                 </button>
@@ -552,7 +552,7 @@ export default function EnglishHomePage() {
               {/* Bottom CTA Button */}
               <button
                 onClick={() => setModalOpen(true)}
-                className="mt-8 w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-lg shadow-xl shadow-blue-200 hover:shadow-2xl hover:scale-[1.02] transition-all active:scale-95"
+                className="mt-8 w-full py-4 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-lg shadow-xl shadow-blue-200 hover:shadow-2xl hover:scale-[1.02] transition-all active:scale-95"
               >
                 Get Free Consultation
               </button>
@@ -585,7 +585,7 @@ export default function EnglishHomePage() {
                     href="https://www.google.com/search?sca_esv=39fb4ce6952c9081&q=Bay+Media+Star+reviews"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
+                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-blue-700 hover:bg-blue-800 text-white font-bold shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all"
                   >
                       View Google Reviews
                   </a>
@@ -796,7 +796,7 @@ export default function EnglishHomePage() {
 <div className="hidden md:flex fixed bottom-8 right-8 z-40">
   <button
     onClick={() => setModalOpen(true)}
-    className="flex items-center gap-2 px-5 py-3 rounded-full bg-green-500 text-white font-bold shadow-xl shadow-green-500/30 hover:bg-green-600 hover:scale-105 transition duration-300"
+    className="flex items-center gap-2 px-5 py-3 rounded-full bg-blue-700 text-white font-bold shadow-xl hover:bg-blue-800 hover:scale-105 transition duration-300"
   >
     <MessageCircle size={20} />
     WeChat Consultation

@@ -78,7 +78,7 @@ export default function MobileContactBar() {
             <a
               href={`tel:${PHONE_NUMBER}`}
               className="flex-1 flex items-center justify-center gap-2
-                         rounded-xl bg-blue-600
+                         rounded-xl bg-blue-700 hover:bg-blue-800
                          py-4 text-white font-bold text-base
                          shadow-lg active:scale-95 transition"
             >
@@ -90,7 +90,7 @@ export default function MobileContactBar() {
             <button
               onClick={() => setWeChatOpen(true)}
               className="flex-1 flex items-center justify-center gap-2
-                         rounded-xl bg-emerald-600
+                         rounded-xl bg-blue-700 hover:bg-blue-800
                          py-4 text-white font-bold text-base
                          shadow-lg active:scale-95 transition"
             >
@@ -102,8 +102,8 @@ export default function MobileContactBar() {
             <a
               href={`sms:${PHONE_NUMBER}`}
               className="flex-1 flex items-center justify-center gap-2
-                         rounded-xl bg-green-500
-                         py-4 text-white font-bold text-base
+                         rounded-xl border-2 border-blue-700 bg-white text-blue-700 hover:bg-blue-50
+                         py-4 font-bold text-base
                          shadow-lg active:scale-95 transition"
             >
               <MessageCircle size={20} />

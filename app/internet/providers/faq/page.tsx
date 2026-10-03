@@ -290,7 +290,7 @@ export default function InternetProvidersFAQPage() {
           </div>
 
           {/* 底部 CTA 模块 */}
-          <div className="mt-16 p-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl text-white text-center shadow-xl">
+          <div className="mt-16 p-8 bg-blue-700 rounded-2xl text-white text-center shadow-xl">
             <h2 className="text-2xl md:text-3xl font-black mb-4">
               不确定您的地址能装哪些宽带？
             </h2>

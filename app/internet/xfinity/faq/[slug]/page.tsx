@@ -146,7 +146,7 @@ export default async function XfinityFAQDetailPage({ params }: XfinityFAQPagePro
             </section>
           )}
 
-          <div className="bg-gradient-to-r from-blue-700 to-indigo-700 rounded-2xl p-8 text-white mb-10 shadow-xl">
+          <div className="bg-blue-700 rounded-2xl p-8 text-white mb-10 shadow-xl">
             <h2 className="text-2xl font-black mb-3">👉 如果你正在被 Xfinity 账单、合约或网络问题困扰</h2>
             <p className="text-blue-100 mb-6 text-lg">
               我们可以帮你中文查询、协商或更换更合适的方案（覆盖、价格、账单、取消服务）。 

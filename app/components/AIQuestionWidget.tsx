@@ -526,12 +526,12 @@ export default function AIQuestionWidget() {
             }}
             className={`
               relative flex items-center gap-2
-              bg-gradient-to-r from-green-600 to-emerald-600
+              bg-blue-700 hover:bg-blue-800
               text-white px-4 py-3 rounded-full
               shadow-lg hover:shadow-xl
               transition-all duration-300
               hover:scale-105
-              focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2
+              focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2
               cursor-pointer
               text-sm md:text-base
               ${showShake ? 'animate-shake' : ''}
@@ -552,7 +552,7 @@ export default function AIQuestionWidget() {
           style={getWidgetPosition()}
         >
           {/* 头部 */}
-          <div className="flex items-center justify-between px-5 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+          <div className="flex items-center justify-between px-5 py-4 bg-blue-700 text-white">
             <div className="flex items-center gap-2">
               <Bot size={20} />
               <h3 className="font-semibold text-lg">鸿达电讯智能客服</h3>

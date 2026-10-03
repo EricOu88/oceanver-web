@@ -51,7 +51,7 @@ export default function PlanCard({
       <button
         onClick={onClick}
         className={`mt-6 w-full py-3 rounded-xl font-semibold active:scale-95 transition
-          ${highlight ? 'bg-blue-700 text-white' : 'bg-blue-600 text-white'}
+          bg-blue-700 text-white hover:bg-blue-800
         `}
       >
         {buttonText}

@@ -8,14 +8,14 @@ export default function WhyUsClient() {
   const [showWechat, setShowWechat] = useState(false);
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-indigo-500 to-purple-600 py-8 px-4">
+    <main className="min-h-screen bg-[#EDF5F9] py-8 px-4">
 
       {/* ================= 返回首页（必须保留） ================= */}
       <div className="mb-5 max-w-6xl mx-auto">
         <Link
           href="/"
           className="inline-flex items-center gap-2
-                     text-white/90 hover:text-white
+                     text-slate-600 hover:text-blue-700
                      transition font-medium"
         >
           ← 返回首页

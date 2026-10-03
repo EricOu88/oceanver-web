@@ -118,7 +118,7 @@ export default function ATTClient({ promoSlot }: ATTClientProps) {
 
             <button
               onClick={() => setShowWeChat(true)}
-              className="mt-6 w-full bg-cyan-600 text-white py-3 rounded-xl font-semibold active:scale-95 transition"
+              className="mt-6 w-full bg-blue-700 hover:bg-blue-800 text-white py-3 rounded-xl font-semibold active:scale-95 transition"
             >
               咨询开通 →
             </button>
@@ -245,7 +245,7 @@ export default function ATTClient({ promoSlot }: ATTClientProps) {
             </p>
             <Link
               href="/cellphone/att/family-faq"
-              className="inline-flex items-center gap-2 bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-colors shadow-lg"
+              className="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-colors shadow-lg"
             >
               查看家庭合约计划完整 FAQ
               <ArrowRight size={20} />

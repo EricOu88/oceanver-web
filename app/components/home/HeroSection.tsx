@@ -36,7 +36,7 @@ export default function HeroSection() {
             <div className="flex w-full flex-col gap-3 md:flex-row md:flex-wrap">
               <Link
                 href="/bill-optimization"
-                className="inline-flex min-h-14 w-full min-w-0 items-center justify-center gap-2 rounded-full border-2 border-[#164B78] bg-[#164B78] px-4 py-3 text-sm font-bold leading-5 text-white shadow-lg shadow-[#164B78]/20 transition-all hover:border-[#103B60] hover:bg-[#103B60] hover:shadow-xl md:w-[calc(50%-0.375rem)] md:px-4 md:text-sm"
+                className="inline-flex min-h-14 w-full min-w-0 items-center justify-center gap-2 rounded-full border-2 border-blue-700 bg-blue-700 px-4 py-3 text-sm font-bold leading-5 text-white shadow-lg shadow-[#164B78]/20 transition-all hover:border-blue-800 hover:bg-blue-800 hover:shadow-xl md:w-[calc(50%-0.375rem)] md:px-4 md:text-sm"
               >
                 <span className="min-w-0 text-center">帮我查为什么变贵了</span>
                 <ArrowRight size={18} className="shrink-0" />

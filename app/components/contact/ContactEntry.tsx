@@ -40,7 +40,7 @@ export default function ContactEntry({
         {/* ================= 微信（主入口） ================= */}
         <button
           onClick={() => setShowQRModal(true)}
-          className="bg-green-600 hover:bg-green-700 text-white rounded-xl p-4 md:p-5 flex flex-col items-center text-center gap-2 transition-all shadow-sm hover:shadow-md transform hover:scale-105"
+          className="bg-blue-700 hover:bg-blue-800 text-white rounded-xl p-4 md:p-5 flex flex-col items-center text-center gap-2 transition-all shadow-sm hover:shadow-md transform hover:scale-105"
         >
           <MessageCircle size={28} className="text-white md:hidden" strokeWidth={2} />
           <MessageCircle size={32} className="text-white hidden md:block" strokeWidth={2} />
@@ -59,17 +59,17 @@ export default function ContactEntry({
         {/* ================= 电话 ================= */}
         <a
           href={`tel:${PHONE_NUMBER}`}
-          className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl p-4 md:p-5 flex flex-col items-center text-center gap-2 transition-all shadow-sm hover:shadow-md transform hover:scale-105"
+          className="bg-white border-2 border-blue-700 text-blue-700 hover:bg-blue-50 rounded-xl p-4 md:p-5 flex flex-col items-center text-center gap-2 transition-all shadow-sm hover:shadow-md transform hover:scale-105"
         >
-          <Phone size={28} className="text-white md:hidden" strokeWidth={2} />
-          <Phone size={32} className="text-white hidden md:block" strokeWidth={2} />
+          <Phone size={28} className="text-blue-700 md:hidden" strokeWidth={2} />
+          <Phone size={32} className="text-blue-700 hidden md:block" strokeWidth={2} />
           <div className="space-y-1">
-            <h3 className="text-base md:text-lg font-black text-white">电话咨询</h3>
-            <p className="text-xs text-white/90 leading-relaxed">
+            <h3 className="text-base md:text-lg font-black text-blue-700">电话咨询</h3>
+            <p className="text-xs text-slate-600 leading-relaxed">
               直接拨打<br />
               美国本地号，中文服务
             </p>
-            <p className="text-xs text-white/80 font-semibold mt-1.5">
+            <p className="text-xs text-slate-700 font-semibold mt-1.5">
               {PHONE_DISPLAY}
             </p>
           </div>
@@ -78,17 +78,17 @@ export default function ContactEntry({
         {/* ================= 短信 ================= */}
         <a
           href={`sms:${PHONE_NUMBER}`}
-          className="bg-purple-600 hover:bg-purple-700 text-white rounded-xl p-4 md:p-5 flex flex-col items-center text-center gap-2 transition-all shadow-sm hover:shadow-md transform hover:scale-105"
+          className="bg-white border-2 border-blue-700 text-blue-700 hover:bg-blue-50 rounded-xl p-4 md:p-5 flex flex-col items-center text-center gap-2 transition-all shadow-sm hover:shadow-md transform hover:scale-105"
         >
-          <Mail size={28} className="text-white md:hidden" strokeWidth={2} />
-          <Mail size={32} className="text-white hidden md:block" strokeWidth={2} />
+          <Mail size={28} className="text-blue-700 md:hidden" strokeWidth={2} />
+          <Mail size={32} className="text-blue-700 hidden md:block" strokeWidth={2} />
           <div className="space-y-1">
-            <h3 className="text-base md:text-lg font-black text-white">短信咨询</h3>
-            <p className="text-xs text-white/90 leading-relaxed">
+            <h3 className="text-base md:text-lg font-black text-blue-700">短信咨询</h3>
+            <p className="text-xs text-slate-600 leading-relaxed">
               发送短信<br />
               说明需要核实的问题
             </p>
-            <p className="text-xs text-white/80 font-semibold mt-1.5">
+            <p className="text-xs text-slate-700 font-semibold mt-1.5">
               支持中英文
             </p>
           </div>
