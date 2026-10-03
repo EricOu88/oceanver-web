@@ -1,9 +1,9 @@
 // app/components/seo/HomeSchema.tsx
 // Server Component - 首页专用结构化数据（WebPage + WebSite + Service + FAQPage）
-// 引用全站唯一 LocalBusiness：https://baymediastar.com/#localbusiness
+// 引用全站 Organization：https://oceanver.com/#organization
 
-const DOMAIN = "https://baymediastar.com";
-const LOCALBUSINESS_ID = `${DOMAIN}/#localbusiness`;
+const DOMAIN = "https://oceanver.com";
+const ORGANIZATION_ID = `${DOMAIN}/#organization`;
 const HOMEPAGE_URL = `${DOMAIN}/`;
 
 const graph = [
@@ -12,9 +12,9 @@ const graph = [
     "@type": "WebSite",
     "@id": `${DOMAIN}/#website`,
     url: DOMAIN,
-    name: "鸿达电讯 Bay Media Star",
+    name: "美国鸿达电讯",
     inLanguage: ["zh-CN", "en-US"],
-    publisher: { "@id": LOCALBUSINESS_ID },
+    publisher: { "@id": ORGANIZATION_ID },
   },
 
   // 1) WebPage（首页实体，明确"关于谁/更新"）
@@ -22,9 +22,9 @@ const graph = [
     "@type": "WebPage",
     "@id": `${HOMEPAGE_URL}#webpage`,
     url: HOMEPAGE_URL,
-    name: "鸿达电讯 Bay Media Star｜全美国华人手机卡与宽带中文办理",
+    name: "美国鸿达电讯｜全美手机套餐与宽带中文信息",
     inLanguage: "zh-CN",
-    about: { "@id": LOCALBUSINESS_ID },
+    about: { "@id": ORGANIZATION_ID },
     isPartOf: { "@id": `${DOMAIN}/#website` },
     // 如果你有首页促销更新时间，可把它同步到这里（推荐）
     // dateModified: "2026-01-31",
@@ -37,14 +37,10 @@ const graph = [
     name: "美国家庭宽带与 WiFi 安装服务",
     serviceType: "Home Internet & WiFi Setup",
     description:
-      "为旧金山湾区、洛杉矶及全美华人提供 Xfinity、AT&T、Spectrum、Frontier 等宽带办理、移机、涨价账单优化等一站式服务。",
+      "为美国中文用户提供 Xfinity、AT&T、Spectrum、Frontier 等宽带信息、账单变化判断与常见问题说明。",
     url: `${DOMAIN}/internet`,
-    provider: { "@type": "LocalBusiness", "@id": LOCALBUSINESS_ID },
-    areaServed: [
-      { "@type": "AdministrativeArea", name: "San Francisco Bay Area" },
-      { "@type": "AdministrativeArea", name: "Los Angeles Metropolitan Area" },
-      { "@type": "Country", name: "United States" },
-    ],
+    provider: { "@type": "Organization", "@id": ORGANIZATION_ID },
+    areaServed: { "@type": "Country", name: "United States" },
     availableChannel: [
       {
         "@type": "ServiceChannel",
@@ -64,12 +60,8 @@ const graph = [
     description:
       "提供 AT&T、T-Mobile、Verizon 及多家虚拟运营商手机卡与 eSIM 办理，支持新移民、留学生及全美远程开卡。",
     url: `${DOMAIN}/cellphone`,
-    provider: { "@type": "LocalBusiness", "@id": LOCALBUSINESS_ID },
-    areaServed: [
-      { "@type": "AdministrativeArea", name: "San Francisco Bay Area" },
-      { "@type": "AdministrativeArea", name: "Los Angeles Metropolitan Area" },
-      { "@type": "Country", name: "United States" },
-    ],
+    provider: { "@type": "Organization", "@id": ORGANIZATION_ID },
+    areaServed: { "@type": "Country", name: "United States" },
     availableChannel: [
       {
         "@type": "ServiceChannel",
@@ -89,7 +81,7 @@ const graph = [
     description:
       "帮你检查美国手机与宽带账单是否被涨价或多收费，协助与运营商沟通续约、换套餐或换运营商，尽量帮你降回合理价格。",
     url: `${DOMAIN}/bill-optimization`,
-    provider: { "@type": "LocalBusiness", "@id": LOCALBUSINESS_ID },
+    provider: { "@type": "Organization", "@id": ORGANIZATION_ID },
     areaServed: [
       { "@type": "Country", name: "United States" },
     ],
@@ -108,7 +100,7 @@ const graph = [
     "@type": "FAQPage",
     "@id": `${HOMEPAGE_URL}#home-faq`,
     isPartOf: { "@id": `${HOMEPAGE_URL}#webpage` },
-    about: { "@id": LOCALBUSINESS_ID },
+    about: { "@id": ORGANIZATION_ID },
     inLanguage: "zh-CN",
     mainEntity: [
       {

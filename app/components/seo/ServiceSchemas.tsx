@@ -29,10 +29,10 @@ export default function ServiceSchemas() {
           "description":
             "提供美国预付费电话卡套餐信息与中文办理协助，具体账户、身份和资格要求以运营商审核结果为准。",
           "provider": {
-            "@id": "https://oceanver.com/#localbusiness"
+            "@id": "https://oceanver.com/#organization"
           },
           "areaServed": {
-            "@type": "AdministrativeArea",
+            "@type": "Country",
             "name": "United States"
           }
         }}
@@ -49,10 +49,10 @@ export default function ServiceSchemas() {
           "description":
             "协助检查 Xfinity、AT&T Fiber、Spectrum 等宽带账单变化并比较可用方案。",
           "provider": {
-            "@id": "https://oceanver.com/#localbusiness"
+            "@id": "https://oceanver.com/#organization"
           },
           "areaServed": {
-            "@type": "AdministrativeArea",
+            "@type": "Country",
             "name": "United States"
           }
         }}
@@ -69,10 +69,10 @@ export default function ServiceSchemas() {
           "description":
             "提供 Xfinity、AT&T Fiber、Spectrum 等美国宽带申请与安装服务，中文协助，适合新装或搬家用户。",
           "provider": {
-            "@id": "https://oceanver.com/#localbusiness"
+            "@id": "https://oceanver.com/#organization"
           },
           "areaServed": {
-            "@type": "AdministrativeArea",
+            "@type": "Country",
             "name": "United States"
           }
         }}
@@ -94,10 +94,10 @@ export function CellphoneServiceSchema() {
         "description":
           "提供美国预付费电话卡套餐信息与中文办理协助，具体账户、身份和资格要求以运营商审核结果为准。",
         "provider": {
-          "@id": "https://oceanver.com/#localbusiness"
+          "@id": "https://oceanver.com/#organization"
         },
         "areaServed": {
-          "@type": "AdministrativeArea",
+          "@type": "Country",
           "name": "United States"
         }
       }}
@@ -119,10 +119,10 @@ export function InternetServiceSchema() {
           "description":
             "协助检查 Xfinity、AT&T Fiber、Spectrum 等宽带账单变化并比较可用方案。",
           "provider": {
-            "@id": "https://oceanver.com/#localbusiness"
+          "@id": "https://oceanver.com/#organization"
           },
           "areaServed": {
-            "@type": "AdministrativeArea",
+          "@type": "Country",
             "name": "United States"
           }
         }}
@@ -138,10 +138,10 @@ export function InternetServiceSchema() {
           "description":
             "提供美国宽带新装、转网与搬家申请服务，支持 Xfinity、AT&T Fiber、Spectrum。",
           "provider": {
-            "@id": "https://oceanver.com/#localbusiness"
+          "@id": "https://oceanver.com/#organization"
           },
           "areaServed": {
-            "@type": "AdministrativeArea",
+          "@type": "Country",
             "name": "United States"
           }
         }}

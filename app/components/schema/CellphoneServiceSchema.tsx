@@ -4,7 +4,7 @@ export default function CellphoneServiceSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://baymediastar.com/cellphone#service",
+    "@id": "https://oceanver.com/cellphone#service",
     "name": "美国预付费电话卡中文办理",
     "description":
       "提供美国 AT&T、T-Mobile、Ultra、Gen Mobile 等预付费电话卡中文办理服务，支持无 SSN、新移民、留学生、短期访美用户，可实体店或远程激活。",
@@ -14,13 +14,13 @@ export default function CellphoneServiceSchema() {
       "name": "United States"
     },
     "provider": {
-      "@id": "https://baymediastar.com/#localbusiness"
+      "@id": "https://oceanver.com/#organization"
     },
     "availableChannel": {
       "@type": "ServiceChannel",
       "serviceLocation": {
         "@type": "Place",
-        "name": "Bay Media Star 鸿达电讯 Fremont 实体门店"
+        "name": "Online & Phone Service"
       }
     },
     "audience": {

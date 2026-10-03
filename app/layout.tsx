@@ -22,10 +22,10 @@ export const metadata: Metadata = {
   keywords: [
     '美国手机卡中文办理',
     '美国宽带中文办理',
-    '湾区手机卡',
-    '湾区宽带',
-    'Fremont 手机卡',
-    'Fremont 宽带',
+    '美国手机账单检查',
+    '美国宽带账单涨价',
+    '美国手机套餐选择',
+    '美国通信问题判断',
     '无SSN办手机卡',
     '无SSN办宽带',
     'eSIM中国可激活',
@@ -80,67 +80,25 @@ export const metadata: Metadata = {
   },
 }
 
-/* ================== 全站唯一 LocalBusiness Schema ================== */
-const localBusinessJsonLd = {
+/* ================== 全站 Organization Schema ================== */
+const organizationJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  '@id': 'https://oceanver.com/#localbusiness',
+  '@type': 'Organization',
+  '@id': 'https://oceanver.com/#organization',
   name: '美国鸿达电讯',
-  alternateName: ['鸿达电讯', 'Fremont 中文手机与家庭宽带服务'],
-  description: '美国中文手机套餐、家庭宽带、账单检查与通信问题协助服务。',
+  description:
+    '为美国中文用户提供手机套餐、家庭宽带、账单检查、套餐选择和常见通信问题信息与中文协助。',
   url: 'https://oceanver.com',
   telephone: '+1-510-849-6191',
-  priceRange: '$$',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '46292 Warm Springs Blvd #606',
-    addressLocality: 'Fremont',
-    addressRegion: 'CA',
-    postalCode: '94539',
-    addressCountry: 'US',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 37.4764,
-    longitude: -121.9281,
-  },
-  openingHoursSpecification: {
-    '@type': 'OpeningHoursSpecification',
-    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-    opens: '10:00',
-    closes: '18:00',
-  },
-  areaServed: [
-    {
-      '@type': 'City',
-      name: 'Fremont',
-    },
-    {
-      '@type': 'City',
-      name: 'San Jose',
-    },
-    {
-      '@type': 'City',
-      name: 'Dublin',
-    },
-    {
-      '@type': 'Country',
-      name: 'United States',
-    },
-  ],
-  knowsLanguage: ['zh-CN', 'en-US', '中文', 'English'],
+  knowsLanguage: ['zh-CN', 'en-US'],
   audience: {
     '@type': 'Audience',
-    audienceType: 'New immigrants, International students, Chinese-speaking families',
-    geographicArea: {
-      '@type': 'Country',
-      name: 'United States',
-    },
+    audienceType: 'Chinese-speaking users in the United States',
   },
-  hasMap: 'https://www.google.com/maps/search/?api=1&query=美国鸿达电讯&query_place_id=ChIJX6ngelzGj4ARrdcNVV0c-Gc',
-  sameAs: [
-    'https://www.google.com/maps/search/?api=1&query=美国鸿达电讯&query_place_id=ChIJX6ngelzGj4ARrdcNVV0c-Gc',
-  ],
+  areaServed: {
+    '@type': 'Country',
+    name: 'United States',
+  },
 }
 
 /* ================== 根布局 ================== */
@@ -158,11 +116,11 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         
-        {/* LocalBusiness JSON-LD（只注入一次） */}
+        {/* Organization JSON-LD */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessJsonLd),
+            __html: JSON.stringify(organizationJsonLd),
           }}
         />
         {/* Google Analytics 4 (GA4) - 延迟加载以减少 TBT */}

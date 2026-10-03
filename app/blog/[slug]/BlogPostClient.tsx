@@ -1,9 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
 import ContactModal from '@/app/components/ContactModal'
-import { MessageCircle, ArrowRight, Phone } from 'lucide-react'
+import { MessageCircle, Phone } from 'lucide-react'
 
 export default function BlogPostClient() {
   const [isModalOpen, setModalOpen] = useState(false)
@@ -15,10 +14,7 @@ export default function BlogPostClient() {
           需要专业建议？
         </h3>
         <p className="text-slate-700 mb-4 leading-relaxed">
-          鸿达电讯位于旧金山湾区 Fremont，提供全中文服务。如果您在办理电话卡或家庭网络上有任何疑问，欢迎随时咨询。
-        </p>
-        <p className="text-slate-700 mb-4">
-          <strong>地址：</strong> 46292 Warm Springs Blvd #606, Fremont, CA 94539
+          美国鸿达电讯为全美中文用户整理手机套餐、家庭宽带和账单问题信息。如需核对账户或地址条件，可通过电话或微信联系中文客服。
         </p>
         <div className="flex flex-col sm:flex-row gap-3">
           <a

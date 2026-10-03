@@ -14,7 +14,7 @@ export default function PriceHikeServiceSchema() {
       "name": "United States"
     },
     "provider": {
-      "@id": "https://oceanver.com/#localbusiness"
+      "@id": "https://oceanver.com/#organization"
     }
   };
 

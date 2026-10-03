@@ -8,7 +8,6 @@ import {
   ArrowRight,
   CheckCircle2,
   HelpCircle,
-  MapPin,
   BarChart3,
   Zap,
 } from 'lucide-react';
@@ -30,7 +29,7 @@ const FAQ_ITEMS = [
   {
     href: '/blog/bay-area-phone-card-guide',
     title: '湾区电话卡办理指南',
-    desc: '湾区华人办理电话卡常见问题与推荐',
+    desc: '湾区相关电话卡覆盖与套餐问题',
   },
   {
     href: '/blog/how-to-save-on-phone-bills',
@@ -53,11 +52,11 @@ export default function CellphoneClient() {
       <section className="pt-16 pb-10 bg-gradient-to-b from-blue-50/80 via-indigo-50/50 to-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight">
-            湾区华人电话卡与手机方案总览
+            美国手机套餐与电话卡选择
           </h1>
           <div className="text-lg text-slate-700 leading-relaxed space-y-3">
             <p>
-              在湾区办理电话卡或手机方案，第一步不是比价格，而是<strong className="text-slate-900">先选对「类型」</strong>。
+              选择美国手机套餐或电话卡，第一步不是比价格，而是<strong className="text-slate-900">先选对「类型」</strong>。
             </p>
             <p>
               不同类型适合的人群不同：<strong className="text-slate-900">预付费电话卡</strong>（灵活省心）、
@@ -65,7 +64,7 @@ export default function CellphoneClient() {
               <strong className="text-slate-900">AT&T 商业手机方案</strong>（多线/企业更合适）。
             </p>
             <p>
-              我们提供湾区中文服务，覆盖东湾、南湾、北湾，并支持远程办理。
+              本页面向美国中文用户提供信息与协助；具体办理资格和方式以运营商政策、账户状态及所在地址为准。
             </p>
           </div>
         </div>
@@ -178,7 +177,7 @@ export default function CellphoneClient() {
       <section className="py-12 bg-slate-50">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-6 text-center">
-            为什么在湾区办电话卡要先选类型？
+            为什么选电话卡或手机方案要先看类型？
           </h2>
           <ul className="space-y-4 mb-8">
             <li className="flex items-start gap-3">
@@ -237,7 +236,7 @@ export default function CellphoneClient() {
       {/* ===================== 常见问题入口 ===================== */}
       <section className="py-12 bg-slate-50">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-2xl font-black text-slate-900 mb-6">湾区华人常见电话卡问题</h2>
+          <h2 className="text-2xl font-black text-slate-900 mb-6">美国手机卡常见问题</h2>
           <div className="space-y-3">
             {FAQ_ITEMS.map((item) => (
               <Link
@@ -264,15 +263,15 @@ export default function CellphoneClient() {
       {/* ===================== GEO 信任模块 ===================== */}
       <section className="py-12 bg-white">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-2xl font-black text-slate-900 mb-6 text-center">湾区中文服务</h2>
+          <h2 className="text-2xl font-black text-slate-900 mb-6 text-center">全美中文协助</h2>
           <ul className="space-y-3 mb-8 text-slate-700">
             <li className="flex items-center gap-2">
-              <MapPin className="text-blue-600 flex-shrink-0" size={20} />
-              <span>服务覆盖东湾、南湾、北湾</span>
+              <HelpCircle className="text-blue-600 flex-shrink-0" size={20} />
+              <span>套餐资格、网络覆盖与办理方式需按运营商和地址核实</span>
             </li>
             <li className="flex items-center gap-2">
               <CheckCircle2 className="text-green-600 flex-shrink-0" size={20} />
-              <span>全程中文，可到店/可远程</span>
+              <span>可通过电话或微信获取中文服务</span>
             </li>
             <li className="flex items-center gap-2">
               <CheckCircle2 className="text-green-600 flex-shrink-0" size={20} />

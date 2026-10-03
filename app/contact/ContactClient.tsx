@@ -5,10 +5,10 @@ import CopyWechatButton from '@/app/components/CopyWechatButton';
 import StoreLocationSection from '@/app/components/StoreLocationSection';
 import { Phone, MapPin, Home, Mail } from 'lucide-react';
 
-/* ================== ContactPage Schema（只引用 LocalBusiness，不重复声明） ================== */
+/* ================== ContactPage Schema（引用全站 Organization） ================== */
 /* 使用常量 JSON 字符串避免 SSR/CSR 的 JSON.stringify 结果不一致导致 hydration 报错 */
 const CONTACT_PAGE_SCHEMA_JSON =
-  '{"@context":"https://schema.org","@type":"ContactPage","@id":"https://oceanver.com/contact#contactpage","url":"https://oceanver.com/contact","name":"联系我们 | 美国鸿达电讯","description":"联系美国鸿达电讯，前往 Fremont 门店或通过电话、微信获得手机与宽带中文一对一服务。","inLanguage":"zh-CN","about":{"@id":"https://oceanver.com/#localbusiness"}}';
+  '{"@context":"https://schema.org","@type":"ContactPage","@id":"https://oceanver.com/contact#contactpage","url":"https://oceanver.com/contact","name":"联系我们 | 美国鸿达电讯","description":"联系美国鸿达电讯，前往 Fremont 门店或通过电话、微信获得手机与宽带中文一对一服务。","inLanguage":"zh-CN","about":{"@id":"https://oceanver.com/#organization"}}';
 
 function ContactSchema() {
   return (

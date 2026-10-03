@@ -2,15 +2,15 @@ export default function InternetServiceSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://baymediastar.com/internet#service",
+    "@id": "https://oceanver.com/internet#service",
     "name": "美国宽带办理与账单优化服务",
     "description":
-      "鸿达电讯 Bay Media Star 为华人用户提供美国宽带办理、地址覆盖查询、账单涨价优化服务，支持 Xfinity、AT&T Fiber、Spectrum、Frontier 等主流运营商，全程中文协助。",
+      "美国鸿达电讯为美国中文用户提供宽带信息、地址条件查询、账单变化判断和中文协助，涉及运营商方案以账户与地址核实为准。",
     "provider": {
-      "@id": "https://baymediastar.com/#localbusiness"
+      "@id": "https://oceanver.com/#organization"
     },
     "areaServed": {
-      "@type": "AdministrativeArea",
+      "@type": "Country",
       "name": "United States"
     },
     "serviceType": [

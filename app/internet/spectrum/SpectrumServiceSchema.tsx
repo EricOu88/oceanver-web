@@ -8,17 +8,13 @@ export default function SpectrumServiceSchema() {
           '@type': 'Service',
           name: 'Spectrum 宽带',
           serviceType: 'Internet Service',
-          areaServed: [
-            'Fremont',
-            'San Jose',
-            'Daly City',
-            'Bay Area',
-            'United States',
-          ],
+          areaServed: { '@type': 'Country', name: 'United States' },
           provider: {
-            '@type': 'LocalBusiness',
-            name: 'Bay Media Star 鸿达电讯',
-            url: 'https://baymediastar.com',
+            '@type': 'Organization',
+            '@id': 'https://oceanver.com/#organization',
+            name: '美国鸿达电讯',
+            url: 'https://oceanver.com',
+            telephone: '+1-510-849-6191',
           },
         }),
       }}

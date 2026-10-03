@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { MapPin, MessageCircle, Phone, CheckCircle2, HelpCircle, ArrowRight } from 'lucide-react'
+import { MapPin, MessageCircle, Phone, HelpCircle, ArrowRight } from 'lucide-react'
 
 const PHONE_DISPLAY = '510-849-6191'
 const PHONE_NUMBER = '15108496191'
@@ -75,37 +75,19 @@ export default function SEOServiceSignal() {
             <h3 className="text-xl md:text-2xl font-bold text-slate-900">【服务覆盖区域】</h3>
           </div>
           <p className="text-slate-700 leading-relaxed mb-3">
-            我们为湾区华人用户提供中文宽带与手机套餐协助服务，覆盖地区包括：
-            <strong className="text-slate-900">San Jose、Fremont、Milpitas、Santa Clara、Cupertino</strong> 及周边城市。
+            我们面向美国中文用户提供手机套餐、家庭宽带和通信账单问题的中文协助。实际可用方案需结合运营商政策、账户条件和具体地址确认。
           </p>
           <p className="text-slate-700 leading-relaxed">
             可远程协助查询地址覆盖、套餐价格与安装时间。
           </p>
         </div>
 
-        {/* 近期真实案例 */}
+        {/* 地址与账户条件 */}
         <div className="mb-8">
-          <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-4">【近期真实案例】</h3>
-          <ul className="space-y-3">
-            <li className="flex items-start gap-3">
-              <CheckCircle2 className="text-green-600 flex-shrink-0 mt-1" size={20} />
-              <span className="text-slate-700">
-                <strong className="text-slate-900">Fremont：</strong>Spectrum 500M 安装，3 天完成，全程中文协助
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle2 className="text-green-600 flex-shrink-0 mt-1" size={20} />
-              <span className="text-slate-700">
-                <strong className="text-slate-900">San Jose：</strong>AT&T 光纤转网，月费成功降低 $40
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle2 className="text-green-600 flex-shrink-0 mt-1" size={20} />
-              <span className="text-slate-700">
-                <strong className="text-slate-900">Milpitas：</strong>Verizon 手机家庭套餐配置，2 条主线 + 1 条副线
-              </span>
-            </li>
-          </ul>
+          <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-4">【需要按地址或账户核实的情况】</h3>
+          <p className="text-slate-700 leading-relaxed">
+            宽带覆盖、促销资格和部分手机套餐条件会因地址、运营商及账户状态而异；不确定时先核对账单或联系运营商确认。
+          </p>
         </div>
 
         {/* 中文人工协助 */}
@@ -167,7 +149,7 @@ export default function SEOServiceSignal() {
               href="/internet"
               className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold transition"
             >
-              湾区宽带安装与对比指南
+              美国宽带套餐与覆盖判断
               <ArrowRight size={16} />
             </Link>
             <Link

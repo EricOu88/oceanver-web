@@ -10,16 +10,15 @@ import {
   Home,
   HelpCircle,
 } from 'lucide-react'
-import StoreLocationSection from '@/app/components/StoreLocationSection'
 import SEOServiceSignal from '@/app/components/SEOServiceSignal'
 import FAQPageSchema from '@/app/components/FAQPageSchema'
 import GradientBannerCTA from '@/app/components/cta/GradientBannerCTA'
 import { getHreflangAlternates } from '@/lib/hreflang-utils'
 
 export const metadata: Metadata = {
-  title: '美国宽带申请 (中文服务) - 湾区/Fremont 实体店办理 | 鸿达电信',
+  title: '美国宽带套餐与账单问题判断 | 美国鸿达电讯',
   description:
-    '美国宽带申请中文服务。旧金山湾区 Fremont 实体店办理，覆盖 San Jose、Milpitas、Cupertino 及全美 50 州。Xfinity、AT&T Fiber、Spectrum、Frontier 宽带套餐选择，地址覆盖查询，优惠期到期涨价处理。',
+    '面向美国中文用户整理 Xfinity、AT&T Fiber、Spectrum、Frontier 等宽带套餐信息、地址覆盖核对和优惠到期后的账单判断。',
   alternates: getHreflangAlternates('/internet'),
 
   robots: {
@@ -54,7 +53,7 @@ export default function InternetPage() {
       <section className="text-center space-y-4">
         <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-blue-100 text-blue-800 text-sm font-semibold">
           <Wifi size={16} />
-          旧金山湾区 Fremont 实体店 · 全美宽带中文协助
+          全美宽带信息与中文协助
         </div>
 
         <h1 className="text-4xl md:text-5xl font-extrabold">
@@ -208,7 +207,7 @@ export default function InternetPage() {
         <p className="text-lg text-slate-600">
           中文顾问免费帮你查地址覆盖、对比方案、预约安装。
           如果你发现宽带或手机账单在优惠期后突然涨价，可以查看我们的<Link href="/bill-optimization" className="text-blue-600 hover:text-blue-700 font-semibold underline">手机与宽带账单涨价优化服务</Link>，帮助你判断是否该续约、换套餐或更换运营商。
-          如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">鸿达电讯 Bay Media Star 首页</Link>。
+          如需了解更多通信问题说明，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">美国鸿达电讯首页</Link>。
           常见问题如<Link href="/internet/faq" className="text-blue-600 hover:text-blue-700 font-semibold underline">宽带账单为什么会突然涨价？</Link>和<Link href="/internet/providers/faq" className="text-blue-600 hover:text-blue-700 font-semibold underline">没有 SSN 可以办宽带吗？</Link>都有详细解答。
         </p>
         <Link
@@ -219,9 +218,6 @@ export default function InternetPage() {
           直接找中文顾问
         </Link>
       </section>
-
-      {/* ================= 门店信息区块 ================= */}
-      <StoreLocationSection variant="compact" />
 
       {/* ================= FAQ Schema ================= */}
       <FAQPageSchema />

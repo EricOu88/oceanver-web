@@ -4,15 +4,12 @@ import { getHreflangAlternates } from '@/lib/hreflang-utils';
 
 /* ===================== SEO Metadata（Server Only） ===================== */
 export const metadata: Metadata = {
-  title: '湾区华人电话卡与手机方案总览 - 预付费/AT&T家庭/商业 | 鸿达电信',
+  title: '美国手机套餐与电话卡选择指南 | 美国鸿达电讯',
   description:
-    '美国手机卡中文申请中心：鸿达电信为您精选 T-Mobile, AT&T, Ultra Mobile 及 H2O 等主流运营商套餐。支持无信用检查申请，全美顺丰邮寄到家，提供中文激活指导与售后支持，为您彻底解决在美国通讯的所有后顾之忧，信号稳价格优！',
+    '面向美国中文用户整理 T-Mobile、AT&T、Ultra Mobile、H2O 等手机套餐与电话卡信息，说明预付费、家庭套餐、eSIM、账单和资格条件。具体方案以运营商政策与账户审核为准。',
   keywords: [
     '新移民手机卡',
     '留学生手机卡',
-    '湾区手机卡',
-    '洛杉矶手机卡',
-    'Fremont 手机卡',
     '美国手机卡',
     '美国电话卡',
     'AT&T 手机卡',
@@ -25,22 +22,16 @@ export const metadata: Metadata = {
     '免 SSN 开卡',
     '新移民落地手机卡',
     '留学生 eSIM',
-    '湾区 AT&T',
-    '洛杉矶 T-Mobile',
-    'San Jose 手机卡',
-    'Milpitas 手机卡',
-    'Cupertino 手机卡',
-    'Irvine 手机卡',
     '短期访客手机卡',
     '探亲手机卡',
   ],
   alternates: getHreflangAlternates('/cellphone'),
   openGraph: {
-    title: '湾区华人电话卡与手机方案总览 - 预付费/AT&T家庭/商业 | 鸿达电信',
+    title: '美国手机套餐与电话卡选择指南 | 美国鸿达电讯',
     description:
-      '美国手机卡中文申请中心：鸿达电信为您精选 T-Mobile, AT&T, Ultra Mobile 及 H2O 等主流运营商套餐。支持无信用检查申请，全美顺丰邮寄到家，提供中文激活指导与售后支持，为您彻底解决在美国通讯的所有后顾之忧，信号稳价格优！',
-    url: 'https://baymediastar.com/cellphone',
-    siteName: 'Bay Media Star 鸿达电讯',
+      '面向美国中文用户整理 T-Mobile、AT&T、Ultra Mobile、H2O 等手机套餐与电话卡信息，说明预付费、家庭套餐、eSIM、账单和资格条件。具体方案以运营商政策与账户审核为准。',
+    url: 'https://oceanver.com/cellphone',
+    siteName: '美国鸿达电讯',
     locale: 'zh_CN',
     type: 'website',
   },

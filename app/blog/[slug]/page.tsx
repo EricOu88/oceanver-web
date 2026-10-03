@@ -50,45 +50,25 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const relatedPosts = getRelatedPosts(slug, post.category, 3)
 
-  // LocalBusiness Schema
-  const localBusinessJsonLd = {
+  // Sitewide Organization reference
+  const organizationJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': 'https://baymediastar.com/#localbusiness',
-    name: 'Bay Media Star 鸿达电讯',
-    alternateName: ['鸿达电讯', 'Bay Media Star Fremont', 'Fremont 中文手机卡宽带'],
-    description: '鸿达电讯18年湾区实体店，美国手机卡宽带中文办理专家。支持无SSN办网、无SSN办手机卡，服务全美50州。',
-    url: 'https://baymediastar.com',
-    logo: 'https://baymediastar.com/bms-logo.png',
-    image: 'https://baymediastar.com/telecom-logos.png',
+    '@type': 'Organization',
+    '@id': 'https://oceanver.com/#organization',
+    name: '美国鸿达电讯',
+    description: '为美国中文用户提供手机套餐、家庭宽带、账单检查、套餐选择和常见通信问题信息与中文协助。',
+    url: 'https://oceanver.com',
     telephone: '+1-510-849-6191',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '46292 Warm Springs Blvd #606',
-      addressLocality: 'Fremont',
-      addressRegion: 'CA',
-      postalCode: '94539',
-      addressCountry: 'US',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 37.491624,
-      longitude: -121.928423,
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5.0',
-      reviewCount: '100',
-    },
+    areaServed: { '@type': 'Country', name: 'United States' },
   }
 
   return (
     <>
-      {/* LocalBusiness Schema */}
+      {/* Organization Schema */}
       <Script
-        id="local-business-schema"
+        id="organization-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
       />
 
       <main className="max-w-4xl mx-auto px-6 py-12 md:py-16">

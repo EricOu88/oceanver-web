@@ -8,14 +8,6 @@ export default function SiteFooter() {
   const pathname = usePathname() || '/';
   const isEn = pathname.startsWith('/en');
 
-  // Google Maps links
-  const maps = {
-    addr1:
-      'https://www.google.com/maps?q=46292+Warm+Springs+Blvd+%23606,+Fremont,+CA+94539',
-    addr2:
-      'https://www.google.com/maps?q=338+Barber+Lane,+Milpitas,+CA+95035',
-  };
-
   // 文案与路径基准
   const t = isEn
     ? {
@@ -28,18 +20,12 @@ export default function SiteFooter() {
           'Send your name and what you need (cell / internet / security).',
         ],
         introLines: [
-          'Best deals and help on AT&T, Comcast/Xfinity, Frontier,',
-          'Windstream WiFi broadband (new & existing customers),',
-          'and ADT security systems.',
+          'Information for Chinese-speaking users across the United States.',
+          'Compare phone plans, home internet bills, and common service issues.',
         ],
         email: 'Email',
         phone: 'Phone',
-        stores: 'Store Locations',
-        addr1:
-          '338 Barber Lane, Milpitas, CA 95035 (inside 99 Ranch Market area)',
-        addr2:
-          '46292 Warm Springs Blvd #606, Fremont, CA 94539 (Yong He Plaza)',
-        links: 'More',
+        links: 'Quick links',
         privacy: 'Privacy Policy',
         about: 'About Us',
         copyright: 'All rights reserved.',
@@ -55,17 +41,11 @@ export default function SiteFooter() {
           '点击打开二维码，长按二维码，选择“美国鸿达电讯”，联系在线客服',
         ],
         introLines: [
-          '鸿达电讯提供最优惠的 AT&T、Comcast/Xfinity、',
-          'Frontier、Windstream WiFi 宽带网络（包括新、老客户）、',
-          '以及 ADT 报警安防系统。',
+          '面向全美中文用户，整理手机套餐、家庭宽带账单和常见通信问题。',
+          '需要核对账户或地址条件时，可联系中文客服协助确认。',
         ],
         email: '邮箱',
         phone: '电话',
-        stores: '店铺地址：',
-        addr1:
-          '46292 Warm Springs Blvd #606, Fremont, CA 94539（总店：超市广场右侧）',
-        addr2:
-          '338 Barber Lane, Milpitas, CA 95035（分店：大华超市内）',
         links: '更多链接',
         privacy: '隐私政策',
         about: '关于我们',
@@ -114,15 +94,7 @@ export default function SiteFooter() {
         <div className="grid gap-12 lg:grid-cols-2">
           {/* Left */}
           <div>
-            <div className="mb-6">
-              <Image
-                src="/bms-logo.png"
-                alt="Bay Media Star"
-                width={260}
-                height={72}
-                priority
-              />
-            </div>
+            <h3 className="mb-6 text-2xl font-bold">{isEn ? 'Oceanver' : '美国鸿达电讯'}</h3>
             <p className="text-white/90 leading-relaxed">
               {t.introLines.map((line, i) => (
                 <span key={i}>
@@ -156,38 +128,10 @@ export default function SiteFooter() {
           {/* Right */}
           <div className="lg:pl-12">
             <h4 className="text-2xl font-semibold tracking-wide">
-              {t.stores}
-              <span className="ml-2 text-yellow-300">▸</span>
+              {t.links}
             </h4>
-
-            <ul className="mt-6 space-y-6">
-              <li className="flex items-start gap-3">
-                <span className="mt-2 h-2 w-2 rounded-full bg-yellow-300 inline-block" />
-                <a
-                  href={maps.addr1}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/90 underline decoration-white/30 underline-offset-4 hover:text-white"
-                >
-                  {t.addr1}
-                </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-2 h-2 w-2 rounded-full bg-yellow-300 inline-block" />
-                <a
-                  href={maps.addr2}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/90 underline decoration-white/30 underline-offset-4 hover:text-white"
-                >
-                  {t.addr2}
-                </a>
-              </li>
-            </ul>
-
             {/* Privacy & About */}
             <div className="mt-8">
-              <h5 className="font-semibold">{t.links}</h5>
               <ul className="mt-2 space-y-1 text-white/90">
                 <li>
                   <Link
@@ -213,14 +157,6 @@ export default function SiteFooter() {
                     {t.about}
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    href={href('/blog/bay-area-internet-guide')}
-                    className="text-white/70 underline underline-offset-4 decoration-white/30 hover:text-white transition-colors"
-                  >
-                    {isEn ? '2026 Bay Area Internet Guide' : '2026 湾区宽带指南'}
-                  </Link>
-                </li>
               </ul>
             </div>
           </div>
@@ -230,13 +166,13 @@ export default function SiteFooter() {
       {/* ===== CTA Button ===== */}
       <div className="text-center mt-10">
         <a
-          href={href('/contact')}
+          href={href('/bill-optimization')}
           className="inline-block bg-gradient-to-r from-green-500 to-green-700 text-white px-8 py-4 rounded-2xl font-bold shadow-[0_0_10px_rgba(34,197,94,0.5)] hover:shadow-[0_0_20px_rgba(34,197,94,0.8)] animate-pulse-slow transition-all duration-300"
         >
-          💬 咨询客服，帮我推荐最划算的宽带网络手机方案 →
+          {isEn ? 'Check how to understand a bill increase →' : '查看账单涨价判断 →'}
         </a>
         <p className="text-white/80 text-sm mt-3">
-          我们将根据您的使用场景（个人 / 家庭 / 商业）推荐最优套餐
+          {isEn ? 'Review common causes before deciding what to change.' : '先了解费用变化原因，再判断是否需要调整方案。'}
         </p>
       </div>
 
@@ -260,7 +196,7 @@ export default function SiteFooter() {
       {/* ===== Bottom Bar ===== */}
       <div className="border-t border-white/20 mt-10">
         <div className="mx-auto max-w-7xl px-4 py-6 text-xs text-white/80">
-          © {new Date().getFullYear()} Bay Media Star Inc. {t.copyright}
+          © {new Date().getFullYear()} {isEn ? 'Oceanver' : '美国鸿达电讯'} {t.copyright}
         </div>
       </div>
     </footer>

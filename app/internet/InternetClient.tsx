@@ -11,7 +11,7 @@ export default function InternetClient() {
       <section className="space-y-6">
 
         <p className="text-sm text-slate-500">
-  服务湾区 Fremont / Milpitas / San Jose · 全美可办理
+  面向全美中文用户提供宽带信息与中文协助
 </p>
 
         <h1 className="text-5xl font-extrabold leading-tight">

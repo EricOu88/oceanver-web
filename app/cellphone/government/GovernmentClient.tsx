@@ -27,18 +27,11 @@ const GovernmentPhoneSchema = () => {
       "name": "California"
     },
     "provider": {
-      "@type": "LocalBusiness",
-      "name": "Bay Media Star 鸿达电讯",
-      "url": "https://baymediastar.com",
+      "@type": "Organization",
+      "@id": "https://oceanver.com/#organization",
+      "name": "美国鸿达电讯",
+      "url": "https://oceanver.com",
       "telephone": "+1-510-849-6191",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "338 Barber Ln",
-        "addressLocality": "Milpitas",
-        "addressRegion": "CA",
-        "postalCode": "95035",
-        "addressCountry": "US"
-      }
     }
   };
 
@@ -94,7 +87,7 @@ export default function GovernmentClient() {
         </h1>
         <p className="text-center text-slate-500 font-bold mb-12">
           Lifeline 政府补助方案 · 每月 $0 月费 · 免费智能手机。
-          如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">鸿达电讯 Bay Media Star 首页</Link>。
+          如需了解更多通信问题说明，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">美国鸿达电讯首页</Link>。
           常见问题如<Link href="/cellphone/government" className="text-blue-600 hover:text-blue-700 font-semibold underline">政府白卡免费手机如何申请？</Link>都有详细解答。
         </p>
 
@@ -179,7 +172,7 @@ export default function GovernmentClient() {
 
           <h2 className="text-2xl font-black mt-12 mb-6 text-blue-700 flex items-center gap-2">
             <div className="w-2 h-8 bg-blue-600 rounded-full" />
-            申请时间与地点
+            申请时间与方式
           </h2>
           <div className="bg-slate-50 p-6 rounded-2xl mb-10">
             <p className="font-bold mb-4 flex items-center gap-2 text-slate-900">
@@ -187,9 +180,8 @@ export default function GovernmentClient() {
               办理流程约 20–30 分钟，现场领新手机+新的电话号码
             </p>
             <ul className="space-y-3 text-slate-600 font-bold text-sm">
-              <li>📍 地点：338 Barber Ln, Milpitas, CA 95035（99 大华超市内）</li>
-              <li>📞 预约电话：510-676-7518</li>
-              <li>🤝 无需本人到场，支持委托代办</li>
+              <li>📞 中文咨询：510-849-6191</li>
+              <li>🤝 具体申请方式与资格以所在州及服务项目要求为准</li>
             </ul>
           </div>
 
@@ -215,7 +207,7 @@ export default function GovernmentClient() {
             立即微信预约查询资格
           </button>
           <p className="text-blue-200 text-[10px] font-black uppercase tracking-[0.2em] mt-6">
-            Quick Support · Official Provider · Milpitas CA
+            中文协助 · 资格以项目要求为准
           </p>
         </div>
       </div>
@@ -225,7 +217,7 @@ export default function GovernmentClient() {
       
       <footer className="py-12 text-center">
         <p className="text-[10px] font-black text-slate-300 tracking-[0.3em] uppercase">
-          © {new Date().getFullYear()} BAY MEDIA STAR · GOVERNMENT ASSISTANCE
+          © {new Date().getFullYear()} 美国鸿达电讯 · GOVERNMENT ASSISTANCE
         </p>
       </footer>
     </main>

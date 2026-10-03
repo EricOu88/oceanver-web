@@ -263,7 +263,7 @@ export default function InternetDiagnosisPage() {
           name: '美国宽带问题诊断与咨询服务',
           serviceType: 'Internet Service Evaluation',
           description: '为新移民和华人用户提供美国宽带账单涨价判断、地址覆盖分析，以及是否值得更换宽带方案的中文咨询服务。',
-          provider: { '@type': 'LocalBusiness', name: '美国鸿达电讯', url: 'https://oceanver.com', telephone: '+1-510-849-6191' },
+          provider: { '@type': 'Organization', '@id': 'https://oceanver.com/#organization', name: '美国鸿达电讯', url: 'https://oceanver.com', telephone: '+1-510-849-6191' },
           areaServed: { '@type': 'Country', name: 'United States' },
           availableChannel: { '@type': 'ServiceChannel', serviceLocation: { '@type': 'VirtualLocation', url: 'https://oceanver.com' } },
           audience: { '@type': 'Audience', audienceType: 'Chinese-speaking residents in the United States' },

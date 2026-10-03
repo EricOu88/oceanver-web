@@ -87,7 +87,7 @@ export default function BlogListClient({ posts }: { posts: BlogListPost[] }) {
           博客文章
         </h1>
         <p className="text-lg text-slate-600">
-          湾区宽带、手机套餐申请指南与省钱攻略
+          美国手机套餐、家庭宽带与通信账单问题指南
         </p>
       </div>
 

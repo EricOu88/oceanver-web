@@ -4,38 +4,18 @@ import { useState } from 'react'
 import Script from 'next/script'
 import Link from 'next/link'
 import ContactModal from '@/app/components/ContactModal'
-import { ArrowRight, CheckCircle2, AlertCircle, MapPin, Phone, MessageCircle } from 'lucide-react'
+import { ArrowRight, CheckCircle2, AlertCircle, MapPin, MessageCircle } from 'lucide-react'
 
-/* ================== LocalBusiness Schema ================== */
-const localBusinessJsonLd = {
+/* ================== Organization Schema ================== */
+const organizationJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  '@id': 'https://baymediastar.com/#localbusiness',
-  name: 'Bay Media Star 鸿达电讯',
-  alternateName: ['鸿达电讯', 'Bay Media Star Fremont', 'Fremont 中文手机卡宽带'],
-  description: '鸿达电讯18年湾区实体店，美国手机卡宽带中文办理专家。支持无SSN办网、无SSN办手机卡，服务全美50州。',
-  url: 'https://baymediastar.com',
-  logo: 'https://baymediastar.com/bms-logo.png',
-  image: 'https://baymediastar.com/telecom-logos.png',
+  '@type': 'Organization',
+  '@id': 'https://oceanver.com/#organization',
+  name: '美国鸿达电讯',
+  description: '为美国中文用户提供手机套餐、家庭宽带、账单检查、套餐选择和常见通信问题信息与中文协助。',
+  url: 'https://oceanver.com',
   telephone: '+1-510-849-6191',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '46292 Warm Springs Blvd #606',
-    addressLocality: 'Fremont',
-    addressRegion: 'CA',
-    postalCode: '94539',
-    addressCountry: 'US',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 37.491624,
-    longitude: -121.928423,
-  },
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5.0',
-    reviewCount: '100',
-  },
+  areaServed: { '@type': 'Country', name: 'United States' },
 }
 
 /* ================== 页面主体 ================== */
@@ -44,11 +24,11 @@ export default function BayAreaInternetGuidePage() {
 
   return (
     <>
-      {/* LocalBusiness Schema */}
+      {/* Organization Schema */}
       <Script
-        id="local-business-schema"
+        id="organization-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
       />
 
       <main className="max-w-4xl mx-auto px-6 py-12 md:py-16">
@@ -329,67 +309,7 @@ export default function BayAreaInternetGuidePage() {
                     <span><strong>全程中文协助：</strong>你不需要和英文客服沟通，我们帮你处理所有流程。</span>
                   </li>
                 </ul>
-                <div className="mt-4 pt-4 border-t border-green-200">
-                  <p className="text-green-800 font-bold">
-                    💰 真实案例：湾区 Fremont 客户，Xfinity 账单从 $89.99/月 降到 $49.99/月，每年节省 $480。
-                  </p>
-                </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ================= 板块四：本地服务 ================= */}
-        <section className="mb-16">
-          <div className="flex items-center gap-3 mb-6">
-            <MapPin className="text-blue-600" size={32} />
-            <h2 className="text-2xl md:text-3xl font-black text-slate-900">
-              【本地服务】为什么要选 Fremont 实体店？
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-blue-50 rounded-2xl p-6 border-2 border-blue-200">
-              <h3 className="text-xl font-black text-blue-900 mb-4 flex items-center gap-2">
-                <MessageCircle className="text-blue-600" size={24} />
-                中文沟通，零障碍
-              </h3>
-              <p className="text-slate-700 leading-relaxed">
-                从申请到安装，再到后续账单问题，全程中文服务。不需要担心英文沟通障碍，我们的中文客服团队 18 年经验，熟悉各种运营商政策和流程。
-              </p>
-            </div>
-
-            <div className="bg-green-50 rounded-2xl p-6 border-2 border-green-200">
-              <h3 className="text-xl font-black text-green-900 mb-4 flex items-center gap-2">
-                <CheckCircle2 className="text-green-600" size={24} />
-                售后无忧，有保障
-              </h3>
-              <p className="text-slate-700 leading-relaxed">
-                实体店经营，不是临时中介。遇到问题可以随时到店咨询，或通过微信、电话联系。账单问题、网络故障、搬家迁移，我们都有专业团队协助处理。
-              </p>
-            </div>
-
-            <div className="bg-purple-50 rounded-2xl p-6 border-2 border-purple-200">
-              <h3 className="text-xl font-black text-purple-900 mb-4 flex items-center gap-2">
-                <MapPin className="text-purple-600" size={24} />
-                Fremont 实体店地址
-              </h3>
-              <p className="text-slate-700 leading-relaxed mb-3">
-                <strong>46292 Warm Springs Blvd #606, Fremont, CA 94539</strong>
-              </p>
-              <p className="text-slate-600 text-sm">
-                营业时间：周一至周五 9:00-18:00，周六 10:00-17:00
-              </p>
-            </div>
-
-            <div className="bg-orange-50 rounded-2xl p-6 border-2 border-orange-200">
-              <h3 className="text-xl font-black text-orange-900 mb-4 flex items-center gap-2">
-                <Phone className="text-orange-800" size={24} />
-                全美 50 州远程服务
-              </h3>
-              <p className="text-slate-700 leading-relaxed">
-                即使不在湾区，我们也可以远程协助你办理。洛杉矶、纽约、芝加哥、休斯顿等全美各城市，都可以通过微信、电话远程申请和咨询。
-              </p>
             </div>
           </div>
         </section>
