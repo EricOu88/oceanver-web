@@ -24,6 +24,16 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // Reject the known legacy WordPress query URL without affecting normal queries.
+  const legacyQuery = url.search.replace(/%2f/gi, "/");
+  if (pathname === "/" && /^\?syjc(?:\/79\.html)?=?$/.test(legacyQuery)) {
+    return new NextResponse("Gone", {
+      status: 410,
+      statusText: "Gone",
+      headers: { "Cache-Control": "public, max-age=31536000, immutable" },
+    });
+  }
+
   // 【规则 0.5】vercel.app 域名一律 410（但允许 SEO 基础文件）
   if (hostname.includes("vercel.app")) {
     return new Response("Gone", { status: 410 });
