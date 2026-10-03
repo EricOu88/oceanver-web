@@ -201,7 +201,7 @@ export default function RootLayout({
                 美国中文手机 / 宽带 / 网络服务协助
               </div>
               <div>
-                Fremont, California · 电话：510-849-6191
+                电话：510-849-6191
               </div>
               <div>
                 © {new Date().getFullYear()} 美国鸿达电讯

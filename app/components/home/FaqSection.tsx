@@ -8,45 +8,69 @@ export default function FAQSection() {
       <div className="space-y-3">
         <details className="group bg-white rounded-xl border px-5 py-3">
           <summary className="cursor-pointer font-semibold flex justify-between">
-            我的宽带账单从 $45 直接涨到 $95，是不是被坑了？
+            手机、宽带账单为什么会突然变贵？
             <span className="group-open:rotate-180 transition">⌄</span>
           </summary>
           <p className="mt-2 text-slate-600">
-            这是美国宽带最常见的涨价套路，新用户优惠结束后价格自动上涨。很多客户在我们协助核账后，成功把费用降回到 $60
-            左右。
+            常见原因包括优惠期结束、AutoPay 或其他折扣失效、设备费用变化、附加服务增加、套餐调整，以及运营商价格变化。先确认是哪一项发生变化，再判断是否需要处理。
           </p>
         </details>
 
         <details className="group bg-white rounded-xl border px-5 py-3">
           <summary className="cursor-pointer font-semibold flex justify-between">
-            合约到期后是不是一定会涨？
+            优惠到期后一定要换运营商吗？
             <span className="group-open:rotate-180 transition">⌄</span>
           </summary>
           <p className="mt-2 text-slate-600">
-            答: 是的，许多促销价格有期限，到期后会按标准价格收费。只要用户不主动处理，价格几乎一定会上涨。
+            不一定。先比较当前价格、可用套餐、设备费用和实际使用需求。有时调整现有方案即可，有时换运营商才更合适。
           </p>
         </details>
-
-        <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 text-center">
-          <p className="text-slate-800 font-semibold mb-2">不确定自己是不是被涨价了？</p>
-          <p className="text-slate-600 mb-3">我们可以帮你快速看一眼账单，判断有没有降价空间</p>
-          <Link
-            href="/bill-optimization"
-            className="inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-bold shadow-lg"
-          >
-            免费帮我看账单
-          </Link>
-        </div>
 
         <details className="group bg-white rounded-xl border px-5 py-3">
           <summary className="cursor-pointer font-semibold flex justify-between">
-            关于美国的宽带费,为什么每年涨啊？有没有解决办法？
+            AutoPay 折扣为什么突然没有了？
             <span className="group-open:rotate-180 transition">⌄</span>
           </summary>
           <p className="mt-2 text-slate-600">
-            很多人会比较周边其他运营商的报价，鸿达电讯可以帮忙与客服协商. 节约您的时间。
+            可能与付款方式、银行卡类型、账户状态或运营商规则变化有关。先查看当前账单中的折扣项目以及付款设置。
           </p>
         </details>
+
+        <details className="group bg-white rounded-xl border px-5 py-3">
+          <summary className="cursor-pointer font-semibold flex justify-between">
+            手机 Trade-in credit 为什么没有出现在账单上？
+            <span className="group-open:rotate-180 transition">⌄</span>
+          </summary>
+          <p className="mt-2 text-slate-600">
+            可能是抵扣尚未开始、账期延迟、线路或套餐资格变化、设备分期状态或旧设备评估仍在处理中。需要结合具体促销条件判断。
+          </p>
+        </details>
+
+        <details className="group bg-white rounded-xl border px-5 py-3">
+          <summary className="cursor-pointer font-semibold flex justify-between">
+            宽带设备费为什么突然增加？
+            <span className="group-open:rotate-180 transition">⌄</span>
+          </summary>
+          <p className="mt-2 text-slate-600">
+            可能与 modem、router、gateway、Wi-Fi 扩展设备或设备优惠结束有关。先确认账单中新增的设备项目，再决定是否需要调整。
+          </p>
+        </details>
+
+        <details className="group bg-white rounded-xl border px-5 py-3">
+          <summary className="cursor-pointer font-semibold flex justify-between">
+            这次账单变贵，是一次性费用还是以后每个月都会这样？
+            <span className="group-open:rotate-180 transition">⌄</span>
+          </summary>
+          <p className="mt-2 text-slate-600">
+            先比较前后两期账单。安装费、激活费、按比例计费等通常可能是一次性的；基础月费、设备费、附加服务或折扣消失则可能持续影响之后的账单。
+          </p>
+        </details>
+      </div>
+
+      <div className="mt-5 text-center">
+        <Link href="/bill-optimization" className="text-sm font-semibold text-blue-700 hover:underline">
+          查看完整账单判断指南 →
+        </Link>
       </div>
     </section>
   );

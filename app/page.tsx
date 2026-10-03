@@ -6,7 +6,6 @@ import TrustIndicators from '@/app/components/home/TrustIndicators'
 import ContactEntry from '@/app/components/contact/ContactEntry'
 import HomeClientWrapper from './HomeClientWrapper'
 import CommunityHighlights from '@/app/components/community/CommunityHighlights'
-import HomepageCampaignBanner from '@/app/components/home/HomepageCampaignBanner'
 
 export const metadata: Metadata = {
   title: {
@@ -69,8 +68,6 @@ export default function Page() {
 
       {/* 首页下半部 - Server Component；仅局部交互保留 Client 边界 */}
       <HomeClientWrapper />
-
-      <HomepageCampaignBanner />
 
       <CommunityHighlights />
 

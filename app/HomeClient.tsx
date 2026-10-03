@@ -10,8 +10,6 @@ import GoogleReviewsSlider from '@/app/components/home/GoogleReviewsSlider';
 /* ================= 1. 数据定义 ================= */
 const BUSINESS_INFO = {
   tel: '510-849-6191',
-  telLink: '15108496191', // For tel: links (no dashes or plus)
-  address: '46292 Warm Springs Blvd #606, Fremont, CA 94539',
 };
 
 const PHONE_QUESTION_LINKS = [
@@ -191,11 +189,6 @@ export default function HomePage() {
               <p>美国鸿达电讯</p>
               <p>电话：{BUSINESS_INFO.tel}</p>
               <p>中文一对一服务</p>
-              <address className="not-italic leading-relaxed font-bold text-slate-700">
-                <span className="text-blue-700 block mb-1">Fremont, California</span>
-                46292 Warm Springs Blvd #606, <br />
-                Fremont, CA 94539
-              </address>
             </div>
           </div>
         </div>
@@ -212,9 +205,10 @@ export default function HomePage() {
           <div className="text-sm font-bold text-slate-700 bg-blue-50 p-5 rounded-2xl border border-blue-200">
             <p className="mb-2 text-slate-950 font-black">📚 热门指南</p>
             <ul className="space-y-1 text-xs">
-              <li><Link href="/blog/bay-area-internet-guide" className="text-blue-600 hover:underline">2026年湾区华人办宽带全攻略</Link></li>
-              <li><Link href="/cellphone/faq/how-to-choose-us-cellphone-plan" className="text-blue-600 hover:underline">美国手机套餐怎么选？新手指南</Link></li>
-              <li><Link href="/cellphone/faq/prepaid-vs-postpaid" className="text-blue-600 hover:underline">预付费 vs 后付费：哪种适合你？</Link></li>
+              <li><Link href="/cellphone/faq/how-to-choose-us-cellphone-plan" className="text-blue-600 hover:underline">美国手机套餐怎么选？</Link></li>
+              <li><Link href="/cellphone/faq/prepaid-vs-postpaid" className="text-blue-600 hover:underline">预付费 vs 后付费</Link></li>
+              <li><Link href="/internet/price-hike" className="text-blue-600 hover:underline">宽带涨价原因与处理</Link></li>
+              <li><Link href="/cellphone/diagnosis" className="text-blue-600 hover:underline">手机账单与套餐判断</Link></li>
             </ul>
           </div>
         </div>
