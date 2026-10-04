@@ -136,9 +136,17 @@ button:disabled,
 }
 
 /* 移动端底部安全区（防止被固定 CTA 遮挡） */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+  html {
+    scroll-padding-bottom: calc(128px + env(safe-area-inset-bottom));
+  }
+
   body {
-    padding-bottom: 120px; /* 为移动端 CTA 预留空间 */
+    padding-bottom: calc(128px + env(safe-area-inset-bottom));
+  }
+
+  #mobile-contact-bar > div {
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
   }
 }
 
