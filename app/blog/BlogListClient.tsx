@@ -88,31 +88,31 @@ export default function BlogListClient({ posts }: { posts: BlogListPost[] }) {
           猜你想问？
         </h1>
         <p className="text-lg text-slate-600">
-          先选择你想了解的是手机还是宽带；如果没有找到答案，也可以继续查看相关文章或直接留言。
+          先选手机或宽带，直接进入对应的常见问题。
         </p>
       </div>
 
       <section aria-label="常见问题入口" className="mb-12 grid gap-5 md:grid-cols-2">
         <Link
           href="/cellphone/faq"
-          className="group rounded-2xl border border-[#D8E2EA] bg-[#EDF5F9] p-6 transition hover:-translate-y-0.5 hover:border-[#2786A5] hover:shadow-lg md:p-8"
+          className="group rounded-2xl border-2 border-[#D8E2EA] bg-white p-6 transition hover:-translate-y-0.5 hover:border-[#2786A5] hover:shadow-md md:p-8"
         >
-          <Smartphone className="mb-4 text-[#2786A5]" size={32} aria-hidden="true" />
+          <Smartphone className="mb-2 text-[#2786A5] md:mb-4" size={32} aria-hidden="true" />
           <h2 className="text-2xl font-black text-slate-900">手机常见问题</h2>
-          <p className="mt-3 text-base leading-7 text-slate-600">套餐选择、Prepaid / Postpaid、转号、eSIM、账单、信号等常见问题。</p>
-          <span className="mt-6 inline-flex items-center gap-1 font-bold text-[#164B78] group-hover:text-[#103B60]">
+          <p className="mt-2 text-base leading-6 text-slate-600 md:mt-3 md:leading-7">套餐、账单、转号、eSIM、信号等问题，从这里开始找答案。</p>
+          <span className="mt-2 inline-flex items-center gap-2 rounded-lg bg-[#164B78] px-4 py-2 font-bold text-white transition-colors group-hover:bg-[#103B60] md:mt-6">
             查看手机常见问题 <ArrowRight size={16} aria-hidden="true" />
           </span>
         </Link>
 
         <Link
           href="/internet/faq"
-          className="group rounded-2xl border border-[#D8E2EA] bg-[#EDF5F9] p-6 transition hover:-translate-y-0.5 hover:border-[#2786A5] hover:shadow-lg md:p-8"
+          className="group rounded-2xl border-2 border-[#D8E2EA] bg-white p-6 transition hover:-translate-y-0.5 hover:border-[#2786A5] hover:shadow-md md:p-8"
         >
-          <Wifi className="mb-4 text-[#2786A5]" size={32} aria-hidden="true" />
+          <Wifi className="mb-2 text-[#2786A5] md:mb-4" size={32} aria-hidden="true" />
           <h2 className="text-2xl font-black text-slate-900">宽带常见问题</h2>
-          <p className="mt-3 text-base leading-7 text-slate-600">账单涨价、安装、设备、网速、Wi-Fi、地址覆盖等常见问题。</p>
-          <span className="mt-6 inline-flex items-center gap-1 font-bold text-[#164B78] group-hover:text-[#103B60]">
+          <p className="mt-2 text-base leading-6 text-slate-600 md:mt-3 md:leading-7">涨价、安装、设备、网速、Wi-Fi、地址覆盖等问题，从这里开始找答案。</p>
+          <span className="mt-2 inline-flex items-center gap-2 rounded-lg bg-[#164B78] px-4 py-2 font-bold text-white transition-colors group-hover:bg-[#103B60] md:mt-6">
             查看宽带常见问题 <ArrowRight size={16} aria-hidden="true" />
           </span>
         </Link>
