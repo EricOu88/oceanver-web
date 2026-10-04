@@ -9,7 +9,7 @@ import {
 
 export const providerSlugMap: Record<string, string> = {
   'AT&T': '/cellphone/att',
-  'Verizon': '/cellphone/verizon',
+  'Verizon': '/cellphone/diagnosis',
   'T-Mobile': '/cellphone/tmobile',
   'Ultra Mobile': '/cellphone/ultra',
   'Gen Mobile': '/cellphone/genmobile',
@@ -60,7 +60,7 @@ export const problemCards = [
       '企业用户，要求企业级服务'
     ],
     solutions: ['AT&T', 'Verizon'],
-    solutionHrefs: ['/cellphone/verizon'],
+    solutionHrefs: ['/cellphone/diagnosis'],
     icon: Briefcase,
     color: 'purple',
     seoKeywords: '商务套餐, 工作稳定性, 企业手机'

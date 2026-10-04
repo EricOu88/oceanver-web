@@ -144,10 +144,10 @@ export default function CellphoneProvidersPage() {
           <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4 text-center">相关指南（来自博客）</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             <Link
-              href="/blog/bay-area-internet-guide"
+              href="/internet/faq"
               className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-sm transition-all"
             >
-              <h3 className="text-lg font-semibold text-blue-700 underline underline-offset-4 hover:text-blue-900">新用户办理手机卡前要核对什么</h3>
+              <h3 className="text-lg font-semibold text-blue-700 underline underline-offset-4 hover:text-blue-900">美国宽带常见问题</h3>
             </Link>
             <Link
               href="#"

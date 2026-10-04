@@ -68,7 +68,7 @@ const OPERATOR_CARDS = [
   { name: 'T-Mobile', type: 'Prepaid', tagline: '适合城市用户、国际漫游需求', pros: ['国际漫游好', '城市 5G 覆盖', '预付费可选'], cons: ['郊区信号相对弱'], href: '/cellphone/tmobile' },
   { name: 'AT&T 家庭', type: 'Family', tagline: '比较家庭多线、长期使用的条件', pros: ['线路数量', '设备分期条件', '退出成本'], cons: ['需核对信用与资格'], href: '/cellphone/att-family' },
   { name: 'AT&T 商业', type: 'Business', tagline: '比较公司、店铺、团队多线的条件', pros: ['账户资格', '账单与管理方式', '线路需求'], cons: ['需商业资格'], href: '/cellphone/att-business' },
-  { name: 'Verizon', type: 'Family', tagline: '适合信号优先、郊区乡村用户', pros: ['信号最强', '郊区覆盖好', '高速网络'], cons: ['价格偏高'], href: '/cellphone/verizon' },
+  { name: 'Verizon', type: 'Family', tagline: '适合信号优先、郊区乡村用户', pros: ['信号最强', '郊区覆盖好', '高速网络'], cons: ['价格偏高'], href: '/cellphone/diagnosis' },
 ];
 
 /* ===================== Providers FAQ ===================== */

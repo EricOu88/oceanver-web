@@ -37,7 +37,7 @@ const CARRIER_LOGOS = [
   {
     name: 'Verizon',
     src: '/brands/verizon.webp',
-    href: '/cellphone/verizon',
+    href: '/cellphone/providers',
     scale: 2.4,
   },
 ]

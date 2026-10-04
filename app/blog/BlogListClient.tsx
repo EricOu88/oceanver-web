@@ -181,9 +181,7 @@ export default function BlogListClient({ posts }: { posts: BlogListPost[] }) {
                     <img
                       src={post.image}
                       alt={
-                        post.slug === 'bay-area-phone-card-guide'
-                          ? '2026美国T-Mobile手机套餐对比-鸿达电讯'
-                          : post.title
+                        post.title
                       }
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />

@@ -305,7 +305,7 @@ export default function ATTClient({ promoSlot }: ATTClientProps) {
                 AT&T 与其他运营商对比
               </h3>
               <p className="mb-2">
-                AT&T 和 T-Mobile、Verizon 相比有什么区别？在湾区信号覆盖如何？详细对比请查看<Link href="/cellphone/coverage/bay-area-los-angeles" className="text-blue-600 hover:text-blue-700 font-semibold underline">湾区信号覆盖实测页面</Link>。
+                AT&T 和其他运营商的信号、覆盖与网速表现，会因地址、设备和使用场景而不同。如需继续判断，可以进入<Link href="/cellphone/diagnosis" className="text-blue-600 hover:text-blue-700 font-semibold underline">手机问题诊断</Link>。
               </p>
             </div>
             <div>

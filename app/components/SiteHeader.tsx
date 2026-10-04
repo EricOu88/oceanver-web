@@ -15,9 +15,7 @@ export default function SiteHeader() {
     { href: '/', label: '首页', isActive: (path: string) => path === '/' },
     { href: '/cellphone', label: '手机套餐', isActive: (path: string) => path.startsWith('/cellphone') },
     { href: '/internet', label: '宽带网络', isActive: (path: string) => path.startsWith('/internet') },
-    { href: '/security', label: '安防报警', isActive: (path: string) => path.startsWith('/security') },
     { href: '/blog', label: '最新资讯', isActive: (path: string) => path.startsWith('/blog') },
-    { href: '/blog/bay-area-internet-guide', label: '省钱攻略', isActive: (path: string) => path === '/blog/bay-area-internet-guide' },
     { href: '/contact', label: '联系我们', isActive: () => false },
   ];
 

@@ -19,8 +19,7 @@ image: /图片路径（可选）
 ## 文章命名规则
 
 - 使用小写字母和连字符（kebab-case）
-- 例如：`bay-area-internet-guide.md`
-- 文件名将自动成为 URL slug：`/blog/bay-area-internet-guide`
+- 文件名将自动成为 URL slug，例如 `sample-guide.md` 对应 `/blog/sample-guide`
 
 ## 内容编写
 
@@ -28,6 +27,4 @@ image: /图片路径（可选）
 - 支持 GitHub Flavored Markdown（GFM）
 - 可以使用 HTML 标签（如果需要）
 
-## 示例
-
-查看 `bay-area-internet-guide.md` 作为参考示例。
+\r\n

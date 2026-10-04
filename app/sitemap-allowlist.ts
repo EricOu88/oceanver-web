@@ -19,7 +19,6 @@ export const SITEMAP_ALLOWLIST = [
   '/cellphone/att/business-faq',
   '/cellphone/att/family-faq',
   '/cellphone/tmobile',
-  '/cellphone/verizon',
   '/cellphone/ultra',
   '/cellphone/genmobile',
   '/cellphone/government',
