@@ -4,7 +4,7 @@ import { ArrowRight, BookOpen, HelpCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
   alternates: { canonical: 'https://oceanver.com/cellphone/faq' },
-  title: '美国手机套餐常见问题 FAQ | 鸿达电信',
+  title: '美国手机常见问题 FAQ｜美国鸿达电讯',
   description:
     '美国手机套餐常见问题解答，包括 Prepaid、Postpaid、Family Plan 的区别，如何选择运营商，以及新移民和留学生常见问题。',
 };
@@ -26,7 +26,7 @@ export default function CellphoneFAQPage() {
         {/* H1 */}
         <header className="mb-12">
           <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">
-            美国手机套餐常见问题 FAQ
+            美国手机常见问题 FAQ
           </h1>
           <p className="text-lg text-slate-600 leading-relaxed">
             解答关于美国手机套餐选择、办理流程和常见问题的疑问。
@@ -34,9 +34,9 @@ export default function CellphoneFAQPage() {
         </header>
 
         {/* 新手必读区块 */}
-        <section className="mb-12 p-6 bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-300 rounded-2xl shadow-sm">
+        <section className="mb-12 p-6 bg-gradient-to-r from-[#FCFDFE] to-[#EDF5F9] border-2 border-[#D8E2EA] rounded-2xl shadow-sm">
           <div className="flex items-start gap-4">
-            <div className="w-12 h-12 bg-amber-600 rounded-xl flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 bg-[#164B78] rounded-xl flex items-center justify-center shrink-0">
               <BookOpen className="text-white" size={24} />
             </div>
             <div className="flex-1">
@@ -49,7 +49,7 @@ export default function CellphoneFAQPage() {
               </p>
               <Link
                 href="/cellphone/faq/how-to-choose-us-cellphone-plan"
-                className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-xl font-bold transition-all shadow-md hover:shadow-lg"
+                className="inline-flex items-center gap-2 bg-[#164B78] hover:bg-[#103B60] text-white px-6 py-3 rounded-xl font-bold transition-all shadow-md hover:shadow-lg"
               >
                 查看《美国手机套餐怎么选》新手指南
                 <ArrowRight size={18} />
@@ -100,7 +100,7 @@ export default function CellphoneFAQPage() {
               <ArrowRight className="text-slate-400 group-hover:text-blue-600 transition-transform group-hover:translate-x-1" size={20} />
             </div>
             <p className="text-slate-600 text-sm mt-2 ml-9">
-              详细对比 Prepaid 和 Postpaid 两种套餐类型，包括信用要求、合约、价格稳定性、信号覆盖等，帮你做出正确选择。
+              详细对比 Prepaid 和 Postpaid 两种套餐类型，包括信用要求、合约、价格稳定性、信号覆盖等。
             </p>
           </Link>
         </div>
@@ -109,16 +109,16 @@ export default function CellphoneFAQPage() {
         <section className="mt-12 pt-8 border-t border-slate-200">
           <div className="bg-blue-700 rounded-3xl p-10 text-white text-center">
             <h2 className="text-2xl md:text-3xl font-black mb-4">
-              不确定选哪种类型？
+              还有具体问题？
             </h2>
             <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-              用我们的智能诊断工具，1 分钟帮你判断适合哪种手机方案类型，并推荐具体运营商。
+              如果你遇到的是账单变贵、信号差、转号、eSIM 或设备分期问题，可以进入手机问题诊断继续排查。
             </p>
             <Link
               href="/cellphone/diagnosis"
               className="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-2xl font-black text-lg hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl"
             >
-              👉 开始 1 分钟智能诊断
+              进入手机问题诊断
               <ArrowRight size={20} />
             </Link>
           </div>
