@@ -111,11 +111,11 @@ export default function DiagnosisClient({ knowledge }: { knowledge: QADocument[]
   return (
     <main className="min-h-screen bg-[#FCFDFE] px-4 py-8 text-[#202D3A] sm:px-6 sm:py-12">
       <div className="mx-auto max-w-5xl">
-        <Link href="/" className="inline-flex items-center gap-2 text-sm text-[#526170] transition hover:text-[#164B78]"><ArrowLeft size={16} />返回首页</Link>
+        <Link href="/internet/faq" className="inline-flex items-center gap-2 text-sm text-[#526170] transition hover:text-[#164B78]"><ArrowLeft size={16} />返回宽带常见问题</Link>
         <header className="mx-auto mb-8 mt-8 max-w-3xl text-center sm:mb-10">
           <p className="mb-3 text-sm font-bold tracking-wide text-[#2786A5]">OCEANVER · 宽带问题判断</p>
           <h1 className="text-3xl font-black tracking-tight sm:text-5xl">宽带出了问题？<br className="sm:hidden" />先判断是哪一种</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#526170] sm:text-lg">从账单涨价、网速慢、Wi-Fi 覆盖、断网、地址覆盖到搬家安装，先帮你判断问题在哪，再决定下一步怎么处理。</p>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#526170] sm:text-lg">从账单涨价、网速慢 / Wi-Fi、断网 / Modem、地址覆盖、搬家 / 安装、设备退还 / 账户问题到暂时不确定，都可以先判断问题在哪，再看下一步怎么处理。</p>
         </header>
 
         {!problem && (

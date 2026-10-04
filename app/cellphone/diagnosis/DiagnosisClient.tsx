@@ -238,8 +238,8 @@ export default function DiagnosisClient({ knowledge }: DiagnosisClientProps) {
   return (
     <main className="min-h-screen bg-[#FCFDFE] px-4 py-8 sm:px-6">
       <div className="mx-auto max-w-4xl">
-        <Link href="/cellphone" className="inline-flex text-sm font-medium text-[#526170] hover:text-[#164B78]">
-          ← 返回手机服务
+        <Link href="/cellphone/faq" className="inline-flex text-sm font-medium text-[#526170] hover:text-[#164B78]">
+          ← 返回手机常见问题
         </Link>
 
         <header className="py-8 text-center sm:py-10">
@@ -247,7 +247,7 @@ export default function DiagnosisClient({ knowledge }: DiagnosisClientProps) {
             手机出了问题？先判断是哪一种
           </h1>
           <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-[#526170] sm:text-lg">
-            从账单、信号、转网、eSIM、设备分期到套餐异常，先帮你判断问题在哪，再决定下一步怎么处理。
+            从账单变贵、信号或网速、转号 / 保号、eSIM / SIM、设备分期或 Trade-in，到暂时不确定问题类型，都可以先判断问题在哪，再看下一步怎么处理。
           </p>
         </header>
 
