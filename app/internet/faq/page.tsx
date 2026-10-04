@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft, HelpCircle, ChevronRight, ArrowRight } from 'lucide-react'
+import { ArrowLeft, HelpCircle, ChevronRight } from 'lucide-react'
 import { internetFAQData } from './data'
 
 export const metadata: Metadata = {
-  title: '美国宽带常见问题 FAQ｜宽带类型、安装、涨价、合约与中文办理 | 美国鸿达电讯',
+  title: '美国宽带常见问题 FAQ｜涨价、安装、设备与 Wi-Fi｜美国鸿达电讯',
   description:
-    '美国宽带常见问题成文版知识中枢：光纤/Cable/DSL 区别、安装流程、涨价原因、合同与设备、中文办理等，每题附运营商 FAQ 内链。',
+    '整理美国宽带涨价、安装、设备、网速、Wi-Fi、地址覆盖等常见问题，帮助中文用户先理解情况，再判断下一步。',
   keywords: [
     '美国宽带常见问题',
     '美国宽带FAQ',
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     canonical: 'https://oceanver.com/internet/faq',
   },
   openGraph: {
-    title: '美国宽带常见问题 FAQ｜宽带类型、安装、涨价、合约与中文办理',
-    description: '美国宽带常见问题成文版知识中枢，覆盖类型区别、安装流程、涨价原因、合同设备、中文办理，每题附运营商 FAQ 推荐。',
+    title: '美国宽带常见问题 FAQ｜涨价、安装、设备与 Wi-Fi｜美国鸿达电讯',
+    description: '整理美国宽带涨价、安装、设备、网速、Wi-Fi、地址覆盖等常见问题，帮助中文用户先理解情况，再判断下一步。',
     url: 'https://oceanver.com/internet/faq',
     siteName: '美国鸿达电讯',
     locale: 'zh_CN',
@@ -66,16 +66,16 @@ export default function InternetFAQPage() {
 
         <div className="max-w-4xl mx-auto px-6 py-10">
           {/* 顶部：诊断入口 */}
-          <div className="mb-8 p-4 bg-amber-50 border border-amber-200 rounded-xl">
-            <p className="text-slate-800 text-sm">
-              遇到具体问题？可前往{' '}
+          <div className="mb-8 rounded-xl border border-[#D8E2EA] bg-[#EDF5F9] p-4">
+            <p className="font-bold text-[#202D3A]">遇到具体问题？</p>
+            <p className="mt-1 text-sm leading-6 text-[#202D3A]">
+              如果你遇到的是账单涨价、网速慢、Wi-Fi、设备、地址覆盖或安装问题，可以进入宽带问题诊断继续排查。{' '}
               <Link
                 href="/internet/diagnosis"
-                className="font-bold text-amber-800 hover:underline"
+                className="font-bold text-[#164B78] hover:underline"
               >
-                宽带问题诊断
+                进入宽带问题诊断
               </Link>{' '}
-              页面，按地址覆盖、涨价处理、中文支持一步步排查。
             </p>
           </div>
 
@@ -84,16 +84,7 @@ export default function InternetFAQPage() {
               美国宽带常见问题（FAQ）
             </h1>
             <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-4">
-              成文版知识中枢，覆盖宽带类型、安装、涨价、合约与设备、中文办理等，每题附运营商 FAQ 推荐。
-            </p>
-            <p className="text-slate-700 text-base max-w-2xl mx-auto font-medium">
-              本页面解答美国宽带最常见问题，如需个性化方案，请使用{' '}
-              <Link
-                href="/internet/diagnosis"
-                className="text-blue-600 hover:underline font-semibold"
-              >
-                宽带问题诊断
-              </Link>
+              整理宽带类型、安装、涨价、设备、网速、Wi-Fi、地址覆盖等常见问题，帮助你先理解情况，再判断下一步。
             </p>
           </div>
 
@@ -120,7 +111,7 @@ export default function InternetFAQPage() {
                 {item.relatedProviders.length > 0 && (
                   <div className="mt-6 pt-5 border-t border-slate-100">
                     <p className="text-sm font-semibold text-slate-600 mb-2">
-                      推荐相关运营商
+                      相关运营商资料
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {item.relatedProviders.map((p) => (
@@ -136,30 +127,20 @@ export default function InternetFAQPage() {
                     </div>
                   </div>
                 )}
-                {/* 统一转化区块 */}
-                <div className="mt-6 pt-5 border-t border-slate-100">
-                  <p className="text-slate-700 text-sm mb-3">
-                    如果你的情况比较复杂，建议使用宽带问题诊断获取准确方案
-                  </p>
-                  <Link
-                    href="/internet/diagnosis"
-                    className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition"
-                  >
-                    开始宽带问题诊断
-                    <ArrowRight size={16} />
-                  </Link>
-                </div>
               </article>
             ))}
           </div>
 
-          <div className="mt-14 text-center">
+          <div className="mt-14 rounded-2xl border border-[#D8E2EA] bg-[#EAF2F6] p-6 text-center md:p-8">
+            <h2 className="text-2xl font-black text-[#202D3A]">还有具体问题？</h2>
+            <p className="mx-auto mt-3 mb-6 max-w-2xl leading-7 text-[#202D3A]">
+              如果你的情况涉及账单、网速、Wi-Fi、设备、地址覆盖或安装，可以进入宽带问题诊断继续排查。
+            </p>
             <Link
               href="/internet/diagnosis"
-              className="inline-flex items-center gap-2 text-blue-600 font-bold hover:underline"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#164B78] px-6 py-3 font-bold text-white transition-colors hover:bg-[#103B60]"
             >
-              <HelpCircle size={18} />
-              遇到具体问题？前往宽带问题诊断
+              进入宽带问题诊断
             </Link>
           </div>
         </div>
