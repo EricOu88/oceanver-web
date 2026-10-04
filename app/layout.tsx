@@ -3,7 +3,6 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import './globals.css'
-import ServiceSchemas from '@/app/components/seo/ServiceSchemas'
 import MobileContactBarClientOnly from '@/app/components/contact/MobileContactBarClientOnly'
 // import AIQuestionWidget from '@/app/components/AIQuestionWidget' // 暂时注释，使用 SafeAIQuestionWidget
 // import SafeAIQuestionWidgetWrapper from '@/app/components/SafeAIQuestionWidgetWrapper' // 暂时隐藏全站公开入口；需要恢复时取消注释
@@ -142,9 +141,6 @@ export default function RootLayout({
       <body className="antialiased">
         {/* ================== 页面主体 ================== */}
         {children}
-
-        {/* ================== 全站 Service Schema（不影响 UI） ================== */}
-        <ServiceSchemas />
 
         {/* ================== 全站唯一移动端悬浮 CTA（全局只引入一次） ================== */}
         <MobileContactBarClientOnly />

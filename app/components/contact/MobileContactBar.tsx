@@ -113,7 +113,7 @@ export default function MobileContactBar() {
 
           {/* 信任提示（很重要，但不抢眼） */}
           <div className="mt-2 text-center text-xs text-slate-500">
-            🇺🇸 美国本地号码 · 🀄 中文回复 · 一般 10 分钟内
+            🇺🇸 美国本地号码 · 🀄 中文回复 ·
           </div>
         </div>
       </div>
