@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft, HelpCircle, ChevronRight } from 'lucide-react'
+import { HelpCircle, ChevronRight } from 'lucide-react'
 import { internetFAQData } from './data'
 
 export const metadata: Metadata = {
@@ -55,11 +55,10 @@ export default function InternetFAQPage() {
         <div className="bg-white border-b border-slate-200">
           <div className="max-w-4xl mx-auto px-6 py-4">
             <Link
-              href="/internet"
+              href="/blog"
               className="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 hover:text-blue-600 transition"
             >
-              <ArrowLeft size={18} />
-              返回宽带首页
+              ← 返回猜你想问
             </Link>
           </div>
         </div>

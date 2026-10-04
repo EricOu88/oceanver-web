@@ -16,10 +16,10 @@ export default function CellphoneFAQPage() {
         {/* 返回链接 */}
         <div className="mb-6">
           <Link
-            href="/cellphone/providers"
+            href="/blog"
             className="inline-flex items-center text-sm text-slate-500 hover:text-blue-600 transition"
           >
-            ← 返回手机套餐选择
+            ← 返回猜你想问
           </Link>
         </div>
 
