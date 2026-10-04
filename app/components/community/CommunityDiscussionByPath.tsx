@@ -12,8 +12,14 @@ const CommunityDiscussion = dynamic(() => import('./CommunityDiscussion'), {
   ),
 })
 
-export function CommunityDiscussionClientOnly({ pageKey }: { pageKey: string }) {
-  return <CommunityDiscussion pageKey={pageKey} />
+const CommunityDiscussionFormOnly = dynamic(() => import('./CommunityDiscussion'), {
+  ssr: false,
+  loading: () => null,
+})
+
+export function CommunityDiscussionClientOnly({ pageKey, showComments }: { pageKey: string; showComments?: boolean }) {
+  if (showComments === false) return <CommunityDiscussionFormOnly pageKey={pageKey} showComments={false} />
+  return <CommunityDiscussion pageKey={pageKey} showComments={showComments} />
 }
 
 export default function CommunityDiscussionByPath() {

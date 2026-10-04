@@ -118,6 +118,8 @@ export default function BlogListClient({ posts }: { posts: BlogListPost[] }) {
         </Link>
       </section>
 
+      <CommunityDiscussionClientOnly pageKey="page:/blog" showComments={false} />
+
       <h2 className="mb-5 text-2xl font-black text-slate-900 md:text-3xl">更多问题与指南</h2>
 
       {/* 分类筛选按钮：放在标题下方 */}
@@ -238,16 +240,6 @@ export default function BlogListClient({ posts }: { posts: BlogListPost[] }) {
           ← 返回首页
         </Link>
       </div>
-
-      <section aria-labelledby="blog-community-title" className="mt-14 border-t border-slate-200 pt-10">
-        <h2 id="blog-community-title" className="text-2xl font-black text-slate-900 md:text-3xl">
-          还有其他问题？给我们留言
-        </h2>
-        <p className="mt-2 text-base text-slate-600">
-          没找到答案？把你的情况写下来，我们会整理和回复。
-        </p>
-        <CommunityDiscussionClientOnly pageKey="page:/blog" />
-      </section>
     </main>
   )
 }
