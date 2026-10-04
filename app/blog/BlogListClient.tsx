@@ -2,7 +2,8 @@
 
 import { useMemo, useState } from 'react'
 import Link from 'next/link'
-import { Calendar, Tag, ArrowRight } from 'lucide-react'
+import { Calendar, Tag, ArrowRight, Smartphone, Wifi } from 'lucide-react'
+import { CommunityDiscussionClientOnly } from '@/app/components/community/CommunityDiscussionByPath'
 
 type BlogListCategory = 'all' | 'mobile' | 'broadband' | 'guide'
 
@@ -77,19 +78,47 @@ export default function BlogListClient({ posts }: { posts: BlogListPost[] }) {
             </Link>
           </li>
           <li className="text-slate-300">/</li>
-          <li className="text-slate-700 font-semibold">博客</li>
+          <li className="text-slate-700 font-semibold">猜你想问？</li>
         </ol>
       </nav>
 
       {/* 页面标题 */}
       <div className="mb-8 text-center">
         <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">
-          博客文章
+          猜你想问？
         </h1>
         <p className="text-lg text-slate-600">
-          美国手机套餐、家庭宽带与通信账单问题指南
+          先选择你想了解的是手机还是宽带；如果没有找到答案，也可以继续查看相关文章或直接留言。
         </p>
       </div>
+
+      <section aria-label="常见问题入口" className="mb-12 grid gap-5 md:grid-cols-2">
+        <Link
+          href="/cellphone/faq"
+          className="group rounded-2xl border border-[#D8E2EA] bg-[#EDF5F9] p-6 transition hover:-translate-y-0.5 hover:border-[#2786A5] hover:shadow-lg md:p-8"
+        >
+          <Smartphone className="mb-4 text-[#2786A5]" size={32} aria-hidden="true" />
+          <h2 className="text-2xl font-black text-slate-900">手机常见问题</h2>
+          <p className="mt-3 text-base leading-7 text-slate-600">套餐选择、Prepaid / Postpaid、转号、eSIM、账单、信号等常见问题。</p>
+          <span className="mt-6 inline-flex items-center gap-1 font-bold text-[#164B78] group-hover:text-[#103B60]">
+            查看手机常见问题 <ArrowRight size={16} aria-hidden="true" />
+          </span>
+        </Link>
+
+        <Link
+          href="/internet/faq"
+          className="group rounded-2xl border border-[#D8E2EA] bg-[#EDF5F9] p-6 transition hover:-translate-y-0.5 hover:border-[#2786A5] hover:shadow-lg md:p-8"
+        >
+          <Wifi className="mb-4 text-[#2786A5]" size={32} aria-hidden="true" />
+          <h2 className="text-2xl font-black text-slate-900">宽带常见问题</h2>
+          <p className="mt-3 text-base leading-7 text-slate-600">账单涨价、安装、设备、网速、Wi-Fi、地址覆盖等常见问题。</p>
+          <span className="mt-6 inline-flex items-center gap-1 font-bold text-[#164B78] group-hover:text-[#103B60]">
+            查看宽带常见问题 <ArrowRight size={16} aria-hidden="true" />
+          </span>
+        </Link>
+      </section>
+
+      <h2 className="mb-5 text-2xl font-black text-slate-900 md:text-3xl">更多问题与指南</h2>
 
       {/* 分类筛选按钮：放在标题下方 */}
       <div className="text-center mb-10">
@@ -209,6 +238,16 @@ export default function BlogListClient({ posts }: { posts: BlogListPost[] }) {
           ← 返回首页
         </Link>
       </div>
+
+      <section aria-labelledby="blog-community-title" className="mt-14 border-t border-slate-200 pt-10">
+        <h2 id="blog-community-title" className="text-2xl font-black text-slate-900 md:text-3xl">
+          还有其他问题？给我们留言
+        </h2>
+        <p className="mt-2 text-base text-slate-600">
+          没找到答案？把你的情况写下来，我们会整理和回复。
+        </p>
+        <CommunityDiscussionClientOnly pageKey="page:/blog" />
+      </section>
     </main>
   )
 }

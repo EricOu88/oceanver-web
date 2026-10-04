@@ -35,7 +35,7 @@ const ITEMS = [
     title: '猜你想问？',
     desc: '看看大家最常问的手机、宽带和账单问题',
     cta: '查看常见问题',
-    href: '/#faq',
+    href: '/blog',
     external: false,
     color: 'text-[#2786A5] bg-[#EDF5F9]',
   },

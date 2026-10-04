@@ -4,8 +4,8 @@ import BlogListClient from './BlogListClient'
 import { getCanonicalUrl } from '@/lib/seo-utils'
 
 export const metadata: Metadata = {
-  title: '通信问题与账单指南 | 美国鸿达电讯',
-  description: '分享美国手机套餐、家庭宽带、账单变化和常见通信问题的中文说明与判断方法。',
+  title: '猜你想问？｜美国手机与宽带常见问题｜美国鸿达电讯',
+  description: '整理美国手机、宽带、账单和使用中的常见问题，可分别进入手机 FAQ、宽带 FAQ，也可继续查看相关文章和留言提问。',
   alternates: {
     canonical: getCanonicalUrl('/blog'),
   },
