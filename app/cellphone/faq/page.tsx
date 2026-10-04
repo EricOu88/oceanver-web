@@ -107,16 +107,16 @@ export default function CellphoneFAQPage() {
 
         {/* CTA 引导到诊断 */}
         <section className="mt-12 pt-8 border-t border-slate-200">
-          <div className="bg-blue-700 rounded-3xl p-10 text-white text-center">
-            <h2 className="text-2xl md:text-3xl font-black mb-4">
+          <div className="rounded-2xl border border-[#D8E2EA] bg-[#EAF2F6] p-6 text-center md:p-8">
+            <h2 className="mb-4 text-2xl font-black text-[#202D3A] md:text-3xl">
               还有具体问题？
             </h2>
-            <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+            <p className="mx-auto mb-6 max-w-2xl text-lg text-[#526170]">
               如果你遇到的是账单变贵、信号差、转号、eSIM 或设备分期问题，可以进入手机问题诊断继续排查。
             </p>
             <Link
               href="/cellphone/diagnosis"
-              className="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-2xl font-black text-lg hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#164B78] px-6 py-3 font-bold text-white transition-colors hover:bg-[#103B60]"
             >
               进入手机问题诊断
               <ArrowRight size={20} />
