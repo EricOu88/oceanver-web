@@ -6,6 +6,9 @@ import { xfinityFAQContent, type XfinityFAQContent } from '@/app/internet-wifi/x
 import { xfinityFAQIndex } from '../faq-index'
 import FAQPageSchema from '@/app/components/seo/FAQPageSchema'
 
+const isPublishedXfinityFAQ = (slug: string) =>
+  xfinityFAQIndex.some((item) => item.slug === slug)
+
 interface XfinityFAQPageProps {
   params: Promise<{ slug: string }>
 }
@@ -16,7 +19,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: XfinityFAQPageProps): Promise<Metadata> {
   const { slug } = await params
-  const faq = xfinityFAQContent[slug]
+  const faq = isPublishedXfinityFAQ(slug) ? xfinityFAQContent[slug] : undefined
 
   if (!faq) {
     return { title: '问题未找到 | 鸿达电讯' }
@@ -63,7 +66,7 @@ const getFullAnswer = (faq: XfinityFAQContent): string => {
 
 export default async function XfinityFAQDetailPage({ params }: XfinityFAQPageProps) {
   const { slug } = await params
-  const faq = xfinityFAQContent[slug]
+  const faq = isPublishedXfinityFAQ(slug) ? xfinityFAQContent[slug] : undefined
 
   if (!faq) notFound()
 
@@ -88,7 +91,7 @@ export default async function XfinityFAQDetailPage({ params }: XfinityFAQPagePro
               <ArrowLeft size={18} />
               返回 FAQ 总览
             </Link>
-            <Link href="/internet/xfinity" className="text-sm font-semibold text-slate-700 hover:text-blue-700 transition">
+            <Link href="/internet/diagnosis" className="text-sm font-semibold text-slate-700 hover:text-blue-700 transition">
               Xfinity 服务页
             </Link>
           </div>
@@ -136,15 +139,15 @@ export default async function XfinityFAQDetailPage({ params }: XfinityFAQPagePro
           )}
 
           <div className="bg-blue-700 rounded-2xl p-8 text-white mb-10 shadow-xl">
-            <h2 className="text-2xl font-black mb-3">👉 如果你正在被 Xfinity 账单、合约或网络问题困扰</h2>
+            <h2 className="text-2xl font-black mb-3">先把账单、设备或线路问题查清楚</h2>
             <p className="text-blue-100 mb-6 text-lg">
-              我们可以帮你中文查询、协商或更换更合适的方案（覆盖、价格、账单、取消服务）。 
+              如果仅凭页面信息仍无法判断，可以整理最近两期账单、设备状态和问题发生时间，再继续做宽带问题判断。
             </p>
             <Link
-              href="/internet/xfinity"
+              href="/internet/diagnosis"
               className="inline-flex items-center gap-2 bg-white text-blue-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all shadow-lg"
             >
-              前往 Xfinity 服务页
+              继续判断宽带问题
               <ArrowRight size={20} />
             </Link>
           </div>
@@ -159,7 +162,7 @@ export default async function XfinityFAQDetailPage({ params }: XfinityFAQPagePro
             </Link>
             <span className="text-slate-300">|</span>
             <Link
-              href="/internet/xfinity"
+              href="/internet/diagnosis"
               className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 font-semibold transition-colors"
             >
               返回 Xfinity 服务页
