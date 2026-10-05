@@ -1,21 +1,29 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { HelpCircle, Search } from 'lucide-react';
+import {
+  ArrowRight,
+  Calculator,
+  CheckCircle2,
+  HelpCircle,
+  Search,
+  ShieldCheck,
+} from 'lucide-react';
+
 import { ProvidersShell } from './ProvidersShell';
 import ProblemCards from './ProblemCards';
 import { BottomCTAButton } from './BottomCTAButton';
 
 export const metadata: Metadata = {
-  title: '不同手机方案该怎么比较？| 美国鸿达电讯',
+  title: '手机套餐要不要换？先算清楚再决定 | 美国鸿达电讯',
   description:
-    '面向全美中文用户比较 AT&T、T-Mobile、Verizon、Ultra Mobile 等手机方案，覆盖月费、线路数量、数据、设备、资格与退出成本。',
+    '面向全美中文用户判断手机套餐是否值得更换。比较当前月费、家庭线路、换机优惠、36个月总成本、信号、资格与退出成本，再决定是否换运营商。',
   alternates: {
     canonical: 'https://oceanver.com/cellphone/providers',
   },
   openGraph: {
-    title: '不同手机方案该怎么比较？| 美国鸿达电讯',
+    title: '手机套餐要不要换？先算清楚再决定 | 美国鸿达电讯',
     description:
-      '面向全美中文用户比较 AT&T、T-Mobile、Verizon、Ultra Mobile 等手机方案，覆盖月费、线路数量、数据、设备、资格与退出成本。',
+      '不要只看免费手机或促销价格。先比较当前账单、换网后的长期总成本、设备优惠和退出成本，再决定是否值得换。',
     url: 'https://oceanver.com/cellphone/providers',
     siteName: '美国鸿达电讯',
     locale: 'zh_CN',
@@ -23,230 +31,328 @@ export const metadata: Metadata = {
   },
 };
 
+const COST_CHECKS = [
+  {
+    title: '现在每月实际花多少？',
+    desc: '看真实账单，不只看套餐标价。把线路费、设备分期、附加服务和折扣一起算进去。',
+  },
+  {
+    title: '换过去以后每月多少？',
+    desc: '确认线路数量、AutoPay、税费、设备费用和优惠资格，不要只看广告中的最低价格。',
+  },
+  {
+    title: '手机优惠要拿多久？',
+    desc: '很多换机优惠通过 24 或 36 个月 bill credit 发放，提前离开可能拿不完。',
+  },
+  {
+    title: '三年下来到底花多少？',
+    desc: '把套餐增加的费用和手机优惠放在一起计算，才能判断换网以后到底有没有省钱。',
+  },
+];
+
+const DONT_SWITCH = [
+  '现在的套餐已经很便宜，而且信号和使用都没有明显问题。',
+  '为了拿新手机，需要长期支付明显更高的套餐月费。',
+  '现有手机还能正常使用，并没有真正的换机需求。',
+  '需要持续 24–36 个月才能拿完设备优惠。',
+  '家庭计划只有一条线想调整，其他号码不想一起变化。',
+  '新运营商在家里、公司或通勤路线上的信号还没有确认。',
+];
+
+const FAQS = [
+  {
+    q: '换运营商一定会更便宜吗？',
+    a: '不一定。需要比较当前真实月费、新方案月费、设备费用、优惠期限以及提前退出成本。有时手机优惠很高，但三年套餐总支出反而更贵。',
+  },
+  {
+    q: '为什么不能只看“免费手机”？',
+    a: '因为很多免费或低价手机依赖长期账单抵扣。如果为了手机优惠把每月套餐提高很多，增加的月费可能超过手机本身省下的钱。',
+  },
+  {
+    q: '家庭计划是不是线路越多越划算？',
+    a: '不一定。虽然多线以后单线价格可能下降，但还要看每条线的数据需求、设备优惠、附加服务和家庭总账单。',
+  },
+  {
+    q: '没有 SSN 可以办美国手机套餐吗？',
+    a: '很多 Prepaid 或不需要信用审核的方案可以办理。具体要结合运营商、付款方式和开户资格判断。',
+  },
+  {
+    q: '信号应该怎么比较？',
+    a: '不能只看运营商品牌。最好结合家里、公司、通勤路线以及经常活动的地点判断实际覆盖。',
+  },
+  {
+    q: '什么时候继续保留原套餐更合适？',
+    a: '如果目前月费合理、信号稳定、没有迫切换机需求，而且新方案长期总成本没有明显优势，继续使用原套餐往往更合理。',
+  },
+];
+
 export default function CellphoneProvidersPage() {
   return (
     <ProvidersShell>
-      <main className="py-12">
-        <div className="max-w-6xl mx-auto px-4">
-          {/* HERO */}
-          <section className="text-center space-y-4 mb-12">
-            <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">
-              不同手机方案该怎么比较？
-            </h1>
-            <div className="max-w-3xl mx-auto text-center text-base md:text-lg text-slate-600 leading-relaxed space-y-2">
-              <p>面向全美中文用户，整理不同手机方案的比较方法。</p>
-              <p>从月费、线路数量、数据与热点需求、国际使用、设备分期和退出成本进行判断。</p>
-              <p>具体价格、优惠和资格随账户、地区和时间变化，需要核实。</p>
-            </div>
-            <p className="max-w-3xl mx-auto text-center text-base md:text-lg text-slate-600 leading-relaxed">
-              不同手机运营商在
-              <strong className="text-slate-900">价格、信号覆盖、国际使用、账单稳定性</strong>
-              方面差异很大。选错运营商可能导致信号差、国际漫游费用高、账单突然涨价等问题。
-              <strong className="text-blue-600">中文协助可以帮你整理比较条件，不直接给出固定运营商推荐。</strong>
-              如需返回判断入口，请回到<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">美国鸿达电讯首页</Link>。
-              常见问题如<Link href="/cellphone/faq/how-to-choose-us-cellphone-plan" className="text-blue-600 hover:text-blue-700 font-semibold underline">没有 SSN 可以办手机卡吗？</Link>和<Link href="/cellphone/faq/prepaid-vs-postpaid" className="text-blue-600 hover:text-blue-700 font-semibold underline">预付费和后付费手机卡有什么区别？</Link>都有详细解答。
+      <main>
+        {/* HERO */}
+        <section className="py-14 px-4">
+          <div className="max-w-5xl mx-auto text-center">
+            <p className="text-sm md:text-base font-bold text-blue-700 mb-4">
+              手机套餐判断 · 换网前先算清楚
             </p>
-          </section>
 
-          {/* 不知道怎么选？ */}
-          <section className="mb-8 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-300 rounded-2xl shadow-sm">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-              <div className="flex-1">
-                <h3 className="text-xl font-black text-slate-900 mb-2">🤔 不知道怎么选？</h3>
-                <p className="text-slate-700 leading-relaxed mb-3">
-                  刚到美国，面对各种手机套餐不知道从哪开始？
-                  <strong className="text-slate-900">先了解 Prepaid、Postpaid、Family Plan 三种类型的区别</strong>，
-                  掌握「先选类型，再选运营商」的核心思路，选起来更高效。
-                </p>
-                <Link
-                  href="/cellphone/faq/how-to-choose-us-cellphone-plan"
-                  className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-bold text-sm transition"
+            <h1 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight mb-6">
+              手机套餐要不要换？
+              <br className="hidden md:block" />
+              先算清楚，再决定换哪家
+            </h1>
+
+            <div className="max-w-3xl mx-auto text-base md:text-lg text-slate-600 leading-relaxed space-y-3">
+              <p>
+                已经有套餐、账单变贵、想换手机、准备转网，
+                <strong className="text-slate-900">
+                  不要先从“哪家优惠最大”开始。
+                </strong>
+              </p>
+
+              <p>
+                先比较现在每月花多少、新方案长期要花多少、
+                手机优惠条件和退出成本，再判断是否真的值得换。
+              </p>
+            </div>
+
+            <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
+              <Link
+                href="/cellphone/diagnosis"
+                className="inline-flex items-center justify-center gap-2 bg-blue-700 hover:bg-blue-800 text-white px-7 py-3.5 rounded-xl font-black transition"
+              >
+                <Search size={18} />
+                开始手机方案检查
+              </Link>
+
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 border border-slate-300 bg-white hover:border-blue-400 hover:text-blue-700 text-slate-700 px-7 py-3.5 rounded-xl font-black transition"
+              >
+                <Calculator size={18} />
+                让中文人员帮我算
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* 用户问题入口 */}
+        <section className="py-10 px-4 bg-slate-50">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-3">
+                先从你现在的问题开始
+              </h2>
+
+              <p className="text-slate-600 max-w-2xl mx-auto">
+                不需要先懂运营商，也不需要先懂套餐名称。
+                先告诉我们你遇到什么问题。
+              </p>
+            </div>
+
+            <ProblemCards />
+          </div>
+        </section>
+
+        {/* 四个数字 */}
+        <section className="py-14 px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-9">
+              <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-3">
+                换运营商之前，先看这 4 个数字
+              </h2>
+
+              <p className="text-slate-600">
+                真正决定是否划算的，不只是手机优惠，而是长期总成本。
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-5">
+              {COST_CHECKS.map((item, index) => (
+                <div
+                  key={item.title}
+                  className="bg-white border border-slate-200 rounded-2xl p-6"
                 >
-                  查看《美国手机套餐怎么选》完整指南 →
+                  <div className="text-sm font-black text-blue-700 mb-2">
+                    0{index + 1}
+                  </div>
+
+                  <h3 className="text-xl font-black text-slate-900 mb-2">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-slate-600 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="max-w-3xl mx-auto mt-8 p-6 border-2 border-blue-100 rounded-2xl bg-blue-50/40 text-center">
+              <p className="text-2xl font-black text-slate-900">
+                手机免费，不等于套餐便宜。
+              </p>
+
+              <p className="text-slate-600 mt-2">
+                如果为了拿手机而长期支付更高月费，
+                三年下来可能反而花得更多。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* 不建议换 */}
+        <section className="py-14 px-4 bg-slate-50">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-3">
+                有这些情况，先不要急着换
+              </h2>
+
+              <p className="text-slate-600">
+                换运营商不是目的。真正目标是降低长期成本，同时保持适合自己的服务。
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-4">
+              {DONT_SWITCH.map((item) => (
+                <div
+                  key={item}
+                  className="flex items-start gap-3 bg-white border border-slate-200 rounded-xl p-5"
+                >
+                  <CheckCircle2
+                    size={19}
+                    className="text-blue-700 shrink-0 mt-0.5"
+                  />
+
+                  <p className="text-slate-700 leading-relaxed">
+                    {item}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 判断原则 */}
+        <section className="py-14 px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="border border-slate-200 rounded-2xl p-7">
+                <ShieldCheck
+                  size={28}
+                  className="text-blue-700 mb-4"
+                />
+
+                <h2 className="text-2xl font-black text-slate-900 mb-3">
+                  先判断，再选运营商
+                </h2>
+
+                <p className="text-slate-600 leading-relaxed mb-5">
+                  AT&T、T-Mobile、Verizon、Prepaid 或其他方案都只是选择。
+                  真正应该先确认的是预算、线路数量、信号、设备需求和长期使用计划。
+                </p>
+
+                <Link
+                  href="/cellphone/diagnosis"
+                  className="inline-flex items-center gap-2 font-bold text-blue-700 hover:text-blue-800"
+                >
+                  开始 1 分钟判断
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+
+              <div className="border border-slate-200 rounded-2xl p-7">
+                <HelpCircle
+                  size={28}
+                  className="text-blue-700 mb-4"
+                />
+
+                <h2 className="text-2xl font-black text-slate-900 mb-3">
+                  不确定条件？先看问题库
+                </h2>
+
+                <p className="text-slate-600 leading-relaxed mb-5">
+                  无 SSN、Prepaid、家庭计划、换网、账单、国际使用等常见问题，
+                  可以先查看中文说明，再决定下一步。
+                </p>
+
+                <Link
+                  href="/cellphone/faq"
+                  className="inline-flex items-center gap-2 font-bold text-blue-700 hover:text-blue-800"
+                >
+                  查看手机常见问题
+                  <ArrowRight size={16} />
                 </Link>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* 首屏弱干扰引导 */}
-          <section className="mb-8 p-4 bg-blue-50 border border-blue-200 rounded-xl">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-              <p className="text-slate-700 text-sm md:text-base">
-                不确定选哪家？
-                <span className="font-semibold text-slate-900"> 👉 用 1 分钟帮你判断手机方案条件</span>
-              </p>
-              <Link
-                href="/cellphone/diagnosis"
-                className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition shrink-0"
-              >
-                开始套餐诊断
-              </Link>
+        {/* FAQ */}
+        <section className="py-14 px-4 bg-slate-50">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-8 text-center">
+              换手机套餐常见问题
+            </h2>
+
+            <div className="space-y-3">
+              {FAQS.map((faq) => (
+                <details
+                  key={faq.q}
+                  className="group bg-white border border-slate-200 rounded-xl overflow-hidden"
+                >
+                  <summary className="cursor-pointer list-none px-5 py-4 font-bold text-slate-900 flex justify-between gap-4">
+                    {faq.q}
+                    <span className="text-slate-400 group-open:rotate-45 transition">
+                      +
+                    </span>
+                  </summary>
+
+                  <div className="px-5 pb-5">
+                    <p className="text-slate-600 leading-relaxed">
+                      {faq.a}
+                    </p>
+                  </div>
+                </details>
+              ))}
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* 问题导向的卡片网格（Server Component，solutions 无 hydration） */}
-          <ProblemCards />
-        </div>
+        {/* 人工 CTA */}
+        <section className="py-14 px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-black text-slate-900 mb-4">
+              不想自己算？直接让我们帮你核对
+            </h2>
+
+            <p className="text-slate-600 leading-relaxed mb-7 max-w-2xl mx-auto">
+              告诉我们你现在的运营商、线路数量、月费和换机需求，
+              可以一起判断继续留、换套餐还是换运营商更合适。
+            </p>
+
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-xl font-black transition"
+            >
+              中文咨询
+              <ArrowRight size={18} />
+            </Link>
+          </div>
+        </section>
+
+        {/* 原有底部 CTA */}
+        <section className="pb-16 px-4">
+          <div className="max-w-4xl mx-auto">
+            <BottomCTAButton />
+          </div>
+        </section>
       </main>
 
-      {/* Testimonials 模块 */}
-      <section className="py-16 px-4 bg-gradient-to-br from-slate-50 to-slate-100">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4 text-center">比较手机方案时先核对这些条件</h2>
-          <p className="text-center text-slate-600 mb-12">月费、线路数、数据需求、设备条件和退出成本都可能影响结果。</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-white border border-slate-200 rounded-xl shadow-sm p-5">
-              <p className="text-slate-700 leading-relaxed mb-3">
-                “刚来美国不懂怎么选套餐，中文解释特别清楚，帮我对比了 AT&T 和 T-Mobile 的覆盖和费用，最后选到合适的预付费方案，办得很快。”
-              </p>
-              <p className="font-semibold text-slate-900">— 月费与线路数</p>
-            </div>
-            <div className="bg-white border border-slate-200 rounded-xl shadow-sm p-5">
-              <p className="text-slate-700 leading-relaxed mb-3">
-                “家里 4 条线需要比较月费和设备条件，中文说明了不同方案的差异，也提醒了转网和账单核对事项。”
-              </p>
-              <p className="font-semibold text-slate-900">— 设备分期与 bill credit</p>
-            </div>
-            <div className="bg-white border border-slate-200 rounded-xl shadow-sm p-5">
-              <p className="text-slate-700 leading-relaxed mb-3">
-                “没有 SSN 也能办理，流程讲得很细，哪些材料要带、哪些套餐更稳都说明白了。远程微信也能办，特别省心。”
-              </p>
-              <p className="font-semibold text-slate-900">— 东湾新移民</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 双 CTA 按钮组（对比表后） */}
-      <section className="py-12 px-4 bg-gradient-to-br from-blue-50 to-indigo-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-2xl md:text-3xl font-black text-slate-900 mb-6">需要帮助？立即联系中文客服</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <Link
-              href="/contact"
-              className="bg-blue-600 text-white text-lg px-8 py-4 rounded-xl shadow w-full sm:w-auto min-h-[48px] flex items-center justify-center font-black transition-all hover:bg-blue-700"
-            >
-              添加微信咨询（中文客服）
-            </Link>
-            <Link
-              href="/contact"
-              className="border border-blue-700 text-blue-700 bg-white hover:bg-blue-50 text-lg px-8 py-4 rounded-xl w-full sm:w-auto min-h-[48px] flex items-center justify-center font-black transition-all"
-            >
-              查看比较方法
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 相关指南（来自博客） */}
-      <section className="py-16 px-4 bg-slate-50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4 text-center">相关指南（来自博客）</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            <Link
-              href="/internet/faq"
-              className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-sm transition-all"
-            >
-              <h3 className="text-lg font-semibold text-blue-700 underline underline-offset-4 hover:text-blue-900">美国宽带常见问题</h3>
-            </Link>
-            <Link
-              href="#"
-              className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-sm transition-all"
-            >
-              <h3 className="text-lg font-semibold text-blue-700 underline underline-offset-4 hover:text-blue-900">预付费 vs 合约：哪种更适合你</h3>
-              {/* TODO: Replace with real blog link when available */}
-            </Link>
-            <Link
-              href="#"
-              className="bg-white border border-slate-200 rounded-xl p-6 hover:shadow-sm transition-all"
-            >
-              <h3 className="text-lg font-semibold text-blue-700 underline underline-offset-4 hover:text-blue-900">转网不换号（Port-in）流程：如何避免断联</h3>
-              {/* TODO: Replace with real blog link when available */}
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 底部入口区域 */}
-      <section className="py-16 px-4 bg-slate-100">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-6 mb-12">
-            <Link
-              href="/cellphone/faq"
-              className="bg-white border-2 border-blue-200 rounded-3xl p-8 hover:shadow-xl transition-all group"
-            >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center">
-                  <HelpCircle size={28} />
-                </div>
-                <h3 className="text-2xl font-black text-slate-900">美国手机常见问题</h3>
-              </div>
-              <p className="text-slate-600 leading-relaxed mb-4">
-                完整FAQ知识库，包含售前与售后常见问题详细解答，帮助您全面了解手机套餐选择、办理流程和常见坑点。
-              </p>
-              <div className="text-blue-600 font-semibold group-hover:underline">查看完整FAQ →</div>
-            </Link>
-
-            <Link
-              href="/cellphone/diagnosis"
-              className="bg-white border-2 border-orange-200 rounded-3xl p-8 hover:shadow-xl transition-all group"
-            >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-orange-50 text-orange-800 flex items-center justify-center">
-                  <Search size={28} />
-                </div>
-                <h3 className="text-2xl font-black text-slate-900">手机套餐诊断</h3>
-              </div>
-              <p className="text-slate-600 leading-relaxed mb-4">
-                根据你的城市、使用需求和预算，快速判断你适合哪种手机方案，避免选错套餐。
-              </p>
-              <div className="text-orange-800 font-semibold group-hover:underline">开始 1 分钟诊断 →</div>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ下方强转化CTA */}
-      <section className="py-16 px-4 bg-gradient-to-br from-blue-50 to-indigo-50 border-t border-slate-200">
-        <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-2xl md:text-3xl font-black text-slate-900 mb-4">
-            需要帮助？立即联系中文客服
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-            <Link
-              href="/contact"
-              className="bg-blue-600 text-white text-lg px-8 py-4 rounded-xl shadow w-full sm:w-auto min-h-[48px] flex items-center justify-center font-black transition-all hover:bg-blue-700"
-            >
-              添加微信咨询（中文客服）
-            </Link>
-            <Link
-              href="/contact"
-              className="border border-blue-700 text-blue-700 bg-white hover:bg-blue-50 text-lg px-8 py-4 rounded-xl w-full sm:w-auto min-h-[48px] flex items-center justify-center font-black transition-all"
-            >
-              办理前先判断
-            </Link>
-          </div>
-          <p className="text-slate-700 text-lg mb-8 leading-relaxed">
-            根据你的城市、使用需求和预算，快速判断你适合哪种手机方案，避免选错套餐。
-          </p>
-          <Link
-            href="/cellphone/diagnosis"
-            className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl text-lg font-black transition-all shadow-lg hover:shadow-xl"
-          >
-            👉 开始手机套餐诊断
-          </Link>
-        </div>
-      </section>
-
-      {/* 底部联系区 */}
-      <section className="pb-20 px-4 md:pb-20 mb-16 md:mb-0">
-        <div className="max-w-4xl mx-auto">
-          <BottomCTAButton />
-        </div>
-      </section>
-
-      <footer className="py-12 border-t border-slate-100 text-center">
-        <p className="text-[10px] font-black text-slate-300 tracking-[0.2em] uppercase">
+      <footer className="py-10 border-t border-slate-100 text-center">
+        <p className="text-xs font-bold text-slate-400">
           © {new Date().getFullYear()} 美国鸿达电讯
         </p>
       </footer>
