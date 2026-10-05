@@ -1,44 +1,36 @@
 import type { Metadata } from 'next';
-import CellphoneClient from './CellphoneClient';
-import { getCanonicalUrl } from '@/lib/seo-utils';
 
-/* ===================== SEO Metadata（Server Only） ===================== */
+import CellphoneClient from './CellphoneClient';
+
 export const metadata: Metadata = {
-  title: '美国手机套餐与电话卡选择指南 | 美国鸿达电讯',
+  title: '美国手机套餐怎么选？账单、换机、转网先判断 | 美国鸿达电讯',
   description:
-    '面向美国中文用户整理 T-Mobile、AT&T、Ultra Mobile、H2O 等手机套餐与电话卡信息，说明预付费、家庭套餐、eSIM、账单和资格条件。具体方案以运营商政策与账户审核为准。',
-  keywords: [
-    '新移民手机卡',
-    '留学生手机卡',
-    '美国手机卡',
-    '美国电话卡',
-    'AT&T 手机卡',
-    'T-Mobile 手机卡',
-    'Verizon 手机卡',
-    '美国 eSIM',
-    '美国预付费手机卡',
-    '美国手机卡 中文办理',
-    '无 SSN 手机卡',
-    '免 SSN 开卡',
-    '新移民落地手机卡',
-    '留学生 eSIM',
-    '短期访客手机卡',
-    '探亲手机卡',
-  ],
-  alternates: { canonical: getCanonicalUrl('/cellphone') },
+    '美国手机套餐中文判断入口。手机账单涨价、想换新手机、准备转网、家庭多线、没有 SSN、预付费或回国使用，先从真实问题开始判断，再决定是否换套餐或运营商。',
+  alternates: {
+    canonical: 'https://oceanver.com/cellphone',
+  },
   openGraph: {
-    title: '美国手机套餐与电话卡选择指南 | 美国鸿达电讯',
+    title: '美国手机套餐怎么选？先从你的实际问题开始 | 美国鸿达电讯',
     description:
-      '面向美国中文用户整理 T-Mobile、AT&T、Ultra Mobile、H2O 等手机套餐与电话卡信息，说明预付费、家庭套餐、eSIM、账单和资格条件。具体方案以运营商政策与账户审核为准。',
+      '账单涨价、换手机、换运营商、家庭多线、无 SSN、Prepaid 与国际使用，不需要先懂运营商，先判断自己的情况。',
     url: 'https://oceanver.com/cellphone',
     siteName: '美国鸿达电讯',
     locale: 'zh_CN',
     type: 'website',
   },
-
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
-/* ===================== Page（Server Component） ===================== */
 export default function CellphonePage() {
   return <CellphoneClient />;
 }
