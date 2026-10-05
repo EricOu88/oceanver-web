@@ -6,6 +6,9 @@ import { attFiberFAQContent, type ATTFiberFAQContent } from '@/app/internet-wifi
 import { attFiberFAQIndex } from '../faq-index'
 import FAQPageSchema from '@/app/components/seo/FAQPageSchema'
 
+const isPublishedATTFiberFAQ = (slug: string) =>
+  attFiberFAQIndex.some((item) => item.slug === slug)
+
 interface ATTFiberFAQPageProps {
   params: Promise<{ slug: string }>
 }
@@ -18,7 +21,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: ATTFiberFAQPageProps): Promise<Metadata> {
   const { slug } = await params
-  const faq = attFiberFAQContent[slug]
+  const faq = isPublishedATTFiberFAQ(slug) ? attFiberFAQContent[slug] : undefined
 
   if (!faq) {
     return {
@@ -26,21 +29,9 @@ export async function generateMetadata({ params }: ATTFiberFAQPageProps): Promis
     }
   }
 
-  const isBusiness = slug.includes('business')
-  const serviceType = isBusiness ? '商业' : '住家'
-
   return {
     title: `${faq.question} - 详细解答 | 鸿达电讯`,
-    description: `${faq.summary} 查看完整解答，了解 AT&T Fiber ${serviceType}宽带${faq.question}的详细情况、官方规则、真实使用体验和适合人群。`,
-    keywords: [
-      'AT&T Fiber',
-      'AT&T Fiber 宽带',
-      isBusiness ? 'AT&T Business Fiber' : 'AT&T Fiber',
-      faq.question,
-      '湾区宽带',
-      'AT&T Fiber FAQ',
-      '中文办理',
-    ],
+    description: `${faq.summary} 查看 AT&T Fiber 相关费用、网络、设备、账户或安装问题的判断信息与适用边界。`,
     alternates: {
       canonical: `https://oceanver.com/internet/att/fiber/faq/${slug}`,
     },
@@ -78,7 +69,7 @@ const getFullAnswer = (faq: ATTFiberFAQContent): string => {
 
 export default async function ATTFiberFAQDetailPage({ params }: ATTFiberFAQPageProps) {
   const { slug } = await params
-  const faq = attFiberFAQContent[slug]
+  const faq = isPublishedATTFiberFAQ(slug) ? attFiberFAQContent[slug] : undefined
 
   if (!faq) {
     notFound()
@@ -110,7 +101,7 @@ export default async function ATTFiberFAQDetailPage({ params }: ATTFiberFAQPageP
                 返回 FAQ 总览
               </Link>
               <Link
-                href="/internet/att/fiber"
+                href="/internet/diagnosis"
                 className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition"
               >
                 AT&T Fiber 服务页
@@ -181,15 +172,15 @@ export default async function ATTFiberFAQDetailPage({ params }: ATTFiberFAQPageP
 
           {/* 固定 CTA - 链接到服务页 */}
           <div className="bg-blue-700 rounded-2xl p-8 text-white mb-12 shadow-xl">
-            <h2 className="text-2xl font-black mb-4">中文协助查询 AT&T Fiber 覆盖、价格、安装或账单问题</h2>
+            <h2 className="text-2xl font-black mb-4">先把费用、网络、设备或安装问题查清楚</h2>
             <p className="text-blue-100 mb-6 text-lg">
-              中文顾问可协助整理地址覆盖、套餐、安装预约和账单信息，具体条件以当前运营商规则为准。
+              如果仅凭页面信息仍无法判断，可以整理最近两期账单、设备状态、问题发生时间和安装记录，再继续做宽带问题判断。
             </p>
             <Link
-              href="/internet/att/fiber"
+              href="/internet/diagnosis"
               className="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all shadow-lg"
             >
-              前往 AT&T Fiber 服务页
+              继续判断宽带问题
               <ArrowRight size={20} />
             </Link>
           </div>
@@ -205,7 +196,7 @@ export default async function ATTFiberFAQDetailPage({ params }: ATTFiberFAQPageP
             </Link>
             <span className="text-slate-300">|</span>
             <Link
-              href="/internet/att/fiber"
+              href="/internet/diagnosis"
               className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 font-semibold transition-colors"
             >
               返回 AT&T Fiber 服务页
