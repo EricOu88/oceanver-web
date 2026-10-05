@@ -26,10 +26,10 @@ export default function CoreServicesBlock() {
       description: '账单审计、涨价处理、降费方案',
     },
     {
-      href: '/cellphone/att',
+      href: '/cellphone/diagnosis',
       icon: <Building2 size={24} className="text-blue-700" />,
-      title: 'AT&T 官方手机计划与优惠',
-      description: 'AT&T 预付费、后付费套餐与独家优惠',
+      title: '手机方案问题判断',
+      description: '从账单、设备、转号和线路条件判断下一步',
     },
   ];
 

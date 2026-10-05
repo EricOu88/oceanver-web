@@ -630,7 +630,7 @@ export default function FamilyPlanGuidePage() {
           <p className="text-slate-600 mb-4">相关文章：</p>
           <div className="flex flex-wrap gap-4">
             <Link
-              href="/cellphone/att"
+              href="/cellphone/providers"
               className="text-blue-600 hover:underline font-semibold"
             >
               AT&T 手机计划 →

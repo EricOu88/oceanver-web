@@ -19,13 +19,13 @@ export default function PrepaidPage() {
         </p>
         <div className="space-y-4">
           <Link
-            href="/cellphone/genmobile"
+            href="/cellphone/providers"
             className="block p-4 bg-white rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-md transition"
           >
             Gen Mobile 预付费方案 →
           </Link>
           <Link
-            href="/cellphone/ultra"
+            href="/cellphone/providers"
             className="block p-4 bg-white rounded-xl border border-slate-200 hover:border-blue-400 hover:shadow-md transition"
           >
             Ultra Mobile 预付费方案 →

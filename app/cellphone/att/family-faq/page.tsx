@@ -60,7 +60,7 @@ export default function ATTFamilyFAQPage() {
       <div className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200">
         <div className="max-w-4xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
           <Link
-            href="/cellphone/att"
+            href="/cellphone/providers"
             className="inline-flex items-center gap-1 text-slate-600 hover:text-blue-600 transition-colors font-medium text-sm md:text-base"
           >
             <ChevronLeft size={18} />

@@ -15,12 +15,8 @@ export const SITEMAP_ALLOWLIST = [
   // 手机服务页
   '/cellphone',
   '/cellphone/providers',
-  '/cellphone/att',
   '/cellphone/att/business-faq',
   '/cellphone/att/family-faq',
-  '/cellphone/tmobile',
-  '/cellphone/ultra',
-  '/cellphone/genmobile',
   '/cellphone/government',
   // 账单优化服务页
   '/bill-optimization',

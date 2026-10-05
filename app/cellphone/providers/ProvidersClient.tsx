@@ -29,7 +29,7 @@ const TYPE_CARDS = [
     title: 'AT&T 家庭合约机',
     desc: '适合：家庭多线、长期使用、想要合约机',
     bullets: ['比较线路数量和总月费', '核对设备分期与 bill credit', '不同需求对应不同类型'],
-    href: '/cellphone/att-family',
+    href: '/cellphone/providers',
     icon: Users,
     color: 'cyan',
   },
@@ -37,7 +37,7 @@ const TYPE_CARDS = [
     title: 'AT&T 商业手机方案',
     desc: '适合：公司、店铺、团队多线',
     bullets: ['账户资格和价格需要核实', '商业账单与管理方式不同', '不同需求对应不同方案'],
-    href: '/cellphone/att-business',
+    href: '/cellphone/providers',
     icon: Building2,
     color: 'indigo',
   },
@@ -48,26 +48,26 @@ const OPERATOR_COMPARE = [
   { name: 'Gen Mobile', type: 'Prepaid', crowd: '留学生/回国漫游/预算优先', strength: '低价、国际漫游', difficulty: '低', href: '/cellphone/prepaid' },
   { name: 'Ultra Mobile', type: 'Prepaid', crowd: '新移民/无 SSN/短期', strength: '无 SSN、灵活', difficulty: '低', href: '/cellphone/prepaid' },
   { name: 'T-Mobile', type: 'Prepaid/Family', crowd: '城市用户/国际使用', strength: '国际漫游、城市覆盖', difficulty: '中', href: '/cellphone/prepaid' },
-  { name: 'AT&T', type: 'Family/Business', crowd: '家庭多线/商业多线', strength: '比较覆盖、设备与账户条件', difficulty: '中', href: '/cellphone/att-family' },
-  { name: 'Verizon', type: 'Family', crowd: '信号优先/郊区/乡村', strength: '信号最强、覆盖广', difficulty: '中', href: '/cellphone/att-family' },
+  { name: 'AT&T', type: 'Family/Business', crowd: '家庭多线/商业多线', strength: '比较覆盖、设备与账户条件', difficulty: '中', href: '/cellphone/providers' },
+  { name: 'Verizon', type: 'Family', crowd: '信号优先/郊区/乡村', strength: '信号最强、覆盖广', difficulty: '中', href: '/cellphone/providers' },
 ];
 
 /* ===================== 按场景比较 ===================== */
 const SCENARIO_RECOMEND = [
   { scenario: '新移民 / 无 SSN', desc: '无法办理合约套餐，预付费无需信用检查，落地即用。', href: '/cellphone/prepaid' },
   { scenario: '留学生 / 预算优先', desc: '预付费灵活、可随时换，国内可下单包邮到美，回国也可用。', href: '/cellphone/prepaid' },
-  { scenario: '家庭多线 / 长期使用', desc: '比较线路数量、设备条件、促销期限和退出成本。', href: '/cellphone/att-family' },
-  { scenario: '公司 / 店铺 / 团队多线', desc: '商业方案专属折扣，可扩展多号码，商业账单便于报销。', href: '/cellphone/att-business' },
+  { scenario: '家庭多线 / 长期使用', desc: '比较线路数量、设备条件、促销期限和退出成本。', href: '/cellphone/providers' },
+  { scenario: '公司 / 店铺 / 团队多线', desc: '商业方案专属折扣，可扩展多号码，商业账单便于报销。', href: '/cellphone/providers' },
   { scenario: '经常回国 / 国际使用', desc: '预付费方案多含国际漫游，或可搭配 WiFi Calling。', href: '/cellphone/prepaid' },
 ];
 
 /* ===================== 运营商分组与详情卡 ===================== */
 const OPERATOR_CARDS = [
-  { name: 'Gen Mobile', type: 'Prepaid', tagline: '适合留学生、回国漫游、预算优先用户', pros: ['低价月费', '国际漫游友好', '国内可激活'], cons: ['MVNO 依赖 T-Mobile 网络'], href: '/cellphone/genmobile' },
-  { name: 'Ultra Mobile', type: 'Prepaid', tagline: '适合新移民、无 SSN、短期用户', pros: ['无 SSN 可办', '灵活无合约', '邮寄中美'], cons: ['预付费流量有限'], href: '/cellphone/ultra' },
-  { name: 'T-Mobile', type: 'Prepaid', tagline: '适合城市用户、国际漫游需求', pros: ['国际漫游好', '城市 5G 覆盖', '预付费可选'], cons: ['郊区信号相对弱'], href: '/cellphone/tmobile' },
-  { name: 'AT&T 家庭', type: 'Family', tagline: '比较家庭多线、长期使用的条件', pros: ['线路数量', '设备分期条件', '退出成本'], cons: ['需核对信用与资格'], href: '/cellphone/att-family' },
-  { name: 'AT&T 商业', type: 'Business', tagline: '比较公司、店铺、团队多线的条件', pros: ['账户资格', '账单与管理方式', '线路需求'], cons: ['需商业资格'], href: '/cellphone/att-business' },
+  { name: 'Gen Mobile', type: 'Prepaid', tagline: '适合留学生、回国漫游、预算优先用户', pros: ['低价月费', '国际漫游友好', '国内可激活'], cons: ['MVNO 依赖 T-Mobile 网络'], href: '/cellphone/providers' },
+  { name: 'Ultra Mobile', type: 'Prepaid', tagline: '适合新移民、无 SSN、短期用户', pros: ['无 SSN 可办', '灵活无合约', '邮寄中美'], cons: ['预付费流量有限'], href: '/cellphone/providers' },
+  { name: 'T-Mobile', type: 'Prepaid', tagline: '适合城市用户、国际漫游需求', pros: ['国际漫游好', '城市 5G 覆盖', '预付费可选'], cons: ['郊区信号相对弱'], href: '/cellphone/providers' },
+  { name: 'AT&T 家庭', type: 'Family', tagline: '比较家庭多线、长期使用的条件', pros: ['线路数量', '设备分期条件', '退出成本'], cons: ['需核对信用与资格'], href: '/cellphone/providers' },
+  { name: 'AT&T 商业', type: 'Business', tagline: '比较公司、店铺、团队多线的条件', pros: ['账户资格', '账单与管理方式', '线路需求'], cons: ['需商业资格'], href: '/cellphone/providers' },
   { name: 'Verizon', type: 'Family', tagline: '适合信号优先、郊区乡村用户', pros: ['信号最强', '郊区覆盖好', '高速网络'], cons: ['价格偏高'], href: '/cellphone/diagnosis' },
 ];
 

@@ -130,7 +130,7 @@ export default function CellphoneClient() {
                 </li>
               </ul>
               <Link
-                href="/cellphone/att-family"
+                href="/cellphone/providers"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-xl transition"
               >
                 查看 AT&T 家庭方案
@@ -162,7 +162,7 @@ export default function CellphoneClient() {
                 </li>
               </ul>
               <Link
-                href="/cellphone/att-business"
+                href="/cellphone/providers"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-blue-700 hover:bg-blue-800 text-white font-bold rounded-xl transition"
               >
                 查看 AT&T 商业方案

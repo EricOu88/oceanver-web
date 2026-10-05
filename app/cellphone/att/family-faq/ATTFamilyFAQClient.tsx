@@ -399,7 +399,7 @@ export default function ATTFamilyFAQClient() {
               联系中文顾问
             </Link>
             <Link
-              href="/cellphone/att"
+              href="/cellphone/providers"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-2xl font-bold transition-all backdrop-blur"
             >
               查看 AT&T 套餐方案

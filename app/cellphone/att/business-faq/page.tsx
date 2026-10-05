@@ -68,7 +68,7 @@ export default function ATTBusinessFAQPage() {
         <div className="bg-white border-b border-slate-200">
           <div className="max-w-7xl mx-auto px-6 py-4">
             <Link
-              href="/cellphone/att"
+              href="/cellphone/providers"
               className="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 hover:text-blue-600 transition"
             >
               <ArrowLeft size={18} />

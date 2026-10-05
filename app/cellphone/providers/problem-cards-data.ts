@@ -8,11 +8,11 @@ import {
 } from 'lucide-react';
 
 export const providerSlugMap: Record<string, string> = {
-  'AT&T': '/cellphone/att',
+  'AT&T': '/cellphone/providers',
   'Verizon': '/cellphone/diagnosis',
-  'T-Mobile': '/cellphone/tmobile',
-  'Ultra Mobile': '/cellphone/ultra',
-  'Gen Mobile': '/cellphone/genmobile',
+  'T-Mobile': '/cellphone/providers',
+  'Ultra Mobile': '/cellphone/providers',
+  'Gen Mobile': '/cellphone/providers',
   '政府白卡免费手机': '/cellphone/government',
 };
 
@@ -30,7 +30,7 @@ export const problemCards = [
       '对网络质量要求高的用户'
     ],
     solutions: ['AT&T', 'Verizon'],
-    solutionHrefs: ['/cellphone/att'],
+    solutionHrefs: ['/cellphone/providers'],
     icon: Signal,
     color: 'blue',
     seoKeywords: '信号稳定, 手机套餐, 长期使用'
@@ -45,7 +45,7 @@ export const problemCards = [
       '留学生或新移民家庭'
     ],
     solutions: ['Gen Mobile', 'Ultra Mobile'],
-    solutionHrefs: ['/cellphone/tmobile'],
+    solutionHrefs: ['/cellphone/providers'],
     icon: Globe,
     color: 'indigo',
     seoKeywords: '国际使用, 5G, 国际漫游, 留学生'
@@ -75,7 +75,7 @@ export const problemCards = [
       '想先试用，再决定是否长期使用'
     ],
     solutions: ['Ultra Mobile', '预付费方案'],
-    solutionHrefs: ['/cellphone/ultra'],
+    solutionHrefs: ['/cellphone/providers'],
     icon: CreditCard,
     color: 'green',
     seoKeywords: '留学生, 预付费, 短期访客, 无合约'
@@ -90,7 +90,7 @@ export const problemCards = [
       '电商平台国内收验证码'
     ],
     solutions: ['Gen Mobile', '低价预付费'],
-    solutionHrefs: ['/cellphone/genmobile'],
+    solutionHrefs: ['/cellphone/providers'],
     icon: TrendingUp,
     color: 'orange',
     seoKeywords: '低价套餐, 防涨价, 价格稳定, 性价比'

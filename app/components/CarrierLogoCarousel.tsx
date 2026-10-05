@@ -7,19 +7,19 @@ const CARRIER_LOGOS = [
   {
     name: 'T-Mobile',
     src: '/brands/tmobile.webp',
-    href: '/cellphone/tmobile',
+    href: '/cellphone/providers',
     scale: 1.5,
   },
   {
     name: 'Ultra Mobile',
     src: '/brands/ultra.webp',
-    href: '/cellphone/ultra',
+    href: '/cellphone/providers',
     scale: 1.5,
   },
   {
     name: 'Gen Mobile',
     src: '/brands/genmobile.webp',
-    href: '/cellphone/genmobile',
+    href: '/cellphone/providers',
     scale: 2.4,
   },
   {
