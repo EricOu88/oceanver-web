@@ -58,39 +58,36 @@ export default function Page() {
           <div className="max-w-md">
             <h2 className="text-xl font-bold text-slate-900">美国鸿达电讯</h2>
             <p className="mt-4 text-sm leading-6 text-slate-600">
-              帮助美国中文用户看懂手机和宽带账单，判断问题原因与下一步核实方式。首页内容依据公开规则、已审核真实问题与常见咨询情境整理。
+              帮助美国中文用户看懂手机和宽带账单，判断问题原因与下一步核实方式。内容依据公开规则、已审核问题与常见咨询情境整理。
             </p>
             <p className="mt-4 text-sm text-slate-600">电话：510-849-6191</p>
-            <Link href="/bill-optimization" className="mt-4 inline-block text-sm font-medium text-blue-700 hover:underline">
-              查看完整账单判断指南 →
-            </Link>
           </div>
 
           <div className="border-t border-slate-200 pt-5 sm:border-t-0 sm:pt-0 lg:border-l lg:pl-8">
-            <h3 className="text-sm font-semibold text-slate-900">手机问题</h3>
+            <h3 className="text-sm font-semibold text-slate-900">问题判断</h3>
             <ul className="mt-4 space-y-3 text-sm font-medium text-slate-600">
-              <li><Link href="/cellphone/faq/how-to-choose-us-cellphone-plan" className="hover:text-blue-700">美国手机套餐怎么选</Link></li>
-              <li><Link href="/cellphone/faq/prepaid-vs-postpaid" className="hover:text-blue-700">预付费与后付费比较</Link></li>
+              <li><Link href="/bill-optimization" className="hover:text-blue-700">账单为什么变贵</Link></li>
               <li><Link href="/cellphone/diagnosis" className="hover:text-blue-700">手机问题诊断</Link></li>
-              <li><Link href="/cellphone/faq" className="hover:text-blue-700">美国手机常见问题</Link></li>
-            </ul>
-          </div>
-
-          <div className="border-t border-slate-200 pt-5 sm:border-t-0 sm:pt-0 lg:border-l lg:pl-8">
-            <h3 className="text-sm font-semibold text-slate-900">宽带问题</h3>
-            <ul className="mt-4 space-y-3 text-sm font-medium text-slate-600">
-              <li><Link href="/internet/price-hike" className="hover:text-blue-700">宽带涨价原因</Link></li>
               <li><Link href="/internet/diagnosis" className="hover:text-blue-700">宽带问题诊断</Link></li>
-              <li><Link href="/internet/faq" className="hover:text-blue-700">美国宽带常见问题</Link></li>
-              <li><Link href="/internet/providers" className="hover:text-blue-700">宽带运营商资料</Link></li>
+              <li><Link href="/internet/price-hike" className="hover:text-blue-700">宽带涨价后怎么判断</Link></li>
             </ul>
           </div>
 
           <div className="border-t border-slate-200 pt-5 sm:border-t-0 sm:pt-0 lg:border-l lg:pl-8">
-            <h3 className="text-sm font-semibold text-slate-900">关于鸿达</h3>
+            <h3 className="text-sm font-semibold text-slate-900">常见问题与案例</h3>
+            <ul className="mt-4 space-y-3 text-sm font-medium text-slate-600">
+              <li><Link href="/cellphone/faq" className="hover:text-blue-700">美国手机常见问题</Link></li>
+              <li><Link href="/internet/faq" className="hover:text-blue-700">美国宽带常见问题</Link></li>
+              <li><Link href="/why-us" className="hover:text-blue-700">真实问题与处理案例</Link></li>
+              <li><Link href="/blog" className="hover:text-blue-700">猜你想问</Link></li>
+            </ul>
+          </div>
+
+          <div className="border-t border-slate-200 pt-5 sm:border-t-0 sm:pt-0 lg:border-l lg:pl-8">
+            <h3 className="text-sm font-semibold text-slate-900">关于与联系</h3>
             <ul className="mt-4 space-y-3 text-sm font-medium text-slate-600">
               <li><Link href="/about" className="hover:text-blue-700">关于我们</Link></li>
-              <li><Link href="/contact" className="hover:text-blue-700">联系中文客服</Link></li>
+              <li><Link href="/contact" className="hover:text-blue-700">问题核实与联系</Link></li>
               <li><Link href="/privacy-policy" className="hover:text-blue-700">隐私政策</Link></li>
             </ul>
           </div>
