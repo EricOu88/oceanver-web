@@ -16,11 +16,11 @@ const QUESTIONS = [
 export default function FAQSection() {
   return (
     <section aria-labelledby="homepage-faq-title" className="home-faq-section bg-[#FCFDFE] px-5 md:px-6">
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-[1120px]">
         <h2 id="homepage-faq-title" className="text-left text-3xl font-black text-[#202D3A] md:text-4xl">
           常见问题
         </h2>
-        <div className="mt-5">
+        <div className="mt-7 max-w-[860px] md:mt-8">
           {QUESTIONS.map((item) => (
             <details key={item.question} className="group border-b border-[#E9EEF2] py-5 first:border-t">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[17px] font-bold leading-7 text-[#202D3A] md:text-lg">

@@ -40,14 +40,14 @@ export default async function HomeClient() {
   return (
     <>
       <section aria-labelledby="action-principle-title" className="home-action-section bg-white px-5 md:px-6">
-        <div className="mx-auto max-w-[900px] text-center">
+        <div className="mx-auto max-w-[1120px] text-left">
           <h2 id="action-principle-title" className="text-3xl font-black leading-tight text-[#202D3A] md:text-4xl xl:text-[40px]">
             多数问题先查原因，再决定要不要改变
           </h2>
-          <p className="mx-auto mt-5 max-w-[780px] text-lg leading-[1.8] text-[#40505F]">
+          <p className="mt-4 max-w-[820px] text-lg leading-[1.8] text-[#40505F] md:mt-4">
             账单金额变化本身，不足以说明需要换方案；网络变慢，也可能来自 Wi-Fi、设备或线路，而不一定是套餐速度不足。准备转号时，在号码、设备余额和账户状态没有确认前，也不应先停用旧线路。
           </p>
-          <p className="mx-auto mt-4 max-w-[780px] text-[13px] leading-6 text-slate-400 md:text-sm">
+          <p className="mt-4 max-w-[820px] text-sm leading-[1.8] text-slate-400">
             美国鸿达电讯提供面向美国中文用户的通信问题整理与判断信息，不代表任何运营商官方。具体账户、服务资格、地址覆盖、收费调整及退款结果，以实际账户与运营商记录为准。
           </p>
         </div>
@@ -75,14 +75,14 @@ export default async function HomeClient() {
           </h2>
           <div className="mt-8 grid items-stretch gap-5 md:grid-cols-3 md:gap-6">
             {cases.map(({ id, preview }) => (
-              <article key={id} className="flex h-full min-w-0 flex-col rounded-3xl border border-[#E9EEF2] bg-white p-6 md:p-7">
-                <h3 className="text-lg font-black leading-7 text-[#202D3A] xl:text-xl">{preview.title}</h3>
+              <article key={id} className="home-case-card flex h-full min-w-0 flex-col rounded-3xl border border-[#E9EEF2] bg-white p-6 md:p-7">
+                <h3 className="home-case-title text-lg font-black leading-7 text-[#202D3A] xl:text-xl">{preview.title}</h3>
                 <p className="mt-4 flex-1 leading-7 text-[#526170]">{preview.conclusion}</p>
                 <div className="mt-4">
                   <p className="text-[13px] font-semibold leading-5 text-[#526170]">适用边界</p>
                   <p className="mt-1 text-sm leading-6 text-slate-500">{preview.boundary}</p>
                 </div>
-                <Link href="/why-us" className="mt-5 inline-flex font-bold text-[#164B78] hover:text-[#103B60]">
+                <Link href="/why-us" className="mt-auto inline-flex pt-5 font-bold text-[#164B78] hover:text-[#103B60]">
                   {preview.link} →
                 </Link>
               </article>
@@ -92,8 +92,8 @@ export default async function HomeClient() {
       </section>
 
       <section aria-labelledby="prepare-title" className="home-prepare-section bg-white px-5 md:px-6">
-        <div className="mx-auto grid max-w-[1040px] items-start gap-5 md:grid-cols-[0.82fr_1.18fr] md:gap-12">
-          <h2 id="prepare-title" className="text-balance text-2xl font-black leading-tight text-[#202D3A] md:text-3xl">进入具体判断前，可以先准备什么</h2>
+        <div className="mx-auto grid max-w-[1120px] items-start gap-5 md:grid-cols-[0.82fr_1.18fr] md:gap-12">
+          <h2 id="prepare-title" className="text-balance text-2xl font-black leading-tight text-[#202D3A] md:text-3xl">判断前先准备什么</h2>
           <div>
             <p className="leading-7 text-[#526170]">
               准备最近两期账单、问题发生时间、设备状态，以及与问题相关的地址、退还凭证或账户资料，可以减少误判。不要在公开页面提交完整账号、SSN、身份证件或银行卡信息。
@@ -109,7 +109,7 @@ export default async function HomeClient() {
       <FAQSection />
 
       <section id="contact" className="home-contact-section bg-[#F7FAFC] px-5 md:px-6">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-[1120px]">
           <ContactEntry
             variant="homepage"
             title="看完还是不确定？"
