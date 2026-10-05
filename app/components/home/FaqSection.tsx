@@ -1,76 +1,36 @@
-import Link from 'next/link';
+const QUESTIONS = [
+  {
+    question: '账单有问题，应该找运营商还是找你们？',
+    answer: '现有账户的故障、停机、正式账单争议、退款、取消和设备维修，通常需要联系运营商官方处理。我们可以帮助你整理账单、判断可能原因，以及下一步该核实什么。',
+  },
+  {
+    question: '哪些信息不看账户或地址就无法判断？',
+    answer: '地址覆盖、账户资格、设备余额、Trade-in 状态、当前优惠和部分安装条件，都需要结合实际账户或地址信息核实。',
+  },
+  {
+    question: '什么时候不建议自己先取消服务或转号？',
+    answer: '涉及号码保留、设备分期、eSIM、主账户关系或新地址尚未确认时，不应先取消原服务，以免造成号码、设备或服务中断问题。',
+  },
+];
 
 export default function FAQSection() {
   return (
-    <section className="max-w-4xl mx-auto bg-[#EDF5F9] px-4 py-12">
-      <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">常见问题（FAQ）</h2>
-
-      <div className="space-y-3">
-        <details className="group bg-white rounded-xl border px-5 py-3">
-          <summary className="cursor-pointer font-semibold flex justify-between">
-            账单突然变贵，我应该先检查哪几项？
-            <span className="group-open:rotate-180 transition">⌄</span>
-          </summary>
-          <p className="mt-2 text-slate-600">
-            先看最近两期账单，确认是基础月费上涨、优惠结束、AutoPay 折扣失效，还是设备费、附加服务或一次性费用增加。再检查套餐、线路、设备和促销状态最近是否发生变化。如果仍看不出原因，再根据具体账户或地址条件进一步核实。
-          </p>
-        </details>
-
-        <details className="group bg-white rounded-xl border px-5 py-3">
-          <summary className="cursor-pointer font-semibold flex justify-between">
-            优惠到期后一定要换运营商吗？
-            <span className="group-open:rotate-180 transition">⌄</span>
-          </summary>
-          <p className="mt-2 text-slate-600">
-            不一定。先比较当前价格、可用套餐、设备费用和实际使用需求。有时调整现有方案即可，有时换运营商才更合适。
-          </p>
-        </details>
-
-        <details className="group bg-white rounded-xl border px-5 py-3">
-          <summary className="cursor-pointer font-semibold flex justify-between">
-            AutoPay 折扣为什么突然没有了？
-            <span className="group-open:rotate-180 transition">⌄</span>
-          </summary>
-          <p className="mt-2 text-slate-600">
-            可能与付款方式、银行卡类型、账户状态或运营商规则变化有关。先查看当前账单中的折扣项目以及付款设置。
-          </p>
-        </details>
-
-        <details className="group bg-white rounded-xl border px-5 py-3">
-          <summary className="cursor-pointer font-semibold flex justify-between">
-            手机 Trade-in credit 为什么没有出现在账单上？
-            <span className="group-open:rotate-180 transition">⌄</span>
-          </summary>
-          <p className="mt-2 text-slate-600">
-            可能是抵扣尚未开始、账期延迟、线路或套餐资格变化、设备分期状态或旧设备评估仍在处理中。需要结合具体促销条件判断。
-          </p>
-        </details>
-
-        <details className="group bg-white rounded-xl border px-5 py-3">
-          <summary className="cursor-pointer font-semibold flex justify-between">
-            宽带设备费为什么突然增加？
-            <span className="group-open:rotate-180 transition">⌄</span>
-          </summary>
-          <p className="mt-2 text-slate-600">
-            可能与 modem、router、gateway、Wi-Fi 扩展设备或设备优惠结束有关。先确认账单中新增的设备项目，再决定是否需要调整。
-          </p>
-        </details>
-
-        <details className="group bg-white rounded-xl border px-5 py-3">
-          <summary className="cursor-pointer font-semibold flex justify-between">
-            这次账单变贵，是一次性费用还是以后每个月都会这样？
-            <span className="group-open:rotate-180 transition">⌄</span>
-          </summary>
-          <p className="mt-2 text-slate-600">
-            先比较前后两期账单。安装费、激活费、按比例计费等通常可能是一次性的；基础月费、设备费、附加服务或折扣消失则可能持续影响之后的账单。
-          </p>
-        </details>
-      </div>
-
-      <div className="mt-5 text-center">
-        <Link href="/bill-optimization" className="text-sm font-semibold text-blue-700 hover:underline">
-          查看完整账单判断指南 →
-        </Link>
+    <section aria-labelledby="homepage-faq-title" className="home-faq-section bg-[#FCFDFE] px-5 md:px-6">
+      <div className="mx-auto max-w-4xl">
+        <h2 id="homepage-faq-title" className="text-left text-3xl font-black text-[#202D3A] md:text-4xl">
+          常见问题
+        </h2>
+        <div className="mt-5">
+          {QUESTIONS.map((item) => (
+            <details key={item.question} className="group border-b border-[#E9EEF2] py-5 first:border-t">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[17px] font-bold leading-7 text-[#202D3A] md:text-lg">
+                {item.question}
+                <span aria-hidden="true" className="shrink-0 text-[#164B78] transition group-open:rotate-180">⌄</span>
+              </summary>
+              <p className="mt-4 max-w-[860px] leading-[1.75] text-[#526170]">{item.answer}</p>
+            </details>
+          ))}
+        </div>
       </div>
     </section>
   );

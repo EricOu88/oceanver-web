@@ -1,69 +1,104 @@
-// app/page.tsx  （Server Component）
-import type { Metadata } from 'next'
-import HeroSection from '@/app/components/home/HeroSection'
-import ProblemSelection from '@/app/components/home/ProblemSelection'
-import TrustIndicators from '@/app/components/home/TrustIndicators'
-import ContactEntry from '@/app/components/contact/ContactEntry'
-import HomeClientWrapper from './HomeClientWrapper'
-import CommunityHighlights from '@/app/components/community/CommunityHighlights'
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import HeroSection from '@/app/components/home/HeroSection';
+import HomeClientWrapper from './HomeClientWrapper';
+
+const HOME_TITLE = '手机、宽带账单怎么又贵了？费用、网络与转号问题判断｜美国鸿达电讯';
+const HOME_DESCRIPTION = '手机或宽带账单变贵、网速变慢、设备收费、新地址安装或准备转号换机时，先判断费用、网络、设备、账户与地址发生了什么，再决定是否需要调整或改变方案。';
 
 export const metadata: Metadata = {
-  title: {
-    absolute: '美国手机、宽带账单涨价怎么办？｜美国鸿达电讯',
-  },
-  description:
-    '手机或家庭宽带账单突然变贵？美国鸿达电讯帮助中文用户判断涨价原因、优惠是否到期、是否需要换套餐或换运营商，并处理常见手机与宽带问题。',
+  title: { absolute: HOME_TITLE },
+  description: HOME_DESCRIPTION,
+  alternates: { canonical: 'https://oceanver.com' },
   openGraph: {
-    title: '美国手机、宽带账单涨价怎么办？｜美国鸿达电讯',
-    description:
-      '手机或家庭宽带账单突然变贵？美国鸿达电讯帮助中文用户判断涨价原因、优惠是否到期、是否需要换套餐或换运营商，并处理常见手机与宽带问题。',
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
     siteName: '美国鸿达电讯',
     type: 'website',
     locale: 'zh_CN',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '美国手机、宽带账单涨价怎么办？｜美国鸿达电讯',
-    description:
-      '手机或家庭宽带账单突然变贵？美国鸿达电讯帮助中文用户判断涨价原因、优惠是否到期、是否需要换套餐或换运营商，并处理常见手机与宽带问题。',
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
   },
+};
+
+function BillIncreaseReasons() {
+  return (
+    <section id="bill-increase-reasons" aria-labelledby="bill-increase-reasons-title" className="bg-white px-5 py-10 md:px-6 md:py-14">
+      <div className="mx-auto max-w-[1120px]">
+        <h2 id="bill-increase-reasons-title" className="text-2xl font-black text-[#202D3A] md:text-3xl">为什么账单会突然变贵？</h2>
+        <p className="mt-3 font-semibold text-[#202D3A]">常见原因主要有五类：</p>
+        <ol role="list" className="mt-4 list-decimal space-y-2 pl-6 leading-7 text-[#526170] marker:font-semibold marker:text-[#2786A5]">
+          <li>促销期结束，恢复标准月费</li>
+          <li>AutoPay 等折扣失效</li>
+          <li>运营商调价或套餐调整</li>
+          <li>设备费或附加服务发生变化</li>
+          <li>安装、激活、按比例计费等一次性费用</li>
+        </ol>
+        <p className="mt-4 leading-7 text-[#526170]">先对比最近两期账单中同一服务项目的变化，再判断这次上涨是否会持续。</p>
+        <Link href="/bill-optimization" className="mt-3 inline-flex font-semibold text-[#164B78] hover:text-[#103B60]">按顺序核对账单 →</Link>
+      </div>
+    </section>
+  );
 }
 
 export default function Page() {
   return (
     <>
-      {/* HeroSection - Server Component，最顶部 */}
-      <HeroSection />
+      <main>
+        <HeroSection />
+        <BillIncreaseReasons />
+        <HomeClientWrapper />
+      </main>
 
-      {/* 问题选择三大入口（新增） */}
-      <ProblemSelection />
+      <footer className="border-t border-slate-200 bg-[#FCFDFE] py-12 md:py-14">
+        <div className="mx-auto grid max-w-[1180px] gap-8 px-6 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1fr] lg:gap-12">
+          <div className="max-w-md">
+            <h2 className="text-xl font-bold text-slate-900">美国鸿达电讯</h2>
+            <p className="mt-4 text-sm leading-6 text-slate-600">
+              帮助美国中文用户看懂手机和宽带账单，判断问题原因与下一步核实方式。首页内容依据公开规则、已审核真实问题与常见咨询情境整理。
+            </p>
+            <p className="mt-4 text-sm text-slate-600">电话：510-849-6191</p>
+            <Link href="/bill-optimization" className="mt-4 inline-block text-sm font-medium text-blue-700 hover:underline">
+              查看完整账单判断指南 →
+            </Link>
+          </div>
 
-      {/* 信任/特性条（新增） */}
-      <TrustIndicators />
+          <div className="border-t border-slate-200 pt-5 sm:border-t-0 sm:pt-0 lg:border-l lg:pl-8">
+            <h3 className="text-sm font-semibold text-slate-900">手机问题</h3>
+            <ul className="mt-4 space-y-3 text-sm font-medium text-slate-600">
+              <li><Link href="/cellphone/faq/how-to-choose-us-cellphone-plan" className="hover:text-blue-700">美国手机套餐怎么选</Link></li>
+              <li><Link href="/cellphone/faq/prepaid-vs-postpaid" className="hover:text-blue-700">预付费与后付费比较</Link></li>
+              <li><Link href="/cellphone/diagnosis" className="hover:text-blue-700">手机问题诊断</Link></li>
+              <li><Link href="/cellphone/faq" className="hover:text-blue-700">美国手机常见问题</Link></li>
+            </ul>
+          </div>
 
-      <section aria-labelledby="bill-increase-summary-title" className="mx-auto max-w-5xl bg-white px-6 py-12 md:py-16">
-        <div className="border-y border-slate-200 py-8 md:py-10">
-          <h2 id="bill-increase-summary-title" className="text-2xl font-black text-slate-900 md:text-3xl">
-            手机、宽带账单为什么会突然变贵？
-          </h2>
-          <p className="mt-5 text-base leading-8 text-slate-700 md:text-lg">
-            手机或家庭宽带账单突然变贵，常见原因包括优惠期结束、AutoPay 或其他折扣失效、设备费变化、附加服务增加、套餐调整，以及运营商价格变化。是否需要换套餐、降速、取消附加服务或换运营商，要结合当前账单、地址、账户资格和实际使用需求判断。
-          </p>
-          <p className="mt-6 text-sm text-slate-500">
-            最后更新：2026年10月 · 内容由美国鸿达电讯团队整理与审核
-          </p>
+          <div className="border-t border-slate-200 pt-5 sm:border-t-0 sm:pt-0 lg:border-l lg:pl-8">
+            <h3 className="text-sm font-semibold text-slate-900">宽带问题</h3>
+            <ul className="mt-4 space-y-3 text-sm font-medium text-slate-600">
+              <li><Link href="/internet/price-hike" className="hover:text-blue-700">宽带涨价原因</Link></li>
+              <li><Link href="/internet/diagnosis" className="hover:text-blue-700">宽带问题诊断</Link></li>
+              <li><Link href="/internet/faq" className="hover:text-blue-700">美国宽带常见问题</Link></li>
+              <li><Link href="/internet/providers" className="hover:text-blue-700">宽带运营商资料</Link></li>
+            </ul>
+          </div>
+
+          <div className="border-t border-slate-200 pt-5 sm:border-t-0 sm:pt-0 lg:border-l lg:pl-8">
+            <h3 className="text-sm font-semibold text-slate-900">关于鸿达</h3>
+            <ul className="mt-4 space-y-3 text-sm font-medium text-slate-600">
+              <li><Link href="/about" className="hover:text-blue-700">关于我们</Link></li>
+              <li><Link href="/contact" className="hover:text-blue-700">联系中文客服</Link></li>
+              <li><Link href="/privacy-policy" className="hover:text-blue-700">隐私政策</Link></li>
+            </ul>
+          </div>
         </div>
-      </section>
-
-      {/* 首页下半部 - Server Component；仅局部交互保留 Client 边界 */}
-      <HomeClientWrapper />
-
-      <CommunityHighlights />
-
-      {/* ContactSection - Server Component，在业务介绍之后 */}
-      <div className="max-w-6xl mx-auto bg-[#EAF2F6] px-6 py-8 md:py-12">
-        <ContactEntry />
-      </div>
+        <div className="mx-auto mt-10 max-w-[1180px] border-t border-slate-200 px-6 pt-5 text-sm text-slate-500">
+          © {new Date().getFullYear()} 美国鸿达电讯
+        </div>
+      </footer>
     </>
-  )
+  );
 }

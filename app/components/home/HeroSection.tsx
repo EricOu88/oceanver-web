@@ -1,92 +1,82 @@
-'use client';
-
-import { useState } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, MessageCircle, Phone, Star } from 'lucide-react';
-import WeChatPopup from '@/app/components/WeChatPopup';
+import Link from 'next/link';
+import { ArrowRight, Phone } from 'lucide-react';
 
-const BUSINESS_TEL_DISPLAY = '510-849-6191';
-const BUSINESS_TEL = '+15108496191';
+const QUESTIONS = [
+  {
+    title: '账单变贵了？',
+    description: '先区分折扣、设备费和一次性收费。',
+    link: '查账单为什么变贵',
+    href: '/bill-optimization',
+  },
+  {
+    title: '网速慢或断网？',
+    description: '先分清服务、设备和 Wi-Fi 覆盖。',
+    link: '查宽带问题',
+    href: '/internet/diagnosis',
+  },
+  {
+    title: '要转号或换机？',
+    description: '旧线路先别取消。',
+    link: '查看手机转号与设备问题判断',
+    href: '/cellphone/diagnosis',
+  },
+];
 
 export default function HeroSection() {
-  const [showWeChat, setShowWeChat] = useState(false);
-
   return (
-    <>
-      <section className="relative overflow-hidden bg-[#FCFDFE]">
-        <div className="max-w-[1280px] mx-auto px-5 py-6 md:px-6 md:py-3">
-          <div className="grid items-center gap-7 lg:min-h-[400px] lg:grid-cols-2 lg:gap-8">
-          {/* 左侧：文案 */}
-          <div className="text-center lg:text-left">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#D8E2EA] bg-[#EDF5F9] px-4 py-1.5 text-sm font-bold text-[#246B95]">
-              服务全美华人家庭 · 手机 · 宽带都可以
-            </div>
-
-            <h1 className="mb-4 text-4xl font-extrabold leading-[1.1] tracking-tight text-slate-900 sm:text-[42px] lg:text-[64px]">
-              手机、宽带账单
-              <br />
-              <span className="text-[#2786A5]">怎么又贵了？</span>
-            </h1>
-
-            <p className="mx-auto mb-6 max-w-xl text-lg leading-relaxed text-slate-600 lg:mx-0 lg:mb-7">
-              先帮你判断为什么变贵，再告诉你该不该调整、换方案，还是继续用。
+    <section className="home-hero bg-[#FCFDFE]">
+      <div className="mx-auto max-w-[1280px] px-5 py-12 md:px-6 md:pt-16 md:pb-14 lg:pt-20 lg:pb-16">
+        <div className="grid items-center gap-7 lg:items-start lg:grid-cols-[1.08fr_0.92fr] lg:gap-12">
+          <div className="min-w-0">
+            <p className="mb-4 inline-flex rounded-full border border-[#D8E2EA] bg-[#EDF5F9] px-3.5 py-1 text-sm font-bold text-[#246B95]">
+              美国手机与宽带问题判断
             </p>
-
-            <div className="flex w-full flex-col gap-3 md:flex-row md:flex-wrap">
-              <Link
-                href="/bill-optimization"
-                className="inline-flex min-h-14 w-full min-w-0 items-center justify-center gap-2 rounded-full border-2 border-blue-700 bg-blue-700 px-4 py-3 text-sm font-bold leading-5 text-white shadow-lg shadow-[#164B78]/20 transition-all hover:border-blue-800 hover:bg-blue-800 hover:shadow-xl md:w-[calc(50%-0.375rem)] md:px-4 md:text-sm"
-              >
-                <span className="min-w-0 text-center">帮我查为什么变贵了</span>
-                <ArrowRight size={18} className="shrink-0" />
-              </Link>
-
-              <button
-                type="button"
-                onClick={() => setShowWeChat(true)}
-                className="inline-flex min-h-14 w-full min-w-0 items-center justify-center gap-2 rounded-full border-2 border-[#164B78] bg-white px-4 py-3 text-sm font-bold leading-5 text-[#164B78] shadow-md transition-all hover:bg-[#EDF5F9] hover:shadow-lg md:w-[calc(50%-0.375rem)] md:px-4 md:text-sm"
-              >
-                <MessageCircle size={18} className="shrink-0" />
-                <span className="min-w-0 text-center">不想研究，直接找人帮我看</span>
-              </button>
-
-              <a
-                href={`tel:${BUSINESS_TEL}`}
-                className="inline-flex min-h-14 w-full min-w-0 items-center justify-center gap-2 rounded-full border-2 border-[#164B78] bg-white px-4 py-3 text-sm font-bold leading-5 text-[#164B78] shadow-md transition-all hover:bg-[#EDF5F9] hover:shadow-lg md:w-[calc(50%-0.375rem)] md:px-4 md:text-sm"
-              >
-                <Phone size={18} className="shrink-0" />
-                <span className="min-w-0 text-center">电话咨询 {BUSINESS_TEL_DISPLAY}</span>
-              </a>
-
-              <a
-                href="https://search.google.com/local/reviews?placeid=ChIJX6ngelzGj4ARrdcNVV0c-Gc"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-14 w-full min-w-0 items-center justify-center gap-2 rounded-full border-2 border-[#164B78] bg-white px-4 py-3 text-sm font-bold leading-5 text-[#164B78] shadow-md transition-all hover:bg-[#EDF5F9] hover:shadow-lg md:w-[calc(50%-0.375rem)] md:px-4 md:text-sm"
-              >
-                <Star size={18} className="shrink-0" />
-                <span className="min-w-0 text-center">查看 Google 评价</span>
-              </a>
-            </div>
+            <h1 className="text-[32px] font-black leading-[1.02] tracking-tight text-[#202D3A] sm:text-5xl lg:text-[54px] xl:text-[68px] 2xl:text-[72px]">
+              <span className="block">手机、宽带账单</span>
+              <span className="block text-[#2786A5]">怎么又贵了？</span>
+            </h1>
+            <p className="mt-5 max-w-[620px] text-base leading-7 text-[#526170] md:text-lg md:leading-8">
+              账单变贵、网速变慢或准备转号时，不一定要立刻换运营商或升级套餐。先查清费用或服务为什么变化，再确认问题属于网络、设备、账户还是地址，最后决定下一步。
+            </p>
           </div>
 
-          {/* 右侧：配图占位（素材到位后替换） */}
-          <div className="relative mx-auto h-[200px] w-full max-w-xl overflow-hidden rounded-3xl bg-gradient-to-br from-[#EDF5F9] via-slate-100 to-[#EDF5F9] sm:h-auto sm:aspect-[16/10] lg:max-w-none">
+          <div className="relative mx-auto aspect-[16/9] w-full max-w-xl overflow-hidden rounded-[30px] bg-[#EDF5F9] md:aspect-[16/10] lg:mt-12 lg:aspect-auto lg:h-[360px] lg:max-w-none xl:h-[410px]">
             <Image
               src="/home/hero-bill-review.png"
-              alt="华人用户在家查看手机和宽带账单"
+              alt="客人在查看手机账单"
               fill
               priority
               sizes="(max-width: 1023px) calc(100vw - 40px), 600px"
               className="object-cover object-center"
             />
           </div>
+        </div>
+
+        <div className="mt-10 md:mt-11 xl:mt-12">
+          <h2 className="mb-4 text-xl font-bold text-[#202D3A] md:mb-5 md:text-2xl">从哪个问题开始判断</h2>
+          <div className="grid items-stretch gap-4 md:grid-cols-3 md:gap-5">
+            {QUESTIONS.map((question) => (
+              <article key={question.href} className="group flex h-full min-w-0 flex-col rounded-[22px] border border-[#E8EDF1] bg-white p-5 transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(32,45,58,0.07)] lg:p-6">
+                <h3 className="text-xl font-black leading-7 text-[#202D3A]">{question.title}</h3>
+                <p className="mt-2 flex-1 text-[15px] leading-[1.65] text-[#526170]">{question.description}</p>
+                <Link href={question.href} className="mt-3 line-clamp-2 inline-flex items-center gap-1 text-[15px] font-bold leading-6 text-[#164B78] hover:text-[#103B60]">
+                  {question.link}<ArrowRight size={15} aria-hidden="true" />
+                </Link>
+              </article>
+            ))}
           </div>
         </div>
-      </section>
 
-      {showWeChat && <WeChatPopup onClose={() => setShowWeChat(false)} />}
-    </>
+        <div className="mt-5 flex flex-wrap items-center gap-2 text-sm">
+          <Link href="#contact" className="inline-flex min-h-11 items-center rounded-lg border border-[#D8E2EA] bg-white px-4 font-semibold text-[#164B78] transition hover:border-[#246B95] hover:bg-[#F7FAFC]">我需要核实具体情况</Link>
+          <a href="tel:15108496191" className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-[#D8E2EA] bg-white px-4 font-semibold text-[#164B78] transition hover:border-[#246B95] hover:bg-[#F7FAFC]">
+            <Phone size={15} aria-hidden="true" />电话核实 510-849-6191
+          </a>
+        </div>
+
+        <p className="mt-5 text-xs leading-5 text-slate-400">最后更新：2026 年 10 月 4 日</p>
+      </div>
+    </section>
   );
 }

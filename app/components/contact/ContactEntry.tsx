@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { Phone, MessageCircle, Mail, Copy, X } from 'lucide-react'
+import { Phone, MessageCircle, Mail, Copy, X, ArrowRight } from 'lucide-react'
 import { useState } from 'react'
 
 const WECHAT_ID = '美国鸿达电讯'
@@ -10,10 +10,12 @@ const PHONE_DISPLAY = '510-849-6191' // For display text
 
 export default function ContactEntry({
   title = '看完还是不确定？',
-  subtitle = '如果涉及具体账单、账户资格、地址覆盖或促销条件，可以联系中文客服进一步核实。'
+  subtitle = '如果涉及具体账单、账户资格、地址覆盖或促销条件，可以联系中文客服进一步核实。',
+  variant = 'default',
 }: {
   title?: string
   subtitle?: string
+  variant?: 'default' | 'homepage'
 }) {
   const [copied, setCopied] = useState(false)
   const [showQRModal, setShowQRModal] = useState(false)
@@ -22,6 +24,79 @@ export default function ContactEntry({
     navigator.clipboard.writeText(WECHAT_ID)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
+  }
+
+  const qrModal = showQRModal && (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4 backdrop-blur-sm"
+      onClick={() => setShowQRModal(false)}
+    >
+      <div
+        className="relative w-full max-w-md rounded-3xl bg-white p-8 text-center shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button onClick={() => setShowQRModal(false)} className="absolute right-4 top-4 text-slate-400 transition-colors hover:text-slate-700" aria-label="关闭">
+          <X size={24} />
+        </button>
+        <h3 className="mb-2 text-xl font-black text-slate-900">微信客服二维码</h3>
+        <p className="mb-6 text-sm text-slate-600">长按保存或扫描添加</p>
+        <div className="relative mx-auto h-64 w-64 overflow-hidden rounded-2xl border-4 border-blue-100 bg-white shadow-xl">
+          <Image src="/wechat-qr.jpg" alt="微信二维码｜美国鸿达电讯" fill className="object-contain p-2" priority />
+        </div>
+        <div className="mt-6 rounded-xl border border-blue-200 bg-blue-50 p-4">
+          <p className="mb-2 text-sm font-bold text-slate-700">微信号：</p>
+          <button
+            onClick={() => {
+              copyWechat()
+              setShowQRModal(false)
+            }}
+            className="mx-auto flex items-center justify-center gap-2 text-lg font-black text-blue-700 transition-colors hover:text-blue-900"
+          >
+            {WECHAT_ID}<Copy size={18} />
+          </button>
+          {copied && <p className="mt-2 text-xs font-semibold text-green-600">已复制到剪贴板</p>}
+        </div>
+        <p className="mt-4 text-xs text-slate-500">工作时间内可协助核实具体情况</p>
+      </div>
+    </div>
+  )
+
+  if (variant === 'homepage') {
+    return (
+      <section className="homepage-contact-card grid gap-8 rounded-[30px] border border-[#E8EDF1] bg-white p-6 md:grid-cols-[0.8fr_1.2fr] md:items-center md:gap-12 md:p-10">
+        <div>
+          <h2 className="text-2xl font-black text-slate-900 md:text-3xl">{title}</h2>
+          <p className="mt-4 text-[15px] leading-7 text-slate-600">{subtitle}</p>
+        </div>
+        <div className="divide-y divide-[#E9EEF2]">
+          <button onClick={() => setShowQRModal(true)} className="grid w-full grid-cols-[auto_1fr_auto] items-center gap-4 py-4 text-left first:pt-0 last:pb-0">
+            <MessageCircle size={22} aria-hidden="true" className="text-[#2786A5]" />
+            <span className="min-w-0">
+              <span className="block font-bold text-[#202D3A]">微信咨询</span>
+              <span className="mt-1 block text-sm leading-6 text-[#526170]">扫码添加客服<br />说明需要核实的问题<br />微信号：{WECHAT_ID}</span>
+            </span>
+            <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#164B78]">查看二维码 <ArrowRight size={15} aria-hidden="true" /></span>
+          </button>
+          <a href={`tel:${PHONE_NUMBER}`} className="grid grid-cols-[auto_1fr_auto] items-center gap-4 py-4">
+            <Phone size={22} aria-hidden="true" className="text-[#2786A5]" />
+            <span className="min-w-0">
+              <span className="block font-bold text-[#202D3A]">电话咨询</span>
+              <span className="mt-1 block text-sm leading-6 text-[#526170]">直接拨打<br />美国号码，中文服务</span>
+            </span>
+            <span className="whitespace-nowrap text-sm font-semibold text-[#164B78]">{PHONE_DISPLAY}</span>
+          </a>
+          <a href={`sms:${PHONE_NUMBER}`} className="grid grid-cols-[auto_1fr_auto] items-center gap-4 py-4">
+            <Mail size={22} aria-hidden="true" className="text-[#2786A5]" />
+            <span className="min-w-0">
+              <span className="block font-bold text-[#202D3A]">短信咨询</span>
+              <span className="mt-1 block text-sm leading-6 text-[#526170]">发送短信<br />说明需要核实的问题</span>
+            </span>
+            <span className="text-sm font-semibold text-[#526170]">中文服务</span>
+          </a>
+        </div>
+        {qrModal}
+      </section>
+    )
   }
 
   return (
@@ -95,68 +170,7 @@ export default function ContactEntry({
         </a>
       </div>
 
-      {/* 二维码放大模态框 */}
-      {showQRModal && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-black/70 backdrop-blur-sm"
-          onClick={() => setShowQRModal(false)}
-        >
-          <div
-            className="relative bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setShowQRModal(false)}
-              className="absolute right-4 top-4 text-slate-400 hover:text-slate-700 transition-colors"
-              aria-label="关闭"
-            >
-              <X size={24} />
-            </button>
-
-            <h3 className="text-xl font-black text-slate-900 mb-2">
-              微信客服二维码
-            </h3>
-            <p className="text-sm text-slate-600 mb-6">
-              长按保存或扫描添加
-            </p>
-
-            <div className="relative mx-auto w-64 h-64 rounded-2xl overflow-hidden border-4 border-blue-100 shadow-xl bg-white">
-              <Image
-                src="/wechat-qr.jpg"
-                alt="微信二维码｜美国鸿达电讯"
-                fill
-                className="object-contain p-2"
-                priority
-              />
-            </div>
-
-            <div className="mt-6 p-4 bg-blue-50 rounded-xl border border-blue-200">
-              <p className="text-sm font-bold text-slate-700 mb-2">
-                微信号：
-              </p>
-              <button
-                onClick={() => {
-                  copyWechat()
-                  setShowQRModal(false)
-                }}
-                className="text-lg font-black text-blue-700 hover:text-blue-900 transition-colors flex items-center justify-center gap-2 mx-auto"
-              >
-                {WECHAT_ID}
-                <Copy size={18} />
-              </button>
-              {copied && (
-                <p className="text-xs text-green-600 font-semibold mt-2">
-                  已复制到剪贴板
-                </p>
-              )}
-            </div>
-
-            <p className="mt-4 text-xs text-slate-500">
-              工作时间内可协助核实具体情况
-            </p>
-          </div>
-        </div>
-      )}
+      {qrModal}
     </section>
   )
 }
