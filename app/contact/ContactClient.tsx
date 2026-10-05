@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import CopyWechatButton from '@/app/components/CopyWechatButton';
+import { CommunityDiscussionClientOnly } from '@/app/components/community/CommunityDiscussionByPath';
 import { Home, Mail, MessageCircle, Phone } from 'lucide-react';
 
 const CONTACT_PAGE_SCHEMA_JSON =
@@ -104,6 +105,9 @@ export default function ContactClient() {
           </p>
         </div>
       </main>
+      <div className="mx-auto max-w-[1120px] px-5 md:px-6">
+        <CommunityDiscussionClientOnly pageKey="page:/contact" showContactLink={false} />
+      </div>
     </>
   );
 }

@@ -118,8 +118,6 @@ export default function BlogListClient({ posts }: { posts: BlogListPost[] }) {
         </Link>
       </section>
 
-      <CommunityDiscussionClientOnly pageKey="page:/blog" showComments={false} />
-
       <h2 className="mb-5 text-2xl font-black text-slate-900 md:text-3xl">更多问题与指南</h2>
 
       {/* 分类筛选按钮：放在标题下方 */}
@@ -238,6 +236,7 @@ export default function BlogListClient({ posts }: { posts: BlogListPost[] }) {
           ← 返回首页
         </Link>
       </div>
+      <CommunityDiscussionClientOnly pageKey="page:/blog" />
     </main>
   )
 }

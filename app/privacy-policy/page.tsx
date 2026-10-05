@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import CommunityDiscussionByPath from '@/app/components/community/CommunityDiscussionByPath';
 
 export const metadata: Metadata = {
   title: '隐私政策',
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
+    <>
     <main className="max-w-4xl mx-auto px-6 py-12 text-slate-800">
       <h1 className="text-3xl font-extrabold mb-6">
         隐私政策（Privacy Policy）
@@ -46,5 +48,7 @@ export default function PrivacyPage() {
         </p>
       </section>
     </main>
+    <div className="mx-auto max-w-4xl px-6"><CommunityDiscussionByPath /></div>
+    </>
   );
 }

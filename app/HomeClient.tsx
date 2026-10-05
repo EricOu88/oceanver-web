@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import FAQSection from '@/app/components/home/FaqSection';
 import ContactEntry from '@/app/components/contact/ContactEntry';
+import { CommunityDiscussionClientOnly } from '@/app/components/community/CommunityDiscussionByPath';
 import { getPublicCases } from '@/lib/cases/getPublicCases';
 
 const HOMEPAGE_CASE_PREVIEWS: Record<string, { title: string; conclusion: string; boundary: string; link: string }> = {
@@ -117,6 +118,14 @@ export default async function HomeClient() {
           />
         </div>
       </section>
+      <div className="mx-auto max-w-[1120px] px-5 md:px-6">
+        <CommunityDiscussionClientOnly
+          pageKey="page:/"
+          title="讨论与留言"
+          description="有类似的手机、宽带或账单问题，可以在这里留言交流。"
+          showContactLink={false}
+        />
+      </div>
     </>
   );
 }

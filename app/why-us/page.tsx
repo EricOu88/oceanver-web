@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import WhyUsClient from './WhyUsClient';
 import { getPublicCases } from '@/lib/cases/getPublicCases';
+import CommunityDiscussionByPath from '@/app/components/community/CommunityDiscussionByPath';
 
 export const metadata: Metadata = {
   title: { absolute: '真实问题与处理案例｜美国手机与宽带问题｜美国鸿达电讯' },
@@ -21,5 +22,10 @@ export const metadata: Metadata = {
 
 export default async function WhyUsPage() {
   const cases = await getPublicCases();
-  return <WhyUsClient cases={cases} />;
+  return <>
+    <WhyUsClient cases={cases} />
+    <div className="mx-auto max-w-6xl px-6">
+      <CommunityDiscussionByPath />
+    </div>
+  </>;
 }

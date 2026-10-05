@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { getCanonicalUrl } from '@/lib/seo-utils';
+import CommunityDiscussionByPath from '@/app/components/community/CommunityDiscussionByPath';
 
 export const metadata: Metadata = {
   title: '关于我们｜美国鸿达电讯',
@@ -26,6 +27,7 @@ const AboutSchema = () => {
 
 export default function AboutPage() {
   return (
+    <>
     <main className="max-w-4xl mx-auto px-6 py-12 text-slate-800">
       <AboutSchema />
 
@@ -57,5 +59,7 @@ export default function AboutPage() {
         </p>
       </section>
     </main>
+    <div className="mx-auto max-w-4xl px-6"><CommunityDiscussionByPath /></div>
+    </>
   );
 }
