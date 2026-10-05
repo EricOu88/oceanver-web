@@ -96,7 +96,7 @@ export default function FrontierFAQIndexPage() {
                     </h3>
                     <p className="text-slate-600 mb-3">{content.summary}</p>
                   <Link
-                    href={`/internet-wifi/frontier/faq/${item.slug}`}
+                    href={`/internet/frontier/faq#${item.slug}`}
                     className="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm hover:text-blue-700 transition-colors group"
                   >
                     查看详细解答
@@ -129,7 +129,7 @@ export default function FrontierFAQIndexPage() {
                     </h3>
                     <p className="text-slate-600 mb-3">{content.summary}</p>
                     <Link
-                      href={`/internet-wifi/frontier/faq/${item.slug}`}
+                      href={`/internet/frontier/faq#${item.slug}`}
                       className="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm hover:text-blue-700 transition-colors group"
                     >
                       查看详细解答
