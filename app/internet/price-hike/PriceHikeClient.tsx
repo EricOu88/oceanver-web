@@ -149,14 +149,100 @@ export default function PriceHikeClient() {
             </article>
           </div>
         </section>
+{/* 按当前运营商继续检查 */}
+<section className="py-12 px-6 bg-white">
+  <div className="max-w-5xl mx-auto">
+    <div className="text-center mb-8">
+      <h2 className="text-2xl md:text-3xl font-black mb-3">
+        已经知道是哪家宽带？继续看对应的涨价问题
+      </h2>
 
+      <p className="text-slate-600 max-w-3xl mx-auto leading-7">
+        不同运营商的账单结构、促销方式和账户条件不同。
+        如果已经知道当前运营商，可以继续查看对应问题，再决定是否调整或换网。
+      </p>
+    </div>
+
+    <div className="grid gap-5 md:grid-cols-3">
+      <Link
+        href="/internet/xfinity/faq/xfinity-price-increase"
+        className="group rounded-2xl border border-slate-200 bg-slate-50 p-6 hover:border-blue-300 hover:bg-white hover:shadow-md transition"
+      >
+        <h3 className="text-xl font-black mb-2">
+          Xfinity 账单涨价
+        </h3>
+
+        <p className="text-sm text-slate-600 leading-6 mb-4">
+          查看促销结束、基础月费变化和账单项目应该怎么核对。
+        </p>
+
+        <span className="inline-flex items-center gap-2 text-blue-700 font-bold">
+          查看 Xfinity 涨价问题
+          <ArrowRight size={16} />
+        </span>
+      </Link>
+
+      <Link
+        href="/internet/spectrum/faq"
+        className="group rounded-2xl border border-slate-200 bg-slate-50 p-6 hover:border-blue-300 hover:bg-white hover:shadow-md transition"
+      >
+        <h3 className="text-xl font-black mb-2">
+          Spectrum 账单涨价
+        </h3>
+
+        <p className="text-sm text-slate-600 leading-6 mb-4">
+          查看 Spectrum 账单、优惠、设备和套餐变化的常见问题。
+        </p>
+
+        <span className="inline-flex items-center gap-2 text-blue-700 font-bold">
+          查看 Spectrum 常见问题
+          <ArrowRight size={16} />
+        </span>
+      </Link>
+
+      <Link
+        href="/internet/att/fiber/faq/att-fiber-price-increase"
+        className="group rounded-2xl border border-slate-200 bg-slate-50 p-6 hover:border-blue-300 hover:bg-white hover:shadow-md transition"
+      >
+        <h3 className="text-xl font-black mb-2">
+          AT&T Fiber 账单涨价
+        </h3>
+
+        <p className="text-sm text-slate-600 leading-6 mb-4">
+          查看 AT&T Fiber 价格变化、账单项目和下一步核对方法。
+        </p>
+
+        <span className="inline-flex items-center gap-2 text-blue-700 font-bold">
+          查看 AT&T Fiber 涨价问题
+          <ArrowRight size={16} />
+        </span>
+      </Link>
+    </div>
+
+    <p className="mt-6 text-center text-sm text-slate-500">
+      不确定当前涨价原因，也可以先做
+      {' '}
+      <Link
+        href="/internet/diagnosis"
+        className="font-bold text-blue-700 underline underline-offset-4"
+      >
+        宽带问题诊断
+      </Link>
+      。
+    </p>
+  </div>
+</section>
         {/* 三步 */}
         <section className="py-12 px-6">
           <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
             {[
               { icon: <TrendingUp />, title: '账单审核', desc: '检查隐藏涨价与优惠失效' },
               { icon: <Zap />, title: '转网 / 新户', desc: '结合地址和账户资格比较可选方案' },
-              { icon: <CheckCircle2 />, title: 'Retention 谈价', desc: '指导或代沟通争取优惠' },
+              {
+  icon: <CheckCircle2 />,
+  title: '继续留还是换网',
+  desc: '比较当前价格、可选方案和切换成本，再决定下一步'
+},
             ].map((i, idx) => (
               <div key={idx} className="p-8 bg-slate-50 rounded-2xl">
                 <div className="mb-4 text-blue-600">{i.icon}</div>
