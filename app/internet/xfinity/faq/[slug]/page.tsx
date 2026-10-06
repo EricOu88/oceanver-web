@@ -8,7 +8,6 @@ import FAQPageSchema from '@/app/components/seo/FAQPageSchema'
 
 const isPublishedXfinityFAQ = (slug: string) =>
   xfinityFAQIndex.some((item) => item.slug === slug)
-
 interface XfinityFAQPageProps {
   params: Promise<{ slug: string }>
 }
