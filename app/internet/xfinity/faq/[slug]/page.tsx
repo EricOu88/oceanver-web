@@ -27,7 +27,6 @@ export async function generateMetadata({ params }: XfinityFAQPageProps): Promise
   return {
     title: faq.seo.title,
     description: faq.seo.description,
-    keywords: ['Xfinity', 'Xfinity FAQ', 'Xfinity 账单', 'Xfinity 合约', 'Xfinity 取消', 'Xfinity 涨价', 'Xfinity 流量', faq.question],
     alternates: {
       canonical: `https://oceanver.com/internet/xfinity/faq/${slug}`,
     },
@@ -91,7 +90,7 @@ export default async function XfinityFAQDetailPage({ params }: XfinityFAQPagePro
               返回 FAQ 总览
             </Link>
             <Link href="/internet/diagnosis" className="text-sm font-semibold text-slate-700 hover:text-blue-700 transition">
-              Xfinity 服务页
+              宽带问题诊断
             </Link>
           </div>
         </div>
@@ -164,7 +163,7 @@ export default async function XfinityFAQDetailPage({ params }: XfinityFAQPagePro
               href="/internet/diagnosis"
               className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 font-semibold transition-colors"
             >
-              返回 Xfinity 服务页
+              返回宽带问题诊断
             </Link>
           </div>
         </article>

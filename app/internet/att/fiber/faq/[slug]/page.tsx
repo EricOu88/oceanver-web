@@ -104,7 +104,7 @@ export default async function ATTFiberFAQDetailPage({ params }: ATTFiberFAQPageP
                 href="/internet/diagnosis"
                 className="text-sm font-semibold text-slate-700 hover:text-blue-600 transition"
               >
-                AT&T Fiber 服务页
+                宽带问题诊断
               </Link>
             </div>
           </div>
@@ -199,7 +199,7 @@ export default async function ATTFiberFAQDetailPage({ params }: ATTFiberFAQPageP
               href="/internet/diagnosis"
               className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 font-semibold transition-colors"
             >
-              返回 AT&T Fiber 服务页
+              返回宽带问题诊断
             </Link>
           </div>
         </article>
