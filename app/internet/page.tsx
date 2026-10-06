@@ -208,6 +208,8 @@ export default function InternetPage() {
         </Link>
       </section>
 
+      <p className="text-center text-xs text-slate-500">最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前账户与官方规则为准。</p>
+
       {/* ================= FAQ Schema ================= */}
       <FAQPageSchema />
     </main>

@@ -404,6 +404,7 @@ export default function CellphoneClient() {
         </div>
       </section>
 
+      <p className="mx-auto mt-8 max-w-6xl px-4 text-center text-xs text-[#526170]">最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前账户与官方规则为准。</p>
       <footer className="py-8 border-t border-[#164B78]/10 text-center">
         <p className="text-xs font-bold text-[#202D3A]/35">
           © {new Date().getFullYear()} 美国鸿达电讯

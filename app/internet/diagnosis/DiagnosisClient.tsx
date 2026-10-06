@@ -173,6 +173,7 @@ export default function DiagnosisClient({ knowledge }: { knowledge: QADocument[]
         )}
 
         <p className="mx-auto mt-8 flex max-w-3xl items-start gap-2 rounded-2xl border border-[#D8E2EA] bg-[#F1F4F7] p-4 text-sm leading-6 text-[#526170]"><CircleHelp size={18} className="mt-0.5 shrink-0 text-[#2786A5]" />此诊断用于帮助整理问题和自查方向，不会读取账户或地址信息，也不能代替运营商对具体资格、费用和服务状态的确认。</p>
+        <p className="mt-6 text-center text-xs text-[#526170]">最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前账户与官方规则为准。</p>
       </div>
     </main>
   )

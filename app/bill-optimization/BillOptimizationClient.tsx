@@ -248,7 +248,7 @@ export default function BillOptimizationClient() {
         </nav>
 
         <footer className="px-2 py-4 text-center text-sm leading-6 text-slate-500">
-          <p>最后更新：2026年10月</p>
+          <p>最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前账户与官方规则为准。</p>
           <p>内容由美国鸿达电讯团队整理与审核</p>
         </footer>
       </div>

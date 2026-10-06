@@ -263,6 +263,7 @@ export default function PriceHikeClient() {
           </button>
         </section>
 
+        <p className="mx-auto max-w-6xl px-4 pb-6 text-center text-xs text-slate-500">最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前账户与官方规则为准。</p>
         <footer className="py-8 text-center text-xs text-slate-400">
           © {new Date().getFullYear()} 美国鸿达电讯 · 宽带账单检查服务
         </footer>

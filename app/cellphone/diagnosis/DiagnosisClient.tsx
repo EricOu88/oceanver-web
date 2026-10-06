@@ -344,6 +344,7 @@ export default function DiagnosisClient({ knowledge }: DiagnosisClientProps) {
             不知道怎么选也没关系，可以选“不确定是哪一种”，或先查看<Link href="/bill-optimization" className="mx-1 font-semibold text-[#164B78] underline">手机账单判断</Link>。
           </p>
         )}
+        <p className="mt-8 text-center text-xs text-[#526170]">最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前账户与官方规则为准。</p>
       </div>
     </main>
   );

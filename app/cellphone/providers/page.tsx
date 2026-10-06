@@ -349,6 +349,7 @@ export default function CellphoneProvidersPage() {
             <BottomCTAButton />
           </div>
         </section>
+        <p className="mx-auto mb-8 max-w-6xl px-4 text-center text-xs text-[#526170]">最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前账户与官方规则为准。</p>
       </main>
 
       <footer className="py-10 border-t border-slate-100 text-center">
