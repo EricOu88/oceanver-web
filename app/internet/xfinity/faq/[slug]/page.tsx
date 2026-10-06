@@ -23,6 +23,29 @@ interface XfinityFAQPageProps {
 const isPublishedXfinityFAQ = (slug: string) =>
   xfinityFAQIndex.some((item) => item.slug === slug)
 
+const relatedSlugs: Record<string, string[]> = {
+  'xfinity-bill-sudden-increase': ['xfinity-billing-error-appeal', 'xfinity-overcharge-refund', 'xfinity-router-fee'],
+  'xfinity-billing-error-appeal': ['xfinity-bill-sudden-increase', 'xfinity-overcharge-refund', 'xfinity-router-fee'],
+  'xfinity-overcharge-refund': ['xfinity-bill-sudden-increase', 'xfinity-billing-error-appeal', 'xfinity-router-fee'],
+  'xfinity-router-fee': ['xfinity-equipment-not-returned', 'xfinity-technician-visit-fee', 'xfinity-bill-sudden-increase'],
+  'xfinity-equipment-not-returned': ['xfinity-router-fee', 'xfinity-moving-transfer', 'xfinity-move-reinstallation-fee'],
+  'xfinity-outage': ['xfinity-restart-not-working', 'xfinity-judge-line-issue', 'xfinity-night-slow'],
+  'xfinity-night-slow': ['xfinity-judge-line-issue', 'xfinity-outage', 'xfinity-restart-not-working'],
+  'xfinity-restart-not-working': ['xfinity-outage', 'xfinity-judge-line-issue', 'xfinity-night-slow'],
+  'xfinity-technician-visit-fee': ['xfinity-router-fee', 'xfinity-equipment-not-returned', 'xfinity-judge-line-issue'],
+  'xfinity-judge-line-issue': ['xfinity-outage', 'xfinity-night-slow', 'xfinity-restart-not-working'],
+  'xfinity-over-data-fee': ['xfinity-check-data-usage', 'xfinity-bill-sudden-increase', 'xfinity-router-fee'],
+  'xfinity-check-data-usage': ['xfinity-over-data-fee', 'xfinity-bill-sudden-increase'],
+  'xfinity-cancel-before-contract': ['xfinity-mid-month-cancel-refund', 'xfinity-pause-service', 'xfinity-moving-transfer'],
+  'xfinity-mid-month-cancel-refund': ['xfinity-cancel-before-contract', 'xfinity-pause-service', 'xfinity-bill-sudden-increase'],
+  'xfinity-moving-transfer': ['xfinity-new-address-no-coverage', 'xfinity-move-reinstallation-fee', 'xfinity-equipment-not-returned'],
+  'xfinity-new-address-no-coverage': ['xfinity-moving-transfer', 'xfinity-move-reinstallation-fee', 'xfinity-equipment-not-returned'],
+  'xfinity-move-reinstallation-fee': ['xfinity-moving-transfer', 'xfinity-new-address-no-coverage', 'xfinity-equipment-not-returned'],
+  'xfinity-pause-service': ['xfinity-cancel-before-contract', 'xfinity-mid-month-cancel-refund', 'xfinity-moving-transfer'],
+  'xfinity-unpaid-affect-credit': ['xfinity-cancel-before-contract', 'xfinity-billing-error-appeal', 'xfinity-mid-month-cancel-refund'],
+  'xfinity-network-issue-compensation': ['xfinity-outage', 'xfinity-judge-line-issue', 'xfinity-technician-visit-fee'],
+}
+
 export async function generateStaticParams() {
   return xfinityFAQIndex.map((item) => ({
     slug: item.slug,
@@ -85,9 +108,9 @@ export default async function XfinityFAQDetailPage({
     notFound()
   }
 
-  const relatedFAQs = xfinityFAQIndex
-    .filter((item) => item.slug !== slug)
-    .slice(0, 3)
+  const relatedFAQs = (relatedSlugs[slug] ?? [])
+    .map((relatedSlug) => xfinityFAQIndex.find((item) => item.slug === relatedSlug))
+    .filter((item): item is (typeof xfinityFAQIndex)[number] => item !== undefined)
     .map((item) => xfinityFAQContent[item.slug])
     .filter((item): item is XfinityFAQContent => item !== undefined)
 

@@ -20,7 +20,7 @@ const problemCards = [
     title: '账单越来越贵',
     description:
       '先确认是促销结束、基础月费、设备费、AutoPay 折扣还是一次性收费。',
-    href: '/internet/xfinity/faq/xfinity-price-increase',
+    href: '/internet/xfinity/faq/xfinity-bill-sudden-increase',
     action: '查看 Xfinity 涨价判断',
   },
   {
@@ -185,7 +185,7 @@ export default function XfinityClient() {
 
             <div className="flex flex-wrap gap-4">
               <Link
-                href="/internet/xfinity/faq/xfinity-price-increase"
+                href="/internet/xfinity/faq/xfinity-bill-sudden-increase"
                 className="inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]"
               >
                 查看 Xfinity 涨价专项
@@ -301,22 +301,22 @@ export default function XfinityClient() {
           <div className="mt-7 grid gap-4 md:grid-cols-2">
             <FAQLink
               title="Xfinity 账单突然上涨"
-              href="/internet/xfinity/faq/xfinity-price-increase"
+              href="/internet/xfinity/faq/xfinity-bill-sudden-increase"
             />
 
             <FAQLink
               title="Xfinity 提前取消和合约问题"
-              href="/internet/xfinity/faq/xfinity-contract-early-termination"
+              href="/internet/xfinity/faq/xfinity-cancel-before-contract"
             />
 
             <FAQLink
               title="Xfinity 账单为什么每个月不一样"
-              href="/internet/xfinity/faq/xfinity-bill-changes"
+              href="/internet/xfinity/faq/xfinity-bill-sudden-increase"
             />
 
             <FAQLink
               title="Xfinity Data 使用与限制"
-              href="/internet/xfinity/faq/xfinity-data-cap"
+              href="/internet/xfinity/faq/xfinity-check-data-usage"
             />
 
             <FAQLink

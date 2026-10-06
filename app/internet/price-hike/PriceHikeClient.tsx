@@ -305,7 +305,7 @@ export default function PriceHikeClient() {
               <ProviderLink
                 name="Xfinity"
                 description="查看 Xfinity 账单上涨和收费项目判断。"
-                href="/internet/xfinity/faq/xfinity-price-increase"
+                href="/internet/xfinity/faq/xfinity-bill-sudden-increase"
               />
 
               <ProviderLink
