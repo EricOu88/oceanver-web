@@ -4,50 +4,32 @@ import { ArrowLeft } from 'lucide-react'
 import ATTFiberFAQClient from './ATTFiberFAQClient'
 import { getAllFAQsForSchema } from './faq-data'
 
+const pageUrl = 'https://oceanver.com/internet/att/fiber/faq'
+
 export const metadata: Metadata = {
-  title: 'AT&T 光纤 常见问题 | 中文办理 | 无 SSN 可办 | 鸿达电讯',
+  title: 'AT&T Fiber 常见问题 FAQ｜地址、账单、安装与设备｜美国鸿达电讯',
   description:
-    'AT&T Fiber 光纤宽带完整 FAQ：涵盖地址覆盖、套餐选择、价格变化、无 SSN 相关条件、账单问题和速度优化等常见问题。具体条件以当前运营商规则为准。',
-  keywords: [
-    'AT&T Fiber FAQ',
-    'AT&T 光纤 常见问题',
-    'AT&T Fiber 宽带问题',
-    'AT&T Fiber 账单问题',
-    'AT&T Fiber 速度问题',
-    'AT&T Fiber 无SSN办理',
-    'AT&T Fiber 价格优惠',
-    'AT&T Fiber 技术支持',
-    'AT&T 商业光纤',
-    '美国 AT&T 光纤',
-  ],
-  alternates: {
-    canonical: 'https://oceanver.com/internet/att/fiber/faq',
-  },
+    '整理 AT&T Fiber 地址覆盖、是否更换、网速与 Wi-Fi、账单成本、安装设备及账户问题，帮助先判断情况，再确认下一步。',
+  alternates: { canonical: pageUrl },
   openGraph: {
-    title: 'AT&T 光纤 常见问题 | 中文办理 | 无 SSN 可办',
+    title: 'AT&T Fiber 常见问题 FAQ｜美国鸿达电讯',
     description:
-      'AT&T Fiber 光纤宽带完整 FAQ：住家与商业光纤售前售后问题解答。涵盖地址覆盖、套餐、价格、账单等 100+ 个常见问题。',
-    url: 'https://oceanver.com/internet/att/fiber/faq',
+      '按地址覆盖、服务比较、网速、账单、安装和账户问题整理 AT&T Fiber 常见判断信息。',
+    url: pageUrl,
     siteName: '美国鸿达电讯',
     locale: 'zh_CN',
     type: 'website',
   },
 }
 
-// FAQPage Schema for SEO
 function FAQPageSchema() {
-  const allFaqs = getAllFAQsForSchema()
-
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: allFaqs.map((item) => ({
+    mainEntity: getAllFAQsForSchema().map((item) => ({
       '@type': 'Question',
       name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
     })),
   }
 
@@ -63,23 +45,21 @@ export default function Page() {
   return (
     <>
       <FAQPageSchema />
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-        {/* 返回按钮 */}
-        <div className="bg-white border-b border-slate-200 sticky top-0 z-40">
-          <div className="max-w-5xl mx-auto px-4 md:px-6 py-3">
+      <div className="min-h-screen bg-[#FCFDFE]">
+        <div className="border-b border-[#D5E5EC] bg-white">
+          <div className="mx-auto max-w-5xl px-5 py-3 md:px-8">
             <Link
               href="/internet/att-fiber"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-blue-600 transition"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#164B78] hover:text-[#103B60]"
             >
-              <ArrowLeft size={16} />
-              返回 AT&T Fiber 主页
+              <ArrowLeft size={16} /> 返回 AT&amp;T Fiber 判断页
             </Link>
           </div>
         </div>
-
-        {/* FAQ 内容 */}
         <ATTFiberFAQClient />
-        <p className="mx-auto max-w-5xl px-4 pb-8 text-center text-xs text-slate-500">最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前账户与官方规则为准。</p>
+        <p className="mx-auto max-w-5xl px-5 pb-8 text-center text-xs leading-5 text-[#526170] md:px-8">
+          最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前地址、账户与官方规则为准。
+        </p>
       </div>
     </>
   )

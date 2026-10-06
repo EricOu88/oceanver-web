@@ -1,288 +1,151 @@
-'use client'
-
-import { useState } from 'react'
 import Link from 'next/link'
 import {
-  Wifi,
-  Home,
-  Building2,
   ArrowRight,
-  Phone,
-  CheckCircle2,
-  MessageCircle,
+  CircleDollarSign,
+  MapPin,
+  Router,
+  Upload,
+  Wifi,
+  Wrench,
 } from 'lucide-react'
-import AttFiberServiceSchema from './AttFiberServiceSchema'
+
+const checks = [
+  {
+    title: '当前地址能不能装 Fiber',
+    description: '覆盖结果可能受完整地址、单元、楼宇线路和实际订单核验影响；同一片区域的结果也可能不同。',
+    href: '/internet/att/fiber/faq',
+    label: '查看地址与覆盖问题',
+    icon: MapPin,
+  },
+  {
+    title: '现在的宽带真的需要换吗',
+    description: '单个房间 Wi-Fi 慢、单台设备异常或一次短暂 outage，不一定说明当前运营商不适合。',
+    href: '/internet/diagnosis',
+    label: '先诊断宽带问题',
+    icon: Wifi,
+  },
+  {
+    title: '长期成本是否更合适',
+    description: '一起核对持续月费、折扣变化、设备与安装条件，以及取消旧服务可能产生的成本。',
+    href: '/internet/providers',
+    label: '比较宽带长期成本',
+    icon: CircleDollarSign,
+  },
+  {
+    title: '上传速度是否重要',
+    description: '远程办公、视频会议、云备份或频繁上传时，上行表现可能是比较服务的一个维度。',
+    href: '/internet/providers',
+    label: '了解宽带比较维度',
+    icon: Upload,
+  },
+  {
+    title: '地址与安装条件是否合适',
+    description: '先确认现有线路、房屋或物业要求、是否需要技术人员，以及当前可选的预约方式。',
+    href: '/internet/att/fiber/faq',
+    label: '查看安装与设备问题',
+    icon: Wrench,
+  },
+  {
+    title: '是否值得换到 AT&T Fiber',
+    description: '地址可用、实际需求匹配且综合成本合适后，再与现有服务比较；Fiber 并非对每个家庭都更合适。',
+    href: '/internet/providers',
+    label: '进入宽带服务比较',
+    icon: Router,
+  },
+]
+
+const notYetReasons = [
+  '只有一个房间 Wi-Fi 慢或只有一台设备异常',
+  '只遇到一次短暂 outage，原因还未确认',
+  '问题可能来自 Router、Gateway 或设备位置',
+  '刚更换设备，尚未完成基础排查',
+  '只看到首期账单变化，还没区分一次性收费和持续月费',
+]
+
+const worthComparingReasons = [
+  '当前完整地址的可用性已经核实',
+  '现有宽带的持续成本或服务表现与需求不匹配',
+  '上传速度、稳定性或多设备使用有明确需求',
+  '问题并非单纯的室内 Wi-Fi 或单设备现象',
+  '把安装、设备、旧服务取消等成本纳入后仍值得比较',
+]
 
 export default function AttFiberClient() {
-  const [open, setOpen] = useState(false)
-
   return (
-    <>
-      <AttFiberServiceSchema />
-
-      <main className="min-h-screen bg-white text-slate-900">
-
-        {/* 顶部返回 */}
-        <div className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b">
-          <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-            <Link
-              href="/internet/providers"
-              className="text-sm font-semibold text-slate-700 hover:text-blue-700"
-            >
-              ← 返回宽带对比页
-            </Link>
-
-            <div className="flex gap-2">
-              <a
-                href="tel:15108496191"
-                className="hidden sm:flex items-center gap-1 px-4 py-2 border rounded-full text-xs font-bold"
-              >
-                <Phone size={14} />
-                电话咨询
-              </a>
-              <Link
-                href="/contact"
-                className="flex items-center gap-1 px-4 py-2 bg-blue-600 text-white rounded-full text-xs font-bold"
-              >
-                <MessageCircle size={14} />
-                微信咨询
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* HERO */}
-        <section className="bg-gradient-to-b from-blue-50 to-white">
-          <div className="max-w-7xl mx-auto px-6 py-14">
-            <div className="max-w-3xl space-y-6">
-              <span className="inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold">
-                AT&T Fiber 真光纤 · 用户视角
-              </span>
-
-              <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
-                你是在找「真正稳定的光纤宽带」吗？
-              </h1>
-
-              <p className="text-lg text-slate-700">
-                AT&T Fiber 是<strong>真·光纤到户</strong>，
-                在稳定性、延迟、上传速度上明显优于普通有线宽带。
-                但不是所有地址都能装，也不一定适合所有人。
-                如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">美国鸿达电讯首页</Link>。
-                常见问题如<Link href="/internet/att/fiber/faq" className="text-blue-600 hover:text-blue-700 font-semibold underline">AT&T Fiber 会涨价吗？</Link>都有详细解答。
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/contact"
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl text-lg font-bold flex items-center justify-center gap-2"
-                >
-                  查我这个地址能不能装 <ArrowRight />
-                </Link>
-
-                <Link
-                  href="/internet/price-hike"
-                  className="border-2 px-8 py-4 rounded-2xl text-lg font-bold flex items-center justify-center gap-2"
-                >
-                  宽带涨价怎么办 <ArrowRight />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 住家 vs 商业 */}
-        <section className="py-12">
-          <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-6">
-
-            {/* 住家 */}
-            <PlanCard
-              icon={<Home />}
-              badge="住家宽带 Residential"
-              title="适合家庭 / 公寓 / 稳定远程办公"
-              pros={[
-                '上下行对称，视频会议更稳',
-                '延迟低，适合远程办公/学习',
-                '长期稳定，不靠短期促销',
-              ]}
-              cons={[
-                '必须地址支持 AT&T 光纤',
-                '价格通常高于促销型宽带',
-              ]}
-            />
-
-            {/* 商业 */}
-            <PlanCard
-              icon={<Building2 />}
-              badge="商业宽带 Business"
-              title="适合公司 / 店铺 / 对网络极度敏感"
-              pros={[
-                '更高稳定性，适合营业环境',
-                '支持静态 IP（部分方案）',
-                '更适合长期使用，不频繁涨价',
-              ]}
-              cons={[
-                '月费高于住家方案',
-                '部分地址只能装商业',
-              ]}
-            />
-          </div>
-        </section>
-
-        {/* GEO */}
-        <section className="bg-slate-50 py-12">
-          <div className="max-w-5xl mx-auto px-6 space-y-4">
-            <h2 className="text-3xl font-bold">
-              哪些地址更常见 AT&T Fiber？
-            </h2>
-            <p className="text-slate-700">
-              AT&T Fiber 的可用性需要按详细地址查询，<strong>同一城市不同街区差异也可能很大</strong>，
-              必须按地址查询。
-            </p>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="py-14 text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            不确定 AT&T Fiber 是否适合你？
-          </h2>
-          <p className="text-lg text-slate-600 mb-6">
-            中文顾问可免费帮你查询地址、对比 Xfinity / Spectrum / Frontier。
-            如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">美国鸿达电讯首页</Link>。
-            常见问题如<Link href="/internet/att/fiber/faq" className="text-blue-600 hover:text-blue-700 font-semibold underline">AT&T Fiber 会涨价吗？</Link>都有详细解答。
-          </p>
-
-          <Link
-            href="/contact"
-            className="inline-block bg-black text-white px-10 py-4 rounded-2xl text-lg font-bold"
-          >
-            直接找中文顾问
+    <main className="min-h-screen bg-[#FCFDFE] text-[#202D3A]">
+      <div className="border-b border-[#D5E5EC] bg-white">
+        <div className="mx-auto flex max-w-6xl justify-between px-5 py-3 md:px-8">
+          <Link href="/internet/providers" className="text-sm font-semibold text-[#164B78] hover:text-[#103B60]">
+            ← 返回宽带比较
           </Link>
-        </section>
-
-        {/* AT&T Fiber 常见问题模块 - 反向链接到独立 FAQ 页面 */}
-        <section className="bg-slate-50 py-12 border-t border-slate-200">
-          <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-6 text-center">
-              AT&T Fiber 常见问题
-            </h2>
-            <div className="grid md:grid-cols-2 gap-4 mb-8">
-              <Link
-                href="/internet/att/fiber/faq/att-fiber-coverage-areas"
-                className="block p-4 bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all group"
-              >
-                <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">
-                  AT&T Fiber 覆盖哪些地区？我家能装吗？
-                </h3>
-                <p className="text-sm text-slate-600 line-clamp-2">
-                  AT&T Fiber 覆盖范围需要按详细地址查询，城市内不同街区也可能不同...
-                </p>
-              </Link>
-              <Link
-                href="/internet/att/fiber/faq/att-fiber-true-fiber-to-home"
-                className="block p-4 bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all group"
-              >
-                <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">
-                  AT&T Fiber 真的有光纤到家吗？
-                </h3>
-                <p className="text-sm text-slate-600 line-clamp-2">
-                  AT&T Fiber 是真光纤到户，与 Cable 宽带技术不同，稳定性和速度更优...
-                </p>
-              </Link>
-              <Link
-                href="/internet/att/fiber/faq/att-fiber-speed-performance"
-                className="block p-4 bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all group"
-              >
-                <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">
-                  AT&T Fiber 网速真实吗？
-                </h3>
-                <p className="text-sm text-slate-600 line-clamp-2">
-                  AT&T Fiber 实际速度通常接近宣传速度，上下行对称，稳定性高...
-                </p>
-              </Link>
-              <Link
-                href="/internet/att/fiber/faq/att-fiber-price-increase"
-                className="block p-4 bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all group"
-              >
-                <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">
-                  AT&T Fiber 会涨价吗？第一年后多少钱？
-                </h3>
-                <p className="text-sm text-slate-600 line-clamp-2">
-                  AT&T Fiber 促销期限和后续月费可能变化，需核对当前账单条款...
-                </p>
-              </Link>
-              <Link
-                href="/internet/att/fiber/faq/att-fiber-frequent-disconnections"
-                className="block p-4 bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all group"
-              >
-                <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">
-                  AT&T Fiber 经常断网怎么办？
-                </h3>
-                <p className="text-sm text-slate-600 line-clamp-2">
-                  常见原因包括设备故障、线路问题、光纤连接不良...
-                </p>
-              </Link>
-            </div>
-            <div className="text-center">
-              <Link
-                href="/internet/att/fiber/faq"
-                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-colors shadow-lg"
-              >
-                查看所有 AT&T Fiber FAQ
-                <ArrowRight size={20} />
-              </Link>
-            </div>
-          </div>
-        </section>
-
-      </main>
-    </>
-  )
-}
-
-/* ===== 子组件 ===== */
-
-function PlanCard({
-  icon,
-  badge,
-  title,
-  pros,
-  cons,
-}: {
-  icon: React.ReactNode
-  badge: string
-  title: string
-  pros: string[]
-  cons: string[]
-}) {
-  return (
-    <div className="border rounded-3xl p-6 space-y-5 bg-white">
-      <div className="flex justify-between items-start">
-        <div>
-          <span className="inline-block px-3 py-1 rounded-full bg-slate-100 text-sm font-semibold">
-            {badge}
-          </span>
-          <h3 className="text-2xl font-bold mt-4">{title}</h3>
-        </div>
-        <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center">
-          {icon}
+          <a href="tel:15108496191" className="text-sm font-semibold text-[#164B78] hover:text-[#103B60]">
+            电话咨询
+          </a>
         </div>
       </div>
 
-      <ul className="space-y-2">
-        {pros.map((p) => (
-          <li key={p} className="flex gap-2 text-slate-700">
-            <CheckCircle2 className="text-green-600" size={18} />
-            {p}
-          </li>
-        ))}
-      </ul>
+      <section className="bg-[#EDF5F9]">
+        <div className="mx-auto max-w-6xl px-5 py-12 md:px-8 md:py-16">
+          <p className="mb-4 text-sm font-semibold text-[#246B95]">AT&amp;T Fiber 宽带判断</p>
+          <h1 className="max-w-4xl text-3xl font-black leading-tight md:text-5xl">
+            AT&amp;T Fiber 值不值得换？先看地址、需求和长期成本
+          </h1>
+          <p className="mt-5 max-w-3xl text-base leading-7 text-[#526170] md:text-lg md:leading-8">
+            Fiber 不代表每个家庭都一定更适合。先确认当前地址是否可用，再比较现有宽带的长期成本、上传需求、稳定性和安装条件，最后决定是否值得换。
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Link href="/internet/diagnosis" className="inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#164B78] px-5 font-bold text-white transition hover:bg-[#103B60]">
+              还不知道问题在哪里？先诊断 <ArrowRight size={18} />
+            </Link>
+            <Link href="/internet/att/fiber/faq" className="inline-flex min-h-12 items-center rounded-xl border border-[#164B78] bg-white px-5 font-bold text-[#164B78] transition hover:bg-[#EDF5F9]">
+              查看 AT&amp;T Fiber 常见问题
+            </Link>
+          </div>
+        </div>
+      </section>
 
-      <ul className="text-sm text-slate-500 space-y-1">
-        {cons.map((c) => (
-          <li key={c}>• {c}</li>
-        ))}
-      </ul>
-    </div>
+      <section className="mx-auto max-w-6xl px-5 py-12 md:px-8 md:py-16">
+        <h2 className="text-2xl font-black md:text-3xl">比较之前，先确认这 6 件事</h2>
+        <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {checks.map(({ title, description, href, label, icon: Icon }) => (
+            <article key={title} className="rounded-2xl border border-[#D5E5EC] bg-white p-5 shadow-sm">
+              <Icon aria-hidden="true" className="mb-3 text-[#2786A5]" size={22} />
+              <h3 className="text-lg font-bold">{title}</h3>
+              <p className="mt-2 text-sm leading-6 text-[#526170]">{description}</p>
+              <Link href={href} className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-[#164B78] hover:text-[#103B60]">
+                {label} <ArrowRight size={15} />
+              </Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-[#F4F8FA]">
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 md:grid-cols-2 md:px-8 md:py-14">
+          <div>
+            <h2 className="text-xl font-black md:text-2xl">这些情况，先不要急着换 Fiber</h2>
+            <ul className="mt-4 space-y-3 text-sm leading-6 text-[#526170]">
+              {notYetReasons.map((item) => <li key={item}>• {item}</li>)}
+            </ul>
+            <p className="mt-4 text-sm leading-6 text-[#526170]">这些现象不一定说明运营商本身不合适；先定位原因，再决定是否比较新服务。</p>
+          </div>
+          <div>
+            <h2 className="text-xl font-black md:text-2xl">这些情况，才值得认真比较 Fiber</h2>
+            <ul className="mt-4 space-y-3 text-sm leading-6 text-[#526170]">
+              {worthComparingReasons.map((item) => <li key={item}>• {item}</li>)}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 py-10 md:px-8">
+        <p className="rounded-xl border border-[#D5E5EC] bg-white p-5 text-sm leading-6 text-[#526170]">
+          商业宽带应按 SLA、固定 IP、线路和合同单独判断，不与住家 Fiber 混在一起比较。
+        </p>
+        <p className="mt-5 text-center text-xs text-[#526170]">
+          最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前地址、账户与官方规则为准。
+        </p>
+      </section>
+    </main>
   )
 }
