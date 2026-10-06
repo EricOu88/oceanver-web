@@ -1,273 +1,476 @@
-'use client';
+'use client'
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-
-import PriceHikeServiceSchema from '@/app/components/schema/PriceHikeServiceSchema';
-
+import Link from 'next/link'
 import {
-  TrendingUp,
-  MessageCircle,
-  Zap,
-  CheckCircle2,
-  X,
+  ArrowLeft,
   ArrowRight,
-  Copy
-} from 'lucide-react';
+  CheckCircle2,
+  CircleDollarSign,
+  CircleHelp,
+  RefreshCcw,
+  ShieldCheck,
+  TrendingUp,
+} from 'lucide-react'
 
-/* ===================== 微信弹窗 ===================== */
-function WeChatModal({ open, onClose }: { open: boolean; onClose: () => void }) {
-  const [cp, setCp] = useState(false);
-  const ID = '美国鸿达电讯';
+import PriceHikeServiceSchema from '@/app/components/schema/PriceHikeServiceSchema'
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(ID);
-    setCp(true);
-    setTimeout(() => setCp(false), 2000);
-  };
+const hikeReasons = [
+  {
+    title: '原来的优惠或 Credit 到期',
+    description:
+      '促销结束后，基础月费可能恢复到当前账户适用的正常价格。',
+  },
+  {
+    title: '基础月费发生变化',
+    description:
+      '即使没有更换套餐，运营商也可能调整部分服务的基础价格。',
+  },
+  {
+    title: 'AutoPay / Paperless 折扣变化',
+    description:
+      '付款方式、电子账单设置或账户资格变化，都可能让原来的折扣消失。',
+  },
+  {
+    title: '设备费或附加服务增加',
+    description:
+      'Gateway、Router、Extender、附加服务或设备记录变化，都可能增加 recurring charge。',
+  },
+  {
+    title: '一次性费用混在账单里',
+    description:
+      '安装、激活、Technician、设备事件或账单周期调整，可能只影响一期账单。',
+  },
+  {
+    title: '套餐、速度档位或组合服务变化',
+    description:
+      '如果近期改过速度、Bundle 或服务内容，总价也可能随之变化。',
+  },
+]
 
-  if (!open) return null;
+const stayConditions = [
+  '涨价来自一次性费用，而不是长期 recurring charge',
+  '服务质量稳定，长期价格仍在你可接受范围内',
+  '当前问题主要是 Wi-Fi、Router 或设备，而不是运营商本身',
+  '新运营商的地址、安装和长期价格还没有确认',
+]
 
-  return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center px-4">
-      <div className="absolute inset-0 bg-slate-900/70 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative bg-white rounded-[2rem] shadow-2xl p-8 w-full max-w-sm text-center">
-        <button onClick={onClose} className="absolute right-6 top-6 text-slate-500">
-          <X size={24} />
-        </button>
-
-        <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-green-700">
-          <MessageCircle size={32} />
-        </div>
-
-        <h3 className="text-xl font-bold mb-1">添加中文客服</h3>
-        <p className="text-slate-600 mb-6 text-sm">免费检查你的宽带账单</p>
-
-        <div className="relative aspect-square w-48 mx-auto rounded-2xl overflow-hidden border">
-          <Image src="/wechat-qr.jpg" alt="微信客服二维码" fill unoptimized />
-        </div>
-
-        <div className="mt-6 flex items-center justify-between bg-slate-50 p-3 rounded-xl border">
-          <span className="font-bold text-sm">{ID}</span>
-          <button
-            onClick={handleCopy}
-            className={`px-3 py-1.5 rounded-lg text-xs font-bold text-white ${
-              cp ? 'bg-green-600' : 'bg-blue-700'
-            }`}
-          >
-            {cp ? '已复制' : <><Copy size={12} /> 复制</>}
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
+const compareConditions = [
+  '基础月费已经连续两期或以上明显上涨',
+  '原有优惠结束后，新的长期价格超出预算',
+  '设备费或附加项目使总成本长期偏高',
+  '服务质量长期不稳定，而且多次排查仍没有改善',
+  '搬家后当前运营商条件明显不再合适',
+]
 
 export default function PriceHikeClient() {
-  const [open, setOpen] = useState(false);
-
   return (
     <>
-      {/* ✅ Service Schema（只给 Google 看） */}
       <PriceHikeServiceSchema />
 
-      <div className="min-h-screen bg-white text-slate-900">
-        <WeChatModal open={open} onClose={() => setOpen(false)} />
-
-        {/* 顶部 */}
-        <nav className="border-b px-6 py-4">
-          <div className="max-w-7xl mx-auto flex justify-between">
-            <Link href="/internet" className="font-black">← 返回宽带</Link>
-            <button onClick={() => setOpen(true)} className="text-blue-700 font-black">
-              客服咨询
-            </button>
-          </div>
-        </nav>
-
-        {/* Hero */}
-        <section className="py-12 bg-slate-50 text-center px-6">
-          <p className="mb-5 text-sm font-bold tracking-wide text-blue-700">宽带账单变化判断指南</p>
-
-          <h1 className="text-3xl md:text-5xl font-black mb-4">
-            宽带优惠到期后为什么会涨价？
-          </h1>
-
-          <p className="max-w-2xl mx-auto text-slate-600 mb-8">
-            宽带促销价通常只在约定期限内适用；优惠结束后，账单中的基础月费可能恢复为当时适用的标准月费。AutoPay 折扣、设备费、speed tier、bundle 或运营商价格调整也可能改变总额。应先比较账单项目和促销条款，再判断是否需要调整。
-          </p>
-
-          <button
-            onClick={() => setOpen(true)}
-            className="px-10 py-4 bg-blue-700 text-white rounded-2xl font-black shadow-xl"
+      <main className="min-h-screen bg-[#FCFDFE] px-4 py-8 text-[#202D3A] sm:px-6 sm:py-12">
+        <div className="mx-auto max-w-6xl">
+          <Link
+            href="/internet"
+            className="inline-flex items-center gap-2 text-sm text-[#526170] transition hover:text-[#164B78]"
           >
-            免费检查我的账单
-          </button>
-        </section>
+            <ArrowLeft size={16} />
+            返回宽带问题入口
+          </Link>
 
-        <section className="py-12 px-6">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-black mb-3">宽带优惠到期后，账单为什么会涨价？</h2>
-            <p className="max-w-3xl text-slate-700 leading-7 mb-6">
-              如果账单中的促销折扣结束，基础月费可能恢复到该账户当时适用的标准价格。账单总额也可能同时受到其他项目变化影响，因此需要逐项核对，不能只凭总额判断。
+          {/* HERO */}
+          <section className="mx-auto mt-8 max-w-4xl text-center">
+            <p className="text-sm font-bold tracking-wide text-[#2786A5]">
+              宽带长期涨价判断
             </p>
-            <div className="grid gap-4 md:grid-cols-2">
-              {[
-                ['促销价结束', '核对 promotion 的期限、折扣金额和结束日期；以账单及运营商条款为准。'],
-                ['标准月费恢复', '比较促销前后基础套餐费用，确认变化是否出现在同一服务项目。'],
-                ['AutoPay 折扣变化', '查看自动付款或 Paperless 折扣是否仍符合账户当前条件。'],
-                ['设备费变化', '核对 Modem / Router 租赁、设备促销或设备记录是否变化。'],
-                ['Speed tier / bundle 变化', '确认速度档位、组合服务和相应折扣是否被调整。'],
-                ['运营商价格调整', '查看运营商通知和账单基础服务费的变化日期，确认是否影响后续月份。'],
-              ].map(([title, detail]) => (
-                <article key={title} className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                  <h3 className="font-black mb-2">{title}</h3>
-                  <p className="leading-7 text-slate-700">{detail}</p>
-                </article>
+
+            <h1 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">
+              宽带账单涨了，
+              <br className="sm:hidden" />
+              下一步是留、调还是换？
+            </h1>
+
+            <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-[#526170] sm:text-lg">
+              先确认涨价是不是长期的，再比较当前服务质量、真实月费、
+              新方案长期成本和切换条件。不是所有涨价都需要马上换运营商。
+            </p>
+
+            <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
+              <Link
+                href="/bill-optimization"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#164B78] px-6 py-3 font-bold text-white transition hover:bg-[#103B60]"
+              >
+                还没确认原因，先检查账单
+                <ArrowRight size={18} />
+              </Link>
+
+              <Link
+                href="/internet/providers"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-6 py-3 font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-[#F4F8FA]"
+              >
+                已经确认长期涨价，开始比较
+                <ArrowRight size={18} />
+              </Link>
+            </div>
+          </section>
+
+          {/* 涨价原因 */}
+          <section className="mt-16">
+            <p className="text-sm font-bold text-[#2786A5]">
+              先确认到底是哪一项变了
+            </p>
+
+            <h2 className="mt-2 text-2xl font-black sm:text-3xl">
+              宽带账单变贵，常见原因有这 6 类
+            </h2>
+
+            <div className="mt-7 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {hikeReasons.map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-2xl border border-[#D5E5EC] bg-white p-5"
+                >
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#F4F8FA] text-[#164B78]">
+                    <CircleDollarSign size={21} />
+                  </div>
+
+                  <h3 className="mt-4 font-bold">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-2 text-sm leading-6 text-[#526170]">
+                    {item.description}
+                  </p>
+                </div>
               ))}
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="py-12 px-6 bg-slate-50">
-          <div className="max-w-5xl mx-auto grid gap-8 md:grid-cols-2">
-            <article>
-              <h2 className="text-2xl font-black mb-4">怎么判断是不是优惠到期？</h2>
-              <ol className="list-decimal pl-5 space-y-3 leading-7 text-slate-700">
-                <li>对比本月和上月账单中的相同服务项目。</li>
-                <li>查找 promotion、discount 或 credit 行及对应金额。</li>
-                <li>查看是否有 expiration 或 promotional pricing 相关说明。</li>
-                <li>核对 base plan 是否恢复为标准月费。</li>
-                <li>排除 installation、activation 或 prorated charge 等一次性费用。</li>
-              </ol>
-              <p className="mt-4 leading-7 text-slate-700">如果账单没有标明促销期限或项目含义不清，记录变化的行项目和日期，再向运营商核实；不要仅凭总额推断原因。</p>
-            </article>
-            <article className="rounded-2xl border border-blue-200 bg-white p-6">
-              <h2 className="text-2xl font-black mb-4">优惠到期后一定要换运营商吗？</h2>
-              <p className="leading-7 text-slate-700">不一定。先比较当前标准价、现有服务质量、设备和安装成本，以及新运营商促销结束后的长期成本，再结合实际使用需求和账户条件决定是否换套餐或换运营商。促销价格不代表之后的长期费用。</p>
-              <p className="mt-4 leading-7 text-slate-700">如果仍不确定费用是否会持续，可查看<a href="/internet/faq" className="font-semibold text-blue-700 underline">宽带账单 FAQ</a>中的设备费、AutoPay 和一次性费用说明。</p>
-            </article>
-          </div>
-        </section>
-{/* 按当前运营商继续检查 */}
-<section className="py-12 px-6 bg-white">
-  <div className="max-w-5xl mx-auto">
-    <div className="text-center mb-8">
-      <h2 className="text-2xl md:text-3xl font-black mb-3">
-        已经知道是哪家宽带？继续看对应的涨价问题
+          {/* 一次性 vs 长期 */}
+          <section className="mt-16 grid gap-6 lg:grid-cols-2">
+            <InfoCard
+              icon={<RefreshCcw size={23} />}
+              title="先判断：只是这一次高，还是以后都会高"
+            >
+              <p>
+                安装、激活、Technician、设备事件或账期调整，
+                可能只影响一期账单。
+              </p>
+
+              <p>
+                真正需要重点判断的是：
+                <strong className="text-[#202D3A]">
+                  同一项收费是否已经连续出现，以及它是不是 recurring。
+                </strong>
+              </p>
+
+              <Link
+                href="/bill-optimization"
+                className="inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]"
+              >
+                对比最近两期账单
+                <ArrowRight size={16} />
+              </Link>
+            </InfoCard>
+
+            <InfoCard
+              icon={<TrendingUp size={23} />}
+              title="如果已经连续涨了两期以上"
+            >
+              <p>
+                如果基础月费、设备费或其他 recurring charge
+                已经连续出现，就更接近长期成本变化。
+              </p>
+
+              <p>
+                到这一步才值得认真比较：
+                继续留、调整现有方案，还是换到其他运营商。
+              </p>
+            </InfoCard>
+          </section>
+
+          {/* 判断 promo */}
+          <section className="mt-16 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
+            <p className="text-sm font-bold text-[#2786A5]">
+              判断是不是优惠到期
+            </p>
+
+            <h2 className="mt-2 text-2xl font-black sm:text-3xl">
+              先看账单，不要只看总金额
+            </h2>
+
+            <ol className="mt-6 grid gap-4 md:grid-cols-2">
+              {[
+                '对比本月和上月相同服务项目。',
+                '查看 Promotion、Discount 或 Credit 是否减少或消失。',
+                '确认基础 Internet 月费是否变化。',
+                '检查 AutoPay / Paperless Billing 折扣。',
+                '查看 Equipment、Gateway 或其他 recurring charge。',
+                '排除 Installation、Activation、Prorated charge 等一次性项目。',
+              ].map((item, index) => (
+                <li
+                  key={item}
+                  className="flex gap-3 rounded-2xl border border-[#D5E5EC] bg-white p-4 text-sm leading-6 text-[#526170]"
+                >
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#F4F8FA] text-xs font-black text-[#164B78]">
+                    {index + 1}
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ol>
+          </section>
+
+          {/* 不一定要换 */}
+          <section className="mt-16">
+            <p className="text-sm font-bold text-[#2786A5]">
+              涨价不等于一定要换
+            </p>
+
+            <h2 className="mt-2 text-2xl font-black sm:text-3xl">
+              这几种情况，可以先不急着换运营商
+            </h2>
+
+            <div className="mt-7 grid gap-4 md:grid-cols-2">
+              {stayConditions.map((item) => (
+                <div
+                  key={item}
+                  className="flex gap-3 rounded-2xl border border-[#D5E5EC] bg-white p-5"
+                >
+                  <CheckCircle2
+                    size={20}
+                    className="mt-0.5 shrink-0 text-[#2786A5]"
+                  />
+
+                  <p className="text-sm leading-6 text-[#526170]">
+                    {item}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* 值得开始比较 */}
+          <section className="mt-16 rounded-3xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+            <p className="text-sm font-bold text-[#2786A5]">
+              什么情况值得认真比较新方案
+            </p>
+
+            <h2 className="mt-2 text-2xl font-black sm:text-3xl">
+              出现这些情况，可以进入比较阶段
+            </h2>
+
+            <div className="mt-6 space-y-3">
+              {compareConditions.map((item) => (
+                <div
+                  key={item}
+                  className="flex gap-3 rounded-xl bg-[#F4F8FA] p-4"
+                >
+                  <ShieldCheck
+                    size={19}
+                    className="mt-0.5 shrink-0 text-[#164B78]"
+                  />
+
+                  <p className="text-sm leading-6 text-[#526170]">
+                    {item}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <Link
+              href="/internet/providers"
+              className="mt-7 inline-flex items-center gap-2 rounded-xl bg-[#164B78] px-6 py-3 font-bold text-white transition hover:bg-[#103B60]"
+            >
+              开始比较宽带方案
+              <ArrowRight size={18} />
+            </Link>
+          </section>
+
+          {/* 运营商专项 */}
+          <section className="mt-16">
+            <p className="text-sm font-bold text-[#2786A5]">
+              已经知道当前是哪家运营商
+            </p>
+
+            <h2 className="mt-2 text-2xl font-black sm:text-3xl">
+              可以继续查看对应的账单问题
+            </h2>
+
+            <p className="mt-3 max-w-3xl text-sm leading-7 text-[#526170]">
+              不同运营商的账单结构、设备和账户规则不同。
+              如果已经知道当前运营商，可以继续查看专项 FAQ。
+            </p>
+
+            <div className="mt-7 grid gap-4 md:grid-cols-3">
+              <ProviderLink
+                name="Xfinity"
+                description="查看 Xfinity 账单上涨和收费项目判断。"
+                href="/internet/xfinity/faq/xfinity-price-increase"
+              />
+
+              <ProviderLink
+                name="Spectrum"
+                description="查看 Spectrum 账单、费用和账户相关常见问题。"
+                href="/internet/spectrum/faq"
+              />
+
+              <ProviderLink
+                name="AT&T Fiber"
+                description="查看 AT&T Fiber 价格变化和账单判断。"
+                href="/internet/att/fiber/faq/att-fiber-price-increase"
+              />
+            </div>
+          </section>
+
+          {/* 三个出口 */}
+          <section className="mt-16 grid gap-4 md:grid-cols-3">
+            <DecisionCard
+              title="还没看懂账单"
+              description="先确认到底是哪一项费用增加。"
+              href="/bill-optimization"
+              action="继续账单检查"
+            />
+
+            <DecisionCard
+              title="不确定是不是宽带本身的问题"
+              description="先排除 Wi-Fi、设备、线路和地址问题。"
+              href="/internet/diagnosis"
+              action="进入宽带诊断"
+            />
+
+            <DecisionCard
+              title="已经确认长期成本太高"
+              description="再比较不同运营商的长期费用和安装条件。"
+              href="/internet/providers"
+              action="开始比较运营商"
+            />
+          </section>
+
+          {/* 人工边界 */}
+          <section className="mx-auto mt-16 max-w-4xl text-center">
+            <CircleHelp
+              size={28}
+              className="mx-auto text-[#2786A5]"
+            />
+
+            <h2 className="mt-4 text-2xl font-black">
+              有些价格只能结合具体账户确认
+            </h2>
+
+            <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-[#526170]">
+              当前优惠资格、账户 Credit、设备记录和最终可选方案，
+              都可能因账户和地址而不同。页面可以帮助判断方向，
+              但不能代替运营商后台确认。
+            </p>
+
+            <Link
+              href="/contact"
+              className="mt-6 inline-flex items-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-6 py-3 text-sm font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-[#F4F8FA]"
+            >
+              需要时进入人工核实
+              <ArrowRight size={16} />
+            </Link>
+          </section>
+
+          <p className="mt-12 text-center text-xs leading-5 text-[#526170]">
+            最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前账户与官方规则为准。
+          </p>
+        </div>
+      </main>
+    </>
+  )
+}
+
+function InfoCard({
+  icon,
+  title,
+  children,
+}: {
+  icon: React.ReactNode
+  title: string
+  children: React.ReactNode
+}) {
+  return (
+    <div className="rounded-3xl border border-[#D5E5EC] bg-white p-6 sm:p-7">
+      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F4F8FA] text-[#164B78]">
+        {icon}
+      </div>
+
+      <h2 className="mt-4 text-xl font-black">
+        {title}
       </h2>
 
-      <p className="text-slate-600 max-w-3xl mx-auto leading-7">
-        不同运营商的账单结构、促销方式和账户条件不同。
-        如果已经知道当前运营商，可以继续查看对应问题，再决定是否调整或换网。
-      </p>
-    </div>
-
-    <div className="grid gap-5 md:grid-cols-3">
-      <Link
-        href="/internet/xfinity/faq/xfinity-price-increase"
-        className="group rounded-2xl border border-slate-200 bg-slate-50 p-6 hover:border-blue-300 hover:bg-white hover:shadow-md transition"
-      >
-        <h3 className="text-xl font-black mb-2">
-          Xfinity 账单涨价
-        </h3>
-
-        <p className="text-sm text-slate-600 leading-6 mb-4">
-          查看促销结束、基础月费变化和账单项目应该怎么核对。
-        </p>
-
-        <span className="inline-flex items-center gap-2 text-blue-700 font-bold">
-          查看 Xfinity 涨价问题
-          <ArrowRight size={16} />
-        </span>
-      </Link>
-
-      <Link
-        href="/internet/spectrum/faq"
-        className="group rounded-2xl border border-slate-200 bg-slate-50 p-6 hover:border-blue-300 hover:bg-white hover:shadow-md transition"
-      >
-        <h3 className="text-xl font-black mb-2">
-          Spectrum 账单涨价
-        </h3>
-
-        <p className="text-sm text-slate-600 leading-6 mb-4">
-          查看 Spectrum 账单、优惠、设备和套餐变化的常见问题。
-        </p>
-
-        <span className="inline-flex items-center gap-2 text-blue-700 font-bold">
-          查看 Spectrum 常见问题
-          <ArrowRight size={16} />
-        </span>
-      </Link>
-
-      <Link
-        href="/internet/att/fiber/faq/att-fiber-price-increase"
-        className="group rounded-2xl border border-slate-200 bg-slate-50 p-6 hover:border-blue-300 hover:bg-white hover:shadow-md transition"
-      >
-        <h3 className="text-xl font-black mb-2">
-          AT&T Fiber 账单涨价
-        </h3>
-
-        <p className="text-sm text-slate-600 leading-6 mb-4">
-          查看 AT&T Fiber 价格变化、账单项目和下一步核对方法。
-        </p>
-
-        <span className="inline-flex items-center gap-2 text-blue-700 font-bold">
-          查看 AT&T Fiber 涨价问题
-          <ArrowRight size={16} />
-        </span>
-      </Link>
-    </div>
-
-    <p className="mt-6 text-center text-sm text-slate-500">
-      不确定当前涨价原因，也可以先做
-      {' '}
-      <Link
-        href="/internet/diagnosis"
-        className="font-bold text-blue-700 underline underline-offset-4"
-      >
-        宽带问题诊断
-      </Link>
-      。
-    </p>
-  </div>
-</section>
-        {/* 三步 */}
-        <section className="py-12 px-6">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6">
-            {[
-              { icon: <TrendingUp />, title: '账单审核', desc: '检查隐藏涨价与优惠失效' },
-              { icon: <Zap />, title: '转网 / 新户', desc: '结合地址和账户资格比较可选方案' },
-              {
-  icon: <CheckCircle2 />,
-  title: '继续留还是换网',
-  desc: '比较当前价格、可选方案和切换成本，再决定下一步'
-},
-            ].map((i, idx) => (
-              <div key={idx} className="p-8 bg-slate-50 rounded-2xl">
-                <div className="mb-4 text-blue-600">{i.icon}</div>
-                <h3 className="font-black mb-2">{i.title}</h3>
-                <p className="text-sm text-slate-600">{i.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="py-12 px-6 border-t text-center">
-          <button
-            onClick={() => setOpen(true)}
-            className="w-full max-w-3xl mx-auto py-8 bg-slate-900 text-white rounded-[2.5rem] font-black text-xl"
-          >
-            添加客服 · 开始账单优化 <ArrowRight className="inline ml-2" />
-          </button>
-        </section>
-
-        <p className="mx-auto max-w-6xl px-4 pb-6 text-center text-xs text-slate-500">最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前账户与官方规则为准。</p>
-        <footer className="py-8 text-center text-xs text-slate-400">
-          © {new Date().getFullYear()} 美国鸿达电讯 · 宽带账单检查服务
-        </footer>
+      <div className="mt-4 space-y-4 text-sm leading-7 text-[#526170]">
+        {children}
       </div>
-    </>
-  );
+    </div>
+  )
+}
+
+function ProviderLink({
+  name,
+  description,
+  href,
+}: {
+  name: string
+  description: string
+  href: string
+}) {
+  return (
+    <Link
+      href={href}
+      className="group rounded-2xl border border-[#D5E5EC] bg-white p-5 transition hover:border-[#2786A5] hover:shadow-sm"
+    >
+      <h3 className="font-black">
+        {name}
+      </h3>
+
+      <p className="mt-2 text-sm leading-6 text-[#526170]">
+        {description}
+      </p>
+
+      <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[#164B78]">
+        查看专项问题
+        <ArrowRight
+          size={15}
+          className="transition group-hover:translate-x-0.5"
+        />
+      </span>
+    </Link>
+  )
+}
+
+function DecisionCard({
+  title,
+  description,
+  href,
+  action,
+}: {
+  title: string
+  description: string
+  href: string
+  action: string
+}) {
+  return (
+    <Link
+      href={href}
+      className="group rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 transition hover:border-[#2786A5]"
+    >
+      <h3 className="font-black">
+        {title}
+      </h3>
+
+      <p className="mt-2 text-sm leading-6 text-[#526170]">
+        {description}
+      </p>
+
+      <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[#164B78]">
+        {action}
+        <ArrowRight
+          size={15}
+          className="transition group-hover:translate-x-0.5"
+        />
+      </span>
+    </Link>
+  )
 }
