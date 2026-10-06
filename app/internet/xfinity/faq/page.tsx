@@ -6,26 +6,26 @@ import { getAllFAQsForSchema } from './xfinity-faq-data'
 import { getCanonicalUrl } from '@/lib/seo-utils'
 
 export const metadata: Metadata = {
-  title: 'Xfinity 宽带 常见问题 | 中文办理 | 无 SSN 可办 | 鸿达电讯',
+  title: 'Xfinity 常见问题：账单、Wi-Fi、断网、设备与取消｜美国鸿达电讯',
   description:
-    'Xfinity 宽带完整 FAQ：住家与商业宽带售前售后，涵盖地址覆盖、套餐选择、价格变化、无 SSN 相关条件、账单问题和速度优化。中文说明以当前运营商规则为准。',
+    'Xfinity 宽带问题知识库：账单涨价、Wi-Fi 变慢、断网、设备费用、安装地址、搬家、取消和账户问题。先判断问题来源，再决定下一步怎么处理。',
   keywords: [
     'Xfinity FAQ',
     'Xfinity 常见问题',
-    'Xfinity 账单',
-    'Xfinity 涨价',
-    'Xfinity 合约',
+    'Xfinity 账单涨价',
+    'Xfinity WiFi慢',
+    'Xfinity 断网',
+    'Xfinity 设备费',
+    'Xfinity 搬家',
     'Xfinity 取消',
-    'Xfinity 流量上限',
-    'Xfinity Outage',
   ],
   alternates: {
     canonical: getCanonicalUrl('/internet/xfinity/faq'),
   },
   openGraph: {
-    title: 'Xfinity 宽带 常见问题 | 中文办理 | 无 SSN 可办',
+    title: 'Xfinity 常见问题：账单、Wi-Fi、断网、设备与取消',
     description:
-      'Xfinity 宽带完整 FAQ：住家与商业宽带售前售后问题解答。涵盖地址覆盖、套餐、价格、账单等常见问题。',
+      '按实际问题分类整理 Xfinity 宽带常见问题，帮助判断账单、Wi-Fi、线路、设备、安装和账户问题。',
     url: getCanonicalUrl('/internet/xfinity/faq'),
     siteName: '美国鸿达电讯',
     locale: 'zh_CN',
@@ -33,7 +33,6 @@ export const metadata: Metadata = {
   },
 }
 
-// FAQPage Schema for SEO
 function FAQPageSchema() {
   const allFaqs = getAllFAQsForSchema()
 
@@ -53,7 +52,9 @@ function FAQPageSchema() {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(schema),
+      }}
     />
   )
 }
@@ -62,23 +63,25 @@ export default function Page() {
   return (
     <>
       <FAQPageSchema />
-      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-        {/* 返回按钮 */}
-        <div className="bg-white border-b border-slate-200 sticky top-0 z-40">
-          <div className="max-w-5xl mx-auto px-4 md:px-6 py-3">
+
+      <div className="min-h-screen bg-[#FCFDFE]">
+        <div className="sticky top-0 z-40 border-b border-[#D5E5EC] bg-white/95 backdrop-blur">
+          <div className="mx-auto max-w-6xl px-4 py-3 md:px-6">
             <Link
               href="/internet/xfinity"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-blue-600 transition"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#526170] transition hover:text-[#164B78]"
             >
               <ArrowLeft size={16} />
-              返回 Xfinity 主页
+              返回 Xfinity 判断页
             </Link>
           </div>
         </div>
 
-        {/* FAQ 内容 */}
         <XfinityFAQClient />
-        <p className="mx-auto max-w-5xl px-4 pb-8 text-center text-xs text-slate-500">最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前账户与官方规则为准。</p>
+
+        <p className="mx-auto max-w-6xl px-4 pb-10 text-center text-xs leading-5 text-[#526170] md:px-6">
+          最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前地址、账户与官方规则为准。
+        </p>
       </div>
     </>
   )

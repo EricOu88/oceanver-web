@@ -1,136 +1,124 @@
 'use client'
 
-import { useState, useMemo, useRef } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
+import type { ReactNode } from 'react'
 import {
-  Search,
-  ChevronDown,
-  Home,
-  Building2,
-  ShoppingCart,
-  Headphones,
-  MessageSquare,
-  X,
-  Flame,
   ArrowRight,
-  Phone,
+  ChevronDown,
+  CircleDollarSign,
+  CircleHelp,
+  Gauge,
+  MapPin,
+  Router,
+  Search,
+  ShieldCheck,
+  WifiOff,
+  X,
 } from 'lucide-react'
-import { allCategories, FAQSubCategory, FAQItem } from './xfinity-faq-data'
+import {
+  allCategories,
+  type FAQItem,
+  type FAQSubCategory,
+} from './xfinity-faq-data'
 
-// Tab 配置
-const tabConfig: Record<string, {
-  icon: React.ReactNode
-  gradient: string
-  lightGradient: string
-  color: string
-  lightBg: string
-}> = {
-  'residential-pre-sales': {
-    icon: <><Home size={18} /><ShoppingCart size={16} /></>,
-    gradient: 'from-blue-600 to-indigo-600',
-    lightGradient: 'from-blue-50 to-indigo-50',
-    color: 'text-blue-600',
-    lightBg: 'bg-blue-50',
+const tabConfig: Record<
+  string,
+  {
+    icon: ReactNode
+  }
+> = {
+  billing: {
+    icon: <CircleDollarSign size={20} />,
   },
-  'residential-after-sales': {
-    icon: <><Home size={18} /><Headphones size={16} /></>,
-    gradient: 'from-emerald-600 to-teal-600',
-    lightGradient: 'from-emerald-50 to-teal-50',
-    color: 'text-emerald-600',
-    lightBg: 'bg-emerald-50',
+  'wifi-speed': {
+    icon: <Gauge size={20} />,
   },
-  'business-pre-sales': {
-    icon: <><Building2 size={18} /><ShoppingCart size={16} /></>,
-    gradient: 'from-purple-600 to-violet-600',
-    lightGradient: 'from-purple-50 to-violet-50',
-    color: 'text-purple-600',
-    lightBg: 'bg-purple-50',
+  'outage-line': {
+    icon: <WifiOff size={20} />,
   },
-  'business-after-sales': {
-    icon: <><Building2 size={18} /><Headphones size={16} /></>,
-    gradient: 'from-orange-600 to-amber-600',
-    lightGradient: 'from-orange-50 to-amber-50',
-    color: 'text-orange-600',
-    lightBg: 'bg-orange-50',
+  equipment: {
+    icon: <Router size={20} />,
+  },
+  'install-moving': {
+    icon: <MapPin size={20} />,
+  },
+  'account-cancel': {
+    icon: <ShieldCheck size={20} />,
   },
 }
 
 export default function XfinityFAQClient() {
-  const [activeTab, setActiveTab] = useState<string>('residential-pre-sales')
+  const [activeTab, setActiveTab] = useState<string>('billing')
   const [searchQuery, setSearchQuery] = useState('')
   const [openItems, setOpenItems] = useState<Set<string>>(new Set())
-  const [expandedSubCategories, setExpandedSubCategories] = useState<Set<string>>(new Set())
+  const [expandedSubCategories, setExpandedSubCategories] = useState<
+    Set<string>
+  >(new Set())
+
   const subCategoryRefs = useRef<Record<string, HTMLElement | null>>({})
 
-  const activeCategory = allCategories.find(c => c.id === activeTab) || allCategories[0]
-  const config = tabConfig[activeTab]
+  const activeCategory =
+    allCategories.find((category) => category.id === activeTab) ||
+    allCategories[0]
 
-  // 搜索过滤
+  const config = tabConfig[activeCategory.id]
+
   const filteredSubCategories = useMemo(() => {
-    if (!searchQuery.trim()) return activeCategory.subCategories
+    if (!searchQuery.trim()) {
+      return activeCategory.subCategories
+    }
 
     const query = searchQuery.toLowerCase()
+
     return activeCategory.subCategories
-      .map(subCat => ({
-        ...subCat,
-        items: subCat.items.filter(
-          item =>
+      .map((subCategory) => ({
+        ...subCategory,
+        items: subCategory.items.filter(
+          (item) =>
             item.question.toLowerCase().includes(query) ||
             item.answer.toLowerCase().includes(query)
         ),
       }))
-      .filter(subCat => subCat.items.length > 0)
-  }, [searchQuery, activeCategory])
+      .filter((subCategory) => subCategory.items.length > 0)
+  }, [activeCategory, searchQuery])
 
   const totalQuestions = activeCategory.subCategories.reduce(
-    (sum, sub) => sum + sub.items.length,
+    (total, subCategory) => total + subCategory.items.length,
     0
   )
 
   const filteredCount = filteredSubCategories.reduce(
-    (sum, sub) => sum + sub.items.length,
+    (total, subCategory) => total + subCategory.items.length,
     0
   )
 
   const toggleItem = (id: string) => {
-    setOpenItems(prev => {
-      const newSet = new Set(prev)
-      if (newSet.has(id)) {
-        newSet.delete(id)
+    setOpenItems((previous) => {
+      const next = new Set(previous)
+
+      if (next.has(id)) {
+        next.delete(id)
       } else {
-        newSet.add(id)
+        next.add(id)
       }
-      return newSet
+
+      return next
     })
   }
 
   const toggleSubCategory = (id: string) => {
-    setExpandedSubCategories(prev => {
-      const newSet = new Set(prev)
-      if (newSet.has(id)) {
-        newSet.delete(id)
-      } else {
-        newSet.add(id)
-      }
-      return newSet
-    })
-  }
+    setExpandedSubCategories((previous) => {
+      const next = new Set(previous)
 
-  const scrollToSubCategory = (subCatId: string) => {
-    setExpandedSubCategories(prev => new Set([...prev, subCatId]))
-    // 延迟执行滚动，确保 DOM 已更新
-    setTimeout(() => {
-      const element = subCategoryRefs.current[subCatId]
-      if (element && typeof window !== 'undefined') {
-        const headerOffset = 200
-        const elementPosition = element.getBoundingClientRect().top
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth',
-        })
+      if (next.has(id)) {
+        next.delete(id)
+      } else {
+        next.add(id)
       }
-    }, 50)
+
+      return next
+    })
   }
 
   const handleTabChange = (tabId: string) => {
@@ -138,56 +126,101 @@ export default function XfinityFAQClient() {
     setSearchQuery('')
     setOpenItems(new Set())
     setExpandedSubCategories(new Set())
+
     if (typeof window !== 'undefined') {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      })
     }
   }
 
-  const clearSearch = () => {
-    setSearchQuery('')
+  const scrollToSubCategory = (subCategoryId: string) => {
+    setExpandedSubCategories((previous) => {
+      const next = new Set(previous)
+      next.add(subCategoryId)
+      return next
+    })
+
+    setTimeout(() => {
+      const element = subCategoryRefs.current[subCategoryId]
+
+      if (!element || typeof window === 'undefined') {
+        return
+      }
+
+      const headerOffset = 180
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      })
+    }, 50)
   }
 
-  const renderFAQItem = (item: FAQItem, index: number, subCatId: string) => {
-    const itemId = `${subCatId}-${index}`
+  const renderFAQItem = (
+    item: FAQItem,
+    index: number,
+    subCategoryId: string
+  ) => {
+    const itemId = `${subCategoryId}-${index}`
     const isOpen = openItems.has(itemId)
 
     return (
-      <div key={itemId} className="border-b border-slate-100 last:border-b-0">
+      <div
+        key={itemId}
+        className="border-b border-[#D5E5EC] last:border-b-0"
+      >
         <button
+          type="button"
           onClick={() => toggleItem(itemId)}
-          className={`w-full flex items-start justify-between p-4 md:p-5 text-left transition-colors group ${
-            isOpen ? config.lightBg : 'hover:bg-slate-50'
+          className={`flex w-full items-start justify-between gap-4 px-5 py-5 text-left transition ${
+            isOpen ? 'bg-[#F4F8FA]' : 'hover:bg-[#F4F8FA]'
           }`}
           aria-expanded={isOpen}
         >
-          <div className="flex items-start gap-3 flex-1 pr-4">
+          <div className="min-w-0 flex-1">
             {item.isHot && (
-              <Flame size={16} className="text-orange-500 flex-shrink-0 mt-1" />
+              <span className="mb-2 inline-flex rounded-full bg-[#F4F8FA] px-2.5 py-1 text-[11px] font-bold text-[#2786A5]">
+                高频问题
+              </span>
             )}
-            <h3 className={`font-semibold text-base leading-relaxed ${
-              isOpen ? config.color : 'text-slate-800 group-hover:text-slate-900'
-            }`}>
+
+            <h3 className="text-base font-bold leading-7 text-[#202D3A]">
               {item.question}
             </h3>
           </div>
-          <div className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-all ${
-            isOpen ? `bg-gradient-to-br ${config.gradient} text-white` : 'bg-slate-100 text-slate-500'
-          }`}>
+
+          <div
+            className={`mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition ${
+              isOpen
+                ? 'border-[#164B78] bg-[#164B78] text-white'
+                : 'border-[#D5E5EC] bg-white text-[#164B78]'
+            }`}
+          >
             <ChevronDown
-              size={16}
-              className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+              size={17}
+              className={`transition-transform ${
+                isOpen ? 'rotate-180' : ''
+              }`}
             />
           </div>
         </button>
+
         <div
           className={`grid transition-all duration-300 ${
-            isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+            isOpen
+              ? 'grid-rows-[1fr] opacity-100'
+              : 'grid-rows-[0fr] opacity-0'
           }`}
         >
           <div className="overflow-hidden">
-            <div className="px-4 md:px-5 pb-4 md:pb-5">
-              <div className={`rounded-xl p-4 ${config.lightBg} border border-slate-200/50`}>
-                <p className="text-slate-700 leading-relaxed whitespace-pre-line text-sm md:text-base">
+            <div className="px-5 pb-5">
+              <div className="rounded-2xl border border-[#D5E5EC] bg-[#FCFDFE] p-5">
+                <p className="whitespace-pre-line text-sm leading-7 text-[#526170] md:text-base">
                   {item.answer}
                 </p>
               </div>
@@ -198,53 +231,77 @@ export default function XfinityFAQClient() {
     )
   }
 
-  const renderSubCategory = (subCat: FAQSubCategory, index: number) => {
-    // 默认不展开，只有用户点击或搜索时才展开
-    const isExpanded = expandedSubCategories.has(subCat.id) || searchQuery.trim() !== ''
+  const renderSubCategory = (
+    subCategory: FAQSubCategory,
+    index: number
+  ) => {
+    const isExpanded =
+      expandedSubCategories.has(subCategory.id) ||
+      searchQuery.trim() !== ''
 
     return (
       <section
-        key={subCat.id}
-        id={subCat.id}
-        ref={el => { subCategoryRefs.current[subCat.id] = el }}
-        className="scroll-mt-52"
+        key={subCategory.id}
+        id={subCategory.id}
+        ref={(element) => {
+          subCategoryRefs.current[subCategory.id] = element
+        }}
+        className="scroll-mt-48"
       >
         <button
-          onClick={() => toggleSubCategory(subCat.id)}
-          className={`w-full flex items-center justify-between p-4 rounded-xl mb-3 transition-all ${
+          type="button"
+          onClick={() => toggleSubCategory(subCategory.id)}
+          className={`mb-3 flex w-full items-center justify-between gap-4 rounded-2xl border p-4 text-left transition ${
             isExpanded
-              ? `bg-gradient-to-r ${config.gradient} text-white shadow-lg`
-              : 'bg-white border border-slate-200 hover:border-slate-300 hover:shadow-md'
+              ? 'border-[#164B78] bg-[#164B78] text-white'
+              : 'border-[#D5E5EC] bg-white text-[#202D3A] hover:border-[#2786A5]'
           }`}
         >
           <div className="flex items-center gap-3">
-            <span className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold ${
-              isExpanded ? 'bg-white/20' : `${config.lightBg} ${config.color}`
-            }`}>
+            <span
+              className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-sm font-black ${
+                isExpanded
+                  ? 'bg-white/15 text-white'
+                  : 'bg-[#F4F8FA] text-[#164B78]'
+              }`}
+            >
               {index + 1}
             </span>
-            <h2 className={`font-bold text-base ${isExpanded ? '' : 'text-slate-800'}`}>
-              {subCat.title}
-            </h2>
-            <span className={`text-sm ${isExpanded ? 'text-white/80' : 'text-slate-400'}`}>
-              ({subCat.items.length} 个问题)
-            </span>
+
+            <div>
+              <h2 className="font-black">
+                {subCategory.title}
+              </h2>
+
+              <p
+                className={`mt-0.5 text-xs ${
+                  isExpanded ? 'text-white/75' : 'text-[#526170]'
+                }`}
+              >
+                {subCategory.items.length} 个问题
+              </p>
+            </div>
           </div>
+
           <ChevronDown
             size={20}
-            className={`transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''} ${
-              isExpanded ? '' : 'text-slate-400'
+            className={`shrink-0 transition-transform ${
+              isExpanded ? 'rotate-180' : ''
             }`}
           />
         </button>
 
         <div
-          className={`transition-all duration-300 overflow-hidden ${
-            isExpanded ? 'max-h-[5000px] opacity-100 mb-6' : 'max-h-0 opacity-0'
+          className={`overflow-hidden transition-all duration-300 ${
+            isExpanded
+              ? 'mb-6 max-h-[5000px] opacity-100'
+              : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-            {subCat.items.map((item, idx) => renderFAQItem(item, idx, subCat.id))}
+          <div className="overflow-hidden rounded-2xl border border-[#D5E5EC] bg-white">
+            {subCategory.items.map((item, itemIndex) =>
+              renderFAQItem(item, itemIndex, subCategory.id)
+            )}
           </div>
         </div>
       </section>
@@ -252,205 +309,296 @@ export default function XfinityFAQClient() {
   }
 
   return (
-    <div className="max-w-5xl mx-auto px-4 md:px-6 py-6 md:py-10">
-      {/* ============ Hero ============ */}
-      <div className="text-center mb-8">
-        <h1 className="text-2xl md:text-4xl font-black text-slate-900 mb-3 leading-tight">
-          Xfinity 宽带 常见问题
-          <span className="block text-lg md:text-xl font-bold text-blue-600 mt-2">
-            中文办理 | 无 SSN 可办
-          </span>
-        </h1>
-        <p className="text-slate-500 text-base md:text-lg">
-          住家 & 商业宽带 · 售前售后全解答
+    <main className="mx-auto max-w-6xl px-4 py-8 md:px-6 md:py-12">
+      {/* Hero */}
+      <section className="mx-auto max-w-4xl text-center">
+        <p className="text-sm font-bold tracking-wide text-[#2786A5]">
+          Xfinity 问题知识库
         </p>
-      </div>
 
-      {/* ============ 四大 Tab ============ */}
-      <div className="mb-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3">
-          {allCategories.map(category => {
-            const catConfig = tabConfig[category.id]
+        <h1 className="mt-3 text-3xl font-black tracking-tight text-[#202D3A] md:text-5xl">
+          Xfinity 出了问题，
+          <br className="sm:hidden" />
+          先找到属于哪一类
+        </h1>
+
+        <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-[#526170] md:text-lg">
+          这里不按“售前 / 售后”分类，而是按照实际遇到的问题整理。
+          先判断是账单、Wi-Fi、线路、设备、安装搬家还是账户问题，
+          再决定下一步怎么处理。
+        </p>
+
+        <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
+          <Link
+            href="/internet/diagnosis"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#164B78] px-6 py-3 font-bold text-white transition hover:bg-[#103B60]"
+          >
+            不知道问题在哪？先诊断
+            <ArrowRight size={18} />
+          </Link>
+
+          <Link
+            href="/internet/xfinity"
+            className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-6 py-3 font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-[#F4F8FA]"
+          >
+            返回 Xfinity 判断页
+            <ArrowRight size={18} />
+          </Link>
+        </div>
+      </section>
+
+      {/* 分类 */}
+      <section className="mt-12">
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
+          {allCategories.map((category) => {
+            const categoryConfig = tabConfig[category.id]
             const isActive = activeTab === category.id
-            const questionsCount = category.subCategories.reduce(
-              (sum, sub) => sum + sub.items.length,
-              0
-            )
 
             return (
               <button
                 key={category.id}
+                type="button"
                 onClick={() => handleTabChange(category.id)}
-                className={`relative p-3 md:p-4 rounded-xl transition-all duration-300 text-left ${
+                className={`rounded-2xl border p-4 text-left transition ${
                   isActive
-                    ? `bg-gradient-to-br ${catConfig.gradient} text-white shadow-lg scale-[1.02]`
-                    : 'bg-white border-2 border-slate-200 hover:border-slate-300 hover:shadow-md'
+                    ? 'border-[#164B78] bg-[#164B78] text-white'
+                    : 'border-[#D5E5EC] bg-white text-[#202D3A] hover:border-[#2786A5]'
                 }`}
               >
-                <div className="flex items-center gap-2 mb-2">
-                  <span className={isActive ? 'text-white' : catConfig.color}>
-                    {catConfig.icon}
-                  </span>
+                <div
+                  className={`mb-3 flex h-10 w-10 items-center justify-center rounded-xl ${
+                    isActive
+                      ? 'bg-white/15 text-white'
+                      : 'bg-[#F4F8FA] text-[#164B78]'
+                  }`}
+                >
+                  {categoryConfig?.icon}
                 </div>
-                <div className={`font-bold text-sm md:text-base ${isActive ? '' : 'text-slate-800'}`}>
+
+                <div className="font-black">
                   {category.shortTitle}
                 </div>
-                <div className={`text-xs mt-1 ${isActive ? 'text-white/80' : 'text-slate-400'}`}>
-                  {questionsCount} 个问题
+
+                <div
+                  className={`mt-1 text-xs leading-5 ${
+                    isActive ? 'text-white/75' : 'text-[#526170]'
+                  }`}
+                >
+                  {category.description}
                 </div>
               </button>
             )
           })}
         </div>
-      </div>
+      </section>
 
-      {/* ============ 搜索框 ============ */}
-      <div className="mb-8">
+      {/* 搜索 */}
+      <section className="mt-8">
         <div className="relative">
           <Search
             size={20}
-            className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-[#526170]"
           />
+
           <input
             type="text"
             value={searchQuery}
-            onChange={e => setSearchQuery(e.target.value)}
-            placeholder={`在「${activeCategory.shortTitle}」中搜索问题...`}
-            className="w-full pl-12 pr-12 py-3.5 rounded-xl border-2 border-slate-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all text-base"
+            onChange={(event) => setSearchQuery(event.target.value)}
+            placeholder={`在“${activeCategory.title}”中搜索问题`}
+            className="w-full rounded-2xl border border-[#D5E5EC] bg-white py-4 pl-12 pr-12 text-base text-[#202D3A] outline-none transition focus:border-[#2786A5]"
           />
+
           {searchQuery && (
             <button
-              onClick={clearSearch}
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+              type="button"
+              onClick={() => setSearchQuery('')}
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-[#526170] transition hover:text-[#202D3A]"
+              aria-label="清除搜索"
             >
               <X size={20} />
             </button>
           )}
         </div>
+
         {searchQuery && (
-          <p className="text-center text-slate-500 mt-3">
-            找到 <span className={`font-bold ${config.color}`}>{filteredCount}</span> 个相关问题
+          <p className="mt-3 text-center text-sm text-[#526170]">
+            找到{' '}
+            <span className="font-bold text-[#164B78]">
+              {filteredCount}
+            </span>{' '}
+            个相关问题
           </p>
         )}
-      </div>
+      </section>
 
-      {/* ============ 分类标题 ============ */}
-      <div className={`flex items-center gap-4 mb-6 p-5 rounded-2xl bg-gradient-to-r ${config.gradient}`}>
-        <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center text-white">
-          {config.icon}
+      {/* 当前分类 */}
+      <section className="mt-8 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 md:p-6">
+        <div className="flex items-start gap-4">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-[#164B78]">
+            {config?.icon}
+          </div>
+
+          <div>
+            <h2 className="text-xl font-black text-[#202D3A] md:text-2xl">
+              {activeCategory.title}
+            </h2>
+
+            <p className="mt-1 text-sm leading-6 text-[#526170]">
+              {activeCategory.description} · 共 {totalQuestions} 个问题
+            </p>
+          </div>
         </div>
-        <div className="text-white">
-          <h2 className="text-xl md:text-2xl font-black">{activeCategory.title}</h2>
-          <p className="text-white/80 text-sm">
-            {activeCategory.description} · {totalQuestions} 个问题
+      </section>
+
+      {/* 快速跳转 */}
+      {!searchQuery && activeCategory.subCategories.length > 1 && (
+        <section className="mt-6 rounded-2xl border border-[#D5E5EC] bg-white p-4">
+          <p className="mb-3 text-sm font-bold text-[#526170]">
+            快速跳转
           </p>
-        </div>
-      </div>
 
-      {/* ============ 快速跳转（非搜索时显示） ============ */}
-      {!searchQuery && (
-        <div className="mb-8 p-4 bg-slate-50 rounded-xl border border-slate-200">
-          <div className="text-sm font-medium text-slate-600 mb-3">快速跳转：</div>
           <div className="flex flex-wrap gap-2">
-            {activeCategory.subCategories.map((subCat, index) => (
+            {activeCategory.subCategories.map((subCategory) => (
               <button
-                key={subCat.id}
-                onClick={() => scrollToSubCategory(subCat.id)}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${config.lightBg} ${config.color} hover:opacity-80`}
+                key={subCategory.id}
+                type="button"
+                onClick={() => scrollToSubCategory(subCategory.id)}
+                className="rounded-lg bg-[#F4F8FA] px-3 py-2 text-sm font-bold text-[#164B78] transition hover:bg-[#D5E5EC]"
               >
-                <span className="w-5 h-5 rounded bg-white/80 flex items-center justify-center text-xs">
-                  {index + 1}
-                </span>
-                {subCat.title}
+                {subCategory.title}
               </button>
             ))}
           </div>
-        </div>
+        </section>
       )}
 
-      {/* ============ FAQ 内容 ============ */}
-      <div className="space-y-4">
-        {filteredSubCategories.map((subCat, index) => renderSubCategory(subCat, index))}
-      </div>
+      {/* FAQ */}
+      <section className="mt-8 space-y-4">
+        {filteredSubCategories.map((subCategory, index) =>
+          renderSubCategory(subCategory, index)
+        )}
+      </section>
 
-      {/* 无结果 */}
       {searchQuery && filteredCount === 0 && (
-        <div className="text-center py-16">
-          <div className="text-6xl mb-4">🔍</div>
-          <h3 className="text-xl font-bold text-slate-700 mb-2">没有找到相关问题</h3>
-          <p className="text-slate-500 mb-6">试试换个关键词，或者直接联系我们</p>
+        <section className="py-16 text-center">
+          <CircleHelp
+            size={34}
+            className="mx-auto text-[#2786A5]"
+          />
+
+          <h3 className="mt-4 text-xl font-black text-[#202D3A]">
+            没找到完全对应的问题
+          </h3>
+
+          <p className="mx-auto mt-2 max-w-xl text-sm leading-6 text-[#526170]">
+            可以换一个关键词，或者先进入宽带问题诊断，
+            根据现象一步步判断问题来源。
+          </p>
+
           <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-bold transition-colors"
+            href="/internet/diagnosis"
+            className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#164B78] px-6 py-3 font-bold text-white transition hover:bg-[#103B60]"
           >
-            <MessageSquare size={18} />
-            联系中文顾问
+            进入宽带问题诊断
+            <ArrowRight size={18} />
           </Link>
-        </div>
+        </section>
       )}
 
-      {/* ============ 底部 CTA ============ */}
-      <div className="mt-12 p-6 md:p-8 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-3xl relative overflow-hidden">
-        {/* 装饰 */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-indigo-500/10 rounded-full blur-3xl" />
+      {/* 下一步 */}
+      <section className="mt-14 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 md:p-8">
+        <p className="text-sm font-bold text-[#2786A5]">
+          看完 FAQ 后怎么走
+        </p>
 
-        <div className="relative text-center">
-          <h3 className="text-xl md:text-2xl font-black text-white mb-2">
-            还有其他问题？
-          </h3>
-          <p className="text-slate-400 mb-6 text-sm md:text-base">
-            我们提供免费地址覆盖查询和中文办理服务
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link
-              href="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl font-bold transition-all shadow-lg"
-            >
-              <MessageSquare size={18} />
-              联系中文顾问
-            </Link>
-            <Link
-              href="/internet/xfinity"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-3 rounded-xl font-bold transition-all"
-            >
-              查看 Xfinity 宽带套餐
-              <ArrowRight size={16} />
-            </Link>
-          </div>
-        </div>
-      </div>
+        <h2 className="mt-2 text-2xl font-black text-[#202D3A]">
+          根据问题类型进入下一步
+        </h2>
 
-      {/* ============ 联系方式 ============ */}
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="flex items-center gap-3 p-4 bg-white rounded-xl border border-slate-200">
-          <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
-            <Phone size={18} className="text-blue-600" />
-          </div>
-          <div>
-            <div className="text-sm text-slate-500">电话咨询</div>
-            <div className="font-bold text-slate-800">510-849-6191</div>
-          </div>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          <NextStepCard
+            title="账单已经明显涨价"
+            description="先确认是不是长期 recurring 成本变化。"
+            href="/internet/price-hike"
+            action="进入涨价判断"
+          />
+
+          <NextStepCard
+            title="还不知道问题在哪里"
+            description="先区分 Wi-Fi、设备、线路还是运营商问题。"
+            href="/internet/diagnosis"
+            action="进入宽带诊断"
+          />
+
+          <NextStepCard
+            title="已经确认想比较其他宽带"
+            description="再比较地址覆盖、长期成本和安装条件。"
+            href="/internet/providers"
+            action="比较其他运营商"
+          />
         </div>
-        <div className="flex items-center gap-3 p-4 bg-white rounded-xl border border-slate-200">
-          <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center">
-            <MessageSquare size={18} className="text-emerald-600" />
-          </div>
-          <div>
-            <div className="text-sm text-slate-500">微信咨询</div>
-            <div className="font-bold text-slate-800">扫码添加顾问</div>
-          </div>
-        </div>
-        <div className="flex items-center gap-3 p-4 bg-white rounded-xl border border-slate-200">
-          <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
-            <Home size={18} className="text-purple-600" />
-          </div>
-          <div>
-            <div className="text-sm text-slate-500">服务范围</div>
-            <div className="font-bold text-slate-800">全美中文说明与远程协助</div>
-          </div>
-        </div>
-      </div>
-    </div>
+      </section>
+
+      {/* 人工边界 */}
+      <section className="mx-auto mt-14 max-w-4xl text-center">
+        <CircleHelp
+          size={28}
+          className="mx-auto text-[#2786A5]"
+        />
+
+        <h2 className="mt-4 text-2xl font-black text-[#202D3A]">
+          有些问题必须看具体账户
+        </h2>
+
+        <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-[#526170]">
+          Promotion、Credit、设备序列号、地址 serviceability、
+          合同、订单状态和账户历史无法仅靠网页判断。
+          如果已经排查到这一步，可以再进入人工核实。
+        </p>
+
+        <Link
+          href="/contact"
+          className="mt-6 inline-flex items-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-6 py-3 text-sm font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-[#F4F8FA]"
+        >
+          需要时进入人工核实
+          <ArrowRight size={16} />
+        </Link>
+      </section>
+    </main>
+  )
+}
+
+function NextStepCard({
+  title,
+  description,
+  href,
+  action,
+}: {
+  title: string
+  description: string
+  href: string
+  action: string
+}) {
+  return (
+    <Link
+      href={href}
+      className="group rounded-2xl border border-[#D5E5EC] bg-white p-5 transition hover:border-[#2786A5]"
+    >
+      <h3 className="font-black text-[#202D3A]">
+        {title}
+      </h3>
+
+      <p className="mt-2 text-sm leading-6 text-[#526170]">
+        {description}
+      </p>
+
+      <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[#164B78]">
+        {action}
+        <ArrowRight
+          size={15}
+          className="transition group-hover:translate-x-0.5"
+        />
+      </span>
+    </Link>
   )
 }
