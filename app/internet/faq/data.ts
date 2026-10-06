@@ -6,157 +6,125 @@ export interface InternetFAQEntry {
 
 export const internetFAQData: InternetFAQEntry[] = [
   {
-    question: '光纤、Cable 和 DSL 宽带有什么区别？',
+    question: 'Fiber、Cable 和 DSL 宽带有什么区别？',
     answer:
-      '光纤（Fiber）通过光信号传输，上下行对称、延迟低、最稳定，适合远程办公和在线会议；Cable 用同轴电缆，下行快、上行较慢，高峰时段可能略降速，覆盖广；DSL 走电话线，速度与稳定性最弱，多用于偏远地区。选型时优先看地址有无光纤覆盖，有则选 Fiber，否则选 Cable；DSL 仅作兜底。',
-    relatedProviders: [
-      { name: 'AT&T Fiber', href: '/internet/att/fiber/faq' },
-      { name: 'Frontier', href: '/internet/frontier/faq' },
-      { name: 'Xfinity', href: '/internet/xfinity/faq' },
-      { name: 'Spectrum', href: '/internet/spectrum/faq' },
-    ],
+      'Fiber、Cable 和 DSL 的主要区别在于接入技术、上下行能力、延迟、地址覆盖和线路条件。Fiber 通常更适合对上传、视频会议或大量数据传输有要求的家庭；Cable 覆盖较广，实际表现会受到当地网络和家庭设备影响；DSL 的表现更依赖线路距离和当地基础设施。选择时不要只看技术名称，应同时确认具体地址能装什么、长期费用、实际使用需求和安装条件。',
+    relatedProviders: [],
   },
   {
-    question: '美国宽带新装一般要多久？安装流程是怎样的？',
+    question: '美国宽带安装一般要经过哪些步骤？',
     answer:
-      '通常预约后 3–7 个工作日可上门安装；部分运营商提供自安装套件（Self-Install Kit），邮寄 2–5 天，按说明自助激活。流程大致为：官网或电话下单 → 选预约时间 → 技术员上门或收自装包 → 接 Modem、激活 → 测速验收。公寓需确认物业允许打孔/走线，否则可能装不上；自装仅适用于已有线缆到户的地址。',
-    relatedProviders: [
-      { name: 'Xfinity', href: '/internet/xfinity/faq' },
-      { name: 'Spectrum', href: '/internet/spectrum/faq' },
-      { name: 'AT&T Fiber', href: '/internet/att/fiber/faq' },
-      { name: 'Frontier', href: '/internet/frontier/faq' },
-    ],
+      '宽带安装通常包括：确认地址可用性、建立订单、选择自助安装或技术员安装、连接设备、完成激活，再测试网络是否正常。不同地址是否能自助安装，与现有线路、设备和运营商系统状态有关。公寓、新建住宅、近期搬家或地址记录不完整时，可能需要进一步核实线路、Unit 或物业条件，因此不能只根据网站显示的安装方式判断最终结果。',
+    relatedProviders: [],
   },
   {
-    question: '为什么宽带第一年便宜、第二年就涨价？',
+    question: '为什么宽带用了一段时间以后账单会变贵？',
     answer:
-      '部分美国宽带套餐包含有期限的促销折扣，优惠结束后账单可能恢复为当时适用的标准价格。具体优惠期限和费用变化以账单及运营商条款为准。发现涨价时，可先检查优惠、AutoPay、设备费和附加服务，再向运营商确认续约、换套餐或转网条件。',
-    relatedProviders: [
-      { name: 'Xfinity', href: '/internet/xfinity/faq' },
-      { name: 'Spectrum', href: '/internet/spectrum/faq' },
-      { name: 'AT&T Fiber', href: '/internet/att/fiber/faq' },
-      { name: 'Frontier', href: '/internet/frontier/faq' },
-    ],
+      '账单变贵不一定只有一个原因。常见情况包括原有优惠或 Credit 到期、基础月费变化、AutoPay 或 Paperless Billing 折扣改变、设备费、附加服务以及一次性费用。第一步不是马上换运营商，而是对比最近两到三期账单，找出具体是哪一项收费发生变化，再判断它是一次性还是会长期重复。',
+    relatedProviders: [],
   },
   {
-    question: '宽带一定要签合约吗？有没有无合约方案？',
+    question: '宽带一定要签合约吗？',
     answer:
-      '不一定。运营商可能提供有合约或无合约方案，具体月费、促销期限和提前取消条件会因地址、套餐及账户而异。若计划长住，可比较合约期内的总成本；若可能短期居住或搬家，则应重点查看取消和移机条款。签约前务必确认提前解约费用及适用条件。',
-    relatedProviders: [
-      { name: 'Spectrum', href: '/internet/spectrum/faq' },
-      { name: 'Xfinity', href: '/internet/xfinity/faq' },
-      { name: 'AT&T Fiber', href: '/internet/att/fiber/faq' },
-      { name: 'Frontier', href: '/internet/frontier/faq' },
-    ],
+      '不一定。宽带是否涉及合约、价格保证期或提前取消条件，会因运营商、地址、套餐和账户而不同。比较方案时，不要只问“有没有合约”，还应确认当前价格能维持多久、以后可能如何变化、搬家时如何处理，以及提前停止服务是否有额外成本。具体条款应以当前订单和账户条件为准。',
+    relatedProviders: [],
   },
   {
-    question: 'AutoPay 折扣为什么消失？',
+    question: 'AutoPay 折扣为什么会消失？',
     answer:
-      'AutoPay 折扣可能因付款方式变化、银行账户或银行卡类型不再符合要求、Paperless Billing 关闭、账户状态或资格变化而消失。更新付款或电子账单设置后，折扣也可能要到下一个账期才显示。请核对账单和账户设置；具体资格、付款方式要求及生效时间以对应运营商规则和账户状态为准。',
-    relatedProviders: [
-      { name: 'Xfinity', href: '/internet/xfinity/faq' },
-      { name: 'Spectrum', href: '/internet/spectrum/faq' },
-      { name: 'AT&T Fiber', href: '/internet/att/fiber/faq' },
-      { name: 'Frontier', href: '/internet/frontier/faq' },
-    ],
+      'AutoPay 或相关账单折扣可能因为付款方式变化、Paperless Billing 设置变化、账户状态、资格规则或系统更新而发生变化。发现折扣消失时，应先比较前后两期账单，并检查账户中的付款和电子账单设置。即使重新开启相关设置，折扣何时恢复以及是否仍符合资格，也要以运营商当前账户规则为准。',
+    relatedProviders: [],
   },
   {
-    question: '宽带设备费为什么增加？',
+    question: '宽带设备费为什么会增加？',
     answer:
-      '宽带设备费可能来自 Modem 或 Router 租赁、新增 extender 或 gateway、equipment promotion 到期、设备退还尚未处理完成，或设备型号及方案发生变化。账单也可能列出一次性设备相关费用。请比较设备名称、收费类型和账期；如果设备已退还或项目来源不确定，可向运营商核对设备记录和费用是否会在下期重复。',
-    relatedProviders: [
-      { name: 'Xfinity', href: '/internet/xfinity/faq' },
-      { name: 'Spectrum', href: '/internet/spectrum/faq' },
-      { name: 'AT&T Fiber', href: '/internet/att/fiber/faq' },
-      { name: 'Frontier', href: '/internet/frontier/faq' },
-    ],
+      '设备相关费用可能来自 Modem、Gateway、Router、Extender 等租赁项目，也可能与新增设备、优惠结束、设备更换或退还记录尚未处理完成有关。判断时应看清收费项目名称、是否按月重复，以及设备是否仍在账户中。如果设备已经退还但费用继续出现，需要保留退还凭证并让运营商核对后台设备记录。',
+    relatedProviders: [],
   },
   {
     question: '一次性费用和长期涨价怎么区分？',
     answer:
-      'Installation fee、activation fee、prorated charge 和 equipment one-time charge 可能只对应一次安装、开通、账期调整或设备事件；recurring monthly charge 则通常按月重复。先看收费项目是否标为 one-time 或 recurring，再对照下期账单确认同一项目是否再次出现；标注不清时应向运营商核实。',
-    relatedProviders: [
-      { name: 'Xfinity', href: '/internet/xfinity/faq' },
-      { name: 'Spectrum', href: '/internet/spectrum/faq' },
-      { name: 'AT&T Fiber', href: '/internet/att/fiber/faq' },
-      { name: 'Frontier', href: '/internet/frontier/faq' },
-    ],
+      '最重要的是看收费项目是否会重复。安装、激活、技术员上门、设备事件或账期调整，可能只影响某一期账单；基础月费、设备月租或附加服务则可能持续出现。不要只比较账单总额，应逐项查看收费名称和服务周期，并在下一期账单确认同一项目是否再次出现。',
+    relatedProviders: [],
   },
   {
-    question: '促销到期前该怎么操作，才不容易被涨价？',
+    question: '发现宽带优惠快到期了，应该先做什么？',
     answer:
-      '发现优惠即将到期时，可联系运营商确认到期后的价格、续约条件和其他可选套餐。若现有方案不合适，再结合地址覆盖、账户资格、设备费用和实际需求比较其他运营商。具体优惠期限和资格以运营商当前条款及审核结果为准。',
-    relatedProviders: [
-      { name: 'Xfinity', href: '/internet/xfinity/faq' },
-      { name: 'Spectrum', href: '/internet/spectrum/faq' },
-      { name: 'AT&T Fiber', href: '/internet/att/fiber/faq' },
-      { name: 'Frontier', href: '/internet/frontier/faq' },
-    ],
+      '先确认三个信息：当前优惠何时结束、结束后的预计月费、现有设备和附加服务是否会继续收费。只有确认长期价格后，才有必要比较继续留、调整方案或换运营商。不要只因为看到另一家的广告价格更低就立即取消现有服务，新方案的地址可用性、安装时间、设备和长期费用也需要一起确认。',
+    relatedProviders: [],
   },
   {
-    question: '宽带速度多少才够用？家庭和公寓怎么选？',
+    question: '家庭宽带到底需要多快？',
     answer:
-      '单人轻量上网、视频 50–100Mbps 即可；2–3 人同时办公、上课、看 4K，建议 200–300Mbps；多人多设备、游戏、远程办公则 500Mbps 及以上更稳。公寓若已有线缆到户，可优先选自安装套餐；独栋房可关注光纤是否覆盖。不必盲目追千兆，按实际人数与用途选，避免多付钱。',
-    relatedProviders: [
-      { name: 'AT&T Fiber', href: '/internet/att/fiber/faq' },
-      { name: 'Xfinity', href: '/internet/xfinity/faq' },
-      { name: 'Spectrum', href: '/internet/spectrum/faq' },
-      { name: 'Frontier', href: '/internet/frontier/faq' },
-    ],
+      '没有一个适用于所有家庭的固定速度。真正需要考虑的是同时使用的人数、视频会议和上传需求、4K 视频、游戏、云端备份，以及家庭 Wi-Fi 覆盖情况。如果只有某个房间慢或只有一台设备慢，升级套餐未必有效。选择速度前，最好先区分问题来自互联网接入速度，还是家里的 Router、Wi-Fi 覆盖和设备。',
+    relatedProviders: [],
   },
   {
-    question: '同一地址不同运营商价格差很多，为什么？',
+    question: '为什么同一地址不同宽带运营商的价格差很多？',
     answer:
-      '主因包括技术类型、当地覆盖情况、促销期限、设备费与附加服务不同。不能只看官网起价，应对比包含设备、税费和其他项目后的实际账单，并结合地址可用方案逐项判断。',
-    relatedProviders: [
-      { name: 'AT&T Fiber', href: '/internet/att/fiber/faq' },
-      { name: 'Xfinity', href: '/internet/xfinity/faq' },
-      { name: 'Spectrum', href: '/internet/spectrum/faq' },
-      { name: 'Frontier', href: '/internet/frontier/faq' },
-    ],
+      '价格差异可能来自接入技术、当地竞争情况、促销期限、设备、安装和附加项目。广告上的起始月费并不能代表长期总成本。真正比较时，应把长期月费、设备、安装、促销结束后的价格和切换成本放在一起，并确认每一家在你的具体地址是否真正可用。',
+    relatedProviders: [],
   },
   {
     question: '怎么查自己地址能装哪些宽带？',
     answer:
-      '可到各运营商官网输入地址查询覆盖，但系统结果仍可能受楼内线路、接口或物业限制影响。建议交叉查询多家运营商，并在下单前向运营商确认现场安装条件，尤其是公寓和新建住宅。',
+      '可以先到不同运营商的地址查询工具检查可用性，但网页查询结果并不是最终安装保证。公寓 Unit、旧账户占用、新建住宅、线路条件或地址数据库差异，都可能影响实际结果。准备换网或搬家时，最好在取消现有服务之前确认新地址的订单、安装和设备安排。',
+    relatedProviders: [],
+  },
+  {
+    question: '网站显示地址没有服务，是不是就一定不能装？',
+    answer:
+      '不一定。地址查询结果可能受到 Unit 格式、旧住户记录、新建地址、地址数据库或当地线路状态影响。如果实际地址信息正确但结果异常，可以进一步让运营商核实 serviceability。尤其是公寓、新建住宅或近期地址变更的情况，不要只根据一次网页查询结果下结论。',
+    relatedProviders: [],
+  },
+  {
+    question: '没有 SSN 可以申请美国宽带吗？',
+    answer:
+      '是否需要 SSN，以及没有 SSN 时可以使用哪些身份或信用资料，会因运营商、地址、账户类型和审核要求而不同。有些账户可能需要其他身份证明、押金或额外验证。不能把“没有 SSN”简单理解为一定能办或一定不能办，最终资格应以当前运营商的账户审核结果为准。',
+    relatedProviders: [],
+  },
+  {
+    question: '为什么第一期宽带账单比预期高很多？',
+    answer:
+      '第一期账单可能同时包含正常月费、按比例计算的服务周期、安装或激活费用、设备费用等，因此总额有时会高于以后月份。先查看账单服务周期和每个收费项目，再判断哪些是一次性的、哪些会按月重复。不要只因为第一期账单高，就认定以后每个月都会是同样金额。',
+    relatedProviders: [],
+  },
+  {
+    question: 'Wi-Fi 慢是不是说明宽带套餐速度不够？',
+    answer:
+      '不一定。如果靠近 Router 时速度正常，而卧室、楼上或远处明显变慢，更像是家庭 Wi-Fi 覆盖问题。如果只有一台设备慢，也应先检查设备本身。只有在多台设备、不同位置甚至网线连接都持续异常时，才更需要进一步检查入户线路、设备状态或运营商网络。',
+    relatedProviders: [],
+  },
+  {
+    question: '宽带经常掉线，先检查什么？',
+    answer:
+      '先确认掉线时是所有设备同时断网，还是只有 Wi-Fi 或个别设备有问题。然后查看 Gateway、Modem 或 ONT 的指示灯，并记录问题发生的时间和频率。如果重启只能短暂恢复，或者所有设备反复同时掉线，就需要进一步检查设备、入户线路或区域网络状态。',
+    relatedProviders: [],
+  },
+  {
+    question: '设备已经退还了，为什么账单还在收费？',
+    answer:
+      '设备退还后，仓库接收记录和账户设备状态不一定会立即同步。如果账单仍出现设备费，应先找到退还收据、追踪号码或设备序列号，再让运营商核对设备是否已经从账户移除。没有凭证时处理会更困难，因此退还设备后应保留记录，直到后续账单确认费用已经停止。',
     relatedProviders: [
-      { name: 'AT&T Fiber', href: '/internet/att/fiber/faq' },
       { name: 'Xfinity', href: '/internet/xfinity/faq' },
-      { name: 'Spectrum', href: '/internet/spectrum/faq' },
-      { name: 'Frontier', href: '/internet/frontier/faq' },
     ],
   },
   {
-    question: '没有 SSN 能办美国宽带吗？',
+    question: '搬家时应该先取消旧宽带，还是先开新地址？',
     answer:
-      '是否可以在没有 SSN 的情况下办理，取决于运营商、套餐、地址、身份材料及账户审核要求。部分情况可能需要其他身份证明或押金，具体应以运营商当前政策和审核结果为准。',
-    relatedProviders: [
-      { name: 'Xfinity', href: '/internet/xfinity/faq' },
-      { name: 'Spectrum', href: '/internet/spectrum/faq' },
-      { name: 'AT&T Fiber', href: '/internet/att/fiber/faq' },
-      { name: 'Frontier', href: '/internet/frontier/faq' },
-    ],
+      '通常更稳妥的做法是先确认新地址的服务可用性、安装时间和设备安排，再处理旧地址停止日期。这样可以减少新地址无法及时安装而同时失去旧服务的风险。搬家后还要检查旧地址账户是否仍然 active，以及新旧地址之间的设备和账单是否已经正确处理。',
+    relatedProviders: [],
   },
   {
-    question: '华人、新移民如何用中文办理宽带？',
+    question: '换宽带运营商一定会更便宜吗？',
     answer:
-      '可直接联系运营商客服，或选择提供中文协助的服务渠道。办理前应确认地址覆盖、套餐价格、设备费、安装安排及账户资格；最终可用方案和费用以运营商当前政策及审核结果为准。',
-    relatedProviders: [
-      { name: 'Xfinity', href: '/internet/xfinity/faq' },
-      { name: 'Spectrum', href: '/internet/spectrum/faq' },
-      { name: 'AT&T Fiber', href: '/internet/att/fiber/faq' },
-      { name: 'Frontier', href: '/internet/frontier/faq' },
-    ],
+      '不一定。新的广告价格可能只适用于特定期限或资格，真正成本还包括设备、安装、促销结束后的价格以及切换过程中的时间成本。决定换网前，应先确认当前账单为什么变贵，再比较新旧方案的长期成本。如果问题只是 Wi-Fi 覆盖或设备故障，换运营商甚至可能无法解决原来的问题。',
+    relatedProviders: [],
   },
   {
-    question: '可以只装宽带、不绑手机或电视吗？',
+    question: '什么时候才值得开始比较其他宽带运营商？',
     answer:
-      '可以。主流运营商都提供「仅宽带」套餐，不必捆绑手机或电视。销售有时会推捆绑方案，若不需要，直接要求「Internet Only」即可。只装宽带通常更便宜，也更好比价；若日后想加电视或手机，再单独追加即可。',
-    relatedProviders: [
-      { name: 'Xfinity', href: '/internet/xfinity/faq' },
-      { name: 'Spectrum', href: '/internet/spectrum/faq' },
-      { name: 'AT&T Fiber', href: '/internet/att/fiber/faq' },
-      { name: 'Frontier', href: '/internet/frontier/faq' },
-    ],
+      '如果已经确认当前问题不是单纯 Wi-Fi、单台设备或一次性账单费用，而是长期价格、持续线路质量、地址变化或当前方案确实不适合，再开始比较其他运营商更有意义。比较时先确认地址可用性，再看长期月费、设备、安装和实际需求，而不是只比较广告上的首期价格。',
+    relatedProviders: [],
   },
 ]
