@@ -1,201 +1,207 @@
-'use client'
-
-import React, { type ReactNode } from 'react'
 import Link from 'next/link'
 import {
-  Wifi,
   ArrowRight,
-  Phone,
-  CheckCircle2,
-  TrendingUp,
-  MessageCircle,
-  Home,
-  Building2,
+  CircleDollarSign,
+  Scale,
+  MapPin,
+  Router,
+  Wifi,
+  WifiOff,
 } from 'lucide-react'
-import SpectrumServiceSchema from './SpectrumServiceSchema'
+
+const issueLinks = [
+  {
+    title: '账单与涨价',
+    description:
+      '账单突然变高，先检查 Promotion / Credit、基础月费、设备、AutoPay 和一次性费用。',
+    href: '/internet/price-hike',
+    action: '查看宽带涨价判断',
+    icon: <CircleDollarSign size={22} />,
+  },
+  {
+    title: '网速与 Wi-Fi',
+    description:
+      '先区分单台设备、单个房间、全屋 Wi-Fi，还是有线连接也变慢。',
+    href: '/internet/diagnosis',
+    action: '检查网速与 Wi-Fi',
+    icon: <Wifi size={22} />,
+  },
+  {
+    title: '经常断网',
+    description:
+      '观察是否有区域 outage，再检查 Gateway、Wi-Fi 和线路表现。',
+    href: '/internet/diagnosis',
+    action: '判断断网原因',
+    icon: <WifiOff size={22} />,
+  },
+  {
+    title: '设备与费用',
+    description:
+      '核对 Gateway、Router、设备记录，以及是否出现持续性设备收费。',
+    href: '/internet/spectrum/faq',
+    action: '查看设备与费用问题',
+    icon: <Router size={22} />,
+  },
+  {
+    title: '搬家与地址',
+    description:
+      '确认新地址、Unit、安装方式、设备安排和新旧地址服务时间。',
+    href: '/internet/spectrum/faq',
+    action: '查看地址与搬家问题',
+    icon: <MapPin size={22} />,
+  },
+  {
+    title: '要不要换 Spectrum',
+    description:
+      '结合长期月费、服务表现、设备与安装成本，以及新选项促销结束后的费用再比较。',
+    href: '/internet/providers',
+    action: '比较宽带选择',
+    icon: <Scale size={22} />,
+  },
+]
+
+const waitBeforeSwitching = [
+  '只有一个房间 Wi-Fi 慢',
+  '只有一台设备异常',
+  '第一期账单金额较高',
+  '刚刚更换设备',
+  '只遇到一次区域 outage',
+  '搬家后新地址尚未完成安装',
+]
+
+const compareOtherProviders = [
+  '长期 recurring 成本明显上涨',
+  '多次线路问题经核实后仍未解决',
+  '新地址有 Fiber 等更符合需求的选择',
+  '上传速度、稳定性或延迟长期无法满足使用',
+  '调整当前账户后，长期成本仍不合适',
+]
 
 export default function SpectrumClient() {
-  // 统一 FAQ 基础路径，避免 Search Console 抓取到不同的路径版本
-  const FAQ_BASE_PATH = "/internet/spectrum/faq"
-
   return (
-    <>
-      <SpectrumServiceSchema />
+    <main className="min-h-screen bg-[#FCFDFE] px-4 py-8 text-[#202D3A] sm:px-6 sm:py-12">
+      <div className="mx-auto max-w-6xl">
+        <Link
+          href="/internet/providers"
+          className="text-sm font-semibold text-[#526170] transition hover:text-[#164B78]"
+        >
+          ← 返回宽带运营商比较
+        </Link>
 
-      <main className="min-h-screen bg-white text-slate-900">
-        {/* 顶部导航 - 使用 div 与 SSR 输出一致，避免 hydration 报错 */}
-        <div className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b">
-          <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+        <section className="mx-auto mt-8 max-w-4xl text-center">
+          <p className="text-sm font-bold tracking-wide text-[#2786A5]">
+            Spectrum 宽带问题判断
+          </p>
+          <h1 className="mt-3 text-3xl font-black tracking-tight md:text-5xl">
+            Spectrum 有问题，先判断原因，再决定要不要换
+          </h1>
+          <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-[#526170] md:text-lg">
+            账单变贵、Wi-Fi 变慢、经常断网、设备收费或搬家后出现问题，并不一定意味着马上换网。先判断问题来源，再决定继续使用、调整当前服务还是比较其他运营商。
+          </p>
+          <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
-              href="/internet/providers"
-              className="text-sm font-semibold text-slate-700 hover:text-blue-700 transition-colors"
+              href="/internet/diagnosis"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#164B78] px-6 py-3 font-bold text-white transition hover:bg-[#103B60]"
             >
-              ← 返回宽带对比页
+              不知道问题在哪？先诊断
+              <ArrowRight size={18} />
             </Link>
+            <Link
+              href="/internet/spectrum/faq"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#D8E2EA] bg-white px-6 py-3 font-bold text-[#164B78] transition hover:bg-[#EDF5F9]"
+            >
+              查看 Spectrum 常见问题
+              <ArrowRight size={18} />
+            </Link>
+          </div>
+        </section>
 
-            <div className="flex gap-2">
-              <a
-                href="tel:15108496191"
-                className="hidden sm:flex items-center gap-1 px-4 py-2 border rounded-full text-xs font-bold hover:bg-slate-50 transition-colors"
-              >
-                <Phone size={14} />
-                电话咨询
-              </a>
+        <section className="mt-14" aria-labelledby="spectrum-issues">
+          <h2 id="spectrum-issues" className="text-2xl font-black md:text-3xl">
+            先从你遇到的问题开始
+          </h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {issueLinks.map((item) => (
               <Link
-                href="/contact"
-                className="flex items-center gap-1 px-4 py-2 bg-blue-600 text-white rounded-full text-xs font-bold hover:bg-blue-700 transition-colors"
+                key={item.title}
+                href={item.href}
+                className="group rounded-2xl border border-[#D8E2EA] bg-white p-5 transition hover:-translate-y-0.5 hover:shadow-md"
               >
-                <MessageCircle size={14} />
-                微信咨询
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#EDF5F9] text-[#2786A5]">
+                  {item.icon}
+                </span>
+                <h3 className="mt-4 text-lg font-bold">{item.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-[#526170]">
+                  {item.description}
+                </p>
+                <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[#164B78] group-hover:text-[#103B60]">
+                  {item.action}
+                  <ArrowRight size={15} />
+                </span>
               </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* HERO 区域 */}
-        <section className="bg-gradient-to-b from-slate-100 to-white">
-          <div className="max-w-7xl mx-auto px-6 py-14">
-            <div className="max-w-3xl space-y-6">
-              <span className="inline-block px-4 py-1 rounded-full bg-slate-200 text-slate-800 text-sm font-semibold">
-                Spectrum 宽带 · 不爱折腾型选择
-              </span>
-
-              <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">
-                Spectrum 宽带速度稳定吗？价格会不会突然涨价？
-              </h1>
-
-              <p className="text-lg text-slate-700 leading-relaxed">
-                用户比较 Xfinity、AT&T 和 Spectrum 时，通常需要同时查看<strong>价格结构、地址、设备、网络负载和促销条件</strong>，不能只按价格或品牌判断。
-                如需了解更多服务，请返回 <Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">鸿达电讯首页</Link>。
-                常见问题如 <Link href={`${FAQ_BASE_PATH}/spectrum-bill-increase`} className="text-blue-600 hover:text-blue-700 font-semibold underline">Spectrum 宽带会不会涨价？</Link> 都有详细解答。
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                <Link
-                  href="/contact"
-                  className="bg-black hover:bg-slate-900 text-white px-8 py-4 rounded-2xl text-lg font-bold flex items-center justify-center gap-2 transition-all"
-                >
-                  查我这个地址能不能装 <ArrowRight size={20} />
-                </Link>
-
-                <Link
-                  href="/internet/providers"
-                  className="border-2 border-slate-200 hover:border-slate-300 px-8 py-4 rounded-2xl text-lg font-bold flex items-center justify-center gap-2 transition-all"
-                >
-                  和其他宽带对比
-                </Link>
-              </div>
-            </div>
+            ))}
           </div>
         </section>
 
-        {/* 方案选择 */}
-        <section className="py-12" aria-labelledby="plan-selection">
-          <h2 id="plan-selection" className="sr-only">方案选择</h2>
-          <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-8">
-            <PlanCard
-              icon={<Home className="text-blue-600" />}
-              title="Spectrum 住家宽带适合你，如果你："
-              points={[
-                '不追求最低价，只想省心',
-                '不想一年一次打电话谈价',
-                '家庭日常上网 / 视频 / 办公',
-              ]}
-            />
-            <PlanCard
-              icon={<Building2 className="text-blue-600" />}
-              title="Spectrum 商业宽带适合你，如果你："
-              points={[
-                '小公司 / 店铺 / 工作室',
-                '不希望账单频繁变动',
-                '网络稳定比极限速度更重要',
-              ]}
-            />
-          </div>
+        <section className="mt-14 rounded-3xl border border-[#D8E2EA] bg-[#EDF5F9] p-6 md:p-8">
+          <h2 className="text-2xl font-black">
+            这些情况，先不要急着换 Spectrum
+          </h2>
+          <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+            {waitBeforeSwitching.map((item) => (
+              <li key={item} className="rounded-xl bg-white p-4 text-[#526170]">
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-5 text-sm leading-7 text-[#526170]">
+            这些现象未必代表 Spectrum 本身不适合，先确认问题发生在哪一层，通常更有助于判断下一步。
+          </p>
         </section>
 
-        {/* 核心优势 */}
-        <section className="bg-slate-50 py-16">
-          <div className="max-w-5xl mx-auto px-6 space-y-6">
-            <h2 className="text-3xl font-bold flex items-center gap-2 text-slate-900">
-              <TrendingUp className="text-blue-600" /> 用户选择 Spectrum 的真实原因
-            </h2>
-
-            <ul className="grid gap-4 text-slate-700">
-              {[
-                '月费结构相对稳定，不靠低价诱导',
-                '通常无流量上限，适合家庭长期使用',
-                '覆盖范围广，很多老社区只能选 Spectrum'
-              ].map((text, idx) => (
-                <li key={idx} className="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-100">
-                  <CheckCircle2 className="text-green-600 mt-1 shrink-0" size={20} />
-                  <span className="font-medium">{text}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        {/* 常见问题模块 - 统一路径 */}
-        <section className="py-16 border-t border-slate-100">
-          <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-3xl font-black text-slate-900 mb-8 text-center">
-              Spectrum 常见问题解答
-            </h2>
-            <div className="grid md:grid-cols-2 gap-4 mb-10">
-              {[
-                { slug: 'spectrum-bill-increase', q: 'Spectrum 会不会涨价？', a: '大多数套餐在促销期结束后会恢复原价...' },
-                { slug: 'spectrum-installation', q: 'Spectrum 安装要多久？', a: '不同房型流程不同，最快当天完成...' },
-                { slug: 'spectrum-coverage', q: '哪些地址有 Spectrum？', a: '可用性取决于详细地址和当前覆盖查询结果，不能仅凭城市或邻近地址判断。' },
-                { slug: 'spectrum-retention', q: '账单涨价了怎么办？', a: '先核对促销期限、设备费和账单项目，再向运营商核实当前方案与可用资格。' },
-                { slug: 'spectrum-speed', q: 'Spectrum 速度怎么样？', a: 'Cable 宽带，速度稳定，适合日常使用...' },
-              ].map((faq) => (
-                <Link
-                  key={faq.slug}
-                  href={`${FAQ_BASE_PATH}/${faq.slug}`}
-                  className="block p-5 bg-white rounded-2xl border border-slate-200 hover:border-blue-400 hover:shadow-lg transition-all group"
-                >
-                  <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">
-                    {faq.q}
-                  </h3>
-                  <p className="text-sm text-slate-600 line-clamp-2">
-                    {faq.a}
-                  </p>
-                </Link>
-              ))}
-            </div>
-            <div className="text-center">
-              <Link
-                href={FAQ_BASE_PATH}
-                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-2xl font-bold text-lg transition-all shadow-xl hover:scale-[1.02]"
+        <section className="mt-14">
+          <h2 className="text-2xl font-black md:text-3xl">
+            这些情况，才更值得比较其他运营商
+          </h2>
+          <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+            {compareOtherProviders.map((item) => (
+              <li
+                key={item}
+                className="rounded-xl border border-[#D8E2EA] bg-white p-4 text-[#526170]"
               >
-                查看所有 Spectrum 问答 <ArrowRight size={20} />
-              </Link>
-            </div>
-          </div>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <Link
+            href="/internet/providers"
+            className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#164B78] px-6 py-3 font-bold text-white transition hover:bg-[#103B60]"
+          >
+            比较其他宽带
+            <ArrowRight size={18} />
+          </Link>
         </section>
-      </main>
-    </>
-  )
-}
 
-function PlanCard({ icon, title, points }: { icon: ReactNode; title: string; points: string[] }) {
-  return (
-    <div className="border border-slate-200 rounded-3xl p-8 bg-white hover:border-blue-200 transition-colors">
-      <div className="flex items-center gap-4 mb-6">
-        <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600">
-          {icon}
-        </div>
-        <h3 className="text-xl font-bold text-slate-900">{title}</h3>
+        <section className="mt-14 rounded-3xl border border-[#D8E2EA] bg-[#EDF5F9] p-6 text-center md:p-8">
+          <h2 className="text-2xl font-black">
+            有些问题必须看具体账户或地址
+          </h2>
+          <p className="mx-auto mt-3 max-w-3xl text-sm leading-7 text-[#526170]">
+            Promotion、Credit、设备记录、订单状态、地址 serviceability 和安装条件等，网页无法读取实际后台结果。
+          </p>
+          <Link
+            href="/contact"
+            className="mt-6 inline-flex items-center gap-2 rounded-xl border border-[#164B78] bg-white px-6 py-3 font-bold text-[#164B78] transition hover:bg-[#EDF5F9]"
+          >
+            需要时进入人工核实
+            <ArrowRight size={17} />
+          </Link>
+        </section>
+
+        <p className="mt-10 text-center text-xs leading-5 text-[#526170]">
+          最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前地址、账户与官方规则为准。
+        </p>
       </div>
-      <ul className="space-y-3 text-slate-700">
-        {points.map((p) => (
-          <li key={p} className="flex items-start gap-2">
-            <CheckCircle2 className="text-green-600 mt-1 shrink-0" size={18} />
-            <span>{p}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
+    </main>
   )
 }
