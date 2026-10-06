@@ -1,234 +1,494 @@
 import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
 import Link from 'next/link'
 import {
-  Wifi,
-  TrendingUp,
-  ShieldCheck,
-  Home,
-  Building2,
+  ArrowLeft,
   ArrowRight,
-  HelpCircle,
+  CheckCircle2,
+  CircleDollarSign,
+  Home,
+  MapPin,
+  Router,
+  ShieldCheck,
+  TimerReset,
+  Wifi,
 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: '不同宽带运营商怎么比较？| 美国鸿达电讯',
+  title: '美国宽带运营商怎么比较？先算长期费用再决定｜美国鸿达电讯',
   description:
-    '面向全美中文用户整理宽带运营商比较维度，包括地址可用性、速度需求、设备费用、促销期限、合同条件与实际月费。',
+    '比较美国宽带运营商前，先确认地址覆盖、真实长期月费、设备和安装费用、网络需求及切换成本。Xfinity、AT&T Fiber、Spectrum、Frontier 不应只看促销价。',
   alternates: {
     canonical: 'https://oceanver.com/internet/providers',
   },
+  keywords: [
+    '美国宽带运营商比较',
+    '美国宽带怎么选',
+    '宽带要不要换',
+    'Xfinity Spectrum AT&T Fiber 比较',
+    '宽带长期费用',
+    '宽带换网成本',
+  ],
 }
+
+const comparisonDimensions = [
+  {
+    icon: <MapPin size={22} />,
+    title: '1. 地址到底能不能装',
+    description:
+      '美国宽带首先受地址限制。同一条街、同一个公寓楼，甚至不同 Unit，可选运营商都可能不同。',
+  },
+  {
+    icon: <CircleDollarSign size={22} />,
+    title: '2. 不只看广告月费',
+    description:
+      '真正要比较的是促销结束后的月费、设备、安装、附加项目，以及可能消失的折扣。',
+  },
+  {
+    icon: <Wifi size={22} />,
+    title: '3. 先确认你真正需要什么',
+    description:
+      '普通上网、远程办公、多人视频、上传文件和家庭 Wi-Fi 问题，需要解决的并不是同一件事。',
+  },
+  {
+    icon: <Router size={22} />,
+    title: '4. 把设备和安装一起算',
+    description:
+      'Gateway、Router、Modem、自助安装、Technician 等条件都会影响真实使用成本和切换难度。',
+  },
+  {
+    icon: <TimerReset size={22} />,
+    title: '5. 看 12–24 个月，不只看第一个月',
+    description:
+      '短期促销看起来很便宜，但真正重要的是优惠结束后，你是否仍然愿意支付这个价格。',
+  },
+]
+
+const providers = [
+  {
+    name: 'Xfinity',
+    href: '/internet/xfinity',
+    summary:
+      '比较时重点看地址可用性、促销期限、设备安排以及优惠结束后的实际月费。',
+    checks: [
+      '当前地址是否可以安装',
+      '促销结束后价格如何变化',
+      '设备和安装是否产生额外费用',
+    ],
+  },
+  {
+    name: 'AT&T Fiber',
+    href: '/internet/att-fiber',
+    summary:
+      '如果地址有 Fiber，可重点比较上传需求、长期价格、设备条件和安装方式。',
+    checks: [
+      '地址是否真正有 Fiber',
+      '上下行需求是否重要',
+      '安装和账户条件是否合适',
+    ],
+  },
+  {
+    name: 'Spectrum',
+    href: '/internet/spectrum',
+    summary:
+      '比较时先确认地址、长期月费、设备和安装条件，不要只看当前宣传价格。',
+    checks: [
+      '具体地址是否覆盖',
+      '当前与长期费用',
+      '设备和安装安排',
+    ],
+  },
+  {
+    name: 'Frontier Fiber',
+    href: '/internet/frontier',
+    summary:
+      'Frontier 的可用性高度依赖具体地址，有 Fiber 时再进一步比较费用和安装条件。',
+    checks: [
+      '地址是否有 Fiber',
+      '实际长期费用',
+      '安装和设备条件',
+    ],
+  },
+]
+
+const wrongReasonsToSwitch = [
+  {
+    title: '只有一个房间 Wi-Fi 弱',
+    description:
+      '这更可能是家庭网络覆盖问题。换运营商后，如果 Router 位置和环境没有变化，问题仍可能存在。',
+  },
+  {
+    title: '第一期账单特别高',
+    description:
+      '先检查安装、激活、设备或账单周期等一次性费用，不一定代表以后每个月都这么高。',
+  },
+  {
+    title: '只有一台设备速度慢',
+    description:
+      '先排查设备本身、Wi-Fi 连接和软件问题，不能直接判断是运营商速度不够。',
+  },
+  {
+    title: '看到另一家广告价格更低',
+    description:
+      '广告价不等于长期总成本。促销期限、设备和安装费用都要一起算。',
+  },
+]
 
 export default function InternetProvidersPage() {
   return (
-    <main className="max-w-6xl mx-auto px-6 py-12 space-y-12">
-      {/* ===== 返回主页 ===== */}
-      <div className="mb-6">
+    <main className="min-h-screen bg-[#FCFDFE] px-4 py-8 text-[#202D3A] sm:px-6 sm:py-12">
+      <div className="mx-auto max-w-6xl">
         <Link
-          href="/"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 hover:text-blue-600 transition"
+          href="/internet/diagnosis"
+          className="inline-flex items-center gap-2 text-sm text-[#526170] transition hover:text-[#164B78]"
         >
-          ← 返回主页
+          <ArrowLeft size={16} />
+          返回宽带问题诊断
         </Link>
+
+        {/* HERO */}
+        <section className="mx-auto mt-8 max-w-4xl text-center">
+          <p className="text-sm font-bold tracking-wide text-[#2786A5]">
+            美国家庭宽带比较
+          </p>
+
+          <h1 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">
+            想换宽带？
+            <br className="sm:hidden" />
+            先比较长期成本，再决定换哪家
+          </h1>
+
+          <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-[#526170] sm:text-lg">
+            Xfinity、AT&amp;T Fiber、Spectrum、Frontier
+            不能只看谁现在广告价格最低。先确认地址、真实长期月费、设备和安装条件，
+            再判断换网到底值不值得。
+          </p>
+        </section>
+
+        {/* 先判断是否真的应该来到这里 */}
+        <section className="mt-12 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
+          <div className="grid gap-7 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+            <div>
+              <p className="text-sm font-bold text-[#2786A5]">
+                先确认一件事
+              </p>
+
+              <h2 className="mt-2 text-2xl font-black sm:text-3xl">
+                你是真的需要换运营商，还是只需要解决当前问题？
+              </h2>
+
+              <p className="mt-4 max-w-2xl leading-7 text-[#526170]">
+                如果你只是 Wi-Fi 某个房间弱、设备异常、第一期账单偏高，
+                换运营商未必解决问题。只有确认问题来自长期价格、线路质量、
+                地址变化或当前服务确实不合适后，比较运营商才有意义。
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <Link
+                href="/internet/diagnosis"
+                className="flex items-center justify-between rounded-2xl border border-[#D5E5EC] bg-white p-4 font-bold text-[#164B78] transition hover:border-[#2786A5]"
+              >
+                还没判断清楚问题
+                <ArrowRight size={18} />
+              </Link>
+
+              <Link
+                href="/internet/price-hike"
+                className="flex items-center justify-between rounded-2xl border border-[#D5E5EC] bg-white p-4 font-bold text-[#164B78] transition hover:border-[#2786A5]"
+              >
+                主要问题是账单涨价
+                <ArrowRight size={18} />
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* 五个比较维度 */}
+        <section className="mt-16">
+          <p className="text-sm font-bold text-[#2786A5]">
+            不要先问哪家最好
+          </p>
+
+          <h2 className="mt-2 text-2xl font-black sm:text-3xl">
+            真正值得比较的是这 5 件事
+          </h2>
+
+          <div className="mt-7 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {comparisonDimensions.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-2xl border border-[#D5E5EC] bg-white p-5"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#F4F8FA] text-[#164B78]">
+                  {item.icon}
+                </div>
+
+                <h3 className="mt-4 font-bold">{item.title}</h3>
+
+                <p className="mt-2 text-sm leading-6 text-[#526170]">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* 真正比较运营商 */}
+        <section className="mt-16">
+          <p className="text-sm font-bold text-[#2786A5]">
+            已经确认需要开始比较
+          </p>
+
+          <h2 className="mt-2 text-2xl font-black sm:text-3xl">
+            再看不同运营商分别要核对什么
+          </h2>
+
+          <p className="mt-3 max-w-3xl leading-7 text-[#526170]">
+            下面不是“谁最好”的排名。每个运营商是否适合你，都要回到具体地址、
+            当前价格和实际使用需求。
+          </p>
+
+          <div className="mt-7 grid gap-5 md:grid-cols-2">
+            {providers.map((provider) => (
+              <ProviderCard
+                key={provider.name}
+                name={provider.name}
+                href={provider.href}
+                summary={provider.summary}
+                checks={provider.checks}
+              />
+            ))}
+          </div>
+        </section>
+
+        {/* 不应该因为这些原因马上换 */}
+        <section className="mt-16 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
+          <p className="text-sm font-bold text-[#2786A5]">
+            很多人换网之前会误判
+          </p>
+
+          <h2 className="mt-2 text-2xl font-black sm:text-3xl">
+            这 4 种情况，先不要急着换运营商
+          </h2>
+
+          <div className="mt-7 grid gap-4 md:grid-cols-2">
+            {wrongReasonsToSwitch.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-2xl border border-[#D5E5EC] bg-white p-5"
+              >
+                <div className="flex gap-3">
+                  <CheckCircle2
+                    size={20}
+                    className="mt-0.5 shrink-0 text-[#2786A5]"
+                  />
+
+                  <div>
+                    <h3 className="font-bold">{item.title}</h3>
+
+                    <p className="mt-2 text-sm leading-6 text-[#526170]">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* 长期成本 */}
+        <section className="mt-16">
+          <div className="grid gap-6 lg:grid-cols-2">
+            <InfoCard
+              icon={<CircleDollarSign size={24} />}
+              title="不要只比较“每月多少钱”"
+            >
+              <p>
+                真正应该比较的是：
+                <strong className="text-[#202D3A]">
+                  基础月费 + 设备 + 安装 + 附加服务 + 促销结束后的价格
+                </strong>
+                。
+              </p>
+
+              <p>
+                如果当前宽带只是促销结束后变贵，可以先判断留下来、
+                调整方案还是换网哪个长期成本更合理。
+              </p>
+
+              <Link
+                href="/internet/price-hike"
+                className="inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]"
+              >
+                查看宽带涨价后的判断
+                <ArrowRight size={16} />
+              </Link>
+            </InfoCard>
+
+            <InfoCard
+              icon={<ShieldCheck size={24} />}
+              title="新运营商确认好之前，不要先取消旧宽带"
+            >
+              <p>
+                网站显示“可安装”只是第一步。真正切换前，还要确认地址、
+                安装时间、设备和订单状态。
+              </p>
+
+              <p>
+                搬家、新建地址、公寓 Unit 或旧账户占用，都可能影响最终安装。
+              </p>
+
+              <Link
+                href="/internet/diagnosis"
+                className="inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]"
+              >
+                地址或安装有问题，先做诊断
+                <ArrowRight size={16} />
+              </Link>
+            </InfoCard>
+          </div>
+        </section>
+
+        {/* Residential / business */}
+        <section className="mt-16 rounded-3xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+          <div className="flex gap-4">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#F4F8FA] text-[#164B78]">
+              <Home size={22} />
+            </div>
+
+            <div>
+              <h2 className="text-xl font-black">
+                住家宽带和商业宽带不要直接混在一起比较
+              </h2>
+
+              <p className="mt-3 max-w-3xl text-sm leading-7 text-[#526170]">
+                两者的价格结构、服务条款、设备和支持方式可能不同。
+                如果是办公室、店铺或其他商业用途，应根据商业场景单独判断，
+                不能简单认为商业宽带一定更快或更稳定。
+              </p>
+
+              <Link
+                href="/internet/business-vs-residential"
+                className="mt-4 inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]"
+              >
+                查看住家与商业宽带区别
+                <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* 最终出口 */}
+        <section className="mx-auto mt-16 max-w-4xl text-center">
+          <h2 className="text-2xl font-black sm:text-3xl">
+            比较的目标不是找“最好”的运营商
+          </h2>
+
+          <p className="mx-auto mt-4 max-w-2xl leading-7 text-[#526170]">
+            而是找到在你的地址、使用需求和长期预算下，
+            更合适、成本也更清楚的方案。
+          </p>
+
+          <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
+            <Link
+              href="/internet/diagnosis"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#164B78] px-6 py-3 font-bold text-white transition hover:bg-[#103B60]"
+            >
+              还没判断清楚，先做诊断
+              <ArrowRight size={18} />
+            </Link>
+
+            <Link
+              href="/internet/faq"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-6 py-3 font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-[#F4F8FA]"
+            >
+              查看宽带常见问题
+              <ArrowRight size={18} />
+            </Link>
+          </div>
+        </section>
+
+        <p className="mt-12 text-center text-xs leading-5 text-[#526170]">
+          最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前地址、账户与官方规则为准。
+        </p>
       </div>
-
-      {/* ================= HERO ================= */}
-      <section className="text-center space-y-4">
-        <h1 className="text-4xl md:text-5xl font-black text-slate-900">
-          美国宽带运营商对比（Xfinity / AT&amp;T / Spectrum / Frontier）
-        </h1>
-
-        <p className="mt-6 max-w-3xl mx-auto text-center text-base md:text-lg text-slate-600 leading-relaxed">
-          美国宽带运营商主要分为有线（Cable）和光纤（Fiber）两类。
-          不同地址、不同城市，可选运营商差异很大。
-          下面按地址可用性、速度需求、设备费用、促销期限、合同条件和实际月费，
-          帮你建立比较不同宽带运营商的判断框架。
-        </p>
-      </section>
-
-      {/* ================= 顶部提示：先看 FAQ ================= */}
-      <section className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 p-5 bg-amber-50 border border-amber-200 rounded-2xl">
-        <p className="text-slate-800 text-base md:text-lg">
-          <span className="font-semibold">不确定哪家宽带适合你？</span>
-          <span className="text-slate-700"> 先查看美国宽带常见问题，了解不同类型与常见坑点</span>
-        </p>
-        <Link
-          href="/internet/faq"
-          className="inline-flex items-center justify-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-5 py-2.5 rounded-xl font-semibold transition shrink-0"
-        >
-          <HelpCircle size={18} />
-          查看宽带常见问题
-        </Link>
-      </section>
-
-      {/* ================= 决策树 4 卡 ================= */}
-      <section className="grid md:grid-cols-2 gap-6">
-        {/* 1️⃣ Xfinity */}
-        <DecisionCard
-          icon={<Wifi size={28} />}
-          provider="Xfinity"
-          title="先核对地址与促销期限"
-          desc="比较 Xfinity 时，先确认地址能否安装、下载上传需求、设备费用和促销结束后的实际月费。"
-          who="需要核对地址、费用和安装条件的用户"
-          highlights={[
-            '地址可用性与安装方式',
-            '促销期限与恢复价格',
-            '设备费、税费与实际月费',
-          ]}
-          cta="查看 Xfinity 比较维度"
-          href="/internet/xfinity"
-        />
-
-        {/* 2️⃣ AT&T Fiber */}
-        <DecisionCard
-          icon={<ShieldCheck size={28} />}
-          provider="AT&T Fiber"
-          title="核对上传需求与设备条件"
-          desc="比较 AT&T Fiber 时，重点确认地址可用性、上下行需求、设备费用、合同和提前退出条件。"
-          who="远程办公、视频会议或有上传需求的用户"
-          highlights={[
-            '地址是否支持光纤安装',
-            '上下行与设备需求',
-            '合同、促销和实际月费',
-          ]}
-          cta="查看 AT&T Fiber 比较维度"
-          href="/internet/att-fiber"
-        />
-
-        {/* 3️⃣ Frontier Fiber */}
-        <DecisionCard
-          icon={<TrendingUp size={28} />}
-          provider="Frontier Fiber"
-          title="确认局部地址与条件"
-          desc="比较 Frontier Fiber 时，不能只看宣传价格，需要核对具体地址、安装条件、促销期限和退出成本。"
-          who="正在核对光纤可用性与总成本的用户"
-          highlights={[
-            '具体地址是否可装',
-            '促销后价格与设备费',
-            '合同和提前退出条件',
-          ]}
-          cta="查看 Frontier 比较维度"
-          href="/internet/frontier"
-        />
-
-        {/* 4️⃣ Spectrum */}
-        <DecisionCard
-          icon={<Home size={28} />}
-          provider="Spectrum"
-          title="核对可用性与长期费用"
-          desc="比较 Spectrum 时，重点确认地址是否可用、设备费用、数据条件、促销期限和实际总月费。"
-          who="需要比较安装条件和长期费用的用户"
-          highlights={[
-            '具体地址和安装条件',
-            '设备费用与数据条件',
-            '促销结束后的总月费',
-          ]}
-          cta="查看 Spectrum 比较维度"
-          href="/internet/spectrum"
-        />
-      </section>
-
-      {/* ================= 账单涨价入口模块 ================= */}
-      <section className="bg-slate-50 border border-slate-200 rounded-2xl p-8 text-center space-y-4">
-        <h3 className="text-xl md:text-2xl font-bold text-slate-900">
-          已经在用这些运营商，账单变贵了？
-        </h3>
-        <p className="text-base text-slate-600 max-w-2xl mx-auto">
-          很多用户不是用多了，而是优惠到期或老用户没拿到新方案。
-        </p>
-        <Link
-          href="/bill-optimization"
-          className="inline-flex items-center gap-2 border-2 border-slate-400 bg-transparent hover:bg-slate-100 text-slate-700 font-semibold px-6 py-3 rounded-xl transition-all"
-        >
-          查看账单是否还能降价
-          <ArrowRight size={18} />
-        </Link>
-      </section>
-
-      {/* ================= 住家 vs 商业 提示 ================= */}
-      <section className="bg-slate-100 rounded-3xl p-10 space-y-6">
-        <h2 className="text-3xl font-bold flex items-center gap-2">
-          <Building2 /> 住家宽带 vs 商业宽带
-        </h2>
-        <p className="text-lg text-slate-700">
-          同一家运营商，<strong>住家和商业完全是两套逻辑</strong>。
-          商业宽带通常更稳定、价格结构不同，更适合公司、店铺、诊所等场景。
-          如需返回判断入口，请回到<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">美国鸿达电讯首页</Link>。
-          常见问题如<Link href="/internet/providers/faq" className="text-blue-600 hover:text-blue-700 font-semibold underline">宽带账单为什么会突然涨价？</Link>和<Link href="/internet/faq" className="text-blue-600 hover:text-blue-700 font-semibold underline">没有 SSN 可以办宽带吗？</Link>都有详细解答。
-        </p>
-        <Link
-          href="/contact"
-          className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-2xl text-lg font-semibold"
-        >
-          告诉我你的宽带判断问题
-          <ArrowRight size={20} />
-        </Link>
-      </section>
     </main>
   )
 }
 
-/* ================= 子组件 ================= */
-
-function DecisionCard({
-  icon,
-  provider,
-  title,
-  desc,
-  who,
-  highlights,
-  cta,
+function ProviderCard({
+  name,
   href,
+  summary,
+  checks,
 }: {
-  icon: React.ReactNode
-  provider: string
-  title: string
-  desc: string
-  who: string
-  highlights: string[]
-  cta: string
+  name: string
   href: string
+  summary: string
+  checks: string[]
 }) {
   return (
     <Link
       href={href}
-      className="border rounded-3xl p-8 space-y-5 hover:bg-slate-50 transition group"
-      aria-label={`查看 ${provider} 宽带方案`}
+      className="group rounded-3xl border border-[#D5E5EC] bg-white p-6 transition hover:border-[#2786A5] hover:shadow-sm"
     >
-      <div className="flex items-center gap-3">
-        <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-700 flex items-center justify-center">
-          {icon}
-        </div>
-        <div>
-          {/* 运营商名（纯文本） */}
-          <h3 className="text-xl font-black text-slate-900">
-            {provider}
-          </h3>
-          <p className="text-sm font-semibold text-slate-500">
-            {title}
-          </p>
-        </div>
-      </div>
+      <h3 className="text-xl font-black">{name}</h3>
 
-      {/* 1–2 行说明 */}
-      <p className="text-slate-600 leading-relaxed line-clamp-2">
-        {desc}
+      <p className="mt-3 text-sm leading-6 text-[#526170]">
+        {summary}
       </p>
 
-      <p className="text-slate-600 font-medium">
-        适合：{who}
+      <p className="mt-5 text-sm font-bold text-[#202D3A]">
+        比较前先确认：
       </p>
 
-      <ul className="space-y-2 text-slate-700">
-        {highlights.map((h) => (
-          <li key={h}>• {h}</li>
+      <ul className="mt-3 space-y-2">
+        {checks.map((item) => (
+          <li
+            key={item}
+            className="flex gap-2 text-sm leading-6 text-[#526170]"
+          >
+            <CheckCircle2
+              size={16}
+              className="mt-1 shrink-0 text-[#2786A5]"
+            />
+            {item}
+          </li>
         ))}
       </ul>
 
-      {/* 明确指向子页的 Link */}
-      <div className="text-blue-600 font-semibold group-hover:underline">
-        {cta} →
+      <div className="mt-5 inline-flex items-center gap-2 font-bold text-[#164B78]">
+        查看 {name} 的比较条件
+        <ArrowRight
+          size={16}
+          className="transition group-hover:translate-x-0.5"
+        />
       </div>
     </Link>
+  )
+}
+
+function InfoCard({
+  icon,
+  title,
+  children,
+}: {
+  icon: ReactNode
+  title: string
+  children: ReactNode
+}) {
+  return (
+    <div className="rounded-3xl border border-[#D5E5EC] bg-white p-6 sm:p-7">
+      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F4F8FA] text-[#164B78]">
+        {icon}
+      </div>
+
+      <h2 className="mt-4 text-xl font-black">{title}</h2>
+
+      <div className="mt-4 space-y-4 text-sm leading-7 text-[#526170]">
+        {children}
+      </div>
+    </div>
   )
 }
