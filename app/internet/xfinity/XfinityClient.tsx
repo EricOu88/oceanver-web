@@ -1,386 +1,414 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from 'next/link'
 import {
-  Phone,
-  X,
-  MessageCircle,
-  Copy,
+  ArrowLeft,
   ArrowRight,
   CheckCircle2,
-  Building2,
-  Home,
-} from 'lucide-react';
+  CircleDollarSign,
+  CircleHelp,
+  Gauge,
+  MapPin,
+  Router,
+  ShieldCheck,
+  WifiOff,
+} from 'lucide-react'
 
-/* ================= WeChat Modal ================= */
+const problemCards = [
+  {
+    icon: <CircleDollarSign size={22} />,
+    title: '账单越来越贵',
+    description:
+      '先确认是促销结束、基础月费、设备费、AutoPay 折扣还是一次性收费。',
+    href: '/internet/xfinity/faq/xfinity-price-increase',
+    action: '查看 Xfinity 涨价判断',
+  },
+  {
+    icon: <Gauge size={22} />,
+    title: '网速慢 / Wi-Fi 不稳定',
+    description:
+      '先判断是家庭 Wi-Fi、单台设备，还是入户线路和服务本身。',
+    href: '/internet/diagnosis',
+    action: '进入宽带问题诊断',
+  },
+  {
+    icon: <WifiOff size={22} />,
+    title: '断网 / 经常掉线',
+    description:
+      '确认是否所有设备同时受影响、Gateway 灯号以及是否存在区域中断。',
+    href: '/internet/xfinity/faq/xfinity-outage',
+    action: '查看断网问题',
+  },
+  {
+    icon: <Router size={22} />,
+    title: '设备 / Gateway 问题',
+    description:
+      '设备费、退还、激活、自购 Modem 或设备灯号异常，都应分别判断。',
+    href: '/internet/xfinity/faq',
+    action: '查看设备相关问题',
+  },
+  {
+    icon: <MapPin size={22} />,
+    title: '安装 / 地址问题',
+    description:
+      'Unit、旧账户、地址数据库和线路条件都可能影响实际安装结果。',
+    href: '/internet/diagnosis',
+    action: '判断地址与安装问题',
+  },
+  {
+    icon: <ShieldCheck size={22} />,
+    title: '想换运营商',
+    description:
+      '先确认问题是不是长期价格或线路质量，再比较其他运营商。',
+    href: '/internet/providers',
+    action: '开始比较宽带方案',
+  },
+]
 
-function WeChatModal({ open, onClose }: { open: boolean; onClose: () => void }) {
-  const [copied, setCopied] = useState(false);
-  const ID = '美国鸿达电讯';
+const doNotSwitchYet = [
+  '只有一个房间 Wi-Fi 弱',
+  '只有一台设备速度慢',
+  '第一期账单有一次性费用',
+  '还没有确认涨价是不是 recurring',
+  '新运营商的地址和安装条件还没确认',
+]
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(ID);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
-  if (!open) return null;
-
-  return (
-    <div className="fixed inset-0 z-[200] flex items-center justify-center px-4">
-      <div
-        className="absolute inset-0 bg-slate-900/70 backdrop-blur-sm"
-        onClick={onClose}
-      />
-      <div className="relative bg-white rounded-[2rem] shadow-2xl p-6 w-full max-w-sm text-center">
-        <button
-          onClick={onClose}
-          className="absolute right-6 top-6 text-slate-500 hover:text-slate-800"
-        >
-          <X size={24} />
-        </button>
-
-        <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-green-700">
-          <MessageCircle size={32} />
-        </div>
-
-        <h3 className="text-xl font-black text-slate-900 mb-1">
-          添加在线中文客服
-        </h3>
-        <p className="text-slate-600 mb-6 text-sm font-medium">
-          查地址覆盖 · 对比套餐 · 处理涨价
-        </p>
-
-        <div className="relative aspect-square w-48 mx-auto rounded-2xl overflow-hidden border">
-          <Image
-            src="/wechat-qr.jpg"
-            alt="微信客服二维码"
-            fill
-            unoptimized
-            className="object-cover"
-          />
-        </div>
-
-        <div className="mt-6 flex items-center justify-between bg-slate-50 p-3 rounded-xl border">
-          <span className="font-black text-sm">{ID}</span>
-          <button
-            onClick={handleCopy}
-            className={`px-3 py-1.5 rounded-lg text-xs font-black text-white flex items-center gap-1 ${
-              copied ? 'bg-green-600' : 'bg-blue-700'
-            }`}
-          >
-            {copied ? '已复制' : (
-              <>
-                <Copy size={12} /> 复制
-              </>
-            )}
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/* ================= Choice Card ================= */
-
-function ChoiceCard({
-  icon,
-  badge,
-  title,
-  who,
-  highlights,
-  concernTitle,
-  concerns,
-  ctaText,
-  onCta,
-}: {
-  icon: React.ReactNode;
-  badge: string;
-  title: string;
-  who: string;
-  highlights: string[];
-  concernTitle: string;
-  concerns: string[];
-  ctaText: string;
-  onCta: () => void;
-}) {
-  return (
-    <div className="bg-white border border-slate-200 rounded-[2.25rem] p-6 shadow-sm hover:shadow-md transition">
-      <div className="flex items-start justify-between gap-6 mb-6">
-        <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-800 text-xs font-black">
-            {badge}
-          </div>
-          <h2 className="text-2xl md:text-3xl font-black mt-4">
-            {title}
-          </h2>
-          <p className="text-slate-600 mt-2 font-medium">{who}</p>
-        </div>
-        <div className="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-800">
-          {icon}
-        </div>
-      </div>
-
-      <div className="space-y-4">
-        <div>
-          <div className="text-sm font-black text-slate-900 mb-2">
-            用户最在意的优点
-          </div>
-          <ul className="space-y-2 text-slate-700 font-medium">
-            {highlights.map((t) => (
-              <li key={t} className="flex items-start gap-2">
-                <CheckCircle2
-                  size={18}
-                  className="mt-0.5 text-green-600"
-                />
-                <span>{t}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="pt-2">
-          <div className="text-sm font-black text-slate-900 mb-2">
-            {concernTitle}
-          </div>
-          <ul className="space-y-2 text-slate-700 font-medium">
-            {concerns.map((t) => (
-              <li key={t} className="flex items-start gap-2">
-                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-slate-400" />
-                <span>{t}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <button
-          onClick={onCta}
-          className="w-full mt-6 rounded-2xl bg-blue-700 hover:bg-blue-800 text-white font-black py-3.5 flex items-center justify-center gap-2 transition"
-        >
-          {ctaText} <ArrowRight size={18} />
-        </button>
-
-        <p className="text-[12px] text-slate-500 font-medium text-center">
-          同一个地址：套餐 / 价格 / 是否合约差异很大，必须查地址才准
-        </p>
-      </div>
-    </div>
-  );
-}
-
-/* ================= Page UI ================= */
+const startComparing = [
+  '基础月费已经连续多期明显上涨',
+  '促销结束后的长期价格明显超出预算',
+  '线路或服务质量长期不稳定，排查后仍无改善',
+  '搬家后当前服务条件不再适合',
+  '已经确认其他运营商在地址上可用，并且长期成本更合理',
+]
 
 export default function XfinityClient() {
-  const [wechatOpen, setWechatOpen] = useState(false);
-
   return (
-    <>
-      <WeChatModal
-        open={wechatOpen}
-        onClose={() => setWechatOpen(false)}
-      />
-
-      <main className="min-h-screen bg-white text-slate-900">
-        {/* 顶部 */}
-        <div className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-slate-100">
-          <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-            <Link
-              href="/internet/providers"
-              className="font-black text-sm text-slate-800 hover:text-blue-700 transition"
-            >
-              ← 返回宽带对比页
-            </Link>
-
-            <div className="flex items-center gap-2">
-              <a
-                href="tel:15108496191"
-                className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 bg-white font-black text-xs hover:bg-slate-50 transition"
-              >
-                <Phone size={16} className="text-blue-700" />
-                电话咨询
-              </a>
-              <button
-                onClick={() => setWechatOpen(true)}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-700 text-white font-black text-xs hover:bg-blue-800 transition"
-              >
-                <MessageCircle size={16} />
-                微信在线咨询
-              </button>
-            </div>
-          </div>
-        </div>
+    <main className="min-h-screen bg-[#FCFDFE] px-4 py-8 text-[#202D3A] sm:px-6 sm:py-12">
+      <div className="mx-auto max-w-6xl">
+        <Link
+          href="/internet/providers"
+          className="inline-flex items-center gap-2 text-sm text-[#526170] transition hover:text-[#164B78]"
+        >
+          <ArrowLeft size={16} />
+          返回宽带运营商比较
+        </Link>
 
         {/* HERO */}
-        <section className="bg-gradient-to-b from-blue-50 to-white">
-          <div className="max-w-7xl mx-auto px-6 pt-12 pb-10 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-black">
-              Xfinity 宽带 · 住家 / 商业怎么选（用户视角）
-            </div>
+        <section className="mx-auto mt-8 max-w-4xl text-center">
+          <p className="text-sm font-bold tracking-wide text-[#2786A5]">
+            Xfinity 宽带判断指南
+          </p>
 
-            <h1 className="text-4xl md:text-5xl font-black mt-5 leading-tight">
-              Xfinity 宽带速度稳定吗？住家和商业宽带有什么区别？
-            </h1>
+          <h1 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">
+            Xfinity 有问题，
+            <br className="sm:hidden" />
+            先判断原因，再决定要不要换
+          </h1>
 
-            <p className="text-slate-700 font-medium mt-4 leading-relaxed">
-              同样是 Xfinity：住家宽带与商业宽带在
-              <strong>价格结构、稳定性、合约</strong> 上差异很大。
-              如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">美国鸿达电讯首页</Link>。
-              常见问题如<Link href="/internet/xfinity/faq" className="text-blue-600 hover:text-blue-700 font-semibold underline">Xfinity 宽带优惠期结束后会涨价吗？</Link>都有详细解答。
+          <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-[#526170] sm:text-lg">
+            如果你正在用 Xfinity，最常见的问题不是“该买哪个套餐”，
+            而是账单涨价、Wi-Fi、掉线、设备、地址和安装。
+            先判断问题属于哪一类，再决定继续用、调整还是比较其他运营商。
+          </p>
+
+          <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
+            <Link
+              href="/internet/diagnosis"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#164B78] px-6 py-3 font-bold text-white transition hover:bg-[#103B60]"
+            >
+              先做宽带问题诊断
+              <ArrowRight size={18} />
+            </Link>
+
+            <Link
+              href="/internet/xfinity/faq"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-6 py-3 font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-[#F4F8FA]"
+            >
+              查看 Xfinity FAQ
+              <ArrowRight size={18} />
+            </Link>
+          </div>
+        </section>
+
+        {/* 问题入口 */}
+        <section className="mt-16">
+          <p className="text-sm font-bold text-[#2786A5]">
+            先从问题本身开始
+          </p>
+
+          <h2 className="mt-2 text-2xl font-black sm:text-3xl">
+            你现在遇到的是哪一种 Xfinity 问题？
+          </h2>
+
+          <div className="mt-7 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {problemCards.map((item) => (
+              <Link
+                key={item.title}
+                href={item.href}
+                className="group rounded-3xl border border-[#D5E5EC] bg-white p-6 transition hover:border-[#2786A5] hover:shadow-sm"
+              >
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F4F8FA] text-[#164B78]">
+                  {item.icon}
+                </div>
+
+                <h3 className="mt-4 text-lg font-black">
+                  {item.title}
+                </h3>
+
+                <p className="mt-2 text-sm leading-6 text-[#526170]">
+                  {item.description}
+                </p>
+
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#164B78]">
+                  {item.action}
+                  <ArrowRight
+                    size={15}
+                    className="transition group-hover:translate-x-0.5"
+                  />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* 核心判断 */}
+        <section className="mt-16 grid gap-6 lg:grid-cols-2">
+          <InfoCard
+            title="如果最主要的问题是账单涨价"
+            icon={<CircleDollarSign size={23} />}
+          >
+            <p>
+              先比较最近两到三期账单，不要只看总额。
+              找出变化来自基础月费、Promotion / Credit、AutoPay、
+              设备还是一次性收费。
             </p>
 
-            <div className="mt-7 flex flex-col sm:flex-row gap-3">
-              <button
-                onClick={() => setWechatOpen(true)}
-                className="px-6 py-3.5 rounded-2xl bg-blue-700 hover:bg-blue-800 text-white font-black flex items-center justify-center gap-2 transition"
-              >
-                查我这个地址能装什么 <ArrowRight size={18} />
-              </button>
-
-              <Link
-                href="/internet/price-hike"
-                className="px-6 py-3.5 rounded-2xl border-2 border-slate-200 bg-white font-black hover:bg-slate-50 transition flex items-center justify-center gap-2"
-              >
-                优惠到期涨价怎么办 <ArrowRight size={18} />
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* 住家 / 商业 */}
-        <section className="py-10">
-          <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-6">
-            <ChoiceCard
-              icon={<Home size={22} />}
-              badge="住家宽带 Residential"
-              title="更看重促销与性价比"
-              who="适合：家庭 / 租房 / 公寓"
-              highlights={[
-                '覆盖广，促销多',
-                '价格前期更友好',
-                '适合价格敏感用户',
-              ]}
-              concernTitle="用户最怕的问题"
-              concerns={[
-                '优惠期结束后可能涨价',
-                '是否合约需查地址',
-                '上传速度不如光纤',
-              ]}
-              ctaText="我想选住家，先查地址"
-              onCta={() => setWechatOpen(true)}
-            />
-
-            <ChoiceCard
-              icon={<Building2 size={22} />}
-              badge="商业宽带 Business"
-              title="更看重稳定与营业"
-              who="适合：公司 / 店铺 / POS / 监控"
-              highlights={[
-                '稳定性更高',
-                '价格结构更稳定',
-                '支持静态 IP',
-              ]}
-              concernTitle="用户需要知道"
-              concerns={[
-                '月费通常更高',
-                '部分地址只能装商业',
-                '可能需要合约',
-              ]}
-              ctaText="我需要商业，先查地址"
-              onCta={() => setWechatOpen(true)}
-            />
-          </div>
-        </section>
-
-        {/* Xfinity 常见问题模块 - 反向链接到独立 FAQ 页面 */}
-        <section className="bg-slate-50 py-12 border-t border-slate-200">
-          <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-6 text-center">
-              Xfinity 常见问题
-            </h2>
-
-            <div className="grid md:grid-cols-2 gap-4 mb-8">
+            <div className="flex flex-wrap gap-4">
               <Link
                 href="/internet/xfinity/faq/xfinity-price-increase"
-                className="block p-4 bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all group"
+                className="inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]"
               >
-                <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">
-                  Xfinity 会不会涨价？促销结束后真实账单解析
-                </h3>
-                <p className="text-sm text-slate-600 line-clamp-2">
-                  促销到期、设备费与附加费叠加，最容易导致账单突然变贵…
-                </p>
+                查看 Xfinity 涨价专项
+                <ArrowRight size={16} />
               </Link>
 
               <Link
-                href="/internet/xfinity/faq/xfinity-contract-early-termination"
-                className="block p-4 bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all group"
+                href="/bill-optimization"
+                className="inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]"
               >
-                <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">
-                  Xfinity 有合约吗？提前取消会不会有违约金
-                </h3>
-                <p className="text-sm text-slate-600 line-clamp-2">
-                  是否违约金取决于你当初选的 term agreement 与条款…
-                </p>
-              </Link>
-
-              <Link
-                href="/internet/xfinity/faq/xfinity-bill-changes"
-                className="block p-4 bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all group"
-              >
-                <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">
-                  Xfinity 账单为什么每个月都不一样？
-                </h3>
-                <p className="text-sm text-slate-600 line-clamp-2">
-                  税费/附加费波动、折扣失效、首月按天计费都可能造成差异…
-                </p>
-              </Link>
-
-              <Link
-                href="/internet/xfinity/faq/xfinity-data-cap"
-                className="block p-4 bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all group"
-              >
-                <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">
-                  Xfinity 有流量上限吗？超了会怎么样
-                </h3>
-                <p className="text-sm text-slate-600 line-clamp-2">
-                  部分地区有 data cap，重度用户需要评估 Unlimited Data…
-                </p>
-              </Link>
-
-              <Link
-                href="/internet/xfinity/faq/xfinity-outage"
-                className="block p-4 bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-md transition-all group"
-              >
-                <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors">
-                  Xfinity 经常断网怎么办？Outage 常见原因
-                </h3>
-                <p className="text-sm text-slate-600 line-clamp-2">
-                  先判断区域 Outage，再排查线路/分线器/信号噪声与设备问题…
-                </p>
+                做完整账单检查
+                <ArrowRight size={16} />
               </Link>
             </div>
+          </InfoCard>
 
-            <div className="text-center">
-              <Link
-                href="/internet/xfinity/faq"
-                className="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-colors shadow-lg"
-              >
-                查看所有 Xfinity FAQ
-                <ArrowRight size={20} />
-              </Link>
-            </div>
-            <p className="text-center text-slate-600 mt-6">
-              如需了解更多服务，请返回<Link href="/" className="text-blue-600 hover:text-blue-700 font-semibold underline">美国鸿达电讯首页</Link>。
+          <InfoCard
+            title="如果主要问题是速度或稳定性"
+            icon={<Gauge size={23} />}
+          >
+            <p>
+              不要先把 Wi-Fi 慢理解成套餐速度不够。
+              如果靠近 Router 正常、网线正常，只有部分房间慢，
+              更可能是家庭网络覆盖问题。
             </p>
+
+            <Link
+              href="/internet/diagnosis"
+              className="inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]"
+            >
+              判断 Wi-Fi、设备还是线路
+              <ArrowRight size={16} />
+            </Link>
+          </InfoCard>
+        </section>
+
+        {/* 不要急着换 */}
+        <section className="mt-16 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
+          <p className="text-sm font-bold text-[#2786A5]">
+            Xfinity 有问题，不等于一定要换
+          </p>
+
+          <h2 className="mt-2 text-2xl font-black sm:text-3xl">
+            这几种情况先不要急着换运营商
+          </h2>
+
+          <div className="mt-7 grid gap-4 md:grid-cols-2">
+            {doNotSwitchYet.map((item) => (
+              <div
+                key={item}
+                className="flex gap-3 rounded-2xl border border-[#D5E5EC] bg-white p-5"
+              >
+                <CheckCircle2
+                  size={20}
+                  className="mt-0.5 shrink-0 text-[#2786A5]"
+                />
+
+                <p className="text-sm leading-6 text-[#526170]">
+                  {item}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
 
-        <footer className="py-10 border-t border-slate-100 text-center text-xs text-slate-400 font-black">
-          © {new Date().getFullYear()} 美国鸿达电讯 · XFINITY INTERNET
-        </footer>
-      </main>
-    </>
-  );
+        {/* 值得比较 */}
+        <section className="mt-16">
+          <p className="text-sm font-bold text-[#2786A5]">
+            什么情况下值得开始比较其他运营商
+          </p>
+
+          <h2 className="mt-2 text-2xl font-black sm:text-3xl">
+            先确认是长期问题，再进入换网比较
+          </h2>
+
+          <div className="mt-7 grid gap-4 md:grid-cols-2">
+            {startComparing.map((item) => (
+              <div
+                key={item}
+                className="flex gap-3 rounded-2xl border border-[#D5E5EC] bg-white p-5"
+              >
+                <ShieldCheck
+                  size={20}
+                  className="mt-0.5 shrink-0 text-[#164B78]"
+                />
+
+                <p className="text-sm leading-6 text-[#526170]">
+                  {item}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <Link
+            href="/internet/providers"
+            className="mt-7 inline-flex items-center gap-2 rounded-xl bg-[#164B78] px-6 py-3 font-bold text-white transition hover:bg-[#103B60]"
+          >
+            比较不同宽带运营商
+            <ArrowRight size={18} />
+          </Link>
+        </section>
+
+        {/* FAQ */}
+        <section className="mt-16 rounded-3xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+          <p className="text-sm font-bold text-[#2786A5]">
+            Xfinity 专项知识库
+          </p>
+
+          <h2 className="mt-2 text-2xl font-black sm:text-3xl">
+            常见 Xfinity 问题
+          </h2>
+
+          <div className="mt-7 grid gap-4 md:grid-cols-2">
+            <FAQLink
+              title="Xfinity 账单突然上涨"
+              href="/internet/xfinity/faq/xfinity-price-increase"
+            />
+
+            <FAQLink
+              title="Xfinity 提前取消和合约问题"
+              href="/internet/xfinity/faq/xfinity-contract-early-termination"
+            />
+
+            <FAQLink
+              title="Xfinity 账单为什么每个月不一样"
+              href="/internet/xfinity/faq/xfinity-bill-changes"
+            />
+
+            <FAQLink
+              title="Xfinity Data 使用与限制"
+              href="/internet/xfinity/faq/xfinity-data-cap"
+            />
+
+            <FAQLink
+              title="Xfinity 经常断网怎么办"
+              href="/internet/xfinity/faq/xfinity-outage"
+            />
+
+            <FAQLink
+              title="查看全部 Xfinity FAQ"
+              href="/internet/xfinity/faq"
+            />
+          </div>
+        </section>
+
+        {/* 人工边界 */}
+        <section className="mx-auto mt-16 max-w-4xl text-center">
+          <CircleHelp
+            size={28}
+            className="mx-auto text-[#2786A5]"
+          />
+
+          <h2 className="mt-4 text-2xl font-black">
+            具体账户和地址状态，页面无法直接读取
+          </h2>
+
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-[#526170]">
+            当前 Promotion、Credit、设备记录、地址 serviceability
+            和最终订单条件，都可能因账户和地址而不同。
+            页面可以帮助判断方向，最终仍需结合实际记录核实。
+          </p>
+
+          <Link
+            href="/contact"
+            className="mt-6 inline-flex items-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-6 py-3 text-sm font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-[#F4F8FA]"
+          >
+            需要时进入人工核实
+            <ArrowRight size={16} />
+          </Link>
+        </section>
+
+        <p className="mt-12 text-center text-xs leading-5 text-[#526170]">
+          最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前地址、账户与官方规则为准。
+        </p>
+      </div>
+    </main>
+  )
+}
+
+function InfoCard({
+  title,
+  icon,
+  children,
+}: {
+  title: string
+  icon: React.ReactNode
+  children: React.ReactNode
+}) {
+  return (
+    <div className="rounded-3xl border border-[#D5E5EC] bg-white p-6 sm:p-7">
+      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F4F8FA] text-[#164B78]">
+        {icon}
+      </div>
+
+      <h2 className="mt-4 text-xl font-black">
+        {title}
+      </h2>
+
+      <div className="mt-4 space-y-4 text-sm leading-7 text-[#526170]">
+        {children}
+      </div>
+    </div>
+  )
+}
+
+function FAQLink({
+  title,
+  href,
+}: {
+  title: string
+  href: string
+}) {
+  return (
+    <Link
+      href={href}
+      className="group flex items-center justify-between gap-4 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-4 font-bold text-[#202D3A] transition hover:border-[#2786A5]"
+    >
+      <span>{title}</span>
+
+      <ArrowRight
+        size={17}
+        className="shrink-0 text-[#164B78] transition group-hover:translate-x-0.5"
+      />
+    </Link>
+  )
 }
