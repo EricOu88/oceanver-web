@@ -1,97 +1,59 @@
-/**
- * Frontier FAQ Sitemap 专用数据源
- * 只包含 slug 和 lastModified，用于生成 sitemap
- * 正文内容在 faq-content.ts 中
- */
-export interface FrontierFAQSitemapItem {
-  slug: string
-  lastModified: string
+export interface FrontierFAQCategory {
+  title: string
+  slugs: string[]
 }
 
-// 售前常见问题（申请前需要了解的问题）
-export const frontierPreSaleFAQIndex: FrontierFAQSitemapItem[] = [
-  // 覆盖相关
+export const frontierFAQCategories: FrontierFAQCategory[] = [
   {
-    slug: 'frontier-coverage-areas',
-    lastModified: '2026-01-20',
-  },
-  // 技术相关
-  {
-    slug: 'frontier-fiber-vs-dsl',
-    lastModified: '2026-01-20',
+    title: '地址与技术类型',
+    slugs: [
+      'frontier-address-availability',
+      'frontier-neighborhood-availability',
+      'frontier-fiber-or-dsl',
+    ],
   },
   {
-    slug: 'frontier-ont-box',
-    lastModified: '2026-01-20',
-  },
-  // 速度相关
-  {
-    slug: 'frontier-speed-performance',
-    lastModified: '2026-01-20',
-  },
-  {
-    slug: 'frontier-speed-slower-than-advertised',
-    lastModified: '2026-01-20',
+    title: '是否值得更换',
+    slugs: [
+      'frontier-better-than-current',
+      'frontier-dont-rush-switch',
+      'frontier-worth-comparing',
+    ],
   },
   {
-    slug: 'frontier-peak-time-performance',
-    lastModified: '2026-01-20',
-  },
-  // 安装相关
-  {
-    slug: 'frontier-installation-time',
-    lastModified: '2026-01-20',
-  },
-  {
-    slug: 'frontier-appointment-issues',
-    lastModified: '2026-01-20',
-  },
-  // 费用相关（售前）
-  {
-    slug: 'frontier-hidden-fees',
-    lastModified: '2026-01-20',
-  },
-  // 用户适合度
-  {
-    slug: 'frontier-international-students-vs-long-term',
-    lastModified: '2026-01-20',
-  },
-]
-
-// 售后常见问题（使用中遇到的问题）
-export const frontierAfterSaleFAQIndex: FrontierFAQSitemapItem[] = [
-  // 故障相关
-  {
-    slug: 'frontier-frequent-disconnections',
-    lastModified: '2026-01-20',
-  },
-  // 合约和取消相关
-  {
-    slug: 'frontier-contract-early-termination',
-    lastModified: '2026-01-20',
+    title: '网速与 Wi-Fi',
+    slugs: [
+      'frontier-slow-speed-package',
+      'frontier-speed-test-normal',
+      'frontier-room-wifi-slow',
+    ],
   },
   {
-    slug: 'frontier-cancellation-tips',
-    lastModified: '2026-01-20',
-  },
-  // 费用相关（售后）
-  {
-    slug: 'frontier-restocking-fee',
-    lastModified: '2026-01-20',
-  },
-  // 客服相关
-  {
-    slug: 'frontier-customer-service',
-    lastModified: '2026-01-20',
+    title: '账单与长期成本',
+    slugs: [
+      'frontier-advertised-price',
+      'frontier-bill-increase',
+      'frontier-long-term-cost',
+    ],
   },
   {
-    slug: 'frontier-billing-errors',
-    lastModified: '2026-01-20',
+    title: '安装与设备',
+    slugs: [
+      'frontier-install-preparation',
+      'frontier-technician-visit',
+      'frontier-router-gateway',
+    ],
+  },
+  {
+    title: '取消、账户与其他',
+    slugs: [
+      'frontier-cancel-old-service',
+      'frontier-cancel-frontier',
+      'frontier-human-verification',
+    ],
   },
 ]
 
-// 合并所有问题（用于 sitemap 和总览页）
-export const frontierFAQIndex: FrontierFAQSitemapItem[] = [
-  ...frontierPreSaleFAQIndex,
-  ...frontierAfterSaleFAQIndex,
-]
+export const frontierFAQIndex = frontierFAQCategories.flatMap((category) =>
+  category.slugs.map((slug) => ({ slug, category: category.title })),
+)

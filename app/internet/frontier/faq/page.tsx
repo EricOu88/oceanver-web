@@ -1,39 +1,34 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft, ArrowRight, HelpCircle, MessageSquare } from 'lucide-react'
-import { frontierFAQIndex, frontierPreSaleFAQIndex, frontierAfterSaleFAQIndex } from './faq-index'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { frontierFAQCategories, frontierFAQIndex } from './faq-index'
 import { frontierFAQContent } from '@/app/internet-wifi/frontier/faq/faq-content'
 
+const LAST_UPDATED =
+  '最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前地址、账户与官方规则为准。'
+
 export const metadata: Metadata = {
-  title: 'Frontier 常见问题总览 | 15个核心问题索引 | 鸿达电讯',
+  title: 'Frontier 宽带常见问题｜地址、网速与长期成本｜美国鸿达电讯',
   description:
-    'Frontier 宽带常见问题总览页。涵盖覆盖范围、光纤DSL区别、速度、安装、故障、合约、费用、客服等15个常见问题。点击问题查看详细解答，中文办理协助。',
+    '整理 Frontier 地址覆盖、Fiber 与 DSL、网速、Wi-Fi、账单、安装和取消等问题，帮助你先判断现有宽带是否值得更换。',
   alternates: {
     canonical: 'https://oceanver.com/internet/frontier/faq',
   },
 }
 
-// ItemList Schema for SEO
-function ItemListSchema() {
-  const items = frontierFAQIndex
-    .map((item) => {
-      const content = frontierFAQContent[item.slug]
-      return content ? { ...item, ...content } : null
-    })
-    .filter(Boolean) as Array<{ slug: string; question: string; summary: string }>
+const questions = frontierFAQIndex.flatMap(({ slug }) => {
+  const item = frontierFAQContent[slug]
+  return item ? [{ ...item, slug }] : []
+})
 
+function FAQPageSchema() {
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    name: 'Frontier 常见问题列表',
-    description: 'Frontier 宽带常见问题完整列表',
-    numberOfItems: items.length,
-    itemListElement: items.map((item, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: item.question,
-      description: item.summary,
-      url: `https://oceanver.com/internet/frontier/faq/${item.slug}`,
+    '@type': 'FAQPage',
+    mainEntity: questions.map(({ question, answer }) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: { '@type': 'Answer', text: answer },
     })),
   }
 
@@ -45,120 +40,76 @@ function ItemListSchema() {
   )
 }
 
-export default function FrontierFAQIndexPage() {
+export default function FrontierFAQPage() {
   return (
     <>
-      <ItemListSchema />
-      <div className="min-h-screen bg-slate-50">
-        {/* 返回按钮 */}
-        <div className="bg-white border-b border-slate-200">
-          <div className="max-w-7xl mx-auto px-6 py-4">
+      <FAQPageSchema />
+      <main className="min-h-screen bg-[#F4F8FA] text-[#202D3A]">
+        <div className="border-b border-[#D5E5EC] bg-white">
+          <div className="mx-auto max-w-5xl px-5 py-4">
             <Link
               href="/internet/frontier"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 hover:text-blue-600 transition"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#526170] hover:text-[#164B78]"
             >
-              <ArrowLeft size={18} />
-              返回 Frontier 主页
+              <ArrowLeft size={18} /> 返回 Frontier 判断页
             </Link>
           </div>
         </div>
 
-        {/* 索引页内容 */}
-        <div className="max-w-4xl mx-auto px-6 py-12">
-          {/* 页面介绍 */}
-          <div className="text-center mb-12">
-            <h1 className="text-3xl md:text-4xl font-black text-slate-900 mb-4">
-              Frontier 常见问题
-            </h1>
-            <p className="text-lg text-slate-700 max-w-2xl mx-auto">
-              我们整理了 Frontier 宽带最常见的问题，帮助您快速找到答案。涵盖覆盖范围、光纤DSL区别、速度、安装、故障、合约、费用、客服等核心问题。点击下方问题查看详细解答。
+        <div className="mx-auto max-w-5xl px-5 py-10 md:py-14">
+          <header className="mb-10 max-w-3xl">
+            <h1 className="mb-4 text-3xl font-black md:text-4xl">Frontier 宽带常见问题</h1>
+            <p className="text-base leading-7 text-[#526170] md:text-lg">
+              先核对地址、服务类型和实际问题，再比较是否值得更换。价格、资格、安装与账户结果应以当前地址和账户信息为准。
             </p>
-          </div>
+          </header>
 
-          {/* 售前常见问题 */}
-          <section className="mb-12">
-            <div className="flex items-center gap-3 mb-6">
-              <HelpCircle className="text-blue-600" size={28} />
-              <h2 className="text-2xl md:text-3xl font-black text-slate-900">售前常见问题</h2>
-            </div>
-            <div className="space-y-4">
-              {frontierPreSaleFAQIndex.map((item) => {
-                const content = frontierFAQContent[item.slug]
-                if (!content) return null
-                
-                return (
-                  <div
-                    key={item.slug}
-                    className="bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all p-6"
-                  >
-                    <h3 className="text-lg font-bold text-slate-900 mb-2">
-                      Q：{content.question}
-                    </h3>
-                    <p className="text-slate-600 mb-3">{content.summary}</p>
-                  <Link
-                    href={`/internet/frontier/faq#${item.slug}`}
-                    className="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm hover:text-blue-700 transition-colors group"
-                  >
-                    查看详细解答
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                  </Link>
+          <div className="space-y-9">
+            {frontierFAQCategories.map((category) => (
+              <section key={category.title} aria-labelledby={`category-${category.title}`}>
+                <h2
+                  id={`category-${category.title}`}
+                  className="mb-4 text-xl font-bold md:text-2xl"
+                >
+                  {category.title}
+                </h2>
+                <div className="grid gap-4 md:grid-cols-2">
+                  {category.slugs.map((slug) => {
+                    const item = frontierFAQContent[slug]
+                    if (!item) return null
+
+                    return (
+                      <article
+                        key={slug}
+                        className="rounded-2xl border border-[#D5E5EC] bg-white p-5 shadow-sm md:p-6"
+                      >
+                        <h3 className="mb-3 text-base font-bold md:text-lg">{item.question}</h3>
+                        <p className="leading-7 text-[#526170]">{item.answer}</p>
+                      </article>
+                    )
+                  })}
                 </div>
-              )
-            })}
+              </section>
+            ))}
           </div>
-        </section>
 
-          {/* 售后常见问题 */}
-          <section className="mb-12">
-            <div className="flex items-center gap-3 mb-6">
-              <MessageSquare className="text-green-600" size={28} />
-              <h2 className="text-2xl md:text-3xl font-black text-slate-900">售后常见问题</h2>
-            </div>
-            <div className="space-y-4">
-              {frontierAfterSaleFAQIndex.map((item) => {
-                const content = frontierFAQContent[item.slug]
-                if (!content) return null
-                
-                return (
-                  <div
-                    key={item.slug}
-                    className="bg-white rounded-xl border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all p-6"
-                  >
-                    <h3 className="text-lg font-bold text-slate-900 mb-2">
-                      Q：{content.question}
-                    </h3>
-                    <p className="text-slate-600 mb-3">{content.summary}</p>
-                    <Link
-                      href={`/internet/frontier/faq#${item.slug}`}
-                      className="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm hover:text-blue-700 transition-colors group"
-                    >
-                      查看详细解答
-                      <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </div>
-                )
-              })}
-            </div>
-          </section>
-
-          {/* CTA 区域 */}
-          <div className="mt-12 p-6 bg-blue-50 rounded-2xl border border-blue-200 text-center">
-            <p className="text-slate-800 font-semibold mb-3">
-              还有其他问题？
-            </p>
-            <p className="text-slate-600 text-sm mb-4">
-              我们的中文顾问可以为您提供一对一的专业解答
-            </p>
-            <Link
-              href="/internet/frontier"
-              className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-bold transition-colors"
-            >
-              返回 Frontier 服务页
+          <nav aria-label="相关问题入口" className="mt-10 flex flex-wrap gap-x-6 gap-y-3">
+            <Link href="/internet/diagnosis" className="font-semibold text-[#164B78] hover:text-[#103B60]">
+              宽带问题诊断 <ArrowRight className="inline" size={16} />
             </Link>
-          </div>
+            <Link href="/internet/providers" className="font-semibold text-[#164B78] hover:text-[#103B60]">
+              比较宽带长期成本 <ArrowRight className="inline" size={16} />
+            </Link>
+            <Link href="/internet/price-hike" className="font-semibold text-[#164B78] hover:text-[#103B60]">
+              判断宽带账单涨价 <ArrowRight className="inline" size={16} />
+            </Link>
+          </nav>
+
+          <p className="mt-8 border-t border-[#D5E5EC] pt-5 text-xs text-[#526170]">
+            {LAST_UPDATED}
+          </p>
         </div>
-        <p className="mx-auto max-w-7xl px-6 pb-8 text-center text-xs text-slate-500">最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前账户与官方规则为准。</p>
-      </div>
+      </main>
     </>
   )
 }
