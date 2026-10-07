@@ -45,7 +45,7 @@ Oceanver 不是“页面树”，而是“问题网”。
 
 | 节点 | 母问题 | 上级入口 | 横向相关 | 下一步 | 人工边界 |
 |---|---|---|---|---|---|
-| `/cellphone/family-plan-guide` | 家庭多线 | Hub / Diagnosis / FAQ | 设备余额、Bill Credit、转号、Providers | 逐条线路判断后再比较 | `/contact` |
+| `/cellphone/family-plan-guide` | 家庭多线 | Hub / Diagnosis / FAQ | 设备余额、Bill Credit、转号、Providers、线路数量变化 | 逐条线路判断后再比较；线路退出时重算多线阶梯 / Free Line / 账户级折扣 | `/contact` |
 | `/cellphone/faq/promo-credit-not-received` | 手机优惠 / Credit 到账异常 | Hub / FAQ / Diagnosis / Family | Trade-in、Bill Credit、转网奖励、AutoPay、多线优惠 | 继续观察 / 查订单账单 / 方案比较 | `/contact` |
 | `/cellphone/faq/family-plan-leave-keep-number` | Family Plan 成员退出 / 保号 / 户主权限 | Family Guide / FAQ / Diagnosis | 设备余额、Credit、无 SSN、转网、境外处理 | 留在原运营商 / 携号转网 / 注销 | `/contact` |
 | `/cellphone/family-plan-exit-account-holder` | 家庭计划退出 / 户主权限 / 保号 | Family / FAQ / Diagnosis / No-SSN | Account Holder、Transfer PIN、SSN、设备余额、Porting | 转出 / 转责任 / 注销 | `/contact` |
@@ -128,6 +128,7 @@ Oceanver 不是“页面树”，而是“问题网”。
    - 手机账单 ↔ 宽带账单
    - 负责“费用为什么变贵”的共同入口
    - 已增加“手机第一张账单”子模块，拆分激活费、prorated、设备、保险、AutoPay、Promotion / Credit 与 Reward
+   - 已增加“宽带 + 手机 Bundle 依赖”子模块，提醒取消宽带前先核对手机线、Free Line、Mobile Credit 与账户级折扣
    - 已增加“手机 + 宽带一起迁移 / 切换”子模块，处理号码转移、宽带启用、旧账户关闭、设备归还和 Final Bill
 
 2. **`/cellphone/faq/no-ssn-us-cellphone-internet`**
