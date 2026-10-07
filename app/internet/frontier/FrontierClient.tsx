@@ -138,9 +138,31 @@ export default function FrontierClient() {
           </div>
         </section>
 
-        <p className="mx-auto max-w-6xl px-5 py-6 text-sm leading-6 text-[#526170]">
-          商业宽带应按 SLA、固定 IP、线路和合同条件单独判断，不与住家宽带混在一起比较。
-        </p>
+        <section className="mx-auto max-w-6xl px-5 py-10">
+          <div className="grid gap-4 md:grid-cols-3">
+            <Link href="/internet/home-network-guide" className="rounded-2xl border border-[#D5E5EC] bg-white p-5 font-bold text-[#164B78]">
+              Wi-Fi / 家庭网络判断
+            </Link>
+            <Link href="/internet/price-hike" className="rounded-2xl border border-[#D5E5EC] bg-white p-5 font-bold text-[#164B78]">
+              账单持续涨价判断
+            </Link>
+            <Link href="/internet/frontier/faq" className="rounded-2xl border border-[#D5E5EC] bg-white p-5 font-bold text-[#164B78]">
+              Frontier 常见问题
+            </Link>
+          </div>
+          <div className="mt-6 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5">
+            <h2 className="font-black">什么时候需要人工核实？</h2>
+            <p className="mt-2 text-sm leading-6 text-[#526170]">
+              当前地址可用技术、订单状态、安装条件、设备记录、具体价格和资格都需要结合实时账户与地址确认。
+            </p>
+            <Link href="/contact" className="mt-4 inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]">
+              需要时进入人工核实 <ArrowRight size={16} />
+            </Link>
+          </div>
+          <p className="mt-6 text-sm leading-6 text-[#526170]">
+            商业宽带应按 SLA、固定 IP、线路和合同条件单独判断，不与住家宽带混在一起比较。
+          </p>
+        </section>
 
         <div className="mx-auto max-w-6xl px-5 pb-10 text-xs text-[#526170]">{LAST_UPDATED}</div>
       </main>
