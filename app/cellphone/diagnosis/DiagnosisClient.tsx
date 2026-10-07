@@ -338,6 +338,7 @@ function buildResult(problem: ProblemId, answers: string[], knowledge: QADocumen
       result.selfHelp = ['保存 pending/failed 状态、错误提示、提交时间和相关 case number。', '号码完全转移成功前，不要主动取消旧运营商号码。'];
       result.dont = ['不要重复提交多笔转网请求，也不要在旧号码失效后自行假定新线路已接管号码。'];
       result.cannot = ['网页无法查询 Port status、号码资格、账户后台、设备解锁状态或当前 Credit 余额。'];
+      result.actions.push({ type: 'knowledge', label: '家庭组退出 / 户主权限判断', href: '/cellphone/family-plan-exit-account-holder' });
       if (answers[0] !== 'not-started' || answers[1] === 'inactive' || answers[2] !== 'checked') {
         result.actions.push({ type: 'human', label: '需要时进入人工核实', href: '/contact' });
       }
@@ -367,6 +368,7 @@ function buildResult(problem: ProblemId, answers: string[], knowledge: QADocumen
       result.dont = ['不要只用“每线价格”决定，也不要假设所有成员必须同时转网或同时换手机。'];
       result.cannot = ['网页无法确认实际多线价格、每线 Promotion/Upgrade 资格、设备融资余额或 Credit 是否可转移。'];
       result.actions.push({ type: 'knowledge', label: '查看家庭多线计划判断', href: '/cellphone/family-plan-guide' });
+      result.actions.push({ type: 'knowledge', label: '成员退出 / 户主权限 / 保号判断', href: '/cellphone/family-plan-exit-account-holder' });
       result.actions.push({ type: 'human', label: '需要准确数字时进入人工核实', href: '/contact' });
       if (answers[1] === 'switch-all' && answers[2] === 'all' && answers[3] === 'none') {
         result.actions.unshift({ type: 'compare', label: '比较其他手机方案', href: '/cellphone/providers' });
