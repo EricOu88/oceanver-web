@@ -137,20 +137,20 @@ Oceanver 不是“页面树”，而是“问题网”。
 
 按优先级：
 
-### P1 — 直接补齐
+### P1 — 已完成
 
 1. `/internet/spectrum/faq`
-   - 增加 `/internet/providers`
-   - 增加 `/internet/price-hike`
-   - 增加 `/contact`
+   - 已增加 `/internet/providers`
+   - 已增加 `/internet/price-hike`
+   - 已增加 `/contact`
 
 2. `/internet/att/fiber/faq`
-   - 增加 `/internet/att-fiber`
-   - 增加 `/contact`
+   - 已增加 `/internet/att-fiber`
+   - 已增加 `/contact`
 
 3. `/internet/home-network-guide`
-   - 增加明确人工边界与 `/contact`
-   - 只在“地址 / 设备兼容 / 线路 / 当前服务条件无法确认”时进入人工
+   - 已增加明确人工边界与 `/contact`
+   - 仅在“地址 / 设备兼容 / 线路 / 当前服务条件无法确认”时进入人工
 
 ### P2 — 下一阶段问题库增长
 
