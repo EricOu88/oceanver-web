@@ -205,7 +205,7 @@ export default function BillOptimizationClient() {
               <li>折扣或 trade-in credit 与账户记录不一致。</li>
               <li>同一地址存在其他可选方案，且完整周期成本值得比较。</li>
             </ul>
-            <p className="mt-4 leading-7 text-slate-700">比较手机方案时，可先查看 <Link href="/cellphone/providers" className="font-semibold text-blue-700 underline underline-offset-4">现有手机运营商与套餐选择</Link>。</p>
+            <p className="mt-4 leading-7 text-slate-700">比较手机方案时，可先查看 <Link href="/cellphone/providers" className="font-semibold text-blue-700 underline underline-offset-4">手机方案比较方法</Link>。</p>
           </article>
           <article id="observe-first" className="scroll-mt-6 rounded-3xl border border-slate-200 bg-white p-5 md:p-7">
             <h2 className="text-xl font-black md:text-2xl">哪些情况可以先确认，不必急着换？</h2>
@@ -217,7 +217,7 @@ export default function BillOptimizationClient() {
               <li>已确认只收一次的设备费用；仍应在下一期账单确认没有重复。</li>
             </ul>
             <p className="mt-4 rounded-xl bg-slate-50 p-4 leading-7 text-slate-700">先确认费用是否会重复出现，再判断是否需要调整套餐或运营商。</p>
-            <p className="mt-4 leading-7 text-slate-700">比较宽带方案时，可查看 <Link href="/internet/providers" className="font-semibold text-blue-700 underline underline-offset-4">现有宽带运营商比较</Link>。</p>
+            <p className="mt-4 leading-7 text-slate-700">比较宽带方案时，可查看 <Link href="/internet/providers" className="font-semibold text-blue-700 underline underline-offset-4">宽带方案比较方法</Link>。</p>
           </article>
         </section>
 
@@ -243,7 +243,7 @@ export default function BillOptimizationClient() {
             <Link href="/internet/faq" className="rounded-xl border border-slate-200 px-4 py-3 hover:border-blue-300 hover:bg-blue-50">美国宽带常见问题</Link>
             <Link href="/cellphone/diagnosis" className="rounded-xl border border-slate-200 px-4 py-3 hover:border-blue-300 hover:bg-blue-50">手机套餐诊断</Link>
             <Link href="/cellphone/faq" className="rounded-xl border border-slate-200 px-4 py-3 hover:border-blue-300 hover:bg-blue-50">美国手机常见问题</Link>
-            <Link href="/contact" className="rounded-xl border border-slate-200 px-4 py-3 hover:border-blue-300 hover:bg-blue-50">联系中文客服</Link>
+            <Link href="/contact" className="rounded-xl border border-slate-200 px-4 py-3 hover:border-blue-300 hover:bg-blue-50">需要时进入人工核实</Link>
           </div>
         </nav>
 
