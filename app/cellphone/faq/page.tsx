@@ -7,6 +7,7 @@ import {
   HelpCircle,
   Layers3,
   RefreshCcw,
+  ShieldCheck,
   Signal,
   Smartphone,
   Users,
