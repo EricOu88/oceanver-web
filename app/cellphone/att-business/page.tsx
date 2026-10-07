@@ -1,5 +1,5 @@
-import { permanentRedirect } from 'next/navigation'
+import { permanentRedirect } from 'next/navigation';
 
-export default function RetiredCellphoneSalesPage() {
-  permanentRedirect('/cellphone/providers')
+export default function RetiredATTBusinessSalesPage() {
+  permanentRedirect('/cellphone/att/business-faq');
 }
