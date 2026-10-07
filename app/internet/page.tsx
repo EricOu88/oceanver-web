@@ -321,13 +321,22 @@ export default function InternetPage() {
               </p>
             </div>
 
-            <Link
-              href="/internet/faq"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-5 py-3 font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-[#F4F8FA]"
-            >
-              查看宽带常见问题
-              <ArrowRight size={17} />
-            </Link>
+            <div className="flex flex-col gap-3">
+              <Link
+                href="/internet/faq"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-5 py-3 font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-[#F4F8FA]"
+              >
+                查看宽带常见问题
+                <ArrowRight size={17} />
+              </Link>
+              <Link
+                href="/internet/home-network-guide"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-5 py-3 font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-[#F4F8FA]"
+              >
+                家里 Wi-Fi / Router 怎么判断
+                <ArrowRight size={17} />
+              </Link>
+            </div>
           </div>
         </section>
 
