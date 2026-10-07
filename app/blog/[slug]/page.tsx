@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getAllPostSlugs, getPostBySlug, getRelatedPosts } from '@/lib/blog'
 import { Calendar, Tag, ArrowLeft, ArrowRight } from 'lucide-react'
-import Script from 'next/script'
 import BlogPostClient from './BlogPostClient'
 import { CommunityDiscussionClientOnly } from '@/app/components/community/CommunityDiscussionByPath'
 
@@ -51,27 +50,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const relatedPosts = getRelatedPosts(slug, post.category, 3)
 
-  // Sitewide Organization reference
-  const organizationJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    '@id': 'https://oceanver.com/#organization',
-    name: '美国鸿达电讯',
-    description: '为美国中文用户提供手机套餐、家庭宽带、账单检查、套餐选择和常见通信问题信息与中文协助。',
-    url: 'https://oceanver.com',
-    telephone: '+1-510-849-6191',
-    areaServed: { '@type': 'Country', name: 'United States' },
-  }
-
   return (
     <>
-      {/* Organization Schema */}
-      <Script
-        id="organization-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-      />
-
       <main className="max-w-4xl mx-auto px-6 py-12 md:py-16">
         {/* 面包屑导航（提升索引深度） */}
         <nav className="mb-4 text-sm text-slate-500">
