@@ -213,19 +213,21 @@
 
 ## 七、执行顺序
 
-### P1 — 立即建立
-家庭计划退出 / 户主权限 / 保号节点
+### P1 — 已完成
+家庭计划退出 / 户主权限 / 保号节点：
+`/cellphone/family-plan-exit-account-holder`
 
-### P2 — 立即建立
-手机套餐涨价总判断 `/cellphone/price-hike`
+### P2 — 已完成
+手机套餐涨价总判断：
+`/cellphone/price-hike`
 
-### P3 — 先加强，不建新 URL
-Bill Optimization：
+### P3 — 已完成（加强现有节点，不新增 URL）
+Bill Optimization 已增加：
 - 首账单高于报价
 - 手机 / 宽带 bundle 依赖
 - 取消服务前检查关联优惠
 
-Family Guide：
+Family Guide 已增加：
 - 线路减少后每线价格可能变化
 - 加入陌生家庭组前的退出预案
 
