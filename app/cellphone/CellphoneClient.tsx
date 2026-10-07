@@ -97,6 +97,11 @@ const KNOWLEDGE_LINKS = [
     desc: '区分身份验证、信用审核、设备和地址条件，再决定下一步。',
   },
   {
+    href: '/cellphone/price-hike',
+    title: '手机套餐涨价了，要留、改还是换？',
+    desc: '先区分每线月费、AutoPay、多线折扣、Free Line、设备和 Credit，再决定下一步。',
+  },
+  {
     href: '/cellphone/faq/promo-credit-not-received',
     title: 'Trade-in、Bill Credit 或转网奖励还没到账？',
     desc: '先分清优惠类型，再核对订单、设备验收、线路资格和账单记录。',
