@@ -112,6 +112,11 @@ const KNOWLEDGE_LINKS = [
     desc: '逐条核对设备、Credit、转网条件和成员需求。',
   },
   {
+    href: '/cellphone/family-plan-exit-account-holder',
+    title: '想退出家庭组、户主失联或想保号？',
+    desc: '先判断账户角色、号码控制权、Transfer PIN、设备余额和身份验证条件。',
+  },
+  {
     href: '/cellphone/providers',
     title: '已经确定要比较方案？',
     desc: '再比较真实账单、设备成本、信号、国际使用和转网代价。',
