@@ -1,19 +1,12 @@
 import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
 
 export const metadata: Metadata = {
-  title: '美国政府免费手机卡申请指南 - 鸿达电信中文办理',
+  title: 'Lifeline 政府通信补助资格判断 | 美国鸿达电讯',
   description:
-    '美国政府 Lifeline 手机服务申请指南，说明 Medicaid 等资格条件、可用福利和申请前需要核实的信息。项目资格与覆盖范围以所在州及官方规则为准。',
-  alternates: {
-    canonical: 'https://oceanver.com/cellphone/government',
-  },
-
+    '按收入、符合条件的政府福利项目、家庭状态和当前服务规则判断 Lifeline。ACP 已结束，不应再按 ACP 申请。',
 };
 
-export default function GovernmentLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function GovernmentLayout({ children }: { children: ReactNode }) {
   return children;
 }
