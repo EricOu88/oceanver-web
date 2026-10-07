@@ -87,6 +87,7 @@ Oceanver 不是“页面树”，而是“问题网”。
 | `/internet/home-network-guide` | 入户宽带 vs 家庭 Wi-Fi | 宽带 Hub | Diagnosis、FAQ、Providers | 判断 Wi-Fi / Router / Mesh / 入户线路 | **待补直接人工出口** |
 | `/internet/business-vs-residential` | Business vs Residential | Providers / 宽带 Hub | Diagnosis | Providers | `/contact` |
 | `/internet/providers/faq` | 比较方法 FAQ | Providers | 通用 FAQ / Diagnosis | Providers | 通过 Providers / Contact |
+| `/internet/faq/after-cancel-final-bill` | 取消后账户 / Final Bill / 设备状态 | 宽带 FAQ / Xfinity FAQ | Bill Check、Diagnosis、设备归还、AutoPay | 核对取消确认 / Final Bill / 设备 / 账户状态 | `/contact` |
 
 ## 3. 运营商判断节点
 
