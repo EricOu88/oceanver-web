@@ -194,6 +194,20 @@ export default function HomeNetworkGuidePage() {
           </Link>
         </section>
 
+        <section className="mt-12 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-7 md:p-8">
+          <h2 className="text-2xl font-black">哪些情况网页无法直接确认？</h2>
+          <p className="mt-3 leading-relaxed text-[#526170]">
+            具体地址能否安装、现有线路状态、设备兼容、当前 Gateway / Router 记录、账户限制和现场施工条件，
+            都需要结合真实地址、设备或账户核实。网页只能帮助缩小问题范围，不能代替当前后台结果。
+          </p>
+          <Link
+            href="/contact"
+            className="mt-6 inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]"
+          >
+            需要时进入人工核实 <ArrowRight size={16} />
+          </Link>
+        </section>
+
         <p className="mt-10 text-center text-xs leading-5 text-[#526170]">
           最后更新：2026年10月｜技术、设备、地址覆盖和运营商规则可能变化，请以当前地址、设备和实际服务条件为准。
         </p>
