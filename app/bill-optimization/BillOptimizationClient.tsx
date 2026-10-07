@@ -101,9 +101,9 @@ function ReviewList({ items }: { items: string[][] }) {
   return (
     <div className="grid gap-4 md:grid-cols-2">
       {items.map(([title, detail]) => (
-        <article key={title} className="rounded-2xl border border-slate-200 bg-white p-5">
-          <h3 className="font-bold text-slate-900">{title}</h3>
-          <p className="mt-2 leading-7 text-slate-700">{detail}</p>
+        <article key={title} className="rounded-2xl border border-[#D5E5EC] bg-white p-5">
+          <h3 className="font-bold text-[#202D3A]">{title}</h3>
+          <p className="mt-2 leading-7 text-[#526170]">{detail}</p>
         </article>
       ))}
     </div>
@@ -112,27 +112,27 @@ function ReviewList({ items }: { items: string[][] }) {
 
 export default function BillOptimizationClient() {
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900">
-      <header className="bg-gradient-to-b from-blue-50 to-slate-50 px-5 pb-12 pt-36 md:pb-16 md:pt-16">
+    <main className="min-h-screen bg-[#FCFDFE] text-[#202D3A]">
+      <header className="bg-gradient-to-b from-blue-50 to-slate-50 px-5 pb-12 pt-12 md:pb-16 md:pt-16">
         <div className="mx-auto max-w-5xl">
-          <Link href="/" className="mb-6 inline-block text-sm text-slate-500 hover:text-blue-700">
+          <Link href="/" className="mb-6 inline-block text-sm text-[#526170] hover:text-[#164B78]">
             ← 返回首页
           </Link>
-          <p className="mb-4 text-sm font-bold uppercase tracking-wide text-blue-700">BILL CHECK · 美国手机与家庭宽带</p>
+          <p className="mb-4 text-sm font-bold uppercase tracking-wide text-[#164B78]">BILL CHECK · 美国手机与家庭宽带</p>
           <h1 className="max-w-4xl text-3xl font-black leading-tight tracking-tight md:text-5xl">
             手机、宽带账单为什么变贵？
           </h1>
-          <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-700 md:text-xl">
+          <p className="mt-5 max-w-4xl text-lg leading-8 text-[#526170] md:text-xl">
             账单变贵不一定只有一个原因。常见情况包括优惠到期、AutoPay 折扣失效、设备费、附加服务、套餐调整、一次性费用或运营商价格变化。先找到账单中发生变化的项目，再判断是否需要处理。
           </p>
-          <p className="mt-4 font-semibold text-blue-900">先判断原因，再决定是否换套餐或换运营商。</p>
+          <p className="mt-4 font-semibold text-[#202D3A]">先判断原因，再决定是否换套餐或换运营商。</p>
         </div>
       </header>
 
       <div className="mx-auto max-w-5xl space-y-6 px-5 pb-28 pt-0 md:space-y-8 md:py-14">
-        <nav aria-label="快速查看" className="rounded-2xl border border-slate-200 bg-white px-5 py-4">
-          <span className="mr-3 text-sm font-bold text-slate-600">快速查看：</span>
-          <div className="mt-3 flex flex-wrap gap-x-5 gap-y-3 text-sm font-semibold text-blue-800">
+        <nav aria-label="快速查看" className="rounded-2xl border border-[#D5E5EC] bg-white px-5 py-4">
+          <span className="mr-3 text-sm font-bold text-[#526170]">快速查看：</span>
+          <div className="mt-3 flex flex-wrap gap-x-5 gap-y-3 text-sm font-semibold text-[#164B78]">
             <a href="#bill-reasons" className="underline underline-offset-4">常见涨价原因</a>
             <a href="#mobile-bill" className="underline underline-offset-4">手机账单检查</a>
             <a href="#home-internet-bill" className="underline underline-offset-4">宽带账单检查</a>
@@ -144,39 +144,39 @@ export default function BillOptimizationClient() {
         </nav>
         <section id="bill-reasons" className="scroll-mt-6 rounded-3xl bg-white p-5 shadow-sm md:p-8">
           <h2 className="text-2xl font-black md:text-3xl">账单突然变贵，先看这 7 个地方</h2>
-          <p className="mt-3 max-w-3xl leading-7 text-slate-700">先比较本月和上月的账单明细，定位金额、新增项目或折扣状态的变化。下面每种情况都要结合账户记录确认。</p>
+          <p className="mt-3 max-w-3xl leading-7 text-[#526170]">先比较本月和上月的账单明细，定位金额、新增项目或折扣状态的变化。下面每种情况都要结合账户记录确认。</p>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {reasons.map((reason, index) => (
-              <article key={reason.title} className="scroll-mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+              <article key={reason.title} className="scroll-mt-6 rounded-2xl border border-[#D5E5EC] bg-[#FCFDFE] p-5">
                 <h3 className="text-lg font-bold">{index + 1}. {reason.title}</h3>
-                <p className="mt-2 leading-7 text-slate-700">{reason.detail}</p>
+                <p className="mt-2 leading-7 text-[#526170]">{reason.detail}</p>
               </article>
             ))}
           </div>
         </section>
 
         <section id="mobile-bill" className="scroll-mt-6 rounded-3xl bg-white p-5 shadow-sm md:p-8">
-          <p className="text-sm font-bold text-blue-700">手机账单</p>
+          <p className="text-sm font-bold text-[#164B78]">手机账单</p>
           <h2 className="mt-2 text-2xl font-black md:text-3xl">手机账单变贵，重点检查什么？</h2>
           <div className="mt-6"><ReviewList items={phoneItems} /></div>
-          <p className="mt-5 leading-7 text-slate-700">
-            如果问题已经涉及套餐类型、线路数量或是否需要换方案，可继续查看 <Link href="/cellphone/diagnosis" className="font-semibold text-blue-700 underline underline-offset-4">手机套餐诊断</Link>；也可浏览 <Link href="/cellphone/faq" className="font-semibold text-blue-700 underline underline-offset-4">美国手机常见问题</Link>。
+          <p className="mt-5 leading-7 text-[#526170]">
+            如果问题已经涉及套餐类型、线路数量或是否需要换方案，可继续查看 <Link href="/cellphone/diagnosis" className="font-semibold text-[#164B78] underline underline-offset-4">手机问题诊断</Link>；也可浏览 <Link href="/cellphone/faq" className="font-semibold text-[#164B78] underline underline-offset-4">美国手机常见问题</Link>。
           </p>
         </section>
 
         <section id="home-internet-bill" className="scroll-mt-6 rounded-3xl bg-white p-5 shadow-sm md:p-8">
-          <p className="text-sm font-bold text-blue-700">家庭宽带账单</p>
+          <p className="text-sm font-bold text-[#164B78]">家庭宽带账单</p>
           <h2 className="mt-2 text-2xl font-black md:text-3xl">家庭宽带账单变贵，重点检查什么？</h2>
           <div className="mt-6"><ReviewList items={internetItems} /></div>
-          <div className="mt-5 space-y-2 leading-7 text-slate-700">
-            <p>如果已经确认是宽带长期涨价，可继续查看 <Link href="/internet/price-hike" className="font-semibold text-blue-700 underline underline-offset-4">宽带涨价原因与处理方法</Link>。</p>
-            <p>如果除了账单，还涉及地址覆盖、安装或是否值得换网，可查看 <Link href="/internet/diagnosis" className="font-semibold text-blue-700 underline underline-offset-4">宽带问题诊断</Link>。</p>
-            <p>设备费、AutoPay 或一次性费用仍有疑问，可查看 <Link href="/internet/faq" className="font-semibold text-blue-700 underline underline-offset-4">更多宽带常见问题</Link>。</p>
+          <div className="mt-5 space-y-2 leading-7 text-[#526170]">
+            <p>如果已经确认是宽带长期涨价，可继续查看 <Link href="/internet/price-hike" className="font-semibold text-[#164B78] underline underline-offset-4">宽带涨价原因与处理方法</Link>。</p>
+            <p>如果除了账单，还涉及地址覆盖、安装或是否值得换网，可查看 <Link href="/internet/diagnosis" className="font-semibold text-[#164B78] underline underline-offset-4">宽带问题诊断</Link>。</p>
+            <p>设备费、AutoPay 或一次性费用仍有疑问，可查看 <Link href="/internet/faq" className="font-semibold text-[#164B78] underline underline-offset-4">更多宽带常见问题</Link>。</p>
           </div>
         </section>
 
-        <section id="unknown-reason" className="scroll-mt-6 rounded-3xl border border-blue-200 bg-blue-50 p-5 md:p-8">
-          <p className="text-sm font-bold text-blue-700">不知道 / 不确定 / 看不懂账单</p>
+        <section id="unknown-reason" className="scroll-mt-6 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 md:p-8">
+          <p className="text-sm font-bold text-[#164B78]">不知道 / 不确定 / 看不懂账单</p>
           <h2 className="mt-2 text-2xl font-black md:text-3xl">完全看不懂账单？按这个顺序查</h2>
           <ol className="mt-6 grid gap-3 sm:grid-cols-2">
             {[
@@ -187,37 +187,37 @@ export default function BillOptimizationClient() {
               '检查 equipment、add-on、安装费或其他一次性费用。',
               '仍不确定时，记录项目名称和收费日期，再向运营商核实。',
             ].map((item, index) => (
-              <li key={item} className="flex gap-3 rounded-xl bg-white p-4 leading-7 text-slate-700">
-                <span className="font-black text-blue-700">{index + 1}.</span><span>{item}</span>
+              <li key={item} className="flex gap-3 rounded-xl bg-white p-4 leading-7 text-[#526170]">
+                <span className="font-black text-[#164B78]">{index + 1}.</span><span>{item}</span>
               </li>
             ))}
           </ol>
-          <p id="gradual-change" className="mt-5 leading-7 text-slate-700">如果金额是逐月缓慢增加，逐期比较基础月费、设备分期、附加服务和折扣行；如果只在某一期突然变化，优先确认新增项目、优惠结束日期和一次性收费。</p>
+          <p id="gradual-change" className="mt-5 leading-7 text-[#526170]">如果金额是逐月缓慢增加，逐期比较基础月费、设备分期、附加服务和折扣行；如果只在某一期突然变化，优先确认新增项目、优惠结束日期和一次性收费。</p>
         </section>
 
         <section className="grid gap-6 md:grid-cols-2">
-          <article id="worth-action" className="scroll-mt-6 rounded-3xl border border-blue-200 bg-white p-5 md:p-7">
+          <article id="worth-action" className="scroll-mt-6 rounded-3xl border border-[#D5E5EC] bg-white p-5 md:p-7">
             <h2 className="text-xl font-black md:text-2xl">哪些情况值得进一步处理？</h2>
-            <ul className="mt-4 list-disc space-y-2 pl-5 leading-7 text-slate-700">
+            <ul className="mt-4 list-disc space-y-2 pl-5 leading-7 text-[#526170]">
               <li>账单显示优惠明确到期，后续常规价格与原预算差异较大。</li>
               <li>出现不需要的附加服务，或设备月费持续增加。</li>
               <li>实际使用需求改变，当前线路数、速度档位或套餐权益不再合适。</li>
               <li>折扣或 trade-in credit 与账户记录不一致。</li>
               <li>同一地址存在其他可选方案，且完整周期成本值得比较。</li>
             </ul>
-            <p className="mt-4 leading-7 text-slate-700">比较手机方案时，可先查看 <Link href="/cellphone/providers" className="font-semibold text-blue-700 underline underline-offset-4">现有手机运营商与套餐选择</Link>。</p>
+            <p className="mt-4 leading-7 text-[#526170]">比较手机方案时，可先查看 <Link href="/cellphone/providers" className="font-semibold text-[#164B78] underline underline-offset-4">手机方案比较</Link>。</p>
           </article>
-          <article id="observe-first" className="scroll-mt-6 rounded-3xl border border-slate-200 bg-white p-5 md:p-7">
+          <article id="observe-first" className="scroll-mt-6 rounded-3xl border border-[#D5E5EC] bg-white p-5 md:p-7">
             <h2 className="text-xl font-black md:text-2xl">哪些情况可以先确认，不必急着换？</h2>
-            <ul className="mt-4 list-disc space-y-2 pl-5 leading-7 text-slate-700">
+            <ul className="mt-4 list-disc space-y-2 pl-5 leading-7 text-[#526170]">
               <li>只出现一次的安装、激活或升级费用。</li>
               <li>账期中途变更产生的 prorated charge。</li>
               <li>刚换套餐后的首月费用或账期衔接调整。</li>
               <li>小幅税费变化，且基础服务费没有改变。</li>
               <li>已确认只收一次的设备费用；仍应在下一期账单确认没有重复。</li>
             </ul>
-            <p className="mt-4 rounded-xl bg-slate-50 p-4 leading-7 text-slate-700">先确认费用是否会重复出现，再判断是否需要调整套餐或运营商。</p>
-            <p className="mt-4 leading-7 text-slate-700">比较宽带方案时，可查看 <Link href="/internet/providers" className="font-semibold text-blue-700 underline underline-offset-4">现有宽带运营商比较</Link>。</p>
+            <p className="mt-4 rounded-xl bg-[#FCFDFE] p-4 leading-7 text-[#526170]">先确认费用是否会重复出现，再判断是否需要调整套餐或运营商。</p>
+            <p className="mt-4 leading-7 text-[#526170]">比较宽带方案时，可查看 <Link href="/internet/providers" className="font-semibold text-[#164B78] underline underline-offset-4">宽带方案比较</Link>。</p>
           </article>
         </section>
 
@@ -225,29 +225,29 @@ export default function BillOptimizationClient() {
 
         <section id="faq" className="scroll-mt-6 rounded-3xl bg-white p-5 shadow-sm md:p-8">
           <h2 className="text-2xl font-black md:text-3xl">常见问题</h2>
-          <div className="mt-5 divide-y divide-slate-200">
+          <div className="mt-5 divide-y divide-[#D5E5EC]">
             {faqs.map((faq) => (
               <article key={faq.q} className="py-5 first:pt-0 last:pb-0">
                 <h3 className="text-lg font-bold">{faq.q}</h3>
-                <p className="mt-2 leading-7 text-slate-700">{faq.a}</p>
+                <p className="mt-2 leading-7 text-[#526170]">{faq.a}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <nav aria-label="相关账单问题" className="rounded-2xl bg-white p-5 text-sm font-semibold text-blue-800 shadow-sm">
-          <h2 className="mb-3 text-base font-bold text-slate-900">相关问题继续看</h2>
+        <nav aria-label="相关账单问题" className="rounded-2xl bg-white p-5 text-sm font-semibold text-[#164B78] shadow-sm">
+          <h2 className="mb-3 text-base font-bold text-[#202D3A]">相关问题继续看</h2>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            <Link href="/internet/price-hike" className="rounded-xl border border-slate-200 px-4 py-3 hover:border-blue-300 hover:bg-blue-50">宽带涨价原因与处理</Link>
-            <Link href="/internet/diagnosis" className="rounded-xl border border-slate-200 px-4 py-3 hover:border-blue-300 hover:bg-blue-50">宽带问题诊断</Link>
-            <Link href="/internet/faq" className="rounded-xl border border-slate-200 px-4 py-3 hover:border-blue-300 hover:bg-blue-50">美国宽带常见问题</Link>
-            <Link href="/cellphone/diagnosis" className="rounded-xl border border-slate-200 px-4 py-3 hover:border-blue-300 hover:bg-blue-50">手机套餐诊断</Link>
-            <Link href="/cellphone/faq" className="rounded-xl border border-slate-200 px-4 py-3 hover:border-blue-300 hover:bg-blue-50">美国手机常见问题</Link>
-            <Link href="/contact" className="rounded-xl border border-slate-200 px-4 py-3 hover:border-blue-300 hover:bg-blue-50">联系中文客服</Link>
+            <Link href="/internet/price-hike" className="rounded-xl border border-[#D5E5EC] px-4 py-3 hover:border-[#246B95] hover:bg-[#F4F8FA]">宽带涨价原因与处理</Link>
+            <Link href="/internet/diagnosis" className="rounded-xl border border-[#D5E5EC] px-4 py-3 hover:border-[#246B95] hover:bg-[#F4F8FA]">宽带问题诊断</Link>
+            <Link href="/internet/faq" className="rounded-xl border border-[#D5E5EC] px-4 py-3 hover:border-[#246B95] hover:bg-[#F4F8FA]">美国宽带常见问题</Link>
+            <Link href="/cellphone/diagnosis" className="rounded-xl border border-[#D5E5EC] px-4 py-3 hover:border-[#246B95] hover:bg-[#F4F8FA]">手机问题诊断</Link>
+            <Link href="/cellphone/faq" className="rounded-xl border border-[#D5E5EC] px-4 py-3 hover:border-[#246B95] hover:bg-[#F4F8FA]">美国手机常见问题</Link>
+            <Link href="/contact" className="rounded-xl border border-[#D5E5EC] px-4 py-3 hover:border-[#246B95] hover:bg-[#F4F8FA]">需要时进入人工核实</Link>
           </div>
         </nav>
 
-        <footer className="px-2 py-4 text-center text-sm leading-6 text-slate-500">
+        <footer className="px-2 py-4 text-center text-sm leading-6 text-[#526170]">
           <p>最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前账户与官方规则为准。</p>
           <p>内容由美国鸿达电讯团队整理与审核</p>
         </footer>

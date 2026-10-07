@@ -59,19 +59,6 @@ type ProblemDefinition = {
   description: string
 }
 
-type QADocument = {
-  id: string
-  question_variants?: string[]
-  summary?: string
-  answer?: string
-  check_first?: string[]
-  self_help?: string[]
-  cannot_determine?: string[]
-  next_step?: string
-  public_case?: boolean
-  review_status?: string
-}
-
 const problems: ProblemDefinition[] = [
   {
     id: 'bill',
@@ -1016,11 +1003,7 @@ function ListBlock({
   )
 }
 
-export default function DiagnosisClient({
-  knowledge: _knowledge,
-}: {
-  knowledge: QADocument[]
-}) {
+export default function DiagnosisClient() {
   const [problem, setProblem] = useState<ProblemId | null>(null)
   const [step, setStep] = useState(0)
   const [answers, setAnswers] = useState<string[]>([])

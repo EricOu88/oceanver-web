@@ -208,6 +208,21 @@ export default function SpectrumFAQPage() {
         </div>
 
         <section className="mt-10 rounded-2xl border border-[#D8E2EA] bg-white p-5 sm:p-6">
+          <h2 className="text-xl font-black">相关判断入口</h2>
+          <div className="mt-4 flex flex-wrap gap-x-6 gap-y-3">
+            <Link href="/internet/home-network-guide" className="font-semibold text-[#164B78] hover:text-[#103B60]">
+              Wi-Fi / 家庭网络判断 <ArrowRight className="inline" size={16} />
+            </Link>
+            <Link href="/internet/price-hike" className="font-semibold text-[#164B78] hover:text-[#103B60]">
+              账单持续涨价判断 <ArrowRight className="inline" size={16} />
+            </Link>
+            <Link href="/internet/providers" className="font-semibold text-[#164B78] hover:text-[#103B60]">
+              已确定要比较宽带 <ArrowRight className="inline" size={16} />
+            </Link>
+          </div>
+        </section>
+
+        <section className="mt-6 rounded-2xl border border-[#D8E2EA] bg-white p-5 sm:p-6">
           <h2 className="text-xl font-black">还不能确定问题来源？</h2>
           <p className="mt-2 text-sm leading-7 text-[#526170]">
             可进入宽带问题诊断，按网速、Wi-Fi、断网、设备和地址情况继续判断。
@@ -218,6 +233,12 @@ export default function SpectrumFAQPage() {
           >
             宽带问题诊断
             <ArrowRight size={16} />
+          </Link>
+          <p className="mt-4 text-sm leading-7 text-[#526170]">
+            如果涉及当前账单、设备记录、地址覆盖或订单状态，网页无法读取真实账户后台。
+          </p>
+          <Link href="/contact" className="mt-3 inline-flex items-center gap-2 font-bold text-[#164B78]">
+            需要时进入人工核实 <ArrowRight size={16} />
           </Link>
         </section>
 

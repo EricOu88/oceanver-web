@@ -1,35 +1,38 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import { notFound } from 'next/navigation'
-import { getAllPostSlugs, getPostBySlug, getRelatedPosts } from '@/lib/blog'
-import { Calendar, Tag, ArrowLeft, ArrowRight } from 'lucide-react'
-import Script from 'next/script'
-import BlogPostClient from './BlogPostClient'
-import { CommunityDiscussionClientOnly } from '@/app/components/community/CommunityDiscussionByPath'
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { notFound, permanentRedirect } from 'next/navigation';
+import { getAllPostSlugs, getPostBySlug, getRelatedPosts } from '@/lib/blog';
+import { ArrowLeft, ArrowRight, Calendar, Tag } from 'lucide-react';
+import Script from 'next/script';
+import BlogPostClient from './BlogPostClient';
+import { CommunityDiscussionClientOnly } from '@/app/components/community/CommunityDiscussionByPath';
 
 interface BlogPostPageProps {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string }>;
 }
 
+const redirects: Record<string, string> = {
+  'how-to-save-on-phone-bills': '/bill-optimization',
+};
+
 export async function generateStaticParams() {
-  const slugs = getAllPostSlugs()
-  return slugs.map((slug) => ({
-    slug,
-  }))
+  return getAllPostSlugs().map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const { slug } = await params
-  const post = await getPostBySlug(slug)
-
-  if (!post) {
+  const { slug } = await params;
+  if (redirects[slug]) {
     return {
-      title: '文章未找到',
-    }
+      title: '手机账单为什么变贵？｜美国鸿达电讯',
+      alternates: { canonical: 'https://oceanver.com/bill-optimization' },
+    };
   }
 
+  const post = await getPostBySlug(slug);
+  if (!post) return { title: '文章未找到' };
+
   return {
-    title: `${post.title} | 鸿达电讯博客`,
+    title: `${post.title}｜美国鸿达电讯`,
     description: post.description,
     alternates: { canonical: `https://oceanver.com/blog/${slug}` },
     openGraph: {
@@ -38,165 +41,81 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       images: post.image ? [post.image] : [],
       type: 'article',
     },
-  }
+  };
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const { slug } = await params
-  const post = await getPostBySlug(slug)
+  const { slug } = await params;
+  if (redirects[slug]) permanentRedirect(redirects[slug]);
 
-  if (!post) {
-    notFound()
-  }
+  const post = await getPostBySlug(slug);
+  if (!post) notFound();
 
-  const relatedPosts = getRelatedPosts(slug, post.category, 3)
-
-  // Sitewide Organization reference
+  const relatedPosts = getRelatedPosts(slug, post.category, 3);
   const organizationJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': 'https://oceanver.com/#organization',
     name: '美国鸿达电讯',
-    description: '为美国中文用户提供手机套餐、家庭宽带、账单检查、套餐选择和常见通信问题信息与中文协助。',
     url: 'https://oceanver.com',
-    telephone: '+1-510-849-6191',
-    areaServed: { '@type': 'Country', name: 'United States' },
-  }
+  };
 
   return (
     <>
-      {/* Organization Schema */}
       <Script
         id="organization-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
       />
-
-      <main className="max-w-4xl mx-auto px-6 py-12 md:py-16">
-        {/* 面包屑导航（提升索引深度） */}
-        <nav className="mb-4 text-sm text-slate-500">
-          <ol className="flex flex-wrap items-center gap-2">
-            <li>
-              <Link href="/" className="hover:text-blue-600 transition-colors">
-                首页
-              </Link>
-            </li>
-            <li className="text-slate-300">/</li>
-            <li>
-              <Link href="/blog" className="hover:text-blue-600 transition-colors">
-                博客
-              </Link>
-            </li>
-            <li className="text-slate-300">/</li>
-            <li className="text-slate-700 font-semibold">{post.title}</li>
-          </ol>
+      <main className="mx-auto max-w-4xl px-6 py-12 md:py-16">
+        <nav className="mb-6 text-sm text-[#526170]">
+          <Link href="/blog" className="font-semibold text-[#246B95] hover:text-[#103B60]">
+            ← 返回问题知识入口
+          </Link>
         </nav>
 
-        {/* 返回按钮 */}
-        <div className="mb-8">
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 font-semibold transition-colors"
-          >
-            <ArrowLeft size={18} />
-            返回博客列表
-          </Link>
-        </div>
-
-        {/* 文章头部 */}
         <header className="mb-8">
-          {/* 分类和日期 */}
-          <div className="flex items-center gap-4 mb-4 flex-wrap">
-            <div className="flex items-center gap-2">
-              <Tag size={16} className="text-blue-600" />
-              <span className="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
-                {post.category}
-              </span>
-            </div>
-            <div className="flex items-center gap-2 text-sm text-slate-500">
-              <Calendar size={16} />
-              <span>{new Date(post.date).toLocaleDateString('zh-CN', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}</span>
-            </div>
+          <div className="mb-4 flex flex-wrap items-center gap-4">
+            <span className="inline-flex items-center gap-2 rounded-full bg-[#F4F8FA] px-3 py-1 text-sm font-semibold text-[#246B95]">
+              <Tag size={15} /> {post.category}
+            </span>
+            <span className="inline-flex items-center gap-2 text-sm text-[#526170]">
+              <Calendar size={15} />
+              {new Date(post.date).toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </span>
           </div>
-
-          {/* 标题 */}
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight">
-            {post.title}
-          </h1>
-
-          {/* 描述 */}
-          {post.description && (
-            <p className="text-lg text-slate-700 leading-relaxed">
-              {post.description}
-            </p>
-          )}
+          <h1 className="text-3xl font-black leading-tight text-[#202D3A] md:text-5xl">{post.title}</h1>
+          {post.description && <p className="mt-5 text-lg leading-8 text-[#526170]">{post.description}</p>}
         </header>
 
-        {/* 文章内容 */}
         <article
-          className="max-w-none mb-12
-            [&_h2]:text-2xl [&_h2]:font-black [&_h2]:text-slate-900 [&_h2]:mt-12 [&_h2]:mb-6
-            [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-slate-900 [&_h3]:mt-8 [&_h3]:mb-4
-            [&_p]:text-slate-700 [&_p]:leading-relaxed [&_p]:mb-4
-            [&_strong]:text-slate-900 [&_strong]:font-bold
-            [&_ul]:text-slate-700 [&_ul]:list-disc [&_ul]:ml-6 [&_ul]:space-y-2
-            [&_ol]:text-slate-700 [&_ol]:list-decimal [&_ol]:ml-6 [&_ol]:space-y-2
-            [&_li]:my-2
-            [&_blockquote]:border-l-4 [&_blockquote]:border-blue-600 [&_blockquote]:bg-blue-50 [&_blockquote]:py-4 [&_blockquote]:px-6 [&_blockquote]:rounded-r-xl [&_blockquote]:my-6
-            [&_a]:text-blue-600 [&_a]:font-semibold [&_a]:no-underline hover:[&_a]:underline
-            [&_img]:rounded-xl [&_img]:shadow-lg [&_img]:my-6
-            [&_code]:bg-slate-100 [&_code]:px-2 [&_code]:py-1 [&_code]:rounded [&_code]:text-sm
-            [&_pre]:bg-slate-900 [&_pre]:text-slate-100 [&_pre]:p-4 [&_pre]:rounded-xl [&_pre]:overflow-x-auto"
+          className="max-w-none [&_h2]:mt-10 [&_h2]:text-2xl [&_h2]:font-black [&_h2]:text-[#202D3A] [&_h3]:mt-7 [&_h3]:text-xl [&_h3]:font-bold [&_p]:mb-4 [&_p]:leading-7 [&_p]:text-[#526170] [&_li]:my-2 [&_ul]:ml-6 [&_ul]:list-disc [&_a]:font-semibold [&_a]:text-[#246B95]"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
 
-        {/* CTA 区域 */}
         <BlogPostClient />
-
         <CommunityDiscussionClientOnly pageKey={`blog:${post.slug}`} />
 
-        {/* 相关文章 */}
         {relatedPosts.length > 0 && (
-          <section className="mt-16 pt-12 border-t border-slate-200">
-            <h2 className="text-2xl font-black text-slate-900 mb-6">相关文章</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {relatedPosts.map((relatedPost) => (
-                <Link
-                  key={relatedPost.slug}
-                  href={`/blog/${relatedPost.slug}`}
-                  className="group block bg-white rounded-xl border border-slate-200 hover:border-blue-300 p-4 transition-all hover:shadow-lg"
-                >
-                  <h3 className="font-bold text-slate-900 mb-2 group-hover:text-blue-700 transition-colors line-clamp-2">
-                    {relatedPost.title}
-                  </h3>
-                  <p className="text-sm text-slate-600 line-clamp-2 mb-3">
-                    {relatedPost.description || relatedPost.excerpt}
-                  </p>
-                  <div className="flex items-center gap-2 text-xs text-blue-600 font-semibold">
-                    阅读更多
-                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                  </div>
+          <section className="mt-12 border-t border-[#D5E5EC] pt-8">
+            <h2 className="text-2xl font-black text-[#202D3A]">相关内容</h2>
+            <div className="mt-5 grid gap-4 md:grid-cols-3">
+              {relatedPosts.map((item) => (
+                <Link key={item.slug} href={`/blog/${item.slug}`} className="rounded-2xl border border-[#D5E5EC] bg-white p-4">
+                  <h3 className="font-black text-[#202D3A]">{item.title}</h3>
+                  <span className="mt-3 inline-flex items-center gap-1 text-sm font-bold text-[#246B95]">
+                    继续阅读 <ArrowRight size={14} />
+                  </span>
                 </Link>
               ))}
             </div>
           </section>
         )}
 
-        {/* 返回博客列表 */}
-        <div className="mt-12 text-center">
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 font-semibold transition-colors"
-          >
-            <ArrowLeft size={18} />
-            返回博客列表
-          </Link>
-        </div>
+        <Link href="/blog" className="mt-10 inline-flex items-center gap-2 font-semibold text-[#246B95]">
+          <ArrowLeft size={16} /> 返回问题知识入口
+        </Link>
       </main>
     </>
-  )
+  );
 }

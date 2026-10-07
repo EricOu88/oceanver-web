@@ -1,231 +1,110 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { ArrowRight, CheckCircle2, CircleHelp } from 'lucide-react';
+
+const pageUrl = 'https://oceanver.com/internet/business-vs-residential';
 
 export const metadata: Metadata = {
-  title: '商业宽带 vs 住宅宽带：除了价格，为什么湾区的小型初创公司必须选 Business 计划？',
+  title: '商业宽带还是住宅宽带？先看使用条件与账户要求｜美国鸿达电讯',
   description:
-    '商业宽带 vs 住宅宽带深度对比：除了价格差异，为什么湾区的小型初创公司、诊所、店铺必须选择 Business 计划？静态 IP、SLA 保障、技术支持的区别分析。',
-  alternates: {
-    canonical: 'https://oceanver.com/internet/business-vs-residential',
-  },
+    '比较 Business 与 Residential 宽带时，先看地址、用途、静态 IP、支持方式、SLA、上传需求和服务条款。不是所有商业用途都必须自动选择 Business。',
+  alternates: { canonical: pageUrl },
 };
+
+const compare = [
+  ['使用地址与服务条款', '先确认该地址允许哪些账户类型，以及服务条款是否适合实际用途。'],
+  ['静态 IP', '只有确实需要固定公网 IP、特定 VPN 或服务器架构时，才应把静态 IP 当成关键条件。'],
+  ['故障响应与 SLA', '部分商业方案可能提供不同支持或 SLA，但不是所有 Business 计划都有同样保障。'],
+  ['上传与网络架构', '视频会议、云备份、监控或服务器对上传与稳定性的需求不同，应看具体技术与 plan tier。'],
+  ['价格与合同条件', '商业和住宅方案的实际价格、期限、设备和费用结构都需要按地址和当前报价确认。'],
+  ['业务连续性', '如果网络中断会直接影响收银、电话、监控或远程办公，应把恢复方式和备用方案一起考虑。'],
+];
+
+const notAutomatic = [
+  '“开公司”不等于任何情况下都必须买 Business。',
+  'Business 不等于一定更快、更稳定或一定有静态 IP。',
+  'Residential 不等于一定不能用于任何居家办公。',
+  'SLA、支持优先级和静态 IP 都要看具体计划，不应按标签推断。',
+];
 
 export default function BusinessVsResidentialPage() {
   return (
-    <main className="min-h-screen bg-slate-50">
-      <div className="max-w-4xl mx-auto px-6 py-12">
-        <div className="mb-6">
-          <Link
-            href="/internet"
-            className="inline-flex items-center text-sm text-slate-500 hover:text-blue-600 transition"
-          >
-            ← 返回宽带服务
+    <main className="min-h-screen bg-[#FCFDFE] px-4 py-10 text-[#202D3A] sm:px-6 sm:py-14">
+      <div className="mx-auto max-w-5xl">
+        <Link href="/internet" className="text-sm font-semibold text-[#246B95] hover:text-[#103B60]">
+          ← 返回宽带问题
+        </Link>
+
+        <header className="py-10 sm:py-14">
+          <p className="mb-4 inline-flex rounded-full bg-[#F4F8FA] px-3 py-1 text-sm font-semibold text-[#246B95]">
+            Business / Residential 判断
+          </p>
+          <h1 className="max-w-4xl text-3xl font-black leading-tight tracking-tight sm:text-5xl">
+            商业宽带还是住宅宽带？先看业务需求，不用“公司”两个字直接决定
+          </h1>
+          <p className="mt-5 max-w-3xl text-base leading-8 text-[#526170] sm:text-lg">
+            账户标签本身不能保证速度、SLA、静态 IP 或技术支持。真正要比较的是地址、用途、计划层级和业务中断成本。
+          </p>
+        </header>
+
+        <section className="grid gap-4 md:grid-cols-2">
+          {compare.map(([title, desc], index) => (
+            <article key={title} className="rounded-2xl border border-[#D5E5EC] bg-white p-5">
+              <p className="text-sm font-bold text-[#2786A5]">0{index + 1}</p>
+              <h2 className="mt-1 text-xl font-black">{title}</h2>
+              <p className="mt-2 leading-7 text-[#526170]">{desc}</p>
+            </article>
+          ))}
+        </section>
+
+        <section className="py-12">
+          <CircleHelp className="text-[#246B95]" size={28} />
+          <h2 className="mt-4 text-2xl font-black sm:text-3xl">不要从这些绝对结论开始</h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {notAutomatic.map((item) => (
+              <div key={item} className="rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 font-semibold leading-7 text-[#526170]">
+                {item}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="rounded-3xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+          <CheckCircle2 className="text-[#246B95]" size={28} />
+          <h2 className="mt-4 text-2xl font-black">什么情况下值得认真比较 Business</h2>
+          <ul className="mt-5 space-y-3 leading-7 text-[#526170]">
+            <li>• 网络中断会直接影响营业或关键业务。</li>
+            <li>• 确实需要静态 IP、特定 VPN、服务器或监控架构。</li>
+            <li>• 对故障响应、支持方式或 SLA 有明确要求。</li>
+            <li>• 上传、并发、语音或云端应用是核心业务需求。</li>
+            <li>• 当前住宅方案的服务条款或技术条件不能满足实际使用。</li>
+          </ul>
+        </section>
+
+        <section className="mt-12 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
+          <h2 className="text-2xl font-black">下一步</h2>
+          <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+            <Link href="/internet/diagnosis" className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-6 py-3.5 font-bold text-[#246B95]">
+              先判断当前网络问题
+              <ArrowRight size={18} />
+            </Link>
+            <Link href="/internet/providers" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#164B78] px-6 py-3.5 font-bold text-white hover:bg-[#103B60]">
+              已确定要比较宽带方案
+              <ArrowRight size={18} />
+            </Link>
+          </div>
+          <p className="mt-6 leading-7 text-[#526170]">
+            具体地址可用账户类型、静态 IP、SLA、价格、合同和安装条件需要按当前地址与计划核实。
+          </p>
+          <Link href="/contact" className="mt-4 inline-flex items-center gap-2 font-bold text-[#246B95]">
+            需要时进入人工核实
+            <ArrowRight size={16} />
           </Link>
-        </div>
+        </section>
 
-        <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
-          商业宽带 vs 住宅宽带：除了价格，为什么湾区的小型初创公司必须选 Business 计划？
-        </h1>
-
-        <p className="text-lg text-slate-600 mb-12 leading-relaxed">
-          商业宽带和住宅宽带在价格、功能、服务保障等方面存在显著差异。对于小型初创公司、诊所、店铺等商业用户，选择商业宽带不仅是价格问题，更涉及业务稳定性、技术支持、法律合规等关键因素。
+        <p className="py-8 text-center text-xs leading-6 text-[#526170]">
+          最后更新：2026年10月｜Business / Residential 的价格、SLA、静态 IP、支持和账户资格需以当前地址与计划规则为准。
         </p>
-
-        {/* 问题4：商业宽带 vs 住宅宽带 */}
-        <section className="mb-16 bg-white rounded-2xl p-8 shadow-sm">
-          <h2 className="text-3xl font-black text-slate-900 mb-6">
-            商业宽带 vs 住宅宽带：除了价格，为什么湾区的小型初创公司必须选 Business 计划？
-          </h2>
-
-          <div className="space-y-6 text-slate-700 leading-relaxed">
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">结论</h3>
-              <p>
-                湾区的小型初创公司、诊所、店铺等商业用户必须选择商业宽带（Business Plan），因为商业宽带提供静态 IP、SLA 服务保障、优先技术支持、法律合规支持等关键功能，这些是住宅宽带无法提供的。虽然商业宽带价格更高，但对于业务稳定性要求高的用户，这是必要的投资。
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">原因解释</h3>
-              <p className="mb-4">
-                商业宽带和住宅宽带的主要区别：
-              </p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>
-                  <strong>静态 IP：</strong>商业宽带提供静态 IP 地址，适合服务器、监控系统、VPN 等需要固定 IP 的应用；住宅宽带使用动态 IP，不适合商业应用。
-                </li>
-                <li>
-                  <strong>SLA 保障：</strong>商业宽带提供 SLA（服务级别协议），承诺网络可用性和故障响应时间；住宅宽带没有 SLA 保障。
-                </li>
-                <li>
-                  <strong>技术支持：</strong>商业宽带提供优先技术支持，故障响应时间更短；住宅宽带技术支持响应较慢。
-                </li>
-                <li>
-                  <strong>法律合规：</strong>商业宽带符合商业使用规定，避免因使用住宅宽带进行商业活动而违反服务条款。
-                </li>
-                <li>
-                  <strong>上传速度：</strong>商业宽带通常提供更高的上传速度，适合视频会议、文件上传等商业应用。
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">实操建议</h3>
-              <div className="space-y-4">
-                <div className="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-r-xl">
-                  <p className="font-semibold text-slate-900 mb-2">必须选择商业宽带的情况</p>
-                  <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
-                    <li>需要运行服务器、监控系统、VPN 等需要静态 IP 的应用</li>
-                    <li>对网络稳定性要求高，不能接受长时间中断</li>
-                    <li>需要优先技术支持，故障需要快速响应</li>
-                    <li>进行商业活动，需要符合法律合规要求</li>
-                    <li>需要高上传速度，用于视频会议、文件上传等</li>
-                  </ul>
-                </div>
-
-                <div className="bg-green-50 border-l-4 border-green-600 p-4 rounded-r-xl">
-                  <p className="font-semibold text-slate-900 mb-2">可以选择住宅宽带的情况</p>
-                  <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
-                    <li>小型家庭办公室，主要进行一般办公</li>
-                    <li>不需要静态 IP，不需要运行服务器</li>
-                    <li>对网络中断可以接受，不需要 SLA 保障</li>
-                    <li>预算有限，希望节省费用</li>
-                    <li>注意：使用住宅宽带进行商业活动可能违反服务条款</li>
-                  </ul>
-                </div>
-
-                <div className="bg-purple-50 border-l-4 border-purple-600 p-4 rounded-r-xl">
-                  <p className="font-semibold text-slate-900 mb-2">成本对比示例</p>
-                  <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
-                    <li><strong>住宅宽带：</strong>$30-$60/月（促销价）</li>
-                    <li><strong>商业宽带：</strong>$80-$200/月（取决于速度和功能）</li>
-                    <li><strong>成本差异：</strong>商业宽带通常比住宅宽带贵 50%-200%</li>
-                    <li><strong>价值：</strong>商业宽带提供静态 IP、SLA 保障、优先技术支持等额外价值</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">适用人群</h3>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li><strong>小型初创公司：</strong>需要稳定网络进行业务运营</li>
-                <li><strong>诊所、店铺：</strong>需要网络支持业务系统</li>
-                <li><strong>需要运行服务器的用户：</strong>需要静态 IP 和稳定网络</li>
-                <li><strong>对网络稳定性要求高的用户：</strong>不能接受长时间中断</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* 问题26：商业用户选网指南 */}
-        <section className="mb-16 bg-white rounded-2xl p-8 shadow-sm">
-          <h2 className="text-3xl font-black text-slate-900 mb-6">
-            商业用户选网指南：静态 IP (Static IP) 对公司服务器和监控系统意味着什么？
-          </h2>
-
-          <div className="space-y-6 text-slate-700 leading-relaxed">
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">结论</h3>
-              <p>
-                静态 IP（Static IP）对公司服务器和监控系统至关重要，因为它提供固定的 IP 地址，确保外部设备可以稳定访问服务器，DNS 解析正常工作，VPN 连接稳定。没有静态 IP，这些系统可能无法正常工作或频繁中断。
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">原因解释</h3>
-              <p className="mb-4">
-                静态 IP 的重要性：
-              </p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>
-                  <strong>服务器访问：</strong>静态 IP 确保外部设备可以通过固定 IP 访问服务器，无需频繁更新 IP 地址。
-                </li>
-                <li>
-                  <strong>DNS 解析：</strong>静态 IP 可以与域名绑定，确保 DNS 解析正常工作。
-                </li>
-                <li>
-                  <strong>VPN 连接：</strong>静态 IP 确保 VPN 连接稳定，不会因为 IP 变化而中断。
-                </li>
-                <li>
-                  <strong>监控系统：</strong>静态 IP 确保监控系统可以稳定访问，不会因为 IP 变化而无法连接。
-                </li>
-                <li>
-                  <strong>邮件服务器：</strong>静态 IP 确保邮件服务器可以正常发送邮件，避免被标记为垃圾邮件。
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">实操建议</h3>
-              <div className="space-y-4">
-                <div className="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-r-xl">
-                  <p className="font-semibold text-slate-900 mb-2">需要静态 IP 的应用场景</p>
-                  <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
-                    <li>运行 Web 服务器、邮件服务器、FTP 服务器等</li>
-                    <li>运行监控系统、安防系统</li>
-                    <li>建立 VPN 连接，远程访问公司网络</li>
-                    <li>运行游戏服务器、流媒体服务器</li>
-                    <li>需要固定 IP 进行域名解析</li>
-                  </ul>
-                </div>
-
-                <div className="bg-green-50 border-l-4 border-green-600 p-4 rounded-r-xl">
-                  <p className="font-semibold text-slate-900 mb-2">如何获得静态 IP？</p>
-                  <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
-                    <li>选择商业宽带套餐，通常包含静态 IP</li>
-                    <li>部分运营商提供静态 IP 附加服务（需额外付费）</li>
-                    <li>联系运营商或授权代理咨询静态 IP 选项</li>
-                    <li>注意：住宅宽带通常不提供静态 IP</li>
-                  </ul>
-                </div>
-
-                <div className="bg-purple-50 border-l-4 border-purple-600 p-4 rounded-r-xl">
-                  <p className="font-semibold text-slate-900 mb-2">静态 IP 的成本</p>
-                  <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
-                    <li>商业宽带通常包含静态 IP，无需额外付费</li>
-                    <li>部分运营商提供静态 IP 附加服务，通常 $10-$20/月</li>
-                    <li>成本取决于运营商和套餐类型</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">适用人群</h3>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li><strong>需要运行服务器的公司：</strong>需要静态 IP 确保服务器稳定访问</li>
-                <li><strong>需要监控系统的用户：</strong>需要静态 IP 确保监控系统稳定连接</li>
-                <li><strong>需要 VPN 连接的公司：</strong>需要静态 IP 确保 VPN 连接稳定</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* 页面底部内链 */}
-        <div className="border-t border-slate-200 pt-8 mt-12">
-          <p className="text-slate-600 mb-4">相关文章：</p>
-          <div className="flex flex-wrap gap-4">
-            <Link
-              href="/internet/providers"
-              className="text-blue-600 hover:underline font-semibold"
-            >
-              宽带运营商对比 →
-            </Link>
-            <Link
-              href="/why-us"
-              className="text-blue-600 hover:underline font-semibold"
-            >
-              为什么选择授权代理？ →
-            </Link>
-            <Link
-              href="/internet"
-              className="text-blue-600 hover:underline font-semibold"
-            >
-              宽带服务首页 →
-            </Link>
-          </div>
-        </div>
       </div>
     </main>
   );

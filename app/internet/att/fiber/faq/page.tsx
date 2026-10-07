@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
 import ATTFiberFAQClient from './ATTFiberFAQClient'
 import { getAllFAQsForSchema } from './faq-data'
 
@@ -21,6 +21,15 @@ export const metadata: Metadata = {
     type: 'website',
   },
 }
+
+const publishedDetails = [
+  ['att-fiber-price-increase', '账单涨价先查哪些项目？'],
+  ['att-fiber-frequent-disconnections', '经常断网怎样判断？'],
+  ['att-fiber-outage-duration', 'Outage 恢复时间怎样核实？'],
+  ['att-fiber-equipment-fee', '设备收费怎样核对？'],
+  ['att-fiber-cancel-termination-fee', '取消条件和可能费用怎样确认？'],
+  ['att-fiber-buried-wire-installation', '临时光纤线未埋怎样处理？'],
+] as const
 
 function FAQPageSchema() {
   const schema = {
@@ -57,7 +66,29 @@ export default function Page() {
           </div>
         </div>
         <ATTFiberFAQClient />
-        <p className="mx-auto max-w-5xl px-5 pb-8 text-center text-xs leading-5 text-[#526170] md:px-8">
+
+        <section className="mx-auto mt-10 max-w-5xl px-5 md:px-8">
+          <div className="rounded-3xl border border-[#D5E5EC] bg-white p-6 md:p-8">
+            <h2 className="text-2xl font-black text-[#202D3A]">已发布的具体问题</h2>
+            <p className="mt-3 leading-7 text-[#526170]">
+              如果总览已经能定位到具体情况，可以进入对应详情继续检查；真实地址、订单和账户结果仍需按当前记录核实。
+            </p>
+            <div className="mt-6 grid gap-3 md:grid-cols-2">
+              {publishedDetails.map(([slug, title]) => (
+                <Link
+                  key={slug}
+                  href={`/internet/att/fiber/faq/${slug}`}
+                  className="flex items-center justify-between rounded-xl bg-[#F4F8FA] px-4 py-3 font-semibold text-[#164B78]"
+                >
+                  <span>{title}</span>
+                  <ArrowRight size={16} />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <p className="mx-auto max-w-5xl px-5 pb-8 pt-8 text-center text-xs leading-5 text-[#526170] md:px-8">
           最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前地址、账户与官方规则为准。
         </p>
       </div>

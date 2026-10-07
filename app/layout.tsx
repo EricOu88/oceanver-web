@@ -3,7 +3,6 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import './globals.css'
-import MobileContactBarClientOnly from '@/app/components/contact/MobileContactBarClientOnly'
 // import AIQuestionWidget from '@/app/components/AIQuestionWidget' // 暂时注释，使用 SafeAIQuestionWidget
 // import SafeAIQuestionWidgetWrapper from '@/app/components/SafeAIQuestionWidgetWrapper' // 暂时隐藏全站公开入口；需要恢复时取消注释
 
@@ -17,7 +16,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    '美国鸿达电讯为美国中文用户提供手机套餐、家庭宽带、账单检查、套餐选择和常见通信问题处理信息，并在需要账户、地址或资格核实时提供中文一对一服务。',
+    '美国鸿达电讯面向美国中文用户整理手机、家庭宽带、账单与常见通信问题；先帮助判断原因，再在账户、地址或资格无法公开确认时提供人工核实。',
 
   openGraph: {
     type: 'website',
@@ -25,7 +24,7 @@ export const metadata: Metadata = {
     siteName: '美国鸿达电讯',
     title: '美国鸿达电讯｜美国手机与家庭宽带中文服务',
     description:
-      '美国鸿达电讯为美国中文用户提供手机套餐、家庭宽带、账单检查、套餐选择和常见通信问题处理信息，并在需要账户、地址或资格核实时提供中文一对一服务。',
+      '美国鸿达电讯面向美国中文用户整理手机、家庭宽带、账单与常见通信问题；先帮助判断原因，再在账户、地址或资格无法公开确认时提供人工核实。',
     images: [
       {
         url: '/og-image.png',
@@ -40,7 +39,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '美国鸿达电讯｜美国手机与家庭宽带中文服务',
     description:
-      '美国鸿达电讯为美国中文用户提供手机套餐、家庭宽带、账单检查、套餐选择和常见通信问题处理信息，并在需要账户、地址或资格核实时提供中文一对一服务。',
+      '美国鸿达电讯面向美国中文用户整理手机、家庭宽带、账单与常见通信问题；先帮助判断原因，再在账户、地址或资格无法公开确认时提供人工核实。',
     images: ['/og-image.png'],
   },
 
@@ -124,9 +123,6 @@ export default function RootLayout({
       <body className="antialiased">
         {/* ================== 页面主体 ================== */}
         {children}
-
-        {/* ================== 全站唯一移动端悬浮 CTA（全局只引入一次） ================== */}
-        <MobileContactBarClientOnly />
 
         {/* ================== AI 智能问答组件（右下角悬浮） ================== */}
         {/* <SafeAIQuestionWidgetWrapper /> */}

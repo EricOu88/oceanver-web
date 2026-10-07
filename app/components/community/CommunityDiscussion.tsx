@@ -38,7 +38,7 @@ async function fetchCommunityThread(pageKey: string): Promise<CommunityThread> {
   return response.json()
 }
 
-export default function CommunityDiscussion({ pageKey, title, description, showContactLink = true }: { pageKey: string; title?: string; description?: string; showContactLink?: boolean }) {
+export default function CommunityDiscussion({ pageKey, title, description, showContactLink = false }: { pageKey: string; title?: string; description?: string; showContactLink?: boolean }) {
   const captchaRef = useRef<HTMLDivElement>(null)
   const captchaRenderedRef = useRef(false)
   const turnstileRef = useRef<TurnstileApi | null>(null)

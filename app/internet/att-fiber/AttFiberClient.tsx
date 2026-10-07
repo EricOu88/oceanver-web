@@ -74,13 +74,10 @@ export default function AttFiberClient() {
   return (
     <main className="min-h-screen bg-[#FCFDFE] text-[#202D3A]">
       <div className="border-b border-[#D5E5EC] bg-white">
-        <div className="mx-auto flex max-w-6xl justify-between px-5 py-3 md:px-8">
+        <div className="mx-auto max-w-6xl px-5 py-3 md:px-8">
           <Link href="/internet/providers" className="text-sm font-semibold text-[#164B78] hover:text-[#103B60]">
             ← 返回宽带比较
           </Link>
-          <a href="tel:15108496191" className="text-sm font-semibold text-[#164B78] hover:text-[#103B60]">
-            电话咨询
-          </a>
         </div>
       </div>
 
@@ -139,7 +136,27 @@ export default function AttFiberClient() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-10 md:px-8">
-        <p className="rounded-xl border border-[#D5E5EC] bg-white p-5 text-sm leading-6 text-[#526170]">
+        <div className="grid gap-4 md:grid-cols-3">
+          <Link href="/internet/home-network-guide" className="rounded-2xl border border-[#D5E5EC] bg-white p-5 font-bold text-[#164B78]">
+            Wi-Fi / 家庭网络问题
+          </Link>
+          <Link href="/internet/price-hike" className="rounded-2xl border border-[#D5E5EC] bg-white p-5 font-bold text-[#164B78]">
+            账单持续涨价判断
+          </Link>
+          <Link href="/internet/business-vs-residential" className="rounded-2xl border border-[#D5E5EC] bg-white p-5 font-bold text-[#164B78]">
+            Business / Residential 区别
+          </Link>
+        </div>
+        <div className="mt-6 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5">
+          <h2 className="font-black">哪些情况需要人工核实？</h2>
+          <p className="mt-2 text-sm leading-6 text-[#526170]">
+            当前地址 serviceability、订单状态、安装安排、具体价格、Promotion、设备记录和取消条件，网页无法读取真实后台。
+          </p>
+          <Link href="/contact" className="mt-4 inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]">
+            需要时进入人工核实 <ArrowRight size={16} />
+          </Link>
+        </div>
+        <p className="mt-6 rounded-xl border border-[#D5E5EC] bg-white p-5 text-sm leading-6 text-[#526170]">
           商业宽带应按 SLA、固定 IP、线路和合同单独判断，不与住家 Fiber 混在一起比较。
         </p>
         <p className="mt-5 text-center text-xs text-[#526170]">
