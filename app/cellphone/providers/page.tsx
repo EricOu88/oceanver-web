@@ -263,7 +263,7 @@ export default function CellphoneProvidersPage() {
 
         <section className="rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
           <h2 className="text-2xl font-black">下一步怎么走</h2>
-          <div className="mt-5 grid gap-4 md:grid-cols-3">
+          <div className="mt-5 grid gap-4 md:grid-cols-2 lg:grid-cols-5">
             <Link href="/cellphone/diagnosis" className="rounded-2xl bg-white p-5 font-bold text-[#246B95]">
               还没判断清楚 → 手机问题诊断
             </Link>
@@ -272,6 +272,12 @@ export default function CellphoneProvidersPage() {
             </Link>
             <Link href="/cellphone/faq" className="rounded-2xl bg-white p-5 font-bold text-[#246B95]">
               先查知识 → 手机常见问题
+            </Link>
+            <Link href="/cellphone/prepaid" className="rounded-2xl bg-white p-5 font-bold text-[#246B95]">
+              Prepaid / 回国保号 → 使用场景判断
+            </Link>
+            <Link href="/cellphone/att/business-faq" className="rounded-2xl bg-white p-5 font-bold text-[#246B95]">
+              Business / Consumer → 账户类型差异
             </Link>
           </div>
         </section>
