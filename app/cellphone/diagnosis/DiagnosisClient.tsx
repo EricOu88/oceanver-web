@@ -355,6 +355,7 @@ function buildResult(problem: ProblemId, answers: string[], knowledge: QADocumen
       result.selfHelp = ['把已收到账单的 Credit 与订单/条款逐项对照；记录差异出现的账期。', '如涉及丢失设备，先通过当前运营商账户核实线路和设备安全状态。'];
       result.dont = ['不要依据公开广告推算保证优惠金额。', '确认设备余额和未发 Credit 影响前，不要提前付清、取消线路或转网。'];
       result.cannot = ['网页无法确认 Trade-in eligibility、设备验收、Promotion/套餐资格、Upgrade eligibility、剩余余额或 Credit 发放计划。'];
+      result.actions.push({ type: 'knowledge', label: '查看优惠 / Credit 到账判断', href: '/cellphone/faq/promo-credit-not-received' });
       result.actions.push({ type: 'human', label: '需要时进入人工核实', href: '/contact' });
       break;
     }
