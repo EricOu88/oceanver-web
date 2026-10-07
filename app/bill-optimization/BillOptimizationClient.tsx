@@ -141,6 +141,7 @@ export default function BillOptimizationClient() {
             <a href="#worth-action" className="underline underline-offset-4">哪些情况值得处理</a>
             <a href="#observe-first" className="underline underline-offset-4">哪些情况可以先观察</a>
             <a href="#after-adjustment" className="underline underline-offset-4">调整后还要检查什么</a>
+            <a href="#bundle-dependency" className="underline underline-offset-4">手机 + 宽带绑定优惠</a>
             <a href="#move-both" className="underline underline-offset-4">手机 + 宽带一起迁移</a>
             <a href="#faq" className="underline underline-offset-4">常见问题</a>
           </div>
@@ -277,6 +278,30 @@ export default function BillOptimizationClient() {
           </div>
           <p className="mt-5 rounded-xl bg-slate-50 p-4 leading-7 text-slate-700">
             如果调整后又出现新的异常，不要直接假设“优惠失效”或“客服没处理好”；先把确认记录与新账单逐项对照，再决定是否需要运营商或人工核实。
+          </p>
+        </section>
+
+        <section id="bundle-dependency" className="scroll-mt-6 rounded-3xl border border-slate-200 bg-white p-5 md:p-8">
+          <p className="text-sm font-bold text-blue-700">手机 + 宽带绑定优惠</p>
+          <h2 className="mt-2 text-2xl font-black md:text-3xl">取消宽带前，先确认手机线会不会跟着变价</h2>
+          <p className="mt-3 max-w-3xl leading-7 text-slate-700">
+            有些手机优惠、Free Line、Credit 或账户资格可能与家庭宽带、Bundle 或同一账户条件有关。
+            所以“宽带省下多少钱”不能单独算，要把手机线可能发生的变化一起算进去。
+          </p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            {[
+              '哪些手机线正在享受与宽带或 Bundle 相关的 Promotion / Credit。',
+              '取消宽带后，每条手机线的常规价格和账户结构会不会变化。',
+              'Free Line、Mobile Credit 或其他限时优惠还有多久、是否依赖宽带资格。',
+              '手机线是否还有设备分期、Bill Credit 或转网奖励未结束。',
+              '宽带省下的金额，是否会被手机月费增加抵消。',
+              '如果决定拆分服务，先确认手机与宽带各自的切换顺序。',
+            ].map((item) => (
+              <div key={item} className="rounded-xl bg-slate-50 p-4 leading-7 text-slate-700">{item}</div>
+            ))}
+          </div>
+          <p className="mt-5 text-sm font-semibold text-blue-800">
+            网页不能确认当前 Bundle eligibility 或账户级 Credit；这类结果必须按真实账户核实。
           </p>
         </section>
 
