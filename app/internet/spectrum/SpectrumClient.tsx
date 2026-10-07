@@ -143,6 +143,18 @@ export default function SpectrumClient() {
           </div>
         </section>
 
+        <section className="mt-14 grid gap-4 md:grid-cols-3">
+          <Link href="/internet/home-network-guide" className="rounded-2xl border border-[#D8E2EA] bg-white p-5 font-bold text-[#164B78]">
+            Wi-Fi / 家庭网络判断
+          </Link>
+          <Link href="/internet/price-hike" className="rounded-2xl border border-[#D8E2EA] bg-white p-5 font-bold text-[#164B78]">
+            账单持续涨价判断
+          </Link>
+          <Link href="/internet/spectrum/faq" className="rounded-2xl border border-[#D8E2EA] bg-white p-5 font-bold text-[#164B78]">
+            Spectrum 常见问题
+          </Link>
+        </section>
+
         <section className="mt-14 rounded-3xl border border-[#D8E2EA] bg-[#EDF5F9] p-6 md:p-8">
           <h2 className="text-2xl font-black">
             这些情况，先不要急着换 Spectrum
