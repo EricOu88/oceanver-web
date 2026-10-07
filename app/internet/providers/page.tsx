@@ -379,6 +379,21 @@ export default function InternetProvidersPage() {
           </div>
         </section>
 
+        <section className="mx-auto mt-16 max-w-4xl rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 text-center sm:p-8">
+          <h2 className="text-2xl font-black">哪些比较结果必须结合真实地址或账户确认？</h2>
+          <p className="mx-auto mt-4 max-w-2xl leading-7 text-[#526170]">
+            地址 serviceability、当前 Promotion、设备记录、安装资格、订单状态和实际长期价格，
+            都可能因地址与账户不同而变化。网页可以帮助比较方向，但不能代替当前后台结果。
+          </p>
+          <Link
+            href="/contact"
+            className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-6 py-3 font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-white"
+          >
+            需要时进入人工核实
+            <ArrowRight size={18} />
+          </Link>
+        </section>
+
         {/* 最终出口 */}
         <section className="mx-auto mt-16 max-w-4xl text-center">
           <h2 className="text-2xl font-black sm:text-3xl">
