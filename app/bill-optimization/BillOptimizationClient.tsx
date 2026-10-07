@@ -139,6 +139,7 @@ export default function BillOptimizationClient() {
             <a href="#unknown-reason" className="underline underline-offset-4">看不懂账单怎么办</a>
             <a href="#worth-action" className="underline underline-offset-4">哪些情况值得处理</a>
             <a href="#observe-first" className="underline underline-offset-4">哪些情况可以先观察</a>
+            <a href="#after-adjustment" className="underline underline-offset-4">调整后还要检查什么</a>
             <a href="#faq" className="underline underline-offset-4">常见问题</a>
           </div>
         </nav>
@@ -222,6 +223,31 @@ export default function BillOptimizationClient() {
         </section>
 
 
+
+        <section id="after-adjustment" className="scroll-mt-6 rounded-3xl border border-slate-200 bg-white p-5 md:p-8">
+          <h2 className="text-2xl font-black md:text-3xl">账单已经降下来，下一期还要复核什么？</h2>
+          <p className="mt-3 max-w-3xl leading-7 text-slate-700">
+            一次调整成功，不代表后续每期都会完全一样。下一期账单至少再核对一次，确认新月费、Credit、设备和付款条件都按预期持续。
+          </p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            {[
+              '新基础月费是否与确认记录一致。',
+              'Promotion / Credit 是否仍然存在，金额是否与对应线路或服务匹配。',
+              'AutoPay / Paperless 状态和折扣是否正常。',
+              '设备分期、Router / Gateway 或其他设备费用是否正确。',
+              '旧套餐、旧线路或附加服务是否已经停止收费。',
+              '一次性 adjustment、refund 或 prorated charge 是否已经正确结算。',
+            ].map((item, index) => (
+              <div key={item} className="flex gap-3 rounded-xl bg-slate-50 p-4 leading-7 text-slate-700">
+                <span className="font-black text-blue-700">{index + 1}.</span>
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+          <p className="mt-5 rounded-xl bg-slate-50 p-4 leading-7 text-slate-700">
+            如果调整后又出现新的异常，不要直接假设“优惠失效”或“客服没处理好”；先把确认记录与新账单逐项对照，再决定是否需要运营商或人工核实。
+          </p>
+        </section>
 
         <section id="faq" className="scroll-mt-6 rounded-3xl bg-white p-5 shadow-sm md:p-8">
           <h2 className="text-2xl font-black md:text-3xl">常见问题</h2>
