@@ -54,7 +54,7 @@ export default function HomeNetworkGuidePage() {
       '帮助区分入户网络、Wi-Fi 覆盖、Router、Mesh 与不同宽带技术，避免把家庭网络问题误判成运营商问题。',
     mainEntityOfPage: pageUrl,
     inLanguage: 'zh-CN',
-    dateModified: '2026-10-06',
+    dateModified: '2026-10-07',
     author: {
       '@type': 'Organization',
       name: '美国鸿达电讯',
@@ -131,6 +131,23 @@ export default function HomeNetworkGuidePage() {
               自购、租用或 Mesh 没有统一“最省”答案，设备兼容、技术支持和维护责任也要一起考虑。
             </p>
           </article>
+        </section>
+
+        <section className="mt-12 rounded-2xl border border-[#D5E5EC] bg-white p-7 md:p-8">
+          <h2 className="text-2xl font-black">摄像头、门铃或智能设备连不上 2.4GHz Wi-Fi，先看什么？</h2>
+          <p className="mt-3 leading-7 text-[#526170]">
+            这类问题通常先属于家庭 Wi-Fi / 设备兼容层，不等于宽带线路本身有问题。很多 IoT 设备只支持特定 Wi-Fi 频段或对配网方式有要求。
+          </p>
+          <ul className="mt-5 list-disc space-y-3 pl-5 leading-7 text-[#526170]">
+            <li>确认手机和 IoT 设备当前连接的是哪个 Wi-Fi 名称与频段。</li>
+            <li>确认 Router / Gateway 是否把不同频段合并在同一个网络名称下。</li>
+            <li>查看设备说明是否要求特定频段、加密方式或配网步骤。</li>
+            <li>先在 Router 附近测试，排除距离、墙体和信号覆盖问题。</li>
+            <li>如果只有这一台设备连不上，而其他设备上网正常，优先检查设备兼容与设置，不先换运营商。</li>
+          </ul>
+          <p className="mt-4 text-sm font-semibold text-[#246B95]">
+            网页无法确认具体 Router 后台设置、运营商 Gateway 限制或设备固件状态，需要时再结合实际设备核实。
+          </p>
         </section>
 
         <section className="mt-12 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-7 md:p-8">
