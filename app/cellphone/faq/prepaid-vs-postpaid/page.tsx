@@ -1,365 +1,109 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, X, AlertCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle2, CircleHelp } from 'lucide-react';
+
+const pageUrl = 'https://oceanver.com/cellphone/faq/prepaid-vs-postpaid';
 
 export const metadata: Metadata = {
-  title: 'Prepaid vs Postpaid：美国预付费和后付费手机套餐对比 | 鸿达电信',
+  title: 'Prepaid 和 Postpaid 有什么区别？美国手机账户形式判断｜美国鸿达电讯',
   description:
-    'Prepaid（预付费）和 Postpaid（后付费）手机套餐有什么区别？哪个更适合你？本文详细对比两种套餐类型，帮你做出正确选择。',
-  keywords: [
-    'Prepaid vs Postpaid',
-    '预付费 vs 后付费',
-    '预付费手机套餐',
-    '后付费手机套餐',
-    '合约手机',
-    '无合约手机',
-    '美国手机套餐对比',
-    '手机套餐选择'
-  ],
-  alternates: {
-    canonical: 'https://oceanver.com/cellphone/faq/prepaid-vs-postpaid',
-  },
-  openGraph: {
-    title: 'Prepaid vs Postpaid：美国预付费和后付费手机套餐对比',
-    description: '详细对比 Prepaid 和 Postpaid 两种手机套餐类型，帮你做出正确选择。',
-    type: 'article',
-  },
+    '比较 Prepaid 与 Postpaid 的付款方式、账户资格、设备促销、多线管理和灵活性。具体价格、信用要求、网络优先级与资格需按当前计划核实。',
+  alternates: { canonical: pageUrl },
 };
+
+const rows = [
+  ['付款方式', '通常先付费再使用', '通常按账期后付费'],
+  ['账户资格', '通常更少依赖信用审核，但仍可能有身份、付款或激活条件', '可能涉及身份、信用或其他账户资格，不能一概而论'],
+  ['设备优惠', '常见结构相对简单，但具体设备政策按计划确认', '可能结合设备分期、Trade-in、Promotion 或 Bill Credit'],
+  ['多线管理', '可能支持多线，但规则因计划而异', '家庭或商业多线可能有不同账户结构和资格条件'],
+  ['灵活性', '更适合短期、测试网络或希望降低账户复杂度的人', '更适合需要长期账户、设备融资或多线管理的人'],
+  ['网络体验', '不能仅凭 Prepaid 标签判断速度或覆盖', '也不能仅凭 Postpaid 标签判断速度或优先级'],
+];
+
+const myths = [
+  ['Prepaid 一定不需要 SSN', '不能这么绝对。具体身份、付款和开户条件取决于运营商与当前计划。'],
+  ['Postpaid 一定比 Prepaid 信号好', '不能。地点、设备、频段、拥堵和具体套餐层级都会影响体验。'],
+  ['Postpaid 一定更贵', '不能只看账户形式。线路数量、设备、促销和实际账单都会改变结果。'],
+  ['Prepaid 一定没有家庭多线', '不同计划可能有不同多线结构，应查看当前计划而不是依赖固定规则。'],
+];
 
 export default function PrepaidVsPostpaidPage() {
   return (
-    <main className="min-h-screen bg-slate-50">
-      <div className="max-w-4xl mx-auto px-6 py-12">
-        {/* 返回链接 */}
-        <div className="mb-6">
-          <Link
-            href="/cellphone/faq"
-            className="inline-flex items-center text-sm text-slate-500 hover:text-blue-600 transition"
-          >
-            ← 返回手机套餐 FAQ
-          </Link>
-        </div>
+    <main className="min-h-screen bg-[#FCFDFE] px-4 py-10 text-[#202D3A] sm:px-6 sm:py-14">
+      <div className="mx-auto max-w-5xl">
+        <Link href="/cellphone/faq" className="text-sm font-semibold text-[#246B95] hover:text-[#103B60]">
+          ← 返回手机问题知识库
+        </Link>
 
-        {/* H1 标题 */}
-        <header className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-4 leading-tight">
-            Prepaid vs Postpaid：预付费和后付费手机套餐对比
+        <header className="py-10 sm:py-14">
+          <p className="mb-4 inline-flex rounded-full bg-[#F4F8FA] px-3 py-1 text-sm font-semibold text-[#246B95]">
+            账户形式知识
+          </p>
+          <h1 className="max-w-4xl text-3xl font-black leading-tight tracking-tight sm:text-5xl">
+            Prepaid 和 Postpaid 有什么区别？先看账户结构，不先判断谁更好
           </h1>
-          <p className="text-lg text-slate-600 leading-relaxed">
-            刚到美国选手机套餐，最常遇到的问题是：<strong className="text-slate-900">Prepaid（预付费）和 Postpaid（后付费）有什么区别？</strong>
-            哪个更适合我？本文详细对比两种套餐类型，帮你做出正确选择。
+          <p className="mt-5 max-w-3xl text-base leading-8 text-[#526170] sm:text-lg">
+            这两个词描述的是付款与账户结构，不等于信号等级、价格高低或服务质量排名。
+            真正选择时还要结合设备、线路数量、使用时长和当前资格。
           </p>
         </header>
 
-        {/* 核心区别 */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-black text-slate-900 mb-6">
-            核心区别
-          </h2>
-          <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-xl mb-8">
-            <p className="text-slate-900 font-semibold text-lg mb-2">
-              💡 一句话总结
-            </p>
-            <p className="text-slate-700 leading-relaxed">
-              <strong>Prepaid（预付费）</strong>：先充值后使用，无需SSN和信用检查，无合约，灵活自由。
-              <strong>Postpaid（后付费）</strong>：先使用后付费，需要SSN和信用检查，可能有合约，功能更全面。
-            </p>
+        <section className="overflow-hidden rounded-3xl border border-[#D5E5EC] bg-white">
+          <div className="grid grid-cols-3 bg-[#F4F8FA] px-4 py-4 text-sm font-black sm:px-6">
+            <div>比较项目</div><div>Prepaid</div><div>Postpaid</div>
           </div>
-
-          {/* 对比表格 */}
-          <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
-            <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-200">
-              {/* Prepaid 列 */}
-              <div className="p-6">
-                <h3 className="text-2xl font-black text-slate-900 mb-4">Prepaid（预付费）</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="text-green-600 shrink-0 mt-0.5" size={18} />
-                    <span className="text-slate-700">无需SSN和信用检查</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="text-green-600 shrink-0 mt-0.5" size={18} />
-                    <span className="text-slate-700">无合约绑定，随时停用</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="text-green-600 shrink-0 mt-0.5" size={18} />
-                    <span className="text-slate-700">账单结构通常较简单，但价格和条款仍可能变化</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="text-green-600 shrink-0 mt-0.5" size={18} />
-                    <span className="text-slate-700">适合短期使用或试用</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <X className="text-red-500 shrink-0 mt-0.5" size={18} />
-                    <span className="text-slate-700">通常没有多线折扣</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <X className="text-red-500 shrink-0 mt-0.5" size={18} />
-                    <span className="text-slate-700">需要提前充值</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Postpaid 列 */}
-              <div className="p-6">
-                <h3 className="text-2xl font-black text-slate-900 mb-4">Postpaid（后付费）</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="text-green-600 shrink-0 mt-0.5" size={18} />
-                    <span className="text-slate-700">网络优先级和功能条件需要结合具体方案核实</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="text-green-600 shrink-0 mt-0.5" size={18} />
-                    <span className="text-slate-700">多线有时能降低人均月费，需要结合总成本判断</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="text-green-600 shrink-0 mt-0.5" size={18} />
-                    <span className="text-slate-700">可以先使用后付费</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="text-green-600 shrink-0 mt-0.5" size={18} />
-                    <span className="text-slate-700">功能更全面</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <X className="text-red-500 shrink-0 mt-0.5" size={18} />
-                    <span className="text-slate-700">需要SSN和信用检查</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <X className="text-red-500 shrink-0 mt-0.5" size={18} />
-                    <span className="text-slate-700">可能有合约，提前解约要罚款</span>
-                  </li>
-                </ul>
-              </div>
+          {rows.map(([label, prepaid, postpaid]) => (
+            <div key={label} className="grid grid-cols-3 gap-3 border-t border-[#D5E5EC] px-4 py-5 text-sm leading-6 sm:px-6">
+              <div className="font-black">{label}</div>
+              <div className="text-[#526170]">{prepaid}</div>
+              <div className="text-[#526170]">{postpaid}</div>
             </div>
+          ))}
+        </section>
+
+        <section className="py-12">
+          <h2 className="text-2xl font-black sm:text-3xl">4 个常见误区</h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {myths.map(([title, answer]) => (
+              <article key={title} className="rounded-2xl border border-[#D5E5EC] bg-white p-5">
+                <CircleHelp className="text-[#2786A5]" size={22} />
+                <h3 className="mt-3 font-black">{title}</h3>
+                <p className="mt-2 leading-7 text-[#526170]">{answer}</p>
+              </article>
+            ))}
           </div>
         </section>
 
-        {/* 详细对比 */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-black text-slate-900 mb-6">
-            详细对比
-          </h2>
-
-          <div className="space-y-8">
-            {/* 1. 信用要求 */}
-            <div className="bg-white border border-slate-200 rounded-xl p-6">
-              <h3 className="text-xl font-bold text-slate-900 mb-4">1. 信用要求</h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <p className="font-semibold text-slate-900 mb-2">Prepaid</p>
-                  <p className="text-slate-600 text-sm">无需SSN，无需信用检查，任何人都可以办理。</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-slate-900 mb-2">Postpaid</p>
-                  <p className="text-slate-600 text-sm">需要SSN和信用记录，信用不好可能被拒或要求押金。</p>
-                </div>
-              </div>
-            </div>
-
-            {/* 2. 合约 */}
-            <div className="bg-white border border-slate-200 rounded-xl p-6">
-              <h3 className="text-xl font-bold text-slate-900 mb-4">2. 合约绑定</h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <p className="font-semibold text-slate-900 mb-2">Prepaid</p>
-                  <p className="text-slate-600 text-sm">无合约，随时可以停用或更换，完全自由。</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-slate-900 mb-2">Postpaid</p>
-                  <p className="text-slate-600 text-sm">可能有合约（特别是分期买手机），提前解约需要支付违约金。</p>
-                </div>
-              </div>
-            </div>
-
-            {/* 3. 价格稳定性 */}
-            <div className="bg-white border border-slate-200 rounded-xl p-6">
-              <h3 className="text-xl font-bold text-slate-900 mb-4">3. 价格稳定性</h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <p className="font-semibold text-slate-900 mb-2">Prepaid</p>
-                  <p className="text-slate-600 text-sm">价格和条款通常较易核对，但仍可能随运营商政策和账户条件变化。</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-slate-900 mb-2">Postpaid</p>
-                  <p className="text-slate-600 text-sm">促销期结束后可能涨价，需要主动续约或换方案。</p>
-                </div>
-              </div>
-            </div>
-
-            {/* 4. 多线折扣 */}
-            <div className="bg-white border border-slate-200 rounded-xl p-6">
-              <h3 className="text-xl font-bold text-slate-900 mb-4">4. 多线折扣</h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <p className="font-semibold text-slate-900 mb-2">Prepaid</p>
-                  <p className="text-slate-600 text-sm">通常没有多线折扣，每条线独立计费。</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-slate-900 mb-2">Postpaid</p>
-                  <p className="text-slate-600 text-sm">Family Plan 可能通过多线共享降低人均月费，但要结合线路数、设备优惠和总成本判断。</p>
-                </div>
-              </div>
-            </div>
-
-            {/* 5. 信号覆盖 */}
-            <div className="bg-white border border-slate-200 rounded-xl p-6">
-              <h3 className="text-xl font-bold text-slate-900 mb-4">5. 信号覆盖</h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <p className="font-semibold text-slate-900 mb-2">Prepaid</p>
-                  <p className="text-slate-600 text-sm">使用主流运营商网络，但可能优先级较低。</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-slate-900 mb-2">Postpaid</p>
-                  <p className="text-slate-600 text-sm">网络优先级可能不同，实际体验还取决于覆盖、拥塞、设备和套餐条件。</p>
-                </div>
-              </div>
-            </div>
+        <section className="rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
+          <CheckCircle2 className="text-[#246B95]" size={28} />
+          <h2 className="mt-4 text-2xl font-black">怎么决定下一步</h2>
+          <div className="mt-5 grid gap-4 md:grid-cols-3">
+            <Link href="/cellphone/prepaid" className="rounded-2xl bg-white p-5 font-bold text-[#246B95]">
+              想判断 Prepaid 是否适合 → 使用场景指南
+            </Link>
+            <Link href="/cellphone/family-plan-guide" className="rounded-2xl bg-white p-5 font-bold text-[#246B95]">
+              家庭多线 → 家庭计划判断
+            </Link>
+            <Link href="/cellphone/diagnosis" className="rounded-2xl bg-white p-5 font-bold text-[#246B95]">
+              有具体问题 → 手机问题诊断
+            </Link>
           </div>
         </section>
 
-        {/* 适合人群 */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-black text-slate-900 mb-6">
-            适合人群
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-green-50 border border-green-200 rounded-xl p-6">
-              <h3 className="text-xl font-bold text-slate-900 mb-4">选择 Prepaid 如果你：</h3>
-              <ul className="space-y-2 text-slate-700">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="text-green-600 shrink-0 mt-0.5" size={18} />
-                  <span>没有SSN或信用记录</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="text-green-600 shrink-0 mt-0.5" size={18} />
-                  <span>短期使用（几个月）</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="text-green-600 shrink-0 mt-0.5" size={18} />
-                  <span>不想被合约绑定</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="text-green-600 shrink-0 mt-0.5" size={18} />
-                  <span>希望先核对费用结构和条款变化</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="text-green-600 shrink-0 mt-0.5" size={18} />
-                  <span>只需要1-2条线</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-              <h3 className="text-xl font-bold text-slate-900 mb-4">选择 Postpaid 如果你：</h3>
-              <ul className="space-y-2 text-slate-700">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="text-blue-600 shrink-0 mt-0.5" size={18} />
-                  <span>有SSN和良好信用记录</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="text-blue-600 shrink-0 mt-0.5" size={18} />
-                  <span>长期在美（1年以上）</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="text-blue-600 shrink-0 mt-0.5" size={18} />
-                  <span>需要3条以上线路</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="text-blue-600 shrink-0 mt-0.5" size={18} />
-                  <span>需要结合覆盖、拥塞和优先级判断体验</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="text-blue-600 shrink-0 mt-0.5" size={18} />
-                  <span>商务或家庭使用</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* 常见误区 */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-black text-slate-900 mb-6">
-            常见误区
-          </h2>
-
-          <div className="space-y-6">
-            <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-xl">
-              <div className="flex items-start gap-3 mb-2">
-                <AlertCircle className="text-amber-800 shrink-0 mt-0.5" size={24} />
-                <h3 className="text-xl font-bold text-slate-900">
-                  误区 1：Prepaid 信号一定比 Postpaid 差
-                </h3>
-              </div>
-              <p className="text-slate-700 leading-relaxed ml-9">
-                不一定。很多 Prepaid 套餐使用主流运营商（如 AT&T、T-Mobile）的网络，信号覆盖基本相同。
-                区别在于网络优先级，Postpaid 在拥堵时可能优先，但日常使用差异不大。
-              </p>
-            </div>
-
-            <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-xl">
-              <div className="flex items-start gap-3 mb-2">
-                <AlertCircle className="text-amber-800 shrink-0 mt-0.5" size={24} />
-                <h3 className="text-xl font-bold text-slate-900">
-                  误区 2：Postpaid 一定比 Prepaid 贵
-                </h3>
-              </div>
-              <p className="text-slate-700 leading-relaxed ml-9">
-                不能只按 Prepaid 或 Postpaid 判断价格。关键要看线路数量、设备优惠、促销期限和实际总成本。
-              </p>
-            </div>
-
-            <div className="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-xl">
-              <div className="flex items-start gap-3 mb-2">
-                <AlertCircle className="text-amber-800 shrink-0 mt-0.5" size={24} />
-                <h3 className="text-xl font-bold text-slate-900">
-                  误区 3：没有 SSN 就不能办 Postpaid
-                </h3>
-              </div>
-              <p className="text-slate-700 leading-relaxed ml-9">
-                没有 SSN 时可选方案取决于运营商、账户资格和具体办理方式，需要进一步确认，不能直接归结为某一种方案。
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA 引导到诊断 */}
-        <section className="bg-blue-700 rounded-3xl p-10 text-white text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-black mb-4">
-            还是不确定选哪种类型？
-          </h2>
-          <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-            用我们的智能诊断工具，1 分钟帮你比较 Prepaid 与 Postpaid 的条件和下一步，不直接给出固定运营商推荐。
+        <section className="mt-12 rounded-3xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+          <h2 className="text-2xl font-black">哪些内容必须按当前账户核实？</h2>
+          <p className="mt-3 leading-7 text-[#526170]">
+            具体价格、信用与身份要求、网络优先级、设备分期、Promotion、Bill Credit、多线资格和国际使用条件都可能变化。
           </p>
-          <Link
-            href="/cellphone/diagnosis"
-            className="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-2xl font-black text-lg hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl"
-          >
-            👉 开始 1 分钟智能诊断
-            <ArrowRight size={20} />
+          <Link href="/contact" className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#164B78] px-6 py-3.5 font-bold text-white hover:bg-[#103B60]">
+            需要时进入人工核实
+            <ArrowRight size={18} />
           </Link>
         </section>
 
-        {/* 相关链接 */}
-        <div className="border-t border-slate-200 pt-8">
-          <p className="text-slate-600 mb-4">相关文章：</p>
-          <div className="flex flex-wrap gap-4">
-            <Link
-              href="/cellphone/faq/how-to-choose-us-cellphone-plan"
-              className="text-blue-600 hover:underline font-semibold"
-            >
-              美国手机套餐怎么选？新手一篇就懂 →
-            </Link>
-            <Link
-              href="/cellphone/providers"
-              className="text-blue-600 hover:underline font-semibold"
-            >
-              手机运营商对比 →
-            </Link>
-          </div>
-        </div>
+        <p className="py-8 text-center text-xs leading-6 text-[#526170]">
+          最后更新：2026年10月｜账户资格、价格、设备优惠和网络政策可能随运营商规则变化，请以当前计划与实际账户为准。
+        </p>
       </div>
     </main>
   );
