@@ -129,6 +129,21 @@ export default function PrepaidPage() {
           </div>
         </section>
 
+        <section className="mt-12 rounded-3xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+          <h2 className="text-2xl font-black">相关问题</h2>
+          <div className="mt-5 grid gap-4 md:grid-cols-3">
+            <Link href="/cellphone/faq/no-ssn-us-cellphone-internet" className="rounded-2xl bg-[#F4F8FA] p-5 font-bold text-[#246B95]">
+              没有 SSN 的资格判断
+            </Link>
+            <Link href="/cellphone/faq/prepaid-vs-postpaid" className="rounded-2xl bg-[#F4F8FA] p-5 font-bold text-[#246B95]">
+              Prepaid / Postpaid 区别
+            </Link>
+            <Link href="/cellphone/diagnosis" className="rounded-2xl bg-[#F4F8FA] p-5 font-bold text-[#246B95]">
+              eSIM / 信号 / 号码问题
+            </Link>
+          </div>
+        </section>
+
         <section className="mt-12 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
           <h2 className="text-2xl font-black">需要准确数字或资格时</h2>
           <p className="mt-3 max-w-3xl leading-7 text-[#526170]">
