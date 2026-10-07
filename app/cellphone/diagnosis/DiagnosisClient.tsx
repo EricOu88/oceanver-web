@@ -385,8 +385,16 @@ function buildResult(problem: ProblemId, answers: string[], knowledge: QADocumen
           ? '重点是漫游、Wi-Fi Calling、当地数据和 eSIM/双卡之间的使用分工。'
           : '先区分保号、短信、语音漫游和临时数据需求。';
       result.why = '美国号码能否收短信、漫游如何计费、Wi-Fi Calling 与长期未使用处理，都可能依运营商、账户和套餐而异。';
-      result.check = ['确认号码必须持续完成哪些功能：收短信、接打电话、银行验证码或仅保留号码。', '在当前账户中核对 SMS、国际漫游、Wi-Fi Calling、eSIM 和长期不使用规则。'];
-      result.selfHelp = ['记录目的地、停留时长、是否需要美国号码收短信，以及手机是否支持双卡/eSIM。', '出发前向当前运营商确认线路有效状态和境外使用条件。'];
+      result.check = [
+        '确认号码必须持续完成哪些功能：收短信、接打电话、银行验证码或仅保留号码。',
+        '在当前账户中核对 SMS、国际漫游、Wi-Fi Calling、eSIM 和长期不使用规则。',
+        '如果已经出现异常漫游账单，记录旅行日期、目的地、账户类型、账单周期，以及账户中显示的 roaming / international usage 记录。',
+      ];
+      result.selfHelp = [
+        '记录目的地、停留时长、是否需要美国号码收短信，以及手机是否支持双卡/eSIM。',
+        '出发前向当前运营商确认线路有效状态和境外使用条件。',
+        '出现高额漫游收费时，保存账单、使用明细和当时的活动/功能记录，再逐项核对触发原因；不要只按网友提到的固定封顶金额判断。',
+      ];
       result.dont = ['不要假设能收短信就代表号码可长期保留，也不要套用其他套餐的漫游价格或政策。'];
       result.cannot = ['网页无法确认当前账户的国际短信/漫游资格、长期不使用规则、eSIM 状态或具体费用。'];
       result.actions.push({ type: 'knowledge', label: '查看 Prepaid / Postpaid 判断', href: '/cellphone/faq/prepaid-vs-postpaid' });
