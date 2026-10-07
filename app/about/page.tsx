@@ -1,20 +1,21 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { getCanonicalUrl } from '@/lib/seo-utils';
 import CommunityDiscussionByPath from '@/app/components/community/CommunityDiscussionByPath';
 
 export const metadata: Metadata = {
   title: '关于我们｜美国鸿达电讯',
   description:
-    '了解美国鸿达电讯：面向美国中文用户整理手机套餐、家庭宽带、通信账单和常见通信问题信息，并在需要时提供中文协助。',
+    '美国鸿达电讯面向美国中文用户整理手机与家庭宽带的账单、网络、设备、账户、地址和变更问题，帮助先判断原因，再决定下一步。',
   alternates: { canonical: getCanonicalUrl('/about') },
 };
 
 const AboutSchema = () => {
   const schema = {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "关于我们 - 美国鸿达电讯",
-    "about": { "@id": "https://oceanver.com/#organization" }
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: '关于我们 - 美国鸿达电讯',
+    about: { '@id': 'https://oceanver.com/#organization' },
   };
 
   return (
@@ -28,38 +29,58 @@ const AboutSchema = () => {
 export default function AboutPage() {
   return (
     <>
-    <main className="max-w-4xl mx-auto px-6 py-12 text-slate-800">
-      <AboutSchema />
+      <main className="min-h-screen bg-[#FCFDFE] px-6 py-12 text-[#202D3A]">
+        <AboutSchema />
+        <div className="mx-auto max-w-4xl">
+          <Link href="/" className="text-sm font-semibold text-[#246B95] hover:text-[#164B78]">
+            ← 返回首页
+          </Link>
 
-      <h1 className="text-3xl md:text-4xl font-extrabold mb-6">
-        关于我们｜美国鸿达电讯
-      </h1>
+          <h1 className="mt-8 text-3xl font-black md:text-4xl">
+            关于美国鸿达电讯
+          </h1>
 
-      <section className="space-y-4 leading-relaxed">
-        <p>
-          美国鸿达电讯面向美国中文用户整理手机套餐、家庭宽带、通信账单和常见问题信息，
-          并在需要核对账户、地址或运营商资格时提供中文协助。
-        </p>
+          <div className="mt-8 space-y-6 leading-8 text-[#526170]">
+            <p>
+              Oceanver 的核心不是先推荐某一家运营商，而是帮助美国中文用户把手机和家庭宽带问题先判断清楚。
+            </p>
 
-        <p>
-          我们帮助用户先理解费用变化、套餐条件和服务限制，再结合实际使用需求，
-          对比 AT&T、Xfinity、Spectrum、Frontier 等运营商提供的信息。
-        </p>
+            <p>
+              账单变贵、信号或 Wi-Fi 不稳定、设备分期、Trade-in、转号、地址覆盖、安装和搬家，
+              往往需要先确认问题发生在哪一层，再决定是继续使用、调整现有服务，还是比较其他方案。
+            </p>
 
-        <p>
-          对于刚到美国的新移民或留学生来说，
-          英文合同、隐藏条款、账单上涨往往是通信服务中最大的困扰。
-          鸿达电讯坚持用中文讲清价格结构、合约期限以及后续可能发生的账单变化，
-          帮助客户少踩坑、不被反复涨价。
-        </p>
+            <p>
+              因此网站按“问题”组织内容：先进入诊断和知识节点，再根据实际情况进入家庭多线、
+              账单检查、运营商比较或其他专项页面。运营商只是解决问题时可能用到的方案之一。
+            </p>
 
-        <p>
-          无论是手机账单、家庭宽带费用，还是是否调整套餐或更换运营商，
-          我们都希望通过清晰、审慎的中文说明，帮助用户判断下一步是否需要处理。
-        </p>
-      </section>
-    </main>
-    <div className="mx-auto max-w-4xl px-6"><CommunityDiscussionByPath /></div>
+            <p>
+              有些结果无法靠公开网页确认，例如真实账户价格、当前资格、设备余额、Bill Credit、
+              地址 serviceability、订单状态和实时活动条件。遇到这些情况时，再进入人工核实。
+            </p>
+
+            <p>
+              站内内容用于帮助理解和判断，不代表运营商官方，也不会用固定旧价格、旧促销或单一案例替代当前账户与官方规则。
+            </p>
+          </div>
+
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Link href="/cellphone" className="font-bold text-[#164B78] hover:text-[#103B60]">
+              手机问题中心 →
+            </Link>
+            <Link href="/internet" className="font-bold text-[#164B78] hover:text-[#103B60]">
+              宽带问题中心 →
+            </Link>
+            <Link href="/bill-optimization" className="font-bold text-[#164B78] hover:text-[#103B60]">
+              账单问题判断 →
+            </Link>
+          </div>
+        </div>
+      </main>
+      <div className="mx-auto max-w-4xl px-6">
+        <CommunityDiscussionByPath />
+      </div>
     </>
   );
 }
