@@ -103,6 +103,12 @@ export default function FrontierFAQPage() {
             <Link href="/internet/price-hike" className="font-semibold text-[#164B78] hover:text-[#103B60]">
               判断宽带账单涨价 <ArrowRight className="inline" size={16} />
             </Link>
+            <Link href="/internet/home-network-guide" className="font-semibold text-[#164B78] hover:text-[#103B60]">
+              Wi-Fi / 家庭网络判断 <ArrowRight className="inline" size={16} />
+            </Link>
+            <Link href="/contact" className="font-semibold text-[#164B78] hover:text-[#103B60]">
+              需要时进入人工核实 <ArrowRight className="inline" size={16} />
+            </Link>
           </nav>
 
           <p className="mt-8 border-t border-[#D5E5EC] pt-5 text-xs text-[#526170]">
