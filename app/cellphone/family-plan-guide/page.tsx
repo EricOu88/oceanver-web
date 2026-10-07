@@ -197,6 +197,23 @@ export default function FamilyPlanGuidePage() {
             </Link>
           </section>
 
+          <section className="rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 sm:p-8">
+            <h2 className="text-2xl font-bold">为什么少一条线，剩下的人反而可能更贵？</h2>
+            <p className="mt-4 leading-7 text-[#526170]">
+              家庭计划通常不能简单理解成“总价 ÷ 线路数”。当一条线退出、转网或取消时，
+              多线价格阶梯、Free Line、账户级折扣和某些 Promotion 都可能重新计算。
+            </p>
+            <ul className="mt-4 list-disc space-y-2 pl-5 leading-6 text-[#526170]">
+              <li>确认当前一共有几条付费线和免费线。</li>
+              <li>确认哪些折扣是账户级，哪些只属于某一条线。</li>
+              <li>确认退出的那条线是否承担设备分期或关联 Credit。</li>
+              <li>重新计算变更后的家庭总账单，不只看“少了一条线应该少多少钱”。</li>
+            </ul>
+            <p className="mt-4 text-sm font-semibold text-[#246B95]">
+              实际多线阶梯、Free Line 和 Promotion 资格需要按当前账户核实。
+            </p>
+          </section>
+
           <section className="rounded-2xl border border-[#D5E5EC] bg-white p-5 shadow-sm sm:p-8">
             <h2 className="text-2xl font-bold">转网前，每条线需要检查什么</h2>
             <ul className="mt-4 list-disc space-y-2 pl-5 leading-6 text-[#526170]">
