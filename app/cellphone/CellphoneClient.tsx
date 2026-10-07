@@ -97,6 +97,11 @@ const KNOWLEDGE_LINKS = [
     desc: '区分身份验证、信用审核、设备和地址条件，再决定下一步。',
   },
   {
+    href: '/cellphone/faq/promo-credit-not-received',
+    title: 'Trade-in、Bill Credit 或转网奖励还没到账？',
+    desc: '先分清优惠类型，再核对订单、设备验收、线路资格和账单记录。',
+  },
+  {
     href: '/cellphone/family-plan-guide',
     title: '家庭多条线要不要一起变更？',
     desc: '逐条核对设备、Credit、转网条件和成员需求。',
