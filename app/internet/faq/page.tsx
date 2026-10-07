@@ -11,6 +11,7 @@ import {
   MapPin,
   Router,
   Search,
+  ShieldCheck,
   WifiOff,
 } from 'lucide-react'
 import { internetFAQData } from './data'
@@ -103,6 +104,12 @@ const topicEntries = [
     title: '换网与运营商比较',
     description: '什么时候值得换、比较什么，以及为什么不能只看广告价格。',
     href: '/internet/providers',
+  },
+  {
+    icon: <ShieldCheck size={22} />,
+    title: '取消后 / Final Bill / 设备归还',
+    description: '取消以后确认账户、最终账单、AutoPay、设备归还和未结余额是否真正闭环。',
+    href: '/internet/faq/after-cancel-final-bill',
   },
 ]
 
