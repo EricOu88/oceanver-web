@@ -32,6 +32,13 @@ export const metadata: Metadata = {
 const TOPICS = [
   {
     icon: CircleDollarSign,
+    title: '手机套餐持续涨价',
+    text: '如果已经确认不是一次性费用，继续判断每线月费、AutoPay、多线折扣、Free Line、设备和 Credit 哪一层发生变化。',
+    href: '/cellphone/price-hike',
+    label: '进入手机涨价判断',
+  },
+  {
+    icon: CircleDollarSign,
     title: '账单为什么变贵？',
     text: '先判断是套餐、设备分期、Credit、附加服务还是账户变化，再决定要不要比较其他方案。',
     href: '/cellphone/diagnosis',
