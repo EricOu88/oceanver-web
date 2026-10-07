@@ -124,7 +124,7 @@ export default function NoSsnCellphoneInternetPage() {
 
         <section className="py-12">
           <h2 className="text-3xl font-black">按你要办的服务继续</h2>
-          <div className="mt-6 grid gap-5 md:grid-cols-3">
+          <div className="mt-6 grid gap-5 md:grid-cols-2">
             <Link
               href="/cellphone/diagnosis"
               className="rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 transition hover:border-[#246B95]"
@@ -150,6 +150,20 @@ export default function NoSsnCellphoneInternetPage() {
               </p>
               <span className="mt-5 inline-flex items-center gap-2 font-bold text-[#164B78]">
                 比较 Prepaid / Postpaid <ArrowRight size={16} />
+              </span>
+            </Link>
+
+            <Link
+              href="/cellphone/family-plan-exit-account-holder"
+              className="rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 transition hover:border-[#246B95]"
+            >
+              <CreditCard className="mb-4 text-[#2786A5]" size={26} />
+              <h3 className="text-xl font-black">家庭组退出 / 账单责任转移</h3>
+              <p className="mt-2 leading-relaxed text-[#526170]">
+                没有 SSN、成员异地或户主失联时，先判断账户角色、号码控制权和当前验证条件。
+              </p>
+              <span className="mt-5 inline-flex items-center gap-2 font-bold text-[#164B78]">
+                查看家庭计划退出判断 <ArrowRight size={16} />
               </span>
             </Link>
 
