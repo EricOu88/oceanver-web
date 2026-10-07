@@ -111,7 +111,9 @@
 
 ---
 
-### P2：宽带取消后账户 / Final Bill / 设备状态
+### P2：宽带取消后账户 / Final Bill / 设备状态（已建立）
+
+当前节点：`/internet/faq/after-cancel-final-bill`
 
 真实问题来源：G0266，同时与 G0063、G0174、G0227 有交叉。
 
@@ -133,7 +135,7 @@
 
 建议先做**通用宽带节点**，Xfinity FAQ 横向链接过去，不先做一个只属于 Xfinity 的孤立页。
 
-**优先级：高。**
+**状态：已上线到问题网。**
 
 ---
 
@@ -238,9 +240,9 @@
 - Price Hike：已增加优惠到期前准备 checklist
 - Bill Optimization：已增加调整后复核 checklist
 
-### 第三批
+### 第三批（已完成）
 
-再决定是否新增：
+已新增：
 
 > 宽带取消后账户 / Final Bill / 设备状态
 
