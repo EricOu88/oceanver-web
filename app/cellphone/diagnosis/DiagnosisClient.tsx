@@ -286,6 +286,9 @@ function buildResult(problem: ProblemId, answers: string[], knowledge: QADocumen
       result.dont = ['不要只根据总金额断定运营商涨价，也不要把一次性费用当作持续月费。', 'Credit 或设备分期未核实前，不要仅为账单金额取消线路或提前转网。'];
       result.cannot = ['网页无法查看账户实际账单、具体 Promotion eligibility、Credit 发放状态或多线价格。'];
       result.actions.push({ type: 'knowledge', label: '查看账单费用判断', href: '/bill-optimization' });
+      if (kind === 'recurring' || answers[0] === 'lines' || answers[2] === 'plan') {
+        result.actions.push({ type: 'knowledge', label: '进入手机长期涨价判断', href: '/cellphone/price-hike' });
+      }
       if (kind === 'trade-credit' || kind === 'recurring' || answers[0] === 'lines' || answers[2] === 'promotion' || answers[2] === 'plan') {
         result.actions.push({ type: 'human', label: '需要时进入人工核实', href: '/contact' });
       }
