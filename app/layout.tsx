@@ -30,7 +30,7 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: '美国鸿达电讯｜美国手机与家庭宽带中文服务',
+        alt: '美国鸿达电讯｜美国手机与家庭宽带问题判断',
       },
     ],
   },
