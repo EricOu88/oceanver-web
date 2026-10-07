@@ -12,7 +12,6 @@ import {
   TrendingUp,
 } from 'lucide-react'
 
-import PriceHikeServiceSchema from '@/app/components/schema/PriceHikeServiceSchema'
 
 const hikeReasons = [
   {
@@ -65,8 +64,6 @@ const compareConditions = [
 export default function PriceHikeClient() {
   return (
     <>
-      <PriceHikeServiceSchema />
-
       <main className="min-h-screen bg-[#FCFDFE] px-4 py-8 text-[#202D3A] sm:px-6 sm:py-12">
         <div className="mx-auto max-w-6xl">
           <Link
