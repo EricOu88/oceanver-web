@@ -86,7 +86,7 @@ Oceanver 不是“页面树”，而是“问题网”。
 
 | 节点 | 母问题 | 上级入口 | 横向相关 | 下一步 | 人工边界 |
 |---|---|---|---|---|---|
-| `/internet/home-network-guide` | 入户宽带 vs 家庭 Wi-Fi | 宽带 Hub | Diagnosis、FAQ、Providers | 判断 Wi-Fi / Router / Mesh / 入户线路 | **待补直接人工出口** |
+| `/internet/home-network-guide` | 入户宽带 vs 家庭 Wi-Fi | 宽带 Hub | Diagnosis、FAQ、Providers | 判断 Wi-Fi / Router / Mesh / 入户线路 | `/contact` |
 | `/internet/business-vs-residential` | Business vs Residential | Providers / 宽带 Hub | Diagnosis | Providers | `/contact` |
 | `/internet/providers/faq` | 比较方法 FAQ | Providers | 通用 FAQ / Diagnosis | Providers | 通过 Providers / Contact |
 | `/internet/faq/after-cancel-final-bill` | 取消后账户 / Final Bill / 设备状态 | 宽带 FAQ / Xfinity FAQ | Bill Check、Diagnosis、设备归还、AutoPay | 核对取消确认 / Final Bill / 设备 / 账户状态 | `/contact` |
@@ -105,8 +105,8 @@ Oceanver 不是“页面树”，而是“问题网”。
 | 节点 | 当前连接 | 状态 |
 |---|---|---|
 | `/internet/xfinity/faq` | Xfinity、Diagnosis、Price Hike、Providers、Contact | 完整 |
-| `/internet/spectrum/faq` | Spectrum、Diagnosis | **待补 Providers / Contact / Price Hike** |
-| `/internet/att/fiber/faq` | Diagnosis、Providers、Price Hike | **待补 Contact / AT&T Fiber 主节点** |
+| `/internet/spectrum/faq` | Spectrum、Diagnosis、Providers、Price Hike、Contact | 完整 |
+| `/internet/att/fiber/faq` | AT&T Fiber、Diagnosis、Providers、Price Hike、Contact | 完整 |
 | `/internet/frontier/faq` | Frontier、Diagnosis、Providers、Price Hike、Contact | 完整 |
 
 ## 5. 宽带退役 / 兼容 URL
