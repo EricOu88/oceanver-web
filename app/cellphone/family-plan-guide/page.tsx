@@ -133,6 +133,12 @@ export default function FamilyPlanGuidePage() {
               <li>哪条线有 Promotion / Bill Credit，抵扣是否仍在发放。</li>
               <li>变更线路、账户或设备后，哪些抵扣可能受到影响。</li>
             </ul>
+            <Link
+              href="/cellphone/faq/promo-credit-not-received"
+              className="mt-5 inline-flex font-semibold text-[#164B78] hover:text-[#103B60]"
+            >
+              Trade-in / Bill Credit 还没到账？继续检查 →
+            </Link>
           </section>
 
           <section className="rounded-2xl border border-[#D5E5EC] bg-white p-5 shadow-sm sm:p-8">
