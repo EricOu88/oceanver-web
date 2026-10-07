@@ -79,6 +79,20 @@ const TOPICS = [
     label: '进入手机方案比较',
   },
   {
+    icon: ShieldCheck,
+    title: 'Business / Consumer 账户差异',
+    text: '如果你在比较商业账户和个人账户，先看具体 plan tier、热点/数据政策和账户条件，不要只看账户标签。',
+    href: '/cellphone/att/business-faq',
+    label: '查看账户类型差异',
+  },
+  {
+    icon: HelpCircle,
+    title: 'Lifeline 政府通信补助',
+    text: '先按收入、符合条件的政府福利项目和 household 状态判断资格；ACP 已结束。',
+    href: '/cellphone/government',
+    label: '查看 Lifeline 资格判断',
+  },
+  {
     icon: HelpCircle,
     title: '还是不确定属于哪类',
     text: '不用先选运营商或套餐名称，从现象开始回答问题，系统会继续缩小范围。',
