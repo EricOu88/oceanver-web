@@ -38,9 +38,11 @@ export default function ATTFiberFAQClient() {
       </div>
 
       <nav aria-label="相关宽带判断页面" className="mt-10 flex flex-wrap gap-x-6 gap-y-3 border-t border-[#D5E5EC] pt-6 text-sm font-semibold text-[#164B78]">
+        <Link href="/internet/att-fiber" className="hover:text-[#103B60]">AT&amp;T Fiber 判断页</Link>
         <Link href="/internet/diagnosis" className="hover:text-[#103B60]">宽带问题诊断</Link>
         <Link href="/internet/providers" className="hover:text-[#103B60]">比较宽带长期成本</Link>
         <Link href="/internet/price-hike" className="hover:text-[#103B60]">宽带涨价判断</Link>
+        <Link href="/contact" className="hover:text-[#103B60]">需要时进入人工核实</Link>
       </nav>
     </main>
   )
