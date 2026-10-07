@@ -383,7 +383,7 @@ function buildResult(problem: ProblemId, answers: string[], knowledge: QADocumen
       result.selfHelp = ['记录目的地、停留时长、是否需要美国号码收短信，以及手机是否支持双卡/eSIM。', '出发前向当前运营商确认线路有效状态和境外使用条件。'];
       result.dont = ['不要假设能收短信就代表号码可长期保留，也不要套用其他套餐的漫游价格或政策。'];
       result.cannot = ['网页无法确认当前账户的国际短信/漫游资格、长期不使用规则、eSIM 状态或具体费用。'];
-      result.actions.push({ type: 'knowledge', label: '查看预付费方案说明', href: '/cellphone/prepaid' });
+      result.actions.push({ type: 'knowledge', label: '查看 Prepaid / Postpaid 判断', href: '/cellphone/faq/prepaid-vs-postpaid' });
       result.actions.push({ type: 'human', label: '需要时进入人工核实', href: '/contact' });
       break;
     }
