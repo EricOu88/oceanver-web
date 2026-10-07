@@ -515,7 +515,7 @@ export default function XfinityFAQClient() {
           根据问题类型进入下一步
         </h2>
 
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
+        <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           <NextStepCard
             title="账单已经明显涨价"
             description="先确认是不是长期 recurring 成本变化。"
@@ -535,6 +535,13 @@ export default function XfinityFAQClient() {
             description="再比较地址覆盖、长期成本和安装条件。"
             href="/internet/providers"
             action="比较其他运营商"
+          />
+
+          <NextStepCard
+            title="已经取消，但还担心旧账户"
+            description="继续检查 Final Bill、设备归还、AutoPay 和账户是否真正关闭。"
+            href="/internet/faq/after-cancel-final-bill"
+            action="检查取消后状态"
           />
         </div>
       </section>
