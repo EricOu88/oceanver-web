@@ -1,65 +1,64 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import { getCanonicalUrl } from '@/lib/seo-utils';
-import CommunityDiscussionByPath from '@/app/components/community/CommunityDiscussionByPath';
 
 export const metadata: Metadata = {
-  title: '关于我们｜美国鸿达电讯',
+  title: '关于 Oceanver｜美国鸿达电讯',
   description:
-    '了解美国鸿达电讯：面向美国中文用户整理手机套餐、家庭宽带、通信账单和常见通信问题信息，并在需要时提供中文协助。',
+    'Oceanver 面向美国中文用户整理手机与家庭宽带问题：先判断原因，再比较方案，只有真实账户、地址或资格无法公开确认时才进入人工核实。',
   alternates: { canonical: getCanonicalUrl('/about') },
 };
 
-const AboutSchema = () => {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "关于我们 - 美国鸿达电讯",
-    "about": { "@id": "https://oceanver.com/#organization" }
-  };
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: '关于 Oceanver - 美国鸿达电讯',
+  about: { '@id': 'https://oceanver.com/#organization' },
 };
 
 export default function AboutPage() {
   return (
-    <>
-    <main className="max-w-4xl mx-auto px-6 py-12 text-slate-800">
-      <AboutSchema />
+    <main className="min-h-screen bg-[#FCFDFE] px-4 py-10 text-[#202D3A] sm:px-6 sm:py-14">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <div className="mx-auto max-w-4xl">
+        <Link href="/" className="text-sm font-semibold text-[#246B95] hover:text-[#103B60]">← 返回首页</Link>
 
-      <h1 className="text-3xl md:text-4xl font-extrabold mb-6">
-        关于我们｜美国鸿达电讯
-      </h1>
+        <header className="py-10">
+          <p className="mb-4 inline-flex rounded-full bg-[#F4F8FA] px-3 py-1 text-sm font-semibold text-[#246B95]">关于 Oceanver</p>
+          <h1 className="text-3xl font-black md:text-5xl">把手机和宽带问题先讲清楚，再决定要不要改变</h1>
+          <p className="mt-5 text-lg leading-8 text-[#526170]">
+            Oceanver 由美国鸿达电讯运营，面向美国中文用户整理手机、家庭宽带、账单和账户条件问题。
+          </p>
+        </header>
 
-      <section className="space-y-4 leading-relaxed">
-        <p>
-          美国鸿达电讯面向美国中文用户整理手机套餐、家庭宽带、通信账单和常见问题信息，
-          并在需要核对账户、地址或运营商资格时提供中文协助。
-        </p>
+        <section className="space-y-5 rounded-3xl border border-[#D5E5EC] bg-white p-6 leading-8 text-[#526170] sm:p-8">
+          <p>
+            我们不希望用户先看到运营商品牌和优惠，再倒推自己应该买什么。更合理的顺序是先确认问题：
+            账单为什么变、网络为什么慢、设备和号码有什么限制、家庭线路是否应该一起动。
+          </p>
+          <p>
+            网站能解释公开规则、常见原因和判断路径，但不会把固定价格、固定资格或单个促销当成长期答案。
+            当前账户、地址、设备、订单和后台资格无法公开确认时，再进入人工核实。
+          </p>
+          <p>
+            Oceanver 与美国鸿达电讯的目标不是把每个问题都变成销售机会，而是减少误判：
+            能自助的先自助，能继续观察的继续观察，只有真正值得比较时才比较方案。
+          </p>
+        </section>
 
-        <p>
-          我们帮助用户先理解费用变化、套餐条件和服务限制，再结合实际使用需求，
-          对比 AT&T、Xfinity、Spectrum、Frontier 等运营商提供的信息。
-        </p>
-
-        <p>
-          对于刚到美国的新移民或留学生来说，
-          英文合同、隐藏条款、账单上涨往往是通信服务中最大的困扰。
-          鸿达电讯坚持用中文讲清价格结构、合约期限以及后续可能发生的账单变化，
-          帮助客户少踩坑、不被反复涨价。
-        </p>
-
-        <p>
-          无论是手机账单、家庭宽带费用，还是是否调整套餐或更换运营商，
-          我们都希望通过清晰、审慎的中文说明，帮助用户判断下一步是否需要处理。
-        </p>
-      </section>
+        <section className="mt-10 grid gap-4 sm:grid-cols-3">
+          <Link href="/cellphone/diagnosis" className="rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 font-bold text-[#246B95]">
+            手机问题诊断 <ArrowRight className="mt-2" size={17} />
+          </Link>
+          <Link href="/internet/diagnosis" className="rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 font-bold text-[#246B95]">
+            宽带问题诊断 <ArrowRight className="mt-2" size={17} />
+          </Link>
+          <Link href="/contact" className="rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 font-bold text-[#246B95]">
+            需要时人工核实 <ArrowRight className="mt-2" size={17} />
+          </Link>
+        </section>
+      </div>
     </main>
-    <div className="mx-auto max-w-4xl px-6"><CommunityDiscussionByPath /></div>
-    </>
   );
 }
