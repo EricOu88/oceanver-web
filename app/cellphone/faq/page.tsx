@@ -60,10 +60,10 @@ const TOPICS = [
   },
   {
     icon: CreditCard,
-    title: '设备分期 / Trade-in / Bill Credit',
-    text: '手机优惠和设备账单可能影响长期成本，也会影响什么时候适合变更线路。',
-    href: '/cellphone/diagnosis',
-    label: '进入设备账单判断',
+    title: 'Trade-in / Bill Credit / 转网奖励没到账',
+    text: '先分清是哪一种优惠，再核对订单、设备验收、线路资格和每期账单，避免只凭广告或固定时间判断。',
+    href: '/cellphone/faq/promo-credit-not-received',
+    label: '检查优惠与 Credit 状态',
   },
   {
     icon: Users,
