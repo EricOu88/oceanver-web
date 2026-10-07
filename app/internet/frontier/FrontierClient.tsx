@@ -138,8 +138,24 @@ export default function FrontierClient() {
           </div>
         </section>
 
+        <section className="mx-auto max-w-6xl px-5 py-10">
+          <div className="rounded-2xl border border-[#D5E5EC] bg-white p-6">
+            <h2 className="text-xl font-black">哪些情况需要结合真实地址或账户核实？</h2>
+            <p className="mt-3 max-w-3xl leading-7 text-[#526170]">
+              地址 serviceability、当前可订技术、安装条件、设备记录、Promotion 和实际长期价格，
+              都不能仅靠公开网页确认。
+            </p>
+            <Link
+              href="/contact"
+              className="mt-5 inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]"
+            >
+              需要时进入人工核实 <ArrowRight size={16} />
+            </Link>
+          </div>
+        </section>
+
         <p className="mx-auto max-w-6xl px-5 py-6 text-sm leading-6 text-[#526170]">
-          商业宽带应按 SLA、固定 IP、线路和合同条件单独判断，不与住家宽带混在一起比较。
+          商业宽带应按静态 IP、服务等级、线路、合同和实际业务需求单独判断，不与住家宽带混在一起比较。
         </p>
 
         <div className="mx-auto max-w-6xl px-5 pb-10 text-xs text-[#526170]">{LAST_UPDATED}</div>
