@@ -1,35 +1,38 @@
-// Phase 2 候选核心页。
+// Oceanver Phase 2 分批发布候选。
+//
 // Phase 1 期间 app/sitemap.ts 仍返回空数组，因此这里不会让页面提前进入 sitemap。
-// 真正开放收录前，应再按 GSC / AI 引用 / 咨询转化表现复核一次。
+// 真正开放前，仍需完成 docs/phase2-geo-release-priority.md 中的发布审计。
+
+// Phase 2 第一批：先建立“问题判断站”的主题权威。
+// 8 个核心答案页 + 4 个网络入口页。
 export const SITEMAP_ALLOWLIST = [
-  '/',
-
-  // 手机问题网
-  '/cellphone',
-  '/cellphone/diagnosis',
-  '/cellphone/faq',
-  '/cellphone/family-plan-guide',
-  '/cellphone/family-plan-exit-account-holder',
-  '/cellphone/price-hike',
-  '/cellphone/faq/promo-credit-not-received',
-  '/cellphone/providers',
-  '/cellphone/faq/no-ssn-us-cellphone-internet',
-
-  // 手机 + 宽带共同账单母节点
+  // 核心答案页
   '/bill-optimization',
-
-  // 宽带问题网
-  '/internet',
-  '/internet/diagnosis',
-  '/internet/faq',
   '/internet/price-hike',
-  '/internet/providers',
-  '/internet/home-network-guide',
+  '/cellphone/price-hike',
+  '/cellphone/family-plan-exit-account-holder',
+  '/cellphone/faq/promo-credit-not-received',
   '/internet/faq/after-cancel-final-bill',
+  '/cellphone/family-plan-guide',
+  '/internet/home-network-guide',
 
-  // 运营商判断节点
+  // 网络入口页
+  '/cellphone',
+  '/internet',
+  '/cellphone/faq',
+  '/internet/faq',
+] as const;
+
+// Phase 2 第二批候选。
+// 不自动进入 sitemap；第一批有抓取 / 曝光 / AI 引用数据后再复核。
+export const PHASE2_SECOND_BATCH_CANDIDATES = [
+  '/cellphone/diagnosis',
+  '/internet/diagnosis',
+  '/cellphone/faq/no-ssn-us-cellphone-internet',
+  '/internet/providers',
+  '/cellphone/providers',
   '/internet/xfinity',
   '/internet/att-fiber',
   '/internet/spectrum',
   '/internet/frontier',
-];
+] as const;
