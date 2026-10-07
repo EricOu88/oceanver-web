@@ -1,40 +1,62 @@
 'use client'
 
-import { useState } from 'react'
-import ContactModal from '@/app/components/ContactModal'
-import { MessageCircle, Phone } from 'lucide-react'
+import Link from 'next/link'
+import { ArrowRight, BookOpen, Search } from 'lucide-react'
 
 export default function BlogPostClient() {
-  const [isModalOpen, setModalOpen] = useState(false)
-
   return (
-    <>
-      <section className="bg-slate-50 border-2 border-dashed border-blue-600 rounded-2xl p-6 md:p-8 mt-12 mb-12">
-        <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3">
-          需要专业建议？
-        </h3>
-        <p className="text-slate-700 mb-4 leading-relaxed">
-          美国鸿达电讯为全美中文用户整理手机套餐、家庭宽带和账单问题信息。如需核对账户或地址条件，可通过电话或微信联系中文客服。
-        </p>
-        <div className="flex flex-col sm:flex-row gap-3">
-          <a
-            href="tel:15108496191"
-            className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition-colors"
-          >
-            <Phone size={18} />
-            立即拨打电话
-          </a>
-          <button
-            onClick={() => setModalOpen(true)}
-            className="inline-flex items-center justify-center gap-2 bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-xl font-semibold transition-colors"
-          >
-            <MessageCircle size={18} />
-            微信咨询
-          </button>
-        </div>
-      </section>
+    <section className="mt-12 mb-12 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 md:p-8">
+      <h2 className="text-xl font-black text-[#202D3A] md:text-2xl">
+        这个问题下一步怎么查？
+      </h2>
+      <p className="mt-3 max-w-3xl leading-7 text-[#526170]">
+        文章只负责解释问题。真正涉及账单、设备、账户、地址或资格时，
+        应进入对应诊断或知识节点继续判断；只有网页无法确认的部分，再进入人工核实。
+      </p>
 
-      <ContactModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
-    </>
+      <div className="mt-6 grid gap-4 md:grid-cols-3">
+        <Link
+          href="/cellphone/diagnosis"
+          className="rounded-xl border border-[#D5E5EC] bg-white p-5 transition hover:border-[#246B95]"
+        >
+          <Search className="mb-3 text-[#2786A5]" size={22} />
+          <h3 className="font-black text-[#202D3A]">手机问题诊断</h3>
+          <p className="mt-2 text-sm leading-6 text-[#526170]">
+            账单、信号、eSIM、转号、设备分期或家庭多线。
+          </p>
+          <span className="mt-4 inline-flex items-center gap-2 font-bold text-[#164B78]">
+            继续判断 <ArrowRight size={15} />
+          </span>
+        </Link>
+
+        <Link
+          href="/internet/diagnosis"
+          className="rounded-xl border border-[#D5E5EC] bg-white p-5 transition hover:border-[#246B95]"
+        >
+          <BookOpen className="mb-3 text-[#2786A5]" size={22} />
+          <h3 className="font-black text-[#202D3A]">宽带问题诊断</h3>
+          <p className="mt-2 text-sm leading-6 text-[#526170]">
+            涨价、Wi-Fi、断网、设备、安装、地址或搬家。
+          </p>
+          <span className="mt-4 inline-flex items-center gap-2 font-bold text-[#164B78]">
+            继续判断 <ArrowRight size={15} />
+          </span>
+        </Link>
+
+        <Link
+          href="/contact"
+          className="rounded-xl border border-[#D5E5EC] bg-white p-5 transition hover:border-[#246B95]"
+        >
+          <ArrowRight className="mb-3 text-[#2786A5]" size={22} />
+          <h3 className="font-black text-[#202D3A]">网页无法确认</h3>
+          <p className="mt-2 text-sm leading-6 text-[#526170]">
+            真实账户、地址覆盖、资格、设备余额或当前活动需要进一步核实。
+          </p>
+          <span className="mt-4 inline-flex items-center gap-2 font-bold text-[#164B78]">
+            需要时进入人工核实 <ArrowRight size={15} />
+          </span>
+        </Link>
+      </div>
+    </section>
   )
 }
