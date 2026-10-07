@@ -135,6 +135,7 @@ export default function BillOptimizationClient() {
           <div className="mt-3 flex flex-wrap gap-x-5 gap-y-3 text-sm font-semibold text-blue-800">
             <a href="#bill-reasons" className="underline underline-offset-4">常见涨价原因</a>
             <a href="#mobile-bill" className="underline underline-offset-4">手机账单检查</a>
+            <a href="#first-mobile-bill" className="underline underline-offset-4">首张手机账单高于报价</a>
             <a href="#home-internet-bill" className="underline underline-offset-4">宽带账单检查</a>
             <a href="#unknown-reason" className="underline underline-offset-4">看不懂账单怎么办</a>
             <a href="#worth-action" className="underline underline-offset-4">哪些情况值得处理</a>
@@ -163,6 +164,35 @@ export default function BillOptimizationClient() {
           <div className="mt-6"><ReviewList items={phoneItems} /></div>
           <p className="mt-5 leading-7 text-slate-700">
             如果问题已经涉及套餐类型、线路数量或是否需要换方案，可继续查看 <Link href="/cellphone/diagnosis" className="font-semibold text-blue-700 underline underline-offset-4">手机套餐诊断</Link>；也可浏览 <Link href="/cellphone/faq" className="font-semibold text-blue-700 underline underline-offset-4">美国手机常见问题</Link>。
+          </p>
+        </section>
+
+        <section id="first-mobile-bill" className="scroll-mt-6 rounded-3xl border border-slate-200 bg-white p-5 md:p-8">
+          <p className="text-sm font-bold text-blue-700">转网 / 开户后的第一张手机账单</p>
+          <h2 className="mt-2 text-2xl font-black md:text-3xl">为什么第一张账单可能比报价高？</h2>
+          <p className="mt-3 max-w-3xl leading-7 text-slate-700">
+            首账单高，不等于以后每个月都会这么高。先把 recurring 月费和一次性项目拆开，再看哪些折扣或 Credit 还没有反映。
+          </p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            {[
+              'Activation / Upgrade / 一次性开户费用。',
+              '设备税费、首付款或新的设备分期。',
+              'AutoPay / Paperless 折扣尚未体现在这张账单里。',
+              '保险或其他 add-on 被加入账户。',
+              'Promotion / Bill Credit 尚未出现或资格还在核对。',
+              '账期中途开通产生 prorated charge。',
+            ].map((item, index) => (
+              <div key={item} className="flex gap-3 rounded-xl bg-slate-50 p-4 leading-7 text-slate-700">
+                <span className="font-black text-blue-700">{index + 1}.</span>
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+          <p className="mt-5 leading-7 text-slate-700">
+            如果主要是 Trade-in、转网奖励或 Bill Credit 没出现，可继续查看{' '}
+            <Link href="/cellphone/faq/promo-credit-not-received" className="font-semibold text-blue-700 underline underline-offset-4">
+              手机优惠 / Credit 到账判断
+            </Link>。
           </p>
         </section>
 
