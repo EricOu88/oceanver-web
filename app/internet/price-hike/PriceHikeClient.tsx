@@ -298,7 +298,7 @@ export default function PriceHikeClient() {
               如果已经知道当前运营商，可以继续查看专项 FAQ。
             </p>
 
-            <div className="mt-7 grid gap-4 md:grid-cols-3">
+            <div className="mt-7 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
               <ProviderLink
                 name="Xfinity"
                 description="查看 Xfinity 账单上涨和收费项目判断。"
@@ -315,6 +315,12 @@ export default function PriceHikeClient() {
                 name="AT&T Fiber"
                 description="查看 AT&T Fiber 价格变化和账单判断。"
                 href="/internet/att/fiber/faq/att-fiber-price-increase"
+              />
+
+              <ProviderLink
+                name="Frontier"
+                description="查看 Frontier 账单、地址和长期成本相关问题。"
+                href="/internet/frontier/faq"
               />
             </div>
           </section>
