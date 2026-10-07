@@ -142,6 +142,20 @@ export default function FamilyPlanGuidePage() {
           </section>
 
           <section className="rounded-2xl border border-[#D5E5EC] bg-white p-5 shadow-sm sm:p-8">
+            <h2 className="text-2xl font-bold">如果只有部分成员想退出家庭组</h2>
+            <p className="mt-4 leading-7 text-[#526170]">
+              这时要额外判断户主权限、号码是否保留、Account Number / Transfer PIN、设备余额和 Promotion，
+              以及成员是否能独立完成当前运营商要求的身份验证或账单责任转移。
+            </p>
+            <Link
+              href="/cellphone/family-plan-exit-account-holder"
+              className="mt-5 inline-flex font-semibold text-[#164B78] hover:text-[#103B60]"
+            >
+              查看家庭计划退出 / 户主权限判断 →
+            </Link>
+          </section>
+
+          <section className="rounded-2xl border border-[#D5E5EC] bg-white p-5 shadow-sm sm:p-8">
             <h2 className="text-2xl font-bold">转网前，每条线需要检查什么</h2>
             <ul className="mt-4 list-disc space-y-2 pl-5 leading-6 text-[#526170]">
               {transferItems.map((item) => <li key={item}>{item}</li>)}
