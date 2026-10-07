@@ -190,7 +190,7 @@ export default function FamilyPlanGuidePage() {
               如果你担心户主失联、人在异地或境外、没有 SSN，或者想保留原号码，不要只按普通转网流程处理。
             </p>
             <Link
-              href="/cellphone/faq/family-plan-leave-keep-number"
+              href="/cellphone/family-plan-exit-account-holder"
               className="mt-5 inline-flex font-semibold text-[#164B78] hover:text-[#103B60]"
             >
               查看 Family Plan 退组 / 保号判断 →
