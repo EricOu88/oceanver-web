@@ -124,6 +124,7 @@ Oceanver 不是“页面树”，而是“问题网”。
 1. **`/bill-optimization`**
    - 手机账单 ↔ 宽带账单
    - 负责“费用为什么变贵”的共同入口
+   - 已增加“手机 + 宽带一起迁移 / 切换”子模块，处理号码转移、宽带启用、旧账户关闭、设备归还和 Final Bill
 
 2. **`/cellphone/faq/no-ssn-us-cellphone-internet`**
    - 手机开户资格 ↔ 家庭宽带地址 / 身份 / 信用条件
