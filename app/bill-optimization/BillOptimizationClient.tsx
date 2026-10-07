@@ -135,6 +135,7 @@ export default function BillOptimizationClient() {
           <div className="mt-3 flex flex-wrap gap-x-5 gap-y-3 text-sm font-semibold text-blue-800">
             <a href="#bill-reasons" className="underline underline-offset-4">常见涨价原因</a>
             <a href="#mobile-bill" className="underline underline-offset-4">手机账单检查</a>
+            <a href="#first-mobile-bill" className="underline underline-offset-4">手机第一张账单</a>
             <a href="#first-mobile-bill" className="underline underline-offset-4">首张手机账单高于报价</a>
             <a href="#home-internet-bill" className="underline underline-offset-4">宽带账单检查</a>
             <a href="#unknown-reason" className="underline underline-offset-4">看不懂账单怎么办</a>
@@ -194,6 +195,59 @@ export default function BillOptimizationClient() {
             <Link href="/cellphone/faq/promo-credit-not-received" className="font-semibold text-blue-700 underline underline-offset-4">
               手机优惠 / Credit 到账判断
             </Link>。
+          </p>
+        </section>
+
+        <section id="first-mobile-bill" className="scroll-mt-6 rounded-3xl border border-slate-200 bg-white p-5 md:p-8">
+          <p className="text-sm font-bold text-blue-700">转网 / 新开户后的第一张手机账单</p>
+          <h2 className="mt-2 text-2xl font-black md:text-3xl">第一张账单为什么会比销售报价高很多？</h2>
+          <p className="mt-3 max-w-4xl leading-7 text-slate-700">
+            首账单不能只拿“销售说的月费”直接比较。第一期可能同时出现激活、按比例计费、设备税费或分期、
+            保险、尚未生效的 AutoPay、尚未出现的 Promotion / Bill Credit，以及多条线路不同的生效日期。
+            应把“长期月费”和“首期一次性项目”拆开看。
+          </p>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {[
+              ['服务月费', '逐条确认每条线的 plan / line charge，检查是否与书面报价中的账户结构一致。'],
+              ['Prorated charge', '如果线路不是账期第一天开通，确认是否存在按比例计费或跨账期项目。'],
+              ['Activation / upgrade fee', '核对销售是否书面承诺免除、实际哪条线被收取，以及是否已有 adjustment。'],
+              ['设备税费 / 分期', '“免费手机”也可能同时存在设备融资、税费或未开始的 Monthly Bill Credit。'],
+              ['保险 / Add-on', '逐条确认是否加了保险、国际功能、手表线或其他附加服务，以及是否确实需要。'],
+              ['AutoPay / Paperless', '确认付款方式已设置、当前账期是否满足条件，以及折扣是否已经出现在账单。'],
+              ['Promotion / Bill Credit', '确认优惠对应哪条线、当前资格、是否已经开始发放，以及订单记录是否一致。'],
+              ['Reward / Gift Card', '奖励可能和月账单不是同一系统；应单独核对登记、资格、状态和截止要求。'],
+            ].map(([title, detail]) => (
+              <article key={title} className="rounded-2xl bg-slate-50 p-5">
+                <h3 className="font-bold">{title}</h3>
+                <p className="mt-2 leading-7 text-slate-700">{detail}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <h3 className="text-lg font-bold">核账时把 4 份东西放在一起</h3>
+            <ol className="mt-4 grid gap-3 sm:grid-cols-2">
+              {[
+                '销售报价、订单确认或书面聊天记录。',
+                '第一张实际账单，每条线路逐项拆开。',
+                '设备订单、Trade-in / Promotion 条款和融资记录。',
+                '账户当前显示的 AutoPay、Credit、保险和附加服务状态。',
+              ].map((item, index) => (
+                <li key={item} className="flex gap-3 rounded-xl bg-white p-4 leading-7 text-slate-700">
+                  <span className="font-black text-blue-700">{index + 1}.</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+
+          <p className="mt-5 leading-7 text-slate-700">
+            如果 Promotion / Trade-in / Reward 没有按预期出现，可继续查看{' '}
+            <Link href="/cellphone/faq/promo-credit-not-received" className="font-semibold text-blue-700 underline underline-offset-4">
+              手机优惠 / Credit 到账判断
+            </Link>
+            。如果涉及真实 eligibility、争议金额、付款截止日或后台状态，需要结合当前账户核实。
           </p>
         </section>
 
