@@ -140,6 +140,7 @@ export default function BillOptimizationClient() {
             <a href="#worth-action" className="underline underline-offset-4">哪些情况值得处理</a>
             <a href="#observe-first" className="underline underline-offset-4">哪些情况可以先观察</a>
             <a href="#after-adjustment" className="underline underline-offset-4">调整后还要检查什么</a>
+            <a href="#move-both" className="underline underline-offset-4">手机 + 宽带一起迁移</a>
             <a href="#faq" className="underline underline-offset-4">常见问题</a>
           </div>
         </nav>
@@ -247,6 +248,56 @@ export default function BillOptimizationClient() {
           <p className="mt-5 rounded-xl bg-slate-50 p-4 leading-7 text-slate-700">
             如果调整后又出现新的异常，不要直接假设“优惠失效”或“客服没处理好”；先把确认记录与新账单逐项对照，再决定是否需要运营商或人工核实。
           </p>
+        </section>
+
+        <section id="move-both" className="scroll-mt-6 rounded-3xl border border-slate-200 bg-white p-5 md:p-8">
+          <p className="text-sm font-bold text-blue-700">手机 + 宽带一起迁移</p>
+          <h2 className="mt-2 text-2xl font-black md:text-3xl">怎样避免漏取消、重复收费和服务中断？</h2>
+          <p className="mt-3 max-w-3xl leading-7 text-slate-700">
+            手机号码转移和家庭宽带切换的“关旧服务”时机不一样。最重要的原则不是同时取消，而是分别确认新服务已经可用，再处理旧账户的关闭、设备和最终账单。
+          </p>
+
+          <div className="mt-6 grid gap-5 md:grid-cols-2">
+            <article className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="text-lg font-bold">手机：先完成号码转移</h3>
+              <ul className="mt-4 list-disc space-y-2 pl-5 leading-7 text-slate-700">
+                <li>准备 Account Number、Transfer PIN、号码状态和设备解锁信息。</li>
+                <li>确认设备余额、未发 Bill Credit 和 Promotion 影响。</li>
+                <li>号码完全转移成功前，不要主动取消旧号码。</li>
+                <li>转移完成后，再核对旧运营商是否还有设备余额、Final Bill 或其他收费。</li>
+              </ul>
+            </article>
+
+            <article className="rounded-2xl bg-slate-50 p-5">
+              <h3 className="text-lg font-bold">宽带：先确认新服务能真正使用</h3>
+              <ul className="mt-4 list-disc space-y-2 pl-5 leading-7 text-slate-700">
+                <li>确认新地址 serviceability、安装方式、设备和启用时间。</li>
+                <li>新网络没有稳定可用前，不要过早关闭旧宽带。</li>
+                <li>旧宽带取消时保存 confirmation，并处理设备归还。</li>
+                <li>之后继续核对 Final Bill、AutoPay 和旧账户是否真正关闭。</li>
+              </ul>
+            </article>
+          </div>
+
+          <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <h3 className="font-bold">最后做一次“旧账户清场”</h3>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              {[
+                '手机旧运营商：号码、设备余额、Bill Credit、Final Bill。',
+                '宽带旧运营商：取消确认、设备归还、Final Bill、AutoPay。',
+                '新手机账户：线路数、Promotion、AutoPay、设备分期。',
+                '新宽带账户：常规月费、设备、安装费、Promotion 和启用状态。',
+              ].map((item) => (
+                <div key={item} className="rounded-xl bg-white p-4 leading-7 text-slate-700">{item}</div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-5 flex flex-wrap gap-x-6 gap-y-3 font-semibold">
+            <Link href="/cellphone/diagnosis" className="text-blue-700 underline underline-offset-4">手机转网问题诊断</Link>
+            <Link href="/internet/diagnosis" className="text-blue-700 underline underline-offset-4">宽带安装 / 搬家诊断</Link>
+            <Link href="/internet/faq/after-cancel-final-bill" className="text-blue-700 underline underline-offset-4">取消后的 Final Bill / 设备检查</Link>
+          </div>
         </section>
 
         <section id="faq" className="scroll-mt-6 rounded-3xl bg-white p-5 shadow-sm md:p-8">
