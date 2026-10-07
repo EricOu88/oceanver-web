@@ -76,6 +76,20 @@ export default function FamilyPlanGuidePage() {
         </header>
 
         <div className="space-y-8">
+          <section className="rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 sm:p-8">
+            <h2 className="text-2xl font-bold">加入家庭组前，先想好以后怎么退出</h2>
+            <p className="mt-4 leading-7 text-[#526170]">
+              如果是和朋友、室友或不熟悉的人拼家庭组，不要只看现在每线价格。
+              还要提前确认谁是 Account Holder、谁负责付款、设备分期归谁、成员以后如何取得转号资料，以及退出时号码能不能独立转走。
+            </p>
+            <Link
+              href="/cellphone/family-plan-exit-account-holder"
+              className="mt-5 inline-flex font-semibold text-[#164B78] hover:text-[#103B60]"
+            >
+              查看户主权限与退出预案 →
+            </Link>
+          </section>
+
           <section className="rounded-2xl border border-[#D5E5EC] bg-white p-5 shadow-sm sm:p-8">
             <h2 className="text-2xl font-bold">家庭计划最容易看错的地方</h2>
             <p className="mt-4 leading-7 text-[#526170]">
@@ -121,6 +135,20 @@ export default function FamilyPlanGuidePage() {
               </ul>
               <p className="mt-4 text-sm font-semibold text-[#246B95]">不一定所有线路都要在同一天变更。</p>
             </article>
+          </section>
+
+          <section className="rounded-2xl border border-[#D5E5EC] bg-white p-5 sm:p-8">
+            <h2 className="text-2xl font-bold">少一条线以后，剩下的人为什么可能更贵？</h2>
+            <p className="mt-4 leading-7 text-[#526170]">
+              家庭计划不能把某个成员退出理解成“总账单直接减掉那一条线原来的价格”。
+              多线折扣、Free Line、账户级 Promotion 或套餐阶梯可能同时变化，所以成员减少后要重新核算剩余线路的真实价格。
+            </p>
+            <Link
+              href="/cellphone/price-hike"
+              className="mt-5 inline-flex font-semibold text-[#164B78] hover:text-[#103B60]"
+            >
+              继续判断家庭账单涨价 →
+            </Link>
           </section>
 
           <section className="rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 sm:p-8">
