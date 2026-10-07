@@ -194,7 +194,7 @@ XHS-001–007、013–018、029–033 基本已经被以下节点覆盖：
 
 ## P1 — 已完成
 
-已建立：`/cellphone/faq/family-plan-leave-keep-number`
+已建立：`/cellphone/family-plan-exit-account-holder`
 
 主题：
 
