@@ -797,11 +797,13 @@ function getResult(problem: ProblemId, answers: string[]): DiagnosisResult {
       check: [
         '确认订单状态',
         '确认设备是否已经绑定账户',
-        '检查房屋内已有线路',
+        '检查房屋内已有线路、墙外进线或接口是否实际可用',
+        '对照在线地址查询结果与 Technician / 订单记录是否一致',
       ],
       actions: [
         '完成一次标准激活流程',
         '仍然失败时记录错误提示和设备灯号',
+        '如果怀疑外线、节点或 serviceability 记录不一致，让运营商按完整地址手动核实，而不是继续重复下单',
       ],
       avoid: [
         '不要在原因不明时重复下多个订单',
