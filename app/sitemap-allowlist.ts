@@ -9,6 +9,9 @@ export const SITEMAP_ALLOWLIST = [
   '/cellphone/diagnosis',
   '/cellphone/faq',
   '/cellphone/family-plan-guide',
+  '/cellphone/family-plan-exit-account-holder',
+  '/cellphone/price-hike',
+  '/cellphone/faq/promo-credit-not-received',
   '/cellphone/providers',
   '/cellphone/faq/no-ssn-us-cellphone-internet',
 
@@ -22,6 +25,7 @@ export const SITEMAP_ALLOWLIST = [
   '/internet/price-hike',
   '/internet/providers',
   '/internet/home-network-guide',
+  '/internet/faq/after-cancel-final-bill',
 
   // 运营商判断节点
   '/internet/xfinity',
