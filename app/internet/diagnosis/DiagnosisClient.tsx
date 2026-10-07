@@ -120,9 +120,9 @@ const questions: Record<ProblemId, Question[]> = {
     {
       prompt: '这次账单比以前大约多了多少？',
       options: [
-        { value: 'under10', label: '少于 $10' },
-        { value: '10to30', label: '$10–$30' },
-        { value: 'over30', label: '超过 $30' },
+        { value: 'under10', label: '小幅增加' },
+        { value: '10to30', label: '中等幅度增加' },
+        { value: 'over30', label: '明显增加' },
         { value: 'unknown', label: '不确定' },
       ],
     },
