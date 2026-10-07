@@ -229,14 +229,14 @@
 - 不需要发布固定价格
 - 能自然进入人工账户核实
 
-### 第二批
+### 第二批（已完成）
 
-先加强现有宽带节点：
+已加强现有宽带节点：
 
-- Home Network：2.4GHz / IoT
-- Diagnosis：安装受阻 / 外线 / serviceability
-- Price Hike：到期前准备
-- Bill Optimization：调整后复核
+- Home Network：已增加 2.4GHz / IoT 判断
+- Diagnosis：已增加安装受阻 / 外线 / serviceability 检查
+- Price Hike：已增加优惠到期前准备 checklist
+- Bill Optimization：已增加调整后复核 checklist
 
 ### 第三批
 
