@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import DiagnosisClient from './DiagnosisClient';
 import type { QADocument } from '@/ai/index/types';
 import mobileIssues from '../../../content/qa/mobile/customer-issues.json';
@@ -13,7 +14,7 @@ const diagnosisKnowledgeIds = [
 ];
 
 const diagnosisKnowledge = [...mobileIssues, ...billingIssues]
-  .filter((doc) => diagnosisKnowledgeIds.includes(doc.id)) as QADocument[];
+  .filter((doc) => diagnosisKnowledgeIds.includes(doc.id) && doc.review_status === 'approved' && doc.public_case === true) as QADocument[];
 
 export const metadata: Metadata = {
   title: { absolute: '美国手机问题诊断｜账单、信号、转网、eSIM｜美国鸿达电讯' },
@@ -31,5 +32,15 @@ export const metadata: Metadata = {
 };
 
 export default function CellphoneDiagnosisPage() {
-  return <DiagnosisClient knowledge={diagnosisKnowledge} />;
+  return (
+    <>
+      <DiagnosisClient knowledge={diagnosisKnowledge} />
+      <nav aria-label="手机相关问题" className="mx-auto mb-10 grid max-w-5xl gap-3 px-4 sm:grid-cols-2 lg:grid-cols-4 sm:px-6">
+        <Link href="/cellphone/faq" className="rounded-2xl border border-[#D5E5EC] bg-white p-4 font-bold text-[#246B95]">手机问题知识库</Link>
+        <Link href="/cellphone/family-plan-guide" className="rounded-2xl border border-[#D5E5EC] bg-white p-4 font-bold text-[#246B95]">家庭多线判断</Link>
+        <Link href="/cellphone/prepaid" className="rounded-2xl border border-[#D5E5EC] bg-white p-4 font-bold text-[#246B95]">Prepaid / 国际使用</Link>
+        <Link href="/cellphone/providers" className="rounded-2xl border border-[#D5E5EC] bg-white p-4 font-bold text-[#246B95]">已确定要比较方案</Link>
+      </nav>
+    </>
+  );
 }
