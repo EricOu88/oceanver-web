@@ -1,28 +1,31 @@
-// 只保留服务页、FAQ 列表页（博客正文页和独立 FAQ 页面会动态添加）
+// Phase 2 候选核心页。
+// Phase 1 期间 app/sitemap.ts 仍返回空数组，因此这里不会让页面提前进入 sitemap。
+// 真正开放收录前，应再按 GSC / AI 引用 / 咨询转化表现复核一次。
 export const SITEMAP_ALLOWLIST = [
-  // 首页
   '/',
-  // 宽带服务页
+
+  // 手机问题网
+  '/cellphone',
+  '/cellphone/diagnosis',
+  '/cellphone/faq',
+  '/cellphone/family-plan-guide',
+  '/cellphone/providers',
+  '/cellphone/faq/no-ssn-us-cellphone-internet',
+
+  // 手机 + 宽带共同账单母节点
+  '/bill-optimization',
+
+  // 宽带问题网
   '/internet',
-  '/internet/providers',
-  '/internet/xfinity',
-  '/internet/att-fiber',
-  '/internet/frontier',
-  '/internet/price-hike',
   '/internet/diagnosis',
   '/internet/faq',
-  '/internet/providers/faq',
-  // 手机服务页
-  '/cellphone',
-  '/cellphone/providers',
-  '/cellphone/att/business-faq',
-  '/cellphone/government',
-  // 账单优化服务页
-  '/bill-optimization',
-  // FAQ 列表页（独立 FAQ 页面会通过 FAQIndex 动态添加）
-  '/internet/frontier/faq',
-  '/internet/att/fiber/faq',
-  '/internet/xfinity/faq',
-  // 注意：博客正文页会通过 getAllPostSlugs() 动态添加到 sitemap
-  // 独立 FAQ 页面会通过对应的 FAQIndex 动态添加
+  '/internet/price-hike',
+  '/internet/providers',
+  '/internet/home-network-guide',
+
+  // 运营商判断节点
+  '/internet/xfinity',
+  '/internet/att-fiber',
+  '/internet/spectrum',
+  '/internet/frontier',
 ];
