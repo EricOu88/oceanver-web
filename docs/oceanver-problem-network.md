@@ -47,6 +47,8 @@ Oceanver 不是“页面树”，而是“问题网”。
 |---|---|---|---|---|---|
 | `/cellphone/family-plan-guide` | 家庭多线 | Hub / Diagnosis / FAQ | 设备余额、Bill Credit、转号、Providers | 逐条线路判断后再比较 | `/contact` |
 | `/cellphone/faq/promo-credit-not-received` | 手机优惠 / Credit 到账异常 | Hub / FAQ / Diagnosis / Family | Trade-in、Bill Credit、转网奖励、AutoPay、多线优惠 | 继续观察 / 查订单账单 / 方案比较 | `/contact` |
+| `/cellphone/family-plan-exit-account-holder` | 家庭计划退出 / 户主权限 / 保号 | Family / FAQ / Diagnosis / No-SSN | Account Holder、Transfer PIN、SSN、设备余额、Porting | 转出 / 转责任 / 注销 | `/contact` |
+| `/cellphone/price-hike` | 手机长期涨价判断 | Hub / FAQ / Diagnosis / Bill Check | 每线月费、AutoPay、Free Line、多线折扣、设备 Credit | 留 / 调整 / 比较方案 | `/contact` |
 | `/cellphone/faq/how-to-choose-us-cellphone-plan` | 手机方案怎么选 | FAQ | Diagnosis、Family、Prepaid/Postpaid | Providers | 通过 Providers / Contact |
 | `/cellphone/faq/prepaid-vs-postpaid` | Prepaid vs Postpaid | FAQ / Diagnosis | Family、No-SSN | Providers | 当前资格由真实账户规则确认 |
 | `/cellphone/faq/no-ssn-us-cellphone-internet` | 无 SSN / 开户资格 | 手机 FAQ | Prepaid/Postpaid、宽带 Hub | 手机 Diagnosis / 宽带 Hub | `/contact` |
