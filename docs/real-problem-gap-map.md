@@ -139,7 +139,9 @@
 
 ---
 
-### P3：手机 + 宽带一起迁移 / 切换检查清单
+### P3：手机 + 宽带一起迁移 / 切换检查清单（已作为子模块建立）
+
+当前承接：`/bill-optimization#move-both`
 
 真实问题来源：G0353。
 
@@ -163,7 +165,7 @@
 
 建议先作为 `/bill-optimization` 的子模块；如果论坛 / Reddit / 客服数据继续证明高频，再升级为独立 URL。
 
-**优先级：中高。**
+**状态：已先作为 Bill Optimization 子模块上线，继续观察是否值得独立 URL。**
 
 ---
 
@@ -246,9 +248,12 @@
 
 > 宽带取消后账户 / Final Bill / 设备状态
 
-### 第四批
+### 第四批（已完成）
 
-把手机 + 宽带迁移 checklist 先放进 Bill Optimization，观察真实问题量后再决定独立 URL。
+手机 + 宽带迁移 checklist 已放入 Bill Optimization：
+`/bill-optimization#move-both`
+
+继续观察真实问题量后，再决定是否升级为独立 URL。
 
 ---
 
