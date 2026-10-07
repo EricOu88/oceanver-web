@@ -184,6 +184,20 @@ export default function FamilyPlanGuidePage() {
           </section>
 
           <section className="rounded-2xl border border-[#D5E5EC] bg-white p-5 shadow-sm sm:p-8">
+            <h2 className="text-2xl font-bold">如果你不是户主，退出家庭组前先看这个</h2>
+            <p className="mt-4 leading-7 text-[#526170]">
+              普通成员最容易忽略的不是价格，而是号码控制权、户主授权、Transfer PIN、设备余额和接收新账户的资格。
+              如果你担心户主失联、人在异地或境外、没有 SSN，或者想保留原号码，不要只按普通转网流程处理。
+            </p>
+            <Link
+              href="/cellphone/faq/family-plan-leave-keep-number"
+              className="mt-5 inline-flex font-semibold text-[#164B78] hover:text-[#103B60]"
+            >
+              查看 Family Plan 退组 / 保号判断 →
+            </Link>
+          </section>
+
+          <section className="rounded-2xl border border-[#D5E5EC] bg-white p-5 shadow-sm sm:p-8">
             <h2 className="text-2xl font-bold">转网前，每条线需要检查什么</h2>
             <ul className="mt-4 list-disc space-y-2 pl-5 leading-6 text-[#526170]">
               {transferItems.map((item) => <li key={item}>{item}</li>)}
