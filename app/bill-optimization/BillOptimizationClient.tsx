@@ -143,6 +143,7 @@ export default function BillOptimizationClient() {
             <a href="#observe-first" className="underline underline-offset-4">哪些情况可以先观察</a>
             <a href="#after-adjustment" className="underline underline-offset-4">调整后还要检查什么</a>
             <a href="#bundle-dependency" className="underline underline-offset-4">手机 + 宽带绑定优惠</a>
+            <a href="#bundle-dependency" className="underline underline-offset-4">宽带 + 手机 Bundle</a>
             <a href="#move-both" className="underline underline-offset-4">手机 + 宽带一起迁移</a>
             <a href="#faq" className="underline underline-offset-4">常见问题</a>
           </div>
@@ -356,6 +357,33 @@ export default function BillOptimizationClient() {
           </div>
           <p className="mt-5 text-sm font-semibold text-blue-800">
             网页不能确认当前 Bundle eligibility 或账户级 Credit；这类结果必须按真实账户核实。
+          </p>
+        </section>
+
+        <section id="bundle-dependency" className="scroll-mt-6 rounded-3xl border border-slate-200 bg-white p-5 md:p-8">
+          <p className="text-sm font-bold text-blue-700">宽带 + 手机 Bundle 依赖</p>
+          <h2 className="mt-2 text-2xl font-black md:text-3xl">取消宽带前，先确认手机线会不会一起变贵</h2>
+          <p className="mt-3 max-w-4xl leading-7 text-slate-700">
+            有些手机线、Free Line、Mobile Credit 或 Bundle Discount 可能依赖家庭宽带账户。
+            所以“宽带每月省了多少”不能单独算；真正要比较的是取消宽带以后，整个家庭通信账单会发生什么变化。
+          </p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            {[
+              '手机线当前价格是否依赖家庭宽带账户或 Bundle。',
+              'Free Line、Mobile Credit 或账户级折扣是否有宽带资格条件。',
+              '取消宽带后，手机每条线的价格、折扣或 Promotion 是否会变化。',
+              '宽带和手机是否在同一个账户、同一优惠组合或关联资格中。',
+              '如果换宽带，新的宽带节省额能否覆盖手机端可能增加的成本。',
+              '先取得取消后的手机实际价格，再决定是否关闭宽带。',
+            ].map((item, index) => (
+              <div key={item} className="flex gap-3 rounded-xl bg-slate-50 p-4 leading-7 text-slate-700">
+                <span className="font-black text-blue-700">{index + 1}.</span>
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+          <p className="mt-5 rounded-xl bg-slate-50 p-4 leading-7 text-slate-700">
+            这类依赖关系可能随运营商、账户和活动变化。网页只能提醒你检查关联条件，不能直接推断取消宽带后手机一定涨价或一定不变。
           </p>
         </section>
 
