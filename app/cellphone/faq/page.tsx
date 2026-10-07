@@ -73,6 +73,13 @@ const TOPICS = [
     label: '进入家庭多线指南',
   },
   {
+    icon: Users,
+    title: '想退出家庭组 / 户主失联 / 想保号',
+    text: '先确认账户角色、号码控制权、Transfer PIN、设备余额和身份验证条件，再决定转出、转责任或注销。',
+    href: '/cellphone/family-plan-exit-account-holder',
+    label: '进入家庭计划退出判断',
+  },
+  {
     icon: Layers3,
     title: '已经确定要比较方案',
     text: '如果问题已经判断清楚，再比较真实账单、设备成本、家庭结构、信号、国际使用与转网代价。',
