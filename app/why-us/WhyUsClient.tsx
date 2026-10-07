@@ -240,7 +240,7 @@ export default function WhyUsClient({ cases }: WhyUsClientProps) {
             <Link href="/bill-optimization" className="text-[#164B78] hover:text-[#103B60]">查看账单判断 →</Link>
             <Link href="/cellphone/diagnosis" className="text-[#164B78] hover:text-[#103B60]">手机问题诊断 →</Link>
             <Link href="/internet/diagnosis" className="text-[#164B78] hover:text-[#103B60]">宽带问题诊断 →</Link>
-            <Link href="/contact" className="text-[#164B78] hover:text-[#103B60]">联系中文客服 →</Link>
+            <Link href="/contact" className="text-[#164B78] hover:text-[#103B60]">需要时进入人工核实 →</Link>
           </div>
         </section>
       </div>
