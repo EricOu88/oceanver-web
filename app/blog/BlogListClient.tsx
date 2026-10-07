@@ -17,14 +17,8 @@ type BlogListPost = {
   image?: string
 }
 
-function getDataCategory(post: BlogListPost, index: number): BlogListCategory {
-  // 按用户要求：现有三篇文章按顺序标记
-  if (index === 0) return 'guide'
-  if (index === 1) return 'mobile'
-  if (index === 2) return 'broadband'
-
-  // 兜底：根据分类文本做一个简单推断，便于未来新增文章
-  const cat = (post.category || '').toLowerCase()
+function getDataCategory(post: BlogListPost): BlogListCategory {
+  const cat = `${post.category || ''} ${post.title || ''} ${post.description || ''}`.toLowerCase()
   if (cat.includes('手机') || cat.includes('mobile') || cat.includes('phone')) return 'mobile'
   if (cat.includes('宽带') || cat.includes('broadband') || cat.includes('internet')) return 'broadband'
   if (cat.includes('指南') || cat.includes('办事') || cat.includes('guide')) return 'guide'
@@ -61,8 +55,8 @@ export default function BlogListClient({ posts }: { posts: BlogListPost[] }) {
   const [activeCategory, setActiveCategory] = useState<BlogListCategory>('all')
 
   const filteredPosts = useMemo(() => {
-    return posts.filter((post, index) => {
-      const dataCategory = getDataCategory(post, index)
+    return posts.filter((post) => {
+      const dataCategory = getDataCategory(post)
       return activeCategory === 'all' || dataCategory === activeCategory
     })
   }, [activeCategory, posts])
@@ -161,10 +155,8 @@ export default function BlogListClient({ posts }: { posts: BlogListPost[] }) {
         </div>
       ) : (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredPosts.map((post, filteredIndex) => {
-            // data-category 按“原始顺序”标记，保证符合你的三篇文章要求
-            const originalIndex = posts.findIndex((p) => p.slug === post.slug)
-            const dataCategory = getDataCategory(post, originalIndex)
+          {filteredPosts.map((post) => {
+            const dataCategory = getDataCategory(post)
 
             return (
               <Link
