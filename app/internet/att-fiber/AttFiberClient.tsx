@@ -78,9 +78,9 @@ export default function AttFiberClient() {
           <Link href="/internet/providers" className="text-sm font-semibold text-[#164B78] hover:text-[#103B60]">
             ← 返回宽带比较
           </Link>
-          <a href="tel:15108496191" className="text-sm font-semibold text-[#164B78] hover:text-[#103B60]">
-            电话咨询
-          </a>
+          <Link href="/internet" className="text-sm font-semibold text-[#526170] hover:text-[#164B78]">
+            宽带问题中心
+          </Link>
         </div>
       </div>
 
@@ -139,8 +139,22 @@ export default function AttFiberClient() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-10 md:px-8">
-        <p className="rounded-xl border border-[#D5E5EC] bg-white p-5 text-sm leading-6 text-[#526170]">
-          商业宽带应按 SLA、固定 IP、线路和合同单独判断，不与住家 Fiber 混在一起比较。
+        <div className="rounded-2xl border border-[#D5E5EC] bg-white p-6">
+          <h2 className="text-xl font-black">哪些结果需要结合真实地址或账户核实？</h2>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-[#526170]">
+            地址 serviceability、当前可订方案、安装条件、设备记录、Promotion 和实际长期价格，
+            都可能因地址与账户不同而变化。
+          </p>
+          <Link
+            href="/contact"
+            className="mt-5 inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]"
+          >
+            需要时进入人工核实 <ArrowRight size={16} />
+          </Link>
+        </div>
+
+        <p className="mt-6 rounded-xl border border-[#D5E5EC] bg-white p-5 text-sm leading-6 text-[#526170]">
+          商业宽带应按静态 IP、服务等级、线路、合同和实际业务需求单独判断，不与住家 Fiber 混在一起比较。
         </p>
         <p className="mt-5 text-center text-xs text-[#526170]">
           最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前地址、账户与官方规则为准。
