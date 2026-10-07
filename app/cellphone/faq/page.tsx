@@ -81,6 +81,13 @@ const TOPICS = [
   },
   {
     icon: Users,
+    title: '我是成员，不是户主，想退出又要保号',
+    text: '先判断号码是否保留、户主权限、设备余额、Transfer PIN、身份核验，以及是留在原运营商还是携号转走。',
+    href: '/cellphone/faq/family-plan-leave-keep-number',
+    label: '查看退组 / 保号判断',
+  },
+  {
+    icon: Users,
     title: '想退出家庭组 / 户主失联 / 想保号',
     text: '先确认账户角色、号码控制权、Transfer PIN、设备余额和身份验证条件，再决定转出、转责任或注销。',
     href: '/cellphone/family-plan-exit-account-holder',
