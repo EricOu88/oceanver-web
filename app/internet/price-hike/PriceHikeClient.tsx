@@ -217,6 +217,33 @@ export default function PriceHikeClient() {
             </ol>
           </section>
 
+          <section className="mt-16 rounded-3xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+            <p className="text-sm font-bold text-[#2786A5]">
+              优惠快到期时先准备
+            </p>
+            <h2 className="mt-2 text-2xl font-black sm:text-3xl">
+              不用等到涨价以后才开始查
+            </h2>
+            <p className="mt-4 max-w-3xl leading-7 text-[#526170]">
+              不给统一“提前几天”的固定答案。更稳妥的做法是：一旦账单、订单或账户里已经能看到 Promotion / Credit 的结束信号，就开始把后续价格和切换条件查清楚。
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              {[
+                '保存当前账单与 Promotion / Credit 名称、金额和适用条件。',
+                '确认优惠结束后的常规价格，以及设备和附加费用是否会继续。',
+                '确认当前地址有哪些真实可用的替代方案，不只看广告覆盖图。',
+                '如果考虑换网，先确认新服务可安装、预计启用时间和设备安排。',
+                '旧服务不要过早取消；先把新服务条件和切换顺序确认清楚。',
+                '涉及重新办理资格、当前优惠或账户特殊条件时，必须按真实账户核实。',
+              ].map((item) => (
+                <div key={item} className="flex gap-3 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-4">
+                  <CheckCircle2 size={20} className="mt-0.5 shrink-0 text-[#2786A5]" />
+                  <p className="text-sm leading-6 text-[#526170]">{item}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
           {/* 不一定要换 */}
           <section className="mt-16">
             <p className="text-sm font-bold text-[#2786A5]">
