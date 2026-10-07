@@ -16,7 +16,6 @@ export const SITEMAP_ALLOWLIST = [
   '/cellphone',
   '/cellphone/providers',
   '/cellphone/att/business-faq',
-  '/cellphone/att/family-faq',
   '/cellphone/government',
   // 账单优化服务页
   '/bill-optimization',
