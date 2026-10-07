@@ -208,17 +208,24 @@ export default function SpectrumFAQPage() {
         </div>
 
         <section className="mt-10 rounded-2xl border border-[#D8E2EA] bg-white p-5 sm:p-6">
-          <h2 className="text-xl font-black">还不能确定问题来源？</h2>
+          <h2 className="text-xl font-black">下一步怎么判断？</h2>
           <p className="mt-2 text-sm leading-7 text-[#526170]">
-            可进入宽带问题诊断，按网速、Wi-Fi、断网、设备和地址情况继续判断。
+            问题来源还不清楚时先做诊断；已经确认长期涨价时看涨价判断；已经确定值得比较时再进入宽带方案比较。
           </p>
-          <Link
-            href="/internet/diagnosis"
-            className="mt-4 inline-flex items-center gap-2 font-bold text-[#164B78] transition hover:text-[#103B60]"
-          >
-            宽带问题诊断
-            <ArrowRight size={16} />
-          </Link>
+          <div className="mt-5 flex flex-wrap gap-4 text-sm font-bold">
+            <Link href="/internet/diagnosis" className="inline-flex items-center gap-2 text-[#164B78] hover:text-[#103B60]">
+              宽带问题诊断 <ArrowRight size={16} />
+            </Link>
+            <Link href="/internet/price-hike" className="inline-flex items-center gap-2 text-[#164B78] hover:text-[#103B60]">
+              宽带涨价判断 <ArrowRight size={16} />
+            </Link>
+            <Link href="/internet/providers" className="inline-flex items-center gap-2 text-[#164B78] hover:text-[#103B60]">
+              宽带方案比较 <ArrowRight size={16} />
+            </Link>
+            <Link href="/contact" className="inline-flex items-center gap-2 text-[#164B78] hover:text-[#103B60]">
+              需要时进入人工核实 <ArrowRight size={16} />
+            </Link>
+          </div>
         </section>
 
         <p className="mt-8 text-center text-xs leading-5 text-[#526170]">
