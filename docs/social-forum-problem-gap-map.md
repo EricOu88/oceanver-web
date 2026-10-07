@@ -192,9 +192,9 @@ XHS-001–007、013–018、029–033 基本已经被以下节点覆盖：
 
 # 四、下一步执行顺序
 
-## P1 — 现在建立
+## P1 — 已完成
 
-`/cellphone/faq/family-plan-leave-keep-number`
+已建立：`/cellphone/faq/family-plan-leave-keep-number`
 
 主题：
 
@@ -202,21 +202,21 @@ XHS-001–007、013–018、029–033 基本已经被以下节点覆盖：
 
 这是当前最强新缺口。
 
-## P2 — 加强现有 Bill Optimization
+## P2 — 已完成
 
-增加：
+已在 `/bill-optimization#first-mobile-bill` 增加：
 
 > 转网后的第一张手机账单为什么比报价高？
 
-不新建 URL。
+不新增独立 URL。
 
-## P3 — 加强手机 Diagnosis
+## P3 — 已完成
 
-增加：
+已加强手机 Diagnosis 的 International 分支：
 
 > 国际漫游异常收费怎么查？
 
-不新建 URL。
+不新增独立 URL。
 
 ## P4 — 观察池
 
