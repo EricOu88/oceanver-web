@@ -1,583 +1,207 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import {
+  ArrowRight,
+  CheckCircle2,
+  Gauge,
+  Home,
+  Router,
+  ShieldCheck,
+  Wifi,
+} from 'lucide-react';
+
+const pageUrl = 'https://oceanver.com/internet/home-network-guide';
 
 export const metadata: Metadata = {
-  title: '家庭网络技术指南：5G Home Internet、光纤 vs Cable、路由器选择、Mesh WiFi 部署',
+  title: '家庭网络怎么判断？Fiber、Cable、5G Home Internet 与 Wi-Fi | 美国鸿达电讯',
   description:
-    '家庭网络技术深度指南：5G Home Internet 能否替代传统 Cable 宽带？光纤、电缆和 DSL 的真实网速与延迟对比。路由器自购 vs 租用成本分析。Mesh WiFi 部署方案。',
-  alternates: {
-    canonical: 'https://oceanver.com/internet/home-network-guide',
-  },
+    '从入户网络、Wi-Fi 覆盖、Router、Mesh、上传需求和地址条件理解 Fiber、Cable、5G Home Internet 等家庭网络差异，避免把家庭 Wi-Fi 问题误判成运营商问题。',
+  alternates: { canonical: pageUrl },
 };
 
+const technologyItems = [
+  {
+    title: 'Fiber',
+    text: '通常适合重视上传、低延迟和稳定有线接入的场景，但是否可用首先取决于具体地址。',
+  },
+  {
+    title: 'Cable',
+    text: '覆盖通常更广，实际体验取决于地址、线路、套餐、设备和当地网络环境。',
+  },
+  {
+    title: '5G Home Internet',
+    text: '安装方式通常更简单，但实际表现更依赖室内信号、基站负载、位置和时段，不能只看理论速度。',
+  },
+  {
+    title: 'DSL / 其他固定接入',
+    text: '是否适合取决于地址上可用技术、实际线路条件和使用需求，不应只按技术名称排序。',
+  },
+];
+
+const wifiChecks = [
+  '只有某一个房间慢，先看 Router 位置、墙体和 Wi-Fi 覆盖。',
+  '只有一台设备慢，先排除该设备、频段和连接设置。',
+  '靠近 Router 正常、远处变慢，更像家庭 Wi-Fi 覆盖问题。',
+  '有线连接也持续异常，才更值得继续检查入户线路或运营商服务。',
+];
+
 export default function HomeNetworkGuidePage() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: '家庭网络怎么判断？Fiber、Cable、5G Home Internet 与 Wi-Fi',
+    description:
+      '帮助区分入户网络、Wi-Fi 覆盖、Router、Mesh 与不同宽带技术，避免把家庭网络问题误判成运营商问题。',
+    mainEntityOfPage: pageUrl,
+    inLanguage: 'zh-CN',
+    dateModified: '2026-10-06',
+    author: {
+      '@type': 'Organization',
+      name: '美国鸿达电讯',
+    },
+  };
+
   return (
-    <main className="min-h-screen bg-slate-50">
-      <div className="max-w-4xl mx-auto px-6 py-12">
-        <div className="mb-6">
+    <main className="min-h-screen bg-[#FCFDFE] px-4 py-12 text-[#202D3A] md:py-16">
+      <div className="mx-auto max-w-5xl">
+        <Link
+          href="/internet"
+          className="text-sm font-bold text-[#526170] transition hover:text-[#164B78]"
+        >
+          ← 返回宽带问题中心
+        </Link>
+
+        <header className="mt-8">
+          <p className="text-sm font-bold text-[#246B95]">家庭网络判断</p>
+          <h1 className="mt-3 text-4xl font-black leading-tight md:text-5xl">
+            先分清“入户宽带”和“家里 Wi-Fi”，
+            <br className="hidden md:block" />
+            再决定要不要换运营商
+          </h1>
+          <p className="mt-5 max-w-4xl text-lg leading-relaxed text-[#526170]">
+            很多“网速慢”其实发生在家里的 Router、Wi-Fi 覆盖或设备这一层。
+            Fiber、Cable、5G Home Internet 只是入户方式的一部分，不能直接代表全屋体验。
+          </p>
+        </header>
+
+        <section className="mt-12 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-7 md:p-8">
+          <div className="flex gap-3">
+            <ShieldCheck className="mt-1 shrink-0 text-[#2786A5]" size={28} />
+            <div>
+              <h2 className="text-2xl font-black">先问：问题发生在哪一层？</h2>
+              <p className="mt-3 leading-relaxed text-[#526170]">
+                入户线路、Modem/Gateway、Router、Wi-Fi 覆盖和终端设备是不同层。
+                只有先找出问题层级，才知道应该调设备、加 Mesh、换 Router，还是比较新的宽带服务。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-12">
+          <h2 className="text-3xl font-black">不同入户技术怎么理解？</h2>
+          <div className="mt-7 grid gap-5 md:grid-cols-2">
+            {technologyItems.map((item) => (
+              <article key={item.title} className="rounded-2xl border border-[#D5E5EC] bg-white p-6">
+                <h3 className="text-xl font-black">{item.title}</h3>
+                <p className="mt-2 leading-relaxed text-[#526170]">{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="grid gap-5 md:grid-cols-2">
+          <article className="rounded-2xl border border-[#D5E5EC] bg-white p-7">
+            <Wifi className="mb-4 text-[#2786A5]" size={28} />
+            <h2 className="text-2xl font-black">什么时候更像 Wi-Fi 覆盖问题？</h2>
+            <div className="mt-4 space-y-3">
+              {wifiChecks.map((item) => (
+                <div key={item} className="flex gap-3">
+                  <CheckCircle2 className="mt-0.5 shrink-0 text-[#246B95]" size={18} />
+                  <p className="text-[#526170]">{item}</p>
+                </div>
+              ))}
+            </div>
+          </article>
+
+          <article className="rounded-2xl border border-[#D5E5EC] bg-white p-7">
+            <Router className="mb-4 text-[#2786A5]" size={28} />
+            <h2 className="text-2xl font-black">Router / Mesh 怎么判断？</h2>
+            <p className="leading-relaxed text-[#526170]">
+              重点看房屋面积、楼层、墙体、Router 位置、设备数量和回程方式。
+              自购、租用或 Mesh 没有统一“最省”答案，设备兼容、技术支持和维护责任也要一起考虑。
+            </p>
+          </article>
+        </section>
+
+        <section className="mt-12 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-7 md:p-8">
+          <h2 className="text-2xl font-black">什么时候才值得换宽带技术或运营商？</h2>
+          <div className="mt-5 grid gap-4 md:grid-cols-2">
+            {[
+              '多个设备、多个位置甚至有线连接都长期异常。',
+              '当前地址有更合适的 Fiber 或其他固定接入，而且长期成本可以接受。',
+              '上传、远程办公或稳定性需求已经明显超过当前服务能力。',
+              '已经排除 Router、Wi-Fi 和单设备问题，仍持续出现线路质量问题。',
+            ].map((item) => (
+              <div key={item} className="flex gap-3 rounded-xl bg-white p-4">
+                <CheckCircle2 className="mt-0.5 shrink-0 text-[#246B95]" size={18} />
+                <p className="text-[#526170]">{item}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-12 grid gap-5 md:grid-cols-3">
           <Link
-            href="/internet"
-            className="inline-flex items-center text-sm text-slate-500 hover:text-blue-600 transition"
+            href="/internet/diagnosis"
+            className="rounded-2xl border border-[#D5E5EC] bg-white p-6 transition hover:border-[#246B95]"
           >
-            ← 返回宽带服务
+            <Gauge className="mb-4 text-[#2786A5]" size={26} />
+            <h2 className="text-xl font-black">网速 / Wi-Fi 有问题</h2>
+            <p className="mt-2 text-sm leading-relaxed text-[#526170]">
+              先按设备、位置、有线和 Wi-Fi 做问题诊断。
+            </p>
+            <span className="mt-5 inline-flex items-center gap-2 font-bold text-[#164B78]">
+              进入宽带诊断 <ArrowRight size={16} />
+            </span>
           </Link>
-        </div>
 
-        <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
-          家庭网络技术指南：5G Home Internet、光纤 vs Cable、路由器选择、Mesh WiFi 部署
-        </h1>
+          <Link
+            href="/internet/providers"
+            className="rounded-2xl border border-[#D5E5EC] bg-white p-6 transition hover:border-[#246B95]"
+          >
+            <Home className="mb-4 text-[#2786A5]" size={26} />
+            <h2 className="text-xl font-black">已经确定要比较</h2>
+            <p className="mt-2 text-sm leading-relaxed text-[#526170]">
+              再比较地址、长期成本、安装和技术类型。
+            </p>
+            <span className="mt-5 inline-flex items-center gap-2 font-bold text-[#164B78]">
+              进入宽带比较 <ArrowRight size={16} />
+            </span>
+          </Link>
 
-        <p className="text-lg text-slate-600 mb-12 leading-relaxed">
-          家庭网络技术选择直接影响使用体验。本文深度解析 5G Home Internet、光纤、Cable、DSL 的技术差异，路由器自购与租用的成本对比，以及 Mesh WiFi 部署方案，帮助用户做出最适合的技术选择。
+          <Link
+            href="/internet/faq"
+            className="rounded-2xl border border-[#D5E5EC] bg-white p-6 transition hover:border-[#246B95]"
+          >
+            <Wifi className="mb-4 text-[#2786A5]" size={26} />
+            <h2 className="text-xl font-black">查具体宽带问题</h2>
+            <p className="mt-2 text-sm leading-relaxed text-[#526170]">
+              继续看账单、设备、断网、安装和搬家等知识节点。
+            </p>
+            <span className="mt-5 inline-flex items-center gap-2 font-bold text-[#164B78]">
+              进入宽带问题库 <ArrowRight size={16} />
+            </span>
+          </Link>
+        </section>
+
+        <p className="mt-10 text-center text-xs leading-5 text-[#526170]">
+          最后更新：2026年10月｜技术、设备、地址覆盖和运营商规则可能变化，请以当前地址、设备和实际服务条件为准。
         </p>
 
-        {/* 问题13：5G Home Internet */}
-        <section className="mb-16 bg-white rounded-2xl p-8 shadow-sm">
-          <h2 className="text-3xl font-black text-slate-900 mb-6">
-            美国 5G Home Internet (T-Mobile/Verizon) 真的能完全替代传统 Cable 宽带吗？
-          </h2>
-
-          <div className="space-y-6 text-slate-700 leading-relaxed">
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">结论</h3>
-              <p>
-                5G Home Internet 可以在部分场景下替代传统 Cable 宽带，但并非所有情况都适合。对于轻度用户、没有光纤覆盖的区域、或需要快速安装的用户，5G Home Internet 是很好的选择。但对于重度用户、对延迟敏感的游戏玩家、或需要稳定上传速度的用户，传统 Cable 或光纤宽带仍然是更好的选择。
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">原因解释</h3>
-              <p className="mb-4">
-                5G Home Internet 的优势和限制：
-              </p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>
-                  <strong>优势：</strong>无需光纤基础设施，安装快速；价格相对较低（$50-$60/月）；无需长期合约；适合没有光纤覆盖的区域。
-                </li>
-                <li>
-                  <strong>限制：</strong>网速受信号强度影响，可能不稳定；延迟可能高于光纤；上传速度通常较低；在高峰期可能被降速。
-                </li>
-                <li>
-                  <strong>技术原理：</strong>5G Home Internet 使用 5G 移动网络，通过固定设备接收信号，转换为 Wi-Fi 信号供家庭使用。
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">实操建议</h3>
-              <div className="space-y-4">
-                <div className="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-r-xl">
-                  <p className="font-semibold text-slate-900 mb-2">适合选择 5G Home Internet 的情况</p>
-                  <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
-                    <li>轻度用户，主要使用浏览网页、视频流媒体</li>
-                    <li>没有光纤覆盖，Cable 宽带价格过高</li>
-                    <li>需要快速安装，不想等待光纤建设</li>
-                    <li>预算有限，希望节省费用</li>
-                    <li>不需要高上传速度</li>
-                  </ul>
-                </div>
-
-                <div className="bg-green-50 border-l-4 border-green-600 p-4 rounded-r-xl">
-                  <p className="font-semibold text-slate-900 mb-2">不适合选择 5G Home Internet 的情况</p>
-                  <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
-                    <li>重度用户，需要大量下载和上传</li>
-                    <li>对延迟敏感，如在线游戏、视频会议</li>
-                    <li>需要高上传速度，如内容创作、直播</li>
-                    <li>信号覆盖较弱，可能影响网速稳定性</li>
-                    <li>有光纤覆盖，光纤是更好的选择</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">适用人群</h3>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li><strong>没有光纤覆盖的用户：</strong>5G Home Internet 是很好的替代方案</li>
-                <li><strong>轻度用户：</strong>主要使用浏览网页、视频流媒体</li>
-                <li><strong>需要快速安装的用户：</strong>不想等待光纤建设</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* 问题14：光纤 vs Cable vs DSL */}
-        <section className="mb-16 bg-white rounded-2xl p-8 shadow-sm">
-          <h2 className="text-3xl font-black text-slate-900 mb-6">
-            光纤 (Fiber)、电缆 (Cable) 和 DSL 的真实网速与延迟对比：游戏与居家办公选哪个？
-          </h2>
-
-          <div className="space-y-6 text-slate-700 leading-relaxed">
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">结论</h3>
-              <p>
-                光纤（Fiber）在网速和延迟方面表现最佳，最适合游戏和居家办公；Cable 宽带速度较快但延迟略高，适合一般使用；DSL 速度较慢且延迟较高，不适合游戏和视频会议。选择哪种技术主要取决于地址覆盖和预算。
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">原因解释</h3>
-              <p className="mb-4">
-                三种技术的技术差异：
-              </p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>
-                  <strong>光纤（Fiber）：</strong>使用光信号传输，速度最快（通常 100-1000 Mbps），延迟最低（通常 5-15ms），上传和下载速度对称。
-                </li>
-                <li>
-                  <strong>Cable 宽带：</strong>使用同轴电缆，速度较快（通常 50-400 Mbps），延迟中等（通常 15-30ms），上传速度通常较低。
-                </li>
-                <li>
-                  <strong>DSL：</strong>使用电话线，速度较慢（通常 10-100 Mbps），延迟较高（通常 30-50ms），上传速度很低。
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">实操建议</h3>
-              <div className="space-y-4">
-                <div className="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-r-xl">
-                  <p className="font-semibold text-slate-900 mb-2">游戏用户推荐</p>
-                  <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
-                    <li><strong>首选：</strong>光纤（延迟最低，速度最快）</li>
-                    <li><strong>次选：</strong>Cable 宽带（延迟可接受，速度较快）</li>
-                    <li><strong>不推荐：</strong>DSL（延迟太高，不适合游戏）</li>
-                  </ul>
-                </div>
-
-                <div className="bg-green-50 border-l-4 border-green-600 p-4 rounded-r-xl">
-                  <p className="font-semibold text-slate-900 mb-2">居家办公用户推荐</p>
-                  <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
-                    <li><strong>首选：</strong>光纤（上传速度快，适合视频会议）</li>
-                    <li><strong>次选：</strong>Cable 宽带（速度可接受，价格较低）</li>
-                    <li><strong>不推荐：</strong>DSL（上传速度太低，不适合视频会议）</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">适用人群</h3>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li><strong>游戏玩家：</strong>需要低延迟和高速网络</li>
-                <li><strong>居家办公用户：</strong>需要稳定高速网络进行视频会议</li>
-                <li><strong>内容创作者：</strong>需要高上传速度</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* 问题15：无限流量降速阈值 */}
-        <section className="mb-16 bg-white rounded-2xl p-8 shadow-sm">
-          <h2 className="text-3xl font-black text-slate-900 mb-6">
-            美国手机"无限流量"计划背后的真相：揭秘降速阈值 (Throttling) 与优先级
-          </h2>
-
-          <div className="space-y-6 text-slate-700 leading-relaxed">
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">结论</h3>
-              <p>
-                美国手机的"无限流量"计划并非真正无限，通常在使用一定流量后（如 50GB）会被降速或降低优先级。降速阈值和优先级取决于运营商和套餐类型。了解这些限制有助于选择最适合的套餐。
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">原因解释</h3>
-              <p className="mb-4">
-                "无限流量"的技术原理：
-              </p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>
-                  <strong>降速阈值：</strong>大部分"无限流量"计划在使用一定流量后（如 50GB）会被降速到 2G 速度（约 128 Kbps），虽然仍可使用，但速度很慢。
-                </li>
-                <li>
-                  <strong>优先级降低：</strong>部分计划不会降速，但会在高峰期降低优先级，导致网速变慢。
-                </li>
-                <li>
-                  <strong>网络管理：</strong>运营商通过降速和优先级管理来确保网络资源合理分配。
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">实操建议</h3>
-              <div className="space-y-4">
-                <div className="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-r-xl">
-                  <p className="font-semibold text-slate-900 mb-2">各运营商降速阈值对比</p>
-                  <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
-                    <li><strong>AT&T：</strong>通常 50GB 后降速</li>
-                    <li><strong>T-Mobile：</strong>通常 50GB 后降低优先级</li>
-                    <li><strong>Verizon：</strong>通常 50GB 后降速</li>
-                    <li><strong>注意：</strong>具体阈值取决于套餐类型</li>
-                  </ul>
-                </div>
-
-                <div className="bg-green-50 border-l-4 border-green-600 p-4 rounded-r-xl">
-                  <p className="font-semibold text-slate-900 mb-2">如何避免降速？</p>
-                  <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
-                    <li>选择更高档次的套餐（可能有更高的降速阈值）</li>
-                    <li>监控流量使用，避免超过降速阈值</li>
-                    <li>在 Wi-Fi 环境下使用，减少移动数据消耗</li>
-                    <li>选择真正无限流量的套餐（通常价格更高）</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">适用人群</h3>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li><strong>重度用户：</strong>需要了解降速阈值，选择合适套餐</li>
-                <li><strong>对网速要求高的用户：</strong>需要避免降速影响使用</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* 问题16：信号满格但网速慢 */}
-        <section className="mb-16 bg-white rounded-2xl p-8 shadow-sm">
-          <h2 className="text-3xl font-black text-slate-900 mb-6">
-            信号条满格网速却极慢？解析 5G 频段拥堵与基站覆盖的"最后一百米"问题
-          </h2>
-
-          <div className="space-y-6 text-slate-700 leading-relaxed">
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">结论</h3>
-              <p>
-                信号条满格但网速极慢的主要原因是频段拥堵、基站负载过高、或"最后一百米"的信号衰减。即使信号强度显示满格，实际网速可能因为网络拥堵或信号质量问题而很慢。解决方法是选择低频段运营商、避开高峰期、或使用 Wi-Fi。
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">原因解释</h3>
-              <p className="mb-4">
-                信号满格但网速慢的技术原因：
-              </p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>
-                  <strong>频段拥堵：</strong>高频段（如 2.5GHz）速度快但覆盖范围小，在用户密集区域容易拥堵。
-                </li>
-                <li>
-                  <strong>基站负载：</strong>基站连接的设备过多，导致每个设备分配的带宽减少。
-                </li>
-                <li>
-                  <strong>信号质量：</strong>信号强度不等于信号质量，信号可能因为干扰、反射等原因质量较差。
-                </li>
-                <li>
-                  <strong>"最后一百米"问题：</strong>信号在传输过程中可能因为建筑物、地形等原因衰减。
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">实操建议</h3>
-              <div className="space-y-4">
-                <div className="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-r-xl">
-                  <p className="font-semibold text-slate-900 mb-2">解决方法</p>
-                  <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
-                    <li>选择低频段运营商（如 Verizon、AT&T），信号穿透力强</li>
-                    <li>避开高峰期（晚上 7-10 点），选择低峰时段使用</li>
-                    <li>使用 Wi-Fi，避免移动网络拥堵</li>
-                    <li>更换位置，寻找信号质量更好的区域</li>
-                    <li>联系运营商，检查是否有网络问题</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">适用人群</h3>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li><strong>遇到信号满格但网速慢的用户：</strong>需要了解原因和解决方法</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* 问题17：路由器自购 vs 租用 */}
-        <section className="mb-16 bg-white rounded-2xl p-8 shadow-sm">
-          <h2 className="text-3xl font-black text-slate-900 mb-6">
-            路由器自购 vs 运营商租用：从性能和 24 个月成本角度看，哪种更划算？
-          </h2>
-
-          <div className="space-y-6 text-slate-700 leading-relaxed">
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">结论</h3>
-              <p>
-                从 24 个月成本角度看，自购路由器通常更划算。运营商租用路由器通常每月 $10-$15，24 个月总成本 $240-$360，而自购路由器通常 $100-$200，可以节省 $40-$260。但自购路由器需要自己管理和维护，运营商租用路由器有技术支持保障。
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">原因解释</h3>
-              <p className="mb-4">
-                成本对比分析：
-              </p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>
-                  <strong>运营商租用：</strong>每月 $10-$15，24 个月总成本 $240-$360；包含技术支持；设备可能较旧。
-                </li>
-                <li>
-                  <strong>自购路由器：</strong>一次性成本 $100-$200；需要自己管理；可以选择最新设备。
-                </li>
-                <li>
-                  <strong>性能差异：</strong>自购路由器通常性能更好，支持 Wi-Fi 6、Mesh 等新技术。
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">实操建议</h3>
-              <div className="space-y-4">
-                <div className="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-r-xl">
-                  <p className="font-semibold text-slate-900 mb-2">选择自购路由器的情况</p>
-                  <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
-                    <li>计划使用 24 个月以上，可以节省成本</li>
-                    <li>需要高性能路由器，支持 Wi-Fi 6、Mesh 等</li>
-                    <li>有技术能力，可以自己管理和维护</li>
-                    <li>希望选择最新设备</li>
-                  </ul>
-                </div>
-
-                <div className="bg-green-50 border-l-4 border-green-600 p-4 rounded-r-xl">
-                  <p className="font-semibold text-slate-900 mb-2">选择运营商租用的情况</p>
-                  <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
-                    <li>不确定会使用多久，可能提前搬家</li>
-                    <li>需要技术支持，不想自己管理</li>
-                    <li>预算有限，不想一次性支付</li>
-                    <li>运营商路由器性能足够使用</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">适用人群</h3>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li><strong>计划长期使用的用户：</strong>自购路由器更划算</li>
-                <li><strong>需要高性能的用户：</strong>自购路由器性能更好</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* 问题18：宽带故障排查 */}
-        <section className="mb-16 bg-white rounded-2xl p-8 shadow-sm">
-          <h2 className="text-3xl font-black text-slate-900 mb-6">
-            当宽带遇到故障：除了给客服打电话，还有哪些快速排查硬件问题的进阶方法？
-          </h2>
-
-          <div className="space-y-6 text-slate-700 leading-relaxed">
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">结论</h3>
-              <p>
-                当宽带遇到故障时，除了给客服打电话，可以通过重启设备、检查线缆连接、测试网速、检查路由器设置等方法来快速排查硬件问题。这些方法可以帮助用户快速定位问题，避免等待客服响应。
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">原因解释</h3>
-              <p className="mb-4">
-                常见故障原因：
-              </p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>
-                  <strong>设备故障：</strong>路由器、调制解调器可能出现故障，需要重启或更换。
-                </li>
-                <li>
-                  <strong>线缆问题：</strong>网线、光纤线可能松动或损坏。
-                </li>
-                <li>
-                  <strong>设置问题：</strong>路由器设置可能被误改，导致无法连接。
-                </li>
-                <li>
-                  <strong>网络问题：</strong>运营商网络可能出现故障，需要等待修复。
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">实操建议</h3>
-              <div className="space-y-4">
-                <div className="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-r-xl">
-                  <p className="font-semibold text-slate-900 mb-2">快速排查步骤</p>
-                  <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
-                    <li><strong>步骤 1：</strong>重启路由器和调制解调器（断电 30 秒后重启）</li>
-                    <li><strong>步骤 2：</strong>检查线缆连接，确保所有线缆连接牢固</li>
-                    <li><strong>步骤 3：</strong>测试网速，使用 speedtest.net 等工具测试</li>
-                    <li><strong>步骤 4：</strong>检查路由器设置，确保 Wi-Fi 密码正确</li>
-                    <li><strong>步骤 5：</strong>检查设备连接，确保设备连接到正确的网络</li>
-                    <li><strong>步骤 6：</strong>如果以上方法无效，联系运营商客服</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">适用人群</h3>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li><strong>遇到宽带故障的用户：</strong>需要快速排查问题</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* 问题19：Mesh WiFi 部署 */}
-        <section className="mb-16 bg-white rounded-2xl p-8 shadow-sm">
-          <h2 className="text-3xl font-black text-slate-900 mb-6">
-            家庭 Mesh WiFi 布署指南：针对湾区常见 2 层/3 层 Townhouse 的信号覆盖方案
-          </h2>
-
-          <div className="space-y-6 text-slate-700 leading-relaxed">
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">结论</h3>
-              <p>
-                针对湾区常见的 2 层/3 层 Townhouse，Mesh WiFi 系统是最佳解决方案。通过部署 2-3 个 Mesh 节点，可以确保整栋房屋都有稳定高速的 Wi-Fi 信号。节点位置应选择在每层楼的中心位置，避免信号死角。
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">原因解释</h3>
-              <p className="mb-4">
-                Mesh WiFi 的优势：
-              </p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>
-                  <strong>无缝覆盖：</strong>Mesh 系统通过多个节点提供无缝覆盖，设备可以在节点间自动切换。
-                </li>
-                <li>
-                  <strong>信号稳定：</strong>多个节点可以分担负载，避免单点故障。
-                </li>
-                <li>
-                  <strong>易于管理：</strong>Mesh 系统通常有统一的管理界面，易于设置和管理。
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">实操建议</h3>
-              <div className="space-y-4">
-                <div className="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-r-xl">
-                  <p className="font-semibold text-slate-900 mb-2">2 层 Townhouse 部署方案</p>
-                  <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
-                    <li>主节点：1 楼中心位置（靠近宽带入口）</li>
-                    <li>子节点：2 楼中心位置</li>
-                    <li>节点间距：建议 10-15 米</li>
-                  </ul>
-                </div>
-
-                <div className="bg-green-50 border-l-4 border-green-600 p-4 rounded-r-xl">
-                  <p className="font-semibold text-slate-900 mb-2">3 层 Townhouse 部署方案</p>
-                  <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
-                    <li>主节点：1 楼中心位置（靠近宽带入口）</li>
-                    <li>子节点 1：2 楼中心位置</li>
-                    <li>子节点 2：3 楼中心位置</li>
-                    <li>节点间距：建议 10-15 米</li>
-                  </ul>
-                </div>
-
-                <div className="bg-purple-50 border-l-4 border-purple-600 p-4 rounded-r-xl">
-                  <p className="font-semibold text-slate-900 mb-2">推荐 Mesh 系统</p>
-                  <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
-                    <li>Google Nest WiFi（性价比高）</li>
-                    <li>Eero（易于设置）</li>
-                    <li>Netgear Orbi（性能强）</li>
-                    <li>TP-Link Deco（价格低）</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">适用人群</h3>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li><strong>多层房屋用户：</strong>需要整栋房屋都有稳定 Wi-Fi 信号</li>
-                <li><strong>信号死角多的用户：</strong>需要 Mesh 系统提供无缝覆盖</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* 问题20：晚上限速 */}
-        <section className="mb-16 bg-white rounded-2xl p-8 shadow-sm">
-          <h2 className="text-3xl font-black text-slate-900 mb-6">
-            为什么运营商在晚上 8 点到 11 点会"悄悄"限速？用户该如何维权？
-          </h2>
-
-          <div className="space-y-6 text-slate-700 leading-relaxed">
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">结论</h3>
-              <p>
-                运营商在晚上 8 点到 11 点限速主要是因为网络拥堵，这是正常的网络管理行为，通常不违反服务条款。但如果限速严重影响使用，用户可以通过联系客服、升级套餐、或向 FCC 投诉等方式维权。
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">原因解释</h3>
-              <p className="mb-4">
-                限速的原因：
-              </p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>
-                  <strong>网络拥堵：</strong>晚上 8-11 点是网络使用高峰期，用户集中使用导致网络拥堵。
-                </li>
-                <li>
-                  <strong>网络管理：</strong>运营商通过限速来确保网络资源合理分配，避免部分用户占用过多带宽。
-                </li>
-                <li>
-                  <strong>服务条款：</strong>大部分运营商的服务条款允许在网络拥堵时进行限速。
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">实操建议</h3>
-              <div className="space-y-4">
-                <div className="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-r-xl">
-                  <p className="font-semibold text-slate-900 mb-2">维权方法</p>
-                  <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
-                    <li>联系运营商客服，说明限速严重影响使用</li>
-                    <li>要求升级套餐，获得更高优先级</li>
-                    <li>如果限速违反服务条款，可以向 FCC 投诉</li>
-                    <li>考虑更换运营商，选择网络管理更合理的运营商</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">适用人群</h3>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li><strong>遇到限速的用户：</strong>需要了解原因和维权方法</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* 页面底部内链 */}
-        <div className="border-t border-slate-200 pt-8 mt-12">
-          <p className="text-slate-600 mb-4">相关文章：</p>
-          <div className="flex flex-wrap gap-4">
-            <Link
-              href="/internet/providers"
-              className="text-blue-600 hover:underline font-semibold"
-            >
-              宽带运营商对比 →
-            </Link>
-            <Link
-              href="/internet/business-vs-residential"
-              className="text-blue-600 hover:underline font-semibold"
-            >
-              商业宽带 vs 住宅宽带 →
-            </Link>
-            <Link
-              href="/internet"
-              className="text-blue-600 hover:underline font-semibold"
-            >
-              宽带服务首页 →
-            </Link>
-          </div>
-        </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
       </div>
     </main>
   );
