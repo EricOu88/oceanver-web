@@ -46,6 +46,7 @@ Oceanver 不是“页面树”，而是“问题网”。
 | 节点 | 母问题 | 上级入口 | 横向相关 | 下一步 | 人工边界 |
 |---|---|---|---|---|---|
 | `/cellphone/family-plan-guide` | 家庭多线 | Hub / Diagnosis / FAQ | 设备余额、Bill Credit、转号、Providers | 逐条线路判断后再比较 | `/contact` |
+| `/cellphone/faq/promo-credit-not-received` | 手机优惠 / Credit 到账异常 | Hub / FAQ / Diagnosis / Family | Trade-in、Bill Credit、转网奖励、AutoPay、多线优惠 | 继续观察 / 查订单账单 / 方案比较 | `/contact` |
 | `/cellphone/faq/how-to-choose-us-cellphone-plan` | 手机方案怎么选 | FAQ | Diagnosis、Family、Prepaid/Postpaid | Providers | 通过 Providers / Contact |
 | `/cellphone/faq/prepaid-vs-postpaid` | Prepaid vs Postpaid | FAQ / Diagnosis | Family、No-SSN | Providers | 当前资格由真实账户规则确认 |
 | `/cellphone/faq/no-ssn-us-cellphone-internet` | 无 SSN / 开户资格 | 手机 FAQ | Prepaid/Postpaid、宽带 Hub | 手机 Diagnosis / 宽带 Hub | `/contact` |
@@ -157,7 +158,7 @@ Oceanver 不是“页面树”，而是“问题网”。
 未来新增问题时优先补这些“问题节点”，而不是继续写泛文章：
 
 #### 手机
-- Trade-in Credit 没到账
+- Trade-in Credit 没到账（已建立统一节点：`/cellphone/faq/promo-credit-not-received`）
 - 设备余额 / 提前转网
 - 号码转移失败 / Transfer PIN
 - eSIM 激活失败
