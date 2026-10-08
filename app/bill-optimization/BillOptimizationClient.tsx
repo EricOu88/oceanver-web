@@ -170,34 +170,7 @@ export default function BillOptimizationClient() {
           </p>
         </section>
 
-        <section id="first-mobile-bill" className="scroll-mt-6 rounded-3xl border border-slate-200 bg-white p-5 md:p-8">
-          <p className="text-sm font-bold text-blue-700">转网 / 开户后的第一张手机账单</p>
-          <h2 className="mt-2 text-2xl font-black md:text-3xl">为什么第一张账单可能比报价高？</h2>
-          <p className="mt-3 max-w-3xl leading-7 text-slate-700">
-            首账单高，不等于以后每个月都会这么高。先把 recurring 月费和一次性项目拆开，再看哪些折扣或 Credit 还没有反映。
-          </p>
-          <div className="mt-6 grid gap-3 sm:grid-cols-2">
-            {[
-              'Activation / Upgrade / 一次性开户费用。',
-              '设备税费、首付款或新的设备分期。',
-              'AutoPay / Paperless 折扣尚未体现在这张账单里。',
-              '保险或其他 add-on 被加入账户。',
-              'Promotion / Bill Credit 尚未出现或资格还在核对。',
-              '账期中途开通产生 prorated charge。',
-            ].map((item, index) => (
-              <div key={item} className="flex gap-3 rounded-xl bg-slate-50 p-4 leading-7 text-slate-700">
-                <span className="font-black text-blue-700">{index + 1}.</span>
-                <span>{item}</span>
-              </div>
-            ))}
-          </div>
-          <p className="mt-5 leading-7 text-slate-700">
-            如果主要是 Trade-in、转网奖励或 Bill Credit 没出现，可继续查看{' '}
-            <Link href="/cellphone/faq/promo-credit-not-received" className="font-semibold text-blue-700 underline underline-offset-4">
-              手机优惠 / Credit 到账判断
-            </Link>。
-          </p>
-        </section>
+        
 
         <section id="first-mobile-bill" className="scroll-mt-6 rounded-3xl border border-slate-200 bg-white p-5 md:p-8">
           <p className="text-sm font-bold text-blue-700">转网 / 新开户后的第一张手机账单</p>
@@ -336,29 +309,7 @@ export default function BillOptimizationClient() {
           </p>
         </section>
 
-        <section id="bundle-dependency" className="scroll-mt-6 rounded-3xl border border-slate-200 bg-white p-5 md:p-8">
-          <p className="text-sm font-bold text-blue-700">手机 + 宽带绑定优惠</p>
-          <h2 className="mt-2 text-2xl font-black md:text-3xl">取消宽带前，先确认手机线会不会跟着变价</h2>
-          <p className="mt-3 max-w-3xl leading-7 text-slate-700">
-            有些手机优惠、Free Line、Credit 或账户资格可能与家庭宽带、Bundle 或同一账户条件有关。
-            所以“宽带省下多少钱”不能单独算，要把手机线可能发生的变化一起算进去。
-          </p>
-          <div className="mt-6 grid gap-3 sm:grid-cols-2">
-            {[
-              '哪些手机线正在享受与宽带或 Bundle 相关的 Promotion / Credit。',
-              '取消宽带后，每条手机线的常规价格和账户结构会不会变化。',
-              'Free Line、Mobile Credit 或其他限时优惠还有多久、是否依赖宽带资格。',
-              '手机线是否还有设备分期、Bill Credit 或转网奖励未结束。',
-              '宽带省下的金额，是否会被手机月费增加抵消。',
-              '如果决定拆分服务，先确认手机与宽带各自的切换顺序。',
-            ].map((item) => (
-              <div key={item} className="rounded-xl bg-slate-50 p-4 leading-7 text-slate-700">{item}</div>
-            ))}
-          </div>
-          <p className="mt-5 text-sm font-semibold text-blue-800">
-            网页不能确认当前 Bundle eligibility 或账户级 Credit；这类结果必须按真实账户核实。
-          </p>
-        </section>
+        
 
         <section id="bundle-dependency" className="scroll-mt-6 rounded-3xl border border-slate-200 bg-white p-5 md:p-8">
           <p className="text-sm font-bold text-blue-700">宽带 + 手机 Bundle 依赖</p>
