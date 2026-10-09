@@ -43,9 +43,9 @@ const CARRIER_LOGOS = [
 ]
 
 /**
- * 运营商 Logo 轮播组件
- * 从右向左自动轮播，速度偏慢，强调稳定/权威
- * 桌面端和手机端都支持自动轮播
+ * è¿è¥å•† Logo è½®æ’­ç»„ä»¶
+ * ä»Žå³å‘å·¦è‡ªåŠ¨è½®æ’­ï¼Œé€Ÿåº¦åæ…¢ï¼Œå¼ºè°ƒç¨³å®š/æƒå¨
+ * æ¡Œé¢ç«¯å’Œæ‰‹æœºç«¯éƒ½æ”¯æŒè‡ªåŠ¨è½®æ’­
  */
 export default function CarrierLogoCarousel() {
   const LogoList = ({ className = '', isMobile = false }: { className?: string; isMobile?: boolean }) => (
@@ -55,12 +55,12 @@ export default function CarrierLogoCarousel() {
           key={`${logo.name}-${index}`}
           href={logo.href}
           className="flex-shrink-0 flex items-center justify-center transition-transform hover:scale-110 active:scale-95 group"
-          aria-label={`${logo.name} 服务方案`}
+          aria-label={`${logo.name} æœåŠ¡æ–¹æ¡ˆ`}
         >
           <div className={`relative ${isMobile ? 'h-12 sm:h-14 w-[100px] sm:w-[120px]' : 'h-12 md:h-16 w-[120px] md:w-[140px]'} flex items-center justify-center`}>
             <Image
               src={logo.src}
-              alt={`${logo.name} 授权代理 - 鸿达电讯 Fremont 实体店 ${logo.name === 'Xfinity' || logo.name === 'AT&T' ? '宽带' : '手机卡'}中文办理服务`}
+              alt={`${logo.name} æŽˆæƒä»£ç† - é¸¿è¾¾ç”µè®¯ Fremont å®žä½“åº— ${logo.name === 'Xfinity' || logo.name === 'AT&T' ? 'å®½å¸¦' : 'æ‰‹æœºå¡'}ä¸­æ–‡åŠžç†æœåŠ¡`}
               fill
               className="object-contain opacity-80 group-hover:opacity-100 transition-opacity"
               style={{
@@ -78,7 +78,7 @@ export default function CarrierLogoCarousel() {
   return (
     <div className="w-full py-4 md:py-5 border-y border-slate-200 bg-white/50">
       <div className="max-w-7xl mx-auto px-6">
-        {/* 桌面端：从右向左自动轮播（无缝循环） */}
+        {/* æ¡Œé¢ç«¯ï¼šä»Žå³å‘å·¦è‡ªåŠ¨è½®æ’­ï¼ˆæ— ç¼å¾ªçŽ¯ï¼‰ */}
         <div className="hidden md:block overflow-hidden">
           <div className="carousel-wrapper flex items-center">
             <div className="carousel-content flex items-center">
@@ -88,7 +88,7 @@ export default function CarrierLogoCarousel() {
           </div>
         </div>
 
-        {/* 移动端：从右向左自动轮播（无缝循环） */}
+        {/* ç§»åŠ¨ç«¯ï¼šä»Žå³å‘å·¦è‡ªåŠ¨è½®æ’­ï¼ˆæ— ç¼å¾ªçŽ¯ï¼‰ */}
         <div className="md:hidden overflow-hidden">
           <div className="carousel-wrapper-mobile flex items-center">
             <div className="carousel-content-mobile flex items-center">
