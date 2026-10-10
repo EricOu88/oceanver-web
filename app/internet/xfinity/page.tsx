@@ -36,15 +36,6 @@ export const metadata: Metadata = {
   title: 'Xfinity 宽带怎么判断？账单、Wi-Fi、断网与换网｜美国鸿达电讯',
   description:
     'Xfinity 宽带账单涨价、Wi-Fi 慢、断网、设备、安装和地址问题怎么判断？先找出问题来源，再决定继续使用、调整方案还是比较其他运营商。',
-  keywords: [
-    'Xfinity 宽带',
-    'Xfinity 账单涨价',
-    'Xfinity WiFi慢',
-    'Xfinity 断网',
-    'Xfinity 设备费',
-    'Xfinity 安装问题',
-    'Xfinity 要不要换',
-  ],
   alternates: {
     canonical: getCanonicalUrl('/internet/xfinity'),
   },
