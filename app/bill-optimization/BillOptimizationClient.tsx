@@ -118,7 +118,7 @@ export default function BillOptimizationClient() {
           <Link href="/" className="mb-6 inline-block text-sm text-slate-500 hover:text-blue-700">
             ← 返回首页
           </Link>
-          <p className="mb-4 text-sm font-bold uppercase tracking-wide text-blue-700">BILL CHECK · 美国手机与家庭宽带</p>
+          <p className="mb-4 text-sm font-bold uppercase tracking-wide text-blue-700">账单涨价判断 · 美国手机与家庭宽带</p>
           <h1 className="max-w-4xl text-3xl font-black leading-tight tracking-tight md:text-5xl">
             手机、宽带账单为什么变贵？
           </h1>
