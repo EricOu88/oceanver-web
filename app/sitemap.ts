@@ -4,7 +4,7 @@ import { SITEMAP_ALLOWLIST } from './sitemap-allowlist';
 import { isPhase2IndexingEnabled } from '@/lib/indexing-policy';
 
 const SITE_URL = 'https://oceanver.com';
-const LAST_REVIEWED = new Date('2026-10-07T00:00:00-07:00');
+const LAST_REVIEWED = new Date('2026-10-10T00:00:00-07:00');
 
 // Phase 1: return an empty sitemap.
 // Phase 2: advertise only the reviewed first-batch allowlist.
