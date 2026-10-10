@@ -52,18 +52,6 @@ export function proxy(request: NextRequest) {
     return new Response("Gone", { status: 410 });
   }
 
-  // 【规则 1】301：www.baymediastar.com -> baymediastar.com
-  if (hostname === "www.baymediastar.com") {
-    url.hostname = "baymediastar.com";
-    return NextResponse.redirect(url, 301);
-  }
-
-  // 【规则 1.5】301：en.baymediastar.com -> baymediastar.com
-  if (hostname === "en.baymediastar.com") {
-    url.hostname = "baymediastar.com";
-    return NextResponse.redirect(url, 301);
-  }
-
   // 【规则 2】强制所有 URL 使用小写路径（保留查询参数）
   const lowerPathname = pathname.toLowerCase();
   if (pathname !== lowerPathname) {

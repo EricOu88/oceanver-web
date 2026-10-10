@@ -31,13 +31,6 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
-      // ============ www → non-www 301（保底，平台级优先用 vercel.json）============
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'www.baymediastar.com' }],
-        destination: 'https://baymediastar.com/:path*',
-        permanent: true,
-      },
       // ============ 历史套餐页 301 重定向（修复 GSC 404）============
       {
         source: '/t-mobile-wireless-family-plan',
