@@ -156,9 +156,14 @@ export default async function XfinityFAQDetailPage({
             </h1>
 
             {faq.summary && (
-              <p className="mt-5 text-base leading-8 text-[#526170] md:text-lg">
-                {faq.summary}
-              </p>
+              <div className="mt-6 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 md:p-6">
+                <p className="text-xs font-bold tracking-wide text-[#2786A5]">
+                  先说结论
+                </p>
+                <p className="mt-2 text-base font-semibold leading-8 text-[#202D3A] md:text-lg">
+                  {faq.summary}
+                </p>
+              </div>
             )}
 
             <p className="mt-5 text-xs leading-5 text-[#526170]">
@@ -169,8 +174,8 @@ export default async function XfinityFAQDetailPage({
           {/* 为什么会遇到 */}
           <ContentSection
             icon={<CircleHelp size={20} />}
-            eyebrow="先理解问题"
-            title="为什么会出现这种情况"
+            eyebrow="原因范围"
+            title="先看可能原因"
           >
             {faq.content.whyCommon}
           </ContentSection>
@@ -178,8 +183,8 @@ export default async function XfinityFAQDetailPage({
           {/* 当前规则 */}
           <ContentSection
             icon={<FileCheck2 size={20} />}
-            eyebrow="需要核对"
-            title="当前规则与需要确认的条件"
+            eyebrow="判断方法"
+            title="怎么判断"
           >
             {faq.content.officialRules}
           </ContentSection>
@@ -187,8 +192,8 @@ export default async function XfinityFAQDetailPage({
           {/* 实际判断 */}
           <ContentSection
             icon={<SearchCheck size={20} />}
-            eyebrow="实际判断"
-            title="现实中应该怎么判断"
+            eyebrow="核对顺序"
+            title="下一步查什么"
           >
             {faq.content.realUsage}
           </ContentSection>
@@ -196,7 +201,7 @@ export default async function XfinityFAQDetailPage({
           {/* 适合 / 不适合 */}
           <section className="mt-10 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 md:p-8">
             <h2 className="text-xl font-black text-[#202D3A] md:text-2xl">
-              哪些情况更值得继续核实
+              哪些情况网页不能直接确定
             </h2>
 
             <p className="mt-4 whitespace-pre-line text-base leading-8 text-[#526170]">
@@ -287,7 +292,7 @@ export default async function XfinityFAQDetailPage({
             />
 
             <h2 className="mt-4 text-xl font-black text-[#202D3A] md:text-2xl">
-              页面无法读取你的具体账户
+              什么时候需要人工核实
             </h2>
 
             <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-[#526170]">
