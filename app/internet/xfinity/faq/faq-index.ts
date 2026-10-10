@@ -28,18 +28,18 @@ export const xfinityResidentialAfterSaleFAQIndex: XfinityFAQSitemapItem[] = [
   { slug: 'xfinity-technician-visit-fee', lastModified: '2026-10-10' },
   { slug: 'xfinity-judge-line-issue', lastModified: '2026-10-10' },
 
-  { slug: 'xfinity-over-data-fee', lastModified: '2026-10-06' },
-  { slug: 'xfinity-check-data-usage', lastModified: '2026-10-06' },
+  { slug: 'xfinity-over-data-fee', lastModified: '2026-10-10' },
+  { slug: 'xfinity-check-data-usage', lastModified: '2026-10-10' },
 
-  { slug: 'xfinity-cancel-before-contract', lastModified: '2026-10-06' },
-  { slug: 'xfinity-mid-month-cancel-refund', lastModified: '2026-10-06' },
-  { slug: 'xfinity-moving-transfer', lastModified: '2026-10-06' },
-  { slug: 'xfinity-new-address-no-coverage', lastModified: '2026-10-06' },
-  { slug: 'xfinity-move-reinstallation-fee', lastModified: '2026-10-06' },
-  { slug: 'xfinity-pause-service', lastModified: '2026-10-06' },
+  { slug: 'xfinity-cancel-before-contract', lastModified: '2026-10-10' },
+  { slug: 'xfinity-mid-month-cancel-refund', lastModified: '2026-10-10' },
+  { slug: 'xfinity-moving-transfer', lastModified: '2026-10-10' },
+  { slug: 'xfinity-new-address-no-coverage', lastModified: '2026-10-10' },
+  { slug: 'xfinity-move-reinstallation-fee', lastModified: '2026-10-10' },
+  { slug: 'xfinity-pause-service', lastModified: '2026-10-10' },
 
-  { slug: 'xfinity-unpaid-affect-credit', lastModified: '2026-10-06' },
-  { slug: 'xfinity-network-issue-compensation', lastModified: '2026-10-06' },
+  { slug: 'xfinity-unpaid-affect-credit', lastModified: '2026-10-10' },
+  { slug: 'xfinity-network-issue-compensation', lastModified: '2026-10-10' },
 ]
 
 // 商业套餐选择类独立详情页暂不发布。
