@@ -2,12 +2,9 @@
 
 import type { Metadata } from 'next'
 import Script from 'next/script'
-import { isPhase2IndexingEnabled } from '@/lib/indexing-policy'
 import './globals.css'
 // import AIQuestionWidget from '@/app/components/AIQuestionWidget' // 暂时注释，使用 SafeAIQuestionWidget
 // import SafeAIQuestionWidgetWrapper from '@/app/components/SafeAIQuestionWidgetWrapper' // 暂时隐藏全站公开入口；需要恢复时取消注释
-
-const phase2IndexingEnabled = isPhase2IndexingEnabled()
 
 /* ================== 全站默认 SEO / 社交元数据 ================== */
 export const metadata: Metadata = {
@@ -52,29 +49,6 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
 
-  robots: phase2IndexingEnabled
-    ? {
-        index: true,
-        follow: true,
-        googleBot: {
-          index: true,
-          follow: true,
-          'max-video-preview': -1,
-          'max-image-preview': 'large',
-          'max-snippet': -1,
-        },
-      }
-    : {
-        index: false,
-        follow: false,
-        googleBot: {
-          index: false,
-          follow: false,
-          'max-video-preview': -1,
-          'max-image-preview': 'large',
-          'max-snippet': -1,
-        },
-      },
 }
 
 /* ================== 全站 Organization Schema ================== */
