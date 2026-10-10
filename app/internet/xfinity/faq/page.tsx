@@ -9,16 +9,6 @@ export const metadata: Metadata = {
   title: 'Xfinity 常见问题：账单、Wi-Fi、断网、设备与取消｜美国鸿达电讯',
   description:
     'Xfinity 宽带问题知识库：账单涨价、Wi-Fi 变慢、断网、设备费用、安装地址、搬家、取消和账户问题。先判断问题来源，再决定下一步怎么处理。',
-  keywords: [
-    'Xfinity FAQ',
-    'Xfinity 常见问题',
-    'Xfinity 账单涨价',
-    'Xfinity WiFi慢',
-    'Xfinity 断网',
-    'Xfinity 设备费',
-    'Xfinity 搬家',
-    'Xfinity 取消',
-  ],
   alternates: {
     canonical: getCanonicalUrl('/internet/xfinity/faq'),
   },
