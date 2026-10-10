@@ -13,16 +13,16 @@ export interface ATTFiberFAQSitemapItem {
 // 购买前选择类独立详情页不再发布。
 // 仅保留“涨价”这一项，因为它属于持续使用中的账单判断问题。
 export const attFiberResidentialPreSaleFAQIndex: ATTFiberFAQSitemapItem[] = [
-  { slug: 'att-fiber-price-increase', lastModified: '2026-10-06' },
+  { slug: 'att-fiber-price-increase', lastModified: '2026-10-10' },
 ]
 
 // 保留 5 个高价值售后 / 诊断型独立详情页。
 export const attFiberResidentialAfterSaleFAQIndex: ATTFiberFAQSitemapItem[] = [
-  { slug: 'att-fiber-frequent-disconnections', lastModified: '2026-10-06' },
-  { slug: 'att-fiber-outage-duration', lastModified: '2026-10-06' },
-  { slug: 'att-fiber-equipment-fee', lastModified: '2026-10-06' },
-  { slug: 'att-fiber-cancel-termination-fee', lastModified: '2026-10-06' },
-  { slug: 'att-fiber-buried-wire-installation', lastModified: '2026-10-06' },
+  { slug: 'att-fiber-frequent-disconnections', lastModified: '2026-10-10' },
+  { slug: 'att-fiber-outage-duration', lastModified: '2026-10-10' },
+  { slug: 'att-fiber-equipment-fee', lastModified: '2026-10-10' },
+  { slug: 'att-fiber-cancel-termination-fee', lastModified: '2026-10-10' },
+  { slug: 'att-fiber-buried-wire-installation', lastModified: '2026-10-10' },
 ]
 
 // 商业套餐 / SLA / 静态 IP / 价值比较等内容不再作为 Oceanver 独立详情页发布。
