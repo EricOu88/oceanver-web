@@ -181,7 +181,7 @@ export const xfinityFAQContent: Record<string, XfinityFAQContent> = {
       whyCommon: '用量页面的提醒与账单实际收费不是一回事。地区、套餐、账户设置及政策变化都可能影响适用的数据使用条件。',
       officialRules: '在当前账户确认套餐是否有数据条件、计量周期、当前用量、是否产生 charge，以及 Unlimited 等选项和对应价格。不要假设所有用户适用同一规则，以账户说明和账单为准。',
       realUsage: '区分用量提醒与已入账费用，记录周期和用量页面，再核对账单项目、金额及日期。考虑更改选项时，先确认资格、价格和生效时间，并保存页面或通知。',
-      suitableFor: '账户规则不清、用量与账单不一致或出现无法识别的 charge 时，更值得核实。只是提醒且账单没有对应费用时，可先确认周期内规则和用量变化。',
+      suitableFor: '网页无法读取你的实时数据用量规则、地区政策或账户选项。账户规则不清、用量与账单不一致，或出现无法识别的 charge 时，应结合当前账户页面和账单核实；如果只是提醒且账单没有对应费用，可先确认本周期规则和用量变化。',
     },
   },
   'xfinity-check-data-usage': {
@@ -196,7 +196,7 @@ export const xfinityFAQContent: Record<string, XfinityFAQContent> = {
       whyCommon: '不同地区、套餐和账户可能显示不同信息，不能假设每个用户都有相同 data cap 或提醒。',
       officialRules: '入口、计量周期、用量条件和收费规则可能变化，应以当前账户实际显示为准。',
       realUsage: '登录当前账户、App 或网站查找 data usage 和计费周期。页面未显示或信息不一致时，向运营商确认该账户适用规则。',
-      suitableFor: '记录账户显示的周期、用量和提醒并与账单比较；未显示时不要套用其他套餐或地区的上限规则。',
+      suitableFor: '网页无法确认你的账户是否适用某个数据上限、提醒或收费条件。应记录账户显示的周期、用量和提醒并与账单比较；账户未显示相关信息时，不要套用其他地区或其他套餐的规则。',
     },
   },
   'xfinity-cancel-before-contract': {
@@ -211,7 +211,7 @@ export const xfinityFAQContent: Record<string, XfinityFAQContent> = {
       whyCommon: '用户可能把促销、套餐期限或服务期误认为 term agreement，也可能找不到原始条款。协议及取消处理应根据订单和账户记录判断。',
       officialRules: '查看 order confirmation、account agreement 和账户记录，确认协议、期限及 possible early termination charge，并核对最终账单和设备归还要求。搬家或地址不可用本身不能证明费用会免除。',
       realUsage: '找到订单或协议，核对服务项目与期限；再向 Xfinity 确认取消生效日、可能费用、设备归还及 final bill。保存书面确认，不要用旧经验或通用公式计算 ETF。',
-      suitableFor: '找不到协议、账户期限与订单不一致或费用要求不明确时，更值得核实。若已确认无有效协议并了解最终账单及设备要求，不一定需要继续排查。',
+      suitableFor: '网页无法读取你的 agreement、订单和账户后台，因此不能确认是否存在提前终止条件。找不到协议、账户期限与订单不一致，或费用要求不明确时，应结合订单和账户记录核实。',
     },
   },
   'xfinity-mid-month-cancel-refund': {
@@ -226,7 +226,7 @@ export const xfinityFAQContent: Record<string, XfinityFAQContent> = {
       whyCommon: '取消日期可能与账单周期、预付费用或账户余额不一致，因此用户会不确定是否还收费、产生抵扣或退款。仅看取消日或已支付金额无法确认最终结果。',
       officialRules: '结合当前账户、billing period、cancellation effective date 和 final bill 判断。账单可能列出 adjustment、credit 或 remaining balance；最终账单生成前，无法确认是否退款或具体金额。',
       realUsage: '记录 cancellation effective date，待 final bill 出具后核对服务周期、后续收费、adjustment、credit 和 remaining balance。保存取消确认及账单，日期或金额不符时请运营商解释。',
-      suitableFor: '取消日期不明、最终账单仍有 recurring charge 或调整无法对应记录时，更值得核实。最终账单与确认记录一致时，不一定需要继续追查退款。',
+      suitableFor: '网页无法确认你的取消生效日期、final bill 或退款状态。取消日期不明、最终账单仍有 recurring charge，或 adjustment 无法对应确认记录时，应结合取消确认和最终账单核实。',
     },
   },
   'xfinity-moving-transfer': {
@@ -241,7 +241,7 @@ export const xfinityFAQContent: Record<string, XfinityFAQContent> = {
       whyCommon: '搬家涉及地址数据库、Unit、线路、设备和账户方案变化。旧地址能用 Xfinity，不代表新地址可转移原服务或沿用相同条件。',
       officialRules: '提交订单前确认新地址和 Unit 的 serviceability、自助或 technician 安装方式、设备兼容性、价格和账户条件，以及旧址停止和新址启用日期。以当前地址查询和订单为准。',
       realUsage: '依次核对地址可用性、Unit、安装方式、设备、新地址价格、旧址停止日和新址启用日。先确认新址能安装或启用，再决定何时停止旧服务，并保存订单。',
-      suitableFor: '新地址结果、安装方式、服务日期或价格未确认时，更值得核实。订单已确认且新旧服务日期清楚时，可按订单安排执行。',
+      suitableFor: '网页无法确认具体地址的 serviceability、Unit 状态、安装方式或当期价格。新地址结果、服务日期、设备安排或价格未确认时，应结合地址查询和订单记录核实。',
     },
   },
   'xfinity-new-address-no-coverage': {
@@ -256,7 +256,7 @@ export const xfinityFAQContent: Record<string, XfinityFAQContent> = {
       whyCommon: '查询结果可能受地址格式、Unit、新建地址数据库或同一建筑内不同住宅单元影响。旧账户记录也可能使在线流程无法确认服务状态，一次查询未必代表最终结果。',
       officialRules: '核实完整地址和 Unit，并确认新地址记录、同楼其他 Unit 或旧账户占用是否影响 serviceability。确认无法服务后，再查看当前 agreement、设备归还和 final bill 条件；不要预设取消费用豁免。',
       realUsage: '核对账单或租约上的完整地址和 Unit；地址较新时请求人工核查数据库，也确认是否有旧账户记录。得到明确结果后，再比较转移、取消及其他服务选择。',
-      suitableFor: '查询与实际地址不符、Unit 无法识别或可能有旧账户占用时，更值得核实。人工确认结果后，再按当前协议、设备和最终账单判断下一步。',
+      suitableFor: '网页无法读取地址级覆盖、Unit 识别或旧账户占用状态。查询结果与实际地址不符、Unit 无法识别，或怀疑存在旧账户占用时，应由运营商结合具体地址记录核实。',
     },
   },
   'xfinity-move-reinstallation-fee': {
@@ -271,7 +271,7 @@ export const xfinityFAQContent: Record<string, XfinityFAQContent> = {
       whyCommon: '新地址线路和设备安排可能与旧址不同。有的地址可自助安装，有的需要技术员；订单和账户条件也会影响是否列出安装收费。',
       officialRules: '确认新地址线路状态、self-install 资格、是否需要 technician，以及订单和账户显示的安装方式与费用。条件可能变化，以确认订单和当前政策为准。',
       realUsage: '下单前查看安装方式、预约和可能费用；页面未说明时向运营商确认并保存订单。不要根据旧地址经历或他人过往优惠推断新址收费。',
-      suitableFor: '订单未说明安装方式或费用、页面与客服说明不一致，或新地址需额外线路处理时，更值得核实。订单已明确安装安排及费用时，可据此判断。',
+      suitableFor: '网页无法确认你的新地址是否需要自助安装、技术员上门或额外线路处理，也不能提前确认具体费用。订单未说明安装方式或费用、页面与确认记录不一致时，应结合订单和地址条件核实。',
     },
   },
   'xfinity-pause-service': {
@@ -286,7 +286,7 @@ export const xfinityFAQContent: Record<string, XfinityFAQContent> = {
       whyCommon: '旅行、搬家或暂时不用网络时，用户可能希望减少服务；可选方式和收费随账户及政策变化，不能假设一定有暂停选项或取消重开更合适。',
       officialRules: '当前账户是否提供暂停或其他短期服务方式，应以账户页面和当期政策为准；取消和重新开通也可能涉及设备、安装或价格变化。',
       realUsage: '先查账户是否有 seasonal、temporary、reduced-service 等选择，确认期限、费用和恢复条件。若无合适选项，再比较保留和取消成本；取消前核对设备、重开、安装及价格变化。',
-      suitableFor: '账户选项清楚时据此判断；若考虑取消，先确认设备归还和重新开通的条件及费用。',
+      suitableFor: '网页无法确认你的账户当前是否提供暂停、季节性或其他短期选项。应以账户页面和当期政策为准；如果考虑取消，还要先确认设备归还、重新开通和价格变化条件。',
     },
   },
   'xfinity-unpaid-affect-credit': {
@@ -301,7 +301,7 @@ export const xfinityFAQContent: Record<string, XfinityFAQContent> = {
       whyCommon: '账单争议、付款失败或账户变化可能留下未解决余额；后续处理取决于账户状态，不能保证信用结果。',
       officialRules: '是否进入催收及其后续影响取决于当前账户和实际处理流程；不能保证一定影响或不会影响信用，也不能假定一定提供付款计划。',
       realUsage: '先核对账单、付款记录和账户通知。金额有争议时保存凭证并提出核查；无争议时向 Xfinity 确认付款方式及可用安排。',
-      suitableFor: '金额有争议、付款后仍显示欠款或收到催收通知时更值得核实并保存记录。仅凭欠费时长无法确定信用结果。',
+      suitableFor: '网页无法判断某笔余额是否会进入催收，也不能预测个人信用结果。金额有争议、付款后仍显示欠款，或收到催收通知时，应保存付款和账单记录，并结合账户及相关通知核实。',
     },
   },
   'xfinity-network-issue-compensation': {
@@ -316,7 +316,7 @@ export const xfinityFAQContent: Record<string, XfinityFAQContent> = {
       whyCommon: '不同服务、事件记录和合同条件可能影响账单处理，不能假定 outage 一定产生 credit 或 SLA 一定赔偿。',
       officialRules: '住家或商业服务的处理可能不同；商业服务如有具体 SLA，应依合同文本中的适用条件判断。',
       realUsage: '记录 outage 时间、case number、技术员记录和账单项目，向 Xfinity 确认账户是否适用 credit 或 adjustment 及所需材料。商业服务如有 SLA，核对合同条件和申报流程。',
-      suitableFor: '事件记录有争议、账单未反映已确认处理或 SLA 条件不清时更值得核实；结果以账户调查和合同为准。',
+      suitableFor: '网页无法确认某次中断是否符合 credit、adjustment 或 SLA 条件，也不能承诺补偿结果。事件记录有争议、账单未反映已确认处理，或 SLA 条件不清时，应结合账户调查、事件记录和合同核实。',
     },
   },
 }
