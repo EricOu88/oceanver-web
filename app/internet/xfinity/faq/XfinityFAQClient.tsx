@@ -22,6 +22,17 @@ import {
   type FAQSubCategory,
 } from './xfinity-faq-data'
 
+const coreDetailPages = [
+  ['xfinity-bill-sudden-increase', '账单为什么突然变贵'],
+  ['xfinity-billing-error-appeal', '账单出错怎么申诉'],
+  ['xfinity-overcharge-refund', '疑似多收费怎么判断'],
+  ['xfinity-router-fee', '路由器或设备费是什么'],
+  ['xfinity-equipment-not-returned', '设备已归还仍显示未归还'],
+  ['xfinity-outage', '经常断网怎么判断'],
+  ['xfinity-night-slow', '晚上网速变慢怎么查'],
+  ['xfinity-judge-line-issue', '怎么判断 Wi-Fi 还是线路问题'],
+] as const
+
 const tabConfig: Record<
   string,
   {
@@ -504,6 +515,28 @@ export default function XfinityFAQClient() {
           </Link>
         </section>
       )}
+
+      <section className="mt-14">
+        <p className="text-sm font-bold text-[#2786A5]">重点判断页</p>
+        <h2 className="mt-2 text-2xl font-black text-[#202D3A]">
+          需要更完整步骤时，继续看这些问题
+        </h2>
+        <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {coreDetailPages.map(([slug, title]) => (
+            <Link
+              key={slug}
+              href={`/internet/xfinity/faq/${slug}`}
+              className="group rounded-2xl border border-[#D5E5EC] bg-white p-4 transition hover:border-[#2786A5]"
+            >
+              <span className="font-bold leading-6 text-[#202D3A]">{title}</span>
+              <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-[#164B78]">
+                查看判断步骤
+                <ArrowRight size={14} className="transition group-hover:translate-x-0.5" />
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       {/* 下一步 */}
       <section className="mt-14 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 md:p-8">
