@@ -12,7 +12,7 @@ import {
 const pageUrl = 'https://oceanver.com/cellphone/price-hike';
 
 export const metadata: Metadata = {
-  title: '手机套餐涨价了，要留、改还是换？｜美国鸿达电讯',
+  title: { absolute: '手机套餐涨价了，要留、改还是换？｜美国鸿达电讯' },
   description:
     '手机套餐涨价时，先区分基础月费、每线费用、AutoPay、Free Line、多线折扣、设备与 Bill Credit，再判断保留旧计划、调整方案或换运营商。',
   alternates: { canonical: pageUrl },

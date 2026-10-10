@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import CellphoneClient from './CellphoneClient';
 
 export const metadata: Metadata = {
-  title: '美国手机问题中心｜账单、换机、转网先判断 | 美国鸿达电讯',
+  title: { absolute: '美国手机问题中心｜账单、换机、转网先判断 | 美国鸿达电讯' },
   description:
     '美国手机问题中文入口。账单涨价、信号、换手机、转网、家庭多线、没有 SSN、Prepaid 或国际使用，先从真实问题开始判断，再决定是否比较方案或进入人工核实。',
   alternates: {

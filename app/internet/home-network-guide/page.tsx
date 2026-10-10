@@ -13,7 +13,7 @@ import {
 const pageUrl = 'https://oceanver.com/internet/home-network-guide';
 
 export const metadata: Metadata = {
-  title: '家庭网络怎么判断？Fiber、Cable、5G Home Internet 与 Wi-Fi | 美国鸿达电讯',
+  title: { absolute: '家庭网络怎么判断？Fiber、Cable、5G Home Internet 与 Wi-Fi | 美国鸿达电讯' },
   description:
     '从入户网络、Wi-Fi 覆盖、Router、Mesh、上传需求和地址条件理解 Fiber、Cable、5G Home Internet 等家庭网络差异，避免把家庭 Wi-Fi 问题误判成运营商问题。',
   alternates: { canonical: pageUrl },

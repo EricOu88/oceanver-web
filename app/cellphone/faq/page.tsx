@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: '美国手机问题库｜按问题继续查 | 美国鸿达电讯',
+  title: { absolute: '美国手机问题库｜按问题继续查 | 美国鸿达电讯' },
   description:
     '美国手机问题知识入口。按账单、信号、eSIM、转号、设备分期、家庭多线、国际使用等问题继续查，不需要先选择运营商。',
   alternates: { canonical: 'https://oceanver.com/cellphone/faq' },

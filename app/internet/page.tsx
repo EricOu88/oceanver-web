@@ -16,7 +16,7 @@ import {
 import { getCanonicalUrl } from '@/lib/seo-utils'
 
 export const metadata: Metadata = {
-  title: '美国宽带问题怎么判断？账单、网速、断网、搬家与换网｜美国鸿达电讯',
+  title: { absolute: '美国宽带问题怎么判断？账单、网速、断网、搬家与换网｜美国鸿达电讯' },
   description:
     '美国家庭宽带账单涨价、Wi-Fi 慢、断网、Modem、安装、搬家或想换运营商怎么办？先判断问题来源，再决定自查、调整方案还是换网。',
   alternates: {

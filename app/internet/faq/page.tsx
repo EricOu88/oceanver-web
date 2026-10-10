@@ -17,7 +17,7 @@ import {
 import { internetFAQData } from './data'
 
 export const metadata: Metadata = {
-  title: '美国宽带常见问题 FAQ｜账单、Wi-Fi、断网、安装与设备｜美国鸿达电讯',
+  title: { absolute: '美国宽带常见问题 FAQ｜账单、Wi-Fi、断网、安装与设备｜美国鸿达电讯' },
   description:
     '整理美国家庭宽带账单涨价、Wi-Fi 慢、断网、Modem、安装、地址、搬家和换网等常见问题，帮助先理解原因，再决定下一步。',
   keywords: [
