@@ -31,7 +31,7 @@ export const xfinityFAQContent: Record<string, XfinityFAQContent> = {
       whyCommon: '账单总额变化不一定代表基础套餐价格上涨。Promotion 或 Credit 到期、基础 Internet 月费调整、AutoPay 条件变化、Gateway 等设备费用、附加服务，以及 prorated charge 或其他一次性费用，都可能影响当期总额。',
       officialRules: '结合当前账户和账单确认 Promotion/Credit 的名称与期限、基础月费、AutoPay 资格、设备登记、附加服务及收费周期。一次性费用与 recurring charge 不同，具体以账单明细和当前账户记录为准。',
       realUsage: '取最近 2–3 期账单，按同一个 line item 比较金额和服务周期，标记新增、消失或金额变化的项目。确认是持续月费还是一次性/prorated charge 后，再决定是否联系 Xfinity 核对，并保存账单和账户通知。',
-      suitableFor: '如果同一 recurring charge 连续变化、Promotion/Credit 消失，或新增费用无法对应账户变更，更值得核实。如果差额仅来自已注明的一次性收费且下一期不再出现，则不一定需要调整服务。',
+      suitableFor: '网页无法判断某个 Promotion/Credit 是否仍适用于你的账户，也无法确认具体收费是否会延续到下一期。只要 recurring charge、优惠状态或新增项目与账户记录对不上，就需要结合实际账单和账户核实。',
     },
   },
   'xfinity-billing-error-appeal': {
@@ -46,7 +46,7 @@ export const xfinityFAQContent: Record<string, XfinityFAQContent> = {
       whyCommon: '账单差额也可能由 Promotion/Credit 结束、prorated charge、设备费或服务变更造成，不一定是计费错误。',
       officialRules: '核对当前账户、账单周期、订单确认和服务变更记录，确认争议项目及适用期间。是否调整及处理时间均以调查结果为准。',
       realUsage: '比较最近几期同一收费项目，保存账单、订单确认、聊天记录和收据。提交项目名称与对照证据，记录 case number 及后续回复。',
-      suitableFor: '项目与订单不符、重复收费或费用依据无法解释时，更值得申诉核实；若能对应已确认变更或一次性收费，则未必是错误。',
+      suitableFor: '网页无法确认某一笔费用是否已经被后台更正，也无法判断具体账户是否符合调整条件。若项目与订单不符、疑似重复收费，或费用依据无法从账单和订单中解释，应结合账户记录继续核实。',
     },
   },
   'xfinity-overcharge-refund': {
@@ -61,7 +61,7 @@ export const xfinityFAQContent: Record<string, XfinityFAQContent> = {
       whyCommon: '金额高于预期也可能与账期、服务变更或设备项目有关，不一定是重复扣款。',
       officialRules: '确认项目名称、日期和账期，与之前账单、订单和账户记录比较。调整、credit 或退款方式取决于调查结果。',
       realUsage: '保存账单、付款记录、订单及沟通内容，说明争议项目并记录 case number，之后检查是否出现对应调整。',
-      suitableFor: '重复收费、金额与订单不符或取消后仍有 recurring charge 时更值得核查；同时确认费用适用周期。',
+      suitableFor: '网页无法确认这笔金额最终会以 credit、refund 还是其他 adjustment 处理，也无法承诺处理结果。若疑似重复收费、金额与订单不符，或取消后仍出现 recurring charge，应结合账户调查结果确认。',
     },
   },
   'xfinity-router-fee': {
@@ -76,7 +76,7 @@ export const xfinityFAQContent: Record<string, XfinityFAQContent> = {
       whyCommon: '账单中的设备费用不一定只指路由器，也可能对应 Gateway、Modem、Extender 或其他设备服务，或与账户设备配置及优惠变化有关。',
       officialRules: '查看当前账单项目、套餐内容、账户登记设备和 Xfinity 当前兼容设备要求。自备设备是否可行取决于型号、套餐和功能需求；部分账户可能需要运营商 Gateway 特定功能。',
       realUsage: '先找到设备收费的准确名称，再对照账户设备列表确认对应设备及状态。考虑自备 Modem 或 Router 时，先核实当前套餐兼容性、功能和迁移步骤；不要假设买路由器就会免除设备费。',
-      suitableFor: '若出现未识别设备项目、账户设备与实际不符或计划停用租赁设备，更值得核实。如果收费、设备和套餐均能对应且设备满足需求，不一定需要更换。',
+      suitableFor: '网页无法确认你的具体设备是否已正确登记、是否兼容当前套餐，也不能仅凭设备名称判断某项费用是否应取消。出现未识别设备、账户设备与实际不符，或准备停用租赁设备时，应结合账户设备清单核实。',
     },
   },
   'xfinity-equipment-not-returned': {
@@ -91,7 +91,7 @@ export const xfinityFAQContent: Record<string, XfinityFAQContent> = {
       whyCommon: '退还记录与账户设备状态可能尚未对应，导致设备仍显示在账户中或账单继续出现相关项目；不能仅凭交还动作推断账户已更新。',
       officialRules: '确认哪些设备登记为运营商设备、当前状态及退还记录是否关联到对应设备。费用处理以当前设备记录、退还凭证和最终账单为准。',
       realUsage: '保存 return receipt、tracking、serial number 或 MAC、归还日期，并与账户设备清单逐项比对。若仍显示未归还，向 Xfinity 提供凭证核对设备是否已从账户移除，同时保存沟通记录和后续账单。',
-      suitableFor: '已归还但账户状态未更新、仍有对应费用，或不确定哪些设备需归还时，更值得核实。账户已显示移除且后续账单无重复收费时，不一定需要继续处理。',
+      suitableFor: '网页无法读取设备序列号、退还扫描记录或账户后台状态，因此不能确认设备是否已经正式移除。已归还但账户仍显示未归还、继续收费，或不确定哪些设备需归还时，应凭退还记录和设备标识进一步核实。',
     },
   },
   'xfinity-outage': {
