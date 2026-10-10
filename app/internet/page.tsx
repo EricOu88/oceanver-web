@@ -22,17 +22,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: getCanonicalUrl('/internet'),
   },
-  keywords: [
-    '美国宽带问题',
-    '宽带账单涨价',
-    'WiFi慢怎么办',
-    '美国宽带断网',
-    'Modem问题',
-    '搬家宽带',
-    '宽带安装失败',
-    '要不要换宽带',
-    '美国宽带诊断',
-  ],
 }
 
 const problemEntries = [
