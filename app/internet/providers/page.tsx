@@ -21,14 +21,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://oceanver.com/internet/providers',
   },
-  keywords: [
-    '美国宽带运营商比较',
-    '美国宽带怎么选',
-    '宽带要不要换',
-    'Xfinity Spectrum AT&T Fiber 比较',
-    '宽带长期费用',
-    '宽带换网成本',
-  ],
 }
 
 const comparisonDimensions = [
