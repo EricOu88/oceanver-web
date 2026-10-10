@@ -6,7 +6,6 @@
 // Phase 2 第一批：先建立“问题判断站”的主题权威。
 // 8 个核心答案页 + 4 个网络入口页。
 export const SITEMAP_ALLOWLIST = [
-  '/',
   // 核心答案页
   '/bill-optimization',
   '/internet/price-hike',
