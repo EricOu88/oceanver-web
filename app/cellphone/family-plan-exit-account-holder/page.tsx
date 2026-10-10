@@ -12,7 +12,7 @@ import {
 const pageUrl = 'https://oceanver.com/cellphone/family-plan-exit-account-holder';
 
 export const metadata: Metadata = {
-  title: '家庭计划成员想退出、户主失联或想保号怎么办？｜美国鸿达电讯',
+  title: { absolute: '家庭计划成员想退出、户主失联或想保号怎么办？｜美国鸿达电讯' },
   description:
     '家庭计划成员退出、户主失联、保留号码、账单责任转移、无 SSN、异地或离境时，先判断账户角色、号码控制权、设备余额和授权条件，再决定转出、转责任或注销。',
   alternates: { canonical: pageUrl },

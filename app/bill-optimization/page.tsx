@@ -6,7 +6,7 @@ const description =
   '美国手机和家庭宽带账单变贵，常见原因包括优惠到期、AutoPay 折扣失效、设备费、附加服务、套餐调整和一次性费用。先判断费用变化原因，再决定是否需要处理。'
 
 export const metadata: Metadata = {
-  title,
+  title: { absolute: title },
   description,
   alternates: {
     canonical: 'https://oceanver.com/bill-optimization',

@@ -12,7 +12,7 @@ import {
 const pageUrl = 'https://oceanver.com/internet/faq/after-cancel-final-bill';
 
 export const metadata: Metadata = {
-  title: '宽带取消以后，怎么确认账户真的结束了？｜美国鸿达电讯',
+  title: { absolute: '宽带取消以后，怎么确认账户真的结束了？｜美国鸿达电讯' },
   description:
     '宽带取消后，按取消确认、Final Bill、设备归还、AutoPay、未结余额和账户状态逐项检查，避免旧服务继续收费或设备记录未关闭。',
   alternates: { canonical: pageUrl },

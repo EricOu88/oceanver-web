@@ -4,7 +4,7 @@ import PriceHikeClient from './PriceHikeClient';
 const pageUrl = 'https://oceanver.com/internet/price-hike';
 
 export const metadata: Metadata = {
-  title: '宽带账单持续涨价怎么办？先判断原因，再决定留、调还是换｜美国鸿达电讯',
+  title: { absolute: '宽带账单持续涨价怎么办？先判断原因，再决定留、调还是换｜美国鸿达电讯' },
   description:
     '宽带账单持续涨价时，先区分 Promotion 到期、基础月费、AutoPay、设备费和一次性收费，再判断继续留用、调整现有方案或比较其他宽带。',
   alternates: {

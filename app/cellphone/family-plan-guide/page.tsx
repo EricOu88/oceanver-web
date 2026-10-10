@@ -4,7 +4,7 @@ import Link from 'next/link';
 const pageUrl = 'https://oceanver.com/cellphone/family-plan-guide';
 
 export const metadata: Metadata = {
-  title: '家庭计划要不要一起换？家庭多线判断指南｜美国鸿达电讯',
+  title: { absolute: '家庭计划要不要一起换？家庭多线判断指南｜美国鸿达电讯' },
   description:
     '从线路需求、设备分期、Bill Credit 和转网准备判断家庭成员是否适合一起变更。实际价格、资格与账户状态需结合当前账户核实。',
   alternates: { canonical: pageUrl },
