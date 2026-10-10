@@ -22,11 +22,11 @@ export const xfinityResidentialAfterSaleFAQIndex: XfinityFAQSitemapItem[] = [
   { slug: 'xfinity-router-fee', lastModified: '2026-10-10' },
   { slug: 'xfinity-equipment-not-returned', lastModified: '2026-10-10' },
 
-  { slug: 'xfinity-outage', lastModified: '2026-10-06' },
-  { slug: 'xfinity-night-slow', lastModified: '2026-10-06' },
-  { slug: 'xfinity-restart-not-working', lastModified: '2026-10-06' },
-  { slug: 'xfinity-technician-visit-fee', lastModified: '2026-10-06' },
-  { slug: 'xfinity-judge-line-issue', lastModified: '2026-10-06' },
+  { slug: 'xfinity-outage', lastModified: '2026-10-10' },
+  { slug: 'xfinity-night-slow', lastModified: '2026-10-10' },
+  { slug: 'xfinity-restart-not-working', lastModified: '2026-10-10' },
+  { slug: 'xfinity-technician-visit-fee', lastModified: '2026-10-10' },
+  { slug: 'xfinity-judge-line-issue', lastModified: '2026-10-10' },
 
   { slug: 'xfinity-over-data-fee', lastModified: '2026-10-06' },
   { slug: 'xfinity-check-data-usage', lastModified: '2026-10-06' },
