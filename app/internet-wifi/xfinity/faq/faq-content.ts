@@ -106,7 +106,7 @@ export const xfinityFAQContent: Record<string, XfinityFAQContent> = {
       whyCommon: '问题可能在区域服务、家庭 Wi-Fi、Gateway、同轴连接或入户线路，不能仅凭症状认定节点拥堵或线路老化。',
       officialRules: '当前账户或官方渠道未显示 outage 时，检查 Gateway 灯号和 coax 连接，并比较多个设备的 Wi-Fi 与有线表现；记录时间和测试结果供后续核对。',
       realUsage: '先查 outage 状态，再检查设备、连接线并做有线测试；测试结果用于缩小范围，不能单独确认运营商线路故障。',
-      suitableFor: '多设备同时断开且有区域 outage 提示，可先跟进状态；单设备或房间异常先查终端/Wi-Fi；有线也异常时再核实 Gateway、线路或区域服务。',
+      suitableFor: '网页无法读取你所在区域的实时 outage 记录，也不能仅凭断网现象确认是运营商线路问题。多设备同时断开且有区域 outage 提示时可先跟进事件状态；单设备或单房间异常先查终端/Wi-Fi；有线也异常时再结合 Gateway、线路和账户记录核实。',
     },
   },
   'xfinity-night-slow': {
@@ -121,7 +121,7 @@ export const xfinityFAQContent: Record<string, XfinityFAQContent> = {
       whyCommon: '速度变化可能与家庭 Wi-Fi、设备、Gateway、线路或区域负载有关；不能仅凭晚间变慢认定节点拥堵或属于 Cable 的正常现象。',
       officialRules: '当前账户和服务记录无法仅凭时段确定拥堵原因；如需判断区域状况，应结合多时段测试和运营商记录核实。',
       realUsage: '用相近设备记录不同时间测试，比较有线、Wi-Fi、其他设备和房间，连续观察几天。无线局部异常先查覆盖；各种连接均慢时向运营商核实。',
-      suitableFor: '单设备或房间慢先查终端/Wi-Fi；多设备有线和无线均持续变慢时，整理记录后核实 Gateway、线路或区域情况。',
+      suitableFor: '网页无法根据一个测速结果判断区域拥堵、线路质量或账户侧限速。单设备或单房间慢先查终端/Wi-Fi；多设备、有线和无线在相同时段都持续变慢时，应保存测试记录，再结合 Gateway、线路和区域服务信息核实。',
     },
   },
   'xfinity-restart-not-working': {
@@ -136,7 +136,7 @@ export const xfinityFAQContent: Record<string, XfinityFAQContent> = {
       whyCommon: '重启可能清除部分临时状态，但不能排除 outage、连接线、设备、账户或线路问题；仍异常不表示问题必然更严重。',
       officialRules: '当前问题是否涉及区域服务、Gateway 或线路，需要结合 outage 信息、设备表现和运营商记录判断。',
       realUsage: '先查 outage，记录设备灯号，比较多台设备，条件允许时做网线测试并检查线缆。结果可帮助描述现象，但不能确认运营商线路故障。',
-      suitableFor: '单设备异常先查设备；多设备异常、有线也不通或灯号异常时，更值得核实 outage、Gateway、连接线和线路。',
+      suitableFor: '网页无法读取 Gateway 后台状态或区域线路记录。单设备异常先查设备；多设备同时异常、有线也不通或灯号持续异常时，应结合 outage、Gateway、连接线和线路记录进一步核实。',
     },
   },
   'xfinity-technician-visit-fee': {
@@ -151,7 +151,7 @@ export const xfinityFAQContent: Record<string, XfinityFAQContent> = {
       whyCommon: '上门可能涉及安装、线路检查、室内布线、运营商设备或自备设备。不同预约原因和实际检查结果可能影响费用，不能仅凭故障类型推断。',
       officialRules: '预约前核对 visit reason、服务范围、账户或预约页面的收费提示及当前费用条件。安装、维修、室内布线和自备设备情况可能不同，实际以预约确认、服务记录和最终账单为准。',
       realUsage: '记录故障现象和已做检查，询问本次 visit reason 及是否可能收费。保留预约确认和费用提示；服务后将账单与预约内容对照，不一致时提交记录核实。',
-      suitableFor: '预约提示可能收费、服务范围不清或最终账单与预约确认不一致时，更值得核实。问题已解决且费用与事前确认相符时，不一定需要继续排查。',
+      suitableFor: '网页无法确认你的这次上门是否收费，也无法根据故障类型承诺免费。预约提示可能收费、服务范围不清，或最终账单与预约确认不一致时，应结合预约记录、服务记录和账单核实。',
     },
   },
   'xfinity-judge-line-issue': {
@@ -166,7 +166,7 @@ export const xfinityFAQContent: Record<string, XfinityFAQContent> = {
       whyCommon: '网速慢或断线可能来自终端、室内 Wi-Fi、Gateway、coax 或区域服务；自测不能最终确认运营商线路故障。',
       officialRules: '根据当前账户和服务记录判断线路状态；单次重启或测速结果都不足以确认运营商线路故障。',
       realUsage: '单设备异常先查设备设置并与其他设备比较；单房间异常比较路由器附近和问题区；无线异常但有线正常重点查 Wi-Fi；有线无线均异常则查 Gateway、outage、coax 并记录情况交运营商核实。',
-      suitableFor: '单设备/单房间问题先查设备或 Wi-Fi；所有设备有线无线均异常时，再核实 Gateway、outage、连接线及线路，自测不能定论。',
+      suitableFor: '网页无法直接判断运营商线路是否故障。单设备或单房间问题先查设备或 Wi-Fi；所有设备的有线和无线连接都异常时，再结合 Gateway、outage、连接线和运营商记录核实，自测只能缩小范围。',
     },
   },
   'xfinity-over-data-fee': {
