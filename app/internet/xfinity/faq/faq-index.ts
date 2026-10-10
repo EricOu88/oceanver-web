@@ -16,11 +16,11 @@ export const xfinityResidentialPreSaleFAQIndex: XfinityFAQSitemapItem[] = []
 
 // 保留 20 个高价值售后/诊断型独立详情页。
 export const xfinityResidentialAfterSaleFAQIndex: XfinityFAQSitemapItem[] = [
-  { slug: 'xfinity-bill-sudden-increase', lastModified: '2026-10-06' },
-  { slug: 'xfinity-billing-error-appeal', lastModified: '2026-10-06' },
-  { slug: 'xfinity-overcharge-refund', lastModified: '2026-10-06' },
-  { slug: 'xfinity-router-fee', lastModified: '2026-10-06' },
-  { slug: 'xfinity-equipment-not-returned', lastModified: '2026-10-06' },
+  { slug: 'xfinity-bill-sudden-increase', lastModified: '2026-10-10' },
+  { slug: 'xfinity-billing-error-appeal', lastModified: '2026-10-10' },
+  { slug: 'xfinity-overcharge-refund', lastModified: '2026-10-10' },
+  { slug: 'xfinity-router-fee', lastModified: '2026-10-10' },
+  { slug: 'xfinity-equipment-not-returned', lastModified: '2026-10-10' },
 
   { slug: 'xfinity-outage', lastModified: '2026-10-06' },
   { slug: 'xfinity-night-slow', lastModified: '2026-10-06' },
