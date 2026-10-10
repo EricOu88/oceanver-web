@@ -98,27 +98,34 @@ export default async function ATTFiberFAQDetailPage({ params }: PageProps) {
         </div>
 
         <article className="mx-auto max-w-4xl px-5 py-10 md:px-8 md:py-12">
-          <h1 className="mb-10 text-3xl font-black leading-tight text-[#202D3A] md:text-4xl">
+          <h1 className="text-3xl font-black leading-tight text-[#202D3A] md:text-4xl">
             {faq.question}
           </h1>
 
+          <div className="mt-6 mb-10 rounded-2xl border border-[#D5E5EC] bg-white p-5 md:p-6">
+            <p className="text-xs font-bold tracking-wide text-[#2786A5]">先说结论</p>
+            <p className="mt-2 text-base font-semibold leading-7 text-[#202D3A] md:text-lg">
+              {faq.summary}
+            </p>
+          </div>
+
           <section className="mb-9">
-            <h2 className="mb-3 text-xl font-bold text-[#202D3A]">为什么会出现这种情况</h2>
+            <h2 className="mb-3 text-xl font-bold text-[#202D3A]">先看可能原因</h2>
             <p className="text-base leading-7 text-[#526170]">{faq.content.whyCommon}</p>
           </section>
 
           <section className="mb-9">
-            <h2 className="mb-3 text-xl font-bold text-[#202D3A]">当前规则与需要确认的条件</h2>
+            <h2 className="mb-3 text-xl font-bold text-[#202D3A]">怎么判断</h2>
             <p className="text-base leading-7 text-[#526170]">{faq.content.officialRules}</p>
           </section>
 
           <section className="mb-9">
-            <h2 className="mb-3 text-xl font-bold text-[#202D3A]">现实中应该怎么判断</h2>
+            <h2 className="mb-3 text-xl font-bold text-[#202D3A]">下一步查什么</h2>
             <p className="text-base leading-7 text-[#526170]">{faq.content.realUsage}</p>
           </section>
 
           <section className="mb-9">
-            <h2 className="mb-3 text-xl font-bold text-[#202D3A]">哪些情况更值得继续核实</h2>
+            <h2 className="mb-3 text-xl font-bold text-[#202D3A]">哪些情况网页不能直接确定</h2>
             <p className="text-base leading-7 text-[#526170]">{faq.content.suitableFor}</p>
           </section>
 
@@ -137,7 +144,7 @@ export default async function ATTFiberFAQDetailPage({ params }: PageProps) {
           )}
 
           <section className="rounded-2xl border border-[#D5E5EC] bg-white p-5 md:p-6">
-            <h2 className="mb-2 text-lg font-bold text-[#202D3A]">需要时继续核实</h2>
+            <h2 className="mb-2 text-lg font-bold text-[#202D3A]">什么时候需要人工核实</h2>
             <p className="mb-4 text-sm leading-6 text-[#526170]">
               如果仍无法判断费用、连接、设备或安装情况，可先进行宽带问题诊断；涉及具体账户或地址结果时，再按当前信息进一步核实。
             </p>
