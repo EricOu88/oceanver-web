@@ -20,6 +20,37 @@ const memberTypes = [
   ['有人主要用于国际 / 回国', '单独核对收短信、漫游、Wi-Fi Calling、双卡和长期保号需求。'],
 ];
 
+const familyDecisionBranches = [
+  {
+    title: '减掉一条线，剩下的人为什么反而更贵？',
+    check: '比较变更前后的付费线数、免费线、账户级折扣、每线月费与设备抵扣。',
+    caution: '不要按旧账单的平均每线价格直接减去一条线。',
+    href: '/cellphone/price-hike',
+    action: '继续核对手机账单涨价',
+  },
+  {
+    title: '成员想退组，但户主不配合或失联',
+    check: '先确认账户角色、号码控制权、可用授权方式及运营商身份验证要求。',
+    caution: '普通成员不能假定可以绕开户主授权直接取得 Transfer PIN。',
+    href: '/cellphone/family-plan-exit-account-holder',
+    action: '查看户主权限与退出路径',
+  },
+  {
+    title: '转走号码会不会失去手机优惠？',
+    check: '逐条核对设备余额、分期合同、Trade-in 和尚未发放的 Bill Credit。',
+    caution: '号码可转出不等于剩余设备抵扣可以继续领取。',
+    href: '/cellphone/faq/promo-credit-not-received',
+    action: '继续检查设备优惠与抵扣',
+  },
+  {
+    title: '减线后留下还是重新组合更划算？',
+    check: '分别计算不变、减线后、分组后及全部转出的长期总成本，并核对每条线的限制。',
+    caution: '只比较广告标价或单条线价格，容易漏掉税费、设备及失去的折扣。',
+    href: '/bill-optimization',
+    action: '先拆分实际账单成本',
+  },
+];
+
 const reviewItems = [
   '实际多线价格和当前套餐层级',
   'Promotion、Trade-in 与 Upgrade eligibility',
@@ -86,6 +117,25 @@ export default function FamilyPlanGuidePage() {
         </header>
 
         <div className="space-y-8">
+          <section aria-labelledby="family-decision-heading">
+            <h2 id="family-decision-heading" className="text-2xl font-bold">家庭计划变更：先回答这四个问题</h2>
+            <p className="mt-3 leading-7 text-[#526170]">
+              不同成员的号码、设备、优惠和账户权限可能不同。先找到符合你情况的分支，再决定是否减线、转出或重新组合。
+            </p>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2">
+              {familyDecisionBranches.map((item) => (
+                <article key={item.title} className="rounded-2xl border border-[#D5E5EC] bg-white p-5">
+                  <h3 className="font-bold">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-[#526170]"><strong className="text-[#202D3A]">先检查：</strong>{item.check}</p>
+                  <p className="mt-2 text-sm leading-7 text-[#526170]"><strong className="text-[#202D3A]">不要直接推断：</strong>{item.caution}</p>
+                  <Link href={item.href} className="mt-4 inline-flex font-semibold text-[#164B78] underline underline-offset-4">
+                    {item.action} →
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </section>
+
           <section className="rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 sm:p-8">
             <h2 className="text-2xl font-bold">加入家庭组前，先想好以后怎么退出</h2>
             <p className="mt-4 leading-7 text-[#526170]">
