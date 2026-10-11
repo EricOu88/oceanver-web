@@ -12,9 +12,9 @@ import {
 const pageUrl = 'https://oceanver.com/cellphone/price-hike';
 
 export const metadata: Metadata = {
-  title: '手机套餐涨价了，要留、改还是换？｜美国鸿达电讯',
+  title: { absolute: '现有手机账单涨价排查｜多线折扣、设备分期与抵扣｜美国鸿达电讯' },
   description:
-    '手机套餐涨价时，先区分基础月费、每线费用、AutoPay、Free Line、多线折扣、设备与 Bill Credit，再判断保留旧计划、调整方案或换运营商。',
+    '本页帮助现有手机用户区分套餐月费、线路折扣、设备分期、Bill Credit 与附加服务变化。不同运营商和账户的处理条件不同，应核对当前账单后再行动。',
   alternates: { canonical: pageUrl },
 };
 
@@ -77,8 +77,10 @@ export default function CellphonePriceHikePage() {
             手机长期涨价判断
           </p>
           <h1 className="max-w-4xl text-3xl font-black leading-tight tracking-tight sm:text-5xl">
-            手机套餐涨价了，是继续留、改现有计划，还是换运营商？
-          </h1>
+              现有手机账单涨价：核对多线折扣与设备抵扣
+            </h1>
+            <p className="mt-5 max-w-4xl text-base leading-8 text-slate-700">本页帮助现有手机用户区分套餐月费、线路折扣、设备分期、Bill Credit 与附加服务变化。不同运营商和账户的处理条件不同，应核对当前账单后再行动。</p>
+            <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/cellphone/att/price-increase" className="font-semibold underline underline-offset-4">已确认是 AT&T 旧计划调整？查看 AT&T 换套餐成本</Link></p>
           <p className="mt-5 max-w-3xl text-base leading-7 text-[#526170] sm:text-lg">
             先别把“账单变贵”直接理解成“运营商涨价”。家庭账单可能同时受到每线价格、AutoPay、多线折扣、
             Free Line、设备分期和 Bill Credit 影响。先找出哪一层变了，再决定要不要动方案。

@@ -81,10 +81,10 @@ export default function PriceHikeClient() {
             </p>
 
             <h1 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">
-              宽带账单涨了，
-              <br className="sm:hidden" />
-              下一步是留、调还是换？
+              现有宽带账单涨价，先确认哪一项变化
             </h1>
+            <p className="mt-5 max-w-4xl text-base leading-8 text-slate-700">先判断增加的是持续月费还是一次性费用，再核对优惠结束、AutoPay 和设备收费。整理清楚后，才能判断是否需要调整现有账户或进一步比较其他服务。</p>
+            <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/internet/price-hike" className="font-semibold underline underline-offset-4">已确认持续涨价，准备换网？查看地址与切换成本比较</Link></p>
 
             <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-[#526170] sm:text-lg">
               先确认涨价是不是长期的，再比较当前服务质量、真实月费、

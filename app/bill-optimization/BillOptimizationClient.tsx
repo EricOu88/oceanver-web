@@ -120,8 +120,10 @@ export default function BillOptimizationClient() {
           </Link>
           <p className="mb-4 text-sm font-bold uppercase tracking-wide text-blue-700">账单涨价判断 · 美国手机与家庭宽带</p>
           <h1 className="max-w-4xl text-3xl font-black leading-tight tracking-tight md:text-5xl">
-            手机、宽带账单为什么变贵？
-          </h1>
+              手机与宽带账单变贵：先逐项核对费用
+            </h1>
+            <p className="mt-5 max-w-4xl text-base leading-8 text-slate-700">本页面向已经收到手机或宽带账单的用户。先比较同名收费、折扣、设备分期与一次性项目，记录变化发生在哪一期；争议、退款或账户修改仍需运营商确认。</p>
+            <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/bill-optimization" className="font-semibold underline underline-offset-4">原因已确认，准备比较替代套餐？查看主站成本比较</Link></p>
           <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-700 md:text-xl">
             账单变贵不一定只有一个原因。常见情况包括优惠到期、AutoPay 折扣失效、设备费、附加服务、套餐调整、一次性费用或运营商价格变化。先找到账单中发生变化的项目，再判断是否需要处理。
           </p>

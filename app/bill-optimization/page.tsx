@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 import BillOptimizationClient from './BillOptimizationClient'
 
-const title = '手机、宽带账单为什么变贵？账单涨价判断指南｜美国鸿达电讯'
+const title = '手机与宽带账单核对指南｜优惠、设备费与异常收费｜美国鸿达电讯'
 const description =
-  '美国手机和家庭宽带账单变贵，常见原因包括优惠到期、AutoPay 折扣失效、设备费、附加服务、套餐调整和一次性费用。先判断费用变化原因，再决定是否需要处理。'
+  '本页面向已经收到手机或宽带账单的用户。先比较同名收费、折扣、设备分期与一次性项目，记录变化发生在哪一期；争议、退款或账户修改仍需运营商确认。'
 
 export const metadata: Metadata = {
-  title,
+  title: { absolute: title },
   description,
   alternates: {
     canonical: 'https://oceanver.com/bill-optimization',

@@ -13,9 +13,9 @@ import {
 const pageUrl = 'https://oceanver.com/internet/home-network-guide';
 
 export const metadata: Metadata = {
-  title: '家庭网络怎么判断？Fiber、Cable、5G Home Internet 与 Wi-Fi | 美国鸿达电讯',
+  title: { absolute: '家庭网络故障排查｜入户线路、Router、Wi-Fi 与 Mesh｜美国鸿达电讯' },
   description:
-    '从入户网络、Wi-Fi 覆盖、Router、Mesh、上传需求和地址条件理解 Fiber、Cable、5G Home Internet 等家庭网络差异，避免把家庭 Wi-Fi 问题误判成运营商问题。',
+    '先区分全家同时慢、只有远端房间慢，还是单台设备异常。结合有线测速、Router 附近与远端表现判断问题层级；故障维修和线路状态由运营商或设备支持确认。',
   alternates: { canonical: pageUrl },
 };
 
@@ -74,10 +74,10 @@ export default function HomeNetworkGuidePage() {
         <header className="mt-8">
           <p className="text-sm font-bold text-[#246B95]">家庭网络判断</p>
           <h1 className="mt-3 text-4xl font-black leading-tight md:text-5xl">
-            先分清“入户宽带”和“家里 Wi-Fi”，
-            <br className="hidden md:block" />
-            再决定要不要换运营商
-          </h1>
+              家庭网络已经装好，慢或不稳定应该先查哪里？
+            </h1>
+            <p className="mt-5 max-w-4xl text-base leading-8 text-slate-700">先区分全家同时慢、只有远端房间慢，还是单台设备异常。结合有线测速、Router 附近与远端表现判断问题层级；故障维修和线路状态由运营商或设备支持确认。</p>
+            <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/internet/home-network-guide" className="font-semibold underline underline-offset-4">准备首次安装或换网？查看主站设备准备指南</Link></p>
           <p className="mt-5 max-w-4xl text-lg leading-relaxed text-[#526170]">
             很多“网速慢”其实发生在家里的 Router、Wi-Fi 覆盖或设备这一层。
             Fiber、Cable、5G Home Internet 只是入户方式的一部分，不能直接代表全屋体验。
