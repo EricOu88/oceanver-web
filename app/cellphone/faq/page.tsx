@@ -102,13 +102,6 @@ const TOPICS = [
   },
   {
     icon: HelpCircle,
-    title: 'Lifeline 政府通信补助',
-    text: '先按收入、符合条件的政府福利项目和 household 状态判断资格；ACP 已结束。',
-    href: '/cellphone/government',
-    label: '查看 Lifeline 资格判断',
-  },
-  {
-    icon: HelpCircle,
     title: '还是不确定属于哪类',
     text: '不用先选运营商或套餐名称，从现象开始回答问题，系统会继续缩小范围。',
     href: '/cellphone/diagnosis',
