@@ -62,6 +62,14 @@ export default function FamilyPlanGuidePage() {
           <h1 className="max-w-3xl text-3xl font-black leading-tight tracking-tight sm:text-5xl">
               现有家庭计划要调整？先核对每条线与户主权限
             </h1>
+            <section data-page-answer className="best-answer speakable-summary mt-6 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 text-[#202D3A]">
+              <h2 className="text-lg font-bold">直接结论</h2>
+              <p className="mt-3 leading-7">调整现有家庭计划前，逐条核对设备余额、未发抵扣、号码状态与户主权限，并重算剩余成员的费用。先取得正确转号资料，不先关闭要保留的号码。</p>
+              <dl className="mt-4 space-y-3 text-sm leading-7">
+                <div><dt className="font-bold">适用条件</dt><dd>适合已加入家庭组、准备减线、退组或部分成员转网的人；新办或转入家庭套餐的价格比较进入主站。</dd></div>
+                <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/cellphone/family-plan-exit-account-holder" className="font-semibold underline underline-offset-4">先核对户主权限与退出路径</Link><Link href="/cellphone/faq/family-plan-leave-keep-number" className="font-semibold underline underline-offset-4">再确认退组保号准备</Link></dd></div>
+              </dl>
+            </section>
             <p className="mt-5 max-w-4xl text-base leading-8 text-slate-700">本页面向已经加入家庭账户的成员与户主。减线、退组或全家转网前，逐条确认剩余设备余额、抵扣、号码资料及操作权限，并核对剩余成员的费用影响。</p>
             <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/cellphone/att-family" className="font-semibold underline underline-offset-4">准备新办或转入 AT&T 家庭套餐？进入主站办理前比较</Link></p>
           <p className="mt-5 max-w-3xl text-base leading-7 text-[#526170] sm:text-lg">

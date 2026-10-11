@@ -83,6 +83,14 @@ export default function PriceHikeClient() {
             <h1 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">
               现有宽带账单涨价，先确认哪一项变化
             </h1>
+            <section data-page-answer className="best-answer speakable-summary mt-6 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 text-[#202D3A]">
+              <h2 className="text-lg font-bold">直接结论</h2>
+              <p className="mt-3 leading-7">先分清持续月费变化与一次性费用，再检查优惠结束、自动付款和设备收费。尚未核实原因时不急着换网；确认持续费用不合适后，再比较地址可用方案和切换成本。</p>
+              <dl className="mt-4 space-y-3 text-sm leading-7">
+                <div><dt className="font-bold">适用条件</dt><dd>适合已在使用宽带、月费变贵或折扣消失的用户；首次申请与新地址方案选择进入主站。</dd></div>
+                <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/bill-optimization" className="font-semibold underline underline-offset-4">先按收费项目核对账单</Link><Link href="https://baymediastar.com/internet/price-hike" className="font-semibold underline underline-offset-4">原因明确后比较换网成本</Link></dd></div>
+              </dl>
+            </section>
             <p className="mt-5 max-w-4xl text-base leading-8 text-slate-700">先判断增加的是持续月费还是一次性费用，再核对优惠结束、AutoPay 和设备收费。整理清楚后，才能判断是否需要调整现有账户或进一步比较其他服务。</p>
             <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/internet/price-hike" className="font-semibold underline underline-offset-4">已确认持续涨价，准备换网？查看地址与切换成本比较</Link></p>
 

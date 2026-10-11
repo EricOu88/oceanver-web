@@ -76,6 +76,14 @@ export default function HomeNetworkGuidePage() {
           <h1 className="mt-3 text-4xl font-black leading-tight md:text-5xl">
               家庭网络已经装好，慢或不稳定应该先查哪里？
             </h1>
+            <section data-page-answer className="best-answer speakable-summary mt-6 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 text-[#202D3A]">
+              <h2 className="text-lg font-bold">直接结论</h2>
+              <p className="mt-3 leading-7">网络慢时，先区分全家、有线、Router 附近、远端房间和单台设备的表现。只有远处 Wi-Fi 弱时，升级宽带套餐未必解决；先缩小到线路、设备或无线覆盖这一层。</p>
+              <dl className="mt-4 space-y-3 text-sm leading-7">
+                <div><dt className="font-bold">适用条件</dt><dd>适合已经安装网络后的慢速、掉线和覆盖问题；网页不能替代现场线路、设备后台或运营商故障确认。</dd></div>
+                <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/internet/diagnosis" className="font-semibold underline underline-offset-4">按症状继续诊断</Link><Link href="https://baymediastar.com/internet/home-network-guide" className="font-semibold underline underline-offset-4">准备换网时核对设备兼容</Link></dd></div>
+              </dl>
+            </section>
             <p className="mt-5 max-w-4xl text-base leading-8 text-slate-700">先区分全家同时慢、只有远端房间慢，还是单台设备异常。结合有线测速、Router 附近与远端表现判断问题层级；故障维修和线路状态由运营商或设备支持确认。</p>
             <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/internet/home-network-guide" className="font-semibold underline underline-offset-4">准备首次安装或换网？查看主站设备准备指南</Link></p>
           <p className="mt-5 max-w-4xl text-lg leading-relaxed text-[#526170]">
