@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { trackContact } from './ContactAnalytics';
 
 export default function WeChatPopup({ onClose }: { onClose: () => void }) {
   const WECHAT_ID = '美国鸿达电讯';
@@ -8,6 +9,7 @@ export default function WeChatPopup({ onClose }: { onClose: () => void }) {
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(WECHAT_ID);
+      trackContact('wechat_copy', 'wechat_popup', '一键复制');
 
       const w = window as Window & {
         gtag?: (...args: unknown[]) => void;
@@ -99,3 +101,4 @@ export default function WeChatPopup({ onClose }: { onClose: () => void }) {
     </div>
   );
 }
+

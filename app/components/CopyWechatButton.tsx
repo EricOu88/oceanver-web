@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Copy, Check } from 'lucide-react';
+import { trackContact } from './ContactAnalytics';
 
 export default function CopyWechatButton({
   wechatId = '美国鸿达电讯',
@@ -18,10 +19,12 @@ export default function CopyWechatButton({
         input.value = wechatId;
         document.body.appendChild(input);
         input.select();
-        document.execCommand('copy');
+        const succeeded = document.execCommand('copy');
         input.remove();
+        if (!succeeded) throw new Error('Copy failed');
       }
 
+      trackContact('wechat_copy', 'wechat_section', '复制微信号');
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
@@ -39,3 +42,4 @@ export default function CopyWechatButton({
     </button>
   );
 }
+

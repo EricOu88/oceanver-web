@@ -6,6 +6,8 @@ export default function MobileFooterBar({ onWeChatClick }: { onWeChatClick: () =
 
       {/* 微信 */}
       <button
+        data-contact-method="wechat"
+        data-contact-location="sticky"
         onClick={onWeChatClick}
         className="flex-1 h-12 rounded-full bg-blue-700 hover:bg-blue-800 text-white
         font-bold flex items-center justify-center active:scale-95 transition shadow-sm"
@@ -24,3 +26,4 @@ export default function MobileFooterBar({ onWeChatClick }: { onWeChatClick: () =
     </div>
   );
 }
+

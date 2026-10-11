@@ -2,6 +2,7 @@
 
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import ContactAnalytics from '@/app/components/ContactAnalytics'
 import './globals.css'
 // import AIQuestionWidget from '@/app/components/AIQuestionWidget' // 暂时注释，使用 SafeAIQuestionWidget
 // import SafeAIQuestionWidgetWrapper from '@/app/components/SafeAIQuestionWidgetWrapper' // 暂时隐藏全站公开入口；需要恢复时取消注释
@@ -94,12 +95,12 @@ export default function RootLayout({
             __html: JSON.stringify(organizationJsonLd),
           }}
         />
-        {/* Google Analytics 4 (GA4) - 延迟加载以减少 TBT */}
+        {/* Google Analytics 4 (GA4) - 页面可交互时初始化联系事件 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-HM4T9F0SG2"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="lazyOnload">
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -110,6 +111,7 @@ export default function RootLayout({
       </head>
 
       <body className="antialiased">
+        <ContactAnalytics />
         {/* ================== 页面主体 ================== */}
         {children}
 
@@ -119,3 +121,4 @@ export default function RootLayout({
     </html>
   )
 }
+
