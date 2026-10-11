@@ -27,6 +27,45 @@ const reasons = [
   ['旧计划被调整或迁移', '旧套餐继续保留、转新方案或重新组合线路，都可能影响价格与现有优惠。'],
 ];
 
+const evidenceBranches = [
+  {
+    title: '基础月费变高',
+    check: '对比同一条线路最近两期的套餐月费与账户通知。',
+    caution: '不能只看家庭总额就认定每条线路都涨价。',
+  },
+  {
+    title: 'AutoPay / Paperless 折扣消失',
+    check: '核对付款方式、无纸账单设置、折扣资格及生效账期。',
+    caution: '恢复设置不代表旧账期折扣一定会补发。',
+  },
+  {
+    title: '家庭成员减线后反而更贵',
+    check: '重算剩余线路的多线价格、Free Line 与账户优惠。',
+    caution: '减去一条线不一定等于减去它原来的月费。',
+    href: '/cellphone/family-plan-guide',
+    action: '继续检查家庭计划结构',
+  },
+  {
+    title: 'Trade-in / Bill Credit 减少',
+    check: '核对设备订单、分期账单、抵扣名称及发放状态。',
+    caution: '不要在确认未发抵扣前贸然升级或取消线路。',
+    href: '/cellphone/faq/promo-credit-not-received',
+    action: '继续检查优惠抵扣',
+  },
+  {
+    title: '设备分期或附加服务增加',
+    check: '分开比较手机月供、保险、国际功能和其他附加项目。',
+    caution: '设备费增加不一定代表套餐本身涨价。',
+  },
+  {
+    title: '准备退出家庭计划',
+    check: '先确认户主权限、转号资料、设备余额和剩余抵扣。',
+    caution: '需要保留号码时，不要先主动关闭原号码。',
+    href: '/cellphone/family-plan-exit-account-holder',
+    action: '继续核对户主权限和退出路径',
+  },
+];
+
 const beforeSwitch = [
   '每条线路当前月费和家庭总账单。',
   '线路数变化后，多线折扣 / Free Line 是否仍成立。',
@@ -133,6 +172,27 @@ export default function CellphonePriceHikePage() {
                 继续检查家庭多线结构 →
               </Link>
             </div>
+          </div>
+        </section>
+
+        <section className="mt-10" aria-labelledby="cellphone-evidence-heading">
+          <h2 id="cellphone-evidence-heading" className="text-2xl font-black">找到涨价项目后，按证据继续判断</h2>
+          <p className="mt-3 leading-7 text-[#526170]">
+            对照最近两期账单，先确认具体线路和收费项目，再决定是否需要调整。以下是通用检查方法，不代表已查看你的账户。
+          </p>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {evidenceBranches.map((item) => (
+              <article key={item.title} className="rounded-2xl border border-[#D5E5EC] bg-white p-5">
+                <h3 className="font-black">{item.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-[#526170]"><strong className="text-[#202D3A]">先检查：</strong>{item.check}</p>
+                <p className="mt-2 text-sm leading-7 text-[#526170]"><strong className="text-[#202D3A]">不要直接推断：</strong>{item.caution}</p>
+                {item.href && (
+                  <Link href={item.href} className="mt-4 inline-flex items-center gap-2 font-semibold text-[#164B78] underline underline-offset-4">
+                    {item.action} <ArrowRight size={16} />
+                  </Link>
+                )}
+              </article>
+            ))}
           </div>
         </section>
 
