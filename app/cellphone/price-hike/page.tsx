@@ -66,6 +66,21 @@ const evidenceBranches = [
   },
 ];
 
+const promotionExpiryChecklist = [
+  {
+    title: '第一步：确认是优惠结束，还是账单项目变化',
+    detail: '找出最近三期账单中同一条线路的套餐费、Promotion / Bill Credit、AutoPay 折扣及设备月供，记录第一次变化的账期。',
+  },
+  {
+    title: '第二步：判断优惠还能否恢复',
+    detail: '查找原活动名称、优惠起止时间、设备分期及资格通知。不要把设备抵扣期满、活动资格失效和账单错误当成同一件事。',
+  },
+  {
+    title: '第三步：比较留、改、换的真实成本',
+    detail: '保留现有计划、调整现有套餐和跨网转出分别计算未来 12 个月费用；计入设备尾款、可能失去的抵扣及一次性费用。',
+  },
+];
+
 const beforeSwitch = [
   '每条线路当前月费和家庭总账单。',
   '线路数变化后，多线折扣 / Free Line 是否仍成立。',
@@ -194,6 +209,21 @@ export default function CellphonePriceHikePage() {
               </article>
             ))}
           </div>
+        </section>
+
+        <section aria-labelledby="promo-expiry-check" className="mt-10 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+          <h2 id="promo-expiry-check" className="text-2xl font-black">手机优惠到期，先检查再决定是否换网</h2>
+          <p className="mt-3 leading-7 text-[#526170]">账单变贵不一定代表运营商提高了套餐标价；也可能是限时优惠结束、自动付款折扣失效，或设备月度抵扣减少。</p>
+          <ol className="mt-5 space-y-4">
+            {promotionExpiryChecklist.map((item, index) => (
+              <li key={item.title} className="rounded-xl border border-[#D5E5EC] bg-[#F4F8FA] p-4">
+                <h3 className="font-bold">{index + 1}. {item.title.replace(/^第[一二三]步：/, '')}</h3>
+                <p className="mt-2 leading-7 text-[#526170]">{item.detail}</p>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-4 leading-7 text-[#526170]">如果不知道原优惠是否仍有效，应先联系原运营商核对活动编号和资格；不要在确认前取消号码或提前结清设备。</p>
+          <Link href="/cellphone/faq/promo-credit-not-received" className="mt-4 inline-flex font-semibold text-[#164B78] hover:text-[#103B60]">抵扣没有到账？继续检查原因 →</Link>
         </section>
 
         <section className="mt-10 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
