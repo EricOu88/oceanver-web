@@ -150,6 +150,64 @@ export default function PriceHikeClient() {
             </div>
           </section>
 
+          {/* 按账单证据继续判断：不重复创建专题页面 */}
+          <section className="mt-16" aria-labelledby="bill-evidence-heading">
+            <p className="text-sm font-bold text-[#2786A5]">按实际账单分流</p>
+            <h2 id="bill-evidence-heading" className="mt-2 text-2xl font-black sm:text-3xl">
+              找到变化项目后，下一步怎么判断？
+            </h2>
+            <p className="mt-3 max-w-3xl text-sm leading-7 text-[#526170]">
+              建议同时打开最近两期完整账单，按相同项目逐项比较。以下是排查方向，不代表已经核实你的账户。
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              {[
+                {
+                  title: '优惠或 Credit 减少',
+                  check: '找出 Promotion / Discount / Credit 的名称、金额和结束说明。',
+                  caution: '不能仅凭优惠消失，就认定原价可以续回。',
+                },
+                {
+                  title: '自动付款折扣消失',
+                  check: '核对 AutoPay、无纸账单、付款方式及对应账期。',
+                  caution: '重新设置不代表之前少给的折扣一定会补发。',
+                },
+                {
+                  title: '设备或附加服务收费增加',
+                  check: '分开比较 Gateway、Router、Extender、租赁费和附加项目。',
+                  caution: '自行购买设备前，仍需核对兼容性与支持责任。',
+                },
+                {
+                  title: '只有本期出现额外费用',
+                  check: '查看安装、激活、技术员上门、按比例计费及调整项目。',
+                  caution: '一次性收费不等于以后每个月都会增加。',
+                },
+                {
+                  title: '基础 Internet 月费变高',
+                  check: '对比同名基础月费，查看运营商通知和新账期。',
+                  caution: '尚未核对切换成本前，不要直接取消现有服务。',
+                },
+                {
+                  title: '取消服务后仍收到账单',
+                  check: '核对服务终止日期、最后账期、设备归还及付款记录。',
+                  caution: '最后账单不一定是错误收费，应先确认账单明细。',
+                  href: '/internet/faq/after-cancel-final-bill',
+                  action: '继续查看取消后的最后账单',
+                },
+              ].map((item) => (
+                <article key={item.title} className="rounded-2xl border border-[#D5E5EC] bg-white p-5">
+                  <h3 className="font-black">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-[#526170]"><strong className="text-[#202D3A]">先检查：</strong>{item.check}</p>
+                  <p className="mt-2 text-sm leading-7 text-[#526170]"><strong className="text-[#202D3A]">不要直接推断：</strong>{item.caution}</p>
+                  {item.href && (
+                    <Link href={item.href} className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[#164B78] underline underline-offset-4">
+                      {item.action} <ArrowRight size={15} />
+                    </Link>
+                  )}
+                </article>
+              ))}
+            </div>
+          </section>
+
           {/* 一次性 vs 长期 */}
           <section className="mt-16 grid gap-6 lg:grid-cols-2">
             <InfoCard
