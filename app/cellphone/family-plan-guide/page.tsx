@@ -118,6 +118,16 @@ export default function FamilyPlanGuidePage() {
         </header>
 
         <div className="space-y-8">
+          <section aria-labelledby="family-policy-check" className="rounded-2xl border border-[#D5E5EC] bg-white p-5 sm:p-8">
+            <h2 id="family-policy-check" className="text-2xl font-bold">运营商规则：减线前必须核对的三件事</h2>
+            <p className="mt-3 leading-7 text-[#526170]">取消线路、同运营商转移账单责任、跨运营商携号转出，是三种不同操作；不能只按原来的平均每线价格估算。</p>
+            <ul className="mt-4 list-disc space-y-3 pl-5 leading-7 text-[#526170]">
+              <li><strong>线路与折扣：</strong>减线或转责任可能改变多线折扣、免费线路及原账户资格。参考 <a className="text-[#164B78] underline" href="https://www.att.com/support/article/wireless/KM1045265/" target="_blank" rel="noopener noreferrer">AT&amp;T 账单责任说明</a>、<a className="text-[#164B78] underline" href="https://www.t-mobile.com/support/account/transfer-account-or-line-ownership" target="_blank" rel="noopener noreferrer">T-Mobile 转责任说明</a>。</li>
+              <li><strong>设备与抵扣：</strong>设备分期未结清、月度账单抵扣未发完时，取消或变更可能产生尾款或失去优惠。参考 <a className="text-[#164B78] underline" href="https://www.verizon.com/support/current-device-promotions/" target="_blank" rel="noopener noreferrer">Verizon 设备优惠说明</a>。</li>
+              <li><strong>实际成本：</strong>同时比较变更前后整户月费、成员新月费、一次性费用及设备尾款；具体结果需查看账户和活动条款。</li>
+            </ul>
+          </section>
+
           <FamilyPlanQuestionFlow />
           <section aria-labelledby="family-decision-heading">
             <h2 id="family-decision-heading" className="text-2xl font-bold">家庭计划变更：先回答这四个问题</h2>
