@@ -17,9 +17,9 @@ import {
 import { internetFAQData } from './data'
 
 export const metadata: Metadata = {
-  title: '美国宽带常见问题 FAQ｜账单、Wi-Fi、断网、安装与设备｜美国鸿达电讯',
+  title: { absolute: '宽带使用问题 FAQ｜账单、Wi-Fi、断网与设备｜美国鸿达电讯' },
   description:
-    '整理美国家庭宽带账单涨价、Wi-Fi 慢、断网、Modem、安装、地址、搬家和换网等常见问题，帮助先理解原因，再决定下一步。',
+    '本页优先承接已经使用宽带后的收费、断网、Wi-Fi 与设备异常，也保留安装失败及迁移问题的排查入口。首次申请与地址选择转到主站办理 FAQ。',
   keywords: [
     '美国宽带常见问题',
     '美国宽带FAQ',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     canonical: 'https://oceanver.com/internet/faq',
   },
   openGraph: {
-    title: '美国宽带常见问题 FAQ｜账单、Wi-Fi、断网、安装与设备｜美国鸿达电讯',
+    title: '宽带使用问题 FAQ｜账单、Wi-Fi、断网与设备｜美国鸿达电讯',
     description:
       '整理美国家庭宽带账单涨价、Wi-Fi 慢、断网、Modem、安装、地址、搬家和换网等常见问题。',
     url: 'https://oceanver.com/internet/faq',
@@ -135,8 +135,10 @@ export default function InternetFAQPage() {
             </p>
 
             <h1 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">
-              美国宽带常见问题
+              宽带已经在用，按账单、Wi-Fi 与断网问题继续查
             </h1>
+            <p className="mt-5 max-w-4xl text-base leading-8 text-slate-700">本页优先承接已经使用宽带后的收费、断网、Wi-Fi 与设备异常，也保留安装失败及迁移问题的排查入口。首次申请与地址选择转到主站办理 FAQ。</p>
+            <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/internet/faq" className="font-semibold underline underline-offset-4">准备新装或搬家办理？查看主站宽带办理 FAQ</Link></p>
 
             <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-[#526170] sm:text-lg">
               从账单涨价、Wi-Fi、断网、Modem、安装、地址、搬家到换运营商，

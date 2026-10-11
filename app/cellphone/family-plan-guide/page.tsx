@@ -4,9 +4,9 @@ import Link from 'next/link';
 const pageUrl = 'https://oceanver.com/cellphone/family-plan-guide';
 
 export const metadata: Metadata = {
-  title: '家庭计划要不要一起换？家庭多线判断指南｜美国鸿达电讯',
+  title: { absolute: '现有家庭计划调整指南｜减线、退组、分期与 Bill Credit｜美国鸿达电讯' },
   description:
-    '从线路需求、设备分期、Bill Credit 和转网准备判断家庭成员是否适合一起变更。实际价格、资格与账户状态需结合当前账户核实。',
+    '本页面向已经加入家庭账户的成员与户主。减线、退组或全家转网前，逐条确认剩余设备余额、抵扣、号码资料及操作权限，并核对剩余成员的费用影响。',
   alternates: { canonical: pageUrl },
 };
 
@@ -60,8 +60,10 @@ export default function FamilyPlanGuidePage() {
             家庭多线判断
           </p>
           <h1 className="max-w-3xl text-3xl font-black leading-tight tracking-tight sm:text-5xl">
-            家庭计划要不要一起换？先把每条线的情况分清楚
-          </h1>
+              现有家庭计划要调整？先核对每条线与户主权限
+            </h1>
+            <p className="mt-5 max-w-4xl text-base leading-8 text-slate-700">本页面向已经加入家庭账户的成员与户主。减线、退组或全家转网前，逐条确认剩余设备余额、抵扣、号码资料及操作权限，并核对剩余成员的费用影响。</p>
+            <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/cellphone/att-family" className="font-semibold underline underline-offset-4">准备新办或转入 AT&T 家庭套餐？进入主站办理前比较</Link></p>
           <p className="mt-5 max-w-3xl text-base leading-7 text-[#526170] sm:text-lg">
             家庭计划不能只看“每条线多少钱”。真正要看的是一共有几条线、哪些人需要换手机、哪些设备还在分期、哪些线路还在拿 Bill Credit、是否所有号码都需要一起转，以及当前总账单为什么变化。
           </p>

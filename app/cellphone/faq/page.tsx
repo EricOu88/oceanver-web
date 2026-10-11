@@ -14,9 +14,9 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: '美国手机问题库｜按问题继续查 | 美国鸿达电讯',
+  title: { absolute: '手机使用问题 FAQ｜账单、信号、eSIM 与家庭账户｜美国鸿达电讯' },
   description:
-    '美国手机问题知识入口。按账单、信号、eSIM、转号、设备分期、家庭多线、国际使用等问题继续查，不需要先选择运营商。',
+    '本页承接使用中的账单、信号、SIM/eSIM、抵扣与家庭账户问题。先找到问题类型，再进入具体排查页面；准备购买或开通时进入主站办理 FAQ。',
   alternates: { canonical: 'https://oceanver.com/cellphone/faq' },
   openGraph: {
     title: '美国手机问题库｜按问题继续查',
@@ -132,8 +132,10 @@ export default function CellphoneFAQPage() {
         <header className="mx-auto mb-12 max-w-4xl">
           <p className="mb-3 text-sm font-bold text-[#246B95]">手机问题库</p>
           <h1 className="text-4xl font-black leading-tight md:text-5xl">
-            按问题继续查，不需要先选运营商
-          </h1>
+              手机已经在用，按账单、信号与账户问题继续查
+            </h1>
+            <p className="mt-5 max-w-4xl text-base leading-8 text-slate-700">本页承接使用中的账单、信号、SIM/eSIM、抵扣与家庭账户问题。先找到问题类型，再进入具体排查页面；准备购买或开通时进入主站办理 FAQ。</p>
+            <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/cellphone/faq" className="font-semibold underline underline-offset-4">准备开通、转号或选择套餐？查看手机卡办理 FAQ</Link></p>
           <p className="mt-5 text-lg leading-relaxed text-[#526170]">
             这里不是套餐目录。先找到你正在遇到的问题，再进入对应判断节点；只有当方向已经清楚时，才进入方案比较或人工核实。
           </p>
