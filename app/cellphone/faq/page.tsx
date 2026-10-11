@@ -134,6 +134,14 @@ export default function CellphoneFAQPage() {
           <h1 className="text-4xl font-black leading-tight md:text-5xl">
               手机已经在用，按账单、信号与账户问题继续查
             </h1>
+            <section data-page-answer className="best-answer speakable-summary mt-6 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 text-[#202D3A]">
+              <h2 className="text-lg font-bold">直接结论</h2>
+              <p className="mt-3 leading-7">先把使用中的问题分成账单、信号、SIM/eSIM、设备抵扣和家庭账户，再进入对应排查页。记录发生时间、受影响号码与已做的操作，避免尚未确认原因就改套餐或取消线路。</p>
+              <dl className="mt-4 space-y-3 text-sm leading-7">
+                <div><dt className="font-bold">适用条件</dt><dd>适合现有手机服务的问题核对；新开、套餐选择和转号办理准备进入主站手机 FAQ。</dd></div>
+                <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/cellphone/price-hike" className="font-semibold underline underline-offset-4">账单变贵先核对收费</Link><Link href="/cellphone/diagnosis" className="font-semibold underline underline-offset-4">服务异常先按症状判断</Link></dd></div>
+              </dl>
+            </section>
             <p className="mt-5 max-w-4xl text-base leading-8 text-slate-700">本页承接使用中的账单、信号、SIM/eSIM、抵扣与家庭账户问题。先找到问题类型，再进入具体排查页面；准备购买或开通时进入主站办理 FAQ。</p>
             <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/cellphone/faq" className="font-semibold underline underline-offset-4">准备开通、转号或选择套餐？查看手机卡办理 FAQ</Link></p>
           <p className="mt-5 text-lg leading-relaxed text-[#526170]">

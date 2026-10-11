@@ -122,6 +122,14 @@ export default function BillOptimizationClient() {
           <h1 className="max-w-4xl text-3xl font-black leading-tight tracking-tight md:text-5xl">
               手机与宽带账单变贵：先逐项核对费用
             </h1>
+            <section data-page-answer className="best-answer speakable-summary mt-6 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 text-[#202D3A]">
+              <h2 className="text-lg font-bold">直接结论</h2>
+              <p className="mt-3 leading-7">账单总额增加不一定是套餐涨价。先对照同一账户的两期账单，逐项确认月费、折扣、设备分期、抵扣和一次性费用，记录变化项目后再联系运营商核实。</p>
+              <dl className="mt-4 space-y-3 text-sm leading-7">
+                <div><dt className="font-bold">适用条件</dt><dd>适合已经收到手机或宽带账单、需要找出费用变化的人；网页不能确认账户资格、退款或正式调价。</dd></div>
+                <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/internet/price-hike" className="font-semibold underline underline-offset-4">宽带收费变化继续查这里</Link><Link href="/cellphone/price-hike" className="font-semibold underline underline-offset-4">手机收费变化继续查这里</Link></dd></div>
+              </dl>
+            </section>
             <p className="mt-5 max-w-4xl text-base leading-8 text-slate-700">本页面向已经收到手机或宽带账单的用户。先比较同名收费、折扣、设备分期与一次性项目，记录变化发生在哪一期；争议、退款或账户修改仍需运营商确认。</p>
             <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/bill-optimization" className="font-semibold underline underline-offset-4">原因已确认，准备比较替代套餐？查看主站成本比较</Link></p>
           <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-700 md:text-xl">

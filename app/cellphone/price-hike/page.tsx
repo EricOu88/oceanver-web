@@ -79,6 +79,14 @@ export default function CellphonePriceHikePage() {
           <h1 className="max-w-4xl text-3xl font-black leading-tight tracking-tight sm:text-5xl">
               现有手机账单涨价：核对多线折扣与设备抵扣
             </h1>
+            <section data-page-answer className="best-answer speakable-summary mt-6 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 text-[#202D3A]">
+              <h2 className="text-lg font-bold">直接结论</h2>
+              <p className="mt-3 leading-7">手机账单变贵时先检查每条线：套餐月费、多线折扣、设备分期、Bill Credit 和附加服务。少一条线不等于只减掉它的费用，剩余线路可能重新计价。</p>
+              <dl className="mt-4 space-y-3 text-sm leading-7">
+                <div><dt className="font-bold">适用条件</dt><dd>适合现有手机账户收费变化、多线优惠或设备抵扣异常；金额和处理权限以实际账户及运营商审核为准。</dd></div>
+                <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/bill-optimization" className="font-semibold underline underline-offset-4">先找出具体变化项目</Link><Link href="/cellphone/family-plan-guide" className="font-semibold underline underline-offset-4">涉及多线变动时核对家庭账户</Link></dd></div>
+              </dl>
+            </section>
             <p className="mt-5 max-w-4xl text-base leading-8 text-slate-700">本页帮助现有手机用户区分套餐月费、线路折扣、设备分期、Bill Credit 与附加服务变化。不同运营商和账户的处理条件不同，应核对当前账单后再行动。</p>
             <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/cellphone/att/price-increase" className="font-semibold underline underline-offset-4">已确认是 AT&T 旧计划调整？查看 AT&T 换套餐成本</Link></p>
           <p className="mt-5 max-w-3xl text-base leading-7 text-[#526170] sm:text-lg">

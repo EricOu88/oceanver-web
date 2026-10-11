@@ -137,6 +137,14 @@ export default function InternetFAQPage() {
             <h1 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">
               宽带已经在用，按账单、Wi-Fi 与断网问题继续查
             </h1>
+            <section data-page-answer className="best-answer speakable-summary mt-6 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 text-[#202D3A]">
+              <h2 className="text-lg font-bold">直接结论</h2>
+              <p className="mt-3 leading-7">先分清收费异常、全家断网、局部 Wi-Fi 弱或单设备问题，再查对应答案。账单问题比较两期明细，网络问题比较有线与无线表现；原因不同，处理入口也不同。</p>
+              <dl className="mt-4 space-y-3 text-sm leading-7">
+                <div><dt className="font-bold">适用条件</dt><dd>适合已装宽带后的账单、Wi-Fi、断网和设备问题；新装或搬家办理条件进入主站宽带 FAQ。</dd></div>
+                <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/internet/price-hike" className="font-semibold underline underline-offset-4">账单变化进入涨价核对</Link><Link href="/internet/diagnosis" className="font-semibold underline underline-offset-4">网络异常进入逐步排查</Link></dd></div>
+              </dl>
+            </section>
             <p className="mt-5 max-w-4xl text-base leading-8 text-slate-700">本页优先承接已经使用宽带后的收费、断网、Wi-Fi 与设备异常，也保留安装失败及迁移问题的排查入口。首次申请与地址选择转到主站办理 FAQ。</p>
             <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/internet/faq" className="font-semibold underline underline-offset-4">准备新装或搬家办理？查看主站宽带办理 FAQ</Link></p>
 
