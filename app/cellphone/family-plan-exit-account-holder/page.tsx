@@ -249,6 +249,17 @@ export default function FamilyPlanExitAccountHolderPage() {
           </div>
         </section>
 
+        <section aria-labelledby="family-authorization-policy" className="mt-10 rounded-2xl border border-[#D5E5EC] bg-white p-5 sm:p-8">
+          <h2 id="family-authorization-policy" className="text-2xl font-bold">运营商官方规则：同网转责任不等于跨网保号</h2>
+          <p className="mt-3 leading-7 text-[#526170]">在同一运营商内将线路移到另一个账单账户，通常涉及原账户授权与接收方资格；跨运营商携号转出则需另行核对原运营商的转号资料及安全验证。</p>
+          <ul className="mt-4 list-disc space-y-3 pl-5 leading-7 text-[#526170]">
+            <li><strong>AT&amp;T：</strong>账单责任转移有发起、接受及资格核验步骤。<a href="https://www.att.com/support/article/wireless/KM1045265/" target="_blank" rel="noopener noreferrer" className="ml-1 text-[#164B78] underline">查看官方说明</a></li>
+            <li><strong>T-Mobile：</strong>Change of Responsibility 可能影响套餐和优惠，需核对授权及接收要求。<a href="https://www.t-mobile.com/support/account/transfer-account-or-line-ownership" target="_blank" rel="noopener noreferrer" className="ml-1 text-[#164B78] underline">查看官方说明</a></li>
+            <li><strong>Verizon：</strong>账户 Owner/Manager 的权限与接收方资格需要核实。<a href="https://www.verizon.com/support/transfer-your-service/" target="_blank" rel="noopener noreferrer" className="ml-1 text-[#164B78] underline">查看官方说明</a></li>
+          </ul>
+          <p className="mt-4 leading-7 text-[#526170]">如果户主失联或拒绝配合，不能保证普通成员能自行取得转号 PIN。先联系原运营商咨询合法授权或账户恢复路径；保号转出完成前，不要主动取消旧号码。</p>
+        </section>
+
         <p className="mt-10 text-center text-xs leading-5 text-[#526170]">
           最后更新：2026年10月｜账户角色、号码转移、身份验证、设备与优惠规则可能随运营商和账户不同，请以当前账户与官方流程为准。
         </p>
