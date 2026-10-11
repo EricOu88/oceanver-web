@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import FamilyPlanQuestionFlow from './FamilyPlanQuestionFlow';
 
 const pageUrl = 'https://oceanver.com/cellphone/family-plan-guide';
 
@@ -117,6 +118,7 @@ export default function FamilyPlanGuidePage() {
         </header>
 
         <div className="space-y-8">
+          <FamilyPlanQuestionFlow />
           <section aria-labelledby="family-decision-heading">
             <h2 id="family-decision-heading" className="text-2xl font-bold">家庭计划变更：先回答这四个问题</h2>
             <p className="mt-3 leading-7 text-[#526170]">
