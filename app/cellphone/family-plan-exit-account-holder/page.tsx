@@ -41,6 +41,39 @@ const paths = [
   },
 ];
 
+const exitDecisionBranches = [
+  {
+    title: '户主失联，拿不到转号资料',
+    check: '确认自己是否是授权用户、号码是否仍有效，以及运营商是否提供经核验的账户恢复或授权流程。',
+    caution: '没有户主授权时，不保证能直接获取 Account Number 或 Transfer PIN；不要尝试绕过身份验证。',
+    action: '整理账户资料并联系原运营商核实可行路径。',
+  },
+  {
+    title: '户主拒绝配合，但我想保留号码',
+    check: '保留与号码使用、付款有关的记录，核对账户登记人和运营商对号码转移的授权要求。',
+    caution: '号码长期由你使用，不一定代表你拥有账户管理权；不要先取消旧线。',
+    action: '向运营商咨询争议或授权处理渠道，必要时寻求合适的消费者援助。',
+  },
+  {
+    title: '户主同意，成员要带号码离开',
+    check: '取得运营商要求的 Account Number、Transfer PIN 和授权，核对号码 active、设备解锁及目标网络兼容性。',
+    caution: '不同运营商的转号 PIN 有效期和账户限制可能不同；成功转入前保持原号码有效。',
+    action: '确认新服务已准备好后再发起携号转入。',
+  },
+  {
+    title: '留在同一运营商，只想分开付账',
+    check: '咨询当前运营商是否支持账单责任转移，以及接收人的资格、设备分期和优惠变化。',
+    caution: '同运营商转责任与跨网携号不是同一流程，优惠可能无法原样保留。',
+    action: '先核实转责任资格，再决定是否新开独立账户。',
+  },
+  {
+    title: '人在中国或没有 SSN，能否保号退组？',
+    check: '核对当前运营商可接受的身份验证方式、远程办理限制和新账户资格。',
+    caution: '不能假定境外远程操作或没有 SSN 一定成功，也不能断言一定失败。',
+    action: '准备身份及账户资料，请运营商按具体情况确认。',
+  },
+];
+
 const checks = [
   '你当前是 Account Holder、Authorized User，还是普通家庭成员？',
   '这个号码是否必须保留？如果不保留，是否确定可以直接取消？',
@@ -117,6 +150,26 @@ export default function FamilyPlanExitAccountHolderPage() {
                 <p className="mt-2 text-sm leading-7 text-[#526170]">{item.text}</p>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section aria-labelledby="exit-decision-heading" className="mt-10">
+          <h2 id="exit-decision-heading" className="text-2xl font-black">户主失联与保号：按实际情况判断</h2>
+          <p className="mt-3 leading-7 text-[#526170]">先区分是否取得户主授权、是否保留原号码，以及要跨网转出还是同网转责任。每一步以当前运营商的账户规则为准。</p>
+          <div className="mt-5 grid gap-4 sm:grid-cols-2">
+            {exitDecisionBranches.map((item) => (
+              <article key={item.title} className="rounded-2xl border border-[#D5E5EC] bg-white p-5">
+                <h3 className="font-bold">{item.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-[#526170]"><strong className="text-[#202D3A]">先核对：</strong>{item.check}</p>
+                <p className="mt-2 text-sm leading-7 text-[#526170]"><strong className="text-[#202D3A]">不要直接推断：</strong>{item.caution}</p>
+                <p className="mt-2 text-sm leading-7 text-[#526170]"><strong className="text-[#202D3A]">下一步：</strong>{item.action}</p>
+              </article>
+            ))}
+          </div>
+          <div className="mt-5 flex flex-wrap gap-4 text-sm font-semibold">
+            <Link href="/cellphone/faq/family-plan-leave-keep-number" className="text-[#164B78] underline underline-offset-4">退组保号准备 →</Link>
+            <Link href="/cellphone/faq/promo-credit-not-received" className="text-[#164B78] underline underline-offset-4">设备分期与抵扣 →</Link>
+            <Link href="/contact" className="text-[#164B78] underline underline-offset-4">需要人工核实 →</Link>
           </div>
         </section>
 
