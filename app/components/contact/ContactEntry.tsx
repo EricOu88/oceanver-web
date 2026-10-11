@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { Phone, MessageCircle, Mail, Copy, X, ArrowRight } from 'lucide-react'
 import { useState } from 'react'
+import { trackContact } from '../ContactAnalytics'
 
 const WECHAT_ID = '美国鸿达电讯'
 const PHONE_NUMBER = '15108496191' // For tel: and sms: links
@@ -20,10 +21,15 @@ export default function ContactEntry({
   const [copied, setCopied] = useState(false)
   const [showQRModal, setShowQRModal] = useState(false)
 
-  const copyWechat = () => {
-    navigator.clipboard.writeText(WECHAT_ID)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
+  const copyWechat = async () => {
+    try {
+      await navigator.clipboard.writeText(WECHAT_ID)
+      trackContact('wechat_copy', 'contact_entry', '复制微信号')
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch {
+      setCopied(false)
+    }
   }
 
   const qrModal = showQRModal && (
@@ -63,13 +69,13 @@ export default function ContactEntry({
 
   if (variant === 'homepage') {
     return (
-      <section className="homepage-contact-card grid gap-8 rounded-[30px] border border-[#E8EDF1] bg-white p-6 md:grid-cols-[0.8fr_1.2fr] md:items-center md:gap-12 md:p-10">
+      <section data-contact-location="homepage_contact" className="homepage-contact-card grid gap-8 rounded-[30px] border border-[#E8EDF1] bg-white p-6 md:grid-cols-[0.8fr_1.2fr] md:items-center md:gap-12 md:p-10">
         <div>
           <h2 className="text-2xl font-black text-slate-900 md:text-3xl">{title}</h2>
           <p className="mt-4 text-[15px] leading-7 text-slate-600">{subtitle}</p>
         </div>
         <div className="divide-y divide-[#E9EEF2]">
-          <button onClick={() => setShowQRModal(true)} className="grid w-full grid-cols-[auto_1fr_auto] items-center gap-4 py-4 text-left first:pt-0 last:pb-0">
+          <button data-contact-method="wechat" onClick={() => setShowQRModal(true)} className="grid w-full grid-cols-[auto_1fr_auto] items-center gap-4 py-4 text-left first:pt-0 last:pb-0">
             <MessageCircle size={22} aria-hidden="true" className="text-[#2786A5]" />
             <span className="min-w-0">
               <span className="block font-bold text-[#202D3A]">微信咨询</span>
@@ -100,7 +106,7 @@ export default function ContactEntry({
   }
 
   return (
-    <section className="bg-white border border-[#D8E2EA] rounded-3xl p-4 md:p-6 space-y-4">
+      <section data-contact-location="contact_entry" className="bg-white border border-[#D8E2EA] rounded-3xl p-4 md:p-6 space-y-4">
       {/* 标题 */}
       <div className="text-center space-y-1">
         <h2 className="text-xl md:text-2xl font-black text-slate-900">
@@ -114,6 +120,7 @@ export default function ContactEntry({
       <div className="grid md:grid-cols-3 gap-2 md:gap-3 items-stretch">
         {/* ================= 微信（主入口） ================= */}
         <button
+          data-contact-method="wechat"
           onClick={() => setShowQRModal(true)}
           className="bg-blue-700 hover:bg-blue-800 text-white rounded-xl p-4 md:p-5 flex flex-col items-center text-center gap-2 transition-all shadow-sm hover:shadow-md transform hover:scale-105"
         >
@@ -174,3 +181,4 @@ export default function ContactEntry({
     </section>
   )
 }
+
