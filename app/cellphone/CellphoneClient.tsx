@@ -127,11 +127,6 @@ const KNOWLEDGE_LINKS = [
     desc: '比较账户类型、套餐层级、热点与数据政策，不直接假设商业账户一定更快或更便宜。',
   },
   {
-    href: '/cellphone/government',
-    title: 'Lifeline 政府通信补助怎么判断资格？',
-    desc: '从收入、政府福利项目、家庭状态和当前服务条件判断，ACP 已结束。',
-  },
-  {
     href: '/cellphone/faq',
     title: '进入完整手机问题库',
     desc: '从账单、信号、eSIM、转号、设备分期等问题继续查。',
