@@ -89,6 +89,10 @@ export default function PrepaidVsPostpaidPage() {
             预付费和后付费的核心差别是账户、付费和设备结构不同。真正选择时，还要看家庭线路、
             设备余额、Bill Credit、国际使用和退出条件。
           </p>
+                  <div className="mt-4 flex flex-wrap gap-4 text-sm font-semibold">
+            <Link href="/cellphone/diagnosis" className="text-[#164B78] underline underline-offset-4">先判断当前账户问题 →</Link>
+            <Link href="/cellphone/providers" className="text-[#164B78] underline underline-offset-4">再比较方案条件 →</Link>
+          </div>
         </header>
 
         <section className="rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-7 md:p-8">

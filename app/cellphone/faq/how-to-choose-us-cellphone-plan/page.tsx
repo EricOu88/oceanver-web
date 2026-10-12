@@ -91,6 +91,10 @@ export default function HowToChooseCellphonePlanPage() {
             不要先从“AT&T、T-Mobile、Verizon 哪家最好”开始。先看你现在的问题、
             使用时间、线路数量、设备状态、信号和国际使用，再决定是否需要比较不同方案。
           </p>
+                  <div className="mt-4 flex flex-wrap gap-4 text-sm font-semibold">
+            <Link href="/cellphone/diagnosis" className="text-[#164B78] underline underline-offset-4">还没确定问题？先诊断 →</Link>
+            <Link href="/cellphone/providers" className="text-[#164B78] underline underline-offset-4">已经明确需求？比较方案 →</Link>
+          </div>
         </header>
 
         <section className="rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-7 md:p-8">
