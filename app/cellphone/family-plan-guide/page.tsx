@@ -105,11 +105,9 @@ export default function FamilyPlanGuidePage() {
                 <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/cellphone/family-plan-exit-account-holder" className="font-semibold underline underline-offset-4">先核对户主权限与退出路径</Link><Link href="/cellphone/faq/family-plan-leave-keep-number" className="font-semibold underline underline-offset-4">再确认退组保号准备</Link></dd></div>
               </dl>
             </section>
-            <p className="mt-5 max-w-4xl text-base leading-8 text-slate-700">本页面向已经加入家庭账户的成员与户主。减线、退组或全家转网前，逐条确认剩余设备余额、抵扣、号码资料及操作权限，并核对剩余成员的费用影响。</p>
+
             <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/cellphone/att-family" className="font-semibold underline underline-offset-4">准备新办或转入 AT&T 家庭套餐？进入主站办理前比较</Link></p>
-          <p className="mt-5 max-w-3xl text-base leading-7 text-[#526170] sm:text-lg">
-            家庭计划不能只看“每条线多少钱”。真正要看的是一共有几条线、哪些人需要换手机、哪些设备还在分期、哪些线路还在拿 Bill Credit、是否所有号码都需要一起转，以及当前总账单为什么变化。
-          </p>
+
           <div className="mt-7 flex flex-wrap gap-3">
             <Link href="/cellphone/diagnosis" className="inline-flex min-h-12 items-center justify-center rounded-xl bg-[#164B78] px-5 font-bold text-white transition hover:bg-[#103B60]">
               先判断家庭多线问题
