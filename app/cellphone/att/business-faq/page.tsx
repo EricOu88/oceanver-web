@@ -48,7 +48,6 @@ export default function ATTBusinessFAQPage() {
             <Link href="/cellphone/diagnosis" className={primaryStyle}>先判断实际问题</Link>
             <Link href="/cellphone/providers" className="rounded-lg border border-[#164B78] px-5 py-3 font-semibold text-[#164B78] transition hover:bg-[#D5E5EC] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2786A5]">已经确定要比较方案</Link>
           </div>
-          <p className="mt-4 text-sm leading-6">信号、速度或 SIM/eSIM 异常先做诊断；只有明确要比较 Business 与 Consumer 方案时，再查看方案比较。</p>
         </header>
         <section aria-labelledby="questions-heading" className="mt-4">
           <h2 id="questions-heading" className="text-2xl font-bold text-[#103B60]">先看账户、套餐和实际使用条件</h2>
