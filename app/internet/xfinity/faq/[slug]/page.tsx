@@ -163,6 +163,10 @@ export default async function XfinityFAQDetailPage({
                 <p className="mt-2 text-base font-semibold leading-8 text-[#202D3A] md:text-lg">
                   {faq.summary}
                 </p>
+                <div className="mt-3 flex flex-wrap gap-3 text-sm font-semibold">
+                  <Link href="/internet/diagnosis" className="text-[#164B78] underline underline-offset-4 hover:text-[#103B60]">下一步：按问题自查</Link>
+                  <Link href="/contact" className="text-[#164B78] underline underline-offset-4 hover:text-[#103B60]">账户费用需核实</Link>
+                </div>
               </div>
             )}
 
