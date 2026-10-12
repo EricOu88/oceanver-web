@@ -151,9 +151,7 @@ export default function InternetProvidersPage() {
           </h1>
 
           <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-[#526170] sm:text-lg">
-            Xfinity、AT&amp;T Fiber、Spectrum、Frontier
-            不能只看谁现在广告价格最低。先确认地址、真实长期月费、设备和安装条件，
-            再判断换网到底值不值得。
+            先确认地址覆盖、长期月费、设备费与安装条件，再判断换网是否值得；不要只看广告价。
           </p>
         </section>
 
