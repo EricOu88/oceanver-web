@@ -124,8 +124,7 @@ export default function CellphoneProvidersPage() {
               先把真正会影响结果的项目比清楚
             </h1>
             <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-[#526170] md:text-lg">
-              当你已经判断“可能值得换”以后，再进入方案比较。设备余额、Bill Credit、
-              家庭多线、信号、国际使用和转网条件，都可能让同一个报价产生完全不同的结果。
+              先核对设备余额、优惠抵扣、多线价格和信号覆盖，再决定是否换套餐；实际资格需要账户核实。
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <Link
