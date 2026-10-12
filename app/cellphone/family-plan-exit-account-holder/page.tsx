@@ -5,7 +5,6 @@ import {
   KeyRound,
   PhoneCall,
   ShieldCheck,
-  UserRoundCog,
   Users,
 } from 'lucide-react';
 
@@ -132,19 +131,6 @@ export default function FamilyPlanExitAccountHolderPage() {
             </div>
           </section>
         </header>
-
-        <section className="rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
-          <div className="flex gap-3">
-            <UserRoundCog className="mt-1 shrink-0 text-[#2786A5]" size={27} />
-            <div>
-              <h2 className="text-2xl font-black">第一步：先确认你在账户里的角色</h2>
-              <p className="mt-3 leading-7 text-[#526170]">
-                Account Holder、Authorized User 和普通成员能做的事情可能不同。
-                只有先确认账户角色，才知道哪些操作可以自己完成、哪些需要户主授权或运营商后台验证。
-              </p>
-            </div>
-          </div>
-        </section>
 
         <section className="py-12">
           <h2 className="text-3xl font-black">最常见的 5 种情况</h2>
