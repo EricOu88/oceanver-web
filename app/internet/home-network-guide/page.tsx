@@ -64,12 +64,15 @@ export default function HomeNetworkGuidePage() {
   return (
     <main className="min-h-screen bg-[#FCFDFE] px-4 py-12 text-[#202D3A] md:py-16">
       <div className="mx-auto max-w-5xl">
-        <Link
+        <nav aria-label="页面返回导航" className="flex flex-nowrap items-center gap-4 overflow-x-auto py-1">
+            <Link href="/" className="shrink-0 whitespace-nowrap text-sm font-semibold text-[#246B95] hover:text-[#103B60]">← 返回首页</Link>
+            <Link
           href="/internet"
-          className="text-sm font-bold text-[#526170] transition hover:text-[#164B78]"
+          className="shrink-0 whitespace-nowrap text-sm font-bold text-[#526170] transition hover:text-[#164B78]"
         >
           ← 返回宽带问题中心
         </Link>
+          </nav>
 
         <header className="mt-8">
           <p className="text-sm font-bold text-[#246B95]">家庭网络判断</p>

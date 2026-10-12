@@ -83,9 +83,12 @@ export default function FamilyPlanGuidePage() {
     <main className="min-h-screen bg-[#FCFDFE] px-4 py-10 text-[#202D3A] sm:px-6 sm:py-14">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageSchema) }} />
       <div className="mx-auto max-w-4xl">
-        <Link href="/cellphone" className="text-sm font-semibold text-[#246B95] hover:text-[#103B60]">
+        <nav aria-label="页面返回导航" className="flex flex-nowrap items-center gap-4 overflow-x-auto py-1">
+            <Link href="/" className="shrink-0 whitespace-nowrap text-sm font-semibold text-[#246B95] hover:text-[#103B60]">← 返回首页</Link>
+            <Link href="/cellphone" className="shrink-0 whitespace-nowrap text-sm font-semibold text-[#246B95] hover:text-[#103B60]">
           ← 返回手机问题
         </Link>
+          </nav>
 
         <header className="py-10 sm:py-14">
           <p className="mb-4 inline-flex rounded-full bg-[#F4F8FA] px-3 py-1 text-sm font-semibold text-[#246B95]">

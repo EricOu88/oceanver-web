@@ -114,12 +114,15 @@ export default function CellphoneFAQPage() {
     <main className="min-h-screen bg-[#FCFDFE] text-[#202D3A]">
       <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
         <div className="mb-8">
-          <Link
+          <nav aria-label="页面返回导航" className="flex flex-nowrap items-center gap-4 overflow-x-auto py-1">
+            <Link href="/" className="shrink-0 whitespace-nowrap text-sm font-semibold text-[#246B95] hover:text-[#103B60]">← 返回首页</Link>
+            <Link
             href="/cellphone"
-            className="text-sm font-bold text-[#526170] transition hover:text-[#164B78]"
+            className="shrink-0 whitespace-nowrap text-sm font-bold text-[#526170] transition hover:text-[#164B78]"
           >
             ← 返回手机问题中心
           </Link>
+          </nav>
         </div>
 
         <header className="mx-auto mb-12 max-w-4xl">

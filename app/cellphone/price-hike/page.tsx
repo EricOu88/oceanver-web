@@ -122,9 +122,12 @@ export default function CellphonePriceHikePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <div className="mx-auto max-w-5xl">
-        <Link href="/cellphone" className="text-sm font-semibold text-[#246B95] hover:text-[#103B60]">
+        <nav aria-label="页面返回导航" className="flex flex-nowrap items-center gap-4 overflow-x-auto py-1">
+            <Link href="/" className="shrink-0 whitespace-nowrap text-sm font-semibold text-[#246B95] hover:text-[#103B60]">← 返回首页</Link>
+            <Link href="/cellphone" className="shrink-0 whitespace-nowrap text-sm font-semibold text-[#246B95] hover:text-[#103B60]">
           ← 返回手机问题中心
         </Link>
+          </nav>
 
         <header className="py-10 sm:py-14">
           <p className="mb-4 inline-flex rounded-full bg-[#F4F8FA] px-3 py-1 text-sm font-semibold text-[#246B95]">
