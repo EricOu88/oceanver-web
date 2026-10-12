@@ -289,6 +289,16 @@ export default function CellphonePriceHikePage() {
           </div>
         </section>
 
+        <section aria-labelledby="cellphone-official-sources" className="mt-10 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+          <h2 id="cellphone-official-sources" className="text-2xl font-black">官方规则与适用范围</h2>
+          <p className="mt-3 text-sm leading-7 text-[#526170]">核实日期：2026年10月11日。以下来源用于核对对应运营商的规则，不代表已经核实你的账户，也不能套用于其他运营商、商业账户或所有旧套餐。最终以当前账单、订单和活动条款为准。</p>
+          <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-7 text-[#526170]">
+            <li><a href="https://www.att.com/support/article/my-account/KM1052054/" className="font-semibold text-[#164B78] underline underline-offset-4">AT&T 折扣与设备抵扣说明</a>：部分设备优惠要求保持服务、账户状态和分期条件；取消、升级或提前结清可能影响抵扣，须核对具体活动。</li>
+            <li><a href="https://www.att.com/support/article/wireless/KM1045265/" className="font-semibold text-[#164B78] underline underline-offset-4">AT&T 账单责任转移说明</a>：转责任可能改变多线价格与优惠资格，设备分期需按转移规则处理；不能按原平均每线价格估算剩余账单。</li>
+            <li><a href="https://www.verizon.com/support/transfer-your-service/" className="font-semibold text-[#164B78] underline underline-offset-4">Verizon 账户间转线说明</a>：不同优惠的可转移性不同，并受接收账户和套餐资格影响；同运营商转责任与跨运营商携号转出分别核实。</li>
+          </ul>
+        </section>
+
         <p className="mt-10 text-center text-xs leading-5 text-[#526170]">
           最后更新：2026年10月｜价格、资格、折扣、Free Line、设备与账户结果可能随运营商政策变化，请以当前账户与实际规则为准。
         </p>
