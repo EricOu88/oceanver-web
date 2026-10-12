@@ -5,7 +5,6 @@ import {
   CheckCircle2,
   CreditCard,
   Home,
-  ShieldCheck,
   Smartphone,
   UserRoundCheck,
 } from 'lucide-react';
@@ -84,19 +83,6 @@ export default function NoSsnCellphoneInternetPage() {
             </div>
           </section>
         </header>
-
-        <section className="rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-7 md:p-8">
-          <div className="flex gap-3">
-            <ShieldCheck className="mt-1 shrink-0 text-[#2786A5]" size={28} />
-            <div>
-              <h2 className="text-2xl font-black">先记住一个原则</h2>
-              <p className="mt-3 leading-relaxed text-[#526170]">
-                SSN、身份验证和信用审核是不同概念。不同运营商、账户类型、设备方案和服务地址，
-                可能使用不同的核实方式。网页可以帮你判断需要检查什么，但不能替代当前资格结果。
-              </p>
-            </div>
-          </div>
-        </section>
 
         <section className="py-12">
           <h2 className="text-3xl font-black">先分清这 4 件事</h2>

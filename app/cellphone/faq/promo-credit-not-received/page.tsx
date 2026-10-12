@@ -5,7 +5,6 @@ import {
   CheckCircle2,
   CircleDollarSign,
   Clock3,
-  FileSearch,
   ReceiptText,
   ShieldCheck,
   Smartphone,
@@ -118,19 +117,6 @@ export default function PromoCreditNotReceivedPage() {
             </div>
           </section>
         </header>
-
-        <section className="rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
-          <div className="flex gap-3">
-            <FileSearch className="mt-1 shrink-0 text-[#2786A5]" size={27} />
-            <div>
-              <h2 className="text-2xl font-black">第一步：先确认“没到账”的到底是什么</h2>
-              <p className="mt-3 leading-7 text-[#526170]">
-                Trade-in、Monthly Bill Credit、转网奖励和 AutoPay 折扣的触发条件不同。
-                如果把它们混在一起，很容易误以为“所有优惠都应该同时出现”。
-              </p>
-            </div>
-          </div>
-        </section>
 
         <section className="py-12">
           <h2 className="text-3xl font-black">常见的 5 类优惠</h2>
