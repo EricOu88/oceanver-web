@@ -468,6 +468,16 @@ export default function PriceHikeClient() {
             </Link>
           </section>
 
+        <section aria-labelledby="internet-official-sources" className="mt-10 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+          <h2 id="internet-official-sources" className="text-2xl font-black">官方规则与适用范围</h2>
+          <p className="mt-3 text-sm leading-7 text-[#526170]">核实日期：2026年10月11日。以下来源用于核对对应运营商的规则，不代表已经核实你的账户，也不能套用于其他运营商、商业账户或所有旧套餐。最终以当前账单、订单和活动条款为准。</p>
+          <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-7 text-[#526170]">
+            <li><a href="https://www.xfinity.com/support/articles/automatic-payment-paperless-billing" className="font-semibold text-[#164B78] underline underline-offset-4">Xfinity 自动付款与无纸账单折扣</a>：付款方式、服务资格及生效账期会影响折扣；此规则仅用于核对符合条件的 Xfinity 账户。</li>
+            <li><a href="https://www.xfinity.com/support/articles/most-common-taxes-fees-surcharges-on-your-bill" className="font-semibold text-[#164B78] underline underline-offset-4">Xfinity 设备租赁与其他收费</a>：设备费可能包含在服务价格或促销中，促销结束后可能恢复；按实际租赁设备和账单项目确认。</li>
+            <li><a href="https://www.xfinity.com/support/articles/new-bill-design" className="font-semibold text-[#164B78] underline underline-offset-4">Xfinity 账单阅读说明</a>：区分月费、部分账期、一次性费用和税费，并核对账单变化说明。</li>
+          </ul>
+        </section>
+
           <p className="mt-12 text-center text-xs leading-5 text-[#526170]">
             最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前账户与官方规则为准。
           </p>
