@@ -179,6 +179,10 @@ export default function SpectrumFAQPage() {
           <p className="mt-4 max-w-3xl text-base leading-7 text-[#526170] md:text-lg">
             按账单、网络、设备、地址和账户问题整理。先核对可见记录，再根据当前账户与地址判断下一步。
           </p>
+                  <div className="mt-4 flex flex-wrap gap-4 text-sm font-semibold">
+            <Link href="/internet/diagnosis" className="text-[#164B78] underline underline-offset-4">网络异常先诊断 →</Link>
+            <Link href="/internet/price-hike" className="text-[#164B78] underline underline-offset-4">费用变化先核对 →</Link>
+          </div>
         </header>
 
         <div className="mt-10 space-y-8">
