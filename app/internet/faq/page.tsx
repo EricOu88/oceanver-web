@@ -120,13 +120,16 @@ export default function InternetFAQPage() {
 
       <main className="min-h-screen bg-[#FCFDFE] px-4 py-8 text-[#202D3A] sm:px-6 sm:py-12">
         <div className="mx-auto max-w-5xl">
-          <Link
+          <nav aria-label="页面返回导航" className="flex flex-nowrap items-center gap-4 overflow-x-auto py-1">
+            <Link href="/" className="shrink-0 whitespace-nowrap text-sm font-semibold text-[#246B95] hover:text-[#103B60]">← 返回首页</Link>
+            <Link
             href="/internet"
-            className="inline-flex items-center gap-2 text-sm text-[#526170] transition hover:text-[#164B78]"
+            className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 text-sm text-[#526170] transition hover:text-[#164B78]"
           >
             <ArrowLeft size={16} />
             返回宽带问题入口
           </Link>
+          </nav>
 
           {/* HERO */}
           <section className="mx-auto mt-8 max-w-4xl text-center">
