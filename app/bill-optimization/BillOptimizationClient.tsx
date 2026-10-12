@@ -133,7 +133,6 @@ export default function BillOptimizationClient() {
 
             <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/bill-optimization" className="font-semibold underline underline-offset-4">原因已确认，准备比较替代套餐？查看主站成本比较</Link></p>
 
-          <p className="mt-4 font-semibold text-blue-900">先判断原因，再决定是否换套餐或换运营商。</p>
         </div>
       </header>
 

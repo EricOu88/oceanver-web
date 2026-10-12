@@ -97,11 +97,6 @@ export default function PriceHikeClient() {
 
             <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/internet/price-hike" className="font-semibold underline underline-offset-4">已确认持续涨价，准备换网？查看地址与切换成本比较</Link></p>
 
-            <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-[#526170] sm:text-lg">
-              先确认涨价是不是长期的，再比较当前服务质量、真实月费、
-              新方案长期成本和切换条件。不是所有涨价都需要马上换运营商。
-            </p>
-
             <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
               <Link
                 href="/bill-optimization"
