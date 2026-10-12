@@ -94,7 +94,7 @@ export default function PriceHikeClient() {
                 <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/bill-optimization" className="font-semibold underline underline-offset-4">先按收费项目核对账单</Link><Link href="https://baymediastar.com/internet/price-hike" className="font-semibold underline underline-offset-4">原因明确后比较换网成本</Link></dd></div>
               </dl>
             </section>
-            <p className="mt-5 max-w-4xl text-base leading-8 text-slate-700">先判断增加的是持续月费还是一次性费用，再核对优惠结束、AutoPay 和设备收费。整理清楚后，才能判断是否需要调整现有账户或进一步比较其他服务。</p>
+
             <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/internet/price-hike" className="font-semibold underline underline-offset-4">已确认持续涨价，准备换网？查看地址与切换成本比较</Link></p>
 
             <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-[#526170] sm:text-lg">
