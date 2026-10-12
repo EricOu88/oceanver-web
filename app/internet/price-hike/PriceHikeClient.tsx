@@ -171,7 +171,7 @@ export default function PriceHikeClient() {
                 },
                 {
                   title: '自动付款折扣消失',
-                  check: '核对 AutoPay、无纸账单、付款方式及对应账期。',
+                  check: '核对 AutoPay、无纸账单、付款方式及对应账期。Xfinity 当前每月 $10 的相关折扣要求符合资格的 Internet 账户使用银行账户自动扣款并启用无纸账单；信用卡、借记卡不符合该折扣条件，变更后可能需要最多两个账期显示。其他运营商及旧优惠按各自规则核实。',
                   caution: '重新设置不代表之前少给的折扣一定会补发。',
                 },
                 {
