@@ -74,6 +74,10 @@ export default function AfterCancelFinalBillPage() {
             “已经打电话取消”不等于所有后续事项都自动结束。真正需要确认的是：
             服务状态、Final Bill、设备归还、AutoPay 和未结余额是不是都已经闭环。
           </p>
+                  <div className="mt-4 flex flex-wrap gap-4 text-sm font-semibold">
+            <Link href="/bill-optimization" className="text-[#164B78] underline underline-offset-4">核对取消后的最终账单 →</Link>
+            <Link href="/contact" className="text-[#164B78] underline underline-offset-4">账户状态需要人工核实 →</Link>
+          </div>
         </header>
 
         <section className="rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
