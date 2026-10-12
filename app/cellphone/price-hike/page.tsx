@@ -144,12 +144,9 @@ export default function CellphonePriceHikePage() {
                 <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/bill-optimization" className="font-semibold underline underline-offset-4">先找出具体变化项目</Link><Link href="/cellphone/family-plan-guide" className="font-semibold underline underline-offset-4">涉及多线变动时核对家庭账户</Link></dd></div>
               </dl>
             </section>
-            <p className="mt-5 max-w-4xl text-base leading-8 text-slate-700">本页帮助现有手机用户区分套餐月费、线路折扣、设备分期、Bill Credit 与附加服务变化。不同运营商和账户的处理条件不同，应核对当前账单后再行动。</p>
+
             <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/cellphone/att/price-increase" className="font-semibold underline underline-offset-4">已确认是 AT&T 旧计划调整？查看 AT&T 换套餐成本</Link></p>
-          <p className="mt-5 max-w-3xl text-base leading-7 text-[#526170] sm:text-lg">
-            先别把“账单变贵”直接理解成“运营商涨价”。家庭账单可能同时受到每线价格、AutoPay、多线折扣、
-            Free Line、设备分期和 Bill Credit 影响。先找出哪一层变了，再决定要不要动方案。
-          </p>
+
         </header>
 
         <section className="rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">

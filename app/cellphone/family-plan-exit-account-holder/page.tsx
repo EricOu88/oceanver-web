@@ -122,10 +122,15 @@ export default function FamilyPlanExitAccountHolderPage() {
           <h1 className="max-w-4xl text-3xl font-black leading-tight tracking-tight sm:text-5xl">
             想退出家庭计划、户主失联或想保留原号码，先判断什么？
           </h1>
-          <p className="mt-5 max-w-3xl text-base leading-7 text-[#526170] sm:text-lg">
-            家庭计划退出不是单纯“把一条线移出去”。真正需要先判断的是：
-            谁控制账户、号码是否要保留、能不能取得转号资料、设备和 Credit 是否还没结束，以及接收新账户的人是否满足当前验证条件。
-          </p>
+          <section data-page-answer className="best-answer speakable-summary mt-6 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5">
+            <h2 className="text-lg font-bold">直接结论</h2>
+            <p className="mt-3 leading-7">先确认户主授权、号码是否保留、设备余额及优惠抵扣。保号转网成功前不要取消旧号码；户主失联时先走运营商官方授权流程。</p>
+            <p className="mt-3 text-sm leading-7 text-[#526170]">适合已在家庭计划中、准备退组或遇到户主失联的用户；具体操作须核实账户资格。</p>
+            <div className="mt-4 flex flex-wrap gap-4 text-sm font-semibold">
+              <Link href="/cellphone/family-plan-guide" className="text-[#164B78] underline underline-offset-4">还没决定如何调整家庭计划 →</Link>
+              <Link href="/contact" className="text-[#164B78] underline underline-offset-4">户主无法配合，联系人工核实 →</Link>
+            </div>
+          </section>
         </header>
 
         <section className="rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
