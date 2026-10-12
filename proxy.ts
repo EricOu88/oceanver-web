@@ -23,6 +23,14 @@ export function proxy(request: NextRequest) {
   const { pathname } = url;
   const hostname = request.headers.get("host") || "";
 
+  // 统一 Oceanver 唯一公开主机：旧 www 结果与普通页面均永久转向非 www。
+  // 必须早于 robots/sitemap 放行，避免 www 继续提供可索引的重复 URL。
+  if (hostname.toLowerCase().split(":")[0] === "www.oceanver.com") {
+    url.hostname = "oceanver.com";
+    url.protocol = "https:";
+    return NextResponse.redirect(url, 301);
+  }
+
   // 【规则 0】永远放行 robots.txt 和 sitemap.xml
   if (pathname === "/robots.txt" || pathname === "/sitemap.xml") {
     return NextResponse.next();
@@ -50,6 +58,15 @@ export function proxy(request: NextRequest) {
   // 【规则 0.5】vercel.app 域名一律 410（但允许 SEO 基础文件）
   if (hostname.includes("vercel.app")) {
     return new Response("Gone", { status: 410 });
+  }
+
+  // 旧 WordPress 根路径 Xfinity FAQ 已由新站的账户问题库取代。
+  // 避免旧 URL 继续与主站 Xfinity 涨价文章争夺同一搜索意图。
+  if (pathname === "/xfinity/faq" || pathname === "/xfinity/faq/") {
+    return NextResponse.redirect(
+      "https://baymediastar.com/internet/xfinity",
+      301
+    );
   }
 
   // 【规则 2】强制所有 URL 使用小写路径（保留查询参数）
