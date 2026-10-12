@@ -138,7 +138,6 @@ export default function CellphoneFAQPage() {
                 <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/cellphone/price-hike" className="font-semibold underline underline-offset-4">账单变贵先核对收费</Link><Link href="/cellphone/diagnosis" className="font-semibold underline underline-offset-4">服务异常先按症状判断</Link></dd></div>
               </dl>
             </section>
-            <p className="mt-5 max-w-4xl text-base leading-8 text-slate-700">本页承接使用中的账单、信号、SIM/eSIM、抵扣与家庭账户问题。先找到问题类型，再进入具体排查页面；准备购买或开通时进入主站办理 FAQ。</p>
             <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/cellphone/faq" className="font-semibold underline underline-offset-4">准备开通、转号或选择套餐？查看手机卡办理 FAQ</Link></p>
           <p className="mt-5 text-lg leading-relaxed text-[#526170]">
             这里不是套餐目录。先找到你正在遇到的问题，再进入对应判断节点；只有当方向已经清楚时，才进入方案比较或人工核实。
