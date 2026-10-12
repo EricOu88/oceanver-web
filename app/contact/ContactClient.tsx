@@ -43,7 +43,7 @@ export default function ContactClient() {
             <a href="#wechat-qr" className="flex h-full flex-col rounded-2xl border border-[#D8E2EA] bg-white p-6 transition hover:border-[#246B95] hover:shadow-sm">
               <MessageCircle className="h-6 w-6 text-[#2786A5]" aria-hidden="true" />
               <h2 className="mt-4 text-xl font-bold">微信咨询</h2>
-              <p className="mt-2 flex-1 leading-[1.8] text-[#526170]">适合发送账单截图、设备状态或问题说明</p>
+              <p className="mt-2 flex-1 leading-[1.8] text-[#526170]">适合说明账单变化、设备状态；如需提供截图，请先遮盖个人和账户资料</p>
               <span className="mt-5 font-semibold text-[#164B78]">查看微信二维码 →</span>
             </a>
 
@@ -66,7 +66,7 @@ export default function ContactClient() {
           <section id="wechat-qr" aria-labelledby="wechat-qr-title" className="grid items-center gap-6 rounded-2xl border border-[#D8E2EA] bg-white p-6 md:grid-cols-[1fr_auto] md:gap-10 md:p-8">
             <div>
               <h2 id="wechat-qr-title" className="text-2xl font-black">微信咨询二维码</h2>
-              <p className="mt-3 leading-[1.8] text-[#526170]">添加微信后，可说明需要核实的问题。请先遮挡账单中的账户号码、完整地址等敏感信息。</p>
+              <p className="mt-3 leading-[1.8] text-[#526170]">添加微信后，可说明需要核实的问题。如需提供账单截图，请先遮盖姓名、完整地址、账户号码等敏感信息；不要发送密码、验证码或转号 PIN。</p>
               <p className="mt-4 font-semibold text-[#202D3A]">微信号：{wechatId}</p>
               <div className="mt-3">
                 <CopyWechatButton wechatId={wechatId} />
@@ -96,7 +96,7 @@ export default function ContactClient() {
           <section aria-labelledby="privacy-title" className="rounded-2xl border border-[#D8E2EA] bg-[#EDF5F9] p-6 md:p-8">
             <h2 id="privacy-title" className="text-2xl font-black">联系前请注意隐私</h2>
             <p className="mt-3 max-w-[900px] leading-[1.8] text-[#526170]">
-              可以提供账单项目、费用变化、设备状态、问题发生时间和地址覆盖相关信息，但不要在公开页面或留言中发送完整 SSN、银行卡号码、身份证件、完整账户密码或其他敏感信息。
+              可以提供账单项目、费用变化、设备状态、问题发生时间和地址覆盖相关信息，但不要在公开页面或留言中发送完整 SSN、银行卡号码、身份证件、账户密码、一次性验证码、转号 PIN、完整账户号码或其他敏感信息；涉及身份核验时请使用运营商官方或已确认安全的渠道。
             </p>
           </section>
 
