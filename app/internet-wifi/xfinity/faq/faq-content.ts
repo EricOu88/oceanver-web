@@ -28,7 +28,7 @@ export const xfinityFAQContent: Record<string, XfinityFAQContent> = {
       description: 'Xfinity 账单突然变贵时，先比较最近 2–3 期账单中的同一收费项目，检查优惠抵扣、基础月费、AutoPay、设备及一次性费用变化。',
     },
     content: {
-      whyCommon: '账单总额变化不一定代表基础套餐价格上涨。Promotion 或 Credit 到期、基础 Internet 月费调整、AutoPay 条件变化、Gateway 等设备费用、附加服务，以及 prorated charge 或其他一次性费用，都可能影响当期总额。',
+      whyCommon: '先看费用变化发生在哪个账期：优惠结束或基础月费调整可能持续影响后续账单；按比例收费或一次性项目则未必持续。',
       officialRules: '结合当前账户和账单确认 Promotion/Credit 的名称与期限、基础月费、AutoPay 资格、设备登记、附加服务及收费周期。一次性费用与 recurring charge 不同，具体以账单明细和当前账户记录为准。',
       realUsage: '取最近 2–3 期账单，按同一个 line item 比较金额和服务周期，标记新增、消失或金额变化的项目。确认是持续月费还是一次性/prorated charge 后，再决定是否联系 Xfinity 核对，并保存账单和账户通知。',
       suitableFor: '网页无法判断某个 Promotion/Credit 是否仍适用于你的账户，也无法确认具体收费是否会延续到下一期。只要 recurring charge、优惠状态或新增项目与账户记录对不上，就需要结合实际账单和账户核实。',
@@ -43,7 +43,7 @@ export const xfinityFAQContent: Record<string, XfinityFAQContent> = {
       description: 'Xfinity 账单异常时，先对照账单、订单和账户变更，再决定是否提出争议。',
     },
     content: {
-      whyCommon: '账单差额也可能由 Promotion/Credit 结束、prorated charge、设备费或服务变更造成，不一定是计费错误。',
+      whyCommon: '先核对争议项目是否出现在订单或服务变更记录中；账单金额与预期不同，不一定代表计费错误。',
       officialRules: '核对当前账户、账单周期、订单确认和服务变更记录，确认争议项目及适用期间。是否调整及处理时间均以调查结果为准。',
       realUsage: '比较最近几期同一收费项目，保存账单、订单确认、聊天记录和收据。提交项目名称与对照证据，记录 case number 及后续回复。',
       suitableFor: '网页无法确认某一笔费用是否已经被后台更正，也无法判断具体账户是否符合调整条件。若项目与订单不符、疑似重复收费，或费用依据无法从账单和订单中解释，应结合账户记录继续核实。',
@@ -73,7 +73,7 @@ export const xfinityFAQContent: Record<string, XfinityFAQContent> = {
       description: 'Xfinity 账单出现设备费时，先确认费用对应的 Gateway、Modem、Extender 或其他设备，再核对当前套餐和兼容要求。',
     },
     content: {
-      whyCommon: '账单中的设备费用不一定只指路由器，也可能对应 Gateway、Modem、Extender 或其他设备服务，或与账户设备配置及优惠变化有关。',
+      whyCommon: '同一账户可能登记多台设备或不同设备服务；设备清单与账单项目不一致时，需要先确认收费对应哪一台设备。',
       officialRules: '查看当前账单项目、套餐内容、账户登记设备和 Xfinity 当前兼容设备要求。自备设备是否可行取决于型号、套餐和功能需求；部分账户可能需要运营商 Gateway 特定功能。',
       realUsage: '先找到设备收费的准确名称，再对照账户设备列表确认对应设备及状态。考虑自备 Modem 或 Router 时，先核实当前套餐兼容性、功能和迁移步骤；不要假设买路由器就会免除设备费。',
       suitableFor: '网页无法确认你的具体设备是否已正确登记、是否兼容当前套餐，也不能仅凭设备名称判断某项费用是否应取消。出现未识别设备、账户设备与实际不符，或准备停用租赁设备时，应结合账户设备清单核实。',
