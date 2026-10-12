@@ -265,6 +265,12 @@ export default function CellphonePriceHikePage() {
             当前多线价格、Free Line / Promotion 是否仍有效、设备融资余额、未发 Bill Credit、
             AutoPay 条件和旧计划迁移后的实际价格，都需要结合真实账户与当前运营商规则确认。
           </p>
+          <p className="mt-4 text-sm leading-7 text-[#526170]">
+            咨询前建议准备：运营商名称、最近两期账单中发生变化的收费项目、涉及的线路数量，以及设备分期和 Bill Credit 情况。可先遮盖账单中的姓名、地址和账户号码。
+          </p>
+          <p className="mt-2 text-sm font-semibold leading-7 text-[#526170]">
+            请勿在公开评论或网页中提交账户密码、验证码、完整账户号码或 Transfer PIN；需要核验时通过官方或已确认安全的渠道进行。
+          </p>
           <Link href="/contact" className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#164B78] px-5 py-3 font-bold text-white hover:bg-[#103B60]">
             需要准确数字时进入人工核实 <ArrowRight size={16} />
           </Link>
