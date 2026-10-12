@@ -156,17 +156,20 @@ export default function SpectrumFAQPage() {
   const faqItems = faqSections.flatMap((section) => section.items)
 
   return (
-    <main className="min-h-screen bg-[#FCFDFE] px-4 py-8 text-[#202D3A] sm:px-6 sm:py-12">
+    <main className="compact-page min-h-screen bg-[#FCFDFE] px-4 py-4 text-[#202D3A] sm:px-6 sm:py-6">
       <div className="mx-auto max-w-4xl">
-        <Link
+        <nav aria-label="页面返回导航" className="page-nav-row">
+<Link href="/" className="page-nav-button">← 返回首页</Link>
+<Link
           href="/internet/spectrum"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-[#526170] transition hover:text-[#164B78]"
+          className="page-nav-button"
         >
           <ArrowLeft size={16} />
           返回 Spectrum 问题判断
         </Link>
+</nav>
 
-        <header className="mt-8">
+        <header className="mt-4">
           <p className="text-sm font-bold tracking-wide text-[#2786A5]">
             Spectrum 问题判断
           </p>
@@ -207,22 +210,22 @@ export default function SpectrumFAQPage() {
           ))}
         </div>
 
-        <section className="mt-10 rounded-2xl border border-[#D8E2EA] bg-white p-5 sm:p-6">
+        <section className="mt-4 rounded-2xl border border-[#D8E2EA] bg-white p-5 sm:p-6">
           <h2 className="text-xl font-black">下一步怎么判断？</h2>
           <p className="mt-2 text-sm leading-7 text-[#526170]">
             问题来源还不清楚时先做诊断；已经确认长期涨价时看涨价判断；已经确定值得比较时再进入宽带方案比较。
           </p>
           <div className="mt-5 flex flex-wrap gap-4 text-sm font-bold">
-            <Link href="/internet/diagnosis" className="inline-flex items-center gap-2 text-[#164B78] hover:text-[#103B60]">
+            <Link href="/internet/diagnosis" className="page-nav-button">
               宽带问题诊断 <ArrowRight size={16} />
             </Link>
-            <Link href="/internet/price-hike" className="inline-flex items-center gap-2 text-[#164B78] hover:text-[#103B60]">
+            <Link href="/internet/price-hike" className="page-nav-button">
               宽带涨价判断 <ArrowRight size={16} />
             </Link>
-            <Link href="/internet/providers" className="inline-flex items-center gap-2 text-[#164B78] hover:text-[#103B60]">
+            <Link href="/internet/providers" className="page-nav-button">
               宽带方案比较 <ArrowRight size={16} />
             </Link>
-            <Link href="/contact" className="inline-flex items-center gap-2 text-[#164B78] hover:text-[#103B60]">
+            <Link href="/contact" className="page-nav-button">
               需要时进入人工核实 <ArrowRight size={16} />
             </Link>
           </div>

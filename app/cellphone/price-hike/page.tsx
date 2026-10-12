@@ -117,18 +117,18 @@ const schema = {
 
 export default function CellphonePriceHikePage() {
   return (
-    <main className="min-h-screen bg-[#FCFDFE] px-4 py-10 text-[#202D3A] sm:px-6 sm:py-14">
+    <main className="compact-page min-h-screen bg-[#FCFDFE] px-4 py-4 text-[#202D3A] sm:px-6 sm:py-6">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <div className="mx-auto max-w-5xl">
-        <nav aria-label="页面返回导航" className="flex flex-nowrap items-center gap-4 overflow-x-auto py-1">
-            <Link href="/" className="shrink-0 whitespace-nowrap text-sm font-semibold text-[#246B95] hover:text-[#103B60]">← 返回首页</Link>
-            <Link href="/cellphone" className="shrink-0 whitespace-nowrap text-sm font-semibold text-[#246B95] hover:text-[#103B60]">
+        <nav aria-label="页面返回导航" className="page-nav-row">
+            <Link href="/" className="page-nav-button">← 返回首页</Link>
+            <Link href="/cellphone" className="page-nav-button">
           ← 返回手机问题中心
         </Link>
           </nav>
 
-        <header className="py-10 sm:py-14">
+        <header className="py-4 sm:py-6">
           <p className="mb-4 inline-flex rounded-full bg-[#F4F8FA] px-3 py-1 text-sm font-semibold text-[#246B95]">
             手机长期涨价判断
           </p>
@@ -140,7 +140,7 @@ export default function CellphonePriceHikePage() {
               <p className="mt-3 leading-7">手机账单变贵时先检查每条线：套餐月费、多线折扣、设备分期、Bill Credit 和附加服务。少一条线不等于只减掉它的费用，剩余线路可能重新计价。</p>
               <dl className="mt-4 space-y-3 text-sm leading-7">
                 <div><dt className="font-bold">适用条件</dt><dd>适合现有手机账户收费变化、多线优惠或设备抵扣异常；金额和处理权限以实际账户及运营商审核为准。</dd></div>
-                <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/bill-optimization" className="font-semibold underline underline-offset-4">先找出具体变化项目</Link><Link href="/cellphone/family-plan-guide" className="font-semibold underline underline-offset-4">涉及多线变动时核对家庭账户</Link></dd></div>
+                <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/bill-optimization" className="page-nav-button">先找出具体变化项目</Link><Link href="/cellphone/family-plan-guide" className="page-nav-button">涉及多线变动时核对家庭账户</Link></dd></div>
               </dl>
             </section>
 
@@ -148,7 +148,7 @@ export default function CellphonePriceHikePage() {
 
         </header>
 
-        <section className="py-12">
+        <section className="py-4">
           <h2 className="text-3xl font-black">常见的 6 类变化</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {reasons.map(([title, text]) => (
@@ -170,14 +170,14 @@ export default function CellphonePriceHikePage() {
                 当成员退出、免费线消失或账户结构变化时，不能只减去“那一条线原来的价格”，
                 剩余线路也可能重新计算。
               </p>
-              <Link href="/cellphone/family-plan-guide" className="mt-5 inline-flex font-semibold text-[#164B78] hover:text-[#103B60]">
+              <Link href="/cellphone/family-plan-guide" className="page-nav-button">
                 继续检查家庭多线结构 →
               </Link>
             </div>
           </div>
         </section>
 
-        <section className="mt-10" aria-labelledby="cellphone-evidence-heading">
+        <section className="mt-4" aria-labelledby="cellphone-evidence-heading">
           <h2 id="cellphone-evidence-heading" className="text-2xl font-black">找到涨价项目后，按证据继续判断</h2>
           <p className="mt-3 leading-7 text-[#526170]">
             对照最近两期账单，先确认具体线路和收费项目，再决定是否需要调整。以下是通用检查方法，不代表已查看你的账户。
@@ -198,7 +198,7 @@ export default function CellphonePriceHikePage() {
           </div>
         </section>
 
-        <section aria-labelledby="promo-expiry-check" className="mt-10 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+        <section aria-labelledby="promo-expiry-check" className="mt-4 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
           <h2 id="promo-expiry-check" className="text-2xl font-black">手机优惠到期，先检查再决定是否换网</h2>
           <p className="mt-3 leading-7 text-[#526170]">账单变贵不一定代表运营商提高了套餐标价；也可能是限时优惠结束、自动付款折扣失效，或设备月度抵扣减少。</p>
           <ol className="mt-5 space-y-4">
@@ -210,10 +210,10 @@ export default function CellphonePriceHikePage() {
             ))}
           </ol>
           <p className="mt-4 leading-7 text-[#526170]">如果不知道原优惠是否仍有效，应先联系原运营商核对活动编号和资格；不要在确认前取消号码或提前结清设备。</p>
-          <Link href="/cellphone/faq/promo-credit-not-received" className="mt-4 inline-flex font-semibold text-[#164B78] hover:text-[#103B60]">抵扣没有到账？继续检查原因 →</Link>
+          <Link href="/cellphone/faq/promo-credit-not-received" className="page-nav-button">抵扣没有到账？继续检查原因 →</Link>
         </section>
 
-        <section className="mt-10 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
+        <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
           <h2 className="text-2xl font-black">换新计划以前，至少先核对这 6 件事</h2>
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
             {beforeSwitch.map((item) => (
@@ -225,7 +225,7 @@ export default function CellphonePriceHikePage() {
           </div>
         </section>
 
-        <section className="mt-10 grid gap-5 md:grid-cols-2">
+        <section className="mt-4 grid gap-5 md:grid-cols-2">
           <article className="rounded-2xl border border-[#D5E5EC] bg-white p-6">
             <Layers3 className="mb-4 text-[#2786A5]" size={27} />
             <h2 className="text-2xl font-black">哪些情况可以先不换？</h2>
@@ -243,7 +243,7 @@ export default function CellphonePriceHikePage() {
           </article>
         </section>
 
-        <section className="mt-10 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
+        <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
           <h2 className="text-2xl font-black">网页不能替你确认什么？</h2>
           <p className="mt-3 leading-7 text-[#526170]">
             当前多线价格、Free Line / Promotion 是否仍有效、设备融资余额、未发 Bill Credit、
@@ -255,12 +255,12 @@ export default function CellphonePriceHikePage() {
           <p className="mt-2 text-sm font-semibold leading-7 text-[#526170]">
             请勿在公开评论或网页中提交账户密码、验证码、完整账户号码或 Transfer PIN；需要核验时通过官方或已确认安全的渠道进行。
           </p>
-          <Link href="/contact" className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#164B78] px-5 py-3 font-bold text-white hover:bg-[#103B60]">
+          <Link href="/contact" className="page-nav-button">
             需要准确数字时进入人工核实 <ArrowRight size={16} />
           </Link>
         </section>
 
-        <section className="mt-10 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+        <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
           <h2 className="text-2xl font-black">相关问题继续去哪</h2>
           <div className="mt-5 grid gap-4 sm:grid-cols-2">
             <Link href="/bill-optimization" className="rounded-xl border border-[#D5E5EC] p-4 hover:border-[#246B95]">
@@ -282,7 +282,7 @@ export default function CellphonePriceHikePage() {
           </div>
         </section>
 
-        <section aria-labelledby="cellphone-official-sources" className="mt-10 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+        <section aria-labelledby="cellphone-official-sources" className="mt-4 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
           <h2 id="cellphone-official-sources" className="text-2xl font-black">官方规则与适用范围</h2>
           <p className="mt-3 text-sm leading-7 text-[#526170]">核实日期：2026年10月11日。以下来源用于核对对应运营商的规则，不代表已经核实你的账户，也不能套用于其他运营商、商业账户或所有旧套餐。最终以当前账单、订单和活动条款为准。</p>
           <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-7 text-[#526170]">

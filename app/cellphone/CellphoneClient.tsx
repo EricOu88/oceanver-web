@@ -138,7 +138,7 @@ export default function CellphoneClient() {
     <div className="min-h-screen bg-[#FCFDFE] text-[#202D3A] font-sans">
       <BackToHomeButton />
 
-      <section className="bg-[#F4F8FA] pb-14 pt-16">
+      <section className="bg-[#F4F8FA] pb-4 pt-4">
         <div className="mx-auto max-w-5xl px-6 text-center">
           <p className="mb-4 text-sm font-bold text-[#246B95] md:text-base">
             美国手机问题中心
@@ -157,7 +157,7 @@ export default function CellphoneClient() {
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
               href="/cellphone/diagnosis"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#164B78] px-7 py-3.5 font-bold text-white transition hover:bg-[#103B60]"
+              className="page-nav-button"
             >
               <Search size={18} />
               从手机问题诊断开始
@@ -165,7 +165,7 @@ export default function CellphoneClient() {
 
             <Link
               href="/cellphone/faq"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-7 py-3.5 font-bold text-[#164B78] transition hover:border-[#246B95]"
+              className="page-nav-button"
             >
               <HelpCircle size={18} />
               浏览手机问题库
@@ -174,7 +174,7 @@ export default function CellphoneClient() {
         </div>
       </section>
 
-      <section className="bg-white py-14">
+      <section className="bg-white py-4">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-10 text-center">
             <h2 className="mb-3 text-3xl font-black md:text-4xl">
@@ -215,7 +215,7 @@ export default function CellphoneClient() {
         </div>
       </section>
 
-      <section className="bg-[#F4F8FA] py-14">
+      <section className="bg-[#F4F8FA] py-4">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-10 text-center">
             <h2 className="mb-3 text-3xl font-black md:text-4xl">
@@ -243,7 +243,7 @@ export default function CellphoneClient() {
         </div>
       </section>
 
-      <section className="bg-white py-14">
+      <section className="bg-white py-4">
         <div className="mx-auto max-w-5xl px-6">
           <div className="grid gap-6 md:grid-cols-2">
             <div className="rounded-2xl border border-[#D5E5EC] p-7">
@@ -254,7 +254,7 @@ export default function CellphoneClient() {
               </p>
               <Link
                 href="/cellphone/diagnosis"
-                className="inline-flex items-center gap-2 font-bold text-[#164B78]"
+                className="page-nav-button"
               >
                 开始问题判断
                 <ArrowRight size={16} />
@@ -269,7 +269,7 @@ export default function CellphoneClient() {
               </p>
               <Link
                 href="/cellphone/providers"
-                className="inline-flex items-center gap-2 font-bold text-[#164B78]"
+                className="page-nav-button"
               >
                 进入方案比较
                 <ArrowRight size={16} />
@@ -279,7 +279,7 @@ export default function CellphoneClient() {
         </div>
       </section>
 
-      <section className="bg-[#F4F8FA] py-14">
+      <section className="bg-[#F4F8FA] py-4">
         <div className="mx-auto max-w-5xl px-6">
           <div className="mb-9 flex items-center justify-center gap-2">
             <HelpCircle className="text-[#2786A5]" size={24} />
@@ -313,7 +313,7 @@ export default function CellphoneClient() {
         </div>
       </section>
 
-      <section id="contact" className="bg-white py-14">
+      <section id="contact" className="bg-white py-4">
         <div className="mx-auto max-w-4xl px-6">
           <div className="mb-8 text-center">
             <h2 className="mb-3 text-3xl font-black">

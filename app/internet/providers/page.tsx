@@ -128,18 +128,21 @@ const wrongReasonsToSwitch = [
 
 export default function InternetProvidersPage() {
   return (
-    <main className="min-h-screen bg-[#FCFDFE] px-4 py-8 text-[#202D3A] sm:px-6 sm:py-12">
+    <main className="compact-page min-h-screen bg-[#FCFDFE] px-4 py-4 text-[#202D3A] sm:px-6 sm:py-6">
       <div className="mx-auto max-w-6xl">
-        <Link
+        <nav aria-label="页面返回导航" className="page-nav-row">
+<Link href="/" className="page-nav-button">← 返回首页</Link>
+<Link
           href="/internet/diagnosis"
-          className="inline-flex items-center gap-2 text-sm text-[#526170] transition hover:text-[#164B78]"
+          className="page-nav-button"
         >
           <ArrowLeft size={16} />
           返回宽带问题诊断
         </Link>
+</nav>
 
         {/* HERO */}
-        <section className="mx-auto mt-8 max-w-4xl text-center">
+        <section className="mx-auto mt-4 max-w-4xl text-center">
           <p className="text-sm font-bold tracking-wide text-[#2786A5]">
             美国家庭宽带比较
           </p>
@@ -156,7 +159,7 @@ export default function InternetProvidersPage() {
         </section>
 
         {/* 先判断是否真的应该来到这里 */}
-        <section className="mt-12 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
+        <section className="mt-4 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
           <div className="grid gap-7 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
             <div>
               <p className="text-sm font-bold text-[#2786A5]">
@@ -195,7 +198,7 @@ export default function InternetProvidersPage() {
         </section>
 
         {/* 五个比较维度 */}
-        <section className="mt-16">
+        <section className="mt-4">
           <p className="text-sm font-bold text-[#2786A5]">
             不要先问哪家最好
           </p>
@@ -225,7 +228,7 @@ export default function InternetProvidersPage() {
         </section>
 
         {/* 真正比较运营商 */}
-        <section className="mt-16">
+        <section className="mt-4">
           <p className="text-sm font-bold text-[#2786A5]">
             已经确认需要开始比较
           </p>
@@ -253,7 +256,7 @@ export default function InternetProvidersPage() {
         </section>
 
         {/* 不应该因为这些原因马上换 */}
-        <section className="mt-16 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
+        <section className="mt-4 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
           <p className="text-sm font-bold text-[#2786A5]">
             很多人换网之前会误判
           </p>
@@ -288,7 +291,7 @@ export default function InternetProvidersPage() {
         </section>
 
         {/* 长期成本 */}
-        <section className="mt-16">
+        <section className="mt-4">
           <div className="grid gap-6 lg:grid-cols-2">
             <InfoCard
               icon={<CircleDollarSign size={24} />}
@@ -309,7 +312,7 @@ export default function InternetProvidersPage() {
 
               <Link
                 href="/internet/price-hike"
-                className="inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]"
+                className="page-nav-button"
               >
                 查看宽带涨价后的判断
                 <ArrowRight size={16} />
@@ -331,7 +334,7 @@ export default function InternetProvidersPage() {
 
               <Link
                 href="/internet/diagnosis"
-                className="inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]"
+                className="page-nav-button"
               >
                 地址或安装有问题，先做诊断
                 <ArrowRight size={16} />
@@ -341,7 +344,7 @@ export default function InternetProvidersPage() {
         </section>
 
         {/* Residential / business */}
-        <section className="mt-16 rounded-3xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+        <section className="mt-4 rounded-3xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
           <div className="flex gap-4">
             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#F4F8FA] text-[#164B78]">
               <Home size={22} />
@@ -360,7 +363,7 @@ export default function InternetProvidersPage() {
 
               <Link
                 href="/internet/business-vs-residential"
-                className="mt-4 inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]"
+                className="page-nav-button"
               >
                 查看住家与商业宽带区别
                 <ArrowRight size={16} />
@@ -369,7 +372,7 @@ export default function InternetProvidersPage() {
           </div>
         </section>
 
-        <section className="mx-auto mt-16 max-w-4xl rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 text-center sm:p-8">
+        <section className="mx-auto mt-4 max-w-4xl rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 text-center sm:p-8">
           <h2 className="text-2xl font-black">哪些比较结果必须结合真实地址或账户确认？</h2>
           <p className="mx-auto mt-4 max-w-2xl leading-7 text-[#526170]">
             地址 serviceability、当前 Promotion、设备记录、安装资格、订单状态和实际长期价格，
@@ -377,7 +380,7 @@ export default function InternetProvidersPage() {
           </p>
           <Link
             href="/contact"
-            className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-6 py-3 font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-white"
+            className="page-nav-button"
           >
             需要时进入人工核实
             <ArrowRight size={18} />
@@ -385,7 +388,7 @@ export default function InternetProvidersPage() {
         </section>
 
         {/* 最终出口 */}
-        <section className="mx-auto mt-16 max-w-4xl text-center">
+        <section className="mx-auto mt-4 max-w-4xl text-center">
           <h2 className="text-2xl font-black sm:text-3xl">
             比较的目标不是找“最好”的运营商
           </h2>
@@ -398,7 +401,7 @@ export default function InternetProvidersPage() {
           <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
               href="/internet/diagnosis"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#164B78] px-6 py-3 font-bold text-white transition hover:bg-[#103B60]"
+              className="page-nav-button"
             >
               还没判断清楚，先做诊断
               <ArrowRight size={18} />
@@ -406,7 +409,7 @@ export default function InternetProvidersPage() {
 
             <Link
               href="/internet/faq"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-6 py-3 font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-[#F4F8FA]"
+              className="page-nav-button"
             >
               查看宽带常见问题
               <ArrowRight size={18} />

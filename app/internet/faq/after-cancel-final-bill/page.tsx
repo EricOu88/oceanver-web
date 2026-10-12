@@ -49,18 +49,21 @@ const schema = {
 
 export default function AfterCancelFinalBillPage() {
   return (
-    <main className="min-h-screen bg-[#FCFDFE] px-4 py-10 text-[#202D3A] sm:px-6 sm:py-14">
+    <main className="compact-page min-h-screen bg-[#FCFDFE] px-4 py-4 text-[#202D3A] sm:px-6 sm:py-6">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
       <div className="mx-auto max-w-4xl">
-        <Link href="/internet/faq" className="text-sm font-semibold text-[#246B95] hover:text-[#103B60]">
+        <nav aria-label="页面返回导航" className="page-nav-row">
+<Link href="/" className="page-nav-button">← 返回首页</Link>
+<Link href="/internet/faq" className="page-nav-button">
           ← 返回宽带问题库
         </Link>
+</nav>
 
-        <header className="py-10 sm:py-14">
+        <header className="py-4 sm:py-6">
           <p className="mb-4 inline-flex rounded-full bg-[#F4F8FA] px-3 py-1 text-sm font-semibold text-[#246B95]">
             取消后账户检查
           </p>
@@ -86,7 +89,7 @@ export default function AfterCancelFinalBillPage() {
           </div>
         </section>
 
-        <section className="py-12">
+        <section className="py-4">
           <h2 className="text-3xl font-black">取消后至少检查这 6 项</h2>
           <div className="mt-6 space-y-3">
             {checks.map((item) => (
@@ -120,7 +123,7 @@ export default function AfterCancelFinalBillPage() {
           </article>
         </section>
 
-        <section className="mt-10 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
+        <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
           <div className="flex gap-3">
             <ShieldCheck className="mt-1 shrink-0 text-[#2786A5]" size={27} />
             <div>
@@ -133,14 +136,14 @@ export default function AfterCancelFinalBillPage() {
 
           <Link
             href="/contact"
-            className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#164B78] px-5 py-3 font-bold text-white transition hover:bg-[#103B60]"
+            className="page-nav-button"
           >
             需要时进入人工核实
             <ArrowRight size={16} />
           </Link>
         </section>
 
-        <section className="mt-10 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+        <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
           <h2 className="text-2xl font-black">下一步去哪</h2>
           <div className="mt-5 grid gap-4 sm:grid-cols-2">
             <Link href="/bill-optimization" className="rounded-xl border border-[#D5E5EC] p-4 hover:border-[#246B95]">

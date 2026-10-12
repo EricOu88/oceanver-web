@@ -111,21 +111,21 @@ const TOPICS = [
 
 export default function CellphoneFAQPage() {
   return (
-    <main className="min-h-screen bg-[#FCFDFE] text-[#202D3A]">
+    <main className="compact-page min-h-screen bg-[#FCFDFE] text-[#202D3A]">
       <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
         <div className="mb-8">
-          <nav aria-label="页面返回导航" className="flex flex-nowrap items-center gap-4 overflow-x-auto py-1">
-            <Link href="/" className="shrink-0 whitespace-nowrap text-sm font-semibold text-[#246B95] hover:text-[#103B60]">← 返回首页</Link>
+          <nav aria-label="页面返回导航" className="page-nav-row">
+            <Link href="/" className="page-nav-button">← 返回首页</Link>
             <Link
             href="/cellphone"
-            className="shrink-0 whitespace-nowrap text-sm font-bold text-[#526170] transition hover:text-[#164B78]"
+            className="page-nav-button"
           >
             ← 返回手机问题中心
           </Link>
           </nav>
         </div>
 
-        <header className="mx-auto mb-12 max-w-4xl">
+        <header className="mx-auto mb-4 max-w-4xl">
           <p className="mb-3 text-sm font-bold text-[#246B95]">手机问题库</p>
           <h1 className="text-4xl font-black leading-tight md:text-5xl">
               手机已经在用，按账单、信号与账户问题继续查
@@ -135,7 +135,7 @@ export default function CellphoneFAQPage() {
               <p className="mt-3 leading-7">先把使用中的问题分成账单、信号、SIM/eSIM、设备抵扣和家庭账户，再进入对应排查页。记录发生时间、受影响号码与已做的操作，避免尚未确认原因就改套餐或取消线路。</p>
               <dl className="mt-4 space-y-3 text-sm leading-7">
                 <div><dt className="font-bold">适用条件</dt><dd>适合现有手机服务的问题核对；新开、套餐选择和转号办理准备进入主站手机 FAQ。</dd></div>
-                <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/cellphone/price-hike" className="font-semibold underline underline-offset-4">账单变贵先核对收费</Link><Link href="/cellphone/diagnosis" className="font-semibold underline underline-offset-4">服务异常先按症状判断</Link></dd></div>
+                <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/cellphone/price-hike" className="page-nav-button">账单变贵先核对收费</Link><Link href="/cellphone/diagnosis" className="page-nav-button">服务异常先按症状判断</Link></dd></div>
               </dl>
             </section>
             <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/cellphone/faq" className="font-semibold underline underline-offset-4">准备开通、转号或选择套餐？查看手机卡办理 FAQ</Link></p>
@@ -169,7 +169,7 @@ export default function CellphoneFAQPage() {
           </div>
         </section>
 
-        <section className="mt-12 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-7 md:p-8">
+        <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-7 md:p-8">
           <h2 className="text-2xl font-black">这个问题库怎么和其他页面连接？</h2>
           <div className="mt-4 grid gap-4 text-[#526170] md:grid-cols-3">
             <div>

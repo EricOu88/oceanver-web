@@ -116,13 +116,13 @@ export default function WhyUsClient({ cases }: WhyUsClientProps) {
   ), [cases, filter, provider, topic]);
 
   return (
-    <main className="min-h-screen bg-[#EDF5F9] px-4 py-8 sm:px-6">
+    <main className="compact-page min-h-screen bg-[#EDF5F9] px-4 py-4 sm:px-6">
       <div className="mx-auto max-w-6xl">
-        <Link href="/" className="mb-5 inline-flex text-sm font-medium text-[#526170] transition hover:text-[#164B78]">
+        <Link href="/" className="page-nav-button">
           ← 返回首页
         </Link>
 
-        <header className="rounded-3xl bg-white px-5 py-8 shadow-sm sm:px-10 sm:py-12">
+        <header className="rounded-3xl bg-white px-5 py-4 shadow-sm sm:px-10 sm:py-6">
           <h1 className="text-center text-3xl font-extrabold leading-tight text-[#202D3A] sm:text-4xl">
             真实问题与处理案例
           </h1>
@@ -234,7 +234,7 @@ export default function WhyUsClient({ cases }: WhyUsClientProps) {
           )}
         </section>
 
-        <section className="mt-10 rounded-2xl bg-white p-6 text-center shadow-sm sm:p-8">
+        <section className="mt-4 rounded-2xl bg-white p-6 text-center shadow-sm sm:p-8">
           <h2 className="text-xl font-bold text-[#202D3A]">没有找到和你一样的问题？</h2>
           <div className="mt-5 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm font-semibold">
             <Link href="/bill-optimization" className="text-[#164B78] hover:text-[#103B60]">查看账单判断 →</Link>

@@ -98,18 +98,18 @@ const decisionSteps = [
 
 export default function InternetPage() {
   return (
-    <main className="min-h-screen bg-[#FCFDFE] px-4 py-8 text-[#202D3A] sm:px-6 sm:py-12">
+    <main className="compact-page min-h-screen bg-[#FCFDFE] px-4 py-4 text-[#202D3A] sm:px-6 sm:py-6">
       <div className="mx-auto max-w-6xl">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-sm text-[#526170] transition hover:text-[#164B78]"
+          className="page-nav-button"
         >
           <ArrowLeft size={16} />
           返回首页
         </Link>
 
         {/* HERO */}
-        <section className="mx-auto mt-8 max-w-4xl text-center">
+        <section className="mx-auto mt-4 max-w-4xl text-center">
           <p className="text-sm font-bold tracking-wide text-[#2786A5]">
             美国家庭宽带问题入口
           </p>
@@ -128,7 +128,7 @@ export default function InternetPage() {
           <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
               href="/internet/diagnosis"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#164B78] px-6 py-3 font-bold text-white transition hover:bg-[#103B60]"
+              className="page-nav-button"
             >
               开始宽带问题诊断
               <ArrowRight size={18} />
@@ -136,7 +136,7 @@ export default function InternetPage() {
 
             <Link
               href="/bill-optimization"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-6 py-3 font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-[#F4F8FA]"
+              className="page-nav-button"
             >
               先检查账单为什么变贵
               <ArrowRight size={18} />
@@ -145,7 +145,7 @@ export default function InternetPage() {
         </section>
 
         {/* 问题入口 */}
-        <section className="mt-16">
+        <section className="mt-4">
           <p className="text-sm font-bold text-[#2786A5]">
             先选最接近你现在的情况
           </p>
@@ -169,7 +169,7 @@ export default function InternetPage() {
         </section>
 
         {/* Oceanver 判断方法 */}
-        <section className="mt-16 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
+        <section className="mt-4 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
           <p className="text-sm font-bold text-[#2786A5]">
             不要一看到问题就先换网
           </p>
@@ -201,7 +201,7 @@ export default function InternetPage() {
         </section>
 
         {/* 涨价专项 */}
-        <section className="mt-16 grid gap-6 lg:grid-cols-2">
+        <section className="mt-4 grid gap-6 lg:grid-cols-2">
           <InfoCard
             icon={<CircleDollarSign size={24} />}
             title="如果最明显的问题是：账单越来越贵"
@@ -214,7 +214,7 @@ export default function InternetPage() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/bill-optimization"
-                className="inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]"
+                className="page-nav-button"
               >
                 先做账单检查
                 <ArrowRight size={16} />
@@ -222,7 +222,7 @@ export default function InternetPage() {
 
               <Link
                 href="/internet/price-hike"
-                className="inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]"
+                className="page-nav-button"
               >
                 已确认长期涨价
                 <ArrowRight size={16} />
@@ -242,7 +242,7 @@ export default function InternetPage() {
 
             <Link
               href="/internet/providers"
-              className="inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]"
+              className="page-nav-button"
             >
               进入宽带运营商比较
               <ArrowRight size={16} />
@@ -251,7 +251,7 @@ export default function InternetPage() {
         </section>
 
         {/* 常见误判 */}
-        <section className="mt-16">
+        <section className="mt-4">
           <p className="text-sm font-bold text-[#2786A5]">
             很多人其实不是“宽带不够好”
           </p>
@@ -294,7 +294,7 @@ export default function InternetPage() {
         </section>
 
         {/* FAQ */}
-        <section className="mt-16 rounded-3xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+        <section className="mt-4 rounded-3xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
           <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
               <div className="flex items-center gap-3">
@@ -313,14 +313,14 @@ export default function InternetPage() {
             <div className="flex flex-col gap-3">
               <Link
                 href="/internet/faq"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-5 py-3 font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-[#F4F8FA]"
+                className="page-nav-button"
               >
                 查看宽带常见问题
                 <ArrowRight size={17} />
               </Link>
               <Link
                 href="/internet/home-network-guide"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-5 py-3 font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-[#F4F8FA]"
+                className="page-nav-button"
               >
                 家里 Wi-Fi / Router 怎么判断
                 <ArrowRight size={17} />
@@ -330,7 +330,7 @@ export default function InternetPage() {
         </section>
 
         {/* 人工边界 */}
-        <section className="mx-auto mt-16 max-w-4xl text-center">
+        <section className="mx-auto mt-4 max-w-4xl text-center">
           <h2 className="text-2xl font-black">
             有些问题页面无法替你确认
           </h2>
@@ -342,7 +342,7 @@ export default function InternetPage() {
 
           <Link
             href="/contact"
-            className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-6 py-3 font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-[#F4F8FA]"
+            className="page-nav-button"
           >
             需要时进入人工核实
             <ArrowRight size={18} />

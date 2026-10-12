@@ -79,16 +79,19 @@ const compareOtherProviders = [
 
 export default function SpectrumClient() {
   return (
-    <main className="min-h-screen bg-[#FCFDFE] px-4 py-8 text-[#202D3A] sm:px-6 sm:py-12">
+    <main className="compact-page min-h-screen bg-[#FCFDFE] px-4 py-4 text-[#202D3A] sm:px-6 sm:py-6">
       <div className="mx-auto max-w-6xl">
-        <Link
+        <nav aria-label="页面返回导航" className="page-nav-row">
+<Link href="/" className="page-nav-button">← 返回首页</Link>
+<Link
           href="/internet/providers"
-          className="text-sm font-semibold text-[#526170] transition hover:text-[#164B78]"
+          className="page-nav-button"
         >
           ← 返回宽带运营商比较
         </Link>
+</nav>
 
-        <section className="mx-auto mt-8 max-w-4xl text-center">
+        <section className="mx-auto mt-4 max-w-4xl text-center">
           <p className="text-sm font-bold tracking-wide text-[#2786A5]">
             Spectrum 宽带问题判断
           </p>
@@ -101,14 +104,14 @@ export default function SpectrumClient() {
           <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
               href="/internet/diagnosis"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#164B78] px-6 py-3 font-bold text-white transition hover:bg-[#103B60]"
+              className="page-nav-button"
             >
               不知道问题在哪？先诊断
               <ArrowRight size={18} />
             </Link>
             <Link
               href="/internet/spectrum/faq"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#D8E2EA] bg-white px-6 py-3 font-bold text-[#164B78] transition hover:bg-[#EDF5F9]"
+              className="page-nav-button"
             >
               查看 Spectrum 常见问题
               <ArrowRight size={18} />
@@ -116,7 +119,7 @@ export default function SpectrumClient() {
           </div>
         </section>
 
-        <section className="mt-14" aria-labelledby="spectrum-issues">
+        <section className="mt-4" aria-labelledby="spectrum-issues">
           <h2 id="spectrum-issues" className="text-2xl font-black md:text-3xl">
             先从你遇到的问题开始
           </h2>
@@ -143,7 +146,7 @@ export default function SpectrumClient() {
           </div>
         </section>
 
-        <section className="mt-14 rounded-3xl border border-[#D8E2EA] bg-[#EDF5F9] p-6 md:p-8">
+        <section className="mt-4 rounded-3xl border border-[#D8E2EA] bg-[#EDF5F9] p-6 md:p-8">
           <h2 className="text-2xl font-black">
             这些情况，先不要急着换 Spectrum
           </h2>
@@ -159,7 +162,7 @@ export default function SpectrumClient() {
           </p>
         </section>
 
-        <section className="mt-14">
+        <section className="mt-4">
           <h2 className="text-2xl font-black md:text-3xl">
             这些情况，才更值得比较其他运营商
           </h2>
@@ -175,14 +178,14 @@ export default function SpectrumClient() {
           </ul>
           <Link
             href="/internet/providers"
-            className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#164B78] px-6 py-3 font-bold text-white transition hover:bg-[#103B60]"
+            className="page-nav-button"
           >
             比较其他宽带
             <ArrowRight size={18} />
           </Link>
         </section>
 
-        <section className="mt-14 rounded-3xl border border-[#D8E2EA] bg-[#EDF5F9] p-6 text-center md:p-8">
+        <section className="mt-4 rounded-3xl border border-[#D8E2EA] bg-[#EDF5F9] p-6 text-center md:p-8">
           <h2 className="text-2xl font-black">
             有些问题必须看具体账户或地址
           </h2>
@@ -191,7 +194,7 @@ export default function SpectrumClient() {
           </p>
           <Link
             href="/contact"
-            className="mt-6 inline-flex items-center gap-2 rounded-xl border border-[#164B78] bg-white px-6 py-3 font-bold text-[#164B78] transition hover:bg-[#EDF5F9]"
+            className="page-nav-button"
           >
             需要时进入人工核实
             <ArrowRight size={17} />

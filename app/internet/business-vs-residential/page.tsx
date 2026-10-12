@@ -66,16 +66,19 @@ export default function BusinessVsResidentialPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#FCFDFE] px-4 py-12 text-[#202D3A] md:py-16">
+    <main className="compact-page min-h-screen bg-[#FCFDFE] px-4 py-4 text-[#202D3A] md:py-6">
       <div className="mx-auto max-w-5xl">
-        <Link
+        <nav aria-label="页面返回导航" className="page-nav-row">
+<Link href="/" className="page-nav-button">← 返回首页</Link>
+<Link
           href="/internet"
-          className="text-sm font-bold text-[#526170] transition hover:text-[#164B78]"
+          className="page-nav-button"
         >
           ← 返回宽带问题中心
         </Link>
+</nav>
 
-        <header className="mt-8">
+        <header className="mt-4">
           <p className="text-sm font-bold text-[#246B95]">账户类型判断</p>
           <h1 className="mt-3 text-4xl font-black leading-tight md:text-5xl">
             商业宽带 vs 住宅宽带：
@@ -88,7 +91,7 @@ export default function BusinessVsResidentialPage() {
           </p>
         </header>
 
-        <section className="mt-12 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-7 md:p-8">
+        <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-7 md:p-8">
           <div className="flex gap-3">
             <ShieldCheck className="mt-1 shrink-0 text-[#2786A5]" size={28} />
             <div>
@@ -101,7 +104,7 @@ export default function BusinessVsResidentialPage() {
           </div>
         </section>
 
-        <section className="py-12">
+        <section className="py-4">
           <h2 className="text-3xl font-black">比较时重点看这 5 件事</h2>
           <div className="mt-7 grid gap-5 md:grid-cols-2">
             {compareItems.map((item) => (
@@ -141,7 +144,7 @@ export default function BusinessVsResidentialPage() {
           </article>
         </section>
 
-        <section className="mt-12 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-7 md:p-8">
+        <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-7 md:p-8">
           <h2 className="text-2xl font-black">下一步怎么走？</h2>
           <div className="mt-5 grid gap-4 md:grid-cols-3">
             <Link

@@ -112,10 +112,10 @@ function ReviewList({ items }: { items: string[][] }) {
 
 export default function BillOptimizationClient() {
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900">
-      <header className="bg-gradient-to-b from-blue-50 to-slate-50 px-5 pb-12 pt-36 md:pb-16 md:pt-16">
+    <main className="compact-page min-h-screen bg-slate-50 text-slate-900">
+      <header className="bg-gradient-to-b from-blue-50 to-slate-50 px-5 pb-4 pt-4 md:pb-6 md:pt-6">
         <div className="mx-auto max-w-5xl">
-          <Link href="/" className="mb-6 inline-block text-sm text-slate-500 hover:text-blue-700">
+          <Link href="/" className="page-nav-button">
             ← 返回首页
           </Link>
           <p className="mb-4 text-sm font-bold uppercase tracking-wide text-blue-700">账单涨价判断 · 美国手机与家庭宽带</p>
@@ -127,7 +127,7 @@ export default function BillOptimizationClient() {
               <p className="mt-3 leading-7">账单总额增加不一定是套餐涨价。先对照同一账户的两期账单，逐项确认月费、折扣、设备分期、抵扣和一次性费用，记录变化项目后再联系运营商核实。</p>
               <dl className="mt-4 space-y-3 text-sm leading-7">
                 <div><dt className="font-bold">适用条件</dt><dd>适合已经收到手机或宽带账单、需要找出费用变化的人；网页不能确认账户资格、退款或正式调价。</dd></div>
-                <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/internet/price-hike" className="font-semibold underline underline-offset-4">宽带收费变化继续查这里</Link><Link href="/cellphone/price-hike" className="font-semibold underline underline-offset-4">手机收费变化继续查这里</Link></dd></div>
+                <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/internet/price-hike" className="page-nav-button">宽带收费变化继续查这里</Link><Link href="/cellphone/price-hike" className="page-nav-button">手机收费变化继续查这里</Link></dd></div>
               </dl>
             </section>
 
@@ -173,7 +173,7 @@ export default function BillOptimizationClient() {
           <h2 className="mt-2 text-2xl font-black md:text-3xl">手机账单变贵，重点检查什么？</h2>
           <div className="mt-6"><ReviewList items={phoneItems} /></div>
           <p className="mt-5 leading-7 text-slate-700">
-            如果问题已经涉及套餐类型、线路数量或是否需要换方案，可继续查看 <Link href="/cellphone/diagnosis" className="font-semibold text-blue-700 underline underline-offset-4">手机套餐诊断</Link>；也可浏览 <Link href="/cellphone/faq" className="font-semibold text-blue-700 underline underline-offset-4">美国手机常见问题</Link>。
+            如果问题已经涉及套餐类型、线路数量或是否需要换方案，可继续查看 <Link href="/cellphone/diagnosis" className="page-nav-button">手机套餐诊断</Link>；也可浏览 <Link href="/cellphone/faq" className="page-nav-button">美国手机常见问题</Link>。
           </p>
         </section>
 
@@ -225,7 +225,7 @@ export default function BillOptimizationClient() {
 
           <p className="mt-5 leading-7 text-slate-700">
             如果 Promotion / Trade-in / Reward 没有按预期出现，可继续查看{' '}
-            <Link href="/cellphone/faq/promo-credit-not-received" className="font-semibold text-blue-700 underline underline-offset-4">
+            <Link href="/cellphone/faq/promo-credit-not-received" className="page-nav-button">
               手机优惠 / Credit 到账判断
             </Link>
             。如果涉及真实 eligibility、争议金额、付款截止日或后台状态，需要结合当前账户核实。
@@ -237,9 +237,9 @@ export default function BillOptimizationClient() {
           <h2 className="mt-2 text-2xl font-black md:text-3xl">家庭宽带账单变贵，重点检查什么？</h2>
           <div className="mt-6"><ReviewList items={internetItems} /></div>
           <div className="mt-5 space-y-2 leading-7 text-slate-700">
-            <p>如果已经确认是宽带长期涨价，可继续查看 <Link href="/internet/price-hike" className="font-semibold text-blue-700 underline underline-offset-4">宽带涨价原因与处理方法</Link>。</p>
-            <p>如果除了账单，还涉及地址覆盖、安装或是否值得换网，可查看 <Link href="/internet/diagnosis" className="font-semibold text-blue-700 underline underline-offset-4">宽带问题诊断</Link>。</p>
-            <p>设备费、AutoPay 或一次性费用仍有疑问，可查看 <Link href="/internet/faq" className="font-semibold text-blue-700 underline underline-offset-4">更多宽带常见问题</Link>。</p>
+            <p>如果已经确认是宽带长期涨价，可继续查看 <Link href="/internet/price-hike" className="page-nav-button">宽带涨价原因与处理方法</Link>。</p>
+            <p>如果除了账单，还涉及地址覆盖、安装或是否值得换网，可查看 <Link href="/internet/diagnosis" className="page-nav-button">宽带问题诊断</Link>。</p>
+            <p>设备费、AutoPay 或一次性费用仍有疑问，可查看 <Link href="/internet/faq" className="page-nav-button">更多宽带常见问题</Link>。</p>
           </div>
         </section>
 
@@ -273,7 +273,7 @@ export default function BillOptimizationClient() {
               <li>折扣或 trade-in credit 与账户记录不一致。</li>
               <li>同一地址存在其他可选方案，且完整周期成本值得比较。</li>
             </ul>
-            <p className="mt-4 leading-7 text-slate-700">比较手机方案时，可先查看 <Link href="/cellphone/providers" className="font-semibold text-blue-700 underline underline-offset-4">手机方案比较方法</Link>。</p>
+            <p className="mt-4 leading-7 text-slate-700">比较手机方案时，可先查看 <Link href="/cellphone/providers" className="page-nav-button">手机方案比较方法</Link>。</p>
           </article>
           <article id="observe-first" className="scroll-mt-6 rounded-3xl border border-slate-200 bg-white p-5 md:p-7">
             <h2 className="text-xl font-black md:text-2xl">哪些情况可以先确认，不必急着换？</h2>
@@ -285,7 +285,7 @@ export default function BillOptimizationClient() {
               <li>已确认只收一次的设备费用；仍应在下一期账单确认没有重复。</li>
             </ul>
             <p className="mt-4 rounded-xl bg-slate-50 p-4 leading-7 text-slate-700">先确认费用是否会重复出现，再判断是否需要调整套餐或运营商。</p>
-            <p className="mt-4 leading-7 text-slate-700">比较宽带方案时，可查看 <Link href="/internet/providers" className="font-semibold text-blue-700 underline underline-offset-4">宽带方案比较方法</Link>。</p>
+            <p className="mt-4 leading-7 text-slate-700">比较宽带方案时，可查看 <Link href="/internet/providers" className="page-nav-button">宽带方案比较方法</Link>。</p>
           </article>
         </section>
 
@@ -389,9 +389,9 @@ export default function BillOptimizationClient() {
           </div>
 
           <div className="mt-5 flex flex-wrap gap-x-6 gap-y-3 font-semibold">
-            <Link href="/cellphone/diagnosis" className="text-blue-700 underline underline-offset-4">手机转网问题诊断</Link>
-            <Link href="/internet/diagnosis" className="text-blue-700 underline underline-offset-4">宽带安装 / 搬家诊断</Link>
-            <Link href="/internet/faq/after-cancel-final-bill" className="text-blue-700 underline underline-offset-4">取消后的 Final Bill / 设备检查</Link>
+            <Link href="/cellphone/diagnosis" className="page-nav-button">手机转网问题诊断</Link>
+            <Link href="/internet/diagnosis" className="page-nav-button">宽带安装 / 搬家诊断</Link>
+            <Link href="/internet/faq/after-cancel-final-bill" className="page-nav-button">取消后的 Final Bill / 设备检查</Link>
           </div>
         </section>
 

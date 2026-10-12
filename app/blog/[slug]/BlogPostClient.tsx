@@ -5,7 +5,7 @@ import { ArrowRight, BookOpen, Search } from 'lucide-react'
 
 export default function BlogPostClient() {
   return (
-    <section className="mt-12 mb-12 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 md:p-8">
+    <section className="mt-4 mb-4 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 md:p-8">
       <h2 className="text-xl font-black text-[#202D3A] md:text-2xl">
         这个问题下一步怎么查？
       </h2>

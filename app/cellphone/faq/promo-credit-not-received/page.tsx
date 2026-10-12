@@ -87,21 +87,24 @@ const schema = {
 
 export default function PromoCreditNotReceivedPage() {
   return (
-    <main className="min-h-screen bg-[#FCFDFE] px-4 py-10 text-[#202D3A] sm:px-6 sm:py-14">
+    <main className="compact-page min-h-screen bg-[#FCFDFE] px-4 py-4 text-[#202D3A] sm:px-6 sm:py-6">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
       <div className="mx-auto max-w-4xl">
-        <Link
+        <nav aria-label="页面返回导航" className="page-nav-row">
+<Link href="/" className="page-nav-button">← 返回首页</Link>
+<Link
           href="/cellphone/faq"
-          className="text-sm font-semibold text-[#246B95] transition hover:text-[#103B60]"
+          className="page-nav-button"
         >
           ← 返回手机问题库
         </Link>
+</nav>
 
-        <header className="py-10 sm:py-14">
+        <header className="py-4 sm:py-6">
           <p className="mb-4 inline-flex rounded-full bg-[#F4F8FA] px-3 py-1 text-sm font-semibold text-[#246B95]">
             手机优惠 / Credit 判断
           </p>
@@ -112,13 +115,13 @@ export default function PromoCreditNotReceivedPage() {
             <h2 className="text-lg font-bold">直接结论</h2>
             <p className="mt-2 leading-7">先确认没到账的是 Trade-in、每月 Bill Credit、转网奖励还是 AutoPay 折扣，再对照订单、设备验收记录和账单。不同优惠到账条件与时间不同，不能按广告金额推断实际资格。</p>
             <div className="mt-4 flex flex-wrap gap-4 text-sm font-semibold">
-              <Link href="/cellphone/price-hike" className="text-[#164B78] underline underline-offset-4">账单整体变贵，继续核对 →</Link>
-              <Link href="/contact" className="text-[#164B78] underline underline-offset-4">需要核实实际账户 →</Link>
+              <Link href="/cellphone/price-hike" className="page-nav-button">账单整体变贵，继续核对 →</Link>
+              <Link href="/contact" className="page-nav-button">需要核实实际账户 →</Link>
             </div>
           </section>
         </header>
 
-        <section className="py-12">
+        <section className="py-4">
           <h2 className="text-3xl font-black">常见的 5 类优惠</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {promoTypes.map((item) => (
@@ -154,7 +157,7 @@ export default function PromoCreditNotReceivedPage() {
           </ul>
         </section>
 
-        <section className="mt-10 grid gap-5 md:grid-cols-2">
+        <section className="mt-4 grid gap-5 md:grid-cols-2">
           <article className="rounded-2xl border border-[#D5E5EC] bg-white p-6">
             <Clock3 className="mb-4 text-[#2786A5]" size={27} />
             <h2 className="text-2xl font-black">什么时候可以先继续观察？</h2>
@@ -175,7 +178,7 @@ export default function PromoCreditNotReceivedPage() {
           </article>
         </section>
 
-        <section className="mt-10 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+        <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
           <div className="flex gap-3">
             <Smartphone className="mt-1 shrink-0 text-[#2786A5]" size={26} />
             <div>
@@ -190,7 +193,7 @@ export default function PromoCreditNotReceivedPage() {
           </div>
         </section>
 
-        <section className="mt-10 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
+        <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
           <h2 className="text-2xl font-black">网页不能替你确认什么？</h2>
           <p className="mt-3 leading-7 text-[#526170]">
             Promotion eligibility、Trade-in 实际验收结果、Reward 后台状态、Upgrade eligibility、
@@ -198,14 +201,14 @@ export default function PromoCreditNotReceivedPage() {
           </p>
           <Link
             href="/contact"
-            className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#164B78] px-5 py-3 font-bold text-white transition hover:bg-[#103B60]"
+            className="page-nav-button"
           >
             需要时进入人工核实
             <ArrowRight size={16} />
           </Link>
         </section>
 
-        <section className="mt-10 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+        <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
           <h2 className="text-2xl font-black">相关问题继续去哪</h2>
           <div className="mt-5 grid gap-4 sm:grid-cols-2">
             <Link href="/cellphone/diagnosis" className="rounded-xl border border-[#D5E5EC] p-4 hover:border-[#246B95]">

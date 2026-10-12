@@ -64,18 +64,21 @@ const QUESTIONS = [
 
 export default function PrepaidVsPostpaidPage() {
   return (
-    <main className="min-h-screen bg-[#FCFDFE] text-[#202D3A]">
+    <main className="compact-page min-h-screen bg-[#FCFDFE] text-[#202D3A]">
       <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
         <div className="mb-8">
-          <Link
+          <nav aria-label="页面返回导航" className="page-nav-row">
+<Link href="/" className="page-nav-button">← 返回首页</Link>
+<Link
             href="/cellphone/faq"
-            className="text-sm font-bold text-[#526170] transition hover:text-[#164B78]"
+            className="page-nav-button"
           >
             ← 返回手机问题库
           </Link>
+</nav>
         </div>
 
-        <header className="mb-12">
+        <header className="mb-4">
           <p className="mb-3 text-sm font-bold text-[#246B95]">手机账户类型</p>
           <h1 className="text-4xl font-black leading-tight md:text-5xl">
             Prepaid vs Postpaid：
@@ -102,7 +105,7 @@ export default function PrepaidVsPostpaidPage() {
           </div>
         </section>
 
-        <section className="py-12">
+        <section className="py-4">
           <h2 className="text-3xl font-black">真正应该比较什么？</h2>
           <div className="mt-7 overflow-hidden rounded-2xl border border-[#D5E5EC] bg-white">
             <div className="grid grid-cols-[0.8fr_1.1fr_1.1fr] border-b border-[#D5E5EC] bg-[#F4F8FA] text-sm font-black md:text-base">
@@ -135,7 +138,7 @@ export default function PrepaidVsPostpaidPage() {
           </div>
         </section>
 
-        <section className="py-12">
+        <section className="py-4">
           <h2 className="text-3xl font-black">下一步按你的情况继续</h2>
           <div className="mt-6 grid gap-5 md:grid-cols-3">
             <Link

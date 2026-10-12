@@ -112,8 +112,8 @@ const HUMAN_CHECKS = [
 export default function CellphoneProvidersPage() {
   return (
     <ProvidersShell>
-      <main className="bg-[#FCFDFE] text-[#202D3A]">
-        <section className="px-4 py-14 md:py-20">
+      <main className="compact-page bg-[#FCFDFE] text-[#202D3A]">
+        <section className="px-4 py-4 md:py-6">
           <div className="mx-auto max-w-5xl text-center">
             <p className="mb-4 text-sm font-bold text-[#246B95] md:text-base">
               手机方案比较
@@ -129,7 +129,7 @@ export default function CellphoneProvidersPage() {
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <Link
                 href="/cellphone/diagnosis"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#164B78] px-7 py-3.5 font-black text-white transition hover:bg-[#103B60]"
+                className="page-nav-button"
               >
                 还没确定要不要换？先做问题判断
                 <ArrowRight size={18} />
@@ -144,7 +144,7 @@ export default function CellphoneProvidersPage() {
           </div>
         </section>
 
-        <section id="compare" className="border-y border-[#D5E5EC] bg-[#F4F8FA] px-4 py-14">
+        <section id="compare" className="border-y border-[#D5E5EC] bg-[#F4F8FA] px-4 py-4">
           <div className="mx-auto max-w-6xl">
             <div className="mx-auto mb-9 max-w-3xl text-center">
               <h2 className="text-3xl font-black md:text-4xl">比较手机方案，先看这 6 件事</h2>
@@ -167,7 +167,7 @@ export default function CellphoneProvidersPage() {
           </div>
         </section>
 
-        <section className="px-4 py-14">
+        <section className="px-4 py-4">
           <div className="mx-auto max-w-5xl">
             <div className="mb-8 text-center">
               <h2 className="text-3xl font-black md:text-4xl">哪些情况先不要急着换</h2>
@@ -186,7 +186,7 @@ export default function CellphoneProvidersPage() {
           </div>
         </section>
 
-        <section className="bg-[#F4F8FA] px-4 py-14">
+        <section className="bg-[#F4F8FA] px-4 py-4">
           <div className="mx-auto max-w-6xl">
             <div className="mb-8 text-center">
               <h2 className="text-3xl font-black md:text-4xl">发现具体问题，就进入对应节点</h2>
@@ -216,7 +216,7 @@ export default function CellphoneProvidersPage() {
           </div>
         </section>
 
-        <section className="px-4 py-14">
+        <section className="px-4 py-4">
           <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
             <div className="rounded-2xl border border-[#D5E5EC] bg-white p-7">
               <CreditCard className="mb-4 text-[#2786A5]" size={28} />
@@ -238,7 +238,7 @@ export default function CellphoneProvidersPage() {
           </div>
         </section>
 
-        <section className="bg-[#F4F8FA] px-4 py-14">
+        <section className="bg-[#F4F8FA] px-4 py-4">
           <div className="mx-auto max-w-4xl">
             <h2 className="text-center text-3xl font-black md:text-4xl">这些信息需要真实账户才能确认</h2>
             <div className="mt-7 grid gap-3 sm:grid-cols-2">
@@ -252,7 +252,7 @@ export default function CellphoneProvidersPage() {
             <div className="mt-8 text-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#164B78] px-8 py-4 font-black text-white transition hover:bg-[#103B60]"
+                className="page-nav-button"
               >
                 需要准确数字时进入人工核实
                 <ArrowRight size={18} />

@@ -40,17 +40,20 @@ export default function InternetProvidersFAQPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#FCFDFE] px-4 py-8 text-[#202D3A] sm:px-6 sm:py-12">
+    <main className="compact-page min-h-screen bg-[#FCFDFE] px-4 py-4 text-[#202D3A] sm:px-6 sm:py-6">
       <div className="mx-auto max-w-4xl">
-        <Link
+        <nav aria-label="页面返回导航" className="page-nav-row">
+<Link href="/" className="page-nav-button">← 返回首页</Link>
+<Link
           href="/internet/providers"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-[#526170] transition hover:text-[#164B78]"
+          className="page-nav-button"
         >
           <ArrowLeft size={16} />
           返回宽带比较
         </Link>
+</nav>
 
-        <header className="mt-8">
+        <header className="mt-4">
           <p className="text-sm font-bold tracking-wide text-[#2786A5]">
             宽带比较知识库
           </p>
@@ -61,16 +64,19 @@ export default function InternetProvidersFAQPage() {
             真正要比较的不是“哪家广告价最低”，而是当前地址可用性、长期成本、技术类型、设备安装和取消条件。
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <Link
+            <nav aria-label="页面返回导航" className="page-nav-row">
+<Link href="/" className="page-nav-button">← 返回首页</Link>
+<Link
               href="/internet/providers"
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#164B78] px-6 font-bold text-white transition hover:bg-[#103B60]"
+              className="page-nav-button"
             >
               返回宽带比较
               <ArrowRight size={17} />
             </Link>
+</nav>
             <Link
               href="/internet/diagnosis"
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-6 font-bold text-[#164B78] transition hover:bg-[#F4F8FA]"
+              className="page-nav-button"
             >
               还不知道该不该换？先诊断
               <ArrowRight size={17} />
@@ -105,14 +111,14 @@ export default function InternetProvidersFAQPage() {
           ))}
         </div>
 
-        <section className="mt-10 rounded-2xl border border-[#D5E5EC] bg-white p-5 sm:p-6">
+        <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-white p-5 sm:p-6">
           <h2 className="text-xl font-black">有些比较必须看具体地址和账户</h2>
           <p className="mt-2 text-sm leading-7 text-[#526170]">
             地址 serviceability、Promotion、Credit、设备记录、安装条件、合同和订单状态无法仅靠通用网页判断。
           </p>
           <Link
             href="/contact"
-            className="mt-4 inline-flex items-center gap-2 font-bold text-[#164B78] transition hover:text-[#103B60]"
+            className="page-nav-button"
           >
             需要时进入人工核实
             <ArrowRight size={16} />

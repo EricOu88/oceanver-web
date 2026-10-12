@@ -72,12 +72,15 @@ const worthComparingReasons = [
 
 export default function AttFiberClient() {
   return (
-    <main className="min-h-screen bg-[#FCFDFE] text-[#202D3A]">
+    <main className="compact-page min-h-screen bg-[#FCFDFE] text-[#202D3A]">
       <div className="border-b border-[#D5E5EC] bg-white">
         <div className="mx-auto flex max-w-6xl justify-between px-5 py-3 md:px-8">
-          <Link href="/internet/providers" className="text-sm font-semibold text-[#164B78] hover:text-[#103B60]">
+          <nav aria-label="页面返回导航" className="page-nav-row">
+<Link href="/" className="page-nav-button">← 返回首页</Link>
+<Link href="/internet/providers" className="page-nav-button">
             ← 返回宽带比较
           </Link>
+</nav>
           <Link href="/internet" className="text-sm font-semibold text-[#526170] hover:text-[#164B78]">
             宽带问题中心
           </Link>
@@ -94,17 +97,17 @@ export default function AttFiberClient() {
             Fiber 不代表每个家庭都一定更适合。先确认当前地址是否可用，再比较现有宽带的长期成本、上传需求、稳定性和安装条件，最后决定是否值得换。
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
-            <Link href="/internet/diagnosis" className="inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#164B78] px-5 font-bold text-white transition hover:bg-[#103B60]">
+            <Link href="/internet/diagnosis" className="page-nav-button">
               还不知道问题在哪里？先诊断 <ArrowRight size={18} />
             </Link>
-            <Link href="/internet/att/fiber/faq" className="inline-flex min-h-12 items-center rounded-xl border border-[#164B78] bg-white px-5 font-bold text-[#164B78] transition hover:bg-[#EDF5F9]">
+            <Link href="/internet/att/fiber/faq" className="page-nav-button">
               查看 AT&amp;T Fiber 常见问题
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-12 md:px-8 md:py-16">
+      <section className="mx-auto max-w-6xl px-5 py-4 md:px-8 md:py-6">
         <h2 className="text-2xl font-black md:text-3xl">比较之前，先确认这 6 件事</h2>
         <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {checks.map(({ title, description, href, label, icon: Icon }) => (
@@ -138,7 +141,7 @@ export default function AttFiberClient() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-10 md:px-8">
+      <section className="mx-auto max-w-6xl px-5 py-4 md:px-8">
         <div className="rounded-2xl border border-[#D5E5EC] bg-white p-6">
           <h2 className="text-xl font-black">哪些结果需要结合真实地址或账户核实？</h2>
           <p className="mt-3 max-w-3xl text-sm leading-7 text-[#526170]">
@@ -147,7 +150,7 @@ export default function AttFiberClient() {
           </p>
           <Link
             href="/contact"
-            className="mt-5 inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]"
+            className="page-nav-button"
           >
             需要时进入人工核实 <ArrowRight size={16} />
           </Link>

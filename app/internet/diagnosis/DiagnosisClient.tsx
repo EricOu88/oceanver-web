@@ -1078,17 +1078,20 @@ export default function DiagnosisClient({
   }
 
   return (
-    <main className="min-h-screen bg-[#FCFDFE] px-4 py-8 text-[#202D3A] sm:px-6 sm:py-12">
+    <main className="compact-page min-h-screen bg-[#FCFDFE] px-4 py-4 text-[#202D3A] sm:px-6 sm:py-6">
       <div className="mx-auto max-w-6xl">
-        <Link
+        <nav aria-label="页面返回导航" className="page-nav-row">
+<Link href="/" className="page-nav-button">← 返回首页</Link>
+<Link
           href="/internet/faq"
-          className="inline-flex items-center gap-2 text-sm text-[#526170] transition hover:text-[#164B78]"
+          className="page-nav-button"
         >
           <ArrowLeft size={16} />
           返回宽带常见问题
         </Link>
+</nav>
 
-        <header className="mx-auto mb-10 mt-8 max-w-4xl text-center">
+        <header className="mx-auto mb-4 mt-4 max-w-4xl text-center">
           <p className="mb-3 text-sm font-bold tracking-wide text-[#2786A5]">
             美国家庭宽带问题诊断
           </p>
@@ -1137,7 +1140,7 @@ export default function DiagnosisClient({
               ))}
             </section>
 
-            <section className="mt-12 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
+            <section className="mt-4 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
               <h2 className="text-2xl font-black">
                 有些问题，换运营商也不会解决
               </h2>
@@ -1166,7 +1169,7 @@ export default function DiagnosisClient({
               </p>
             </section>
 
-            <section className="mx-auto mt-14 max-w-4xl">
+            <section className="mx-auto mt-4 max-w-4xl">
               <p className="text-sm font-bold text-[#2786A5]">
                 很多人第一步就判断错了
               </p>
@@ -1346,7 +1349,7 @@ export default function DiagnosisClient({
 
                 <Link
                   href="/contact"
-                  className="mt-3 inline-flex items-center gap-2 text-sm font-bold text-[#164B78] hover:text-[#103B60]"
+                  className="page-nav-button"
                 >
                   进入人工核实
                   <ArrowRight size={16} />

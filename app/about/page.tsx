@@ -29,10 +29,10 @@ const AboutSchema = () => {
 export default function AboutPage() {
   return (
     <>
-      <main className="min-h-screen bg-[#FCFDFE] px-6 py-12 text-[#202D3A]">
+      <main className="compact-page min-h-screen bg-[#FCFDFE] px-6 py-4 text-[#202D3A]">
         <AboutSchema />
         <div className="mx-auto max-w-4xl">
-          <Link href="/" className="text-sm font-semibold text-[#246B95] hover:text-[#164B78]">
+          <Link href="/" className="page-nav-button">
             ← 返回首页
           </Link>
 

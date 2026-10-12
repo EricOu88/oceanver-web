@@ -37,7 +37,7 @@ export default function ATTBusinessFAQPage() {
     mainEntity: questions.map(item => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: [item.paragraphs[0], ...(item.checks ?? []), ...item.paragraphs.slice(1)].join(' ') } })),
   }
   return (
-    <main className="min-h-screen bg-[#F4F8FA] text-[#202D3A]">
+    <main className="compact-page min-h-screen bg-[#F4F8FA] text-[#202D3A]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, '\u003c') }} />
       <div className="mx-auto max-w-4xl px-6 py-12 sm:py-16">
         <header>
@@ -50,7 +50,7 @@ export default function ATTBusinessFAQPage() {
           </div>
           <p className="mt-4 text-sm leading-6">信号、速度或 SIM/eSIM 异常先做诊断；只有明确要比较 Business 与 Consumer 方案时，再查看方案比较。</p>
         </header>
-        <section aria-labelledby="questions-heading" className="mt-12">
+        <section aria-labelledby="questions-heading" className="mt-4">
           <h2 id="questions-heading" className="text-2xl font-bold text-[#103B60]">先看账户、套餐和实际使用条件</h2>
           <div className="mt-6 space-y-5">
             {questions.map((item, index) => (
@@ -63,7 +63,7 @@ export default function ATTBusinessFAQPage() {
             ))}
           </div>
         </section>
-        <section aria-labelledby="verification-heading" className="mt-10 rounded-xl border border-[#D5E5EC] bg-[#FCFDFE] p-6">
+        <section aria-labelledby="verification-heading" className="mt-4 rounded-xl border border-[#D5E5EC] bg-[#FCFDFE] p-6">
           <h2 id="verification-heading" className="text-2xl font-bold text-[#103B60]">人工核实边界</h2>
           <p className="mt-4 leading-7">网页无法准确确认以下账户条件，需要时应按当前账户和运营商规则核实：</p>
           <ul className="mt-4 grid list-disc gap-2 pl-6 leading-7 sm:grid-cols-2">{boundaries.map(item => <li key={item}>{item}</li>)}</ul>
