@@ -993,8 +993,9 @@ main:has(#bill-increase-reasons) h2 {
   font-weight: 600;
   line-height: 20px;
   text-decoration: none;
-  white-space: nowrap;
+  white-space: normal;
 }
+.page-nav-row .page-nav-button { white-space: nowrap; }
 .page-nav-button:hover {
   background: #D5E5EC;
   color: #103B60;
@@ -1013,5 +1014,5 @@ main:has(#bill-increase-reasons) h2 {
 }
 @media (max-width: 639px) {
   .compact-page header h1 { font-size: 28px; }
-  .compact-page header .page-nav-button { white-space: normal; text-align: left; }
+  .compact-page header .page-nav-button { text-align: left; }
 }
