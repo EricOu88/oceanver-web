@@ -148,7 +148,6 @@ export default function InternetFAQPage() {
                 <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/internet/price-hike" className="page-nav-button">账单变化进入涨价核对</Link><Link href="/internet/diagnosis" className="page-nav-button">网络异常进入逐步排查</Link></dd></div>
               </dl>
             </section>
-            <p className="mt-5 max-w-4xl text-base leading-8 text-slate-700">本页优先承接已经使用宽带后的收费、断网、Wi-Fi 与设备异常，也保留安装失败及迁移问题的排查入口。首次申请与地址选择转到主站办理 FAQ。</p>
             <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/internet/faq" className="font-semibold underline underline-offset-4">准备新装或搬家办理？查看主站宽带办理 FAQ</Link></p>
 
             <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-[#526170] sm:text-lg">
