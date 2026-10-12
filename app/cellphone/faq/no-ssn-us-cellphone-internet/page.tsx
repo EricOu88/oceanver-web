@@ -75,10 +75,14 @@ export default function NoSsnCellphoneInternetPage() {
           <h1 className="text-4xl font-black leading-tight md:text-5xl">
             没有 SSN，手机和家庭宽带怎么判断？
           </h1>
-          <p className="mt-5 text-lg leading-relaxed text-[#526170]">
-            “没有 SSN”本身不能直接得出“能办”或“不能办”的结论。先把身份验证、信用审核、
-            付款方式、设备和服务地址分开看，再判断下一步。
-          </p>
+          <section data-page-answer className="best-answer speakable-summary mt-6 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5">
+            <h2 className="text-lg font-bold">直接结论</h2>
+            <p className="mt-2 leading-7">没有 SSN 不等于一定不能办理手机或宽带。先区分身份验证、信用审核、设备分期和地址覆盖；不同运营商及服务类型的资格要求不同。</p>
+            <div className="mt-4 flex flex-wrap gap-4 text-sm font-semibold">
+              <Link href="/cellphone/diagnosis" className="text-[#164B78] underline underline-offset-4">手机问题继续判断 →</Link>
+              <Link href="/contact" className="text-[#164B78] underline underline-offset-4">资格不确定，联系人工核实 →</Link>
+            </div>
+          </section>
         </header>
 
         <section className="rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-7 md:p-8">

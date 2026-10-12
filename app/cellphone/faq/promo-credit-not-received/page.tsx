@@ -109,10 +109,14 @@ export default function PromoCreditNotReceivedPage() {
           <h1 className="max-w-4xl text-3xl font-black leading-tight tracking-tight sm:text-5xl">
             Trade-in、Bill Credit 或转网奖励还没到账，先查哪一步？
           </h1>
-          <p className="mt-5 max-w-3xl text-base leading-7 text-[#526170] sm:text-lg">
-            “优惠没到账”不是一个单一问题。先分清是哪一种优惠，再把订单、设备验收、线路资格和每期账单对起来。
-            公开网页不能读取运营商后台，所以不要用广告金额或别人的到账时间推断自己的结果。
-          </p>
+          <section data-page-answer className="best-answer speakable-summary mt-6 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5">
+            <h2 className="text-lg font-bold">直接结论</h2>
+            <p className="mt-2 leading-7">先确认没到账的是 Trade-in、每月 Bill Credit、转网奖励还是 AutoPay 折扣，再对照订单、设备验收记录和账单。不同优惠到账条件与时间不同，不能按广告金额推断实际资格。</p>
+            <div className="mt-4 flex flex-wrap gap-4 text-sm font-semibold">
+              <Link href="/cellphone/price-hike" className="text-[#164B78] underline underline-offset-4">账单整体变贵，继续核对 →</Link>
+              <Link href="/contact" className="text-[#164B78] underline underline-offset-4">需要核实实际账户 →</Link>
+            </div>
+          </section>
         </header>
 
         <section className="rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
