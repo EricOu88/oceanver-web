@@ -95,25 +95,6 @@ export default function PriceHikeClient() {
               </dl>
             </section>
 
-            <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/internet/price-hike" className="font-semibold underline underline-offset-4">已确认持续涨价，准备换网？查看地址与切换成本比较</Link></p>
-
-            <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
-              <Link
-                href="/bill-optimization"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#164B78] px-6 py-3 font-bold text-white transition hover:bg-[#103B60]"
-              >
-                还没确认原因，先检查账单
-                <ArrowRight size={18} />
-              </Link>
-
-              <Link
-                href="/internet/providers"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-6 py-3 font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-[#F4F8FA]"
-              >
-                已经确认长期涨价，开始比较
-                <ArrowRight size={18} />
-              </Link>
-            </div>
           </section>
 
           {/* 涨价原因 */}
