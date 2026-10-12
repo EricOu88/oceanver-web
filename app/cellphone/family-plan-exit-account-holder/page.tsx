@@ -110,9 +110,10 @@ export default function FamilyPlanExitAccountHolderPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <div className="mx-auto max-w-4xl">
-        <Link href="/cellphone/family-plan-guide" className="text-sm font-semibold text-[#246B95] hover:text-[#103B60]">
-          ← 返回家庭多线判断
-        </Link>
+        <nav aria-label="页面返回导航" className="flex items-center gap-4 overflow-x-auto whitespace-nowrap">
+          <Link href="/" className="shrink-0 text-sm font-semibold text-[#246B95] hover:text-[#103B60]">← 返回首页</Link>
+          <Link href="/cellphone/family-plan-guide" className="shrink-0 text-sm font-semibold text-[#246B95] hover:text-[#103B60]">返回家庭多线判断 →</Link>
+        </nav>
 
         <header className="py-10 sm:py-14">
           <p className="mb-4 inline-flex rounded-full bg-[#F4F8FA] px-3 py-1 text-sm font-semibold text-[#246B95]">
