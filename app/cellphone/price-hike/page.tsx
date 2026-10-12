@@ -3,7 +3,6 @@ import Link from 'next/link';
 import {
   ArrowRight,
   CheckCircle2,
-  CircleDollarSign,
   Layers3,
   ShieldCheck,
   Users,
@@ -148,18 +147,6 @@ export default function CellphonePriceHikePage() {
             <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/cellphone/att/price-increase" className="font-semibold underline underline-offset-4">已确认是 AT&T 旧计划调整？查看 AT&T 换套餐成本</Link></p>
 
         </header>
-
-        <section className="rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
-          <div className="flex gap-3">
-            <CircleDollarSign className="mt-1 shrink-0 text-[#2786A5]" size={27} />
-            <div>
-              <h2 className="text-2xl font-black">先确认：到底是哪一项让账单变贵</h2>
-              <p className="mt-3 leading-7 text-[#526170]">
-                同样是“每月多付了钱”，原因可能完全不同。判断错误，可能会为了一个小变化损失更大的设备 Credit 或家庭折扣。
-              </p>
-            </div>
-          </div>
-        </section>
 
         <section className="py-12">
           <h2 className="text-3xl font-black">常见的 6 类变化</h2>
