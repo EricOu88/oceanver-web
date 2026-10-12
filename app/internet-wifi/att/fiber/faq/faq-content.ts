@@ -21,7 +21,7 @@ export const attFiberFAQContent: Record<string, ATTFiberFAQContent> = {
     slug: 'att-fiber-price-increase',
     summary: '账单上涨可能来自持续月费变化、优惠抵扣、设备服务项目、按比例收费或一次性项目；应先对照近期账单确认变化来源。',
     content: {
-      whyCommon: '账单总额变化不一定代表基础月费单独上涨。优惠或账单抵扣变化、设备或服务项目、按比例收费以及一次性费用，都可能影响当期金额。',
+      whyCommon: '先区分持续收费与单次调整：只有基础月费或固定抵扣发生变化，才可能持续影响后续账单。',
       officialRules: '先查看最近两到三期账单中的 recurring internet charge、Promotion / Credit、AutoPay、设备或服务项目、按比例收费和一次性费用，并留意账户或服务变更记录。优惠资格与金额应以当前账单、账户和订单条款为准。',
       realUsage: '如果只有当期总额变化，先区分 recurring 项目是否持续变化，以及是否只是单次调整。对照项目名称、计费周期和抵扣记录；仅凭总额或“优惠结束”的猜测，不能确认涨价原因。',
       suitableFor: '网页无法读取你的具体账户，因此不能确认某个 Promotion/Credit 是否仍有效，也不能判断某项 recurring charge 会不会继续。基础月费连续变化、优惠抵扣与账单显示不一致、出现无法识别的 recurring 项目，或调整后金额仍无法从账单条目解释时，应结合实际账单和账户记录核实。',
@@ -32,7 +32,7 @@ export const attFiberFAQContent: Record<string, ATTFiberFAQContent> = {
     slug: 'att-fiber-frequent-disconnections',
     summary: '先比较受影响的设备、连接方式和发生时间，再检查网关状态与区域 outage；自测只能缩小范围，不能单独确认运营商线路故障。',
     content: {
-      whyCommon: '反复断网可能出现在单台设备、无线连接、网关或区域服务等不同层面。相似的表象不代表原因相同，也不能仅凭一次断线判定线路故障。',
+      whyCommon: '先记录是否多台设备同时掉线及是否影响有线连接；单次断线不足以判断故障发生在运营商线路。',
       officialRules: '先记录断网时间与频率，确认所有设备还是单台设备受影响；比较 Wi-Fi 与有线连接；查看 Gateway / ONT 指示状态，并检查账户 App 中是否有区域 outage 信息。需要上门检查、线路判断或补偿时，应向运营商核实当前账户和事件记录。',
       realUsage: '如果只有一台设备异常，先检查设备和连接；如果多个设备的 Wi-Fi 与有线连接都受影响，再结合网关状态和 outage 信息继续排查。自测结果只能缩小问题范围，不能直接确认运营商线路故障。',
       suitableFor: '网页无法读取 Gateway 后台或区域线路记录，也不能仅凭断网现象确认是运营商线路问题。多个设备反复同时掉线、有线连接也中断、网关状态持续异常，或账户状态与实际服务表现不一致时，应结合 outage、设备和账户记录核实。',
