@@ -57,13 +57,16 @@ export default function Page() {
       <div className="min-h-screen bg-[#FCFDFE]">
         <div className="sticky top-0 z-40 border-b border-[#D5E5EC] bg-white/95 backdrop-blur">
           <div className="mx-auto max-w-6xl px-4 py-3 md:px-6">
-            <Link
+            <nav aria-label="页面返回导航" className="page-nav-row">
+<Link href="/" className="page-nav-button">← 返回首页</Link>
+<Link
               href="/internet/xfinity"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#526170] transition hover:text-[#164B78]"
+              className="page-nav-button"
             >
               <ArrowLeft size={16} />
               返回 Xfinity 判断页
             </Link>
+</nav>
           </div>
         </div>
 

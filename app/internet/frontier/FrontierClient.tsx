@@ -61,12 +61,15 @@ export default function FrontierClient() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageSchema) }}
       />
-      <main className="min-h-screen bg-[#FCFDFE] text-[#202D3A]">
+      <main className="compact-page min-h-screen bg-[#FCFDFE] text-[#202D3A]">
         <div className="border-b border-[#D5E5EC] bg-white">
           <div className="mx-auto max-w-6xl px-5 py-4">
-            <Link href="/internet/providers" className="text-sm font-semibold text-[#526170] hover:text-[#164B78]">
+            <nav aria-label="页面返回导航" className="page-nav-row">
+<Link href="/" className="page-nav-button">← 返回首页</Link>
+<Link href="/internet/providers" className="page-nav-button">
               ← 返回宽带比较
             </Link>
+</nav>
           </div>
         </div>
 
@@ -84,13 +87,13 @@ export default function FrontierClient() {
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
                 href="/internet/diagnosis"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#164B78] px-6 font-bold text-white hover:bg-[#103B60]"
+                className="page-nav-button"
               >
                 不知道问题在哪？先诊断 <ArrowRight size={18} />
               </Link>
               <Link
                 href="/internet/frontier/faq"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[#164B78] bg-white px-6 font-bold text-[#164B78] hover:bg-[#F4F8FA]"
+                className="page-nav-button"
               >
                 查看 Frontier 常见问题 <ArrowRight size={18} />
               </Link>
@@ -98,7 +101,7 @@ export default function FrontierClient() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-5 py-12 md:py-16">
+        <section className="mx-auto max-w-6xl px-5 py-4 md:py-6">
           <h2 className="mb-6 text-2xl font-black md:text-3xl">更换前，先核对这六个问题</h2>
           <div className="grid gap-4 md:grid-cols-2">
             {checks.map((item) => (
@@ -138,7 +141,7 @@ export default function FrontierClient() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-5 py-10">
+        <section className="mx-auto max-w-6xl px-5 py-4">
           <div className="rounded-2xl border border-[#D5E5EC] bg-white p-6">
             <h2 className="text-xl font-black">哪些情况需要结合真实地址或账户核实？</h2>
             <p className="mt-3 max-w-3xl leading-7 text-[#526170]">
@@ -147,7 +150,7 @@ export default function FrontierClient() {
             </p>
             <Link
               href="/contact"
-              className="mt-5 inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]"
+              className="page-nav-button"
             >
               需要时进入人工核实 <ArrowRight size={16} />
             </Link>

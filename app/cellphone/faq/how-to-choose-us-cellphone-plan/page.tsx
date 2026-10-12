@@ -66,18 +66,21 @@ const TYPES = [
 
 export default function HowToChooseCellphonePlanPage() {
   return (
-    <main className="min-h-screen bg-[#FCFDFE] text-[#202D3A]">
+    <main className="compact-page min-h-screen bg-[#FCFDFE] text-[#202D3A]">
       <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
         <div className="mb-8">
-          <Link
+          <nav aria-label="页面返回导航" className="page-nav-row">
+<Link href="/" className="page-nav-button">← 返回首页</Link>
+<Link
             href="/cellphone/faq"
-            className="text-sm font-bold text-[#526170] transition hover:text-[#164B78]"
+            className="page-nav-button"
           >
             ← 返回手机问题库
           </Link>
+</nav>
         </div>
 
-        <header className="mb-12">
+        <header className="mb-4">
           <p className="mb-3 text-sm font-bold text-[#246B95]">手机方案选择方法</p>
           <h1 className="text-4xl font-black leading-tight md:text-5xl">
             美国手机方案怎么选？
@@ -106,7 +109,7 @@ export default function HowToChooseCellphonePlanPage() {
           </div>
         </section>
 
-        <section className="py-12">
+        <section className="py-4">
           <h2 className="text-3xl font-black">Prepaid、Postpaid、家庭多线，应该怎么理解？</h2>
           <p className="mt-3 max-w-3xl leading-relaxed text-[#526170]">
             这些只是不同的账户和付费结构，不是“好 / 坏”的排名。最重要的是看它是否符合你的实际条件。
@@ -143,7 +146,7 @@ export default function HowToChooseCellphonePlanPage() {
           </div>
         </section>
 
-        <section className="py-12">
+        <section className="py-4">
           <h2 className="text-3xl font-black">下一步去哪？</h2>
           <div className="mt-6 grid gap-5 md:grid-cols-3">
             <Link

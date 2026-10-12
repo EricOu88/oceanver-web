@@ -320,7 +320,7 @@ export default function XfinityFAQClient() {
   }
 
   return (
-    <main className="mx-auto max-w-6xl px-4 py-8 md:px-6 md:py-12">
+    <main className="compact-page mx-auto max-w-6xl px-4 py-4 md:px-6 md:py-6">
       {/* Hero */}
       <section className="mx-auto max-w-4xl text-center">
         <p className="text-sm font-bold tracking-wide text-[#2786A5]">
@@ -342,24 +342,27 @@ export default function XfinityFAQClient() {
         <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
           <Link
             href="/internet/diagnosis"
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#164B78] px-6 py-3 font-bold text-white transition hover:bg-[#103B60]"
+            className="page-nav-button"
           >
             不知道问题在哪？先诊断
             <ArrowRight size={18} />
           </Link>
 
-          <Link
+          <nav aria-label="页面返回导航" className="page-nav-row">
+<Link href="/" className="page-nav-button">← 返回首页</Link>
+<Link
             href="/internet/xfinity"
-            className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-6 py-3 font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-[#F4F8FA]"
+            className="page-nav-button"
           >
             返回 Xfinity 判断页
             <ArrowRight size={18} />
           </Link>
+</nav>
         </div>
       </section>
 
       {/* 分类 */}
-      <section className="mt-12">
+      <section className="mt-4">
         <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
           {allCategories.map((category) => {
             const categoryConfig = tabConfig[category.id]
@@ -404,7 +407,7 @@ export default function XfinityFAQClient() {
       </section>
 
       {/* 搜索 */}
-      <section className="mt-8">
+      <section className="mt-4">
         <div className="relative">
           <Search
             size={20}
@@ -443,7 +446,7 @@ export default function XfinityFAQClient() {
       </section>
 
       {/* 当前分类 */}
-      <section className="mt-8 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 md:p-6">
+      <section className="mt-4 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 md:p-6">
         <div className="flex items-start gap-4">
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-[#164B78]">
             {config?.icon}
@@ -484,14 +487,14 @@ export default function XfinityFAQClient() {
       )}
 
       {/* FAQ */}
-      <section className="mt-8 space-y-4">
+      <section className="mt-4 space-y-4">
         {filteredSubCategories.map((subCategory, index) =>
           renderSubCategory(subCategory, index)
         )}
       </section>
 
       {searchQuery && filteredCount === 0 && (
-        <section className="py-16 text-center">
+        <section className="py-4 text-center">
           <CircleHelp
             size={34}
             className="mx-auto text-[#2786A5]"
@@ -508,7 +511,7 @@ export default function XfinityFAQClient() {
 
           <Link
             href="/internet/diagnosis"
-            className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#164B78] px-6 py-3 font-bold text-white transition hover:bg-[#103B60]"
+            className="page-nav-button"
           >
             进入宽带问题诊断
             <ArrowRight size={18} />
@@ -516,7 +519,7 @@ export default function XfinityFAQClient() {
         </section>
       )}
 
-      <section className="mt-14">
+      <section className="mt-4">
         <p className="text-sm font-bold text-[#2786A5]">重点判断页</p>
         <h2 className="mt-2 text-2xl font-black text-[#202D3A]">
           需要更完整步骤时，继续看这些问题
@@ -539,7 +542,7 @@ export default function XfinityFAQClient() {
       </section>
 
       {/* 下一步 */}
-      <section className="mt-14 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 md:p-8">
+      <section className="mt-4 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 md:p-8">
         <p className="text-sm font-bold text-[#2786A5]">
           看完 FAQ 后怎么走
         </p>
@@ -580,7 +583,7 @@ export default function XfinityFAQClient() {
       </section>
 
       {/* 人工边界 */}
-      <section className="mx-auto mt-14 max-w-4xl text-center">
+      <section className="mx-auto mt-4 max-w-4xl text-center">
         <CircleHelp
           size={28}
           className="mx-auto text-[#2786A5]"
@@ -598,7 +601,7 @@ export default function XfinityFAQClient() {
 
         <Link
           href="/contact"
-          className="mt-6 inline-flex items-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-6 py-3 text-sm font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-[#F4F8FA]"
+          className="page-nav-button"
         >
           需要时进入人工核实
           <ArrowRight size={16} />

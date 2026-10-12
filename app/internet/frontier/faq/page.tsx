@@ -44,20 +44,23 @@ export default function FrontierFAQPage() {
   return (
     <>
       <FAQPageSchema />
-      <main className="min-h-screen bg-[#F4F8FA] text-[#202D3A]">
+      <main className="compact-page min-h-screen bg-[#F4F8FA] text-[#202D3A]">
         <div className="border-b border-[#D5E5EC] bg-white">
           <div className="mx-auto max-w-5xl px-5 py-4">
-            <Link
+            <nav aria-label="页面返回导航" className="page-nav-row">
+<Link href="/" className="page-nav-button">← 返回首页</Link>
+<Link
               href="/internet/frontier"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#526170] hover:text-[#164B78]"
+              className="page-nav-button"
             >
               <ArrowLeft size={18} /> 返回 Frontier 判断页
             </Link>
+</nav>
           </div>
         </div>
 
         <div className="mx-auto max-w-5xl px-5 py-10 md:py-14">
-          <header className="mb-10 max-w-3xl">
+          <header className="mb-4 max-w-3xl">
             <h1 className="mb-4 text-3xl font-black md:text-4xl">Frontier 宽带常见问题</h1>
             <p className="text-base leading-7 text-[#526170] md:text-lg">
               先核对地址、服务类型和实际问题，再比较是否值得更换。价格、资格、安装与账户结果应以当前地址和账户信息为准。

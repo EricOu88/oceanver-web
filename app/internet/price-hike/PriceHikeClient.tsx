@@ -64,13 +64,13 @@ const compareConditions = [
 export default function PriceHikeClient() {
   return (
     <>
-      <main className="min-h-screen bg-[#FCFDFE] px-4 py-8 text-[#202D3A] sm:px-6 sm:py-12">
+      <main className="compact-page min-h-screen bg-[#FCFDFE] px-4 py-4 text-[#202D3A] sm:px-6 sm:py-6">
         <div className="mx-auto max-w-6xl">
-          <nav aria-label="页面返回导航" className="flex flex-nowrap items-center gap-4 overflow-x-auto py-1">
-            <Link href="/" className="shrink-0 whitespace-nowrap text-sm font-semibold text-[#246B95] hover:text-[#103B60]">← 返回首页</Link>
+          <nav aria-label="页面返回导航" className="page-nav-row">
+            <Link href="/" className="page-nav-button">← 返回首页</Link>
             <Link
             href="/internet"
-            className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 text-sm text-[#526170] transition hover:text-[#164B78]"
+            className="page-nav-button"
           >
             <ArrowLeft size={16} />
             返回宽带问题入口
@@ -78,7 +78,7 @@ export default function PriceHikeClient() {
           </nav>
 
           {/* HERO */}
-          <section className="mx-auto mt-8 max-w-4xl text-center">
+          <section className="mx-auto mt-4 max-w-4xl text-center">
             <p className="text-sm font-bold tracking-wide text-[#2786A5]">
               宽带长期涨价判断
             </p>
@@ -91,14 +91,14 @@ export default function PriceHikeClient() {
               <p className="mt-3 leading-7">先分清持续月费变化与一次性费用，再检查优惠结束、自动付款和设备收费。尚未核实原因时不急着换网；确认持续费用不合适后，再比较地址可用方案和切换成本。</p>
               <dl className="mt-4 space-y-3 text-sm leading-7">
                 <div><dt className="font-bold">适用条件</dt><dd>适合已在使用宽带、月费变贵或折扣消失的用户；首次申请与新地址方案选择进入主站。</dd></div>
-                <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/bill-optimization" className="font-semibold underline underline-offset-4">先按收费项目核对账单</Link><Link href="https://baymediastar.com/internet/price-hike" className="font-semibold underline underline-offset-4">原因明确后比较换网成本</Link></dd></div>
+                <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/bill-optimization" className="page-nav-button">先按收费项目核对账单</Link><Link href="https://baymediastar.com/internet/price-hike" className="font-semibold underline underline-offset-4">原因明确后比较换网成本</Link></dd></div>
               </dl>
             </section>
 
           </section>
 
           {/* 涨价原因 */}
-          <section className="mt-16">
+          <section className="mt-4">
             <p className="text-sm font-bold text-[#2786A5]">
               先确认到底是哪一项变了
             </p>
@@ -130,7 +130,7 @@ export default function PriceHikeClient() {
           </section>
 
           {/* 按账单证据继续判断：不重复创建专题页面 */}
-          <section className="mt-16" aria-labelledby="bill-evidence-heading">
+          <section className="mt-4" aria-labelledby="bill-evidence-heading">
             <p className="text-sm font-bold text-[#2786A5]">按实际账单分流</p>
             <h2 id="bill-evidence-heading" className="mt-2 text-2xl font-black sm:text-3xl">
               找到变化项目后，下一步怎么判断？
@@ -188,7 +188,7 @@ export default function PriceHikeClient() {
           </section>
 
           {/* 一次性 vs 长期 */}
-          <section className="mt-16 grid gap-6 lg:grid-cols-2">
+          <section className="mt-4 grid gap-6 lg:grid-cols-2">
             <InfoCard
               icon={<RefreshCcw size={23} />}
               title="先判断：只是这一次高，还是以后都会高"
@@ -207,7 +207,7 @@ export default function PriceHikeClient() {
 
               <Link
                 href="/bill-optimization"
-                className="inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]"
+                className="page-nav-button"
               >
                 对比最近两期账单
                 <ArrowRight size={16} />
@@ -231,7 +231,7 @@ export default function PriceHikeClient() {
           </section>
 
           {/* 判断 promo */}
-          <section className="mt-16 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
+          <section className="mt-4 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
             <p className="text-sm font-bold text-[#2786A5]">
               判断是不是优惠到期
             </p>
@@ -262,7 +262,7 @@ export default function PriceHikeClient() {
             </ol>
           </section>
 
-          <section className="mt-16 rounded-3xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+          <section className="mt-4 rounded-3xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
             <p className="text-sm font-bold text-[#2786A5]">
               优惠快到期时先准备
             </p>
@@ -290,7 +290,7 @@ export default function PriceHikeClient() {
           </section>
 
           {/* 不一定要换 */}
-          <section className="mt-16">
+          <section className="mt-4">
             <p className="text-sm font-bold text-[#2786A5]">
               涨价不等于一定要换
             </p>
@@ -319,7 +319,7 @@ export default function PriceHikeClient() {
           </section>
 
           {/* 值得开始比较 */}
-          <section className="mt-16 rounded-3xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+          <section className="mt-4 rounded-3xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
             <p className="text-sm font-bold text-[#2786A5]">
               什么情况值得认真比较新方案
             </p>
@@ -348,7 +348,7 @@ export default function PriceHikeClient() {
 
             <Link
               href="/internet/providers"
-              className="mt-7 inline-flex items-center gap-2 rounded-xl bg-[#164B78] px-6 py-3 font-bold text-white transition hover:bg-[#103B60]"
+              className="page-nav-button"
             >
               开始比较宽带方案
               <ArrowRight size={18} />
@@ -356,7 +356,7 @@ export default function PriceHikeClient() {
           </section>
 
           {/* 运营商专项 */}
-          <section className="mt-16">
+          <section className="mt-4">
             <p className="text-sm font-bold text-[#2786A5]">
               已经知道当前是哪家运营商
             </p>
@@ -398,7 +398,7 @@ export default function PriceHikeClient() {
           </section>
 
           {/* 三个出口 */}
-          <section className="mt-16 grid gap-4 md:grid-cols-3">
+          <section className="mt-4 grid gap-4 md:grid-cols-3">
             <DecisionCard
               title="还没看懂账单"
               description="先确认到底是哪一项费用增加。"
@@ -422,7 +422,7 @@ export default function PriceHikeClient() {
           </section>
 
           {/* 人工边界 */}
-          <section className="mx-auto mt-16 max-w-4xl text-center">
+          <section className="mx-auto mt-4 max-w-4xl text-center">
             <CircleHelp
               size={28}
               className="mx-auto text-[#2786A5]"
@@ -447,14 +447,14 @@ export default function PriceHikeClient() {
 
             <Link
               href="/contact"
-              className="mt-6 inline-flex items-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-6 py-3 text-sm font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-[#F4F8FA]"
+              className="page-nav-button"
             >
               需要时进入人工核实
               <ArrowRight size={16} />
             </Link>
           </section>
 
-        <section aria-labelledby="internet-official-sources" className="mt-10 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+        <section aria-labelledby="internet-official-sources" className="mt-4 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
           <h2 id="internet-official-sources" className="text-2xl font-black">官方规则与适用范围</h2>
           <p className="mt-3 text-sm leading-7 text-[#526170]">核实日期：2026年10月11日。以下来源用于核对对应运营商的规则，不代表已经核实你的账户，也不能套用于其他运营商、商业账户或所有旧套餐。最终以当前账单、订单和活动条款为准。</p>
           <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-7 text-[#526170]">

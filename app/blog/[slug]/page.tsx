@@ -52,7 +52,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <>
-      <main className="max-w-4xl mx-auto px-6 py-12 md:py-16">
+      <main className="compact-page max-w-4xl mx-auto px-6 py-4 md:py-6">
         {/* 面包屑导航（提升索引深度） */}
         <nav className="mb-4 text-sm text-slate-500">
           <ol className="flex flex-wrap items-center gap-2">
@@ -74,17 +74,20 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
         {/* 返回按钮 */}
         <div className="mb-8">
-          <Link
+          <nav aria-label="页面返回导航" className="page-nav-row">
+<Link href="/" className="page-nav-button">← 返回首页</Link>
+<Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 font-semibold transition-colors"
+            className="page-nav-button"
           >
             <ArrowLeft size={18} />
             返回博客列表
           </Link>
+</nav>
         </div>
 
         {/* 文章头部 */}
-        <header className="mb-8">
+        <header className="mb-4">
           {/* 分类和日期 */}
           <div className="flex items-center gap-4 mb-4 flex-wrap">
             <div className="flex items-center gap-2">
@@ -141,7 +144,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
         {/* 相关文章 */}
         {relatedPosts.length > 0 && (
-          <section className="mt-16 pt-12 border-t border-slate-200">
+          <section className="mt-4 pt-4 border-t border-slate-200">
             <h2 className="text-2xl font-black text-slate-900 mb-6">相关文章</h2>
             <div className="grid md:grid-cols-3 gap-6">
               {relatedPosts.map((relatedPost) => (
@@ -168,13 +171,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
         {/* 返回博客列表 */}
         <div className="mt-12 text-center">
-          <Link
+          <nav aria-label="页面返回导航" className="page-nav-row">
+<Link href="/" className="page-nav-button">← 返回首页</Link>
+<Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 font-semibold transition-colors"
+            className="page-nav-button"
           >
             <ArrowLeft size={18} />
             返回博客列表
           </Link>
+</nav>
         </div>
       </main>
     </>

@@ -105,16 +105,16 @@ const schema = {
 
 export default function FamilyPlanExitAccountHolderPage() {
   return (
-    <main className="min-h-screen bg-[#FCFDFE] px-4 py-10 text-[#202D3A] sm:px-6 sm:py-14">
+    <main className="compact-page min-h-screen bg-[#FCFDFE] px-4 py-4 text-[#202D3A] sm:px-6 sm:py-6">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <div className="mx-auto max-w-4xl">
         <nav aria-label="页面返回导航" className="flex items-center gap-4 overflow-x-auto whitespace-nowrap">
-          <Link href="/" className="shrink-0 text-sm font-semibold text-[#246B95] hover:text-[#103B60]">← 返回首页</Link>
-          <Link href="/cellphone/family-plan-guide" className="shrink-0 text-sm font-semibold text-[#246B95] hover:text-[#103B60]">返回家庭多线判断 →</Link>
+          <Link href="/" className="page-nav-button">← 返回首页</Link>
+          <Link href="/cellphone/family-plan-guide" className="page-nav-button">返回家庭多线判断 →</Link>
         </nav>
 
-        <header className="py-10 sm:py-14">
+        <header className="py-4 sm:py-6">
           <p className="mb-4 inline-flex rounded-full bg-[#F4F8FA] px-3 py-1 text-sm font-semibold text-[#246B95]">
             家庭计划退出 / 保号 / 户主权限
           </p>
@@ -126,13 +126,13 @@ export default function FamilyPlanExitAccountHolderPage() {
             <p className="mt-3 leading-7">先确认户主授权、号码是否保留、设备余额及优惠抵扣。保号转网成功前不要取消旧号码；户主失联时先走运营商官方授权流程。</p>
             <p className="mt-3 text-sm leading-7 text-[#526170]">适合已在家庭计划中、准备退组或遇到户主失联的用户；具体操作须核实账户资格。</p>
             <div className="mt-4 flex flex-wrap gap-4 text-sm font-semibold">
-              <Link href="/cellphone/family-plan-guide" className="text-[#164B78] underline underline-offset-4">还没决定如何调整家庭计划 →</Link>
-              <Link href="/contact" className="text-[#164B78] underline underline-offset-4">户主无法配合，联系人工核实 →</Link>
+              <Link href="/cellphone/family-plan-guide" className="page-nav-button">还没决定如何调整家庭计划 →</Link>
+              <Link href="/contact" className="page-nav-button">户主无法配合，联系人工核实 →</Link>
             </div>
           </section>
         </header>
 
-        <section className="py-12">
+        <section className="py-4">
           <h2 className="text-3xl font-black">最常见的 5 种情况</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {paths.map((item) => (
@@ -145,7 +145,7 @@ export default function FamilyPlanExitAccountHolderPage() {
           </div>
         </section>
 
-        <section aria-labelledby="exit-decision-heading" className="mt-10">
+        <section aria-labelledby="exit-decision-heading" className="mt-4">
           <h2 id="exit-decision-heading" className="text-2xl font-black">户主失联与保号：按实际情况判断</h2>
           <p className="mt-3 leading-7 text-[#526170]">先区分是否取得户主授权、是否保留原号码，以及要跨网转出还是同网转责任。每一步以当前运营商的账户规则为准。</p>
           <div className="mt-5 grid gap-4 sm:grid-cols-2">
@@ -159,9 +159,9 @@ export default function FamilyPlanExitAccountHolderPage() {
             ))}
           </div>
           <div className="mt-5 flex flex-wrap gap-4 text-sm font-semibold">
-            <Link href="/cellphone/faq/family-plan-leave-keep-number" className="text-[#164B78] underline underline-offset-4">退组保号准备 →</Link>
-            <Link href="/cellphone/faq/promo-credit-not-received" className="text-[#164B78] underline underline-offset-4">设备分期与抵扣 →</Link>
-            <Link href="/contact" className="text-[#164B78] underline underline-offset-4">需要人工核实 →</Link>
+            <Link href="/cellphone/faq/family-plan-leave-keep-number" className="page-nav-button">退组保号准备 →</Link>
+            <Link href="/cellphone/faq/promo-credit-not-received" className="page-nav-button">设备分期与抵扣 →</Link>
+            <Link href="/contact" className="page-nav-button">需要人工核实 →</Link>
           </div>
         </section>
 
@@ -177,7 +177,7 @@ export default function FamilyPlanExitAccountHolderPage() {
           </div>
         </section>
 
-        <section className="mt-10 grid gap-5 md:grid-cols-2">
+        <section className="mt-4 grid gap-5 md:grid-cols-2">
           <article className="rounded-2xl border border-[#D5E5EC] bg-white p-6">
             <PhoneCall className="mb-4 text-[#2786A5]" size={27} />
             <h2 className="text-2xl font-black">保号转出和直接取消，不是一回事</h2>
@@ -197,14 +197,14 @@ export default function FamilyPlanExitAccountHolderPage() {
           </article>
         </section>
 
-        <section className="mt-10 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
+        <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
           <h2 className="text-2xl font-black">这些操作先不要急着做</h2>
           <ul className="mt-4 list-disc space-y-3 pl-5 leading-7 text-[#526170]">
             {dont.map((item) => <li key={item}>{item}</li>)}
           </ul>
         </section>
 
-        <section className="mt-10 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+        <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
           <h2 className="text-2xl font-black">网页不能替你确认什么？</h2>
           <p className="mt-3 leading-7 text-[#526170]">
             当前 Account Holder / Authorized User 权限、Transfer of Billing Responsibility 资格、
@@ -216,13 +216,13 @@ export default function FamilyPlanExitAccountHolderPage() {
           </p>
           <Link
             href="/contact"
-            className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#164B78] px-5 py-3 font-bold text-white transition hover:bg-[#103B60]"
+            className="page-nav-button"
           >
             需要时进入人工核实 <ArrowRight size={16} />
           </Link>
         </section>
 
-        <section className="mt-10 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+        <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
           <h2 className="text-2xl font-black">相关问题继续去哪</h2>
           <div className="mt-5 grid gap-4 sm:grid-cols-2">
             <Link href="/cellphone/diagnosis" className="rounded-xl border border-[#D5E5EC] p-4 hover:border-[#246B95]">
@@ -244,7 +244,7 @@ export default function FamilyPlanExitAccountHolderPage() {
           </div>
         </section>
 
-        <section aria-labelledby="family-authorization-policy" className="mt-10 rounded-2xl border border-[#D5E5EC] bg-white p-5 sm:p-8">
+        <section aria-labelledby="family-authorization-policy" className="mt-4 rounded-2xl border border-[#D5E5EC] bg-white p-5 sm:p-8">
           <h2 id="family-authorization-policy" className="text-2xl font-bold">运营商官方规则：同网转责任不等于跨网保号</h2>
           <p className="mt-3 leading-7 text-[#526170]">在同一运营商内将线路移到另一个账单账户，通常涉及原账户授权与接收方资格；跨运营商携号转出则需另行核对原运营商的转号资料及安全验证。</p>
           <ul className="mt-4 list-disc space-y-3 pl-5 leading-7 text-[#526170]">

@@ -26,10 +26,10 @@ export default function ContactClient() {
   return (
     <>
       <ContactSchema />
-      <main className="min-h-screen bg-[#FCFDFE] px-5 py-10 text-[#202D3A] md:px-6 md:py-14">
+      <main className="compact-page min-h-screen bg-[#FCFDFE] px-5 py-4 text-[#202D3A] md:px-6 md:py-6">
         <div className="mx-auto max-w-[1120px] space-y-10 md:space-y-12">
           <header>
-            <Link href="/" className="inline-flex items-center gap-2 text-sm font-semibold text-[#246B95] hover:text-[#164B78]">
+            <Link href="/" className="page-nav-button">
               <Home className="h-4 w-4" aria-hidden="true" />
               返回首页
             </Link>

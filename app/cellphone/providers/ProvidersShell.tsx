@@ -9,7 +9,7 @@ export function ProvidersShell({ children }: { children: ReactNode }) {
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
           <Link
             href="/cellphone"
-            className="inline-flex items-center gap-2 text-sm font-bold text-[#526170] transition hover:text-[#164B78]"
+            className="page-nav-button"
           >
             <ChevronLeft size={18} />
             手机问题中心

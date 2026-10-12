@@ -127,13 +127,16 @@ export default async function XfinityFAQDetailPage({
         {/* 顶部导航 */}
         <div className="sticky top-0 z-40 border-b border-[#D5E5EC] bg-white/95 backdrop-blur">
           <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3 md:px-6">
-            <Link
+            <nav aria-label="页面返回导航" className="page-nav-row">
+<Link href="/" className="page-nav-button">← 返回首页</Link>
+<Link
               href="/internet/xfinity/faq"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#526170] transition hover:text-[#164B78]"
+              className="page-nav-button"
             >
               <ArrowLeft size={16} />
               返回 Xfinity FAQ
             </Link>
+</nav>
 
             <Link
               href="/internet/diagnosis"
@@ -164,8 +167,8 @@ export default async function XfinityFAQDetailPage({
                   {faq.summary}
                 </p>
                 <div className="mt-3 flex flex-wrap gap-3 text-sm font-semibold">
-                  <Link href="/internet/diagnosis" className="text-[#164B78] underline underline-offset-4 hover:text-[#103B60]">下一步：按问题自查</Link>
-                  <Link href="/contact" className="text-[#164B78] underline underline-offset-4 hover:text-[#103B60]">账户费用需核实</Link>
+                  <Link href="/internet/diagnosis" className="page-nav-button">下一步：按问题自查</Link>
+                  <Link href="/contact" className="page-nav-button">账户费用需核实</Link>
                 </div>
               </div>
             )}
@@ -203,7 +206,7 @@ export default async function XfinityFAQDetailPage({
           </ContentSection>
 
           {/* 适合 / 不适合 */}
-          <section className="mt-10 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 md:p-8">
+          <section className="mt-4 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 md:p-8">
             <h2 className="text-xl font-black text-[#202D3A] md:text-2xl">
               哪些情况网页不能直接确定
             </h2>
@@ -214,7 +217,7 @@ export default async function XfinityFAQDetailPage({
           </section>
 
           {/* 决策提示 */}
-          <section className="mt-10 rounded-3xl border border-[#D5E5EC] bg-white p-6 md:p-8">
+          <section className="mt-4 rounded-3xl border border-[#D5E5EC] bg-white p-6 md:p-8">
             <p className="text-sm font-bold text-[#2786A5]">
               一个重要原则
             </p>
@@ -233,7 +236,7 @@ export default async function XfinityFAQDetailPage({
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/internet/diagnosis"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#164B78] px-6 py-3 font-bold text-white transition hover:bg-[#103B60]"
+                className="page-nav-button"
               >
                 继续做宽带问题诊断
                 <ArrowRight size={17} />
@@ -241,7 +244,7 @@ export default async function XfinityFAQDetailPage({
 
               <Link
                 href="/internet/price-hike"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-6 py-3 font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-[#F4F8FA]"
+                className="page-nav-button"
               >
                 如果主要问题是涨价
                 <ArrowRight size={17} />
@@ -251,7 +254,7 @@ export default async function XfinityFAQDetailPage({
 
           {/* 相关问题 */}
           {relatedFAQs.length > 0 && (
-            <section className="mt-12">
+            <section className="mt-4">
               <p className="text-sm font-bold text-[#2786A5]">
                 继续了解
               </p>
@@ -289,7 +292,7 @@ export default async function XfinityFAQDetailPage({
           )}
 
           {/* 人工边界 */}
-          <section className="mt-12 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 text-center md:p-8">
+          <section className="mt-4 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 text-center md:p-8">
             <CircleHelp
               size={28}
               className="mx-auto text-[#2786A5]"
@@ -307,7 +310,7 @@ export default async function XfinityFAQDetailPage({
 
             <Link
               href="/contact"
-              className="mt-6 inline-flex items-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-6 py-3 text-sm font-bold text-[#164B78] transition hover:border-[#2786A5]"
+              className="page-nav-button"
             >
               需要时进入人工核实
               <ArrowRight size={16} />
@@ -316,13 +319,16 @@ export default async function XfinityFAQDetailPage({
 
           {/* 底部导航 */}
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4 text-sm">
-            <Link
+            <nav aria-label="页面返回导航" className="page-nav-row">
+<Link href="/" className="page-nav-button">← 返回首页</Link>
+<Link
               href="/internet/xfinity/faq"
-              className="inline-flex items-center gap-2 font-semibold text-[#526170] transition hover:text-[#164B78]"
+              className="page-nav-button"
             >
               <ArrowLeft size={16} />
               返回 FAQ 总览
             </Link>
+</nav>
 
             <span className="text-[#D5E5EC]">|</span>
 
@@ -360,7 +366,7 @@ function ContentSection({
   children: ReactNode
 }) {
   return (
-    <section className="mt-10">
+    <section className="mt-4">
       <div className="flex items-start gap-3">
         <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#F4F8FA] text-[#164B78]">
           {icon}

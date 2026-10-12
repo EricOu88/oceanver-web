@@ -80,17 +80,17 @@ const webpageSchema = {
 
 export default function FamilyPlanGuidePage() {
   return (
-    <main className="min-h-screen bg-[#FCFDFE] px-4 py-10 text-[#202D3A] sm:px-6 sm:py-14">
+    <main className="compact-page min-h-screen bg-[#FCFDFE] px-4 py-4 text-[#202D3A] sm:px-6 sm:py-6">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageSchema) }} />
       <div className="mx-auto max-w-4xl">
-        <nav aria-label="页面返回导航" className="flex flex-nowrap items-center gap-4 overflow-x-auto py-1">
-            <Link href="/" className="shrink-0 whitespace-nowrap text-sm font-semibold text-[#246B95] hover:text-[#103B60]">← 返回首页</Link>
-            <Link href="/cellphone" className="shrink-0 whitespace-nowrap text-sm font-semibold text-[#246B95] hover:text-[#103B60]">
+        <nav aria-label="页面返回导航" className="page-nav-row">
+            <Link href="/" className="page-nav-button">← 返回首页</Link>
+            <Link href="/cellphone" className="page-nav-button">
           ← 返回手机问题
         </Link>
           </nav>
 
-        <header className="py-10 sm:py-14">
+        <header className="py-4 sm:py-6">
           <p className="mb-4 inline-flex rounded-full bg-[#F4F8FA] px-3 py-1 text-sm font-semibold text-[#246B95]">
             家庭多线判断
           </p>
@@ -102,17 +102,17 @@ export default function FamilyPlanGuidePage() {
               <p className="mt-3 leading-7">调整现有家庭计划前，逐条核对设备余额、未发抵扣、号码状态与户主权限，并重算剩余成员的费用。先取得正确转号资料，不先关闭要保留的号码。</p>
               <dl className="mt-4 space-y-3 text-sm leading-7">
                 <div><dt className="font-bold">适用条件</dt><dd>适合已加入家庭组、准备减线、退组或部分成员转网的人；新办或转入家庭套餐的价格比较进入主站。</dd></div>
-                <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/cellphone/family-plan-exit-account-holder" className="font-semibold underline underline-offset-4">先核对户主权限与退出路径</Link><Link href="/cellphone/faq/family-plan-leave-keep-number" className="font-semibold underline underline-offset-4">再确认退组保号准备</Link></dd></div>
+                <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/cellphone/family-plan-exit-account-holder" className="page-nav-button">先核对户主权限与退出路径</Link><Link href="/cellphone/faq/family-plan-leave-keep-number" className="page-nav-button">再确认退组保号准备</Link></dd></div>
               </dl>
             </section>
 
             <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/cellphone/att-family" className="font-semibold underline underline-offset-4">准备新办或转入 AT&T 家庭套餐？进入主站办理前比较</Link></p>
 
           <div className="mt-7 flex flex-wrap gap-3">
-            <Link href="/cellphone/diagnosis" className="inline-flex min-h-12 items-center justify-center rounded-xl bg-[#164B78] px-5 font-bold text-white transition hover:bg-[#103B60]">
+            <Link href="/cellphone/diagnosis" className="page-nav-button">
               先判断家庭多线问题
             </Link>
-            <Link href="/cellphone/providers" className="inline-flex min-h-12 items-center justify-center rounded-xl border border-[#D5E5EC] bg-white px-5 font-bold text-[#164B78] transition hover:bg-[#F4F8FA]">
+            <Link href="/cellphone/providers" className="page-nav-button">
               已经确定要比较方案
             </Link>
           </div>
@@ -157,7 +157,7 @@ export default function FamilyPlanGuidePage() {
             </p>
             <Link
               href="/cellphone/family-plan-exit-account-holder"
-              className="mt-5 inline-flex font-semibold text-[#164B78] hover:text-[#103B60]"
+              className="page-nav-button"
             >
               查看户主权限与退出预案 →
             </Link>
@@ -223,7 +223,7 @@ export default function FamilyPlanGuidePage() {
             </ul>
             <Link
               href="/cellphone/faq/promo-credit-not-received"
-              className="mt-5 inline-flex font-semibold text-[#164B78] hover:text-[#103B60]"
+              className="page-nav-button"
             >
               Trade-in / Bill Credit 还没到账？继续检查 →
             </Link>
@@ -237,7 +237,7 @@ export default function FamilyPlanGuidePage() {
             </p>
             <Link
               href="/cellphone/family-plan-exit-account-holder"
-              className="mt-5 inline-flex font-semibold text-[#164B78] hover:text-[#103B60]"
+              className="page-nav-button"
             >
               查看家庭计划退出 / 户主权限判断 →
             </Link>
@@ -251,7 +251,7 @@ export default function FamilyPlanGuidePage() {
             </p>
             <Link
               href="/cellphone/family-plan-exit-account-holder"
-              className="mt-5 inline-flex font-semibold text-[#164B78] hover:text-[#103B60]"
+              className="page-nav-button"
             >
               查看 Family Plan 退组 / 保号判断 →
             </Link>
@@ -295,7 +295,7 @@ export default function FamilyPlanGuidePage() {
             <p className="mt-4 text-sm leading-7 text-[#526170]">
               咨询时可先说明运营商、线路数量、需要退组或保号的情况及设备分期状态。请勿在公开评论提交账户密码、验证码、完整账户号码或 Transfer PIN；核验资料应通过官方或已确认安全的渠道提供。
             </p>
-            <Link href="/contact" className="mt-6 inline-flex min-h-11 items-center justify-center rounded-xl bg-[#164B78] px-5 font-bold text-white transition hover:bg-[#103B60]">
+            <Link href="/contact" className="page-nav-button">
               需要准确数字时进入人工核实
             </Link>
           </section>
@@ -306,7 +306,10 @@ export default function FamilyPlanGuidePage() {
               还不知道为什么账单变贵、是否应该全家一起换，或哪些线路暂时不能动？先回到诊断；已经明确要比较其他方案，再进入运营商比较。
             </p>
             <div className="mt-5 flex flex-wrap gap-x-6 gap-y-3 font-semibold">
-              <Link href="/cellphone/diagnosis" className="text-[#164B78] hover:text-[#103B60]">返回手机问题诊断 →</Link>
+              <nav aria-label="页面返回导航" className="page-nav-row">
+<Link href="/" className="page-nav-button">← 返回首页</Link>
+<Link href="/cellphone/diagnosis" className="page-nav-button">返回手机问题诊断 →</Link>
+</nav>
               <Link href="/cellphone/providers" className="text-[#164B78] hover:text-[#103B60]">比较其他手机方案 →</Link>
             </div>
           </section>

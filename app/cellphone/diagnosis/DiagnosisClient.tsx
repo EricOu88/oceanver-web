@@ -467,10 +467,13 @@ export default function DiagnosisClient({ knowledge }: DiagnosisClientProps) {
   const boundaries = problem ? boundaryKeys[problem].map((key) => boundaryLabels[key]) : [];
 
   return (
-    <main className="min-h-screen bg-[#FCFDFE] px-4 py-8 sm:px-6">
+    <main className="compact-page min-h-screen bg-[#FCFDFE] px-4 py-4 sm:px-6">
       <div className="mx-auto max-w-4xl">
-        <Link href="/cellphone/faq" className="inline-flex text-sm font-medium text-[#526170] hover:text-[#164B78]">← 返回手机常见问题</Link>
-        <header className="py-8 text-center sm:py-10">
+        <nav aria-label="页面返回导航" className="page-nav-row">
+<Link href="/" className="page-nav-button">← 返回首页</Link>
+<Link href="/cellphone/faq" className="page-nav-button">← 返回手机常见问题</Link>
+</nav>
+        <header className="py-4 text-center sm:py-6">
           <h1 className="text-3xl font-black tracking-tight text-[#202D3A] sm:text-5xl">手机出了问题？先判断是哪一种</h1>
           <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-[#526170] sm:text-lg">从账单、信号、SIM/eSIM、转号、设备分期、家庭多线到回国使用，先判断问题发生在哪一层，再决定自查、继续观察、看知识说明还是核实账户。</p>
         </header>

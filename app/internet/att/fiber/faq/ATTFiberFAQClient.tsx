@@ -13,8 +13,8 @@ const coreDetailPages = [
 
 export default function ATTFiberFAQClient() {
   return (
-    <main className="mx-auto max-w-5xl px-5 py-10 md:px-8 md:py-14">
-      <header className="mb-10">
+    <main className="compact-page mx-auto max-w-5xl px-5 py-4 md:px-8 md:py-6">
+      <header className="mb-4">
         <h1 className="text-3xl font-black leading-tight text-[#202D3A] md:text-4xl">
           AT&amp;T Fiber 常见问题
         </h1>
@@ -46,7 +46,7 @@ export default function ATTFiberFAQClient() {
         ))}
       </div>
 
-      <section className="mt-10">
+      <section className="mt-4">
         <p className="text-sm font-bold text-[#2786A5]">重点判断页</p>
         <h2 className="mt-2 text-2xl font-black text-[#202D3A]">需要完整步骤时继续看</h2>
         <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

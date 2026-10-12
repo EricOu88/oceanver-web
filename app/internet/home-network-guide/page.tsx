@@ -62,19 +62,19 @@ export default function HomeNetworkGuidePage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#FCFDFE] px-4 py-12 text-[#202D3A] md:py-16">
+    <main className="compact-page min-h-screen bg-[#FCFDFE] px-4 py-4 text-[#202D3A] md:py-6">
       <div className="mx-auto max-w-5xl">
-        <nav aria-label="页面返回导航" className="flex flex-nowrap items-center gap-4 overflow-x-auto py-1">
-            <Link href="/" className="shrink-0 whitespace-nowrap text-sm font-semibold text-[#246B95] hover:text-[#103B60]">← 返回首页</Link>
+        <nav aria-label="页面返回导航" className="page-nav-row">
+            <Link href="/" className="page-nav-button">← 返回首页</Link>
             <Link
           href="/internet"
-          className="shrink-0 whitespace-nowrap text-sm font-bold text-[#526170] transition hover:text-[#164B78]"
+          className="page-nav-button"
         >
           ← 返回宽带问题中心
         </Link>
           </nav>
 
-        <header className="mt-8">
+        <header className="mt-4">
           <p className="text-sm font-bold text-[#246B95]">家庭网络判断</p>
           <h1 className="mt-3 text-4xl font-black leading-tight md:text-5xl">
               家庭网络已经装好，慢或不稳定应该先查哪里？
@@ -84,7 +84,7 @@ export default function HomeNetworkGuidePage() {
               <p className="mt-3 leading-7">网络慢时，先区分全家、有线、Router 附近、远端房间和单台设备的表现。只有远处 Wi-Fi 弱时，升级宽带套餐未必解决；先缩小到线路、设备或无线覆盖这一层。</p>
               <dl className="mt-4 space-y-3 text-sm leading-7">
                 <div><dt className="font-bold">适用条件</dt><dd>适合已经安装网络后的慢速、掉线和覆盖问题；网页不能替代现场线路、设备后台或运营商故障确认。</dd></div>
-                <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/internet/diagnosis" className="font-semibold underline underline-offset-4">按症状继续诊断</Link><Link href="https://baymediastar.com/internet/home-network-guide" className="font-semibold underline underline-offset-4">准备换网时核对设备兼容</Link></dd></div>
+                <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/internet/diagnosis" className="page-nav-button">按症状继续诊断</Link><Link href="https://baymediastar.com/internet/home-network-guide" className="font-semibold underline underline-offset-4">准备换网时核对设备兼容</Link></dd></div>
               </dl>
             </section>
             <p className="mt-5 max-w-4xl text-base leading-8 text-slate-700">先区分全家同时慢、只有远端房间慢，还是单台设备异常。结合有线测速、Router 附近与远端表现判断问题层级；故障维修和线路状态由运营商或设备支持确认。</p>
@@ -95,7 +95,7 @@ export default function HomeNetworkGuidePage() {
           </p>
         </header>
 
-        <section className="mt-12 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-7 md:p-8">
+        <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-7 md:p-8">
           <div className="flex gap-3">
             <ShieldCheck className="mt-1 shrink-0 text-[#2786A5]" size={28} />
             <div>
@@ -108,7 +108,7 @@ export default function HomeNetworkGuidePage() {
           </div>
         </section>
 
-        <section className="py-12">
+        <section className="py-4">
           <h2 className="text-3xl font-black">不同入户技术怎么理解？</h2>
           <div className="mt-7 grid gap-5 md:grid-cols-2">
             {technologyItems.map((item) => (
@@ -144,7 +144,7 @@ export default function HomeNetworkGuidePage() {
           </article>
         </section>
 
-        <section className="mt-12 rounded-2xl border border-[#D5E5EC] bg-white p-7 md:p-8">
+        <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-white p-7 md:p-8">
           <h2 className="text-2xl font-black">摄像头、门铃或智能设备连不上 2.4GHz Wi-Fi，先看什么？</h2>
           <p className="mt-3 leading-7 text-[#526170]">
             这类问题通常先属于家庭 Wi-Fi / 设备兼容层，不等于宽带线路本身有问题。很多 IoT 设备只支持特定 Wi-Fi 频段或对配网方式有要求。
@@ -161,7 +161,7 @@ export default function HomeNetworkGuidePage() {
           </p>
         </section>
 
-        <section className="mt-12 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-7 md:p-8">
+        <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-7 md:p-8">
           <h2 className="text-2xl font-black">什么时候才值得换宽带技术或运营商？</h2>
           <div className="mt-5 grid gap-4 md:grid-cols-2">
             {[
@@ -178,7 +178,7 @@ export default function HomeNetworkGuidePage() {
           </div>
         </section>
 
-        <section className="mt-12 grid gap-5 md:grid-cols-3">
+        <section className="mt-4 grid gap-5 md:grid-cols-3">
           <Link
             href="/internet/diagnosis"
             className="rounded-2xl border border-[#D5E5EC] bg-white p-6 transition hover:border-[#246B95]"
@@ -222,7 +222,7 @@ export default function HomeNetworkGuidePage() {
           </Link>
         </section>
 
-        <section className="mt-12 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-7 md:p-8">
+        <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-7 md:p-8">
           <h2 className="text-2xl font-black">哪些情况网页无法直接确认？</h2>
           <p className="mt-3 leading-relaxed text-[#526170]">
             具体地址能否安装、现有线路状态、设备兼容、当前 Gateway / Router 记录、账户限制和现场施工条件，
@@ -230,7 +230,7 @@ export default function HomeNetworkGuidePage() {
           </p>
           <Link
             href="/contact"
-            className="mt-6 inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]"
+            className="page-nav-button"
           >
             需要时进入人工核实 <ArrowRight size={16} />
           </Link>

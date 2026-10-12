@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 function BillIncreaseReasons() {
   return (
-    <section id="bill-increase-reasons" aria-labelledby="bill-increase-reasons-title" className="bg-white px-5 py-10 md:px-6 md:py-14">
+    <section id="bill-increase-reasons" aria-labelledby="bill-increase-reasons-title" className="bg-white px-5 py-4 md:px-6 md:py-6">
       <div className="mx-auto max-w-[1120px]">
         <h2 id="bill-increase-reasons-title" className="text-2xl font-black text-[#202D3A] md:text-3xl">为什么账单会突然变贵？</h2>
         <p className="mt-3 font-semibold text-[#202D3A]">常见原因主要有五类：</p>
@@ -38,7 +38,7 @@ function BillIncreaseReasons() {
           <li>安装、激活、按比例计费等一次性费用</li>
         </ol>
         <p className="mt-4 leading-7 text-[#526170]">先对比最近两期账单中同一服务项目的变化，再判断这次上涨是否会持续。</p>
-        <Link href="/bill-optimization" className="mt-3 inline-flex font-semibold text-[#164B78] hover:text-[#103B60]">按顺序核对账单 →</Link>
+        <Link href="/bill-optimization" className="page-nav-button">按顺序核对账单 →</Link>
       </div>
     </section>
   );

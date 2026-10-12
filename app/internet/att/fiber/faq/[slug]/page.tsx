@@ -85,12 +85,15 @@ export default async function ATTFiberFAQDetailPage({ params }: PageProps) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <main className="min-h-screen bg-[#F4F8FA] text-[#202D3A]">
+      <main className="compact-page min-h-screen bg-[#F4F8FA] text-[#202D3A]">
         <div className="sticky top-0 z-10 border-b border-[#D5E5EC] bg-white">
           <div className="mx-auto flex max-w-4xl items-center justify-between px-5 py-4 md:px-8">
-            <Link href="/internet/att/fiber/faq" className="inline-flex items-center gap-2 text-sm font-semibold text-[#164B78] hover:text-[#103B60]">
+            <nav aria-label="页面返回导航" className="page-nav-row">
+<Link href="/" className="page-nav-button">← 返回首页</Link>
+<Link href="/internet/att/fiber/faq" className="page-nav-button">
               <ArrowLeft size={18} /> 返回 AT&amp;T Fiber FAQ
             </Link>
+</nav>
             <Link href="/internet/diagnosis" className="text-sm font-semibold text-[#164B78] hover:text-[#103B60]">
               宽带问题诊断
             </Link>
@@ -108,8 +111,8 @@ export default async function ATTFiberFAQDetailPage({ params }: PageProps) {
               {faq.summary}
             </p>
             <div className="mt-3 flex flex-wrap gap-3 text-sm font-semibold">
-              <Link href="/internet/diagnosis" className="text-[#164B78] underline underline-offset-4 hover:text-[#103B60]">下一步：按问题自查</Link>
-              <Link href="/contact" className="text-[#164B78] underline underline-offset-4 hover:text-[#103B60]">账户费用需核实</Link>
+              <Link href="/internet/diagnosis" className="page-nav-button">下一步：按问题自查</Link>
+              <Link href="/contact" className="page-nav-button">账户费用需核实</Link>
             </div>
           </div>
 
@@ -153,13 +156,13 @@ export default async function ATTFiberFAQDetailPage({ params }: PageProps) {
               如果仍无法判断费用、连接、设备或安装情况，可先进行宽带问题诊断；涉及具体账户或地址结果时，再按当前信息进一步核实。
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link href="/internet/diagnosis" className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-[#164B78] px-4 font-semibold text-white hover:bg-[#103B60]">
+              <Link href="/internet/diagnosis" className="page-nav-button">
                 继续做宽带问题诊断 <ArrowRight size={16} />
               </Link>
-              <Link href="/internet/providers" className="inline-flex min-h-11 items-center rounded-xl border border-[#D5E5EC] px-4 font-semibold text-[#164B78] hover:bg-[#F4F8FA]">
+              <Link href="/internet/providers" className="page-nav-button">
                 比较其他宽带
               </Link>
-              <Link href="/contact" className="inline-flex min-h-11 items-center rounded-xl border border-[#D5E5EC] px-4 font-semibold text-[#164B78] hover:bg-[#F4F8FA]">
+              <Link href="/contact" className="page-nav-button">
                 需要时进入人工核实
               </Link>
             </div>

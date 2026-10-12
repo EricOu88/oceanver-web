@@ -62,7 +62,7 @@ export default function BlogListClient({ posts }: { posts: BlogListPost[] }) {
   }, [activeCategory, posts])
 
   return (
-    <main className="max-w-6xl mx-auto px-6 py-12 md:py-16">
+    <main className="compact-page max-w-6xl mx-auto px-6 py-4 md:py-6">
       {/* 面包屑导航（提升索引深度） */}
       <nav className="mb-6 text-xl md:text-2xl text-slate-600">
         <ol className="flex flex-wrap items-center gap-2">
@@ -86,7 +86,7 @@ export default function BlogListClient({ posts }: { posts: BlogListPost[] }) {
         </p>
       </div>
 
-      <section aria-label="常见问题入口" className="mb-12 grid gap-5 md:grid-cols-2">
+      <section aria-label="常见问题入口" className="mb-4 grid gap-5 md:grid-cols-2">
         <Link
           href="/cellphone/faq"
           className="group rounded-2xl border-2 border-[#D8E2EA] bg-white p-6 transition hover:-translate-y-0.5 hover:border-[#2786A5] hover:shadow-md md:p-8"
@@ -223,7 +223,7 @@ export default function BlogListClient({ posts }: { posts: BlogListPost[] }) {
       <div className="mt-12 text-center">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 font-semibold transition-colors"
+          className="page-nav-button"
         >
           ← 返回首页
         </Link>

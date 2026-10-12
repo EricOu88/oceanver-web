@@ -58,18 +58,21 @@ const DONT_ASSUME = [
 
 export default function NoSsnCellphoneInternetPage() {
   return (
-    <main className="min-h-screen bg-[#FCFDFE] text-[#202D3A]">
+    <main className="compact-page min-h-screen bg-[#FCFDFE] text-[#202D3A]">
       <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
         <div className="mb-8">
-          <Link
+          <nav aria-label="页面返回导航" className="page-nav-row">
+<Link href="/" className="page-nav-button">← 返回首页</Link>
+<Link
             href="/cellphone/faq"
-            className="text-sm font-bold text-[#526170] transition hover:text-[#164B78]"
+            className="page-nav-button"
           >
             ← 返回手机问题库
           </Link>
+</nav>
         </div>
 
-        <header className="mb-12">
+        <header className="mb-4">
           <p className="mb-3 text-sm font-bold text-[#246B95]">开户资格判断</p>
           <h1 className="text-4xl font-black leading-tight md:text-5xl">
             没有 SSN，手机和家庭宽带怎么判断？
@@ -78,13 +81,13 @@ export default function NoSsnCellphoneInternetPage() {
             <h2 className="text-lg font-bold">直接结论</h2>
             <p className="mt-2 leading-7">没有 SSN 不等于一定不能办理手机或宽带。先区分身份验证、信用审核、设备分期和地址覆盖；不同运营商及服务类型的资格要求不同。</p>
             <div className="mt-4 flex flex-wrap gap-4 text-sm font-semibold">
-              <Link href="/cellphone/diagnosis" className="text-[#164B78] underline underline-offset-4">手机问题继续判断 →</Link>
-              <Link href="/contact" className="text-[#164B78] underline underline-offset-4">资格不确定，联系人工核实 →</Link>
+              <Link href="/cellphone/diagnosis" className="page-nav-button">手机问题继续判断 →</Link>
+              <Link href="/contact" className="page-nav-button">资格不确定，联系人工核实 →</Link>
             </div>
           </section>
         </header>
 
-        <section className="py-12">
+        <section className="py-4">
           <h2 className="text-3xl font-black">先分清这 4 件事</h2>
           <div className="mt-7 grid gap-5 md:grid-cols-2">
             {CHECKS.map((item) => {
@@ -112,7 +115,7 @@ export default function NoSsnCellphoneInternetPage() {
           </div>
         </section>
 
-        <section className="py-12">
+        <section className="py-4">
           <h2 className="text-3xl font-black">按你要办的服务继续</h2>
           <div className="mt-6 grid gap-5 md:grid-cols-2">
             <Link
@@ -182,7 +185,7 @@ export default function NoSsnCellphoneInternetPage() {
           </p>
           <Link
             href="/contact"
-            className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#164B78] px-6 py-3 font-black text-white transition hover:bg-[#103B60]"
+            className="page-nav-button"
           >
             需要确认当前资格时进入人工核实
             <ArrowRight size={17} />

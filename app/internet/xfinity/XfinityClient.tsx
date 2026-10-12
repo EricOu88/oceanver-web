@@ -83,18 +83,21 @@ const startComparing = [
 
 export default function XfinityClient() {
   return (
-    <main className="min-h-screen bg-[#FCFDFE] px-4 py-8 text-[#202D3A] sm:px-6 sm:py-12">
+    <main className="compact-page min-h-screen bg-[#FCFDFE] px-4 py-4 text-[#202D3A] sm:px-6 sm:py-6">
       <div className="mx-auto max-w-6xl">
-        <Link
+        <nav aria-label="页面返回导航" className="page-nav-row">
+<Link href="/" className="page-nav-button">← 返回首页</Link>
+<Link
           href="/internet/providers"
-          className="inline-flex items-center gap-2 text-sm text-[#526170] transition hover:text-[#164B78]"
+          className="page-nav-button"
         >
           <ArrowLeft size={16} />
           返回宽带运营商比较
         </Link>
+</nav>
 
         {/* HERO */}
-        <section className="mx-auto mt-8 max-w-4xl text-center">
+        <section className="mx-auto mt-4 max-w-4xl text-center">
           <p className="text-sm font-bold tracking-wide text-[#2786A5]">
             Xfinity 宽带判断指南
           </p>
@@ -114,7 +117,7 @@ export default function XfinityClient() {
           <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
               href="/internet/diagnosis"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#164B78] px-6 py-3 font-bold text-white transition hover:bg-[#103B60]"
+              className="page-nav-button"
             >
               先做宽带问题诊断
               <ArrowRight size={18} />
@@ -122,7 +125,7 @@ export default function XfinityClient() {
 
             <Link
               href="/internet/xfinity/faq"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-6 py-3 font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-[#F4F8FA]"
+              className="page-nav-button"
             >
               查看 Xfinity FAQ
               <ArrowRight size={18} />
@@ -131,7 +134,7 @@ export default function XfinityClient() {
         </section>
 
         {/* 问题入口 */}
-        <section className="mt-16">
+        <section className="mt-4">
           <p className="text-sm font-bold text-[#2786A5]">
             先从问题本身开始
           </p>
@@ -172,7 +175,7 @@ export default function XfinityClient() {
         </section>
 
         {/* 核心判断 */}
-        <section className="mt-16 grid gap-6 lg:grid-cols-2">
+        <section className="mt-4 grid gap-6 lg:grid-cols-2">
           <InfoCard
             title="如果最主要的问题是账单涨价"
             icon={<CircleDollarSign size={23} />}
@@ -186,7 +189,7 @@ export default function XfinityClient() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/internet/xfinity/faq/xfinity-bill-sudden-increase"
-                className="inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]"
+                className="page-nav-button"
               >
                 查看 Xfinity 涨价专项
                 <ArrowRight size={16} />
@@ -194,7 +197,7 @@ export default function XfinityClient() {
 
               <Link
                 href="/bill-optimization"
-                className="inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]"
+                className="page-nav-button"
               >
                 做完整账单检查
                 <ArrowRight size={16} />
@@ -214,7 +217,7 @@ export default function XfinityClient() {
 
             <Link
               href="/internet/diagnosis"
-              className="inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]"
+              className="page-nav-button"
             >
               判断 Wi-Fi、设备还是线路
               <ArrowRight size={16} />
@@ -223,7 +226,7 @@ export default function XfinityClient() {
         </section>
 
         {/* 不要急着换 */}
-        <section className="mt-16 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
+        <section className="mt-4 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
           <p className="text-sm font-bold text-[#2786A5]">
             Xfinity 有问题，不等于一定要换
           </p>
@@ -252,7 +255,7 @@ export default function XfinityClient() {
         </section>
 
         {/* 值得比较 */}
-        <section className="mt-16">
+        <section className="mt-4">
           <p className="text-sm font-bold text-[#2786A5]">
             什么情况下值得开始比较其他运营商
           </p>
@@ -281,7 +284,7 @@ export default function XfinityClient() {
 
           <Link
             href="/internet/providers"
-            className="mt-7 inline-flex items-center gap-2 rounded-xl bg-[#164B78] px-6 py-3 font-bold text-white transition hover:bg-[#103B60]"
+            className="page-nav-button"
           >
             比较不同宽带运营商
             <ArrowRight size={18} />
@@ -289,7 +292,7 @@ export default function XfinityClient() {
         </section>
 
         {/* FAQ */}
-        <section className="mt-16 rounded-3xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+        <section className="mt-4 rounded-3xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
           <p className="text-sm font-bold text-[#2786A5]">
             Xfinity 专项知识库
           </p>
@@ -332,7 +335,7 @@ export default function XfinityClient() {
         </section>
 
         {/* 人工边界 */}
-        <section className="mx-auto mt-16 max-w-4xl text-center">
+        <section className="mx-auto mt-4 max-w-4xl text-center">
           <CircleHelp
             size={28}
             className="mx-auto text-[#2786A5]"
@@ -350,7 +353,7 @@ export default function XfinityClient() {
 
           <Link
             href="/contact"
-            className="mt-6 inline-flex items-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-6 py-3 text-sm font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-[#F4F8FA]"
+            className="page-nav-button"
           >
             需要时进入人工核实
             <ArrowRight size={16} />

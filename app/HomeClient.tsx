@@ -83,7 +83,7 @@ export default async function HomeClient() {
                   <p className="text-[13px] font-semibold leading-5 text-[#526170]">适用边界</p>
                   <p className="mt-1 text-sm leading-6 text-slate-500">{preview.boundary}</p>
                 </div>
-                <Link href="/why-us" className="mt-auto inline-flex pt-5 font-bold text-[#164B78] hover:text-[#103B60]">
+                <Link href="/why-us" className="page-nav-button">
                   {preview.link} →
                 </Link>
               </article>

@@ -965,3 +965,53 @@ main:has(#bill-increase-reasons) h2 {
     }
   }
 }
+
+/* Shared compact navigation across public pages. */
+.page-nav-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding-block: 4px;
+  margin-bottom: 12px;
+}
+.page-nav-button {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #D5E5EC;
+  border-radius: 8px;
+  background: #F4F8FA;
+  color: #164B78;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.page-nav-button:hover {
+  background: #D5E5EC;
+  color: #103B60;
+}
+.page-nav-button:focus-visible {
+  outline: 2px solid #164B78;
+  outline-offset: 2px;
+}
+.compact-page header h1 {
+  line-height: 1.25;
+  overflow-wrap: break-word;
+}
+.compact-page header section {
+  margin-top: 16px;
+  padding: 16px;
+}
+@media (max-width: 639px) {
+  .compact-page header h1 { font-size: 28px; }
+  .compact-page header .page-nav-button { white-space: normal; text-align: left; }
+}

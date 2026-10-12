@@ -48,12 +48,15 @@ export default function Page() {
       <div className="min-h-screen bg-[#FCFDFE]">
         <div className="border-b border-[#D5E5EC] bg-white">
           <div className="mx-auto max-w-5xl px-5 py-3 md:px-8">
-            <Link
+            <nav aria-label="页面返回导航" className="page-nav-row">
+<Link href="/" className="page-nav-button">← 返回首页</Link>
+<Link
               href="/internet/att-fiber"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#164B78] hover:text-[#103B60]"
+              className="page-nav-button"
             >
               <ArrowLeft size={16} /> 返回 AT&amp;T Fiber 判断页
             </Link>
+</nav>
           </div>
         </div>
         <ATTFiberFAQClient />

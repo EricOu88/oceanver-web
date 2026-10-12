@@ -118,13 +118,13 @@ export default function InternetFAQPage() {
     <>
       <FAQPageSchema />
 
-      <main className="min-h-screen bg-[#FCFDFE] px-4 py-8 text-[#202D3A] sm:px-6 sm:py-12">
+      <main className="compact-page min-h-screen bg-[#FCFDFE] px-4 py-4 text-[#202D3A] sm:px-6 sm:py-6">
         <div className="mx-auto max-w-5xl">
-          <nav aria-label="页面返回导航" className="flex flex-nowrap items-center gap-4 overflow-x-auto py-1">
-            <Link href="/" className="shrink-0 whitespace-nowrap text-sm font-semibold text-[#246B95] hover:text-[#103B60]">← 返回首页</Link>
+          <nav aria-label="页面返回导航" className="page-nav-row">
+            <Link href="/" className="page-nav-button">← 返回首页</Link>
             <Link
             href="/internet"
-            className="shrink-0 whitespace-nowrap inline-flex items-center gap-2 text-sm text-[#526170] transition hover:text-[#164B78]"
+            className="page-nav-button"
           >
             <ArrowLeft size={16} />
             返回宽带问题入口
@@ -132,7 +132,7 @@ export default function InternetFAQPage() {
           </nav>
 
           {/* HERO */}
-          <section className="mx-auto mt-8 max-w-4xl text-center">
+          <section className="mx-auto mt-4 max-w-4xl text-center">
             <p className="text-sm font-bold tracking-wide text-[#2786A5]">
               美国家庭宽带知识库
             </p>
@@ -145,7 +145,7 @@ export default function InternetFAQPage() {
               <p className="mt-3 leading-7">先分清收费异常、全家断网、局部 Wi-Fi 弱或单设备问题，再查对应答案。账单问题比较两期明细，网络问题比较有线与无线表现；原因不同，处理入口也不同。</p>
               <dl className="mt-4 space-y-3 text-sm leading-7">
                 <div><dt className="font-bold">适用条件</dt><dd>适合已装宽带后的账单、Wi-Fi、断网和设备问题；新装或搬家办理条件进入主站宽带 FAQ。</dd></div>
-                <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/internet/price-hike" className="font-semibold underline underline-offset-4">账单变化进入涨价核对</Link><Link href="/internet/diagnosis" className="font-semibold underline underline-offset-4">网络异常进入逐步排查</Link></dd></div>
+                <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/internet/price-hike" className="page-nav-button">账单变化进入涨价核对</Link><Link href="/internet/diagnosis" className="page-nav-button">网络异常进入逐步排查</Link></dd></div>
               </dl>
             </section>
             <p className="mt-5 max-w-4xl text-base leading-8 text-slate-700">本页优先承接已经使用宽带后的收费、断网、Wi-Fi 与设备异常，也保留安装失败及迁移问题的排查入口。首次申请与地址选择转到主站办理 FAQ。</p>
@@ -159,7 +159,7 @@ export default function InternetFAQPage() {
             <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
               <Link
                 href="/internet/diagnosis"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#164B78] px-6 py-3 font-bold text-white transition hover:bg-[#103B60]"
+                className="page-nav-button"
               >
                 不知道属于哪一类？先做诊断
                 <ArrowRight size={18} />
@@ -167,7 +167,7 @@ export default function InternetFAQPage() {
 
               <Link
                 href="/bill-optimization"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-6 py-3 font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-[#F4F8FA]"
+                className="page-nav-button"
               >
                 主要是账单变贵
                 <ArrowRight size={18} />
@@ -176,7 +176,7 @@ export default function InternetFAQPage() {
           </section>
 
           {/* 问题分类入口 */}
-          <section className="mt-16">
+          <section className="mt-4">
             <p className="text-sm font-bold text-[#2786A5]">
               先按问题找答案
             </p>
@@ -217,7 +217,7 @@ export default function InternetFAQPage() {
           </section>
 
           {/* FAQ 正文 */}
-          <section className="mt-16">
+          <section className="mt-4">
             <div className="flex items-center gap-3">
               <BookOpen
                 size={24}
@@ -295,7 +295,7 @@ export default function InternetFAQPage() {
           </section>
 
           {/* FAQ 与诊断的分工 */}
-          <section className="mt-16 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
+          <section className="mt-4 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
             <div className="grid gap-6 md:grid-cols-2">
               <div>
                 <p className="text-sm font-bold text-[#2786A5]">
@@ -328,7 +328,7 @@ export default function InternetFAQPage() {
 
                 <Link
                   href="/internet/diagnosis"
-                  className="mt-4 inline-flex items-center gap-2 font-bold text-[#164B78] hover:text-[#103B60]"
+                  className="page-nav-button"
                 >
                   进入宽带问题诊断
                   <ArrowRight size={16} />
@@ -338,7 +338,7 @@ export default function InternetFAQPage() {
           </section>
 
           {/* 人工边界 */}
-          <section className="mx-auto mt-14 max-w-3xl text-center">
+          <section className="mx-auto mt-4 max-w-3xl text-center">
             <h2 className="text-xl font-black">
               FAQ 能解释规则，但不能读取你的账户
             </h2>
@@ -350,7 +350,7 @@ export default function InternetFAQPage() {
 
             <Link
               href="/contact"
-              className="mt-5 inline-flex items-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-5 py-3 text-sm font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-[#F4F8FA]"
+              className="page-nav-button"
             >
               需要时进入人工核实
               <ArrowRight size={16} />
