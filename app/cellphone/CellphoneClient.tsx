@@ -150,15 +150,9 @@ export default function CellphoneClient() {
             再决定要不要换方案
           </h1>
 
-          <div className="mx-auto max-w-3xl space-y-3 text-base leading-relaxed text-[#526170] md:text-lg">
-            <p>
-              账单涨价、信号不好、想换手机、准备转网、家庭多线、没有 SSN，
-              <strong className="text-[#202D3A]">都不需要先从运营商开始。</strong>
-            </p>
-            <p>
-              先判断问题和账户条件，再进入对应知识节点；只有方向清楚以后，才比较方案或核实真实账户。
-            </p>
-          </div>
+          <p className="mx-auto max-w-3xl text-base leading-relaxed text-[#526170] md:text-lg">
+            账单、信号、转网或家庭多线出了问题？先选问题类型，再按账户条件判断是否需要调整方案。
+          </p>
 
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
