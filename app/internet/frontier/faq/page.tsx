@@ -65,7 +65,11 @@ export default function FrontierFAQPage() {
             <p className="text-base leading-7 text-[#526170] md:text-lg">
               先核对地址、服务类型和实际问题，再比较是否值得更换。价格、资格、安装与账户结果应以当前地址和账户信息为准。
             </p>
-          </header>
+                    <div className="mt-4 flex flex-wrap gap-4 text-sm font-semibold">
+            <Link href="/internet/diagnosis" className="text-[#164B78] underline underline-offset-4">先判断网络或设备问题 →</Link>
+            <Link href="/internet/price-hike" className="text-[#164B78] underline underline-offset-4">账单变贵先核对 →</Link>
+          </div>
+        </header>
 
           <div className="space-y-9">
             {frontierFAQCategories.map((category) => (
