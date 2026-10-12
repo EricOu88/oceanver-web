@@ -294,6 +294,9 @@ export default function FamilyPlanGuidePage() {
             <ul className="mt-4 list-disc space-y-2 pl-5 leading-6 text-[#526170]">
               {reviewItems.map((item) => <li key={item}>{item}</li>)}
             </ul>
+            <p className="mt-4 text-sm leading-7 text-[#526170]">
+              咨询时可先说明运营商、线路数量、需要退组或保号的情况及设备分期状态。请勿在公开评论提交账户密码、验证码、完整账户号码或 Transfer PIN；核验资料应通过官方或已确认安全的渠道提供。
+            </p>
             <Link href="/contact" className="mt-6 inline-flex min-h-11 items-center justify-center rounded-xl bg-[#164B78] px-5 font-bold text-white transition hover:bg-[#103B60]">
               需要准确数字时进入人工核实
             </Link>

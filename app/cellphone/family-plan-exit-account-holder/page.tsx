@@ -220,6 +220,9 @@ export default function FamilyPlanExitAccountHolderPage() {
             Transfer PIN、号码 port status、SSN / 身份验证要求、设备余额、Promotion 和 Credit 状态，
             都依赖真实账户和运营商当前流程。
           </p>
+          <p className="mt-4 text-sm leading-7 text-[#526170]">
+            咨询前可先说明运营商、自己是否为户主或授权用户、是否需要保号，以及设备分期情况。请勿在公开评论中提交账户密码、验证码、完整账户号码、Transfer PIN 或身份证明文件；需要核验时请使用官方或已确认安全的渠道。
+          </p>
           <Link
             href="/contact"
             className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#164B78] px-5 py-3 font-bold text-white transition hover:bg-[#103B60]"

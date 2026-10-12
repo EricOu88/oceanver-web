@@ -462,6 +462,13 @@ export default function PriceHikeClient() {
               但不能代替运营商后台确认。
             </p>
 
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[#526170]">
+              咨询前可准备运营商名称、最近两期账单中变化的项目、优惠名称及设备费用；分享账单前请遮盖姓名、地址和账户号码。
+            </p>
+            <p className="mx-auto mt-2 max-w-2xl text-sm font-semibold leading-7 text-[#526170]">
+              请勿在公开评论中提交账户密码、验证码或完整账户号码；账户核验请使用官方或已确认安全的渠道。
+            </p>
+
             <Link
               href="/contact"
               className="mt-6 inline-flex items-center gap-2 rounded-xl border border-[#D5E5EC] bg-white px-6 py-3 text-sm font-bold text-[#164B78] transition hover:border-[#2786A5] hover:bg-[#F4F8FA]"
