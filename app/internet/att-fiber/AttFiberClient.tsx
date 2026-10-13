@@ -149,10 +149,10 @@ export default function AttFiberClient() {
             都可能因地址与账户不同而变化。
           </p>
           <Link
-            href="/contact"
+            href="https://baymediastar.com/internet/att/fiber"
             className="page-nav-button"
           >
-            需要时进入人工核实 <ArrowRight size={16} />
+            查询可办理方案并中文核实 <ArrowRight size={16} />
           </Link>
         </div>
 
