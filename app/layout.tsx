@@ -3,6 +3,7 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import ContactAnalytics from '@/app/components/ContactAnalytics'
+import SiteHeader from '@/app/components/SiteHeader'
 import './globals.css'
 // import AIQuestionWidget from '@/app/components/AIQuestionWidget' // 暂时注释，使用 SafeAIQuestionWidget
 // import SafeAIQuestionWidgetWrapper from '@/app/components/SafeAIQuestionWidgetWrapper' // 暂时隐藏全站公开入口；需要恢复时取消注释
@@ -112,6 +113,7 @@ export default function RootLayout({
 
       <body className="antialiased">
         <ContactAnalytics />
+        <SiteHeader />
         {/* ================== 页面主体 ================== */}
         {children}
 
