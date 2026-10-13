@@ -34,6 +34,14 @@ export default function ContactClient() {
               返回首页
             </Link>
             <h1 className="mt-6 text-3xl font-black leading-tight md:text-4xl">问题核实与联系</h1>
+            <a
+              href="https://search.google.com/local/reviews?placeid=ChIJX6ngelzGj4ARrdcNVV0c-Gc"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center rounded-md border border-[#D5E5EC] bg-white px-4 py-2.5 text-sm font-semibold text-[#164B78] transition-colors hover:bg-[#F4F8FA] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#164B78]"
+            >
+              ★ 查看 Google 评论 ↗
+            </a>
             <p className="mt-4 max-w-[820px] text-base leading-[1.8] text-[#526170] md:text-lg">
               如果问题涉及具体账单、账户资格、地址覆盖、设备余额、Trade-in、转号资料或当前优惠，需要结合实际情况进一步核实。
             </p>
