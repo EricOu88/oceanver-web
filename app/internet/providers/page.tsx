@@ -15,9 +15,9 @@ import {
 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: '美国宽带运营商怎么比较？先算长期费用再决定｜美国鸿达电讯',
+  title: '现有宽带要不要换？先排查涨价与网络问题｜Oceanver',
   description:
-    '比较美国宽带运营商前，先确认地址覆盖、真实长期月费、设备和安装费用、网络需求及切换成本。Xfinity、AT&T Fiber、Spectrum、Frontier 不应只看促销价。',
+    '正在使用的宽带涨价或网速变慢，要不要换运营商？先区分账单、Wi-Fi、设备和线路问题，再判断是否需要换网；正式地址覆盖与办理转至鸿达电讯主站。',
   alternates: {
     canonical: 'https://oceanver.com/internet/providers',
   },
@@ -144,13 +144,13 @@ export default function InternetProvidersPage() {
         {/* HERO */}
         <section className="mx-auto mt-4 max-w-4xl text-center">
           <p className="text-sm font-bold tracking-wide text-[#2786A5]">
-            美国家庭宽带比较
+            现有宽带问题与换网判断
           </p>
 
           <h1 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">
-            想换宽带？
+            现有宽带值得换吗？
             <br className="sm:hidden" />
-            先比较长期成本，再决定换哪家
+            先查明问题，再决定是否换网
           </h1>
 
           <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-[#526170] sm:text-lg">

@@ -31,6 +31,11 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
+      {
+        source: '/cellphone/government',
+        destination: 'https://baymediastar.com/cellphone/lifeline',
+        permanent: true,
+      },
       // ============ 历史套餐页 301 重定向（修复 GSC 404）============
       {
         source: '/t-mobile-wireless-family-plan',
