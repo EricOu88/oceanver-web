@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Star } from 'lucide-react';
 
 const links = [
   { href: '/', label: '首页' },
@@ -38,8 +39,9 @@ export default function SiteHeader() {
             })}
           </div>
         </nav>
-        <a href="tel:15108496191" aria-label="电话联系 510-849-6191" className="hidden shrink-0 rounded-md border border-[#D5E5EC] px-2.5 py-2 text-sm font-semibold text-[#164B78] hover:bg-[#F4F8FA] lg:inline-flex">
-          ☎ 510-849-6191
+        <a href="https://search.google.com/local/reviews?placeid=ChIJX6ngelzGj4ARrdcNVV0c-Gc" target="_blank" rel="noopener noreferrer" aria-label="查看 Google 评论" className="hidden shrink-0 items-center gap-1.5 rounded-md border border-[#D5E5EC] px-2.5 py-2 text-sm font-semibold text-[#164B78] hover:bg-[#F4F8FA] lg:inline-flex">
+          <Star className="h-4 w-4 fill-current" aria-hidden="true" />
+          查看 Google 评论
         </a>
       </div>
     </header>
