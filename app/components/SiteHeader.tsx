@@ -24,7 +24,7 @@ export default function SiteHeader() {
         </Link>
         <nav aria-label="全站主导航" className="min-w-0 flex-1 overflow-x-auto overscroll-x-contain whitespace-nowrap [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           <div className="flex w-max min-w-full items-center justify-end gap-1 sm:gap-2">
-            {links.map((link) => {
+            {links.filter((link) => pathname !== '/' || link.href !== '/').map((link) => {
               const selected = link.href === '/' ? pathname === '/' : pathname === link.href || pathname.startsWith(link.href + '/');
               return (
                 <Link
