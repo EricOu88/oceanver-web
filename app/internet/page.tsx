@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import Link from 'next/link'
 import {
-  ArrowLeft,
   ArrowRight,
   CircleDollarSign,
   CircleHelp,
@@ -100,15 +99,7 @@ export default function InternetPage() {
   return (
     <main className="compact-page min-h-screen bg-[#FCFDFE] px-4 py-4 text-[#202D3A] sm:px-6 sm:py-6">
       <div className="mx-auto max-w-6xl">
-        <Link
-          href="/"
-          className="page-nav-button"
-        >
-          <ArrowLeft size={16} />
-          返回首页
-        </Link>
-
-        {/* HERO */}
+{/* HERO */}
         <section className="mx-auto mt-4 max-w-4xl text-center">
           <p className="text-sm font-bold tracking-wide text-[#2786A5]">
             美国家庭宽带问题入口
