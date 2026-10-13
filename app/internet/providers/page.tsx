@@ -379,10 +379,10 @@ export default function InternetProvidersPage() {
             都可能因地址与账户不同而变化。网页可以帮助比较方向，但不能代替当前后台结果。
           </p>
           <Link
-            href="/contact"
+            href="https://baymediastar.com/internet/providers"
             className="page-nav-button"
           >
-            需要时进入人工核实
+            查看可办理宽带并中文核实
             <ArrowRight size={18} />
           </Link>
         </section>
