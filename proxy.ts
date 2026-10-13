@@ -60,11 +60,10 @@ export function proxy(request: NextRequest) {
     return new Response("Gone", { status: 410 });
   }
 
-  // 旧 WordPress 根路径 Xfinity FAQ 已由新站的账户问题库取代。
-  // 避免旧 URL 继续与主站 Xfinity 涨价文章争夺同一搜索意图。
+  // 旧 Xfinity FAQ 保留在 Oceanver 的问题解释体系，不转到办理站。
   if (pathname === "/xfinity/faq" || pathname === "/xfinity/faq/") {
     return NextResponse.redirect(
-      "https://baymediastar.com/internet/xfinity",
+      "https://oceanver.com/internet/xfinity/faq",
       301
     );
   }
