@@ -251,10 +251,10 @@ export default function CellphoneProvidersPage() {
             </div>
             <div className="mt-8 text-center">
               <Link
-                href="/contact"
+                href="https://baymediastar.com/cellphone/providers"
                 className="page-nav-button"
               >
-                需要准确数字时进入人工核实
+                查看可办理手机方案并中文核实
                 <ArrowRight size={18} />
               </Link>
             </div>
