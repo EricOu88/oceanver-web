@@ -193,10 +193,10 @@ export default function SpectrumClient() {
             Promotion、Credit、设备记录、订单状态、地址 serviceability 和安装条件等，网页无法读取实际后台结果。
           </p>
           <Link
-            href="/contact"
+            href="https://baymediastar.com/internet/spectrum"
             className="page-nav-button"
           >
-            需要时进入人工核实
+            查询可办理方案并中文核实
             <ArrowRight size={17} />
           </Link>
         </section>
