@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { Phone, MessageCircle, Mail, Copy, X, ArrowRight } from 'lucide-react'
+import { Phone, MessageCircle, Mail, Copy, X, ArrowRight, Star } from 'lucide-react'
 import { useState } from 'react'
 import { trackContact } from '../ContactAnalytics'
 
@@ -13,10 +13,12 @@ export default function ContactEntry({
   title = '看完还是不确定？',
   subtitle = '如果涉及具体账单、账户资格、地址覆盖或促销条件，可以联系中文客服进一步核实。',
   variant = 'default',
+  showGoogleReviewCta = false,
 }: {
   title?: string
   subtitle?: string
   variant?: 'default' | 'homepage'
+  showGoogleReviewCta?: boolean
 }) {
   const [copied, setCopied] = useState(false)
   const [showQRModal, setShowQRModal] = useState(false)
@@ -73,6 +75,18 @@ export default function ContactEntry({
         <div>
           <h2 className="text-2xl font-black text-slate-900 md:text-3xl">{title}</h2>
           <p className="mt-4 text-[15px] leading-7 text-slate-600">{subtitle}</p>
+          {showGoogleReviewCta && (
+            <a
+              href="https://search.google.com/local/reviews?placeid=ChIJX6ngelzGj4ARrdcNVV0c-Gc"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-5 inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-[#164B78] px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-[#103B60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2786A5] focus-visible:ring-offset-2"
+            >
+              <Star size={16} fill="currentColor" aria-hidden="true" />
+              查看 Google 评论
+              <ArrowRight size={16} aria-hidden="true" />
+            </a>
+          )}
         </div>
         <div className="divide-y divide-[#E9EEF2]">
           <button data-contact-method="wechat" onClick={() => setShowQRModal(true)} className="grid w-full grid-cols-[auto_1fr_auto] items-center gap-4 py-4 text-left first:pt-0 last:pb-0">
