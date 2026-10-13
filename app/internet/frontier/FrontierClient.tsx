@@ -149,10 +149,10 @@ export default function FrontierClient() {
               都不能仅靠公开网页确认。
             </p>
             <Link
-              href="/contact"
+              href="https://baymediastar.com/internet/frontier"
               className="page-nav-button"
             >
-              需要时进入人工核实 <ArrowRight size={16} />
+              查询可办理方案并中文核实 <ArrowRight size={16} />
             </Link>
           </div>
         </section>
