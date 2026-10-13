@@ -115,6 +115,7 @@ export default async function HomeClient() {
             variant="homepage"
             title="看完还是不确定？"
             subtitle="如果问题涉及具体账户、地址覆盖、设备余额、Trade-in、退款、转号资格或当前优惠，需要结合实际资料进一步核实。"
+            showGoogleReviewCta
           />
         </div>
       </section>
