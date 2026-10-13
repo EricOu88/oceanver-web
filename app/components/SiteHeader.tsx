@@ -9,7 +9,6 @@ const links = [
   { href: '/', label: '首页' },
   { href: '/cellphone', label: '手机问题' },
   { href: '/internet', label: '宽带问题' },
-  { href: '/blog', label: '资讯' },
   { href: '/contact', label: '联系' },
 ];
 
