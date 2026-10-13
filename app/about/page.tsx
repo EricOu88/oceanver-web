@@ -40,6 +40,15 @@ export default function AboutPage() {
             关于美国鸿达电讯
           </h1>
 
+          <a
+            href="https://www.google.com/search?hl=zh-CN&amp;gl=us&amp;q=%E7%BE%8E%E5%9B%BD%E9%B8%BF%E8%BE%BE%E7%94%B5%E8%AE%AF+(Bay+Media+Star)46292+Warm+Springs+Blvd+%23606,+Fremont,+CA+94539&amp;ludocid=7491769167315326893&amp;lsig=AB86z5XvcsyfCXf381zyps_nU_an#lrd=0x808fc65c7ae0a95f:0x67f81c5d550dd7ad,1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex items-center rounded-md bg-[#164B78] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#103B60] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#164B78]"
+          >
+            查看 Google 评论 ↗
+          </a>
+
           <div className="mt-8 space-y-6 leading-8 text-[#526170]">
             <p>
               Oceanver 的核心不是先推荐某一家运营商，而是帮助美国中文用户把手机和家庭宽带问题先判断清楚。
