@@ -96,12 +96,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/california-lifeline-telephone-service',
-        destination: '/cellphone/government',
+        destination: 'https://baymediastar.com/cellphone/lifeline',
         permanent: true,
       },
       {
         source: '/california-lifeline-telephone-service/:path*',
-        destination: '/cellphone/government',
+        destination: 'https://baymediastar.com/cellphone/lifeline',
         permanent: true,
       },
 
