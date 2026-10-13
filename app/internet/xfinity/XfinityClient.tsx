@@ -352,10 +352,10 @@ export default function XfinityClient() {
           </p>
 
           <Link
-            href="/contact"
+            href="https://baymediastar.com/internet/xfinity"
             className="page-nav-button"
           >
-            需要时进入人工核实
+            查询可办理方案并中文核实
             <ArrowRight size={16} />
           </Link>
         </section>
