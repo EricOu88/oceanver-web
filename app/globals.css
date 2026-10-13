@@ -1017,5 +1017,3 @@ main:has(#bill-increase-reasons) h2 {
   .compact-page header .page-nav-button { text-align: left; }
 }
 
-/* The global header owns the single home entry; suppress duplicate page-level home buttons. */
-a.page-nav-button[href="/"] { display: none; }
