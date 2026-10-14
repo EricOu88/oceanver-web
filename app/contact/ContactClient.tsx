@@ -38,7 +38,7 @@ export default function ContactClient() {
               href="https://search.google.com/local/reviews?placeid=ChIJX6ngelzGj4ARrdcNVV0c-Gc"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center rounded-md border border-[#D5E5EC] bg-white px-4 py-2.5 text-sm font-semibold text-[#164B78] transition-colors hover:bg-[#F4F8FA] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#164B78]"
+              className="mt-5 inline-flex min-h-12 items-center justify-center rounded-xl border border-[#2786A5] bg-[#2786A5] px-6 py-3 text-lg font-bold text-white shadow-md transition hover:-translate-y-0.5 hover:border-[#246B95] hover:bg-[#246B95] hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#164B78] sm:text-xl"
             >
               ★ 查看 Google 评论 ↗
             </a>
