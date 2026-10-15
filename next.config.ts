@@ -111,29 +111,6 @@ const nextConfig: NextConfig = {
         destination: '/internet/att/fiber/faq',
         permanent: true,
       },
-
-      // ============ 历史遗留页面下线（410 Gone 优先，但 Next.js redirects 不支持 410，用 301 作为备选）============
-      // 注意：proxy.ts 中已实现 410 Gone，这里的 301 作为双重保险
-      {
-        source: '/digital-tv',
-        destination: '/internet',
-        permanent: true,
-      },
-      {
-        source: '/digital-tv/:path*',
-        destination: '/internet',
-        permanent: true,
-      },
-      {
-        source: '/solar-panel',
-        destination: '/internet',
-        permanent: true,
-      },
-      {
-        source: '/solar-panel/:path*',
-        destination: '/internet',
-        permanent: true,
-      },
     ]
   },
 
