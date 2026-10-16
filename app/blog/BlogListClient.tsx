@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react'
 import Link from 'next/link'
-import { Calendar, Tag, ArrowRight, Smartphone, Wifi } from 'lucide-react'
+import { Calendar, Tag, ArrowRight } from 'lucide-react'
 import { CommunityDiscussionClientOnly } from '@/app/components/community/CommunityDiscussionByPath'
 
 type BlogListCategory = 'all' | 'mobile' | 'broadband' | 'guide'
