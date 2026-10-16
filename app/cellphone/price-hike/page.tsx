@@ -11,10 +11,18 @@ import {
 const pageUrl = 'https://oceanver.com/cellphone/price-hike';
 
 export const metadata: Metadata = {
-  title: { absolute: '现有手机账单涨价排查｜多线折扣、设备分期与抵扣｜美国鸿达电讯' },
+  title: { absolute: '美国手机账单为什么涨价？优惠到期、AutoPay 与设备费用排查｜美国鸿达电讯' },
   description:
-    '本页帮助现有手机用户区分套餐月费、线路折扣、设备分期、Bill Credit 与附加服务变化。不同运营商和账户的处理条件不同，应核对当前账单后再行动。',
+    '美国手机账单突然变贵？逐项核对优惠到期、套餐月费、AutoPay、税费、附加服务、设备分期与 Bill Credit。可按步骤自查，也可直接联系中文客服协助核对；具体收费以当前账户及运营商规则为准。',
   alternates: { canonical: pageUrl },
+  openGraph: {
+    title: '美国手机账单为什么涨价？优惠到期、AutoPay 与设备费用排查｜美国鸿达电讯',
+    description: '美国手机账单突然变贵？逐项核对优惠到期、套餐月费、AutoPay、税费、附加服务、设备分期与 Bill Credit。可按步骤自查，也可直接联系中文客服协助核对；具体收费以当前账户及运营商规则为准。',
+    url: pageUrl,
+    siteName: '美国鸿达电讯',
+    locale: 'zh_CN',
+    type: 'website',
+  },
 };
 
 const reasons = [
@@ -63,30 +71,40 @@ const evidenceBranches = [
     href: '/cellphone/family-plan-exit-account-holder',
     action: '继续核对户主权限和退出路径',
   },
+  {
+    title: '税费或附加收费变化',
+    check: '对比同一线路、同名税费及附加收费，记录名称、金额和首次变化账期，并向运营商确认收费依据。',
+    caution: '税费或附加收费增加，不等于套餐基础月费一定上涨。',
+  },
+  {
+    title: '只有本期账单特别高',
+    check: '核对账单中是否列有一次性费用、按比例计费或调整项目，并确认对应服务日期。',
+    caution: '本期应付总额增加，不代表以后每月都会按同样金额收费。',
+  },
 ];
 
 const promotionExpiryChecklist = [
   {
     title: '第一步：确认是优惠结束，还是账单项目变化',
-    detail: '找出最近三期账单中同一条线路的套餐费、Promotion / Bill Credit、AutoPay 折扣及设备月供，记录第一次变化的账期。',
+    detail: '先对比手头最近两期账单；需要追溯时再查看更早账期。逐项记录套餐费、Promotion / Bill Credit、AutoPay、税费及设备月供的变化。只有一期账单，也可直接向运营商或中文客服询问。',
   },
   {
     title: '第二步：判断优惠还能否恢复',
     detail: '查找原活动名称、优惠起止时间、设备分期及资格通知。不要把设备抵扣期满、活动资格失效和账单错误当成同一件事。',
   },
   {
-    title: '第三步：比较留、改、换的真实成本',
-    detail: '分别核对保留现有计划、调整套餐和跨网转出的费用变化；设备尾款、可能失去的抵扣及一次性费用由人工结合实际账户确认。',
+    title: '第三步：确认后续是否继续收费，以及是否需要更正',
+    detail: '记录变化项目、首次生效账期及运营商说明，确认后续是否持续收费、是否需要更正或补发抵扣。如另行考虑调整或转网，再核对设备余额、未发抵扣及一次性费用。',
   },
 ];
 
-const beforeSwitch = [
+const billChecklist = [
   '每条线路当前月费和家庭总账单。',
   '线路数变化后，多线折扣 / Free Line 是否仍成立。',
   '每台设备剩余余额和未发 Bill Credit。',
   'AutoPay / Paperless 当前是否有效。',
   '旧计划上仍保留的 Promotion、账户折扣或其他特殊条件。',
-  '新方案是否真的降低长期总成本，而不是只看第一期宣传价格。',
+  '税费、附加服务及一次性项目是否变化，以及各项费用的生效与结束条件。',
 ];
 
 const stay = [
@@ -96,11 +114,11 @@ const stay = [
   '当前信号、使用体验和总成本仍在可接受范围内。',
 ];
 
-const compare = [
-  '持续月费已经明显上涨，而且不是一次性费用。',
-  '多条线路一起涨价，家庭总账单增幅已经超出预算。',
-  '原有 Free Line / 多线折扣 / AutoPay 优惠失去后，长期成本明显上升。',
-  '旧计划权益已经不适合实际需求，且新方案的完整成本更合理。',
+const verificationChecks = [
+  '套餐月费增加：核对项目名称、金额、生效日期及运营商通知。',
+  '多条线路费用同时变化：分别列出每条线路及账户级收费，避免只比较平均价格。',
+  'Free Line、多线或 AutoPay 折扣减少：核对资格、账户结构及折扣适用账期。',
+  '旧计划被迁移或调整：核对迁移通知、原有权益和优惠是否受到影响。',
 ];
 
 const schema = {
@@ -108,11 +126,11 @@ const schema = {
   '@type': 'WebPage',
   '@id': `${pageUrl}#webpage`,
   url: pageUrl,
-  name: '手机套餐涨价了，要留、改还是换？',
+  name: '美国手机账单涨价原因与核实步骤',
   description:
-    '手机套餐涨价判断页，帮助区分月费、多线折扣、AutoPay、设备分期和 Bill Credit 的变化，再决定是否调整或换运营商。',
+    '帮助现有美国手机用户核对套餐月费、优惠与多线折扣、AutoPay、税费、附加服务、设备分期和 Bill Credit 的变化，提供自助检查步骤及中文客服协助入口。',
   inLanguage: 'zh-CN',
-  dateModified: '2026-10-07',
+  dateModified: '2026-10-16',
 };
 
 export default function CellphonePriceHikePage() {
@@ -130,26 +148,37 @@ export default function CellphonePriceHikePage() {
 
         <header className="py-4 sm:py-6">
           <p className="mb-4 inline-flex rounded-full bg-[#F4F8FA] px-3 py-1 text-sm font-semibold text-[#246B95]">
-            手机长期涨价判断
+            美国手机账单涨价原因排查
           </p>
-          <h1 className="max-w-4xl text-3xl font-black leading-tight tracking-tight sm:text-5xl">
+          <h1 className="max-w-4xl text-balance text-3xl font-black leading-tight tracking-tight sm:text-5xl">
               现有手机账单涨价：核对多线折扣与设备抵扣
             </h1>
-            <section data-page-answer className="best-answer speakable-summary mt-6 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 text-[#202D3A]">
-              <h2 className="text-lg font-bold">直接结论</h2>
-              <p className="mt-3 leading-7">手机账单变贵时先检查每条线：套餐月费、多线折扣、设备分期、Bill Credit 和附加服务。少一条线不等于只减掉它的费用，剩余线路可能重新计价。</p>
-              <dl className="mt-4 space-y-3 text-sm leading-7">
-                <div><dt className="font-bold">适用条件</dt><dd>适合现有手机账户收费变化、多线优惠或设备抵扣异常；金额和处理权限以实际账户及运营商审核为准。</dd></div>
-                <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/bill-optimization" className="page-nav-button">先找出具体变化项目</Link><Link href="/cellphone/family-plan-guide" className="page-nav-button">涉及多线变动时核对家庭账户</Link></dd></div>
-              </dl>
-            </section>
-
-            <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/cellphone/att/price-increase" className="font-semibold underline underline-offset-4">已确认是 AT&T 旧计划调整？查看 AT&T 换套餐成本</Link></p>
+            <p data-page-answer className="best-answer speakable-summary mt-5 leading-7 text-[#526170]">
+              手机账单变贵，可能来自优惠到期、套餐月费或多线折扣变化、AutoPay 折扣变化、税费、附加服务，以及设备分期或 Bill Credit 变化。应按具体线路和收费项目核对，区分持续月费与一次性费用；少一条线也可能使剩余线路重新计价。你可以自己检查，也可以直接请中文客服协助，无需先完成自查。
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-2" aria-label="选择手机账单检查方式">
+              <section aria-labelledby="self-check-heading" className="flex flex-col rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 sm:p-6">
+                <h2 id="self-check-heading" className="text-xl font-black">自己查</h2>
+                <p className="mt-3 flex-1 leading-7 text-[#526170]">按步骤核对手机账单，找出涨价原因。</p>
+                <a href="#cellphone-self-check" className="page-nav-button mt-5 min-h-12 justify-center">
+                  开始自助检查 <ArrowRight size={16} aria-hidden="true" />
+                </a>
+              </section>
+              <section aria-labelledby="assisted-check-heading" data-contact-location="cellphone_price_hike_hero" className="flex flex-col rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 sm:p-6">
+                <h2 id="assisted-check-heading" className="text-xl font-black">客服帮查</h2>
+                <p className="mt-3 flex-1 leading-7 text-[#526170]">不想自己查？中文客服协助核对账单，无需先完成自查。</p>
+                <div className="mt-5 flex flex-col gap-3">
+                  <a href="tel:15108496191" className="page-nav-button min-h-12 justify-center">电话咨询：510-849-6191</a>
+                  <Link href="/contact#wechat-qr" data-contact-method="wechat" className="page-nav-button min-h-12 justify-center">微信咨询</Link>
+                </div>
+              </section>
+            </div>
+            <p className="mt-4 text-sm leading-7 text-[#526170]">适合现有手机账户收费变化、多线优惠或设备抵扣异常；金额和处理权限以实际账户及运营商审核为准。</p>
 
         </header>
 
-        <section className="py-4">
-          <h2 className="text-3xl font-black">常见的 6 类变化</h2>
+        <section id="cellphone-self-check" tabIndex={-1} aria-labelledby="cellphone-self-check-heading" className="scroll-mt-24 py-4">
+          <h2 id="cellphone-self-check-heading" className="text-3xl font-black">常见的 6 类变化</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {reasons.map(([title, text]) => (
               <article key={title} className="rounded-2xl border border-[#D5E5EC] bg-white p-5">
@@ -170,9 +199,7 @@ export default function CellphonePriceHikePage() {
                 当成员退出、免费线消失或账户结构变化时，不能只减去“那一条线原来的价格”，
                 剩余线路也可能重新计算。
               </p>
-              <Link href="/cellphone/family-plan-guide" className="page-nav-button">
-                继续检查家庭多线结构 →
-              </Link>
+              <p className="mt-3 text-sm leading-7 text-[#526170]">核实时请同时查看变更前后的线路数、账户优惠及剩余线路价格。</p>
             </div>
           </div>
         </section>
@@ -180,7 +207,7 @@ export default function CellphonePriceHikePage() {
         <section className="mt-4" aria-labelledby="cellphone-evidence-heading">
           <h2 id="cellphone-evidence-heading" className="text-2xl font-black">找到涨价项目后，按证据继续判断</h2>
           <p className="mt-3 leading-7 text-[#526170]">
-            对照最近两期账单，先确认具体线路和收费项目，再决定是否需要调整。以下是通用检查方法，不代表已查看你的账户。
+            可对照手头最近两期账单，确认具体线路、收费项目和首次变化账期；资料不齐也可以直接联系客服。以下是通用检查方法，不代表已查看你的账户。
           </p>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {evidenceBranches.map((item) => (
@@ -199,7 +226,7 @@ export default function CellphonePriceHikePage() {
         </section>
 
         <section aria-labelledby="promo-expiry-check" className="mt-4 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
-          <h2 id="promo-expiry-check" className="text-2xl font-black">手机优惠到期，先检查再决定是否换网</h2>
+          <h2 id="promo-expiry-check" className="text-2xl font-black">手机优惠到期，怎样确认增加的是哪笔费用？</h2>
           <p className="mt-3 leading-7 text-[#526170]">账单变贵不一定代表运营商提高了套餐标价；也可能是限时优惠结束、自动付款折扣失效，或设备月度抵扣减少。</p>
           <ol className="mt-5 space-y-4">
             {promotionExpiryChecklist.map((item, index) => (
@@ -210,13 +237,13 @@ export default function CellphonePriceHikePage() {
             ))}
           </ol>
           <p className="mt-4 leading-7 text-[#526170]">如果不知道原优惠是否仍有效，应先联系原运营商核对活动编号和资格；不要在确认前取消号码或提前结清设备。</p>
-          <Link href="/cellphone/faq/promo-credit-not-received" className="page-nav-button">抵扣没有到账？继续检查原因 →</Link>
+          <p className="mt-3 text-sm leading-7 text-[#526170]">抵扣异常时，记录活动名称和未到账账期，结合设备订单及运营商说明继续核实。</p>
         </section>
 
         <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
-          <h2 className="text-2xl font-black">换新计划以前，至少先核对这 6 件事</h2>
+          <h2 className="text-2xl font-black">核实当前账单，先整理这 6 项信息</h2>
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
-            {beforeSwitch.map((item) => (
+            {billChecklist.map((item) => (
               <div key={item} className="flex gap-3 rounded-xl bg-white p-4">
                 <CheckCircle2 className="mt-1 shrink-0 text-[#246B95]" size={18} />
                 <p className="text-sm leading-7 text-[#526170]">{item}</p>
@@ -236,9 +263,9 @@ export default function CellphonePriceHikePage() {
 
           <article className="rounded-2xl border border-[#D5E5EC] bg-white p-6">
             <ShieldCheck className="mb-4 text-[#2786A5]" size={27} />
-            <h2 className="text-2xl font-black">哪些情况值得认真比较？</h2>
+            <h2 className="text-2xl font-black">哪些变化需要进一步核实？</h2>
             <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-7 text-[#526170]">
-              {compare.map((item) => <li key={item}>{item}</li>)}
+              {verificationChecks.map((item) => <li key={item}>{item}</li>)}
             </ul>
           </article>
         </section>
@@ -250,14 +277,12 @@ export default function CellphonePriceHikePage() {
             AutoPay 条件和旧计划迁移后的实际价格，都需要结合真实账户与当前运营商规则确认。
           </p>
           <p className="mt-4 text-sm leading-7 text-[#526170]">
-            咨询前建议准备：运营商名称、最近两期账单中发生变化的收费项目、涉及的线路数量，以及设备分期和 Bill Credit 情况。可先遮盖账单中的姓名、地址和账户号码。
+            可以直接联系中文客服，不必先完成自查或整理好全部账单。如手头有资料，可提供运营商名称、变化的收费项目、线路数量及设备分期和 Bill Credit 情况；分享前请遮盖姓名、地址和账户号码。
           </p>
           <p className="mt-2 text-sm font-semibold leading-7 text-[#526170]">
             请勿在公开评论或网页中提交账户密码、验证码、完整账户号码或 Transfer PIN；需要核验时通过官方或已确认安全的渠道进行。
           </p>
-          <Link href="/contact" className="page-nav-button">
-            需要准确数字时进入人工核实 <ArrowRight size={16} />
-          </Link>
+          <p className="mt-4 text-sm leading-7 text-[#526170]">需要帮助时，可使用页面顶部的电话或微信入口；具体收费、资格及处理结果仍以运营商核实为准。</p>
         </section>
 
         <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
@@ -275,9 +300,9 @@ export default function CellphonePriceHikePage() {
               <h3 className="font-black">成员退出后家庭价格变化</h3>
               <p className="mt-1 text-sm leading-6 text-[#526170]">先处理户主权限、保号和线路退出路径，再重算家庭结构。</p>
             </Link>
-            <Link href="/cellphone/providers" className="rounded-xl border border-[#D5E5EC] p-4 hover:border-[#246B95]">
-              <h3 className="font-black">已经确定值得比较其他方案</h3>
-              <p className="mt-1 text-sm leading-6 text-[#526170]">再比较真实长期成本、设备和转网代价。</p>
+            <Link href="https://baymediastar.com/cellphone/att/price-increase" className="rounded-xl border border-[#D5E5EC] p-4 hover:border-[#246B95]">
+              <h3 className="font-black">仅适用于已确认 AT&T 旧计划调整</h3>
+              <p className="mt-1 text-sm leading-6 text-[#526170]">前往 BayMediaStar 了解 AT&T 调整套餐成本。其他运营商用户可直接使用首屏电话或微信咨询。</p>
             </Link>
           </div>
         </section>
