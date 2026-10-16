@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, BookOpen } from 'lucide-react';
 
 const QUESTIONS = [
   {
@@ -64,6 +64,19 @@ export default function HeroSection() {
                 </Link>
               </article>
             ))}
+          </div>
+          <div className="mt-5 flex justify-center md:mt-6">
+            <Link
+              href="/blog"
+              className="inline-flex w-full max-w-[420px] items-center justify-between gap-4 rounded-2xl bg-[#164B78] px-5 py-4 text-left text-white shadow-sm transition hover:bg-[#103B60] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#164B78]"
+            >
+              <BookOpen className="h-6 w-6 shrink-0" aria-hidden="true" />
+              <span className="min-w-0 flex-1">
+                <span className="block font-bold">阅读博客文章</span>
+                <span className="mt-1 block text-sm leading-5 text-white/85">账单、宽带与手机问题的判断指南</span>
+              </span>
+              <ArrowRight className="h-5 w-5 shrink-0" aria-hidden="true" />
+            </Link>
           </div>
         </div>
 

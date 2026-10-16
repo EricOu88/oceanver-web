@@ -79,7 +79,7 @@ export default function Page() {
               <li><Link href="/cellphone/faq" className="hover:text-blue-700">美国手机常见问题</Link></li>
               <li><Link href="/internet/faq" className="hover:text-blue-700">美国宽带常见问题</Link></li>
               <li><Link href="/why-us" className="hover:text-blue-700">真实问题与处理案例</Link></li>
-              <li><Link href="/blog" className="hover:text-blue-700">猜你想问</Link></li>
+              <li><Link href="/blog" className="hover:text-blue-700">博客</Link></li>
             </ul>
           </div>
 
