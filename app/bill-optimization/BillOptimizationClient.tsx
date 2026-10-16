@@ -131,7 +131,12 @@ export default function BillOptimizationClient() {
               </dl>
             </section>
 
-            <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/bill-optimization" className="font-semibold underline underline-offset-4">原因已确认，准备比较替代套餐？查看主站成本比较</Link></p>
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              <Link href="/internet/price-hike" className="page-nav-button">自己查：宽带账单涨价</Link>
+              <Link href="/cellphone/price-hike" className="page-nav-button">自己查：手机账单涨价</Link>
+              <a href="tel:15108496191" className="page-nav-button">客服帮查：510-849-6191</a>
+              <Link href="/contact#wechat-qr" className="page-nav-button">微信咨询：查看二维码</Link>
+            </div>
 
         </div>
       </header>
@@ -143,14 +148,12 @@ export default function BillOptimizationClient() {
             <a href="#bill-reasons" className="underline underline-offset-4">常见涨价原因</a>
             <a href="#mobile-bill" className="underline underline-offset-4">手机账单检查</a>
             <a href="#first-mobile-bill" className="underline underline-offset-4">手机第一张账单</a>
-            <a href="#first-mobile-bill" className="underline underline-offset-4">首张手机账单高于报价</a>
             <a href="#home-internet-bill" className="underline underline-offset-4">宽带账单检查</a>
             <a href="#unknown-reason" className="underline underline-offset-4">看不懂账单怎么办</a>
             <a href="#worth-action" className="underline underline-offset-4">哪些情况值得处理</a>
             <a href="#observe-first" className="underline underline-offset-4">哪些情况可以先观察</a>
             <a href="#after-adjustment" className="underline underline-offset-4">调整后还要检查什么</a>
             <a href="#bundle-dependency" className="underline underline-offset-4">手机 + 宽带绑定优惠</a>
-            <a href="#bundle-dependency" className="underline underline-offset-4">宽带 + 手机 Bundle</a>
             <a href="#move-both" className="underline underline-offset-4">手机 + 宽带一起迁移</a>
             <a href="#faq" className="underline underline-offset-4">常见问题</a>
           </div>
@@ -407,6 +410,8 @@ export default function BillOptimizationClient() {
           </div>
         </section>
 
+        <p className="px-2 text-sm leading-7 text-slate-600">已经确认账单涨价原因，准备比较替代套餐？可查看 <Link href="https://baymediastar.com/bill-optimization" className="font-semibold underline underline-offset-4">主站的方案与成本比较</Link>。请先核实完整账期费用与账户资格，再决定是否调整。</p>
+
         <nav aria-label="相关账单问题" className="rounded-2xl bg-white p-5 text-sm font-semibold text-blue-800 shadow-sm">
           <h2 className="mb-3 text-base font-bold text-slate-900">相关问题继续看</h2>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -420,7 +425,7 @@ export default function BillOptimizationClient() {
         </nav>
 
         <footer className="px-2 py-4 text-center text-sm leading-6 text-slate-500">
-          <p>最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前账户与官方规则为准。</p>
+          <p>最后更新：2026年10月16日｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前账户与官方规则为准。</p>
           <p>内容由美国鸿达电讯团队整理与审核</p>
         </footer>
       </div>
