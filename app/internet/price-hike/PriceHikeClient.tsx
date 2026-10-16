@@ -53,12 +53,12 @@ const stayConditions = [
   '新运营商的地址、安装和长期价格还没有确认',
 ]
 
-const compareConditions = [
-  '基础月费已经连续两期或以上明显上涨',
-  '原有优惠结束后，新的长期价格超出预算',
-  '设备费或附加项目使总成本长期偏高',
-  '服务质量长期不稳定，而且多次排查仍没有改善',
-  '搬家后当前运营商条件明显不再合适',
+const verificationChecks = [
+  '基础月费增加：确认调整金额、生效日期，以及是否有价格变化通知。',
+  '优惠或 Credit 消失：确认结束日期、适用条件和结束后的月费。',
+  '设备费或附加项目增加：核对设备记录、服务名称及收费是否持续。',
+  '同时存在服务质量问题：将账单变化与 Wi-Fi、设备或线路故障分开记录，分别排查。',
+  '近期搬家或变更服务：核对新旧地址、速度档位、组合服务及按比例计费。',
 ]
 
 export default function PriceHikeClient() {
@@ -80,30 +80,43 @@ export default function PriceHikeClient() {
           {/* HERO */}
           <section className="mx-auto mt-4 max-w-4xl text-center">
             <p className="text-sm font-bold tracking-wide text-[#2786A5]">
-              宽带长期涨价判断
+              美国宽带账单涨价原因排查
             </p>
 
             <h1 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">
               现有宽带账单涨价，先确认哪一项变化
             </h1>
-            <section data-page-answer className="best-answer speakable-summary mt-6 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 text-[#202D3A]">
-              <h2 className="text-lg font-bold">直接结论</h2>
-              <p className="mt-3 leading-7">先分清持续月费变化与一次性费用，再检查优惠结束、自动付款和设备收费。尚未核实原因时不急着换网；确认持续费用不合适后，再比较地址可用方案和切换成本。</p>
-              <dl className="mt-4 space-y-3 text-sm leading-7">
-                <div><dt className="font-bold">适用条件</dt><dd>适合已在使用宽带、月费变贵或折扣消失的用户；首次申请与新地址方案选择进入主站。</dd></div>
-                <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/bill-optimization" className="page-nav-button">先按收费项目核对账单</Link><Link href="https://baymediastar.com/internet/price-hike" className="font-semibold underline underline-offset-4">原因明确后比较换网成本</Link></dd></div>
-              </dl>
-            </section>
+            <p data-page-answer className="best-answer speakable-summary mt-5 text-left leading-7 text-[#526170]">
+              宽带账单变贵，可能来自优惠到期、基础月费调整、AutoPay 折扣变化、设备或附加服务收费、一次性费用，以及套餐、速度档位或组合服务变化。先找出变化项目、金额和生效账期，再向运营商确认该费用是否会持续收取。
+            </p>
+            <div className="mt-6 grid gap-4 text-left md:grid-cols-2" aria-label="选择账单检查方式">
+              <section aria-labelledby="self-check-heading" className="flex flex-col rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 sm:p-6">
+                <h2 id="self-check-heading" className="text-xl font-black">自己查</h2>
+                <p className="mt-3 flex-1 leading-7 text-[#526170]">按步骤核对账单，找出涨价原因。</p>
+                <a href="#bill-self-check" className="page-nav-button mt-5 min-h-12 justify-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#164B78]">
+                  开始自助检查 <ArrowRight size={16} aria-hidden="true" />
+                </a>
+              </section>
+              <section aria-labelledby="assisted-check-heading" data-contact-location="price_hike_hero" className="flex flex-col rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-5 sm:p-6">
+                <h2 id="assisted-check-heading" className="text-xl font-black">客服帮查</h2>
+                <p className="mt-3 flex-1 leading-7 text-[#526170]">不想自己查？中文客服协助核对账单。</p>
+                <div className="mt-5 flex flex-col gap-3">
+                  <a href="tel:15108496191" className="page-nav-button min-h-12 justify-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#164B78]">电话咨询：510-849-6191</a>
+                  <Link href="/contact#wechat-qr" data-contact-method="wechat" className="page-nav-button min-h-12 justify-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#164B78]">微信咨询</Link>
+                </div>
+              </section>
+            </div>
+            <p className="mt-4 text-sm leading-7 text-[#526170]">适合已经使用美国宽带、发现账单总额增加、月费变贵或折扣消失的用户。</p>
 
           </section>
 
           {/* 涨价原因 */}
-          <section className="mt-4">
+          <section id="bill-self-check" tabIndex={-1} aria-labelledby="bill-self-check-heading" className="mt-4 scroll-mt-24">
             <p className="text-sm font-bold text-[#2786A5]">
               先确认到底是哪一项变了
             </p>
 
-            <h2 className="mt-2 text-2xl font-black sm:text-3xl">
+            <h2 id="bill-self-check-heading" className="mt-2 text-2xl font-black sm:text-3xl">
               宽带账单变贵，常见原因有这 6 类
             </h2>
 
@@ -201,31 +214,23 @@ export default function PriceHikeClient() {
               <p>
                 真正需要重点判断的是：
                 <strong className="text-[#202D3A]">
-                  同一项收费是否已经连续出现，以及它是不是 recurring。
+                  增加的项目是持续性月费，还是一次性费用；应结合账单标注、适用条款和运营商确认判断。
                 </strong>
               </p>
 
-              <Link
-                href="/bill-optimization"
-                className="page-nav-button"
-              >
-                对比最近两期账单
-                <ArrowRight size={16} />
-              </Link>
+              <p>对比最近两期账单时，请按同名收费项目核对，不要只比较应付总额。</p>
             </InfoCard>
 
             <InfoCard
               icon={<TrendingUp size={23} />}
-              title="如果已经连续涨了两期以上"
+              title="如何确认增加的费用会不会持续"
             >
               <p>
-                如果基础月费、设备费或其他 recurring charge
-                已经连续出现，就更接近长期成本变化。
+                对比最近两期账单，有助于发现重复收费；是否属于持续费用，还应核对项目说明、生效日期和结束条件。
               </p>
 
               <p>
-                到这一步才值得认真比较：
-                继续留、调整现有方案，还是换到其他运营商。
+                即使只出现一期，也可以向运营商确认后续是否继续收取，无需等待第二期才开始核实。
               </p>
             </InfoCard>
           </section>
@@ -270,16 +275,16 @@ export default function PriceHikeClient() {
               不用等到涨价以后才开始查
             </h2>
             <p className="mt-4 max-w-3xl leading-7 text-[#526170]">
-              不给统一“提前几天”的固定答案。更稳妥的做法是：一旦账单、订单或账户里已经能看到 Promotion / Credit 的结束信号，就开始把后续价格和切换条件查清楚。
+              不给统一“提前几天”的固定答案。一旦账单、订单或账户显示 Promotion / Credit 即将结束，就记录结束日期，并向运营商确认结束后的基础月费、折扣及设备收费。
             </p>
             <div className="mt-6 grid gap-4 md:grid-cols-2">
               {[
                 '保存当前账单与 Promotion / Credit 名称、金额和适用条件。',
                 '确认优惠结束后的常规价格，以及设备和附加费用是否会继续。',
-                '确认当前地址有哪些真实可用的替代方案，不只看广告覆盖图。',
-                '如果考虑换网，先确认新服务可安装、预计启用时间和设备安排。',
-                '旧服务不要过早取消；先把新服务条件和切换顺序确认清楚。',
-                '涉及重新办理资格、当前优惠或账户特殊条件时，必须按真实账户核实。',
+                '核对优惠结束日期，以及结束后的价格从哪个账期生效。',
+                '确认 AutoPay / Paperless 折扣是否仍适用，有无付款方式或资格变化。',
+                '如另行考虑换网，先确认新服务的安装和启用安排，不要过早取消旧服务。',
+                '对无法解释的优惠、Credit 或收费，记录项目名称、金额和运营商答复。',
               ].map((item) => (
                 <div key={item} className="flex gap-3 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-4">
                   <CheckCircle2 size={20} className="mt-0.5 shrink-0 text-[#2786A5]" />
@@ -318,18 +323,18 @@ export default function PriceHikeClient() {
             </div>
           </section>
 
-          {/* 值得开始比较 */}
+          {/* 收费核实清单 */}
           <section className="mt-4 rounded-3xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
             <p className="text-sm font-bold text-[#2786A5]">
-              什么情况值得认真比较新方案
+              哪些变化还需要向运营商确认
             </p>
 
             <h2 className="mt-2 text-2xl font-black sm:text-3xl">
-              出现这些情况，可以进入比较阶段
+              发现这些情况，先核实收费依据
             </h2>
 
             <div className="mt-6 space-y-3">
-              {compareConditions.map((item) => (
+              {verificationChecks.map((item) => (
                 <div
                   key={item}
                   className="flex gap-3 rounded-xl bg-[#F4F8FA] p-4"
@@ -346,13 +351,7 @@ export default function PriceHikeClient() {
               ))}
             </div>
 
-            <Link
-              href="/internet/providers"
-              className="page-nav-button"
-            >
-              开始比较宽带方案
-              <ArrowRight size={18} />
-            </Link>
+            <p className="mt-5 text-sm leading-7 text-[#526170]">联系运营商时，可逐项询问：这笔费用为什么增加、何时生效、是否持续收取，以及是否需要更正账单。</p>
           </section>
 
           {/* 运营商专项 */}
@@ -414,10 +413,10 @@ export default function PriceHikeClient() {
             />
 
             <DecisionCard
-              title="已经确认长期成本太高"
-              description="再比较不同运营商的长期费用和安装条件。"
-              href="/internet/providers"
-              action="开始比较运营商"
+              title="已核实涨价原因，仍需咨询方案"
+              description="账单项目和后续月费已确认后，如仍需评估调整或换网，可前往 BayMediaStar 咨询。"
+              href="https://baymediastar.com/internet/price-hike"
+              action="原因确认后，前往 BayMediaStar 咨询"
             />
           </section>
 
@@ -445,13 +444,7 @@ export default function PriceHikeClient() {
               请勿在公开评论中提交账户密码、验证码或完整账户号码；账户核验请使用官方或已确认安全的渠道。
             </p>
 
-            <Link
-              href="/contact"
-              className="page-nav-button"
-            >
-              需要时进入人工核实
-              <ArrowRight size={16} />
-            </Link>
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[#526170]">核实具体收费依据、是否持续收取或是否需要更正账单，请以运营商对当前账户的确认为准。</p>
           </section>
 
         <section aria-labelledby="internet-official-sources" className="mt-4 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
