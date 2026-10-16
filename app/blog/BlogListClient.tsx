@@ -72,47 +72,21 @@ export default function BlogListClient({ posts }: { posts: BlogListPost[] }) {
             </Link>
           </li>
           <li className="text-slate-300">/</li>
-          <li className="text-slate-700 font-semibold">猜你想问？</li>
+          <li className="text-slate-700 font-semibold">博客</li>
         </ol>
       </nav>
 
       {/* 页面标题 */}
       <div className="mb-8 text-center">
         <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">
-          猜你想问？
+          博客文章
         </h1>
         <p className="text-lg text-slate-600">
-          先选手机或宽带，直接进入对应的常见问题。
+          围绕手机、宽带与账单问题，按实际情况查原因、看步骤，再决定下一步。
         </p>
       </div>
 
-      <section aria-label="常见问题入口" className="mb-4 grid gap-5 md:grid-cols-2">
-        <Link
-          href="/cellphone/faq"
-          className="group rounded-2xl border-2 border-[#D8E2EA] bg-white p-6 transition hover:-translate-y-0.5 hover:border-[#2786A5] hover:shadow-md md:p-8"
-        >
-          <Smartphone className="mb-2 text-[#2786A5] md:mb-4" size={32} aria-hidden="true" />
-          <h2 className="text-2xl font-black text-slate-900">手机常见问题</h2>
-          <p className="mt-2 text-base leading-6 text-slate-600 md:mt-3 md:leading-7">套餐、账单、转号、eSIM、信号等问题，从这里开始找答案。</p>
-          <span className="mt-2 inline-flex items-center gap-2 rounded-lg bg-[#164B78] px-4 py-2 font-bold text-white transition-colors group-hover:bg-[#103B60] md:mt-6">
-            查看手机常见问题 <ArrowRight size={16} aria-hidden="true" />
-          </span>
-        </Link>
-
-        <Link
-          href="/internet/faq"
-          className="group rounded-2xl border-2 border-[#D8E2EA] bg-white p-6 transition hover:-translate-y-0.5 hover:border-[#2786A5] hover:shadow-md md:p-8"
-        >
-          <Wifi className="mb-2 text-[#2786A5] md:mb-4" size={32} aria-hidden="true" />
-          <h2 className="text-2xl font-black text-slate-900">宽带常见问题</h2>
-          <p className="mt-2 text-base leading-6 text-slate-600 md:mt-3 md:leading-7">涨价、安装、设备、网速、Wi-Fi、地址覆盖等问题，从这里开始找答案。</p>
-          <span className="mt-2 inline-flex items-center gap-2 rounded-lg bg-[#164B78] px-4 py-2 font-bold text-white transition-colors group-hover:bg-[#103B60] md:mt-6">
-            查看宽带常见问题 <ArrowRight size={16} aria-hidden="true" />
-          </span>
-        </Link>
-      </section>
-
-      <h2 className="mb-5 text-2xl font-black text-slate-900 md:text-3xl">更多问题与指南</h2>
+      <h2 className="mb-5 text-2xl font-black text-slate-900 md:text-3xl">全部文章</h2>
 
       {/* 分类筛选按钮：放在标题下方 */}
       <div className="text-center mb-10">
