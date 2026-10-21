@@ -1,9 +1,5 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import {
-  isPhase2IndexingEnabled,
-  isPhase2IndexPath,
-} from "@/lib/indexing-policy";
 
 /**
  * Next.js 16 Proxy Mode
@@ -140,14 +136,8 @@ export function proxy(request: NextRequest) {
 
   const response = NextResponse.next();
 
-  // Oceanver 分阶段索引保险丝：
-  // Phase 1：所有普通页面继续 noindex / nofollow。
-  // Phase 2：只有第一批 allowlist 页面允许索引，其余页面继续 noindex，但允许爬虫沿内链发现已开放节点。
-  if (!isPhase2IndexingEnabled()) {
-    response.headers.set("X-Robots-Tag", "noindex, nofollow");
-  } else if (!isPhase2IndexPath(pathname)) {
-    response.headers.set("X-Robots-Tag", "noindex, follow");
-  }
+  // Phase 1：所有公开 HTML 页面统一 noindex，并允许爬虫沿内链发现页面。
+  response.headers.set("X-Robots-Tag", "noindex, follow");
 
   return response;
 }
