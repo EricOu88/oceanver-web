@@ -41,9 +41,9 @@ export function proxy(request: NextRequest) {
     });
   }
 
-  // Reject the known legacy WordPress query URL without affecting normal queries.
+  // Retire legacy spam-like query URLs reported by GSC; keep normal query strings untouched.
   const legacyQuery = url.search.replace(/%2f/gi, "/");
-  if (pathname === "/" && /^\?syjc(?:\/79\.html)?=?$/.test(legacyQuery)) {
+  if (pathname === "/" && /^\?(?:syjc|lm1|pphd)(?:\/(?:[a-z0-9_-]+(?:\.html)?)?)?=?$/i.test(legacyQuery)) {
     return new NextResponse("Gone", {
       status: 410,
       statusText: "Gone",
