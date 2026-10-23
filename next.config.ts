@@ -31,6 +31,38 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
+      // GSC 2026-10-23: legacy FAQ URLs with closely matching existing answers.
+      {
+        source: '/internet/spectrum/faq/spectrum-bill-increase',
+        destination: '/internet/spectrum/faq',
+        permanent: true,
+      },
+      {
+        source: '/internet/spectrum/faq/spectrum-installation',
+        destination: '/internet/spectrum/faq',
+        permanent: true,
+      },
+      {
+        source: '/internet/spectrum/faq/spectrum-speed',
+        destination: '/internet/spectrum/faq',
+        permanent: true,
+      },
+      {
+        source: '/internet/frontier/faq/frontier-frequent-disconnections',
+        destination: '/internet/frontier/faq',
+        permanent: true,
+      },
+      {
+        source: '/internet-wifi/frontier/faq/frontier-contract-early-termination',
+        destination: '/internet/frontier/faq',
+        permanent: true,
+      },
+      {
+        source: '/internet/att/fiber/faq/att-fiber-coverage-areas',
+        destination: '/internet/att/fiber/faq',
+        permanent: true,
+      },
+
       // ============ 历史套餐页 301 重定向（修复 GSC 404）============
       {
         source: '/t-mobile-wireless-family-plan',
