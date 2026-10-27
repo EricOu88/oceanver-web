@@ -4,9 +4,9 @@ import { getCanonicalUrl } from '@/lib/seo-utils';
 import CommunityDiscussionByPath from '@/app/components/community/CommunityDiscussionByPath';
 
 export const metadata: Metadata = {
-  title: '关于我们｜美国鸿达电讯',
+  title: '关于 Oceanver｜美国手机与宽带问题判断',
   description:
-    '美国鸿达电讯面向美国中文用户整理手机与家庭宽带的账单、网络、设备、账户、地址和变更问题，帮助先判断原因，再决定下一步。',
+    'Oceanver 由美国鸿达电讯（Bay Media Star Inc.）团队运营，帮助中文用户理解通信账单变化、网络和账户问题，以及调整服务前需要核实的条件。',
   alternates: { canonical: getCanonicalUrl('/about') },
 };
 
@@ -14,7 +14,7 @@ const AboutSchema = () => {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'AboutPage',
-    name: '关于我们 - 美国鸿达电讯',
+    name: '关于 Oceanver｜美国手机与宽带问题判断',
     about: { '@id': 'https://oceanver.com/#organization' },
   };
 
@@ -37,8 +37,10 @@ export default function AboutPage() {
           </Link>
 
           <h1 className="mt-8 text-3xl font-black md:text-4xl">
-            关于美国鸿达电讯
+            关于 Oceanver
           </h1>
+
+          <p className="mt-3 text-sm text-[#526170]">页面更新：2026年10月26日</p>
 
           <a
             href="https://www.google.com/search?hl=zh-CN&amp;gl=us&amp;q=%E7%BE%8E%E5%9B%BD%E9%B8%BF%E8%BE%BE%E7%94%B5%E8%AE%AF+(Bay+Media+Star)46292+Warm+Springs+Blvd+%23606,+Fremont,+CA+94539&amp;ludocid=7491769167315326893&amp;lsig=AB86z5XvcsyfCXf381zyps_nU_an#lrd=0x808fc65c7ae0a95f:0x67f81c5d550dd7ad,1"
@@ -73,6 +75,14 @@ export default function AboutPage() {
               站内内容用于帮助理解和判断，不代表运营商官方，也不会用固定旧价格、旧促销或单一案例替代当前账户与官方规则。
             </p>
           </div>
+
+          <section className="mt-8 rounded-xl border border-slate-200 bg-white p-5 leading-8 text-[#526170]">
+            <h2 className="text-xl font-bold text-[#202D3A]">我们与 Bay Media Star 的关系</h2>
+            <p className="mt-3">Oceanver 与 Bay Media Star 服务网站同属 Bay Media Star Inc.，由美国鸿达电讯团队运营。Oceanver 侧重账单变化、网络与账户问题的判断；Bay Media Star 侧重手机卡、家庭及商业宽带的覆盖查询、方案核实与办理协助。</p>
+            <p className="mt-3">你可以只阅读本站指南，不办理任何业务。需要查询覆盖或咨询办理时，可前往 Bay Media Star；具体条件以运营商审核和办理时核实结果为准。</p>
+            <p className="mt-3">Oceanver 问题咨询：<a href="tel:+15108496191" className="font-bold text-[#164B78] underline underline-offset-4">510-849-6191</a></p>
+            <a href="https://baymediastar.com/about" className="mt-3 inline-block font-bold text-[#164B78] underline underline-offset-4">了解美国鸿达电讯及办理服务 →</a>
+          </section>
 
           <div className="mt-10 flex flex-wrap gap-4">
             <Link href="/cellphone" className="font-bold text-[#164B78] hover:text-[#103B60]">
