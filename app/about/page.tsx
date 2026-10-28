@@ -75,14 +75,7 @@ export default function AboutPage() {
             <a href="tel:+15108496191" className="mt-3 inline-block font-bold text-[#164B78] underline underline-offset-4">反馈内容问题：510-849-6191</a>
           </section>
 
-          <section className="mt-8 rounded-xl border border-slate-200 bg-white p-5 leading-8 text-[#526170]">
-            <h2 className="text-xl font-bold text-[#202D3A]">我们与 Bay Media Star 的关系</h2>
-            <p className="mt-3">Oceanver 与 Bay Media Star 服务网站同属 Bay Media Star Inc.，由美国鸿达电讯团队运营。Oceanver 侧重账单变化、网络与账户问题的判断；Bay Media Star 侧重手机卡、家庭及商业宽带的覆盖查询、方案核实与办理协助。</p>
-            <p className="mt-3">你可以只阅读本站指南，不办理任何业务。需要查询覆盖或咨询办理时，可前往 Bay Media Star；具体条件以运营商审核和办理时核实结果为准。</p>
-            <p className="mt-3">Oceanver 问题咨询：<a href="tel:+15108496191" className="font-bold text-[#164B78] underline underline-offset-4">510-849-6191</a></p>
-            <a href="https://baymediastar.com/about" className="mt-3 inline-block font-bold text-[#164B78] underline underline-offset-4">了解美国鸿达电讯及办理服务 →</a>
-          </section>
-
+          
           <div className="mt-10 flex flex-wrap gap-4">
             <Link href="/cellphone" className="font-bold text-[#164B78] hover:text-[#103B60]">
               手机问题中心 →
