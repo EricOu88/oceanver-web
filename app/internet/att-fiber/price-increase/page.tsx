@@ -24,15 +24,29 @@ const steps = [
 export default function ATTInternetPriceIncreasePage() {
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: title,
-    description,
-    mainEntityOfPage: url,
-    inLanguage: 'zh-CN',
-    datePublished: '2026-11-03',
-    dateModified: '2026-11-03',
-    author: { '@type': 'Organization', name: 'Bay Media Star Inc.' },
-    publisher: { '@type': 'Organization', name: 'Bay Media Star Inc.' },
+    '@graph': [
+      {
+        '@type': 'WebPage',
+        '@id': url + '#webpage',
+        url,
+        name: title,
+        description,
+        inLanguage: 'zh-CN',
+        isPartOf: { '@id': 'https://oceanver.com/#website' },
+      },
+      {
+        '@type': 'Article',
+        '@id': url + '#article',
+        headline: title,
+        description,
+        mainEntityOfPage: { '@id': url + '#webpage' },
+        inLanguage: 'zh-CN',
+        datePublished: '2026-11-03',
+        dateModified: '2026-11-03',
+        author: { '@type': 'Organization', name: 'Bay Media Star Inc.' },
+        publisher: { '@type': 'Organization', name: 'Bay Media Star Inc.' },
+      },
+    ],
   }
   return (
     <main className="min-h-screen bg-[#FCFDFE] px-4 py-8 text-[#202D3A] sm:px-6">
