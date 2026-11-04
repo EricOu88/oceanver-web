@@ -378,8 +378,8 @@ export default function PriceHikeClient() {
 
               <ProviderLink
                 name="Spectrum"
-                description="查看 Spectrum 账单、费用和账户相关常见问题。"
-                href="/internet/spectrum/faq"
+                description="Spectrum 涨价五步处理：核对账单、英文或中文客服谈价、调整服务、设备与年度复查。"
+                href="/internet/spectrum/price-increase"
               />
 
               <ProviderLink
