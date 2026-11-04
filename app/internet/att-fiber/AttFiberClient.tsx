@@ -103,6 +103,9 @@ export default function AttFiberClient() {
             <Link href="/internet/att/fiber/faq" className="page-nav-button">
               查看 AT&amp;T Fiber 常见问题
             </Link>
+            <Link href="/internet/att-fiber/price-increase" className="page-nav-button">
+              AT&amp;T 账单涨价？查看谈价与调整指南 <ArrowRight size={18} />
+            </Link>
           </div>
         </div>
       </section>
