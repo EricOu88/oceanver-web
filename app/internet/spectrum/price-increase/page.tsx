@@ -100,6 +100,7 @@ export default function SpectrumPriceIncreasePage() {
             <li>比较调整前后的长期月费，注意优惠重置、套餐变更和税费影响。</li>
             <li>若确实考虑换网，先确认新地址可安装的运营商、正式安装日期和新服务稳定性，再预约关闭旧服务，减少断网风险。</li>
           </ul>
+          <p className="mt-3 leading-8">若在比较 Frontier，也要确认它的价格保证与取消费用：<Link href="/internet/frontier/price-increase" className="font-semibold text-[#164B78] underline">Frontier 涨价和退网费用指南</Link>。</p>
           <Link href="/internet/providers" className="mt-4 inline-block font-semibold text-[#164B78] underline">查看调整或换网前应比较的项目</Link>
         </section>
 
