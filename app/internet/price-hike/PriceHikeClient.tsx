@@ -384,8 +384,8 @@ export default function PriceHikeClient() {
 
               <ProviderLink
                 name="AT&T Fiber"
-                description="查看 AT&T Fiber 价格变化和账单判断。"
-                href="/internet/att/fiber/faq/att-fiber-price-increase"
+                description="AT&T 宽带涨价五步处理：官方账单差异、英文或中文客服、服务调整与设备收费。"
+                href="/internet/att-fiber/price-increase"
               />
 
               <ProviderLink
