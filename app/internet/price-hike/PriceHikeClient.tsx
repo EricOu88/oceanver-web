@@ -390,8 +390,8 @@ export default function PriceHikeClient() {
 
               <ProviderLink
                 name="Frontier"
-                description="查看 Frontier 账单、地址和长期成本相关问题。"
-                href="/internet/frontier/faq"
+                description="先查 Frontier 账单涨价、优惠结束、取消账期与设备处理费用，再决定是否换网。"
+                href="/internet/frontier/price-increase"
               />
             </div>
           </section>
