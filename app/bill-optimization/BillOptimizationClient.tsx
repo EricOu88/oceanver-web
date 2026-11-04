@@ -238,6 +238,7 @@ export default function BillOptimizationClient() {
           <div className="mt-6"><ReviewList items={internetItems} /></div>
           <div className="mt-5 space-y-2 leading-7 text-slate-700">
             <p>如果已经确认是宽带长期涨价，可继续查看 <Link href="/internet/price-hike" className="page-nav-button">宽带涨价原因与处理方法</Link>。</p>
+            <p>如果使用的是 Spectrum，可按照 <Link href="/internet/spectrum/price-increase" className="page-nav-button">Spectrum 涨价谈价与调整五步指南</Link> 检查账单、联系客服和核对设备费用。</p>
             <p>如果除了账单，还涉及地址覆盖、安装或是否值得换网，可查看 <Link href="/internet/diagnosis" className="page-nav-button">宽带问题诊断</Link>。</p>
             <p>设备费、AutoPay 或一次性费用仍有疑问，可查看 <Link href="/internet/faq" className="page-nav-button">更多宽带常见问题</Link>。</p>
           </div>
