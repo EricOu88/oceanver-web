@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 const steps = [
   { id: 'bill', title: '1. 哪些 AT&T 宽带用户在 2026 年加 $5？' },
-  { id: 'call', title: '2. 找 AT&T 英文客服，还是鸿达中文客服？' },
+  { id: 'call', title: '2. 联系 AT&T 官方客服或鸿达中文协助' },
   { id: 'adjust', title: '3. 调整服务和折扣，而不是直接取消' },
   { id: 'device', title: '4. 核实 Wi-Fi 网关、安装与设备费用' },
   { id: 'review', title: '5. 每年检查账单，优惠到期前再查一次' },
@@ -59,8 +59,9 @@ export default function ATTInternetPriceIncreasePage() {
         <p className="text-sm font-bold text-[#2786A5]">Oceanver · AT&amp;T 已有宽带客户 · 2026 年 11 月 3 日核查</p>
         <h1 className="mt-3 text-3xl font-black leading-tight md:text-4xl">{title}</h1>
         <p className="best-answer speakable-summary mt-5 text-lg leading-8" data-page-answer>
-          这篇只讨论 <strong>AT&amp;T 家庭宽带涨价，不是 AT&amp;T 手机线路涨价</strong>。2026 年 AT&amp;T 公布了不同批次的每月 $5 调价：部分 Fiber、Internet Air 和旧式 Internet 套餐受影响，但不是所有客户统一涨价。先核对<strong>套餐类型、开通日期、账单通知</strong>，再按五步处理：<strong>查账单 → 联系英文或中文客服 → 调整服务 → 处理设备 → 每年复查</strong>。单独增加 $5 不代表必须马上换网。
+          AT&amp;T 宽带账单每月多了 5 美元，先别急着取消。2026 年不同批次的调价，适用套餐和开通日期不同：12 月的新一轮调整不包括当前 Fiber 和 Internet Air，但部分老用户已属于此前的调整范围。先用下表核对，再检查账单与折扣。
         </p>
+        <p className="mt-3 text-sm leading-7 text-[#526170]">本文只讨论家庭宽带，不涉及 AT&amp;T 手机线路涨价。需要中文帮助，可联系鸿达协助核对收费项目；账户调整与优惠资格由 AT&amp;T 确认。</p>
         <nav aria-label="文章目录" className="my-7 rounded-2xl border border-[#D8E2EA] bg-[#EDF5F9] p-5">
           <h2 className="font-bold">按这五步处理</h2>
           <ol className="mt-3 list-decimal space-y-2 pl-6">
@@ -98,21 +99,22 @@ export default function ATTInternetPriceIncreasePage() {
         </section>
 
         <section id="call" className="mt-10 scroll-mt-6">
-          <h2 className="text-2xl font-black">第二步：打电话谈价，两条路可以选</h2>
+          <h2 className="text-2xl font-black">第二步：联系 AT&amp;T 官方客服，或请鸿达协助中文核对</h2>
           <div className="mt-5 grid gap-4 md:grid-cols-2">
             <div className="rounded-2xl border border-[#D8E2EA] bg-white p-5">
-              <h3 className="text-xl font-bold">方法 A：自己联系 AT&amp;T 英文客服</h3>
+              <h3 className="text-xl font-bold">自行联系 AT&amp;T 官方客服</h3>
               <p className="mt-3 leading-7">AT&amp;T 官方家庭宽带账单及技术支持电话：<a href="tel:+18002882020" className="font-bold text-[#164B78] underline">800-288-2020</a>。客服工作时间以官方页面当日显示为准；也可以通过官方网页 Chat 联系。</p>
               <p className="mt-3 font-semibold">英文话术：</p>
               <blockquote className="mt-2 border-l-4 border-[#2786A5] pl-4 leading-7 text-[#526170]">My AT&amp;T Internet bill went up. Could you review the charges, explain which discounts ended, and check whether there is a lower-cost plan or any discount available for my existing account? Please confirm the final monthly price, any one-time fees, and when the price may change again.</blockquote>
+              <p className="mt-3 text-sm leading-7 text-[#526170]"><strong>中文意思：</strong>我的 AT&amp;T 宽带账单上涨了，请说明具体变化的收费项、哪些折扣结束，以及现有账户有没有更低价方案。变更前，请确认最终月费、一次性费用和下次价格可能变化的时间。</p>
               <p className="mt-3 text-sm leading-7">如果前台无法说明优惠资格，可询问是否有适合现有客户的账单或账户方案；不要假设一定有 retention 特价，也不要声称已经准备取消服务以换取优惠。</p>
               <a href="https://www.att.com/support/internet/" target="_blank" rel="noopener noreferrer" className="mt-3 inline-block font-semibold text-[#164B78] underline">AT&amp;T 官方宽带客服入口</a>
             </div>
             <div className="rounded-2xl border border-[#D8E2EA] bg-white p-5">
-              <h3 className="text-xl font-bold">方法 B：联系鸿达电讯中文客服</h3>
+              <h3 className="text-xl font-bold">联系鸿达电讯，获取中文账单核对协助</h3>
               <p className="mt-3 leading-7">不方便用英文核对价格，或者看不懂优惠和收费明细？可以联系<strong>美国鸿达电讯中文客服</strong>，协助整理最近两期账单、找出变化项目、准备向 AT&amp;T 询问的问题，并比较调整服务的可行性。</p>
               <p className="mt-3 leading-7">Oceanver 专用中文咨询：<a href="tel:+15108496191" className="font-bold text-[#164B78] underline">510-849-6191</a></p>
-              <p className="mt-3 text-sm leading-7">鸿达并非 AT&amp;T 的账单争议裁决部门；账户验证、折扣资格、费用更改和正式报价最终由 AT&amp;T 决定。不要向任何第三方发送密码或一次性验证码。</p>
+              <p className="mt-3 text-sm leading-7">鸿达并非 AT&amp;T 官方客服或账单争议裁决部门；账户验证、折扣资格、费用更改和正式报价最终由 AT&amp;T 决定。首次咨询只需提供脱敏后的收费项目，不要发送密码、一次性验证码、完整账户资料或未遮盖个人信息的账单。查询地址覆盖时，再通过合适的私密渠道提供必要地址。</p>
               <Link href="/contact" className="mt-3 inline-block font-semibold text-[#164B78] underline">中文咨询入口</Link>
             </div>
           </div>
@@ -122,13 +124,13 @@ export default function ATTInternetPriceIncreasePage() {
         <section id="adjust" className="mt-10 scroll-mt-6">
           <h2 className="text-2xl font-black">第三步：先调整 AT&amp;T 服务和折扣，不一定要换运营商</h2>
           <ul className="mt-4 list-disc space-y-3 pl-6 leading-8">
-            <li><strong>AutoPay：</strong>官方当前一般互联网优惠说明列出银行账户 / 合资格卡片的 $10 折扣、借记卡的 $5 折扣，其他信用卡可能不享受相同优惠；Internet Air 等另有规则。须核实自己套餐是否适用，切勿仅凭这篇文章认定能省 $10。</li>
+            <li><strong>AutoPay：</strong>符合条件的 AT&amp;T 家庭宽带账户，使用银行账户或 AT&amp;T Points Plus Card from Citi 自动付款可享每月 $10 折扣，使用借记卡可享 $5；其他信用卡通常没有该 AutoPay 折扣，Internet Air 的 AutoPay 折扣则为每月 $5，具体仍以账户资格为准。<strong>必须同时开通无纸化账单</strong>。新设置可能需要最多两个账单周期生效；在账户显示 AutoPay 已安排付款之前，仍应按原方式按时支付。<a href="https://www.att.com/deals/autopay-discount/" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#164B78] underline">查看 AT&amp;T 官方 AutoPay 规则</a>。</li>
             <li><strong>Internet 服务档位：</strong>如果 1 Gbps 的速度长期没有用足，可询问现有账户是否可以调整到满足需求、总费用更合适的档位；先比较上传需求，不要因为单个房间 Wi-Fi 慢就直接升级套餐。</li>
             <li><strong>手机 + 宽带折扣：</strong>确认是否有绑定服务相关优惠、条件与失效风险；换宽带也可能影响已有手机或组合折扣。不能为了获得折扣而忽略新增手机线路的总成本。</li>
             <li><strong>Fiber / Internet Air / 旧式宽带：</strong>不要把别的地址新客户广告价格视为你原账户可以直接领取的价；先检查地址、产品类型、资格和转换成本。</li>
           </ul>
           <p className="mt-4 leading-8"><strong>换网前算清楚：</strong>比如新网每月便宜 $10，但安装与新旧服务重叠产生 $120 一次性成本，仅按这两项算，需要约 12 个月抵消。还要检查手机捆绑优惠、Fiber 上传速度与新运营商的长期价格。先确认新网络在完整地址可安装，并在新服务稳定后再取消 AT&amp;T，避免断网。</p>
-          <p className="mt-3 leading-8">如果同时比较 Spectrum，先核查它的优惠结束价格和 Wi-Fi 费用：<Link href="/internet/spectrum/price-increase" className="font-semibold text-[#164B78] underline">Spectrum 涨价怎么办？账单、谈价和设备处理指南</Link>。该链接会在对应文章上线后可用。</p>
+          <p className="mt-3 leading-8">如果同时比较 Spectrum，先核查它的优惠结束价格和 Wi-Fi 费用：<Link href="/internet/spectrum/price-increase" className="font-semibold text-[#164B78] underline">Spectrum 涨价怎么办？账单、谈价和设备处理指南</Link>。</p>
           <Link href="/internet/providers" className="mt-3 inline-block font-semibold text-[#164B78] underline">比较不同宽带服务的长期成本</Link>
         </section>
 
