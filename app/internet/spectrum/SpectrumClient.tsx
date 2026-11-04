@@ -14,8 +14,8 @@ const issueLinks = [
     title: '账单与涨价',
     description:
       '账单突然变高，先检查 Promotion / Credit、基础月费、设备、AutoPay 和一次性费用。',
-    href: '/internet/price-hike',
-    action: '查看宽带涨价判断',
+    href: '/internet/spectrum/price-increase',
+    action: '查看 Spectrum 涨价五步指南',
     icon: <CircleDollarSign size={22} />,
   },
   {
