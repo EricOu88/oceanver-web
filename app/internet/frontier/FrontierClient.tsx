@@ -97,6 +97,9 @@ export default function FrontierClient() {
               >
                 查看 Frontier 常见问题 <ArrowRight size={18} />
               </Link>
+              <Link href="/internet/frontier/price-increase" className="page-nav-button">
+                Frontier 账单涨价？查看谈价与取消费用 <ArrowRight size={18} />
+              </Link>
             </div>
           </div>
         </section>
