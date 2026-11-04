@@ -63,6 +63,7 @@ export default async function HomeClient() {
             </p>
             <div className="mt-5 flex flex-wrap gap-x-6 gap-y-3 text-[15px] font-semibold">
               <Link href="/internet/price-hike" className="text-[#164B78] hover:text-[#103B60]">查看宽带涨价后如何判断是否值得改变 →</Link>
+              <Link href="/internet/att-fiber/price-increase" className="text-[#164B78] hover:text-[#103B60]">AT&amp;T 宽带涨价？查看账单与谈价五步指南 →</Link>
               <Link href="/cellphone/diagnosis" className="text-[#164B78] hover:text-[#103B60]">查看手机转号、设备分期与 Trade-in 问题 →</Link>
             </div>
           </div>
