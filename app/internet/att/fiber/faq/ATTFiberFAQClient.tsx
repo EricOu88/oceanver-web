@@ -49,6 +49,9 @@ export default function ATTFiberFAQClient() {
       <section className="mt-4">
         <p className="text-sm font-bold text-[#2786A5]">重点判断页</p>
         <h2 className="mt-2 text-2xl font-black text-[#202D3A]">需要完整步骤时继续看</h2>
+        <Link href="/internet/att-fiber/price-increase" className="mt-4 inline-flex items-center gap-2 rounded-xl border border-[#D5E5EC] bg-[#EDF5F9] px-4 py-3 font-semibold text-[#164B78] hover:underline">
+          AT&amp;T 宽带涨价？查看账单、英文谈价与中文协助完整指南 <ArrowRight size={16} />
+        </Link>
         <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {coreDetailPages.map(([slug, title]) => (
             <Link
