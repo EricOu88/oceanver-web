@@ -67,7 +67,7 @@ export default function FrontierFAQPage() {
             </p>
                     <div className="mt-4 flex flex-wrap gap-4 text-sm font-semibold">
             <Link href="/internet/diagnosis" className="text-[#164B78] underline underline-offset-4">先判断网络或设备问题 →</Link>
-            <Link href="/internet/price-hike" className="text-[#164B78] underline underline-offset-4">账单变贵先核对 →</Link>
+            <Link href="/internet/frontier/price-increase" className="text-[#164B78] underline underline-offset-4">Frontier 涨价与取消费用完整指南 →</Link>
           </div>
         </header>
 

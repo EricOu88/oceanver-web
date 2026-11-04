@@ -131,6 +131,7 @@ export default function ATTInternetPriceIncreasePage() {
           </ul>
           <p className="mt-4 leading-8"><strong>换网前算清楚：</strong>比如新网每月便宜 $10，但安装与新旧服务重叠产生 $120 一次性成本，仅按这两项算，需要约 12 个月抵消。还要检查手机捆绑优惠、Fiber 上传速度与新运营商的长期价格。先确认新网络在完整地址可安装，并在新服务稳定后再取消 AT&amp;T，避免断网。</p>
           <p className="mt-3 leading-8">如果同时比较 Spectrum，先核查它的优惠结束价格和 Wi-Fi 费用：<Link href="/internet/spectrum/price-increase" className="font-semibold text-[#164B78] underline">Spectrum 涨价怎么办？账单、谈价和设备处理指南</Link>。</p>
+          <p className="mt-3 leading-8">如果考虑 Frontier，请先核对它的价格保证和退网设备费用：<Link href="/internet/frontier/price-increase" className="font-semibold text-[#164B78] underline">Frontier 账单涨价和取消成本指南</Link>。</p>
           <Link href="/internet/providers" className="mt-3 inline-block font-semibold text-[#164B78] underline">比较不同宽带服务的长期成本</Link>
         </section>
 
