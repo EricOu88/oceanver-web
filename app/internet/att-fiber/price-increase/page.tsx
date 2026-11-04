@@ -139,6 +139,16 @@ export default function ATTInternetPriceIncreasePage() {
           </ol>
         </section>
         
+        <section className="mt-10">
+          <h2 className="text-2xl font-black">AT&amp;T 宽带涨价常见问题</h2>
+          <div className="mt-4 space-y-4">
+            <div className="rounded-xl border border-[#D8E2EA] bg-white p-5"><h3 className="font-bold">AT&amp;T 宽带每月多 $5，一定是官方涨价吗？</h3><p className="mt-2 leading-7">不一定。也可能是促销结束、AutoPay 折扣变化或一次性费用。请对照套餐名称、开通日期及具体收费行，再找官方调价通知。</p></div>
+            <div className="rounded-xl border border-[#D8E2EA] bg-white p-5"><h3 className="font-bold">2026 年 12 月所有 AT&amp;T Fiber 都涨 $5 吗？</h3><p className="mt-2 leading-7">不是。12 月这轮官方列出的调整不适用于当前 Fiber / Internet Air 套餐；部分符合资格的 Fiber 账户曾属于 8 月的不同批次。</p></div>
+            <div className="rounded-xl border border-[#D8E2EA] bg-white p-5"><h3 className="font-bold">打电话要求降价一定成功吗？</h3><p className="mt-2 leading-7">不保证。可以申请核对新方案、现有账户折扣、AutoPay 资格和费用生效日期，必须以客服提供的具体报价及确认记录为准。</p></div>
+            <div className="rounded-xl border border-[#D8E2EA] bg-white p-5"><h3 className="font-bold">退 AT&amp;T 宽带设备有多久？</h3><p className="mt-2 leading-7">官方一般要求需要归还的设备在服务变更或断开后 21 天内退还。请核对设备清单、让店员扫描并保留追踪凭证。</p></div>
+          </div>
+        </section>
+
         <section className="mt-10 rounded-2xl border border-[#D8E2EA] bg-[#EDF5F9] p-6">
           <h2 className="text-xl font-black">AT&amp;T 宽带涨价，英文谈价不方便？</h2>
           <p className="mt-3 leading-7">可以把最近两期账单的费用项目整理出来，遮盖姓名、账户号码、详细地址及付款信息后联系鸿达中文客服。我们先帮助你判断涨价原因，区分可尝试调整的项目；如果需要比较替代服务，再按具体地址确认 AT&amp;T、Xfinity、Spectrum 的覆盖和完整成本，不直接建议你更换运营商。</p>
