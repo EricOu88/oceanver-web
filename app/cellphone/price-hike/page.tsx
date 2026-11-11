@@ -11,15 +11,15 @@ import {
 const pageUrl = 'https://oceanver.com/cellphone/price-hike';
 
 export const metadata: Metadata = {
-  title: { absolute: '美国手机账单为什么涨价？优惠到期、AutoPay 与设备费用排查｜美国鸿达电讯' },
+  title: { absolute: '美国手机账单为什么涨价？优惠到期、AutoPay 与设备费用排查｜Oceanver' },
   description:
     '美国手机账单突然变贵？逐项核对优惠到期、套餐月费、AutoPay、税费、附加服务、设备分期与 Bill Credit。可按步骤自查，也可直接联系中文客服协助核对；具体收费以当前账户及运营商规则为准。',
   alternates: { canonical: pageUrl },
   openGraph: {
-    title: '美国手机账单为什么涨价？优惠到期、AutoPay 与设备费用排查｜美国鸿达电讯',
+    title: '美国手机账单为什么涨价？优惠到期、AutoPay 与设备费用排查｜Oceanver',
     description: '美国手机账单突然变贵？逐项核对优惠到期、套餐月费、AutoPay、税费、附加服务、设备分期与 Bill Credit。可按步骤自查，也可直接联系中文客服协助核对；具体收费以当前账户及运营商规则为准。',
     url: pageUrl,
-    siteName: '美国鸿达电讯',
+    siteName: 'Oceanver',
     locale: 'zh_CN',
     type: 'website',
   },
@@ -300,7 +300,7 @@ export default function CellphonePriceHikePage() {
               <h3 className="font-black">成员退出后家庭价格变化</h3>
               <p className="mt-1 text-sm leading-6 text-[#526170]">先处理户主权限、保号和线路退出路径，再重算家庭结构。</p>
             </Link>
-            <Link href="https://baymediastar.com/cellphone/att/price-increase" className="rounded-xl border border-[#D5E5EC] p-4 hover:border-[#246B95]">
+            <Link href="/cellphone/price-hike" className="rounded-xl border border-[#D5E5EC] p-4 hover:border-[#246B95]">
               <h3 className="font-black">仅适用于已确认 AT&T 旧计划调整</h3>
               <p className="mt-1 text-sm leading-6 text-[#526170]">前往 BayMediaStar 了解 AT&T 调整套餐成本。其他运营商用户可直接使用首屏电话或微信咨询。</p>
             </Link>
