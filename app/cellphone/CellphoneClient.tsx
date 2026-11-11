@@ -366,7 +366,7 @@ export default function CellphoneClient() {
 
       <footer className="border-t border-[#D5E5EC] py-8 text-center">
         <p className="text-xs font-bold text-[#526170]">
-          © {new Date().getFullYear()} 美国鸿达电讯
+          © {new Date().getFullYear()} Oceanver
         </p>
       </footer>
     </div>
