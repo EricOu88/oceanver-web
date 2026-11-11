@@ -2,12 +2,11 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import CopyWechatButton from '@/app/components/CopyWechatButton';
 import { CommunityDiscussionClientOnly } from '@/app/components/community/CommunityDiscussionByPath';
 import { Home, Mail, MessageCircle, Phone } from 'lucide-react';
 
 const CONTACT_PAGE_SCHEMA_JSON =
-  '{"@context":"https://schema.org","@type":"ContactPage","@id":"https://oceanver.com/contact#contactpage","url":"https://oceanver.com/contact","name":"问题核实与联系 | 美国鸿达电讯","description":"手机或宽带账单、账户、设备、转号、地址覆盖等问题无法仅靠公开信息判断时，可通过微信、电话或短信进一步核实。","inLanguage":"zh-CN","about":{"@id":"https://oceanver.com/#organization"}}';
+  '{"@context":"https://schema.org","@type":"ContactPage","@id":"https://oceanver.com/contact#contactpage","url":"https://oceanver.com/contact","name":"问题核实与联系 | Oceanver","description":"手机或宽带账单、账户、设备、转号、地址覆盖等问题无法仅靠公开信息判断时，可通过微信、电话或短信进一步核实。","inLanguage":"zh-CN","about":{"@id":"https://oceanver.com/#organization"}}';
 
 function ContactSchema() {
   return (
@@ -21,7 +20,6 @@ function ContactSchema() {
 export default function ContactClient() {
   const hotline = '510-849-6191';
   const hotlineLink = '15108496191';
-  const wechatId = '美国鸿达电讯';
 
   return (
     <>
@@ -34,14 +32,6 @@ export default function ContactClient() {
               返回首页
             </Link>
             <h1 className="mt-6 text-3xl font-black leading-tight md:text-4xl">问题核实与联系</h1>
-            <a
-              href="https://search.google.com/local/reviews?placeid=ChIJX6ngelzGj4ARrdcNVV0c-Gc"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 inline-flex min-h-12 items-center justify-center rounded-xl border border-[#2786A5] bg-[#2786A5] px-6 py-3 text-lg font-bold text-white shadow-md transition hover:-translate-y-0.5 hover:border-[#246B95] hover:bg-[#246B95] hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#164B78] sm:text-xl"
-            >
-              ★ 查看 Google 评论 ↗
-            </a>
             <p className="mt-4 max-w-[820px] text-base leading-[1.8] text-[#526170] md:text-lg">
               如果问题涉及具体账单、账户资格、地址覆盖、设备余额、Trade-in、转号资料或当前优惠，需要结合实际情况进一步核实。
             </p>
@@ -75,14 +65,10 @@ export default function ContactClient() {
             <div>
               <h2 id="wechat-qr-title" className="text-2xl font-black">微信咨询二维码</h2>
               <p className="mt-3 leading-[1.8] text-[#526170]">添加微信后，可说明需要核实的问题。如需提供账单截图，请先遮盖姓名、完整地址、账户号码等敏感信息；不要发送密码、验证码或转号 PIN。</p>
-              <p className="mt-4 font-semibold text-[#202D3A]">微信号：{wechatId}</p>
-              <div className="mt-3">
-                <CopyWechatButton wechatId={wechatId} />
-              </div>
             </div>
             <Image
               src="/wechat-qr.jpg"
-              alt="美国鸿达电讯微信咨询二维码"
+              alt="微信咨询二维码"
               width={192}
               height={192}
               className="mx-auto rounded-xl border border-[#D8E2EA] object-cover md:mx-0"
@@ -109,7 +95,7 @@ export default function ContactClient() {
           </section>
 
           <p className="max-w-[900px] text-sm leading-[1.8] text-[#526170]">
-            美国鸿达电讯提供面向美国中文用户的通信问题整理与判断信息，不代表任何运营商官方。涉及正式账单争议、退款、停机、设备维修或账户后台操作时，可能仍需由运营商官方处理。
+            Oceanver提供面向美国中文用户的通信问题整理与判断信息，不代表任何运营商官方。涉及正式账单争议、退款、停机、设备维修或账户后台操作时，可能仍需由运营商官方处理。
           </p>
         </div>
       </main>
