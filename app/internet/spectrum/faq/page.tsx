@@ -135,7 +135,7 @@ const faqSections = [
   },
 ]
 
-const title = 'Spectrum 常见问题 FAQ｜账单、网速、设备与搬家｜美国鸿达电讯'
+const title = 'Spectrum 常见问题 FAQ｜账单、网速、设备与搬家｜Oceanver'
 const description =
   '整理 Spectrum 账单涨价、Wi-Fi、断网、设备收费、地址与搬家等问题，说明先核对什么以及何时需要结合账户进一步确认。'
 
@@ -146,7 +146,7 @@ export const metadata: Metadata = {
     title,
     description,
     url: 'https://oceanver.com/internet/spectrum/faq',
-    siteName: '美国鸿达电讯',
+    siteName: 'Oceanver',
     locale: 'zh_CN',
     type: 'website',
   },
