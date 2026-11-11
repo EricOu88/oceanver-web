@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
-const title = 'AT&T Business 和个人套餐有什么不同？｜美国鸿达电讯'
+const title = 'AT&T Business 和个人套餐有什么不同？｜Oceanver'
 const description = '从账户类型、套餐层级、热点与数据政策、设备和网络环境判断 AT&T Business 与 Consumer 的差异；具体资格与账户条件需按当前账户核实。'
 export const metadata: Metadata = {
   title: { absolute: title }, description,
   alternates: { canonical: 'https://oceanver.com/cellphone/att/business-faq' },
-  openGraph: { title, description, url: 'https://oceanver.com/cellphone/att/business-faq', siteName: '美国鸿达电讯', locale: 'zh_CN', type: 'website' },
+  openGraph: { title, description, url: 'https://oceanver.com/cellphone/att/business-faq', siteName: 'Oceanver', locale: 'zh_CN', type: 'website' },
 }
 const checks = [
   '是否同一地点：室内外位置可能影响结果。',
@@ -71,7 +71,7 @@ export default function ATTBusinessFAQPage() {
         <footer className="mt-10 border-t border-[#D5E5EC] pt-6 text-sm leading-7">
           <p>最后更新：2026年10月｜账户类型、套餐层级、网络政策和资格可能随运营商规则变化，请以当前账户与官方规则为准。</p>
           <p className="mt-3">规则参考：<a href="https://about.att.com/sites/broadband/network" target="_blank" rel="noopener noreferrer" className="text-[#164B78] underline underline-offset-4">AT&T 官方网络管理说明</a>。具体账户条件仍需另行核实。</p>
-          <p className="mt-3">美国鸿达电讯</p>
+          <p className="mt-3">Oceanver</p>
         </footer>
       </div>
     </main>
