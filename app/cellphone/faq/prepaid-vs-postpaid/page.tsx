@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Prepaid vs Postpaid：美国预付费和后付费怎么选 | 美国鸿达电讯',
+  title: 'Prepaid vs Postpaid：美国预付费和后付费怎么选 | Oceanver',
   description:
     '比较 Prepaid 与 Postpaid 时，不只看是否需要 SSN 或月费。应同时看账户资格、设备分期、Bill Credit、家庭多线、国际使用和退出条件。',
   alternates: {
@@ -221,7 +221,7 @@ export default function PrepaidVsPostpaidPage() {
               dateModified: '2026-10-06',
               author: {
                 '@type': 'Organization',
-                name: '美国鸿达电讯',
+                name: 'Oceanver',
               },
             }),
           }}
