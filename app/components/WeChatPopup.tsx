@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { trackContact } from './ContactAnalytics';
 
 export default function WeChatPopup({ onClose }: { onClose: () => void }) {
-  const WECHAT_ID = '美国鸿达电讯';
+  const WECHAT_ID = 'Oceanver';
 
   const handleCopy = async () => {
     try {
