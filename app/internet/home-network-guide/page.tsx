@@ -13,7 +13,7 @@ import {
 const pageUrl = 'https://oceanver.com/internet/home-network-guide';
 
 export const metadata: Metadata = {
-  title: { absolute: '家庭网络故障排查｜入户线路、Router、Wi-Fi 与 Mesh｜美国鸿达电讯' },
+  title: { absolute: '家庭网络故障排查｜入户线路、Router、Wi-Fi 与 Mesh｜Oceanver' },
   description:
     '先区分全家同时慢、只有远端房间慢，还是单台设备异常。结合有线测速、Router 附近与远端表现判断问题层级；故障维修和线路状态由运营商或设备支持确认。',
   alternates: { canonical: pageUrl },
@@ -57,7 +57,7 @@ export default function HomeNetworkGuidePage() {
     dateModified: '2026-10-07',
     author: {
       '@type': 'Organization',
-      name: '美国鸿达电讯',
+      name: 'Oceanver',
     },
   };
 
@@ -84,11 +84,11 @@ export default function HomeNetworkGuidePage() {
               <p className="mt-3 leading-7">网络慢时，先区分全家、有线、Router 附近、远端房间和单台设备的表现。只有远处 Wi-Fi 弱时，升级宽带套餐未必解决；先缩小到线路、设备或无线覆盖这一层。</p>
               <dl className="mt-4 space-y-3 text-sm leading-7">
                 <div><dt className="font-bold">适用条件</dt><dd>适合已经安装网络后的慢速、掉线和覆盖问题；网页不能替代现场线路、设备后台或运营商故障确认。</dd></div>
-                <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/internet/diagnosis" className="page-nav-button">按症状继续诊断</Link><Link href="https://baymediastar.com/internet/home-network-guide" className="font-semibold underline underline-offset-4">准备换网时核对设备兼容</Link></dd></div>
+                <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/internet/diagnosis" className="page-nav-button">按症状继续诊断</Link><Link href="https://oceanver.com/internet/home-network-guide" className="font-semibold underline underline-offset-4">准备换网时核对设备兼容</Link></dd></div>
               </dl>
             </section>
             <p className="mt-5 max-w-4xl text-base leading-8 text-slate-700">先区分全家同时慢、只有远端房间慢，还是单台设备异常。结合有线测速、Router 附近与远端表现判断问题层级；故障维修和线路状态由运营商或设备支持确认。</p>
-            <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/internet/home-network-guide" className="font-semibold underline underline-offset-4">准备首次安装或换网？查看主站设备准备指南</Link></p>
+            <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://oceanver.com/internet/home-network-guide" className="font-semibold underline underline-offset-4">准备首次安装或换网？查看办理指南设备准备指南</Link></p>
           <p className="mt-5 max-w-4xl text-lg leading-relaxed text-[#526170]">
             很多“网速慢”其实发生在家里的 Router、Wi-Fi 覆盖或设备这一层。
             Fiber、Cable、5G Home Internet 只是入户方式的一部分，不能直接代表全屋体验。

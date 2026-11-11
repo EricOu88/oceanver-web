@@ -12,35 +12,35 @@ import './globals.css'
 export const metadata: Metadata = {
   metadataBase: new URL('https://oceanver.com'),
   title: {
-    default: '美国鸿达电讯｜美国手机与家庭宽带问题判断',
-    template: '%s｜美国鸿达电讯',
+    default: 'Oceanver｜美国手机与家庭宽带问题判断',
+    template: '%s｜Oceanver',
   },
 
   description:
-    '美国鸿达电讯面向美国中文用户整理手机与家庭宽带的账单、网络、设备、账户、地址和变更问题，帮助先判断原因，再比较方案，并在需要真实账户、地址或资格时进入人工核实。',
+    'Oceanver面向美国中文用户整理手机与家庭宽带的账单、网络、设备、账户、地址和变更问题，帮助先判断原因，再比较方案，并在需要真实账户、地址或资格时进入人工核实。',
 
   openGraph: {
     type: 'website',
     locale: 'zh_CN',
-    siteName: '美国鸿达电讯',
-    title: '美国鸿达电讯｜美国手机与家庭宽带问题判断',
+    siteName: 'Oceanver',
+    title: 'Oceanver｜美国手机与家庭宽带问题判断',
     description:
-      '美国鸿达电讯面向美国中文用户整理手机与家庭宽带的账单、网络、设备、账户、地址和变更问题，帮助先判断原因，再比较方案，并在需要真实账户、地址或资格时进入人工核实。',
+      'Oceanver面向美国中文用户整理手机与家庭宽带的账单、网络、设备、账户、地址和变更问题，帮助先判断原因，再比较方案，并在需要真实账户、地址或资格时进入人工核实。',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: '美国鸿达电讯｜美国手机与家庭宽带问题判断',
+        alt: 'Oceanver｜美国手机与家庭宽带问题判断',
       },
     ],
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: '美国鸿达电讯｜美国手机与家庭宽带问题判断',
+    title: 'Oceanver｜美国手机与家庭宽带问题判断',
     description:
-      '美国鸿达电讯面向美国中文用户整理手机与家庭宽带的账单、网络、设备、账户、地址和变更问题，帮助先判断原因，再比较方案，并在需要真实账户、地址或资格时进入人工核实。',
+      'Oceanver面向美国中文用户整理手机与家庭宽带的账单、网络、设备、账户、地址和变更问题，帮助先判断原因，再比较方案，并在需要真实账户、地址或资格时进入人工核实。',
     images: ['/og-image.png'],
   },
 
@@ -57,7 +57,7 @@ const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   '@id': 'https://oceanver.com/#organization',
-  name: '美国鸿达电讯',
+  name: 'Oceanver',
   description:
     '面向美国中文用户整理手机与家庭宽带的账单、网络、设备、账户、地址和变更问题，并在网页无法确认时提供中文人工核实。',
   url: 'https://oceanver.com',

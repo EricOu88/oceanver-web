@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { internetProvidersFAQData } from './data'
 
-const title = '宽带比较常见问题｜长期成本、网络类型与换网判断｜美国鸿达电讯'
+const title = '宽带比较常见问题｜长期成本、网络类型与换网判断｜Oceanver'
 const description =
   '围绕是否值得换宽带，整理长期费用、Fiber 与 Cable、地址安装、设备和账户条件等常见判断问题。'
 
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title,
     description,
     url: 'https://oceanver.com/internet/providers/faq',
-    siteName: '美国鸿达电讯',
+    siteName: 'Oceanver',
     locale: 'zh_CN',
     type: 'website',
   },

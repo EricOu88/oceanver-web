@@ -370,7 +370,7 @@ export default function AIQuestionWidget() {
       setTimeout(() => {
         addMessage(
           'bot',
-          '你好，我是鸿达电讯的中文智能客服，可以先帮你解答宽带和手机的问题 🙂'
+          '你好，我是Oceanver的中文智能客服，可以先帮你解答宽带和手机的问题 🙂'
         )
       }, 300)
     }
@@ -555,7 +555,7 @@ export default function AIQuestionWidget() {
           <div className="flex items-center justify-between px-5 py-4 bg-blue-700 text-white">
             <div className="flex items-center gap-2">
               <Bot size={20} />
-              <h3 className="font-semibold text-lg">鸿达电讯智能客服</h3>
+              <h3 className="font-semibold text-lg">Oceanver智能客服</h3>
             </div>
             <button
               onClick={() => setIsOpen(false)}

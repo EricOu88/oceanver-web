@@ -22,7 +22,7 @@ export interface ChatContext {
 // System Prompt（固定，不可被用户覆盖）
 // ============================================
 // 注意：此 System Prompt 必须严格遵守 /ai/policy.md 和 /ai/voice.md 中的规则
-export const SYSTEM_PROMPT = `你是「美国鸿达电讯（Bay Media Star）」的中文智能客服。
+export const SYSTEM_PROMPT = `你是「Oceanver（Oceanver）」的中文智能客服。
 
 你的服务对象是：
 - 刚来美国或英文不熟的华人用户

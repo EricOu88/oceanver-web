@@ -15,7 +15,7 @@ export default function WhyUsPreviewCard() {
         href="/why-us"
         className="inline-flex items-center text-blue-600 font-semibold hover:underline"
       >
-        官网客服 vs 鸿达电讯客服的区别 →
+        官网客服 vs Oceanver客服的区别 →
       </Link>
     </div>
   )

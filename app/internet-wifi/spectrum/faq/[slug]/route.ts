@@ -11,7 +11,7 @@ export async function GET() {
 <head>
   <meta charset="utf-8">
   <meta name="robots" content="noindex,nofollow">
-  <title>页面已停用｜美国鸿达电讯</title>
+  <title>页面已停用｜Oceanver</title>
 </head>
 <body>
   <main>

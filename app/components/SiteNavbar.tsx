@@ -10,7 +10,7 @@ export default function SiteNavbar() {
 
         {/* 左侧 LOGO */}
         <Link href="/zh" className="font-bold text-xl text-gray-900">
-          美国鸿达电讯
+          Oceanver
         </Link>
 
         {/* 右侧按钮组 */}

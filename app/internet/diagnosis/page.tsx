@@ -18,7 +18,7 @@ const diagnosisKnowledge = [...internetIssues, ...billingIssues].filter(
     doc.public_case === true,
 ) as QADocument[]
 
-const title = '美国宽带问题诊断｜账单、网速、Wi-Fi、覆盖、安装｜美国鸿达电讯'
+const title = '美国宽带问题诊断｜账单、网速、Wi-Fi、覆盖、安装｜Oceanver'
 const description =
   '宽带账单涨价、网速慢、Wi-Fi 信号差、断网、地址覆盖、搬家或设备退还出问题时，先通过中文诊断判断常见原因、检查步骤和下一步处理方向。'
 
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title,
     description,
     url: 'https://oceanver.com/internet/diagnosis',
-    siteName: '美国鸿达电讯',
+    siteName: 'Oceanver',
     locale: 'zh_CN',
     type: 'website',
   },

@@ -4,7 +4,7 @@ import CommunityDiscussionByPath from '@/app/components/community/CommunityDiscu
 export const metadata: Metadata = {
   title: '隐私政策',
   description:
-    '美国鸿达电讯隐私政策。说明我们在网站与服务过程中如何收集、使用和保护用户信息。',
+    'Oceanver隐私政策。说明我们在网站与服务过程中如何收集、使用和保护用户信息。',
   alternates: {
     canonical: 'https://oceanver.com/privacy-policy',
   },
@@ -24,7 +24,7 @@ export default function PrivacyPage() {
 
       <section className="space-y-6 leading-relaxed">
         <p>
-          美国鸿达电讯（以下简称“我们”）非常重视用户的隐私与个人信息保护。
+          Oceanver（以下简称“我们”）非常重视用户的隐私与个人信息保护。
           本隐私政策说明我们如何收集、使用和保护您的信息。
         </p>
 

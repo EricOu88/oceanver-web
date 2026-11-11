@@ -415,7 +415,7 @@ export default function PriceHikeClient() {
             <DecisionCard
               title="已核实涨价原因，仍需咨询方案"
               description="账单项目和后续月费已确认后，如仍需评估调整或换网，可前往 BayMediaStar 咨询。"
-              href="https://baymediastar.com/internet/price-hike"
+              href="https://oceanver.com/internet/price-hike"
               action="原因确认后，前往 BayMediaStar 咨询"
             />
           </section>

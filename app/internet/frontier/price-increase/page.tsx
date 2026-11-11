@@ -3,10 +3,10 @@ import Link from 'next/link'
 
 const url = 'https://oceanver.com/internet/frontier/price-increase'
 const title = 'Frontier 宽带涨价怎么办？账单检查、谈价与取消费用指南'
-const description = 'Frontier 宽带账单变贵，先核对促销到期、套餐价格与附加费用，再联系 Frontier 官方客服或鸿达中文协助，计算取消账期、设备处理费和30天设备归还成本。'
+const description = 'Frontier 宽带账单变贵，先核对促销到期、套餐价格与附加费用，再联系 Frontier 官方客服或中文协助，计算取消账期、设备处理费和30天设备归还成本。'
 const steps = [
   { id: 'bill', text: '1. 核对 Frontier 账单变化与优惠期限' },
-  { id: 'contact', text: '2. 联系 Frontier 官方客服或鸿达中文协助' },
+  { id: 'contact', text: '2. 联系 Frontier 官方客服或中文协助' },
   { id: 'adjust', text: '3. 比较调整套餐、折扣和附加服务' },
   { id: 'cancel', text: '4. 算清取消账期、设备和最终费用' },
   { id: 'review', text: '5. 复查后续账单及取消确认记录' },
@@ -23,14 +23,14 @@ export const metadata: Metadata = {
   description,
   robots: { index: false, follow: true },
   alternates: { canonical: url },
-  openGraph: { title, description, url, locale: 'zh_CN', type: 'article', siteName: 'Oceanver｜美国鸿达电讯' },
+  openGraph: { title, description, url, locale: 'zh_CN', type: 'article', siteName: 'Oceanver' },
 }
 export default function FrontierPriceIncreasePage() {
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
       { '@type': 'WebPage', '@id': url + '#webpage', url, name: title, description, inLanguage: 'zh-CN', isPartOf: { '@id': 'https://oceanver.com/#website' } },
-      { '@type': 'Article', '@id': url + '#article', headline: title, description, mainEntityOfPage: { '@id': url + '#webpage' }, datePublished: '2026-11-03', dateModified: '2026-11-03', inLanguage: 'zh-CN', author: { '@type': 'Organization', name: 'Bay Media Star Inc.' }, publisher: { '@type': 'Organization', name: 'Bay Media Star Inc.' } },
+      { '@type': 'Article', '@id': url + '#article', headline: title, description, mainEntityOfPage: { '@id': url + '#webpage' }, datePublished: '2026-11-03', dateModified: '2026-11-03', inLanguage: 'zh-CN', author: { '@type': 'Organization', name: 'Oceanver' }, publisher: { '@type': 'Organization', name: 'Oceanver' } },
     ],
   }
   return (
@@ -73,7 +73,7 @@ export default function FrontierPriceIncreasePage() {
         </section>
 
         <section id="contact" className="mt-10 scroll-mt-6">
-          <h2 className="text-2xl font-black">第二步：联系 Frontier 官方客服，或请鸿达协助中文核对</h2>
+          <h2 className="text-2xl font-black">第二步：联系 Frontier 官方客服，或请中文客服协助中文核对</h2>
           <div className="mt-5 grid gap-4 md:grid-cols-2">
             <div className="rounded-2xl border border-[#D8E2EA] bg-white p-5">
               <h3 className="text-xl font-bold">自行联系 Frontier 官方客服</h3>
@@ -84,8 +84,8 @@ export default function FrontierPriceIncreasePage() {
               <p className="mt-3 text-sm leading-7">沟通模板不代表可以保证获得优惠或恢复原价。</p>
             </div>
             <div className="rounded-2xl border border-[#D8E2EA] bg-white p-5">
-              <h3 className="text-xl font-bold">联系鸿达电讯，获取中文账单核对协助</h3>
-              <p className="mt-3 leading-7">如果不方便用英文核对收费，可以联系美国鸿达电讯中文客服，协助整理费用变化、准备向 Frontier 询问的问题，并比较可行的套餐调整和换网成本。鸿达不代表 Frontier 官方账单部门，具体优惠、账户变更和退款均由 Frontier 决定。</p>
+              <h3 className="text-xl font-bold">联系Oceanver，获取中文账单核对协助</h3>
+              <p className="mt-3 leading-7">如果不方便用英文核对收费，可以联系Oceanver中文客服，协助整理费用变化、准备向 Frontier 询问的问题，并比较可行的套餐调整和换网成本。Oceanver不代表 Frontier 官方账单部门，具体优惠、账户变更和退款均由 Frontier 决定。</p>
               <p className="mt-3 leading-7">Oceanver 中文咨询：<a href="tel:+15108496191" className="font-bold text-[#164B78] underline">510-849-6191</a></p>
               <p className="mt-3 text-sm leading-7">首次咨询只需要脱敏后的收费项目；请勿发送密码、验证码、完整账户号码、银行卡资料或未遮盖个人信息的账单。如需查覆盖，再通过私密渠道提供必要地址。</p>
               <Link href="/contact" className="mt-3 inline-block font-semibold text-[#164B78] underline">中文联系入口</Link>
@@ -151,10 +151,10 @@ export default function FrontierPriceIncreasePage() {
 
         <section className="mt-10 rounded-2xl border border-[#D8E2EA] bg-[#EDF5F9] p-6">
           <h2 className="text-xl font-black">Frontier 宽带涨价，英文核对不方便？</h2>
-          <p className="mt-3 leading-7">先遮盖个人信息，整理最近两期账单的收费变化，联系鸿达中文客服。我们协助区分优惠结束、基础月费变动及一次性收费；如需要比较 AT&amp;T、Spectrum、Xfinity 或其他宽带，再按地址核对覆盖和完整成本，不直接建议你取消 Frontier。</p>
+          <p className="mt-3 leading-7">先遮盖个人信息，整理最近两期账单的收费变化，联系中文客服。我们协助区分优惠结束、基础月费变动及一次性收费；如需要比较 AT&amp;T、Spectrum、Xfinity 或其他宽带，再按地址核对覆盖和完整成本，不直接建议你取消 Frontier。</p>
           <a href="tel:+15108496191" className="mt-4 inline-block rounded-xl bg-[#164B78] px-5 py-3 font-bold text-white">中文咨询：510-849-6191</a>
         </section>
-        <p className="mt-8 text-sm leading-7 text-[#526170]">核查日期：2026 年 11 月 3 日。本文不代表 Frontier 承诺降价或退款。具体费用、退还期限、服务资格和取消条件以官方账户通知为准。Oceanver 与美国鸿达电讯同属 Bay Media Star Inc.。</p>
+        <p className="mt-8 text-sm leading-7 text-[#526170]">核查日期：2026 年 11 月 3 日。本文不代表 Frontier 承诺降价或退款。具体费用、退还期限、服务资格和取消条件以官方账户通知为准。Oceanver 提供问题核对信息；账户变更、退款和维修由运营商确认或处理。</p>
       </article>
     </main>
   )

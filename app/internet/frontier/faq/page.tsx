@@ -8,7 +8,7 @@ const LAST_UPDATED =
   '最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前地址、账户与官方规则为准。'
 
 export const metadata: Metadata = {
-  title: 'Frontier 宽带常见问题｜地址、网速与长期成本｜美国鸿达电讯',
+  title: 'Frontier 宽带常见问题｜地址、网速与长期成本｜Oceanver',
   description:
     '整理 Frontier 地址覆盖、Fiber 与 DSL、网速、Wi-Fi、账单、安装和取消等问题，帮助你先判断现有宽带是否值得更换。',
   alternates: {

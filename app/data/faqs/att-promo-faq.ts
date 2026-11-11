@@ -6,7 +6,7 @@ export interface PromoFaqItem {
 export const attPromoFaq: PromoFaqItem[] = [
   {
     q: '这个优惠全美国都能办吗？',
-    a: '可以。鸿达电讯支持全美 50 州远程办理，重点覆盖湾区、洛杉矶、纽约、德州等华人城市。',
+    a: '可以。Oceanver支持全美 50 州远程办理，重点覆盖湾区、洛杉矶、纽约、德州等华人城市。',
   },
   {
     q: '需要 SSN 吗？新移民/留学生能办吗？',

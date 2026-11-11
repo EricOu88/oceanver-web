@@ -131,7 +131,7 @@ export default function BillOptimizationClient() {
               </dl>
             </section>
 
-            <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/bill-optimization" className="font-semibold underline underline-offset-4">原因已确认，准备比较替代套餐？查看主站成本比较</Link></p>
+            <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://oceanver.com/bill-optimization" className="font-semibold underline underline-offset-4">原因已确认，准备比较替代套餐？查看办理指南成本比较</Link></p>
 
         </div>
       </header>
@@ -423,7 +423,7 @@ export default function BillOptimizationClient() {
 
         <footer className="px-2 py-4 text-center text-sm leading-6 text-slate-500">
           <p>最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前账户与官方规则为准。</p>
-          <p>内容由美国鸿达电讯团队整理与审核</p>
+          <p>内容由Oceanver团队整理与审核</p>
         </footer>
       </div>
     </main>

@@ -4,16 +4,16 @@ import AttFiberClient from './AttFiberClient'
 const pageUrl = 'https://oceanver.com/internet/att-fiber'
 
 export const metadata: Metadata = {
-  title: 'AT&T Fiber 值不值得换？地址、需求与长期成本判断｜美国鸿达电讯',
+  title: 'AT&T Fiber 值不值得换？地址、需求与长期成本判断｜Oceanver',
   description:
     '先核实 AT&T Fiber 的地址可用性，再结合上传需求、现有宽带表现、安装条件和长期成本判断是否值得更换。具体资格与账户结果以当前地址和运营商规则为准。',
   alternates: { canonical: pageUrl },
   openGraph: {
-    title: 'AT&T Fiber 值不值得换？地址、需求与长期成本判断｜美国鸿达电讯',
+    title: 'AT&T Fiber 值不值得换？地址、需求与长期成本判断｜Oceanver',
     description:
       '从地址可用性、上传需求、现有宽带表现、安装条件和长期成本判断 AT&T Fiber 是否适合当前家庭。',
     url: pageUrl,
-    siteName: '美国鸿达电讯',
+    siteName: 'Oceanver',
     locale: 'zh_CN',
     type: 'website',
   },

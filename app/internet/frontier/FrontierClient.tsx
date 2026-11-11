@@ -48,7 +48,7 @@ const webpageSchema = {
   '@type': 'WebPage',
   '@id': 'https://oceanver.com/internet/frontier#webpage',
   url: 'https://oceanver.com/internet/frontier',
-  name: 'Frontier 值不值得换？先看地址、需求和长期成本｜美国鸿达电讯',
+  name: 'Frontier 值不值得换？先看地址、需求和长期成本｜Oceanver',
   description:
     '从地址可用性、服务类型、网络需求、长期成本和安装条件判断 Frontier 是否适合当前情况。',
   inLanguage: 'zh-CN',
@@ -152,7 +152,7 @@ export default function FrontierClient() {
               都不能仅靠公开网页确认。
             </p>
             <Link
-              href="https://baymediastar.com/internet/frontier"
+              href="https://oceanver.com/internet/frontier"
               className="page-nav-button"
             >
               查询可办理方案并中文核实 <ArrowRight size={16} />

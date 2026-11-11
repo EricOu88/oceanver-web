@@ -14,16 +14,16 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: { absolute: '手机使用问题 FAQ｜账单、信号、eSIM 与家庭账户｜美国鸿达电讯' },
+  title: { absolute: '手机使用问题 FAQ｜账单、信号、eSIM 与家庭账户｜Oceanver' },
   description:
-    '本页承接使用中的账单、信号、SIM/eSIM、抵扣与家庭账户问题。先找到问题类型，再进入具体排查页面；准备购买或开通时进入主站办理 FAQ。',
+    '本页承接使用中的账单、信号、SIM/eSIM、抵扣与家庭账户问题。先找到问题类型，再进入具体排查页面；准备购买或开通时进入办理指南办理 FAQ。',
   alternates: { canonical: 'https://oceanver.com/cellphone/faq' },
   openGraph: {
     title: '美国手机问题库｜按问题继续查',
     description:
       '从账单、信号、eSIM、转号、设备分期、家庭多线和国际使用等问题继续查，再决定是否需要比较方案或人工核实。',
     url: 'https://oceanver.com/cellphone/faq',
-    siteName: '美国鸿达电讯',
+    siteName: 'Oceanver',
     locale: 'zh_CN',
     type: 'website',
   },
@@ -134,11 +134,11 @@ export default function CellphoneFAQPage() {
               <h2 className="text-lg font-bold">直接结论</h2>
               <p className="mt-3 leading-7">先把使用中的问题分成账单、信号、SIM/eSIM、设备抵扣和家庭账户，再进入对应排查页。记录发生时间、受影响号码与已做的操作，避免尚未确认原因就改套餐或取消线路。</p>
               <dl className="mt-4 space-y-3 text-sm leading-7">
-                <div><dt className="font-bold">适用条件</dt><dd>适合现有手机服务的问题核对；新开、套餐选择和转号办理准备进入主站手机 FAQ。</dd></div>
+                <div><dt className="font-bold">适用条件</dt><dd>适合现有手机服务的问题核对；新开、套餐选择和转号办理准备进入办理指南手机 FAQ。</dd></div>
                 <div><dt className="font-bold">下一步</dt><dd className="flex flex-col gap-2 sm:flex-row sm:gap-4"><Link href="/cellphone/price-hike" className="page-nav-button">账单变贵先核对收费</Link><Link href="/cellphone/diagnosis" className="page-nav-button">服务异常先按症状判断</Link></dd></div>
               </dl>
             </section>
-            <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://baymediastar.com/cellphone/faq" className="font-semibold underline underline-offset-4">准备开通、转号或选择套餐？查看手机卡办理 FAQ</Link></p>
+            <p className="mt-3 max-w-4xl text-sm leading-7 text-slate-600"><Link href="https://oceanver.com/cellphone/faq" className="font-semibold underline underline-offset-4">准备开通、转号或选择套餐？查看手机卡办理 FAQ</Link></p>
           <p className="mt-5 text-lg leading-relaxed text-[#526170]">
             这里不是套餐目录。先找到你正在遇到的问题，再进入对应判断节点；只有当方向已经清楚时，才进入方案比较或人工核实。
           </p>

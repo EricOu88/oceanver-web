@@ -4,19 +4,19 @@ import { ArrowLeft } from 'lucide-react'
 import ATTFiberFAQClient from './ATTFiberFAQClient'
 import { getAllFAQsForSchema } from './faq-data'
 
-const pageUrl = 'https://oceanver.com/internet/att/fiber/faq'
+const pageUrl = '/internet/att/fiber/faq'
 
 export const metadata: Metadata = {
-  title: 'AT&T Fiber 常见问题 FAQ｜地址、账单、安装与设备｜美国鸿达电讯',
+  title: 'AT&T Fiber 常见问题 FAQ｜地址、账单、安装与设备｜Oceanver',
   description:
     '整理 AT&T Fiber 地址覆盖、是否更换、网速与 Wi-Fi、账单成本、安装设备及账户问题，帮助先判断情况，再确认下一步。',
   alternates: { canonical: pageUrl },
   openGraph: {
-    title: 'AT&T Fiber 常见问题 FAQ｜美国鸿达电讯',
+    title: 'AT&T Fiber 常见问题 FAQ｜Oceanver',
     description:
       '按地址覆盖、服务比较、网速、账单、安装和账户问题整理 AT&T Fiber 常见判断信息。',
     url: pageUrl,
-    siteName: '美国鸿达电讯',
+    siteName: 'Oceanver',
     locale: 'zh_CN',
     type: 'website',
   },

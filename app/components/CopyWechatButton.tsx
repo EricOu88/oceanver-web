@@ -5,7 +5,7 @@ import { Copy, Check } from 'lucide-react';
 import { trackContact } from './ContactAnalytics';
 
 export default function CopyWechatButton({
-  wechatId = '美国鸿达电讯',
+  wechatId = 'Oceanver',
   className = '',
 }) {
   const [copied, setCopied] = useState(false);

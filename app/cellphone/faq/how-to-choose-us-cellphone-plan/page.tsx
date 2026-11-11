@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: '美国手机方案怎么选？先判断需求，再比较方案 | 美国鸿达电讯',
+  title: '美国手机方案怎么选？先判断需求，再比较方案 | Oceanver',
   description:
     '美国手机方案选择方法：先判断使用时间、线路数量、设备状态、信号、国际使用和账户条件，再决定是否比较 Prepaid、Postpaid、家庭多线或其他方案。',
   alternates: {
@@ -216,7 +216,7 @@ export default function HowToChooseCellphonePlanPage() {
               dateModified: '2026-10-06',
               author: {
                 '@type': 'Organization',
-                name: '美国鸿达电讯',
+                name: 'Oceanver',
               },
             }),
           }}

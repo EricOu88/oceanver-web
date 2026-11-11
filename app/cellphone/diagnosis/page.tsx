@@ -16,15 +16,15 @@ const diagnosisKnowledge = [...mobileIssues, ...billingIssues]
   .filter((doc) => diagnosisKnowledgeIds.includes(doc.id)) as QADocument[];
 
 export const metadata: Metadata = {
-  title: { absolute: '美国手机问题诊断｜账单、信号、转网、eSIM｜美国鸿达电讯' },
+  title: { absolute: '美国手机问题诊断｜账单、信号、转网、eSIM｜Oceanver' },
   description:
     '手机账单变贵、信号差、转网失败、eSIM、设备分期或 Trade-in 出问题时，先通过中文诊断判断常见原因、检查步骤和下一步处理方向。',
   alternates: { canonical: 'https://oceanver.com/cellphone/diagnosis' },
   openGraph: {
-    title: '美国手机问题诊断｜账单、信号、转网、eSIM｜美国鸿达电讯',
+    title: '美国手机问题诊断｜账单、信号、转网、eSIM｜Oceanver',
     description: '手机账单变贵、信号差、转网失败、eSIM、设备分期或 Trade-in 出问题时，先通过中文诊断判断常见原因、检查步骤和下一步处理方向。',
     url: 'https://oceanver.com/cellphone/diagnosis',
-    siteName: '美国鸿达电讯',
+    siteName: 'Oceanver',
     locale: 'zh_CN',
     type: 'website',
   },

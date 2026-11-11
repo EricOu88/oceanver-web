@@ -34,18 +34,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (retiredSlugRedirects[slug]) return {}
 
   const faq = isPublished(slug) ? attFiberFAQContent[slug] : undefined
-  if (!faq) return { title: '问题未找到｜美国鸿达电讯' }
+  if (!faq) return { title: '问题未找到｜Oceanver' }
 
-  const url = `https://oceanver.com/internet/att/fiber/faq/${slug}`
+  const url = `/internet/att/fiber/faq/${slug}`
   return {
-    title: `${faq.question}｜美国鸿达电讯`,
+    title: `${faq.question}｜Oceanver`,
     description: faq.summary,
     alternates: { canonical: url },
     openGraph: {
-      title: `${faq.question}｜美国鸿达电讯`,
+      title: `${faq.question}｜Oceanver`,
       description: faq.summary,
       url,
-      siteName: '美国鸿达电讯',
+      siteName: 'Oceanver',
       locale: 'zh_CN',
       type: 'article',
     },

@@ -11,7 +11,7 @@ import {
 const pageUrl = 'https://oceanver.com/internet/business-vs-residential';
 
 export const metadata: Metadata = {
-  title: '商业宽带 vs 住宅宽带：先看使用场景和账户条件 | 美国鸿达电讯',
+  title: '商业宽带 vs 住宅宽带：先看使用场景和账户条件 | Oceanver',
   description:
     '比较商业宽带与住宅宽带时，先看地址用途、静态 IP、支持需求、合同、设备和长期成本。商业账户不一定更快，住宅账户也不一定适合所有商业场景。',
   alternates: { canonical: pageUrl },

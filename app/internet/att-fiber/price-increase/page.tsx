@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   description,
   robots: { index: false, follow: true },
   alternates: { canonical: url },
-  openGraph: { title, description, url, siteName: 'Oceanver｜美国鸿达电讯', locale: 'zh_CN', type: 'article' },
+  openGraph: { title, description, url, siteName: 'Oceanver', locale: 'zh_CN', type: 'article' },
 }
 
 const steps = [
   { id: 'bill', title: '1. 哪些 AT&T 宽带用户在 2026 年加 $5？' },
-  { id: 'call', title: '2. 联系 AT&T 官方客服或鸿达中文协助' },
+  { id: 'call', title: '2. 联系 AT&T 官方客服或中文协助' },
   { id: 'adjust', title: '3. 调整服务和折扣，而不是直接取消' },
   { id: 'device', title: '4. 核实 Wi-Fi 网关、安装与设备费用' },
   { id: 'review', title: '5. 每年检查账单，优惠到期前再查一次' },
@@ -43,8 +43,8 @@ export default function ATTInternetPriceIncreasePage() {
         inLanguage: 'zh-CN',
         datePublished: '2026-11-03',
         dateModified: '2026-11-03',
-        author: { '@type': 'Organization', name: 'Bay Media Star Inc.' },
-        publisher: { '@type': 'Organization', name: 'Bay Media Star Inc.' },
+        author: { '@type': 'Organization', name: 'Oceanver' },
+        publisher: { '@type': 'Organization', name: 'Oceanver' },
       },
     ],
   }
@@ -61,7 +61,7 @@ export default function ATTInternetPriceIncreasePage() {
         <p className="best-answer speakable-summary mt-5 text-lg leading-8" data-page-answer>
           AT&amp;T 宽带账单每月多了 5 美元，先别急着取消。2026 年不同批次的调价，适用套餐和开通日期不同：12 月的新一轮调整不包括当前 Fiber 和 Internet Air，但部分老用户已属于此前的调整范围。先用下表核对，再检查账单与折扣。
         </p>
-        <p className="mt-3 text-sm leading-7 text-[#526170]">本文只讨论家庭宽带，不涉及 AT&amp;T 手机线路涨价。需要中文帮助，可联系鸿达协助核对收费项目；账户调整与优惠资格由 AT&amp;T 确认。</p>
+        <p className="mt-3 text-sm leading-7 text-[#526170]">本文只讨论家庭宽带，不涉及 AT&amp;T 手机线路涨价。需要中文帮助，可联系中文客服协助核对收费项目；账户调整与优惠资格由 AT&amp;T 确认。</p>
         <nav aria-label="文章目录" className="my-7 rounded-2xl border border-[#D8E2EA] bg-[#EDF5F9] p-5">
           <h2 className="font-bold">按这五步处理</h2>
           <ol className="mt-3 list-decimal space-y-2 pl-6">
@@ -99,7 +99,7 @@ export default function ATTInternetPriceIncreasePage() {
         </section>
 
         <section id="call" className="mt-10 scroll-mt-6">
-          <h2 className="text-2xl font-black">第二步：联系 AT&amp;T 官方客服，或请鸿达协助中文核对</h2>
+          <h2 className="text-2xl font-black">第二步：联系 AT&amp;T 官方客服，或请中文客服协助中文核对</h2>
           <div className="mt-5 grid gap-4 md:grid-cols-2">
             <div className="rounded-2xl border border-[#D8E2EA] bg-white p-5">
               <h3 className="text-xl font-bold">自行联系 AT&amp;T 官方客服</h3>
@@ -111,10 +111,10 @@ export default function ATTInternetPriceIncreasePage() {
               <a href="https://www.att.com/support/internet/" target="_blank" rel="noopener noreferrer" className="mt-3 inline-block font-semibold text-[#164B78] underline">AT&amp;T 官方宽带客服入口</a>
             </div>
             <div className="rounded-2xl border border-[#D8E2EA] bg-white p-5">
-              <h3 className="text-xl font-bold">联系鸿达电讯，获取中文账单核对协助</h3>
-              <p className="mt-3 leading-7">不方便用英文核对价格，或者看不懂优惠和收费明细？可以联系<strong>美国鸿达电讯中文客服</strong>，协助整理最近两期账单、找出变化项目、准备向 AT&amp;T 询问的问题，并比较调整服务的可行性。</p>
+              <h3 className="text-xl font-bold">联系Oceanver，获取中文账单核对协助</h3>
+              <p className="mt-3 leading-7">不方便用英文核对价格，或者看不懂优惠和收费明细？可以联系<strong>Oceanver中文客服</strong>，协助整理最近两期账单、找出变化项目、准备向 AT&amp;T 询问的问题，并比较调整服务的可行性。</p>
               <p className="mt-3 leading-7">Oceanver 专用中文咨询：<a href="tel:+15108496191" className="font-bold text-[#164B78] underline">510-849-6191</a></p>
-              <p className="mt-3 text-sm leading-7">鸿达并非 AT&amp;T 官方客服或账单争议裁决部门；账户验证、折扣资格、费用更改和正式报价最终由 AT&amp;T 决定。首次咨询只需提供脱敏后的收费项目，不要发送密码、一次性验证码、完整账户资料或未遮盖个人信息的账单。查询地址覆盖时，再通过合适的私密渠道提供必要地址。</p>
+              <p className="mt-3 text-sm leading-7">Oceanver并非 AT&amp;T 官方客服或账单争议裁决部门；账户验证、折扣资格、费用更改和正式报价最终由 AT&amp;T 决定。首次咨询只需提供脱敏后的收费项目，不要发送密码、一次性验证码、完整账户资料或未遮盖个人信息的账单。查询地址覆盖时，再通过合适的私密渠道提供必要地址。</p>
               <Link href="/contact" className="mt-3 inline-block font-semibold text-[#164B78] underline">中文咨询入口</Link>
             </div>
           </div>
@@ -168,7 +168,7 @@ export default function ATTInternetPriceIncreasePage() {
 
         <section className="mt-10 rounded-2xl border border-[#D8E2EA] bg-[#EDF5F9] p-6">
           <h2 className="text-xl font-black">AT&amp;T 宽带涨价，英文谈价不方便？</h2>
-          <p className="mt-3 leading-7">可以把最近两期账单的费用项目整理出来，遮盖姓名、账户号码、详细地址及付款信息后联系鸿达中文客服。我们先帮助你判断涨价原因，区分可尝试调整的项目；如果需要比较替代服务，再按具体地址确认 AT&amp;T、Xfinity、Spectrum 的覆盖和完整成本，不直接建议你更换运营商。</p>
+          <p className="mt-3 leading-7">可以把最近两期账单的费用项目整理出来，遮盖姓名、账户号码、详细地址及付款信息后联系中文客服。我们先帮助你判断涨价原因，区分可尝试调整的项目；如果需要比较替代服务，再按具体地址确认 AT&amp;T、Xfinity、Spectrum 的覆盖和完整成本，不直接建议你更换运营商。</p>
           <Link href="/internet/providers" className="mt-3 block font-semibold text-[#164B78] underline">比较不同宽带的长期费用与地址条件</Link>
           <a href="tel:+15108496191" className="mt-4 inline-block rounded-xl bg-[#164B78] px-5 py-3 font-bold text-white">中文咨询：510-849-6191</a>
         </section>
@@ -179,7 +179,7 @@ export default function ATTInternetPriceIncreasePage() {
             <a className="underline" href="https://www.att.com/support/internet/" target="_blank" rel="noopener noreferrer">家庭宽带客服</a>、
             <a className="underline" href="https://www.att.com/support/how-to/internet/equipment-return/" target="_blank" rel="noopener noreferrer">设备归还步骤</a>。
           </p>
-          <p className="mt-2">更新核查：2026 年 11 月 3 日。本文不代表 AT&amp;T 官方承诺降价，账户费用和资格须以运营商确认结果为准。Oceanver 与美国鸿达电讯同属 Bay Media Star Inc.。</p>
+          <p className="mt-2">更新核查：2026 年 11 月 3 日。本文不代表 AT&amp;T 官方承诺降价，账户费用和资格须以运营商确认结果为准。Oceanver 提供问题核对信息；账户变更、退款和维修由运营商确认或处理。</p>
         </section>
       </article>
     </main>

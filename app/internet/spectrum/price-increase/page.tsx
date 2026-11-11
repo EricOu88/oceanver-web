@@ -3,19 +3,19 @@ import Link from 'next/link'
 
 const url = 'https://oceanver.com/internet/spectrum/price-increase'
 const title = 'Spectrum 宽带涨价怎么办？谈价、调整服务、设备费用与年度账单检查'
-const description = 'Spectrum 宽带账单突然变贵？先核对涨价原因，再选择联系 Spectrum 英文客服或鸿达中文客服，调整服务、核查设备收费，并建立每年账单检查习惯。'
+const description = 'Spectrum 宽带账单突然变贵？先核对涨价原因，再选择联系 Spectrum 英文客服或中文客服，调整服务、核查设备收费，并建立每年账单检查习惯。'
 
 export const metadata: Metadata = {
   title: { absolute: title + '｜Oceanver' },
   description,
   robots: { index: false, follow: true },
   alternates: { canonical: url },
-  openGraph: { title, description, url, siteName: 'Oceanver｜美国鸿达电讯', locale: 'zh_CN', type: 'article' },
+  openGraph: { title, description, url, siteName: 'Oceanver', locale: 'zh_CN', type: 'article' },
 }
 
 const sections = [
   { id: 'reasons', name: '第一步：为什么账单涨价？' },
-  { id: 'contact', name: '第二步：联系英文客服或鸿达中文客服' },
+  { id: 'contact', name: '第二步：联系英文客服或中文客服' },
   { id: 'adjust', name: '第三步：调整现有服务内容' },
   { id: 'equipment', name: '第四步：处理设备和设备费用' },
   { id: 'annual', name: '第五步：每年检查一次账单' },
@@ -30,8 +30,8 @@ export default function SpectrumPriceIncreasePage() {
     inLanguage: 'zh-CN',
     mainEntityOfPage: url,
     dateModified: '2026-11-03',
-    author: { '@type': 'Organization', name: 'Bay Media Star Inc.' },
-    publisher: { '@type': 'Organization', name: 'Bay Media Star Inc.' },
+    author: { '@type': 'Organization', name: 'Oceanver' },
+    publisher: { '@type': 'Organization', name: 'Oceanver' },
   }
 
   return (
@@ -81,10 +81,10 @@ export default function SpectrumPriceIncreasePage() {
               <a href="https://www.spectrum.com/contact-spectrum" target="_blank" rel="noopener noreferrer" className="mt-4 inline-block font-semibold text-[#164B78] underline">查看 Spectrum 官方客服页面</a>
             </div>
             <div className="rounded-2xl border border-[#D8E2EA] bg-white p-5">
-              <h3 className="text-xl font-bold">方式二：联系鸿达电讯中文客服</h3>
-              <p className="mt-3 leading-7">英文沟通不方便，或不清楚账单该问什么？可以联系<strong>美国鸿达电讯中文客服</strong>，先用中文梳理涨价项目，准备应向 Spectrum 核实的问题，并讨论可选择的调整方案。</p>
+              <h3 className="text-xl font-bold">方式二：联系Oceanver中文客服</h3>
+              <p className="mt-3 leading-7">英文沟通不方便，或不清楚账单该问什么？可以联系<strong>Oceanver中文客服</strong>，先用中文梳理涨价项目，准备应向 Spectrum 核实的问题，并讨论可选择的调整方案。</p>
               <p className="mt-3 leading-7">Oceanver 中文咨询专线：<a href="tel:+15108496191" className="font-bold text-[#164B78] underline">510-849-6191</a>。</p>
-              <p className="mt-3 text-sm leading-7">鸿达可提供中文说明与方案比较协助；Spectrum 账户费用调整、授权验证与最终优惠由 Spectrum 按账户实际资格决定。请勿提供账户密码或一次性验证码。</p>
+              <p className="mt-3 text-sm leading-7">中文客服可提供中文说明与方案比较协助；Spectrum 账户费用调整、授权验证与最终优惠由 Spectrum 按账户实际资格决定。请勿提供账户密码或一次性验证码。</p>
               <Link href="/contact" className="mt-4 inline-block font-semibold text-[#164B78] underline">用中文说明账单问题</Link>
             </div>
           </div>
@@ -128,10 +128,10 @@ export default function SpectrumPriceIncreasePage() {
 
         <section className="mt-10 rounded-2xl bg-[#EDF5F9] p-6">
           <h2 className="text-xl font-black">Spectrum 账单涨价，看不懂怎么处理？</h2>
-          <p className="mt-3 leading-7">可以先遮盖姓名、账户号码、地址和付款信息，再整理最近两期账单的费用项目，联系鸿达中文客服讨论下一步。我们会优先帮助你弄清问题，而不是直接建议换运营商。</p>
+          <p className="mt-3 leading-7">可以先遮盖姓名、账户号码、地址和付款信息，再整理最近两期账单的费用项目，联系中文客服讨论下一步。我们会优先帮助你弄清问题，而不是直接建议换运营商。</p>
           <a href="tel:+15108496191" className="mt-4 inline-block rounded-xl bg-[#164B78] px-5 py-3 font-bold text-white">中文咨询：510-849-6191</a>
         </section>
-        <p className="mt-8 text-sm leading-7 text-[#526170]">来源：Spectrum 官方客服联系方式与宽带资费披露。本文提供账单核对与沟通建议，不代表 Spectrum 保证降价；账户资格、价格、设备及服务条件以运营商实际记录为准。Oceanver 与美国鸿达电讯同属 Bay Media Star Inc.。</p>
+        <p className="mt-8 text-sm leading-7 text-[#526170]">来源：Spectrum 官方客服联系方式与宽带资费披露。本文提供账单核对与沟通建议，不代表 Spectrum 保证降价；账户资格、价格、设备及服务条件以运营商实际记录为准。Oceanver 提供问题核对信息；账户变更、退款和维修由运营商确认或处理。</p>
         <p className="mt-2 text-sm text-[#526170]">最近核查：2026 年 11 月 3 日。</p>
       </article>
     </main>
