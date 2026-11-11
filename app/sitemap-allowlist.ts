@@ -1,12 +1,9 @@
 // Oceanver Phase 2 分批发布候选。
 //
-// Phase 1 期间 app/sitemap.ts 仍返回空数组，因此这里不会让页面提前进入 sitemap。
-// 真正开放前，仍需完成 docs/phase2-geo-release-priority.md 中的发布审计。
-
-// Phase 2 第一批：仅开放最初批准的首页与三个核心答案页。
+// Phase 2 小规模试运行：只有两篇针对现有账单的涨价诊断页面可索引。
+// 首页和账单总指南继续 noindex，之后需单独审核再决定是否开放。
+// 该列表同时驱动 sitemap 与 proxy 的索引响应，避免状态不一致。
 export const SITEMAP_ALLOWLIST = [
-  '/',
-  '/bill-optimization',
   '/internet/price-hike',
   '/cellphone/price-hike',
 ] as const;
