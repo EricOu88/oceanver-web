@@ -62,7 +62,7 @@ export async function generateMetadata({
 
   if (!faq) {
     return {
-      title: '问题未找到｜美国鸿达电讯',
+      title: '问题未找到｜Oceanver',
     }
   }
 
@@ -76,7 +76,7 @@ export async function generateMetadata({
       title: faq.seo.title,
       description: faq.seo.description,
       url: `https://oceanver.com/internet/xfinity/faq/${slug}`,
-      siteName: '美国鸿达电讯',
+      siteName: 'Oceanver',
       locale: 'zh_CN',
       type: 'article',
     },
