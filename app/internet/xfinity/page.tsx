@@ -33,18 +33,18 @@ const xfinityFAQs = [
 ]
 
 export const metadata: Metadata = {
-  title: 'Xfinity 宽带怎么判断？账单、Wi-Fi、断网与换网｜美国鸿达电讯',
+  title: 'Xfinity 宽带怎么判断？账单、Wi-Fi、断网与换网｜Oceanver',
   description:
     'Xfinity 宽带账单涨价、Wi-Fi 慢、断网、设备、安装和地址问题怎么判断？先找出问题来源，再决定继续使用、调整方案还是比较其他运营商。',
   alternates: {
     canonical: getCanonicalUrl('/internet/xfinity'),
   },
   openGraph: {
-    title: 'Xfinity 宽带怎么判断？账单、Wi-Fi、断网与换网｜美国鸿达电讯',
+    title: 'Xfinity 宽带怎么判断？账单、Wi-Fi、断网与换网｜Oceanver',
     description:
       '从账单、Wi-Fi、设备、断网和安装问题出发，判断 Xfinity 当前服务是否需要调整或更换。',
     url: getCanonicalUrl('/internet/xfinity'),
-    siteName: '美国鸿达电讯',
+    siteName: 'Oceanver',
     locale: 'zh_CN',
     type: 'website',
   },
