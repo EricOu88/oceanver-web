@@ -352,7 +352,7 @@ export default function XfinityClient() {
           </p>
 
           <Link
-            href="https://baymediastar.com/internet/xfinity"
+            href="https://oceanver.com/internet/xfinity"
             className="page-nav-button"
           >
             查询可办理方案并中文核实
