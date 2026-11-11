@@ -121,7 +121,7 @@ export async function GET() {
               color: '#ffffff',
             }}
           >
-            美国鸿达电讯
+            Oceanver
           </div>
         </div>
 
