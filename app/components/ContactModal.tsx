@@ -162,7 +162,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
         {/* 底部标识 */}
         <div className="mt-6 flex flex-col items-center">
           <span className="px-3 py-1 bg-gray-100 rounded-full text-[11px] text-gray-500 font-medium">
-            在线公众号：美国鸿达电讯
+            在线公众号：Oceanver
           </span>
         </div>
       </div>
