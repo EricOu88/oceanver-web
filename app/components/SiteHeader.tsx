@@ -1,9 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Star } from 'lucide-react';
 
 const links = [
   { href: '/', label: '首页' },
@@ -20,11 +18,7 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-50 w-full border-b border-[#D5E5EC] bg-white/95 backdrop-blur">
       <div className="mx-auto flex h-14 max-w-7xl items-center gap-3 px-3 sm:h-16 sm:px-5">
         <Link href="/" aria-label="返回首页" className="shrink-0">
-          {pathname === '/' ? (
-            <Image src="/bms-logo.png" alt="美国鸿达电讯" width={125} height={37} priority className="h-auto w-[100px] sm:w-[125px]" />
-          ) : (
-            <span className="text-lg font-black tracking-tight text-[#202D3A]">Oceanver</span>
-          )}
+          <span className="text-lg font-black tracking-tight text-[#202D3A]">Oceanver</span>
         </Link>
         <nav aria-label="全站主导航" className="min-w-0 flex-1 overflow-x-auto overscroll-x-contain whitespace-nowrap [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           <div className="flex w-max min-w-full items-center justify-end gap-1 sm:gap-2">
@@ -43,11 +37,6 @@ export default function SiteHeader() {
             })}
           </div>
         </nav>
-        {pathname === '/' && (
-          <a href="https://maps.app.goo.gl/8dhS8b6A86htiqaE9" target="_blank" rel="noopener noreferrer" aria-label="查看 Google 评论" className="hidden shrink-0 items-center gap-1.5 rounded-md border border-[#D5E5EC] px-2.5 py-2 text-sm font-semibold text-[#164B78] hover:bg-[#F4F8FA] lg:inline-flex">
-            <Star className="h-4 w-4 fill-current" aria-hidden="true" />查看 Google 评论
-          </a>
-        )}
       </div>
     </header>
   );
