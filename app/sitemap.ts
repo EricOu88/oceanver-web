@@ -1,7 +1,13 @@
 import type { MetadataRoute } from 'next';
+import { SITEMAP_ALLOWLIST } from './sitemap-allowlist';
 
-// Phase 1 stays noindex in proxy.ts. Do not advertise Phase 2 URLs until
-// a separately reviewed release changes both index headers and sitemap.
+const SITE_URL = 'https://oceanver.com';
+
+// Phase 2 pilot: publish only the same two canonical URLs that proxy.ts permits.
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [];
+  return SITEMAP_ALLOWLIST.map((path) => ({
+    url: `${SITE_URL}${path}`,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
 }
