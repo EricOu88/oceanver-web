@@ -6,7 +6,7 @@ import { getAllFAQsForSchema } from './xfinity-faq-data'
 import { getCanonicalUrl } from '@/lib/seo-utils'
 
 export const metadata: Metadata = {
-  title: 'Xfinity 常见问题：账单、Wi-Fi、断网、设备与取消｜美国鸿达电讯',
+  title: 'Xfinity 常见问题：账单、Wi-Fi、断网、设备与取消｜Oceanver',
   description:
     'Xfinity 宽带问题知识库：账单涨价、Wi-Fi 变慢、断网、设备费用、安装地址、搬家、取消和账户问题。先判断问题来源，再决定下一步怎么处理。',
   alternates: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description:
       '按实际问题分类整理 Xfinity 宽带常见问题，帮助判断账单、Wi-Fi、线路、设备、安装和账户问题。',
     url: getCanonicalUrl('/internet/xfinity/faq'),
-    siteName: '美国鸿达电讯',
+    siteName: 'Oceanver',
     locale: 'zh_CN',
     type: 'website',
   },
