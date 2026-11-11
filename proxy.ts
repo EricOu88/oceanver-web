@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { isPhase2IndexPath } from "./lib/indexing-policy";
 
 /**
  * Next.js 16 Proxy Mode
@@ -136,8 +137,12 @@ export function proxy(request: NextRequest) {
 
   const response = NextResponse.next();
 
-  // Phase 1：所有公开 HTML 页面统一 noindex，并允许爬虫沿内链发现页面。
-  response.headers.set("X-Robots-Tag", "noindex, follow");
+  // Phase 2 pilot: only the two reviewed canonical diagnosis URLs may be indexed.
+  // All other pages, query-string variants and noncanonical hosts remain noindex.
+  const allowIndex = hostname.toLowerCase().split(":")[0] === "oceanver.com"
+    && !url.search
+    && isPhase2IndexPath(pathname);
+  response.headers.set("X-Robots-Tag", allowIndex ? "index, follow" : "noindex, follow");
 
   return response;
 }
