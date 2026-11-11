@@ -22,6 +22,7 @@ export default function ContactEntry({
 }) {
   const [copied, setCopied] = useState(false)
   const [showQRModal, setShowQRModal] = useState(false)
+  const showWechatName = variant === 'homepage'
 
   const copyWechat = async () => {
     try {
@@ -49,20 +50,24 @@ export default function ContactEntry({
         <h3 className="mb-2 text-xl font-black text-slate-900">微信客服二维码</h3>
         <p className="mb-6 text-sm text-slate-600">长按保存或扫描添加</p>
         <div className="relative mx-auto h-64 w-64 overflow-hidden rounded-2xl border-4 border-blue-100 bg-white shadow-xl">
-          <Image src="/wechat-qr.jpg" alt="微信二维码｜美国鸿达电讯" fill className="object-contain p-2" priority />
+          <Image src="/wechat-qr.jpg" alt="微信二维码" fill className="object-contain p-2" priority />
         </div>
         <div className="mt-6 rounded-xl border border-blue-200 bg-blue-50 p-4">
-          <p className="mb-2 text-sm font-bold text-slate-700">微信号：</p>
-          <button
-            onClick={() => {
-              copyWechat()
-              setShowQRModal(false)
-            }}
-            className="mx-auto flex items-center justify-center gap-2 text-lg font-black text-blue-700 transition-colors hover:text-blue-900"
-          >
-            {WECHAT_ID}<Copy size={18} />
-          </button>
-          {copied && <p className="mt-2 text-xs font-semibold text-green-600">已复制到剪贴板</p>}
+          {showWechatName && (
+            <>
+              <p className="mb-2 text-sm font-bold text-slate-700">微信号：</p>
+              <button
+                onClick={() => {
+                  copyWechat()
+                  setShowQRModal(false)
+                }}
+                className="mx-auto flex items-center justify-center gap-2 text-lg font-black text-blue-700 transition-colors hover:text-blue-900"
+              >
+                {WECHAT_ID}<Copy size={18} />
+              </button>
+              {copied && <p className="mt-2 text-xs font-semibold text-green-600">已复制到剪贴板</p>}
+            </>
+          )}
         </div>
         <p className="mt-4 text-xs text-slate-500">工作时间内可协助核实具体情况</p>
       </div>
@@ -93,7 +98,7 @@ export default function ContactEntry({
             <MessageCircle size={22} aria-hidden="true" className="text-[#2786A5]" />
             <span className="min-w-0">
               <span className="block font-bold text-[#202D3A]">微信咨询</span>
-              <span className="mt-1 block text-sm leading-6 text-[#526170]">扫码添加客服<br />说明需要核实的问题<br />微信号：{WECHAT_ID}</span>
+              <span className="mt-1 block text-sm leading-6 text-[#526170]">扫码添加客服<br />说明需要核实的问题{showWechatName && <><br />微信号：{WECHAT_ID}</>}</span>
             </span>
             <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#164B78]">查看二维码 <ArrowRight size={15} aria-hidden="true" /></span>
           </button>
@@ -146,9 +151,9 @@ export default function ContactEntry({
               扫码添加客服<br />
               说明需要核实的问题
             </p>
-            <p className="text-xs text-white/80 font-semibold mt-1.5">
-              微信号：{WECHAT_ID}
-            </p>
+            {showWechatName && (
+              <p className="text-xs text-white/80 font-semibold mt-1.5">微信号：{WECHAT_ID}</p>
+            )}
           </div>
         </button>
 
