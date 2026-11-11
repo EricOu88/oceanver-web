@@ -15,7 +15,7 @@ import {
 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: '美国宽带运营商怎么比较？先算长期费用再决定｜美国鸿达电讯',
+  title: '美国宽带运营商怎么比较？先算长期费用再决定｜Oceanver',
   description:
     '比较美国宽带运营商前，先确认地址覆盖、真实长期月费、设备和安装费用、网络需求及切换成本。Xfinity、AT&T Fiber、Spectrum、Frontier 不应只看促销价。',
   alternates: {
@@ -379,7 +379,7 @@ export default function InternetProvidersPage() {
             都可能因地址与账户不同而变化。网页可以帮助比较方向，但不能代替当前后台结果。
           </p>
           <Link
-            href="https://baymediastar.com/internet/providers"
+            href="https://oceanver.com/internet/providers"
             className="page-nav-button"
           >
             查看可办理宽带并中文核实
