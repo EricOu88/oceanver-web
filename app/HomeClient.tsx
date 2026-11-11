@@ -49,7 +49,7 @@ export default async function HomeClient() {
             账单金额变化本身，不足以说明需要换方案；网络变慢，也可能来自 Wi-Fi、设备或线路，而不一定是套餐速度不足。准备转号时，在号码、设备余额和账户状态没有确认前，也不应先停用旧线路。
           </p>
           <p className="mt-4 max-w-[820px] text-sm leading-[1.8] text-slate-400">
-            美国鸿达电讯提供面向美国中文用户的通信问题整理与判断信息，不代表任何运营商官方。具体账户、服务资格、地址覆盖、收费调整及退款结果，以实际账户与运营商记录为准。
+            Oceanver 提供面向美国中文用户的通信问题整理与判断信息，不代表任何运营商官方。具体账户、服务资格、地址覆盖、收费调整及退款结果，以实际账户与运营商记录为准。
           </p>
         </div>
       </section>
@@ -117,7 +117,6 @@ export default async function HomeClient() {
             variant="homepage"
             title="看完还是不确定？"
             subtitle="如果问题涉及具体账户、地址覆盖、设备余额、Trade-in、退款、转号资格或当前优惠，需要结合实际资料进一步核实。"
-            showGoogleReviewCta
           />
         </div>
       </section>
