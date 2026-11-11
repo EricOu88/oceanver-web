@@ -13,7 +13,7 @@ import {
 const pageUrl = 'https://oceanver.com/cellphone/faq/promo-credit-not-received';
 
 export const metadata: Metadata = {
-  title: '手机优惠、Trade-in 或 Bill Credit 还没到账怎么办？｜美国鸿达电讯',
+  title: '手机优惠、Trade-in 或 Bill Credit 还没到账怎么办？｜Oceanver',
   description:
     '手机 Trade-in、Bill Credit、转网奖励、AutoPay 折扣或多线优惠没有按预期出现时，先核对订单、设备验收、资格与账单记录，再判断是否需要人工核实。',
   alternates: { canonical: pageUrl },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description:
       '先分清是哪一种优惠没出现，再核对订单、设备验收、账户资格和账单记录；网页无法确认后台状态时再进入人工核实。',
     url: pageUrl,
-    siteName: '美国鸿达电讯',
+    siteName: 'Oceanver',
     locale: 'zh_CN',
     type: 'website',
   },
