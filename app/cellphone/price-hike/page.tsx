@@ -300,9 +300,9 @@ export default function CellphonePriceHikePage() {
               <h3 className="font-black">成员退出后家庭价格变化</h3>
               <p className="mt-1 text-sm leading-6 text-[#526170]">先处理户主权限、保号和线路退出路径，再重算家庭结构。</p>
             </Link>
-            <Link href="/cellphone/price-hike" className="rounded-xl border border-[#D5E5EC] p-4 hover:border-[#246B95]">
-              <h3 className="font-black">仅适用于已确认 AT&T 旧计划调整</h3>
-              <p className="mt-1 text-sm leading-6 text-[#526170]">前往 BayMediaStar 了解 AT&T 调整套餐成本。其他运营商用户可直接使用首屏电话或微信咨询。</p>
+            <Link href="/contact" className="rounded-xl border border-[#D5E5EC] p-4 hover:border-[#246B95]">
+              <h3 className="font-black">已经核实费用，仍需人工确认？</h3>
+              <p className="mt-1 text-sm leading-6 text-[#526170]">先整理账单与优惠调整记录，再通过本站联系页面咨询；具体处理以运营商确认结果为准。</p>
             </Link>
           </div>
         </section>
