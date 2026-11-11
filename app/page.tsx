@@ -3,7 +3,7 @@ import Link from 'next/link';
 import HeroSection from '@/app/components/home/HeroSection';
 import HomeClientWrapper from './HomeClientWrapper';
 
-const HOME_TITLE = '手机、宽带账单怎么又贵了？费用、网络与转号问题判断｜美国鸿达电讯';
+const HOME_TITLE = '手机、宽带账单怎么又贵了？费用、网络与转号问题判断｜Oceanver';
 const HOME_DESCRIPTION = '手机或宽带账单变贵、网速变慢、设备收费、新地址安装或准备转号换机时，先判断费用、网络、设备、账户与地址发生了什么，再决定是否需要调整或改变方案。';
 
 export const metadata: Metadata = {
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: HOME_TITLE,
     description: HOME_DESCRIPTION,
-    siteName: '美国鸿达电讯',
+    siteName: 'Oceanver',
     type: 'website',
     locale: 'zh_CN',
   },
@@ -56,7 +56,7 @@ export default function Page() {
       <footer className="border-t border-slate-200 bg-[#FCFDFE] py-12 md:py-14">
         <div className="mx-auto grid max-w-[1180px] gap-8 px-6 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1fr] lg:gap-12">
           <div className="max-w-md">
-            <h2 className="text-xl font-bold text-slate-900">美国鸿达电讯</h2>
+            <h2 className="text-xl font-bold text-slate-900">Oceanver</h2>
             <p className="mt-4 text-sm leading-6 text-slate-600">
               帮助美国中文用户看懂手机和宽带账单，判断问题原因与下一步核实方式。内容依据公开规则、已审核问题与常见咨询情境整理。
             </p>
@@ -93,7 +93,7 @@ export default function Page() {
           </div>
         </div>
         <div className="mx-auto mt-10 max-w-[1180px] border-t border-slate-200 px-6 pt-5 text-sm text-slate-500">
-          © {new Date().getFullYear()} 美国鸿达电讯
+          © {new Date().getFullYear()} Oceanver
         </div>
       </footer>
     </>
