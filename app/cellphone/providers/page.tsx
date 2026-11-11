@@ -17,18 +17,18 @@ import {
 import { ProvidersShell } from './ProvidersShell';
 
 export const metadata: Metadata = {
-  title: '手机方案怎么比？别只看月费和手机优惠 | 美国鸿达电讯',
+  title: '手机方案怎么比？别只看月费和手机优惠 | Oceanver',
   description:
     '已经确定要比较手机方案时，先核对真实账单、设备余额、Bill Credit、家庭多线、信号、国际使用和转网条件，再判断是否值得更换。',
   alternates: {
     canonical: 'https://oceanver.com/cellphone/providers',
   },
   openGraph: {
-    title: '手机方案怎么比？别只看月费和手机优惠 | 美国鸿达电讯',
+    title: '手机方案怎么比？别只看月费和手机优惠 | Oceanver',
     description:
       '比较手机方案时，不只看套餐标价。设备余额、Bill Credit、家庭线路、信号、国际使用和转网条件，都可能改变最终结果。',
     url: 'https://oceanver.com/cellphone/providers',
-    siteName: '美国鸿达电讯',
+    siteName: 'Oceanver',
     locale: 'zh_CN',
     type: 'website',
   },
@@ -251,7 +251,7 @@ export default function CellphoneProvidersPage() {
             </div>
             <div className="mt-8 text-center">
               <Link
-                href="https://baymediastar.com/cellphone/providers"
+                href="https://oceanver.com/cellphone/providers"
                 className="page-nav-button"
               >
                 查看可办理手机方案并中文核实
