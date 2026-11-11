@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: '没有 SSN，手机和家庭宽带怎么判断？ | 美国鸿达电讯',
+  title: '没有 SSN，手机和家庭宽带怎么判断？ | Oceanver',
   description:
     '没有 SSN 时，手机和家庭宽带的开户条件并不相同。先区分身份验证、信用审核、设备与地址条件，再决定 Prepaid、Postpaid 或宽带服务下一步怎么查。',
   alternates: {
@@ -211,7 +211,7 @@ export default function NoSsnCellphoneInternetPage() {
               dateModified: '2026-10-06',
               author: {
                 '@type': 'Organization',
-                name: '美国鸿达电讯',
+                name: 'Oceanver',
               },
             }),
           }}
