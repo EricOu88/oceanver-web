@@ -45,6 +45,7 @@ export default function AboutPage() {
           <div className="mt-8 space-y-6 leading-8 text-[#526170]">
             <p>Oceanver 是一个面向中文用户的美国手机与宽带问题判断网站。我们帮助你查清账单为什么变化、网络或号码问题应该先检查什么，以及更换套餐、设备或运营商前，需要算清哪些成本、核实哪些条件。</p>
             <p>我们关注问题在哪里、是否需要改变，以及改变是否值得。</p>
+            <p>Oceanver 由 Bay Media Star Inc. 运营，是以问题解释与诊断为主的信息网站，不是独立注册的通信运营商，也不是 AT&T、Xfinity 等运营商的官方网站。具体服务与咨询请以实际提供方为准。</p>
           </div>
 
           <section className="mt-8 space-y-5 leading-8 text-[#526170]" aria-labelledby="questions-title">
