@@ -6,7 +6,7 @@ import CommunityDiscussionByPath from '@/app/components/community/CommunityDiscu
 export const metadata: Metadata = {
   title: '关于 Oceanver｜美国手机与宽带问题判断',
   description:
-    'Oceanver 由美国鸿达电讯（Bay Media Star Inc.）团队运营，帮助中文用户理解通信账单变化、网络和账户问题，以及调整服务前需要核实的条件。',
+    'Oceanver 是面向中文用户的通信问题判断网站，帮助中文用户理解通信账单变化、网络和账户问题，以及调整服务前需要核实的条件。',
   alternates: { canonical: getCanonicalUrl('/about') },
 };
 
@@ -41,15 +41,6 @@ export default function AboutPage() {
           </h1>
 
           <p className="mt-3 text-sm text-[#526170]">页面更新：2026年10月26日</p>
-
-          <a
-            href="https://www.google.com/search?hl=zh-CN&amp;gl=us&amp;q=%E7%BE%8E%E5%9B%BD%E9%B8%BF%E8%BE%BE%E7%94%B5%E8%AE%AF+(Bay+Media+Star)46292+Warm+Springs+Blvd+%23606,+Fremont,+CA+94539&amp;ludocid=7491769167315326893&amp;lsig=AB86z5XvcsyfCXf381zyps_nU_an#lrd=0x808fc65c7ae0a95f:0x67f81c5d550dd7ad,1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 inline-flex items-center rounded-md bg-[#164B78] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#103B60] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#164B78]"
-          >
-            查看 Google 评论 ↗
-          </a>
 
           <div className="mt-8 space-y-6 leading-8 text-[#526170]">
             <p>Oceanver 是一个面向中文用户的美国手机与宽带问题判断网站。我们帮助你查清账单为什么变化、网络或号码问题应该先检查什么，以及更换套餐、设备或运营商前，需要算清哪些成本、核实哪些条件。</p>
