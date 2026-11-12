@@ -69,6 +69,16 @@ export default function SpectrumPriceIncreasePage() {
           <p className="mt-4 rounded-xl bg-[#EDF5F9] p-4 leading-7"><strong>例子（仅为计算示意，不是真实客户案例）：</strong>上期 $55，本期 $85。先查明多出的 $30 是优惠到期、某项服务新增，还是一次性费用；原因不同，解决方法也不同。</p>
         </section>
 
+        <section className="mt-8 rounded-2xl border border-[#D8E2EA] bg-white p-5">
+          <h2 className="text-xl font-black">确认涨价后，先排除三种容易忽略的情况</h2>
+          <ul className="mt-3 list-disc space-y-2 pl-6 leading-7">
+            <li><strong>旧套餐价格：</strong>老客户原来的速度档位、基础月费及促销，不一定与当前广告套餐相同；应询问是否有适用于本账户的现行方案，比较变更前后的长期总价。</li>
+            <li><strong>捆绑优惠变化：</strong>取消或改变 Spectrum Mobile、TV 或其他组合服务，可能影响宽带折扣；先核对整个家庭账单再决定是否拆分。</li>
+            <li><strong>搬家或修改套餐：</strong>新地址、新订单或速度调整可能改变原有优惠与生效日期；保留原书面报价和新的订单确认，检查下一期账单。</li>
+          </ul>
+          <p className="mt-3 leading-7">如果只是想确认本期为什么多收 $20，而尚未确定是哪项费用变化，请先看 <Link href="/internet/spectrum/bill-increase-20" className="font-semibold text-[#164B78] underline">Spectrum 两期账单逐项核对</Link>；设备费和取消问题可查看 <Link href="/internet/spectrum/faq" className="font-semibold text-[#164B78] underline">Spectrum 常见问题</Link>。</p>
+        </section>
+
         <section id="contact" className="mt-10">
           <h2 className="text-2xl font-black">第二步：联系谁谈价？两条路都可以</h2>
           <div className="mt-5 grid gap-4 md:grid-cols-2">
