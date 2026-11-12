@@ -288,6 +288,10 @@ export default function CellphonePriceHikePage() {
         <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
           <h2 className="text-2xl font-black">相关问题继续去哪</h2>
           <div className="mt-5 grid gap-4 sm:grid-cols-2">
+            <Link href="/cellphone/att/old-plan-bill-change" className="rounded-xl border border-[#D5E5EC] p-4 hover:border-[#246B95]">
+              <h3 className="font-black">AT&amp;T 旧套餐的账单突然涨价</h3>
+              <p className="mt-1 text-sm leading-6 text-[#526170]">核对旧计划通知、每线费用、AutoPay 与设备 Bill Credit。</p>
+            </Link>
             <Link href="/bill-optimization" className="rounded-xl border border-[#D5E5EC] p-4 hover:border-[#246B95]">
               <h3 className="font-black">还没确定哪一项变贵</h3>
               <p className="mt-1 text-sm leading-6 text-[#526170]">先按账单项目把 recurring 月费、设备、Credit 和一次性收费拆开。</p>
