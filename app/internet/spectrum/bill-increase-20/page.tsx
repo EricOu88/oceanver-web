@@ -108,6 +108,30 @@ export default function SpectrumBillTwentyPage() {
           <p className="mt-3 text-sm leading-7 text-[#526170]">账单项目名称及显示方式可能随套餐、账期和服务组合不同；上表用于识别常见费用类别，不代表每个 Spectrum 账户都有这些项目。</p>
         </section>
 
+        <section className="mt-9">
+          <h2 className="text-2xl font-black">另外几种容易遗漏的收费变化</h2>
+          <p className="mt-3 leading-7">以下都是需要核对的<strong>可能原因</strong>，不代表每个 Spectrum 账户都会出现。逐项比较本期与上期相同的账单项目，并确认变动是否会持续。</p>
+          <div className="mt-4 space-y-3">
+            {[
+              { title: '分阶段优惠减少', check: '检查 Promotion / Discount 是否分两次结束，核对不同折扣的各自截止日期和原始订单。', action: '分别计算每项折扣减少金额，向运营商确认下一阶段价格。' },
+              { title: '基础标准月费调整', check: '比较 Internet / Internet Service 两期同名行，查调价通知；这与优惠到期是不同原因。', action: '询问适用的新标准价、生效日期和是否有账户可用方案。' },
+              { title: '电视促销优惠结束', check: '对比 TV 套餐及 TV Promotion / Credit 的金额；TV 与宽带优惠可能不同步。', action: '分开计算电视和宽带价格变化，确认取消 TV 是否影响 Bundle 优惠。' },
+              { title: '电视频道包、接收设备或附加费变化', check: '核对 TV 设备、附加频道和 Broadcast TV Surcharge 等实际列示项目。', action: '区分可取消服务与运营商按套餐适用的收费，要求说明金额及生效时间。' },
+              { title: '逾期费或上期未付余额', check: '查看 Late Payment Fee、Previous Balance、Past Due 与 Payments，不要把以前的余额当成本月基础价。', action: '对照付款记录及到账日期，核实是否属于一次性项目。' },
+              { title: '自动扣款失败或退票费用', check: '查看 Returned Payment、Payment Reversal、付款失败通知与银行交易记录。', action: '确认失败原因、重新付款的处理状态及是否还有单独的费用。' },
+              { title: '安装、恢复服务、改套餐等一次性费用', check: '核查 Installation、Activation、Technician、Service Change、Restore 或 One-time Charges。', action: '先判断是否只发生一次，再对照服务申请及客服确认记录。' },
+              { title: '速度档位被调整', check: '比较前后账单的套餐名称、Mbps / Gig 档位、价格和变更订单。', action: '确认是否经过授权，计算提升速度的真实必要性及新月费。' },
+            ].map((item) => (
+              <article key={item.title} className="rounded-xl border border-[#D8E2EA] bg-white p-4">
+                <h3 className="font-bold">{item.title}</h3>
+                <p className="mt-2 text-sm leading-7"><strong>账单怎么找：</strong>{item.check}</p>
+                <p className="mt-1 text-sm leading-7"><strong>下一步：</strong>{item.action}</p>
+              </article>
+            ))}
+          </div>
+          <p className="mt-3 text-sm leading-7 text-[#526170]">具体金额会因地区、套餐、历史优惠和账户条款而异，不把个别论坛用户的涨幅当作 Spectrum 统一收费标准。</p>
+        </section>
+
         <section className="mt-9 rounded-2xl border border-[#D8E2EA] bg-[#EDF5F9] p-5 sm:p-6">
           <h2 className="text-2xl font-black">六步查明 $20 差额</h2>
           <ol className="mt-4 list-decimal space-y-3 pl-6 leading-7">{steps.map((step) => <li key={step}>{step}</li>)}</ol>
