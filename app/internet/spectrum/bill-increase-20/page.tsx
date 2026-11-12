@@ -107,14 +107,6 @@ export default function SpectrumBillTwentyPage() {
         </section>
 
         <section className="mt-9">
-          <h2 className="text-2xl font-black">联系 Spectrum 客服时，可以这样询问</h2>
-          <blockquote className="mt-4 border-l-4 border-[#2786A5] bg-[#EDF5F9] p-5 leading-8">
-            My Spectrum internet bill increased by $20 compared with last month. Could you help me identify which line item changed, why it changed, when it took effect, and whether it is a recurring monthly charge or a one-time fee? If a promotional discount ended, could you confirm its end date and my current account options?
-          </blockquote>
-          <p className="mt-3 leading-7 text-[#526170]">中文意思：请客服明确指出哪一项多收了 $20、原因、生效时间，以及它会不会每月持续出现；如果是优惠结束，核对优惠到期日和当前账户可用选择。可以询问优惠，但不要假设一定能恢复原价。</p>
-        </section>
-
-        <section className="mt-9">
           <h2 className="text-2xl font-black">常见问题 FAQ</h2>
           <div className="mt-4 space-y-3">
             {faqs.map(({q,a}) => (
