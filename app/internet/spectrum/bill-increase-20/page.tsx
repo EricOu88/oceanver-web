@@ -87,6 +87,13 @@ export default function SpectrumBillTwentyPage() {
           <p className="mt-3 leading-7 text-[#526170]">这里基础月费没有变化，差额来自优惠消失。如果你实际账单显示的是设备费或一次性项目，原因就完全不同。不要照抄例子中的金额来判断自己的账户。</p>
         </section>
 
+        <section className="mt-9 rounded-2xl border border-[#D8E2EA] bg-white p-5">
+          <h2 className="text-xl font-black">Spectrum 促销还没结束，月费为什么也可能增加？</h2>
+          <p className="mt-3 leading-7">先区分固定金额优惠与价格保证：部分旧账户的 Promotion 是固定扣减金额，不一定锁定 Internet 基础月费。核对上期、本期的 Internet Service 和 Discount 两行，才能判断究竟是基础价提高还是优惠减少。</p>
+          <p className="mt-3 leading-7">同样，已经开启 AutoPay 不代表所有账户一直有 $5 折扣；部分旧优惠可能结束。还应排查账单通知及原促销条件，而不是笼统认为所有 Spectrum 促销都是一年。</p>
+          <p className="mt-3 text-sm leading-7 text-[#526170]">具体折扣与价格保证以 Spectrum 当前账户记录为准。确认差额后，可继续查看 <Link href="/internet/spectrum/price-increase" className="font-semibold text-[#164B78] underline">涨价后的处理步骤</Link>。</p>
+        </section>
+
         <section className="mt-9">
           <h2 className="text-2xl font-black">逐项检查 Spectrum 账单的 6 类收费</h2>
           <div className="mt-4 grid gap-4">
