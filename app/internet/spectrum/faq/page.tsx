@@ -92,6 +92,21 @@ const faqSections = [
           '查看设备名称、收费周期以及账单是否标为 recurring 或 one-time，并核对当前账户中登记的设备。设备型号、租用状态和收费规则应以当前账户记录为准。',
       },
       {
+        question: 'Spectrum Advanced WiFi 为什么每个月多收一笔费用？',
+        answer:
+          '先确认账单中的 Advanced WiFi 是否为独立的持续收费、是否包含在当前促销中，以及账户实际使用的路由器归属。不要假定所有 Modem 都收费；询问取消该 Wi-Fi 服务是否能减少费用及会失去哪些功能。',
+      },
+      {
+        question: 'Spectrum WiFi Extender 或高级 Wi-Fi 服务为什么收费？',
+        answer:
+          'WiFi Extender、额外 Mesh / Wi-Fi 覆盖设备与部分高级家庭网络服务可能与基础 Internet 服务分别计费。逐项核对设备数量、服务名称、当前套餐是否包含以及账户每月实际金额，确认是否需要继续租用。',
+      },
+      {
+        question: 'Spectrum 有哪些设备费不能只看广告价？',
+        answer:
+          '区分 Modem、Advanced WiFi / Router、WiFi Extender 及附加的网络服务。部分现行套餐可能包含 Modem，但旧套餐、附加 Wi-Fi 或额外设备的收费规则不同，应以 Spectrum 资费披露、设备清单和账单为准。',
+      },
+      {
         question: '自备 Router 或 Modem 前需要确认什么？',
         answer:
           '先核对设备是否兼容当前服务、是否需要运营商激活，以及更换后哪些功能由自有设备承担。不要只按设备型号推断兼容性，必要时向 Spectrum 确认当前要求。',
