@@ -127,6 +127,12 @@ export default function AfterCancelFinalBillPage() {
           </article>
         </section>
 
+        <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+          <h2 className="text-2xl font-black">Spectrum 用户额外核对：账期与设备记录</h2>
+          <p className="mt-3 leading-7 text-[#526170]">Spectrum 用户月中取消服务时，不应预设未使用的天数一定按比例退款。先核对服务协议、账单周期、终止日期及 Final Bill。即使已通过 UPS 或门店归还设备，也要确认账户中的 Modem、Router、Extender 等设备记录确实移除。</p>
+          <p className="mt-3 leading-7 text-[#526170]">如果出现未归还设备费或取消后的新收费，保留退还收据、追踪号、设备序列号、取消确认号码及后续账单，向 Spectrum 核实具体项目。需要查看更多运营商专属问题，可查看 <Link href="/internet/spectrum/faq" className="font-semibold text-[#164B78] underline">Spectrum FAQ</Link>。</p>
+        </section>
+
         <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
           <div className="flex gap-3">
             <ShieldCheck className="mt-1 shrink-0 text-[#2786A5]" size={27} />
