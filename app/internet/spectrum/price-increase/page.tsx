@@ -114,6 +114,12 @@ export default function SpectrumPriceIncreasePage() {
           <Link href="/internet/providers" className="mt-4 inline-block font-semibold text-[#164B78] underline">查看调整或换网前应比较的项目</Link>
         </section>
 
+        <section className="mt-8 rounded-2xl border border-[#D8E2EA] bg-white p-5">
+          <h2 className="text-xl font-black">第一年和第二年的费用可能不一样</h2>
+          <p className="mt-3 leading-7">Spectrum 并非所有优惠都只持续一年。部分旧套餐的折扣可能分阶段减少；现有不同组合套餐也可能有不同的价格保证期限。先从开户订单和每期账单记录<strong>每项优惠的金额、适用条件和到期日期</strong>，再与现行可选套餐比较长期总价。</p>
+          <p className="mt-3 leading-7">也不要把用户在论坛报告的每月涨 $20、$30 或 $48，当成所有账户的固定涨幅。调整服务前，要求客服明确确认新的月费、优惠剩余期限、是否会重置捆绑条件，以及下一期账单何时生效。</p>
+        </section>
+
         <section id="equipment" className="mt-10">
           <h2 className="text-2xl font-black">第四步：处理设备，但别先买 modem</h2>
           <p className="mt-3 leading-8">Spectrum 当前公开的宽带资费披露中，现行套餐 modem 通常不额外收费；部分旧套餐仍可能有 modem 费用，官方说明可考虑迁移到包含免费 modem 的现行方案。另一方面，Advanced WiFi、扩展器等可能收费。<strong>先看账单上的具体项目，再判断自备路由器是否省钱。</strong></p>
