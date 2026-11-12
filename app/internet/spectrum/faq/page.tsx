@@ -181,6 +181,7 @@ export default function SpectrumFAQPage() {
           </p>
                   <div className="mt-4 flex flex-wrap gap-4 text-sm font-semibold">
             <Link href="/internet/diagnosis" className="text-[#164B78] underline underline-offset-4">网络异常先诊断 →</Link>
+            <Link href="/internet/spectrum/bill-increase-20" className="text-[#164B78] underline underline-offset-4">账单多 $20？逐项检查 →</Link>
             <Link href="/internet/price-hike" className="text-[#164B78] underline underline-offset-4">费用变化先核对 →</Link>
           </div>
         </header>
