@@ -77,6 +77,16 @@ export default function PriceHikeClient() {
           </Link>
           </nav>
 
+      <section id="verizon-fios" className="mx-auto my-8 max-w-5xl scroll-mt-24 rounded-2xl border border-[#D8E2EA] bg-[#EDF5F9] p-5 sm:p-7">
+        <h2 className="text-2xl font-black">Verizon Fios：18 项涨价排查</h2>
+        <p className="mt-3 leading-7">这是一份按账单项目组织的排查清单，不是所有客户都必然适用的收费。按顺序检查最近两期账单、当时订单、优惠条款和运营商通知；识别月费与一次性费用。</p>
+        <ol className="mt-4 grid list-decimal gap-x-8 gap-y-2 pl-5 leading-7 md:grid-cols-2">
+          {["促销优惠到期","旧套餐合同优惠期限结束","价格保证条件或期限变化","AutoPay 折扣取消","自动付款方式不符合条件","Paper-free Billing 状态变化","旧 Mobile + Home 优惠失效","改 Fios 服务后失去原优惠","升级或调整网速档位","旧套餐路由器租赁费用","新增 WiFi 设备或附加覆盖服务","Fios TV、机顶盒和 DVR 费用","广播电视及区域体育相关费用","新安装激活或按比例计费","逾期及恢复服务费","上门维修或服务变更费","旧合约适用的提前终止费","取消或换设备后未归还设备费用"].map((item) => <li key={item}>{item}</li>)}
+        </ol>
+        <p className="mt-4 text-sm leading-7 text-[#526170]">特别注意：2026 年新旧 Mobile + Home 优惠及套餐变更后的资格须按 Verizon 官方通知核对；也不要将 Fios 与 Verizon 5G Home 混为一谈。账户最终金额、争议与退款资格以运营商核实为准。</p>
+        <Link href="/bill-optimization" className="mt-4 inline-block font-bold text-[#164B78] underline">← 返回运营商涨价总入口</Link>
+      </section>
+
           {/* HERO */}
           <section className="mx-auto mt-4 max-w-4xl text-center">
             <p className="text-sm font-bold tracking-wide text-[#2786A5]">
