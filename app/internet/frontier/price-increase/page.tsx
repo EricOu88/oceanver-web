@@ -72,6 +72,16 @@ export default function FrontierPriceIncreasePage() {
           <p className="mt-3 text-sm leading-7">核查来源：<a href={sources.billing} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#164B78] underline">Frontier Billing FAQs</a>。</p>
         </section>
 
+        <section id="billing-checklist" className="mt-9 rounded-2xl border border-[#D8E2EA] bg-[#F4F8FA] p-5 sm:p-6">
+          <h2 className="text-2xl font-black">Frontier：17 项账单变化排查</h2>
+          <p className="mt-3 leading-7">以下是需要逐项核对的潜在原因，并非全部账户都有这些收费。优先对照最近两期账单、开户条款与官方通知，区分每月重复费用和一次性费用。</p>
+          <ol className="mt-4 grid list-decimal gap-x-8 gap-y-2 pl-5 leading-7 md:grid-cols-2">
+            {["促销价到期","价格保证期或适用条件变化","基础服务月费调整","临时信用额或折扣结束","AutoPay 资格或付款条件改变","升级速度或换 Fiber 套餐","旧套餐与现售套餐价差","WiFi 扩展或额外设备","电视电话及其他附加服务","搬家新装或重新安装","月中改档按比例收费","逾期付款费","付款失败或 NSF 费用","税费和账单调整","取消时的剩余账期","适用的设备处理费","设备未归还或其他最终账单费用"].map((item) => <li key={item}>{item}</li>)}
+          </ol>
+          <p className="mt-4 text-sm leading-7 text-[#526170]">不同年代套餐、地区、账户资格和支付设置可能不同；具体金额、是否适用及退款争议均由运营商账户记录确定。</p>
+          <Link href="/bill-optimization" className="mt-4 inline-block font-bold text-[#164B78] underline">← 返回五家运营商涨价总入口</Link>
+        </section>
+
         <section id="contact" className="mt-10 scroll-mt-6">
           <h2 className="text-2xl font-black">第二步：联系 Frontier 官方客服，或请中文客服协助中文核对</h2>
           <div className="mt-5 grid gap-4 md:grid-cols-2">

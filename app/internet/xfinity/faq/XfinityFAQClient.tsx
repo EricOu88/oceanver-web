@@ -582,6 +582,16 @@ export default function XfinityFAQClient() {
         </div>
       </section>
 
+      <section id="xfinity-price-checklist" className="mx-auto my-8 max-w-5xl scroll-mt-24 rounded-2xl border border-[#D8E2EA] bg-[#EDF5F9] p-5 sm:p-7">
+        <h2 className="text-2xl font-black">Xfinity：18 项账单上涨原因</h2>
+        <p className="mt-3 leading-7">这是一份按账单项目组织的排查清单，不是所有客户都必然适用的收费。按顺序检查最近两期账单、当时订单、优惠条款和运营商通知；识别月费与一次性费用。</p>
+        <ol className="mt-4 grid list-decimal gap-x-8 gap-y-2 pl-5 leading-7 md:grid-cols-2">
+          {["新用户促销到期","阶段性优惠减少","基础套餐月费调整","旧合约折扣结束","AutoPay 折扣或付款资格变化","Paperless Billing 折扣条件","旧套餐 Gateway 租赁费","xFi Complete 附加服务费","WiFi Boost Pods 等额外设备","Storm-Ready WiFi 等可选服务","部分旧套餐 1.2TB 用量超额","部分旧套餐 Unlimited Data 附加费","Internet 与 Mobile 捆绑优惠变化","电视套餐折扣到期","广播电视与区域体育相关收费","提速换套餐搬家或重新签约","安装月中调整滞纳等一次性项目","取消后设备未归还或适用的提前终止费"].map((item) => <li key={item}>{item}</li>)}
+        </ol>
+        <p className="mt-4 text-sm leading-7 text-[#526170]">特别注意：旧套餐可能单独收取数据或网关费用，但现售套餐的设备和无限流量包含规则可能不同。账户最终金额、争议与退款资格以运营商核实为准。</p>
+        <Link href="/bill-optimization" className="mt-4 inline-block font-bold text-[#164B78] underline">← 返回运营商涨价总入口</Link>
+      </section>
+
       {/* 人工边界 */}
       <section className="mx-auto mt-4 max-w-4xl text-center">
         <CircleHelp
