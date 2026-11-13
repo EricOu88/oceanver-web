@@ -17,6 +17,21 @@ const faqSections = [
           '账单变化可能来自优惠或折扣变化、套餐调整、设备项目或其他账户变更，不能只凭使用年限判断原因。逐项对比账单和账户通知，确认哪些变化会持续到后续账期。',
       },
       {
+        question: 'Spectrum 促销还没到期，为什么基础月费仍上涨？',
+        answer:
+          '先核对旧优惠是固定金额折扣，还是在明确期限内保证最终月费。有些旧套餐的基础价可能改变，而折扣金额未变。对照 Internet Service、Promotion 和价格保证说明，不要把所有套餐都当作一年固定价。',
+      },
+      {
+        question: 'Spectrum AutoPay 已开启，为什么仍然少了 $5 折扣？',
+        answer:
+          '部分旧账户可能曾有 $5 AutoPay 优惠，但是否继续适用取决于账户与活动。对照前后账单的 Discount 行、活动通知及付款状态；已开启自动付款不代表一定继续享有折扣或能追溯补发。',
+      },
+      {
+        question: '取消电视或手机后，为什么 Spectrum 宽带反而贵了？',
+        answer:
+          '部分 Bundle Discount 取决于同时保留指定服务。取消或变更 TV、Mobile 后，应重新比较宽带和整个家庭的总收费、优惠资格及生效账期，不能只扣去取消服务原来的价格。',
+      },
+      {
         question: '怎么判断是促销结束还是新增费用？',
         answer:
           '查看账单上的折扣、Promotion、Credit 和基础月费项目，并对照账户中的促销期限或变更通知。再确认新增项目属于 recurring charge 还是 one-time charge；具体适用条件以当前账户显示为准。',
@@ -75,6 +90,21 @@ const faqSections = [
         question: 'Spectrum 设备收费怎么看？',
         answer:
           '查看设备名称、收费周期以及账单是否标为 recurring 或 one-time，并核对当前账户中登记的设备。设备型号、租用状态和收费规则应以当前账户记录为准。',
+      },
+      {
+        question: 'Spectrum Advanced WiFi 为什么每个月多收一笔费用？',
+        answer:
+          '先确认账单中的 Advanced WiFi 是否为独立的持续收费、是否包含在当前促销中，以及账户实际使用的路由器归属。不要假定所有 Modem 都收费；询问取消该 Wi-Fi 服务是否能减少费用及会失去哪些功能。',
+      },
+      {
+        question: 'Spectrum WiFi Extender 或高级 Wi-Fi 服务为什么收费？',
+        answer:
+          'WiFi Extender、额外 Mesh / Wi-Fi 覆盖设备与部分高级家庭网络服务可能与基础 Internet 服务分别计费。逐项核对设备数量、服务名称、当前套餐是否包含以及账户每月实际金额，确认是否需要继续租用。',
+      },
+      {
+        question: 'Spectrum 有哪些设备费不能只看广告价？',
+        answer:
+          '区分 Modem、Advanced WiFi / Router、WiFi Extender 及附加的网络服务。部分现行套餐可能包含 Modem，但旧套餐、附加 Wi-Fi 或额外设备的收费规则不同，应以 Spectrum 资费披露、设备清单和账单为准。',
       },
       {
         question: '自备 Router 或 Modem 前需要确认什么？',

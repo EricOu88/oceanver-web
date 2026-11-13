@@ -127,6 +127,18 @@ export default function AfterCancelFinalBillPage() {
           </article>
         </section>
 
+        <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+          <h2 className="text-2xl font-black">Spectrum 用户额外核对：账期与设备记录</h2>
+          <p className="mt-3 leading-7 text-[#526170]">Spectrum 用户月中取消服务时，不应预设未使用的天数一定按比例退款。先核对服务协议、账单周期、终止日期及 Final Bill。即使已通过 UPS 或门店归还设备，也要确认账户中的 Modem、Router、Extender 等设备记录确实移除。</p>
+          <p className="mt-3 leading-7 text-[#526170]">如果出现未归还设备费或取消后的新收费，保留退还收据、追踪号、设备序列号、取消确认号码及后续账单，向 Spectrum 核实具体项目。需要查看更多运营商专属问题，可查看 <Link href="/internet/spectrum/faq" className="font-semibold text-[#164B78] underline">Spectrum FAQ</Link>。</p>
+        </section>
+
+        <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
+          <h2 className="text-xl font-black">为什么月中取消后仍可能收取一个账期费用？</h2>
+          <p className="mt-3 leading-7 text-[#526170]">对于 Spectrum，应先确认适用的月度服务条款及是否提供未使用天数的按比例退款，不要把“没有长期合同”理解为“任何日期取消都会按天退钱”。另外要区分仍未结清的上一账期、取消之后的新服务费及未归还设备费。</p>
+          <p className="mt-3 leading-7 text-[#526170]">对照服务结束日期、账单开始与结束日期、付款历史和最终账单；若账户仍在持续计费，保存取消工单和设备归还凭证，要求 Spectrum 解释每一笔扣费。</p>
+        </section>
+
         <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
           <div className="flex gap-3">
             <ShieldCheck className="mt-1 shrink-0 text-[#2786A5]" size={27} />
