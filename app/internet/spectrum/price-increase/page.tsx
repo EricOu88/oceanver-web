@@ -79,6 +79,16 @@ export default function SpectrumPriceIncreasePage() {
           <p className="mt-3 leading-7">如果只是想确认本期为什么多收 $20，而尚未确定是哪项费用变化，请先看 <Link href="/internet/spectrum/bill-increase-20" className="font-semibold text-[#164B78] underline">Spectrum 两期账单逐项核对</Link>；设备费和取消问题可查看 <Link href="/internet/spectrum/faq" className="font-semibold text-[#164B78] underline">Spectrum 常见问题</Link>。</p>
         </section>
 
+        <section id="billing-checklist" className="mt-9 rounded-2xl border border-[#D8E2EA] bg-[#F4F8FA] p-5 sm:p-6">
+          <h2 className="text-2xl font-black">Spectrum：18 项涨价原因核对</h2>
+          <p className="mt-3 leading-7">以下是需要逐项核对的潜在原因，并非全部账户都有这些收费。优先对照最近两期账单、开户条款与官方通知，区分每月重复费用和一次性费用。</p>
+          <ol className="mt-4 grid list-decimal gap-x-8 gap-y-2 pl-5 leading-7 md:grid-cols-2">
+            {["首年促销结束","第二阶段折扣到期","标准月费调价","优惠期内基础价变化","AutoPay 折扣资格变化","Advanced WiFi 月费","WiFi Extender 设备费","其他高级 WiFi 附加服务","旧套餐与现售方案价差","Mobile 与 Internet 捆绑优惠失效","电视服务优惠到期","电视频道和设备费用","改套餐或搬家导致旧优惠失效","已退设备仍显示收费","逾期付款费","符合条件的 AutoPay 扣款失败费用","恢复服务或改服务的一次性费","取消日期与账单周期不一致"].map((item) => <li key={item}>{item}</li>)}
+          </ol>
+          <p className="mt-4 text-sm leading-7 text-[#526170]">不同年代套餐、地区、账户资格和支付设置可能不同；具体金额、是否适用及退款争议均由运营商账户记录确定。</p>
+          <Link href="/bill-optimization" className="mt-4 inline-block font-bold text-[#164B78] underline">← 返回五家运营商涨价总入口</Link>
+        </section>
+
         <section id="contact" className="mt-10">
           <h2 className="text-2xl font-black">第二步：联系谁谈价？两条路都可以</h2>
           <div className="mt-5 grid gap-4 md:grid-cols-2">
