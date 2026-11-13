@@ -29,7 +29,7 @@ export default function SpectrumPriceIncreasePage() {
     description,
     inLanguage: 'zh-CN',
     mainEntityOfPage: url,
-    dateModified: '2026-11-03',
+    dateModified: '2026-11-12',
     author: { '@type': 'Organization', name: 'Oceanver' },
     publisher: { '@type': 'Organization', name: 'Oceanver' },
   }
@@ -158,7 +158,7 @@ export default function SpectrumPriceIncreasePage() {
           <a href="tel:+15108496191" className="mt-4 inline-block rounded-xl bg-[#164B78] px-5 py-3 font-bold text-white">中文咨询：510-849-6191</a>
         </section>
         <p className="mt-8 text-sm leading-7 text-[#526170]">来源：Spectrum 官方客服联系方式与宽带资费披露。本文提供账单核对与沟通建议，不代表 Spectrum 保证降价；账户资格、价格、设备及服务条件以运营商实际记录为准。Oceanver 提供问题核对信息；账户变更、退款和维修由运营商确认或处理。</p>
-        <p className="mt-2 text-sm text-[#526170]">最近核查：2026 年 11 月 3 日。</p>
+        <p className="mt-2 text-sm text-[#526170]">最后更新：2026 年 11 月 12 日（美西时间）。原政策资料核查：2026 年 11 月 3 日。</p>
       </article>
     </main>
   )

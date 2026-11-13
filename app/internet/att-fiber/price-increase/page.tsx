@@ -42,7 +42,7 @@ export default function ATTInternetPriceIncreasePage() {
         mainEntityOfPage: { '@id': url + '#webpage' },
         inLanguage: 'zh-CN',
         datePublished: '2026-11-03',
-        dateModified: '2026-11-03',
+        dateModified: '2026-11-12',
         author: { '@type': 'Organization', name: 'Oceanver' },
         publisher: { '@type': 'Organization', name: 'Oceanver' },
       },
@@ -189,7 +189,7 @@ export default function ATTInternetPriceIncreasePage() {
             <a className="underline" href="https://www.att.com/support/internet/" target="_blank" rel="noopener noreferrer">家庭宽带客服</a>、
             <a className="underline" href="https://www.att.com/support/how-to/internet/equipment-return/" target="_blank" rel="noopener noreferrer">设备归还步骤</a>。
           </p>
-          <p className="mt-2">更新核查：2026 年 11 月 3 日。本文不代表 AT&amp;T 官方承诺降价，账户费用和资格须以运营商确认结果为准。Oceanver 提供问题核对信息；账户变更、退款和维修由运营商确认或处理。</p>
+          <p className="mt-2">最后更新：2026 年 11 月 12 日（美西时间）。原政策资料核查：2026 年 11 月 3 日。本文不代表 AT&amp;T 官方承诺降价，账户费用和资格须以运营商确认结果为准。Oceanver 提供问题核对信息；账户变更、退款和维修由运营商确认或处理。</p>
         </section>
       </article>
     </main>

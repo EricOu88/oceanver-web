@@ -58,7 +58,7 @@ export default function BillOptimizationClient() {
             <Link href="/contact" className="underline">中文人工核对 →</Link>
           </div>
         </section>
-        <p className="mt-8 text-center text-xs text-[#526170]">资料复核：2026 年 11 月｜价格、优惠和收费资格以运营商当前账单与官方政策为准。</p>
+        <p className="mt-8 text-center text-xs text-[#526170]">最后更新：2026 年 11 月 12 日（美西时间）｜价格、优惠和收费资格以运营商当前账单与官方政策为准。</p>
       </div>
     </main>
   )
