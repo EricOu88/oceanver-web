@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 const providers = [
   { name: 'AT&T 宽带', href: '/internet/att-fiber/price-increase', detail: '旧套餐调价、Fiber / Internet Air 区别、AutoPay 与折扣' },
-  { name: 'Xfinity 网络', href: '/internet/xfinity/faq', detail: '促销到期、Gateway、xFi 与旧套餐数据收费' },
+  { name: 'Xfinity 网络', href: '/internet/xfinity/faq#xfinity-price-checklist', detail: '促销到期、Gateway、xFi 与旧套餐数据收费' },
   { name: 'Spectrum 宽带', href: '/internet/spectrum/price-increase', detail: '18 项排查：优惠、基础月费、Advanced WiFi 与捆绑' },
   { name: 'Frontier 宽带', href: '/internet/frontier/price-increase', detail: '促销价、价格保证、退网账期及设备归还' },
   { name: 'Verizon Fios 网络', href: '/internet/price-hike#verizon-fios', detail: 'Fios 专项：AutoPay、Mobile + Home、路由器与最终账单' },
