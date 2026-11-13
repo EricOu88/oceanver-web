@@ -592,6 +592,8 @@ export default function XfinityFAQClient() {
         <Link href="/bill-optimization" className="mt-4 inline-block font-bold text-[#164B78] underline">← 返回运营商涨价总入口</Link>
       </section>
 
+      <p className="mx-auto mt-6 max-w-4xl text-center text-sm text-[#526170]">最后更新：2026 年 11 月 12 日（美西时间）。运营商收费条件请以当前账户和官方政策为准。</p>
+
       {/* 人工边界 */}
       <section className="mx-auto mt-4 max-w-4xl text-center">
         <CircleHelp
