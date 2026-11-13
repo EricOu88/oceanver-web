@@ -98,6 +98,16 @@ export default function ATTInternetPriceIncreasePage() {
           <a href="https://www.att.com/support/article/my-account/KM1051879/" target="_blank" rel="noopener noreferrer" className="mt-3 inline-block font-semibold text-[#164B78] underline">AT&amp;T 官方：账单为什么发生变化</a>
         </section>
 
+        <section id="billing-checklist" className="mt-9 rounded-2xl border border-[#D8E2EA] bg-[#F4F8FA] p-5 sm:p-6">
+          <h2 className="text-2xl font-black">AT&T 宽带：18 项账单检查清单</h2>
+          <p className="mt-3 leading-7">以下是需要逐项核对的潜在原因，并非全部账户都有这些收费。优先对照最近两期账单、开户条款与官方通知，区分每月重复费用和一次性费用。</p>
+          <ol className="mt-4 grid list-decimal gap-x-8 gap-y-2 pl-5 leading-7 md:grid-cols-2">
+            {["旧套餐官方调价","促销价到期","阶段性 Credit 结束","AutoPay 折扣失效","AutoPay 付款方式改变","无纸化账单设置变化","手机宽带捆绑资格改变","旧套餐转新套餐","升级 Fiber 网速","搬家或更换服务地址","历史设备项目或额外设备","静态 IP、扩展或网络附加服务","旧互联网套餐用量超额","新装及安装费用","月中按比例计费","逾期与恢复服务费","账单抵扣尚未入账","取消服务及设备未归还费用"].map((item) => <li key={item}>{item}</li>)}
+          </ol>
+          <p className="mt-4 text-sm leading-7 text-[#526170]">不同年代套餐、地区、账户资格和支付设置可能不同；具体金额、是否适用及退款争议均由运营商账户记录确定。</p>
+          <Link href="/bill-optimization" className="mt-4 inline-block font-bold text-[#164B78] underline">← 返回五家运营商涨价总入口</Link>
+        </section>
+
         <section id="call" className="mt-10 scroll-mt-6">
           <h2 className="text-2xl font-black">第二步：联系 AT&amp;T 官方客服，或请中文客服协助中文核对</h2>
           <div className="mt-5 grid gap-4 md:grid-cols-2">
