@@ -30,7 +30,7 @@ export default function FrontierPriceIncreasePage() {
     '@context': 'https://schema.org',
     '@graph': [
       { '@type': 'WebPage', '@id': url + '#webpage', url, name: title, description, inLanguage: 'zh-CN', isPartOf: { '@id': 'https://oceanver.com/#website' } },
-      { '@type': 'Article', '@id': url + '#article', headline: title, description, mainEntityOfPage: { '@id': url + '#webpage' }, datePublished: '2026-11-03', dateModified: '2026-11-03', inLanguage: 'zh-CN', author: { '@type': 'Organization', name: 'Oceanver' }, publisher: { '@type': 'Organization', name: 'Oceanver' } },
+      { '@type': 'Article', '@id': url + '#article', headline: title, description, mainEntityOfPage: { '@id': url + '#webpage' }, datePublished: '2026-11-03', dateModified: '2026-11-12', inLanguage: 'zh-CN', author: { '@type': 'Organization', name: 'Oceanver' }, publisher: { '@type': 'Organization', name: 'Oceanver' } },
     ],
   }
   return (
@@ -164,7 +164,7 @@ export default function FrontierPriceIncreasePage() {
           <p className="mt-3 leading-7">先遮盖个人信息，整理最近两期账单的收费变化，联系中文客服。我们协助区分优惠结束、基础月费变动及一次性收费；如需要比较 AT&amp;T、Spectrum、Xfinity 或其他宽带，再按地址核对覆盖和完整成本，不直接建议你取消 Frontier。</p>
           <a href="tel:+15108496191" className="mt-4 inline-block rounded-xl bg-[#164B78] px-5 py-3 font-bold text-white">中文咨询：510-849-6191</a>
         </section>
-        <p className="mt-8 text-sm leading-7 text-[#526170]">核查日期：2026 年 11 月 3 日。本文不代表 Frontier 承诺降价或退款。具体费用、退还期限、服务资格和取消条件以官方账户通知为准。Oceanver 提供问题核对信息；账户变更、退款和维修由运营商确认或处理。</p>
+        <p className="mt-8 text-sm leading-7 text-[#526170]">最后更新：2026 年 11 月 12 日（美西时间）。原政策资料核查：2026 年 11 月 3 日。本文不代表 Frontier 承诺降价或退款。具体费用、退还期限、服务资格和取消条件以官方账户通知为准。Oceanver 提供问题核对信息；账户变更、退款和维修由运营商确认或处理。</p>
       </article>
     </main>
   )
