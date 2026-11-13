@@ -468,7 +468,7 @@ export default function PriceHikeClient() {
         </section>
 
           <p className="mt-12 text-center text-xs leading-5 text-[#526170]">
-            最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前账户与官方规则为准。
+            最后更新：2026 年 11 月 12 日（美西时间）｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前账户与官方规则为准。
           </p>
         </div>
       </main>
