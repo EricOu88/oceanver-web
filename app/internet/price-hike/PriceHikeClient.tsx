@@ -245,38 +245,6 @@ export default function PriceHikeClient() {
             </InfoCard>
           </section>
 
-          {/* 判断 promo */}
-          <section className="mt-4 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
-            <p className="text-sm font-bold text-[#2786A5]">
-              判断是不是优惠到期
-            </p>
-
-            <h2 className="mt-2 text-2xl font-black sm:text-3xl">
-              先看账单，不要只看总金额
-            </h2>
-
-            <ol className="mt-6 grid gap-4 md:grid-cols-2">
-              {[
-                '对比本月和上月相同服务项目。',
-                '查看 Promotion、Discount 或 Credit 是否减少或消失。',
-                '确认基础 Internet 月费是否变化。',
-                '检查 AutoPay / Paperless Billing 折扣。',
-                '查看 Equipment、Gateway 或其他 recurring charge。',
-                '排除 Installation、Activation、Prorated charge 等一次性项目。',
-              ].map((item, index) => (
-                <li
-                  key={item}
-                  className="flex gap-3 rounded-2xl border border-[#D5E5EC] bg-white p-4 text-sm leading-6 text-[#526170]"
-                >
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#F4F8FA] text-xs font-black text-[#164B78]">
-                    {index + 1}
-                  </span>
-                  {item}
-                </li>
-              ))}
-            </ol>
-          </section>
-
           <section className="mt-4 rounded-3xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
             <p className="text-sm font-bold text-[#2786A5]">
               优惠快到期时先准备
