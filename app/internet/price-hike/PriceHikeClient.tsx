@@ -9,7 +9,6 @@ import {
   CircleHelp,
   RefreshCcw,
   ShieldCheck,
-  TrendingUp,
 } from 'lucide-react'
 
 
@@ -210,71 +209,12 @@ export default function PriceHikeClient() {
             </div>
           </section>
 
-          {/* 一次性 vs 长期 */}
-          <section className="mt-4 grid gap-6 lg:grid-cols-2">
-            <InfoCard
-              icon={<RefreshCcw size={23} />}
-              title="先判断：只是这一次高，还是以后都会高"
-            >
+          <section className="mt-4">
+            <InfoCard icon={<RefreshCcw size={23} />} title="一次性费用与持续月费，怎样区分？">
               <p>
-                安装、激活、Technician、设备事件或账期调整，
-                可能只影响一期账单。
-              </p>
-
-              <p>
-                真正需要重点判断的是：
-                <strong className="text-[#202D3A]">
-                  增加的项目是持续性月费，还是一次性费用；应结合账单标注、适用条款和运营商确认判断。
-                </strong>
-              </p>
-
-              <p>对比最近两期账单时，请按同名收费项目核对，不要只比较应付总额。</p>
-            </InfoCard>
-
-            <InfoCard
-              icon={<TrendingUp size={23} />}
-              title="如何确认增加的费用会不会持续"
-            >
-              <p>
-                对比最近两期账单，有助于发现重复收费；是否属于持续费用，还应核对项目说明、生效日期和结束条件。
-              </p>
-
-              <p>
-                即使只出现一期，也可以向运营商确认后续是否继续收取，无需等待第二期才开始核实。
+                对比同一账户最近两期的同名项目：安装、激活、技术员服务或按比例计费可能只影响一期；基础服务费、设备月租或附加服务则可能持续。结合收费日期、账单说明与运营商答复确认，不要仅凭应付总额判断，也不必等下期账单才能提出核实。
               </p>
             </InfoCard>
-          </section>
-
-          {/* 判断 promo */}
-          <section className="mt-4 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
-            <p className="text-sm font-bold text-[#2786A5]">
-              判断是不是优惠到期
-            </p>
-
-            <h2 className="mt-2 text-2xl font-black sm:text-3xl">
-              先看账单，不要只看总金额
-            </h2>
-
-            <ol className="mt-6 grid gap-4 md:grid-cols-2">
-              {[
-                '对比本月和上月相同服务项目。',
-                '查看 Promotion、Discount 或 Credit 是否减少或消失。',
-                '确认基础 Internet 月费是否变化。',
-                '检查 AutoPay / Paperless Billing 折扣。',
-                '查看 Equipment、Gateway 或其他 recurring charge。',
-                '排除 Installation、Activation、Prorated charge 等一次性项目。',
-              ].map((item, index) => (
-                <li
-                  key={item}
-                  className="flex gap-3 rounded-2xl border border-[#D5E5EC] bg-white p-4 text-sm leading-6 text-[#526170]"
-                >
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#F4F8FA] text-xs font-black text-[#164B78]">
-                    {index + 1}
-                  </span>
-                  {item}
-                </li>
-              ))}
-            </ol>
           </section>
 
           <section className="mt-4 rounded-3xl border border-[#D5E5EC] bg-white p-6 sm:p-8">

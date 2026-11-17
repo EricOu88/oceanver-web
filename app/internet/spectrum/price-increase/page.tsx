@@ -59,13 +59,11 @@ export default function SpectrumPriceIncreasePage() {
         <section id="reasons" className="mt-10">
           <h2 className="text-2xl font-black">第一步：账单为什么涨？先看这五处</h2>
           <p className="mt-3 leading-8">打开 My Spectrum App 或账户账单，同时对比本月和上月的详细收费项目。重点核实：</p>
-          <ol className="mt-4 list-decimal space-y-3 pl-6 leading-8">
-            <li><strong>促销优惠到期：</strong>核对 Promotion、Discount、Credit 是否减少或结束。</li>
-            <li><strong>基础月费调整：</strong>查看 Internet Service 套餐价格是否改变，以及是否收到调价通知。</li>
-            <li><strong>自动付款折扣：</strong>检查 AutoPay 资格、付款方式、失败扣款或折扣变化。</li>
-            <li><strong>设备和附加服务：</strong>查看 Advanced WiFi、WiFi Extender、电视或其他附加服务的收费。</li>
-            <li><strong>一次性项目：</strong>检查安装、激活、逾期费及账期调整，不要将一次性费用误认为永久涨价。</li>
-          </ol>
+          <p className="mt-4 leading-8">
+            先核对优惠与基础月费、AutoPay、设备和附加服务以及一次性项目。下方的
+            <a href="#billing-checklist" className="font-semibold text-[#164B78] underline">18 项 Spectrum 专项清单</a>
+            逐项列出可能的收费变化及核对方向。
+          </p>
           <p className="mt-4 rounded-xl bg-[#EDF5F9] p-4 leading-7"><strong>例子（仅为计算示意，不是真实客户案例）：</strong>上期 $55，本期 $85。先查明多出的 $30 是优惠到期、某项服务新增，还是一次性费用；原因不同，解决方法也不同。</p>
         </section>
 
