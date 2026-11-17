@@ -62,7 +62,7 @@ export default function SpectrumPriceIncreasePage() {
           <p className="mt-4 leading-8">
             先核对优惠与基础月费、AutoPay、设备和附加服务以及一次性项目。下方的
             <a href="#billing-checklist" className="font-semibold text-[#164B78] underline">18 项 Spectrum 专项清单</a>
-            已逐项展开，不需要重复检查两份相同的原因列表。
+            逐项列出可能的收费变化及核对方向。
           </p>
           <p className="mt-4 rounded-xl bg-[#EDF5F9] p-4 leading-7"><strong>例子（仅为计算示意，不是真实客户案例）：</strong>上期 $55，本期 $85。先查明多出的 $30 是优惠到期、某项服务新增，还是一次性费用；原因不同，解决方法也不同。</p>
         </section>
