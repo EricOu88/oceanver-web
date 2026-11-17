@@ -4,8 +4,6 @@ import {
   ArrowRight,
   CheckCircle2,
   Layers3,
-  ShieldCheck,
-  Users,
 } from 'lucide-react';
 
 const pageUrl = 'https://oceanver.com/cellphone/price-hike';
@@ -47,7 +45,7 @@ const evidenceBranches = [
   },
   {
     title: '家庭成员减线后反而更贵',
-    check: '重算剩余线路的多线价格、Free Line 与账户优惠。',
+    check: '家庭线路常按线路数、账户结构和 Promotion 联合计价；成员退出后应重新核算剩余线路的多线价格、Free Line 与账户优惠。',
     caution: '减去一条线不一定等于减去它原来的月费。',
     href: '/cellphone/family-plan-guide',
     action: '继续检查家庭计划结构',
@@ -112,13 +110,6 @@ const stay = [
   '旧计划虽然变贵，但仍保留重要的多线、设备或账户优惠。',
   '换计划会损失的 Credit 或设备权益大于潜在月费节省。',
   '当前信号、使用体验和总成本仍在可接受范围内。',
-];
-
-const verificationChecks = [
-  '套餐月费增加：核对项目名称、金额、生效日期及运营商通知。',
-  '多条线路费用同时变化：分别列出每条线路及账户级收费，避免只比较平均价格。',
-  'Free Line、多线或 AutoPay 折扣减少：核对资格、账户结构及折扣适用账期。',
-  '旧计划被迁移或调整：核对迁移通知、原有权益和优惠是否受到影响。',
 ];
 
 const schema = {
@@ -189,21 +180,6 @@ export default function CellphonePriceHikePage() {
           </div>
         </section>
 
-        <section className="rounded-2xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
-          <div className="flex gap-3">
-            <Users className="mt-1 shrink-0 text-[#2786A5]" size={26} />
-            <div>
-              <h2 className="text-2xl font-black">为什么少一条线，剩下的人反而可能更贵？</h2>
-              <p className="mt-3 leading-7 text-[#526170]">
-                家庭计划常按线路数、账户结构和特定 Promotion 共同定价。
-                当成员退出、免费线消失或账户结构变化时，不能只减去“那一条线原来的价格”，
-                剩余线路也可能重新计算。
-              </p>
-              <p className="mt-3 text-sm leading-7 text-[#526170]">核实时请同时查看变更前后的线路数、账户优惠及剩余线路价格。</p>
-            </div>
-          </div>
-        </section>
-
         <section className="mt-4" aria-labelledby="cellphone-evidence-heading">
           <h2 id="cellphone-evidence-heading" className="text-2xl font-black">找到涨价项目后，按证据继续判断</h2>
           <p className="mt-3 leading-7 text-[#526170]">
@@ -252,7 +228,7 @@ export default function CellphonePriceHikePage() {
           </div>
         </section>
 
-        <section className="mt-4 grid gap-5 md:grid-cols-2">
+        <section className="mt-4">
           <article className="rounded-2xl border border-[#D5E5EC] bg-white p-6">
             <Layers3 className="mb-4 text-[#2786A5]" size={27} />
             <h2 className="text-2xl font-black">哪些情况可以先不换？</h2>
@@ -261,13 +237,7 @@ export default function CellphonePriceHikePage() {
             </ul>
           </article>
 
-          <article className="rounded-2xl border border-[#D5E5EC] bg-white p-6">
-            <ShieldCheck className="mb-4 text-[#2786A5]" size={27} />
-            <h2 className="text-2xl font-black">哪些变化需要进一步核实？</h2>
-            <ul className="mt-4 list-disc space-y-3 pl-5 text-sm leading-7 text-[#526170]">
-              {verificationChecks.map((item) => <li key={item}>{item}</li>)}
-            </ul>
-          </article>
+
         </section>
 
         <section className="mt-4 rounded-2xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
