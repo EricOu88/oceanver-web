@@ -156,9 +156,8 @@ export const config = {
      * - _next/static (静态文件)
      * - _next/image (图片优化文件)
      * - favicon.ico (favicon 文件)
-     * - robots.txt (robots 文件)
      * - 静态资源文件扩展名
      */
-    "/((?!api|_next/static|_next/image|favicon.ico|robots.txt|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|woff|woff2|ttf|eot)).*)",
+    "/((?!api|_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|woff|woff2|ttf|eot)).*)",
   ],
 };
