@@ -11,13 +11,8 @@ export const SITEMAP_ALLOWLIST = [
 // Phase 2 第二批候选。
 // 不自动进入 sitemap；第一批有抓取 / 曝光 / AI 引用数据后再复核。
 export const PHASE2_SECOND_BATCH_CANDIDATES = [
+  '/',
+  '/bill-optimization',
   '/cellphone/diagnosis',
   '/internet/diagnosis',
-  '/cellphone/faq/no-ssn-us-cellphone-internet',
-  '/internet/providers',
-  '/cellphone/providers',
-  '/internet/xfinity',
-  '/internet/att-fiber',
-  '/internet/spectrum',
-  '/internet/frontier',
 ] as const;
