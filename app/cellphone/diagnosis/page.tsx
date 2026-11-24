@@ -13,7 +13,7 @@ const diagnosisKnowledgeIds = [
 ];
 
 const diagnosisKnowledge = [...mobileIssues, ...billingIssues]
-  .filter((doc) => diagnosisKnowledgeIds.includes(doc.id)) as QADocument[];
+  .filter((doc) => diagnosisKnowledgeIds.includes(doc.id) && doc.review_status === 'approved' && doc.public_case === true) as QADocument[];
 
 export const metadata: Metadata = {
   title: { absolute: '美国手机问题诊断｜账单、信号、转网、eSIM｜Oceanver' },

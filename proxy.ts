@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { isPhase2IndexPath } from "./lib/indexing-policy";
+import { isPhase2IndexPath, isPhase2IndexingEnabled } from "./lib/indexing-policy";
 
 /**
  * Next.js 16 Proxy Mode
@@ -120,7 +120,7 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
   
-  const deprecatedPaths = ["/digital-tv", "/solar-panel", "/h2o-cellphone-plan", "/att-how-to-check-online-bill", "/2024-new-internet-plan"];
+  const deprecatedPaths = ["/california-lifeline-telephone-service", "/digital-tv", "/solar-panel", "/h2o-cellphone-plan", "/att-how-to-check-online-bill", "/2024-new-internet-plan"];
   const isDeprecatedPath = deprecatedPaths.some(
     (deprecated) => pathname === deprecated || pathname.startsWith(`${deprecated}/`)
   );
@@ -139,7 +139,7 @@ export function proxy(request: NextRequest) {
 
   // Phase 2 pilot: only the two reviewed canonical diagnosis URLs may be indexed.
   // All other pages, query-string variants and noncanonical hosts remain noindex.
-  const allowIndex = hostname.toLowerCase().split(":")[0] === "oceanver.com"
+  const allowIndex = isPhase2IndexingEnabled() && hostname.toLowerCase().split(":")[0] === "oceanver.com"
     && !url.search
     && isPhase2IndexPath(pathname);
   response.headers.set("X-Robots-Tag", allowIndex ? "index, follow" : "noindex, follow");
@@ -156,9 +156,8 @@ export const config = {
      * - _next/static (静态文件)
      * - _next/image (图片优化文件)
      * - favicon.ico (favicon 文件)
-     * - robots.txt (robots 文件)
      * - 静态资源文件扩展名
      */
-    "/((?!api|_next/static|_next/image|favicon.ico|robots.txt|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|woff|woff2|ttf|eot)).*)",
+    "/((?!api|_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|woff|woff2|ttf|eot)).*)",
   ],
 };
