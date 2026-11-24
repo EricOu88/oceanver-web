@@ -40,7 +40,7 @@ export default function ContactClient() {
           <section aria-label="联系方式" className="grid items-stretch gap-5 md:grid-cols-3">
             <a href="#wechat-qr" className="flex h-full flex-col rounded-2xl border border-[#D8E2EA] bg-white p-6 transition hover:border-[#246B95] hover:shadow-sm">
               <MessageCircle className="h-6 w-6 text-[#2786A5]" aria-hidden="true" />
-              <h2 className="mt-4 text-xl font-bold">微信咨询</h2>
+              <h2 className="mt-4 text-xl font-bold">微信在线咨询</h2>
               <p className="mt-2 flex-1 leading-[1.8] text-[#526170]">适合说明账单变化、设备状态；如需提供截图，请先遮盖个人和账户资料</p>
               <span className="mt-5 font-semibold text-[#164B78]">查看微信二维码 →</span>
             </a>
@@ -63,7 +63,7 @@ export default function ContactClient() {
 
           <section id="wechat-qr" aria-labelledby="wechat-qr-title" className="grid items-center gap-6 rounded-2xl border border-[#D8E2EA] bg-white p-6 md:grid-cols-[1fr_auto] md:gap-10 md:p-8">
             <div>
-              <h2 id="wechat-qr-title" className="text-2xl font-black">微信咨询二维码</h2>
+              <h2 id="wechat-qr-title" className="text-2xl font-black">微信在线咨询</h2>
               <p className="mt-3 leading-[1.8] text-[#526170]">添加微信后，可说明需要核实的问题。如需提供账单截图，请先遮盖姓名、完整地址、账户号码等敏感信息；不要发送密码、验证码或转号 PIN。</p>
             </div>
             <Image
