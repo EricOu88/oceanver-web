@@ -111,7 +111,7 @@ export default function PriceHikeClient() {
                 <p className="mt-3 flex-1 leading-7 text-[#526170]">不想自己查？中文客服协助核对账单。</p>
                 <div className="mt-5 flex flex-col gap-3">
                   <a href="tel:15108496191" className="page-nav-button min-h-12 justify-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#164B78]">电话咨询：510-849-6191</a>
-                  <Link href="/contact#wechat-qr" data-contact-method="wechat" className="page-nav-button min-h-12 justify-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#164B78]">微信咨询</Link>
+                  <Link href="/contact#wechat-qr" data-contact-method="wechat" className="page-nav-button min-h-12 justify-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#164B78]">微信在线咨询</Link>
                 </div>
               </section>
             </div>
