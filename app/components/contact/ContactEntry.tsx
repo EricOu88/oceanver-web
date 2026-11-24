@@ -1,11 +1,9 @@
 'use client'
 
 import Image from 'next/image'
-import { Phone, MessageCircle, Mail, Copy, X, ArrowRight, Star } from 'lucide-react'
+import { Phone, MessageCircle, Mail, X, ArrowRight, Star } from 'lucide-react'
 import { useState } from 'react'
-import { trackContact } from '../ContactAnalytics'
 
-const WECHAT_ID = '美国鸿达电讯'
 const PHONE_NUMBER = '15108496191' // For tel: and sms: links
 const PHONE_DISPLAY = '510-849-6191' // For display text
 
@@ -20,21 +18,7 @@ export default function ContactEntry({
   variant?: 'default' | 'homepage'
   showGoogleReviewCta?: boolean
 }) {
-  const [copied, setCopied] = useState(false)
   const [showQRModal, setShowQRModal] = useState(false)
-  const showWechatName = variant === 'homepage'
-
-  const copyWechat = async () => {
-    try {
-      await navigator.clipboard.writeText(WECHAT_ID)
-      trackContact('wechat_copy', 'contact_entry', '复制微信号')
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
-    } catch {
-      setCopied(false)
-    }
-  }
-
   const qrModal = showQRModal && (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4 backdrop-blur-sm"
@@ -47,27 +31,10 @@ export default function ContactEntry({
         <button onClick={() => setShowQRModal(false)} className="absolute right-4 top-4 text-slate-400 transition-colors hover:text-slate-700" aria-label="关闭">
           <X size={24} />
         </button>
-        <h3 className="mb-2 text-xl font-black text-slate-900">微信客服二维码</h3>
+        <h3 className="mb-2 text-xl font-black text-slate-900">微信在线咨询</h3>
         <p className="mb-6 text-sm text-slate-600">长按保存或扫描添加</p>
         <div className="relative mx-auto h-64 w-64 overflow-hidden rounded-2xl border-4 border-blue-100 bg-white shadow-xl">
           <Image src="/wechat-qr.jpg" alt="微信二维码" fill className="object-contain p-2" priority />
-        </div>
-        <div className="mt-6 rounded-xl border border-blue-200 bg-blue-50 p-4">
-          {showWechatName && (
-            <>
-              <p className="mb-2 text-sm font-bold text-slate-700">微信号：</p>
-              <button
-                onClick={() => {
-                  copyWechat()
-                  setShowQRModal(false)
-                }}
-                className="mx-auto flex items-center justify-center gap-2 text-lg font-black text-blue-700 transition-colors hover:text-blue-900"
-              >
-                {WECHAT_ID}<Copy size={18} />
-              </button>
-              {copied && <p className="mt-2 text-xs font-semibold text-green-600">已复制到剪贴板</p>}
-            </>
-          )}
         </div>
         <p className="mt-4 text-xs text-slate-500">工作时间内可协助核实具体情况</p>
       </div>
@@ -97,8 +64,8 @@ export default function ContactEntry({
           <button data-contact-method="wechat" onClick={() => setShowQRModal(true)} className="grid w-full grid-cols-[auto_1fr_auto] items-center gap-4 py-4 text-left first:pt-0 last:pb-0">
             <MessageCircle size={22} aria-hidden="true" className="text-[#2786A5]" />
             <span className="min-w-0">
-              <span className="block font-bold text-[#202D3A]">微信咨询</span>
-              <span className="mt-1 block text-sm leading-6 text-[#526170]">扫码添加客服<br />说明需要核实的问题{showWechatName && <><br />微信号：{WECHAT_ID}</>}</span>
+              <span className="block font-bold text-[#202D3A]">微信在线咨询</span>
+              <span className="mt-1 block text-sm leading-6 text-[#526170]">扫码添加客服<br />说明需要核实的问题</span>
             </span>
             <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#164B78]">查看二维码 <ArrowRight size={15} aria-hidden="true" /></span>
           </button>
@@ -146,14 +113,11 @@ export default function ContactEntry({
           <MessageCircle size={28} className="text-white md:hidden" strokeWidth={2} />
           <MessageCircle size={32} className="text-white hidden md:block" strokeWidth={2} />
           <div className="space-y-1">
-            <h3 className="text-base md:text-lg font-black text-white">微信咨询</h3>
+            <h3 className="text-base md:text-lg font-black text-white">微信在线咨询</h3>
             <p className="text-xs text-white/90 leading-relaxed">
               扫码添加客服<br />
               说明需要核实的问题
             </p>
-            {showWechatName && (
-              <p className="text-xs text-white/80 font-semibold mt-1.5">微信号：{WECHAT_ID}</p>
-            )}
           </div>
         </button>
 
