@@ -126,16 +126,6 @@ const nextConfig: NextConfig = {
         destination: '/internet/faq',
         permanent: true,
       },
-      {
-        source: '/california-lifeline-telephone-service',
-        destination: 'https://baymediastar.com/cellphone/lifeline',
-        permanent: true,
-      },
-      {
-        source: '/california-lifeline-telephone-service/:path*',
-        destination: 'https://baymediastar.com/cellphone/lifeline',
-        permanent: true,
-      },
 
       // ============ 已有重定向（保留）============
       {
