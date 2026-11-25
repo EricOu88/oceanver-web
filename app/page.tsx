@@ -37,7 +37,6 @@ function BillIncreaseReasons() {
           <li>设备费或附加服务发生变化</li>
           <li>安装、激活、按比例计费等一次性费用</li>
         </ol>
-        <p className="mt-4 leading-7 text-[#526170]">先对比最近两期账单中同一服务项目的变化，再判断这次上涨是否会持续。</p>
         <Link href="/bill-optimization" className="page-nav-button">按顺序核对账单 →</Link>
       </div>
     </section>
