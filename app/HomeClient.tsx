@@ -48,9 +48,6 @@ export default async function HomeClient() {
           <p className="mt-4 max-w-[820px] text-lg leading-[1.8] text-[#40505F] md:mt-4">
             账单金额变化本身，不足以说明需要换方案；网络变慢，也可能来自 Wi-Fi、设备或线路，而不一定是套餐速度不足。准备转号时，在号码、设备余额和账户状态没有确认前，也不应先停用旧线路。
           </p>
-          <p className="mt-4 max-w-[820px] text-sm leading-[1.8] text-slate-400">
-            Oceanver 提供面向美国中文用户的通信问题整理与判断信息，不代表任何运营商官方。具体账户、服务资格、地址覆盖、收费调整及退款结果，以实际账户与运营商记录为准。
-          </p>
         </div>
       </section>
 
