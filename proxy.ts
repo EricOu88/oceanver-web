@@ -52,8 +52,10 @@ export function proxy(request: NextRequest) {
     });
   }
 
-  // 【规则 0.5】vercel.app 域名一律 410（但允许 SEO 基础文件）
-  if (hostname.includes("vercel.app")) {
+  // Allow authenticated Vercel Preview deployments for QA; production aliases remain 410.
+  // Preview requests still pass through legacy URL handling and noncanonical noindex rules below.
+  const isVercelHost = hostname.toLowerCase().split(":")[0].endsWith(".vercel.app");
+  if (isVercelHost && process.env.VERCEL_ENV !== "preview") {
     return new Response("Gone", { status: 410 });
   }
 
