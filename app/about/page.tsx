@@ -64,7 +64,7 @@ export default function AboutPage() {
           <section className="mt-8 leading-8 text-[#526170]">
             <h2 className="text-xl font-bold text-[#202D3A]">使用边界与内容纠错</h2>
             <p className="mt-3">本站内容用于理解问题和准备核实资料，不代表运营商对具体账户、地址或设备作出的确认。如果发现内容与现行规则不一致，可致电本站问题咨询电话，提供对应页面和问题说明。请勿在公开讨论中提供完整账号、转号 PIN 或其他敏感资料。</p>
-            <a href="tel:+15108496191" className="mt-3 inline-block font-bold text-[#164B78] underline underline-offset-4">反馈内容问题：510-849-6191</a>
+            <a href="tel:+15108496191" className="mt-3 inline-flex min-h-11 items-center font-bold text-[#164B78] underline underline-offset-4">反馈内容问题：510-849-6191</a>
           </section>
 
           
