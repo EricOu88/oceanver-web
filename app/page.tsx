@@ -27,13 +27,13 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <main>
+      <main className="ocean-home">
         <HeroSection />
         <HomeClientWrapper />
       </main>
 
-      <footer className="border-t border-slate-200 bg-[#FCFDFE] py-12 md:py-14">
-        <div className="mx-auto grid max-w-[1180px] gap-8 px-6 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1fr] lg:gap-12">
+      <footer className="border-t border-slate-200 bg-[#FCFDFE] py-6 md:py-8">
+        <div className="mx-auto grid max-w-[1180px] gap-4 px-4 sm:grid-cols-2 sm:px-6 lg:grid-cols-[1.6fr_1fr_1fr_1fr] lg:gap-6">
           <div className="max-w-md">
             <h2 className="text-xl font-bold text-slate-900">Oceanver</h2>
             <p className="mt-4 text-sm leading-6 text-slate-600">
@@ -44,7 +44,7 @@ export default function Page() {
 
           <div className="border-t border-slate-200 pt-5 sm:border-t-0 sm:pt-0 lg:border-l lg:pl-8">
             <h3 className="text-sm font-semibold text-slate-900">问题判断</h3>
-            <ul className="mt-4 space-y-3 text-sm font-medium text-slate-600">
+            <ul className="mt-3 space-y-2 text-sm font-medium text-slate-600">
               <li><Link href="/bill-optimization" className="hover:text-blue-700">账单为什么变贵</Link></li>
               <li><Link href="/cellphone/diagnosis" className="hover:text-blue-700">手机问题诊断</Link></li>
               <li><Link href="/internet/diagnosis" className="hover:text-blue-700">宽带问题诊断</Link></li>
@@ -54,7 +54,7 @@ export default function Page() {
 
           <div className="border-t border-slate-200 pt-5 sm:border-t-0 sm:pt-0 lg:border-l lg:pl-8">
             <h3 className="text-sm font-semibold text-slate-900">常见问题与案例</h3>
-            <ul className="mt-4 space-y-3 text-sm font-medium text-slate-600">
+            <ul className="mt-3 space-y-2 text-sm font-medium text-slate-600">
               <li><Link href="/cellphone/faq" className="hover:text-blue-700">美国手机常见问题</Link></li>
               <li><Link href="/internet/faq" className="hover:text-blue-700">美国宽带常见问题</Link></li>
               <li><Link href="/why-us" className="hover:text-blue-700">真实问题与处理案例</Link></li>
@@ -64,14 +64,14 @@ export default function Page() {
 
           <div className="border-t border-slate-200 pt-5 sm:border-t-0 sm:pt-0 lg:border-l lg:pl-8">
             <h3 className="text-sm font-semibold text-slate-900">关于与联系</h3>
-            <ul className="mt-4 space-y-3 text-sm font-medium text-slate-600">
+            <ul className="mt-3 space-y-2 text-sm font-medium text-slate-600">
               <li><Link href="/about" className="hover:text-blue-700">关于我们</Link></li>
               <li><Link href="/contact" className="hover:text-blue-700">问题核实与联系</Link></li>
               <li><Link href="/privacy-policy" className="hover:text-blue-700">隐私政策</Link></li>
             </ul>
           </div>
         </div>
-        <div className="mx-auto mt-10 max-w-[1180px] border-t border-slate-200 px-6 pt-5 text-sm text-slate-500">
+        <div className="mx-auto mt-5 max-w-[1180px] border-t border-slate-200 px-4 pt-3 text-sm text-slate-500">
           © {new Date().getFullYear()} Oceanver
         </div>
       </footer>
