@@ -139,12 +139,12 @@ export default function CellphoneClient() {
       <BackToHomeButton />
 
       <section className="bg-[#F4F8FA] pb-4 pt-4">
-        <div className="mx-auto max-w-5xl px-6 text-center">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 text-center">
           <p className="mb-4 text-sm font-bold text-[#246B95] md:text-base">
             美国手机问题中心
           </p>
 
-          <h1 className="mb-6 text-4xl font-black leading-tight md:text-5xl">
+          <h1 className="mb-3 text-[clamp(1.75rem,3vw,2.25rem)] font-black leading-tight">
             先把问题判断清楚，
             <br className="hidden md:block" />
             再决定要不要换方案
@@ -154,7 +154,7 @@ export default function CellphoneClient() {
             账单、信号、转网或家庭多线出了问题？先选问题类型，再按账户条件判断是否需要调整方案。
           </p>
 
-          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+          <div className="mt-4 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
               href="/cellphone/diagnosis"
               className="page-nav-button"
@@ -175,9 +175,9 @@ export default function CellphoneClient() {
       </section>
 
       <section className="bg-white py-4">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="mb-10 text-center">
-            <h2 className="mb-3 text-3xl font-black md:text-4xl">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="mb-4 text-center">
+            <h2 className="mb-2 text-2xl font-black md:text-[28px]">
               你现在遇到的是哪一种问题？
             </h2>
             <p className="mx-auto max-w-2xl text-[#526170]">
@@ -185,20 +185,20 @@ export default function CellphoneClient() {
             </p>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
             {PROBLEM_CARDS.map((item) => {
               const Icon = item.icon;
               return (
                 <Link
                   key={item.title}
                   href={item.href}
-                  className="group rounded-2xl border border-[#D5E5EC] bg-white p-6 transition hover:border-[#246B95] hover:shadow-md"
+                  className="group rounded-2xl border border-[#D5E5EC] bg-white p-4 md:p-5 transition hover:border-[#246B95] hover:shadow-md"
                 >
                   <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-[#F4F8FA]">
                     <Icon className="text-[#2786A5]" size={22} />
                   </div>
                   <h3 className="text-xl font-black">{item.title}</h3>
-                  <p className="mb-5 mt-2 text-sm leading-relaxed text-[#526170]">
+                  <p className="mb-3 mt-2 text-sm leading-relaxed text-[#526170]">
                     {item.desc}
                   </p>
                   <div className="inline-flex items-center gap-2 text-sm font-bold text-[#164B78]">
@@ -216,9 +216,9 @@ export default function CellphoneClient() {
       </section>
 
       <section className="bg-[#F4F8FA] py-4">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="mb-10 text-center">
-            <h2 className="mb-3 text-3xl font-black md:text-4xl">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="mb-4 text-center">
+            <h2 className="mb-2 text-2xl font-black md:text-[28px]">
               先判断这 4 件事
             </h2>
             <p className="text-[#526170]">
@@ -226,11 +226,11 @@ export default function CellphoneClient() {
             </p>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid gap-3 md:grid-cols-2">
             {DECISION_POINTS.map((item, index) => (
               <article
                 key={item.title}
-                className="rounded-2xl border border-[#D5E5EC] bg-white p-6"
+                className="rounded-2xl border border-[#D5E5EC] bg-white p-4 md:p-5"
               >
                 <p className="mb-2 text-sm font-black text-[#246B95]">
                   0{index + 1}
@@ -244,12 +244,12 @@ export default function CellphoneClient() {
       </section>
 
       <section className="bg-white py-4">
-        <div className="mx-auto max-w-5xl px-6">
-          <div className="grid gap-6 md:grid-cols-2">
-            <div className="rounded-2xl border border-[#D5E5EC] p-7">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="rounded-2xl border border-[#D5E5EC] p-4 md:p-5">
               <Search className="mb-4 text-[#2786A5]" size={28} />
               <h2 className="text-2xl font-black">还不知道该不该换？</h2>
-              <p className="mb-5 mt-3 leading-relaxed text-[#526170]">
+              <p className="mb-3 mt-2 leading-relaxed text-[#526170]">
                 先进入 Diagnosis。根据你实际遇到的现象，把问题范围缩小，再决定下一步。
               </p>
               <Link
@@ -261,10 +261,10 @@ export default function CellphoneClient() {
               </Link>
             </div>
 
-            <div className="rounded-2xl border border-[#D5E5EC] p-7">
+            <div className="rounded-2xl border border-[#D5E5EC] p-4 md:p-5">
               <CircleDollarSign className="mb-4 text-[#2786A5]" size={28} />
               <h2 className="text-2xl font-black">已经确定要比较方案？</h2>
-              <p className="mb-5 mt-3 leading-relaxed text-[#526170]">
+              <p className="mb-3 mt-2 leading-relaxed text-[#526170]">
                 进入 Providers，比真实账单、设备成本、家庭结构、信号和转网代价，而不是只看广告优惠。
               </p>
               <Link
@@ -280,10 +280,10 @@ export default function CellphoneClient() {
       </section>
 
       <section className="bg-[#F4F8FA] py-4">
-        <div className="mx-auto max-w-5xl px-6">
-          <div className="mb-9 flex items-center justify-center gap-2">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
+          <div className="mb-4 flex items-center justify-center gap-2">
             <HelpCircle className="text-[#2786A5]" size={24} />
-            <h2 className="text-3xl font-black md:text-4xl">手机知识节点</h2>
+            <h2 className="text-2xl font-black md:text-[28px]">手机知识节点</h2>
           </div>
 
           <div className="grid gap-4 md:grid-cols-2">
@@ -314,9 +314,9 @@ export default function CellphoneClient() {
       </section>
 
       <section id="contact" className="bg-white py-4">
-        <div className="mx-auto max-w-4xl px-6">
-          <div className="mb-8 text-center">
-            <h2 className="mb-3 text-3xl font-black">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <div className="mb-4 text-center">
+            <h2 className="mb-2 text-2xl font-black md:text-[28px]">
               网页无法确认的，再进入人工核实
             </h2>
             <p className="mx-auto max-w-2xl leading-relaxed text-[#526170]">
@@ -325,7 +325,7 @@ export default function CellphoneClient() {
             </p>
           </div>
 
-          <div className="mx-auto mb-8 max-w-2xl">
+          <div className="mx-auto mb-4 max-w-2xl">
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <CheckCircle2
@@ -364,7 +364,7 @@ export default function CellphoneClient() {
         最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前账户与实际活动规则为准。
       </p>
 
-      <footer className="border-t border-[#D5E5EC] py-8 text-center">
+      <footer className="border-t border-[#D5E5EC] py-4 text-center">
         <p className="text-xs font-bold text-[#526170]">
           © {new Date().getFullYear()} Oceanver
         </p>
