@@ -1,0 +1,47 @@
+name: Full-site responsive audit v2
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        mode: [local, production]
+    env:
+      AUDIT_SITE: oceanver.com
+      AUDIT_MODE: ${{ matrix.mode }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Build exact revision
+        if: matrix.mode == 'local'
+        run: npm ci && npm run build
+      - name: Install Chromium
+        run: |
+          python -m pip install playwright==1.51.0
+          python -m playwright install --with-deps chromium
+      - name: Audit
+        run: |
+          if [ "$AUDIT_MODE" = local ]; then
+            npm run start -- --hostname 127.0.0.1 --port 3000 >/tmp/responsive-site.log 2>&1 &
+            export AUDIT_BASE=http://127.0.0.1:3000
+          else
+            export AUDIT_BASE=https://oceanver.com
+          fi
+          python scripts/responsive-audit.py
+      - name: Upload evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: responsive-v2-${{ matrix.mode }}
+          path: responsive-results/
+          if-no-files-found: warn
