@@ -25,19 +25,29 @@ export const metadata: Metadata = {
 };
 
 function BillIncreaseReasons() {
+  const reasons = [
+    { title: '促销期结束，恢复标准月费', href: '/internet/price-hike#reason-promotion' },
+    { title: 'AutoPay 等折扣失效', href: '/internet/price-hike#reason-autopay' },
+    { title: '运营商调价或套餐调整', href: '/internet/price-hike#reason-base-price' },
+    { title: '设备费或附加服务发生变化', href: '/internet/price-hike#reason-equipment' },
+    { title: '安装、激活、按比例计费等一次性费用', href: '/internet/price-hike#reason-one-time' },
+    { title: '设备分期与优惠抵扣变化', href: '/cellphone/faq/promo-credit-not-received' },
+  ];
   return (
     <section id="bill-increase-reasons" aria-labelledby="bill-increase-reasons-title" className="bg-white px-5 py-4 md:px-6 md:py-6">
       <div className="mx-auto max-w-[1120px]">
         <h2 id="bill-increase-reasons-title" className="text-2xl font-black text-[#202D3A] md:text-3xl">为什么账单会突然变贵？</h2>
-        <p className="mt-3 font-semibold text-[#202D3A]">常见原因主要有五类：</p>
-        <ol role="list" className="mt-4 list-decimal space-y-2 pl-6 leading-7 text-[#526170] marker:font-semibold marker:text-[#2786A5]">
-          <li>促销期结束，恢复标准月费</li>
-          <li>AutoPay 等折扣失效</li>
-          <li>运营商调价或套餐调整</li>
-          <li>设备费或附加服务发生变化</li>
-          <li>安装、激活、按比例计费等一次性费用</li>
+        <ol role="list" className="mt-4 grid grid-cols-2 gap-2 sm:gap-4">
+          {reasons.map((reason, index) => (
+            <li key={reason.href} className="min-w-0">
+              <Link href={reason.href} className="group flex h-full min-h-[64px] items-center gap-2 rounded-xl border border-[#D8E2EA] bg-white p-3 text-sm font-semibold leading-6 text-[#202D3A] transition hover:border-[#2786A5] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#164B78] sm:gap-4 sm:p-4 sm:text-base">
+                <span aria-hidden="true" className="shrink-0 font-bold text-[#2786A5]">{String(index + 1).padStart(2, '0')}</span>
+                <span className="min-w-0 flex-1 break-words">{reason.title}</span>
+                <span aria-hidden="true" className="shrink-0 text-[#164B78]">→</span>
+              </Link>
+            </li>
+          ))}
         </ol>
-        <Link href="/bill-optimization" className="page-nav-button">按顺序核对账单 →</Link>
       </div>
     </section>
   );
