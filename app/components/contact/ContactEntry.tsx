@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { Phone, MessageCircle, Mail, X, ArrowRight, Star } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const PHONE_NUMBER = '15108496191' // For tel: and sms: links
 const PHONE_DISPLAY = '510-849-6191' // For display text
@@ -19,21 +19,29 @@ export default function ContactEntry({
   showGoogleReviewCta?: boolean
 }) {
   const [showQRModal, setShowQRModal] = useState(false)
+  useEffect(() => {
+    if (!showQRModal) return
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setShowQRModal(false)
+    }
+    window.addEventListener('keydown', closeOnEscape)
+    return () => window.removeEventListener('keydown', closeOnEscape)
+  }, [showQRModal])
   const qrModal = showQRModal && (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4 backdrop-blur-sm"
       onClick={() => setShowQRModal(false)}
     >
       <div
-        className="relative w-full max-w-md rounded-3xl bg-white p-8 text-center shadow-2xl"
-        onClick={(e) => e.stopPropagation()}
+        className="relative w-full max-w-md max-h-[calc(100dvh-24px)] overflow-y-auto rounded-3xl bg-white p-5 sm:p-8 text-center shadow-2xl"
+        role="dialog" aria-modal="true" aria-label="微信在线咨询" onClick={(e) => e.stopPropagation()}
       >
-        <button onClick={() => setShowQRModal(false)} className="absolute right-4 top-4 text-slate-400 transition-colors hover:text-slate-700" aria-label="关闭">
+        <button onClick={() => setShowQRModal(false)} className="absolute right-2 top-2 inline-flex h-11 w-11 items-center justify-center text-slate-400 transition-colors hover:text-slate-700" aria-label="关闭">
           <X size={24} />
         </button>
         <h3 className="mb-2 text-xl font-black text-slate-900">微信在线咨询</h3>
         <p className="mb-6 text-sm text-slate-600">长按保存或扫描添加</p>
-        <div className="relative mx-auto h-64 w-64 overflow-hidden rounded-2xl border-4 border-blue-100 bg-white shadow-xl">
+        <div className="relative mx-auto aspect-square w-64 max-w-full overflow-hidden rounded-2xl border-4 border-blue-100 bg-white shadow-xl">
           <Image src="/wechat-qr.jpg" alt="微信二维码" fill className="object-contain p-2" priority />
         </div>
         <p className="mt-4 text-xs text-slate-500">工作时间内可协助核实具体情况</p>
