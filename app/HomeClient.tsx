@@ -42,7 +42,7 @@ export default async function HomeClient() {
     <>
       <section aria-labelledby="action-principle-title" className="home-action-section bg-white px-5 md:px-6">
         <div className="mx-auto max-w-[1120px] text-left">
-          <h2 id="action-principle-title" className="text-3xl font-black leading-tight text-[#202D3A] md:text-4xl xl:text-[40px]">
+          <h2 id="action-principle-title" className="text-2xl font-black leading-tight text-[#202D3A] md:text-3xl">
             多数问题先查原因，再决定要不要改变
           </h2>
           <p className="mt-4 max-w-[820px] text-lg leading-[1.8] text-[#40505F] md:mt-4">
@@ -52,13 +52,13 @@ export default async function HomeClient() {
       </section>
 
       <section aria-labelledby="total-cost-title" className="home-total-cost-section bg-[#EDF5F9] px-5 md:px-6">
-        <div className="mx-auto grid max-w-[1120px] items-start gap-6 md:grid-cols-[0.85fr_1.15fr] md:gap-12 xl:gap-16">
-          <h2 id="total-cost-title" className="text-3xl font-black leading-tight text-[#202D3A] md:text-[34px] xl:text-[38px]">不要只看月费，要看改变后的总成本</h2>
+        <div className="mx-auto grid max-w-[1120px] items-start gap-3 lg:grid-cols-[0.85fr_1.15fr] lg:gap-6">
+          <h2 id="total-cost-title" className="text-2xl font-black leading-tight text-[#202D3A] md:text-3xl">不要只看月费，要看改变后的总成本</h2>
           <div>
             <p className="text-lg leading-[1.8] text-[#526170]">
               <strong className="font-semibold text-[#202D3A]">月费更低，不代表改变一定更省。</strong> 设备余额、Trade-in credit、激活或安装费用、优惠期限、优惠结束后的价格，以及号码或服务中断风险，都会改变真实成本。比较的不是广告价格，而是继续使用和改变方案在同一周期内的总成本。
             </p>
-            <div className="mt-5 flex flex-wrap gap-x-6 gap-y-3 text-[15px] font-semibold">
+            <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-[15px] font-semibold">
               <Link href="/internet/price-hike" className="text-[#164B78] hover:text-[#103B60]">查看宽带涨价后如何判断是否值得改变 →</Link>
               <Link href="/internet/att-fiber/price-increase" className="text-[#164B78] hover:text-[#103B60]">AT&amp;T 宽带涨价？查看账单与谈价五步指南 →</Link>
               <Link href="/internet/frontier/price-increase" className="text-[#164B78] hover:text-[#103B60]">Frontier 涨价？先查账单与取消成本 →</Link>
@@ -74,11 +74,11 @@ export default async function HomeClient() {
           <h2 id="homepage-cases-title" className="text-3xl font-black text-[#202D3A] md:text-4xl">
             真实问题：为什么不能只看表面现象
           </h2>
-          <div className="mt-8 grid items-stretch gap-5 md:grid-cols-3 md:gap-6">
+          <div className="mt-4 grid items-stretch gap-3 md:grid-cols-3">
             {cases.map(({ id, preview }) => (
-              <article key={id} className="home-case-card flex h-full min-w-0 flex-col rounded-3xl border border-[#E9EEF2] bg-white p-6 md:p-7">
+              <article key={id} className="home-case-card flex h-full min-w-0 flex-col rounded-3xl border border-[#E9EEF2] bg-white p-4 md:p-5">
                 <h3 className="home-case-title text-lg font-black leading-7 text-[#202D3A] xl:text-xl">{preview.title}</h3>
-                <p className="mt-4 flex-1 leading-7 text-[#526170]">{preview.conclusion}</p>
+                <p className="mt-2 flex-1 leading-7 text-[#526170]">{preview.conclusion}</p>
                 <div className="mt-4">
                   <p className="text-[13px] font-semibold leading-5 text-[#526170]">适用边界</p>
                   <p className="mt-1 text-sm leading-6 text-slate-500">{preview.boundary}</p>
@@ -93,13 +93,13 @@ export default async function HomeClient() {
       </section>
 
       <section aria-labelledby="prepare-title" className="home-prepare-section bg-white px-5 md:px-6">
-        <div className="mx-auto grid max-w-[1120px] items-start gap-5 md:grid-cols-[0.82fr_1.18fr] md:gap-12">
+        <div className="mx-auto grid max-w-[1120px] items-start gap-3 lg:grid-cols-[0.82fr_1.18fr] lg:gap-6">
           <h2 id="prepare-title" className="text-balance text-2xl font-black leading-tight text-[#202D3A] md:text-3xl">判断前先准备什么</h2>
           <div>
             <p className="leading-7 text-[#526170]">
               准备最近两期账单、问题发生时间、设备状态，以及与问题相关的地址、退还凭证或账户资料，可以减少误判。不要在公开页面提交完整账号、SSN、身份证件或银行卡信息。
             </p>
-            <div className="mt-5 flex flex-wrap gap-x-6 gap-y-3 text-[15px] font-semibold">
+            <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-[15px] font-semibold">
               <Link href="/cellphone/diagnosis" className="text-[#164B78] hover:text-[#103B60]">查看手机问题需要核实什么 →</Link>
               <Link href="/internet/diagnosis" className="text-[#164B78] hover:text-[#103B60]">查看宽带问题需要核实什么 →</Link>
             </div>
