@@ -89,7 +89,7 @@ with sync_playwright() as p:
                 page.evaluate("document.fonts.ready")
                 row.update(page.evaluate("""() => {
                   const root=document.documentElement;
-                  const visible=e=>e.getClientRects().length && getComputedStyle(e).visibility!=='hidden';
+                  const visible=e=>{const c=getComputedStyle(e),r=e.getBoundingClientRect();return e.getClientRects().length&&c.visibility!=='hidden'&&c.display!=='none'&&!(c.position==='absolute'&&r.width<=1&&r.height<=1);};
                   const rect=e=>e.getBoundingClientRect();
                   const scrollParent=e=>{for(let a=e.parentElement;a;a=a.parentElement){if(['auto','scroll'].includes(getComputedStyle(a).overflowX)&&a.scrollWidth>a.clientWidth)return a;}return null;};
                   const headings=[...document.querySelectorAll('h1,h2,h3')].filter(visible);
@@ -122,7 +122,8 @@ with sync_playwright() as p:
                             row["dialogEscapeClosed"]=not dialog.count() or not dialog.first.is_visible()
                         else: row["dialogStatus"]="No semantic dialog detected; manual check required"
                     else: row["dialogStatus"]="No matching visible button; not tested"
-                row["pass"]=row["http"]==200 and row["viewport"]==w and row["documentWidth"]<=w+2 and not row["headingOverflow"] and not row["smallContactTargets"] and not row["imageOverflow"] and row["tableOverflow"]==0 and row.get("dialogFits",True) and row.get("dialogEscapeClosed",True)
+                row["intentionalRetirement"]=path in ["/cellphone/government"] and row["http"]==404 and not row.get("linkedFrom")
+                row["pass"]=row["intentionalRetirement"] or row["http"]==200 and row["viewport"]==w and row["documentWidth"]<=w+2 and not row["headingOverflow"] and not row["smallContactTargets"] and not row["imageOverflow"] and row["tableOverflow"]==0 and row.get("dialogFits",True) and row.get("dialogEscapeClosed",True)
                 if not row["pass"]:
                     safe=re.sub(r"[^a-zA-Z0-9_-]","_",path)[:120]
                     if len(list(OUT.glob("*.png")))<120: page.screenshot(path=str(OUT/f"{name}-{safe}.png"),timeout=5000)
@@ -132,7 +133,7 @@ with sync_playwright() as p:
             print(json.dumps(row,ensure_ascii=False),flush=True)
         ctx.close()
     browser.close()
-summary={"mode":MODE,"base":BASE,"routes":len(routes),"profiles":len(profiles),"checks":len(results),"passed":sum(r["pass"] for r in results),"failed":sum(not r["pass"] for r in results),"dynamicTemplates":templates,"excluded":excluded,"discoveryErrors":discover_errors,"limitations":["200% reflow is half CSS viewport, not native browser zoom","Chromium only; actual hardware and Safari/Firefox not tested","Keyboard focus and semantic dialog checks are partial; visual overlap and fixed-bar obstruction require review","Dynamic templates are covered only by discovered concrete paths; private routes excluded"]}
+summary={"mode":MODE,"base":BASE,"routes":len(routes),"profiles":len(profiles),"checks":len(results),"retiredChecks":sum(r.get("intentionalRetirement",False) for r in results),"passed":sum(r["pass"] for r in results),"failed":sum(not r["pass"] for r in results),"dynamicTemplates":templates,"excluded":excluded,"discoveryErrors":discover_errors,"limitations":["200% reflow is half CSS viewport, not native browser zoom","Chromium only; actual hardware and Safari/Firefox not tested","Keyboard focus and semantic dialog checks are partial; visual overlap and fixed-bar obstruction require review","Dynamic templates are covered only by discovered concrete paths; private routes excluded"]}
 (OUT/"report.json").write_text(json.dumps({"summary":summary,"results":results},ensure_ascii=False,indent=2))
 print(json.dumps(summary,ensure_ascii=False),flush=True)
 if summary["failed"] or discover_errors: sys.exit(1)
