@@ -105,18 +105,18 @@ export default function InternetPage() {
             美国家庭宽带问题入口
           </p>
 
-          <h1 className="mt-3 text-3xl font-black tracking-tight sm:text-5xl">
+          <h1 className="mt-2 text-[clamp(1.75rem,3vw,2.25rem)] font-black tracking-tight">
             宽带出了问题？
             <br className="sm:hidden" />
             先判断发生了什么
           </h1>
 
-          <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-[#526170] sm:text-lg">
+          <p className="mx-auto mt-3 max-w-3xl text-base leading-7 text-[#526170] sm:text-lg">
             账单涨价、网速慢、Wi-Fi、断网、Modem、安装、搬家或想换运营商，
             不需要从“哪家最好”开始。先找出问题来源，再决定下一步。
           </p>
 
-          <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
+          <div className="mt-4 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
               href="/internet/diagnosis"
               className="page-nav-button"
@@ -141,11 +141,11 @@ export default function InternetPage() {
             先选最接近你现在的情况
           </p>
 
-          <h2 className="mt-2 text-2xl font-black sm:text-3xl">
+          <h2 className="mt-2 text-2xl font-black sm:text-[28px]">
             你现在最想解决哪一个问题？
           </h2>
 
-          <div className="mt-7 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {problemEntries.map((item) => (
               <ProblemCard
                 key={item.title}
@@ -160,16 +160,16 @@ export default function InternetPage() {
         </section>
 
         {/* Oceanver 判断方法 */}
-        <section className="mt-4 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-6 sm:p-8">
+        <section className="mt-4 rounded-3xl border border-[#D5E5EC] bg-[#F4F8FA] p-4 sm:p-5">
           <p className="text-sm font-bold text-[#2786A5]">
             不要一看到问题就先换网
           </p>
 
-          <h2 className="mt-2 text-2xl font-black sm:text-3xl">
+          <h2 className="mt-2 text-2xl font-black sm:text-[28px]">
             我们建议按这 3 步判断
           </h2>
 
-          <div className="mt-7 grid gap-4 md:grid-cols-3">
+          <div className="mt-4 grid gap-4 md:grid-cols-3">
             {decisionSteps.map((item) => (
               <div
                 key={item.number}
@@ -192,7 +192,7 @@ export default function InternetPage() {
         </section>
 
         {/* 涨价专项 */}
-        <section className="mt-4 grid gap-6 lg:grid-cols-2">
+        <section className="mt-4 grid gap-4 lg:grid-cols-2">
           <InfoCard
             icon={<CircleDollarSign size={24} />}
             title="如果最明显的问题是：账单越来越贵"
@@ -247,11 +247,11 @@ export default function InternetPage() {
             很多人其实不是“宽带不够好”
           </p>
 
-          <h2 className="mt-2 text-2xl font-black sm:text-3xl">
+          <h2 className="mt-2 text-2xl font-black sm:text-[28px]">
             先排除这几种常见误判
           </h2>
 
-          <div className="mt-7 grid gap-4 md:grid-cols-2">
+          <div className="mt-4 grid gap-4 md:grid-cols-2">
             {[
               [
                 '一个房间 Wi-Fi 弱',
@@ -285,8 +285,8 @@ export default function InternetPage() {
         </section>
 
         {/* FAQ */}
-        <section className="mt-4 rounded-3xl border border-[#D5E5EC] bg-white p-6 sm:p-8">
-          <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
+        <section className="mt-4 rounded-3xl border border-[#D5E5EC] bg-white p-4 sm:p-5">
+          <div className="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
               <div className="flex items-center gap-3">
                 <CircleHelp className="text-[#2786A5]" size={24} />
@@ -340,7 +340,7 @@ export default function InternetPage() {
           </Link>
         </section>
 
-        <p className="mt-12 text-center text-xs leading-5 text-[#526170]">
+        <p className="mt-5 text-center text-xs leading-5 text-[#526170]">
           最后更新：2026年10月｜价格、资格、优惠及账户结果可能随运营商政策变化，请以当前账户与官方规则为准。
         </p>
       </div>
@@ -364,7 +364,7 @@ function ProblemCard({
   return (
     <Link
       href={href}
-      className="group rounded-3xl border border-[#D5E5EC] bg-white p-6 transition hover:border-[#2786A5] hover:shadow-sm"
+      className="group rounded-3xl border border-[#D5E5EC] bg-white p-4 md:p-5 transition hover:border-[#2786A5] hover:shadow-sm"
     >
       <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F4F8FA] text-[#164B78]">
         {icon}
@@ -378,7 +378,7 @@ function ProblemCard({
         {description}
       </p>
 
-      <div className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#164B78]">
+      <div className="mt-3 inline-flex items-center gap-2 text-sm font-bold text-[#164B78]">
         {action}
         <ArrowRight
           size={16}
@@ -399,7 +399,7 @@ function InfoCard({
   children: ReactNode
 }) {
   return (
-    <div className="rounded-3xl border border-[#D5E5EC] bg-white p-6 sm:p-7">
+    <div className="rounded-3xl border border-[#D5E5EC] bg-white p-4 sm:p-5">
       <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F4F8FA] text-[#164B78]">
         {icon}
       </div>
@@ -408,7 +408,7 @@ function InfoCard({
         {title}
       </h2>
 
-      <div className="mt-4 space-y-4 text-sm leading-7 text-[#526170]">
+      <div className="mt-3 space-y-3 text-sm leading-7 text-[#526170]">
         {children}
       </div>
     </div>
