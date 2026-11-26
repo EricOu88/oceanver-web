@@ -14,31 +14,37 @@ import {
 
 const hikeReasons = [
   {
+    id: 'reason-promotion',
     title: '原来的优惠或 Credit 到期',
     description:
       '促销结束后，基础月费可能恢复到当前账户适用的正常价格。',
   },
   {
+    id: 'reason-base-price',
     title: '基础月费发生变化',
     description:
       '即使没有更换套餐，运营商也可能调整部分服务的基础价格。',
   },
   {
+    id: 'reason-autopay',
     title: 'AutoPay / Paperless 折扣变化',
     description:
       '付款方式、电子账单设置或账户资格变化，都可能让原来的折扣消失。',
   },
   {
+    id: 'reason-equipment',
     title: '设备费或附加服务增加',
     description:
       'Gateway、Router、Extender、附加服务或设备记录变化，都可能增加 recurring charge。',
   },
   {
+    id: 'reason-one-time',
     title: '一次性费用混在账单里',
     description:
       '安装、激活、Technician、设备事件或账单周期调整，可能只影响一期账单。',
   },
   {
+    id: 'reason-plan',
     title: '套餐、速度档位或组合服务变化',
     description:
       '如果近期改过速度、Bundle 或服务内容，总价也可能随之变化。',
@@ -133,7 +139,8 @@ export default function PriceHikeClient() {
               {hikeReasons.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-2xl border border-[#D5E5EC] bg-white p-5"
+                  id={item.id}
+                  className="scroll-mt-24 rounded-2xl border border-[#D5E5EC] bg-white p-5"
                 >
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#F4F8FA] text-[#164B78]">
                     <CircleDollarSign size={21} />
