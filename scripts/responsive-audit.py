@@ -13,10 +13,11 @@ OUT = Path("responsive-results") / MODE
 OUT.mkdir(parents=True, exist_ok=True)
 excluded = []
 routes = set()
+linked_from = {}
 templates = []
 def include(path, source):
     path = urlparse(path).path.rstrip("/") or "/"
-    if path.startswith(("/admin", "/api", "/_next")) or path == "/410":
+    if path.startswith(("/admin", "/api", "/_next", "/_global-error", "/_not-found")) or path == "/410":
         excluded.append({"path":path,"reason":"private, API or intentional gone page","source":source})
         return
     if re.search(r"\.(png|jpg|jpeg|webp|svg|pdf|xml|txt|ico|js|css|woff2?)$", path, re.I):
@@ -72,7 +73,9 @@ with sync_playwright() as p:
                     u=urlparse(link)
                     if u.hostname in (SITE,"www."+SITE,urlparse(BASE).hostname) and not u.query:
                         # Restrict link discovery to public page namespaces; never follow action endpoints.
-                        if u.path.startswith(("/blog/","/cellphone/","/internet/","/en/")): include(u.path,"internal link")
+                        if u.path.startswith(("/blog/","/cellphone/","/internet/","/en/")):
+                            linked_from.setdefault(u.path.rstrip("/") or "/",set()).add(path)
+                            include(u.path,"internal link")
         except Exception as exc:
             discover_errors.append({"path":path,"error":str(exc)})
     ctx.close()
@@ -90,10 +93,12 @@ with sync_playwright() as p:
                   const rect=e=>e.getBoundingClientRect();
                   const scrollParent=e=>{for(let a=e.parentElement;a;a=a.parentElement){if(['auto','scroll'].includes(getComputedStyle(a).overflowX)&&a.scrollWidth>a.clientWidth)return a;}return null;};
                   const headings=[...document.querySelectorAll('h1,h2,h3')].filter(visible);
-                  const ctas=[...document.querySelectorAll('a,button')].filter(e=>visible(e)&&(/电话咨询|微信咨询|tel:/i.test((e.innerText||'')+' '+(e.getAttribute('href')||''))));
+                  const contact=[...document.querySelectorAll('a,button')].filter(e=>visible(e)&&(/电话咨询|微信(?:在线)?咨询|中文客服|tel:/i.test((e.innerText||'')+' '+(e.getAttribute('href')||''))));
+                  const ctas=contact.filter(e=>getComputedStyle(e).display!=='inline'||e.tagName==='BUTTON');
                   const fixed=[...document.querySelectorAll('body *')].filter(e=>visible(e)&&getComputedStyle(e).position==='fixed'&&rect(e).height>0);
                   return {viewport:innerWidth,documentWidth:root.scrollWidth,
                     headingOverflow:headings.filter(e=>e.scrollWidth>e.clientWidth+2&&!scrollParent(e)).map(e=>e.innerText.slice(0,100)),
+                    inlineContactLinks:contact.filter(e=>!ctas.includes(e)).map(e=>e.innerText.slice(0,80)),
                     smallContactTargets:ctas.filter(e=>rect(e).width<44||rect(e).height<44).map(e=>({text:e.innerText.slice(0,80),w:Math.round(rect(e).width),h:Math.round(rect(e).height)})),
                     imageOverflow:[...document.images].filter(e=>visible(e)&&!scrollParent(e)&&(rect(e).right>innerWidth+2||rect(e).left<-2)).map(e=>e.getAttribute('src')),
                     tableOverflow:[...document.querySelectorAll('table')].filter(e=>visible(e)&&!scrollParent(e)&&(rect(e).right>innerWidth+2||rect(e).left<-2)).length,
@@ -101,19 +106,20 @@ with sync_playwright() as p:
                 }"""))
                 row["http"]=res.status if res else 0
                 row["finalPath"]=urlparse(page.url).path
+                if row["http"]!=200: row["linkedFrom"]=sorted(linked_from.get(path, set()))
                 # Only inspect safe UI controls; never submit or activate a telephone/external link.
                 if name in ("phone-portrait","tablet-landscape","1366"):
                     page.keyboard.press("Tab")
                     row["keyboardFocus"]=page.evaluate("""() => {const e=document.activeElement;return e&&e!==document.body?{tag:e.tagName,visible:!!e.getClientRects().length}:null;}""")
-                    trigger=page.get_by_role("button",name=re.compile("微信咨询|微信客服|扫码咨询"))
+                    trigger=page.get_by_role("button",name=re.compile("微信(?:在线)?咨询|微信客服|扫码咨询"))
                     if trigger.count() and trigger.first.is_visible():
                         trigger.first.click(timeout=3000)
-                        dialog=page.locator('[role=dialog]:visible,dialog[open]:visible,[aria-modal=true]:visible]')
-                        if dialog.count():
+                        dialog=page.locator('[role="dialog"], dialog[open], [aria-modal="true"]')
+                        if dialog.count() and dialog.first.is_visible():
                             box=dialog.first.bounding_box()
                             row["dialogFits"]=bool(box and box["width"]<=w+2 and box["height"]<=h+2)
                             page.keyboard.press("Escape")
-                            row["dialogEscapeClosed"]=not dialog.count()
+                            row["dialogEscapeClosed"]=not dialog.count() or not dialog.first.is_visible()
                         else: row["dialogStatus"]="No semantic dialog detected; manual check required"
                     else: row["dialogStatus"]="No matching visible button; not tested"
                 row["pass"]=row["http"]==200 and row["viewport"]==w and row["documentWidth"]<=w+2 and not row["headingOverflow"] and not row["smallContactTargets"] and not row["imageOverflow"] and row["tableOverflow"]==0 and row.get("dialogFits",True) and row.get("dialogEscapeClosed",True)
